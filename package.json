@@ -30,6 +30,12 @@
 		"vite": "^7.2.6"
 	},
 	"dependencies": {
-		"mode-watcher": "^1.1.0"
+		"@shikijs/langs": "^3.21.0",
+		"@shikijs/themes": "^3.21.0",
+		"isomorphic-dompurify": "2.25.0",
+		"mode-watcher": "^1.1.0",
+		"runed": "^0.37.1",
+		"shiki": "^3.21.0",
+		"svelte-toolbelt": "^0.10.6"
 	}
 }
