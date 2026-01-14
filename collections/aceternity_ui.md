@@ -1,0 +1,98 @@
+Total number of components 70
+
+List of Components
+- Dotted Glow Background
+- Background Ripple Effect
+- Sparkles
+- Background Gradient
+- Gradient Animation
+- Wavy Background
+- Background Boxes
+- Background Beams
+- Background Beams With Collision
+- Background Lines
+- Aurora Background
+- Meteors
+- Glowing Stars
+- Shooting Stars
+- Vortex
+- Spotlight
+- Spotlight New
+- Canvas Reveal Effect
+- SVG Mask Effect
+- Tracing Beam
+- Lamp effect
+- Grid and Dot Backgrounds
+- Glowing Effect
+- Google Gemini Effect
+- Tooltip Card
+- Pixelated Canvas
+- 3D Card Effect
+- Evervault Card
+- Card Stack
+- Card Hover Effect
+- Wobble Card
+- Expandable Card
+- Card Spotlight
+- Focus Cards
+- Infinite Moving Cards
+- Draggable Card
+- Comet Card
+- Glare Card
+- Direction Aware Hover
+- Parallax Scroll
+- Sticky Scroll Reveal
+- Macbook Scroll
+- Container Scroll Animation
+- Hero Parallax
+- Encrypted Text
+- Layout Text Flip
+- Colourful Text
+- Text Generate Effect
+- Typewriter Effect
+- Flip Words
+- Text Hover Effect
+- Container Text Flip
+- Hero Highlight
+- Text Reveal Card
+- Noise Background
+- Tailwind CSS buttons
+- Hover Border Gradient
+- Moving Border
+- Stateful Button
+- Multi Step Loader
+- Loader
+- Floating Navbar
+- Navbar Menu
+- Sidebar
+- Floating Dock
+- Tabs
+- Resizable Navbar
+- Sticky Banner
+- Signup Form
+- Placeholders And Vanish Input
+- File Upload
+- Dither Shader
+- Animated Modal
+- Animated Tooltip
+- Link Preview
+- Images Slider
+- Carousel
+- Apple Cards Carousel
+- Testimonials
+- Layout Grid
+- Bento Grid
+- Container Cover
+- GitHub Globe
+- World Map
+- Timeline
+- Compare
+- Codeblock
+- Following Pointer
+- Pointer Highlight
+- Lens
+- 3D Pin
+- 3D Marquee
+- Feature Sections
+- Cards Sections
+- Hero Sections
