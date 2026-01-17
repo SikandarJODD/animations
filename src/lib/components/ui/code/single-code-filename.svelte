@@ -1,7 +1,10 @@
 <script lang="ts">
   import { TypeScript } from "$lib/components/icons";
+  import Svelte from "$lib/components/icons/svelte.svelte";
+  import Terminal from "$lib/components/icons/terminal.svelte";
   import * as Code from "$lib/components/ui/code";
   import type { CodeBlock as MagicCode } from "$lib/components/ui/code/index";
+  import CopyButton from "../copy-button/copy-button.svelte";
 
   type Props = {
     code: MagicCode;
@@ -9,43 +12,45 @@
   let { code }: Props = $props();
 </script>
 
-<div class="w-full p-6">
-  <div class="border-border rounded-lg border">
+<div class="w-full">
+  <div class="border-border rounded-lg border overflow-hidden">
     <div
-      class="border-border flex h-9 items-center justify-between border-b px-6"
+      class="border-border flex items-center justify-between border-b pl-4 py-1 pr-1"
     >
       <div class="flex items-center gap-2">
-        <TypeScript class="size-4" />
+        <!-- <TypeScript class="size-4" /> -->
+        {#if code.lang === "svelte"}
+          <Svelte class="size-4" />
+        {:else if code.lang === "typescript"}
+          <TypeScript class="size-4" />
+        {:else}
+          <Terminal class="size-4" />
+        {/if}
         <span class="text-sm font-medium">{code.filename}</span>
       </div>
+      <div>
+        <CopyButton text={code.filecode} />
+      </div>
     </div>
-    <!-- <Code.Root
-      lang={code.lang}
-      class="w-full"
-      code={code.filecode}
-      highlight={code.highlight}
-    >
-      <Code.CopyButton />
-    </Code.Root> -->
     {#if code.isExpand}
       <Code.Overflow>
         <Code.Root
           lang={code.lang}
-          class="w-full"
+          class="w-full rounded-none border-none"
           code={code.filecode}
           highlight={code.highlight}
         >
-          <Code.CopyButton />
+          <!-- <Code.CopyButton /> -->
         </Code.Root>
       </Code.Overflow>
     {:else}
       <Code.Root
         lang={code.lang}
-        class="w-full"
+        class="w-full rounded-none border-none"
         code={code.filecode}
         highlight={code.highlight}
       >
-        <Code.CopyButton />
+        <!-- <Code.CopyButton /> -->
       </Code.Root>
     {/if}
   </div>

@@ -45,7 +45,7 @@ class CodeRootState {
 			lang: this.opts.lang.current,
 			themes: {
 				light: 'github-light-default',
-				dark: 'github-dark-default'
+				dark: 'vesper'
 			},
 			transformers: [
 				{
