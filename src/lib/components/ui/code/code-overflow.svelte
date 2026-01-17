@@ -15,7 +15,7 @@
   const state = useCodeOverflow({
     collapsed: box.with(
       () => collapsed,
-      (v) => (collapsed = v)
+      (v) => (collapsed = v),
     ),
   });
 </script>
@@ -26,7 +26,7 @@
   data-collapsed={collapsed}
   class={cn(
     "relative overflow-y-hidden data-[collapsed=true]:max-h-[300px]",
-    className
+    className,
   )}
 >
   {@render children?.()}
@@ -43,6 +43,15 @@
       onclick={state.toggleCollapsed}
     >
       Expand
+    </Button>
+  {:else}
+    <Button
+      variant="secondary"
+      size="sm"
+      class="absolute bottom-2 left-1/2 z-20 w-fit -translate-x-1/2"
+      onclick={state.toggleCollapsed}
+    >
+      Collapse
     </Button>
   {/if}
 </div>

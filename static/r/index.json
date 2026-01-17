@@ -1,0 +1,10 @@
+[
+	{
+		"name": "animated-gradient-text",
+		"title": "Animated Gradient Text",
+		"type": "registry:block",
+		"description": "An animated gradient background which transitions between colors for text.",
+		"registryDependencies": [],
+		"relativeUrl": "animated-gradient-text.json"
+	}
+]
