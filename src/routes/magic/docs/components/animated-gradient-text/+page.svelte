@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from "$app/state";
   import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
   import AnimatedGradientText from "$lib/components/magic-ui/animated-gradient-text/animated-gradient-text.svelte";
   import AnimatedGradientTextRaw from "$lib/components/magic-ui/animated-gradient-text/animated-gradient-text.svelte?raw";
@@ -15,6 +16,9 @@
   };
   import { data } from "./data";
   let MainPreviewComponent = $derived(data.preview_component);
+  let installation_url = $derived(
+    page.url.origin + "/r/" + data.installation_url,
+  );
 </script>
 
 <div>
@@ -37,7 +41,7 @@
   </Paragraph> -->
   <PMCommand
     command="execute"
-    args={["add", data.installation_url]}
+    args={["shadcn-svelte@latest", "add", installation_url]}
     class="my-2"
   />
 

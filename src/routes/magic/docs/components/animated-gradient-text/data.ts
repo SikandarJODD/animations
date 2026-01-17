@@ -27,7 +27,7 @@ let seo: SEO = {
 export let data: Structure = {
     title: "Animated Gradient Text",
     description: "An animated gradient background which transitions between colors for text.",
-    installation_url: "npm install sv5-animations",
+    installation_url: "animated-gradient-text.json",
     preview_component: Preview,
     preview_code: {
         filename: "animated-gradient-text.svelte",
@@ -37,5 +37,7 @@ export let data: Structure = {
     examples: examples,
     seo: seo
 }
+
+// shadcn-svelte@latest add http://localhost:5173/r/animated-gradient-text.json
 
 

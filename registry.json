@@ -1,0 +1,26 @@
+{
+ "$schema": "https://shadcn-svelte.com/schema/registry.json",
+ "name": "acme",
+ "homepage": "https://acme.com",
+ "items": [
+     {
+      "name": "animated-gradient-text",
+      "type": "registry:block",
+      "title": "Animated Gradient Text",
+      "description": "An animated gradient background which transitions between colors for text.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/animated-gradient-text/animated-gradient-text.svelte",
+          "type": "registry:component",
+          "target": "magic/animated-gradient-text/animated-gradient-text.svelte"
+        },
+        {
+            "path": "./src/lib/components/magic-ui/animated-gradient-text/index.ts",
+            "type": "registry:file",
+            "target": "magic/animated-gradient-text/index.ts"
+        }
+      ],
+      "registryDependencies": []
+    }
+ ]
+}
