@@ -17,23 +17,22 @@
     <div
       class="border-border flex items-center justify-between border-b pl-4 py-1 pr-1"
     >
-      <div class="flex items-center gap-2">
-        <!-- <TypeScript class="size-4" /> -->
+      <div class="flex items-center gap-1.5">
         {#if code.lang === "svelte"}
-          <Svelte class="size-4" />
+          <Svelte />
         {:else if code.lang === "typescript"}
-          <TypeScript class="size-4" />
+          <TypeScript />
         {:else}
-          <Terminal class="size-4" />
+          <Terminal />
         {/if}
-        <span class="text-sm font-medium">{code.filename}</span>
+        <span class="text-sm font-normal">{code.filename}</span>
       </div>
       <div>
         <CopyButton text={code.filecode} />
       </div>
     </div>
     {#if code.isExpand}
-      <Code.Overflow>
+      <Code.Overflow collapsed={true}>
         <Code.Root
           lang={code.lang}
           class="w-full rounded-none border-none"
