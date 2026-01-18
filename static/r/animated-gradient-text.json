@@ -4,9 +4,21 @@
 	"title": "Animated Gradient Text",
 	"type": "registry:block",
 	"description": "An animated gradient background which transitions between colors for text.",
+	"css": {
+		"@keyframes gradient": {
+			"to": {
+				"background-position": "var(--bg-size, 300%) 0"
+			}
+		}
+	},
+	"cssVars": {
+		"theme": {
+			"animate-gradient": "gradient 8s linear infinite"
+		}
+	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\r\n  import { cn } from \"$UTILS$\";\r\n  import type { Snippet } from \"svelte\";\r\n\r\n  type AnimatedGradientTextProps = {\r\n    speed?: number;\r\n    colorFrom?: string;\r\n    colorTo?: string;\r\n    children: Snippet;\r\n    class?: string;\r\n    rest: Record<string, any>;\r\n  };\r\n\r\n  let {\r\n    speed = 1,\r\n    colorFrom = \"#ffaa40\",\r\n    colorTo = \"#9c40ff\",\r\n    children,\r\n    class: className = \"\",\r\n    ...rest\r\n  } = $props();\r\n</script>\r\n\r\n<span\r\n  style=\"--color-from:{colorFrom}; --color-to:{colorTo}; --bg-size:{300 *\r\n    speed}%\"\r\n  {...rest}\r\n  class={cn(\r\n    `animate-gradient inline bg-linear-to-r from-[var(--color-from)] via-[var(--color-to)] to-[var(--color-from)] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,\r\n    className\r\n  )}\r\n>\r\n  {@render children?.()}\r\n</span>\r\n",
+			"content": "<script lang=\"ts\">\r\n  import { cn } from \"$UTILS$\";\r\n  import type { Snippet } from \"svelte\";\r\n\r\n  type AnimatedGradientTextProps = {\r\n    speed?: number;\r\n    colorFrom?: string;\r\n    colorTo?: string;\r\n    children: Snippet;\r\n    class?: string;\r\n    rest: Record<string, any>;\r\n  };\r\n\r\n  let {\r\n    speed = 1,\r\n    colorFrom = \"#ffaa40\",\r\n    colorTo = \"#9c40ff\",\r\n    children,\r\n    class: className = \"\",\r\n    ...rest\r\n  }: AnimatedGradientTextProps = $props();\r\n</script>\r\n\r\n<span\r\n  style=\"--color-from:{colorFrom}; --color-to:{colorTo}; --bg-size:{300 *\r\n    speed}%\"\r\n  {...rest}\r\n  class={cn(\r\n    `animate-gradient inline bg-linear-to-r from-(--color-from) via-(--color-to) to-(--color-from) bg-size-[var(--bg-size)_100%] bg-clip-text text-transparent`,\r\n    className,\r\n  )}\r\n>\r\n  {@render children?.()}\r\n</span>\r\n",
 			"type": "registry:component",
 			"target": "magic/animated-gradient-text/animated-gradient-text.svelte"
 		},

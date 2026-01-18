@@ -85,6 +85,8 @@
       lang={selectedCode.lang}
       class="rounded-none border-none w-full "
       code={selectedCode.filecode}
+      highlight={selectedCode.highlight}
+      hideLines={selectedCode.hideLines}
     >
       <Code.CopyButton />
     </Code.Root>

@@ -86,7 +86,7 @@
   }
 
   :global(pre .line.line--highlighted) {
-    @apply bg-secondary;
+    @apply bg-secondary dark:bg-secondary/60 border-l border-primary/30 dark:border-primary/70;
   }
 
   :global(pre .line.line--highlighted span) {
