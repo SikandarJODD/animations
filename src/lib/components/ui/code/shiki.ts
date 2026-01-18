@@ -11,6 +11,7 @@ const bundledLanguages = {
 	svelte: () => import('@shikijs/langs/svelte'),
 	typescript: () => import('@shikijs/langs/typescript'),
 	css: () => import('@shikijs/langs/css'),
+	markdown: () => import('@shikijs/langs/markdown'),
 };
 
 /** The languages configured for the highlighter */

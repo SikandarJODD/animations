@@ -63,11 +63,24 @@ export const data: ComponentDoc = {
   seo,
   tailwind,
   props: [
-    { name: "speed", type: "number", default: "1", description: "Animation speed multiplier for the gradient movement" },
-    { name: "colorFrom", type: "string", default: "#ffaa40", description: "Starting color of the gradient" },
-    { name: "colorTo", type: "string", default: "#9c40ff", description: "Ending color of the gradient" },
-    { name: "class", type: "string", default: '""', description: "Additional CSS classes to apply" },
+    {
+      name: "AnimatedGradientText",
+      desc: "A text component with animated gradient background effect.",
+      props: [
+        { name: "speed", type: "number", default: "1", description: "Animation speed multiplier for the gradient movement" },
+        { name: "colorFrom", type: "string", default: "#ffaa40", description: "Starting color of the gradient" },
+        { name: "colorTo", type: "string", default: "#9c40ff", description: "Ending color of the gradient" },
+        { name: "class", type: "string", default: '""', description: "Additional CSS classes to apply" },
+      ],
+    },
   ],
+  folderStructure: `src/
+└── lib/
+    └── components/
+        └── magic-ui/
+            └── animated-gradient-text/
+                ├── animated-gradient-text.svelte
+                └── index.ts`,
 };
 
 // shadcn-svelte@latest add http://localhost:5173/r/animated-gradient-text.json

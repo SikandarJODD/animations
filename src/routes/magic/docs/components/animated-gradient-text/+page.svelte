@@ -8,6 +8,7 @@
   import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
   import APITable from "$lib/components/docs/base/APITable.svelte";
   import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+  import SingleCodeFilename from "$lib/components/ui/code/single-code-filename.svelte";
   import { data } from "./data";
 
   const code: CodeBlock = {
@@ -45,6 +46,7 @@
     {installUrl}
     tailwindConfig={data.tailwind ? { code: data.tailwind } : undefined}
     codeBlocks={[code]}
+    folderStructure={data.folderStructure}
     class="my-4"
   />
 
@@ -68,12 +70,22 @@
 
   {#if data.props && data.props.length > 0}
     <H2 id="props">Props</H2>
-    <div class="my-4">
-      <APITable
-        headers={["Prop", "Type", "Default"]}
-        keys={["name", "type", "default"]}
-        data={data.props}
-      />
-    </div>
+    {#each data.props as propsTable}
+      <div class="my-4">
+        <H3 id={propsTable.name.toLowerCase().replace(/\s+/g, "-")}>
+          {propsTable.name}
+        </H3>
+        {#if propsTable.desc}
+          <Paragraph>{propsTable.desc}</Paragraph>
+        {/if}
+        <div class="my-4">
+          <APITable
+            headers={["Prop", "Type", "Default"]}
+            keys={["name", "type", "default"]}
+            data={propsTable.props}
+          />
+        </div>
+      </div>
+    {/each}
   {/if}
 </div>

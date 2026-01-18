@@ -1,6 +1,6 @@
 <script lang="ts">
   import { TypeScript } from "$lib/components/icons";
-  import { Svelte, Terminal, CSS } from "$lib/components/icons";
+  import { Svelte, Terminal, CSS, Markdown } from "$lib/components/icons";
   import * as Code from "$lib/components/ui/code";
   import type { CodeBlock as MagicCode } from "$lib/components/ui/code/index";
   import CopyButton from "../copy-button/copy-button.svelte";
@@ -23,6 +23,8 @@
           <TypeScript />
         {:else if code.lang === "css"}
           <CSS />
+        {:else if code.lang === "markdown"}
+          <Markdown />
         {:else}
           <Terminal />
         {/if}

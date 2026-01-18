@@ -11,16 +11,12 @@
   };
 
   export type InstallComponentProps = {
-    /** The installation URL for CLI command (e.g., "shadcn-svelte@next add button") */
     installUrl: string;
-    /** List of component dependencies to install manually */
     dependencies?: DependencyItem[];
-    /** Tailwind CSS configuration if needed */
     tailwindConfig?: TailwindConfig;
-    /** Additional code blocks to show in manual installation */
     codeBlocks?: CodeBlock[];
-    /** Custom class name */
     class?: string;
+    folderStructure?: string;
   };
 </script>
 
@@ -38,6 +34,7 @@
     tailwindConfig,
     codeBlocks = [],
     class: className,
+    folderStructure = "",
   }: InstallComponentProps = $props();
 
   let activeTab = $state("cli");
@@ -57,7 +54,7 @@
       />
     </Tabs.Content>
 
-    <Tabs.Content value="manual" class="mt-4">
+    <Tabs.Content value="manual" class="mt-4" data-toc-ignore="true">
       <Steps>
         {#if dependencies.length > 0}
           <Step title="Install Dependencies">
@@ -98,10 +95,26 @@
             <p class="mb-4">
               Add the following to your <code
                 class="bg-muted rounded px-1.5 py-0.5 text-sm"
-                >tailwind.config.js</code
+                >routes/layout.css</code
               > file:
             </p>
             <SingleCodeFilename code={tailwindConfig.code} />
+          </Step>
+        {/if}
+
+        <!-- Folder Structure -->
+
+        {#if folderStructure}
+          <!-- <H3 id="folder-structure">Folder Structure</H3> -->
+          <Step title="Folder Structure">
+            <SingleCodeFilename
+              code={{
+                filename: "Folder Structure",
+                filecode: folderStructure,
+                lang: "bash",
+                hideLines: true,
+              }}
+            />
           </Step>
         {/if}
       </Steps>
