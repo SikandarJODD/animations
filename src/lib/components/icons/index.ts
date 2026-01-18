@@ -1,5 +1,6 @@
 import type { HTMLAttributes } from "svelte/elements";
 import GitHub from "./github.svelte";
+import CSS from "./css.svelte";
 import TypeScript from "./typescript.svelte";
 import Twitter from "./twitter.svelte";
 import Svelte from "./svelte.svelte";
@@ -14,4 +15,4 @@ export interface Props extends HTMLAttributes<SVGElement> {
 	height?: number;
 }
 
-export { GitHub, TypeScript, Twitter, Svelte, Terminal, Code as CodeIcon, MCP, Markdown };
+export { GitHub, CSS, TypeScript, Twitter, Svelte, Terminal, Code as CodeIcon, MCP, Markdown };

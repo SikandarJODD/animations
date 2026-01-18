@@ -1,7 +1,6 @@
 <script lang="ts">
   import { TypeScript } from "$lib/components/icons";
-  import Svelte from "$lib/components/icons/svelte.svelte";
-  import Terminal from "$lib/components/icons/terminal.svelte";
+  import { Svelte, Terminal, CSS } from "$lib/components/icons";
   import * as Code from "$lib/components/ui/code";
   import type { CodeBlock as MagicCode } from "$lib/components/ui/code/index";
   import CopyButton from "../copy-button/copy-button.svelte";
@@ -22,6 +21,8 @@
           <Svelte />
         {:else if code.lang === "typescript"}
           <TypeScript />
+        {:else if code.lang === "css"}
+          <CSS />
         {:else}
           <Terminal />
         {/if}
@@ -38,6 +39,7 @@
           class="w-full rounded-none border-none"
           code={code.filecode}
           highlight={code.highlight}
+          hideLines={code.hideLines}
         >
           <!-- <Code.CopyButton /> -->
         </Code.Root>
@@ -48,9 +50,8 @@
         class="w-full rounded-none border-none"
         code={code.filecode}
         highlight={code.highlight}
-      >
-        <!-- <Code.CopyButton /> -->
-      </Code.Root>
+        hideLines={code.hideLines}
+      ></Code.Root>
     {/if}
   </div>
 </div>

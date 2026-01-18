@@ -25,6 +25,7 @@ export type CodeBlock = {
 	lang?:  SupportedLanguage;
 	isExpand?: boolean;
 	highlight?: (number | [number, number])[];
+	hideLines?: boolean;
 };
 
 export {

@@ -39,7 +39,7 @@
     command,
     agents = ["npm", "pnpm", "yarn", "bun"],
     args,
-    agent = $bindable("npm"),
+    agent = $bindable("pnpm"),
   }: PMCommandProps = $props();
 
   const cmd = $derived(resolveCommand(agent, command, args));
