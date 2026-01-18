@@ -7,6 +7,7 @@
   import { PreviewComponent } from "$lib/components/ui/preview-component";
   import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
   import APITable from "$lib/components/docs/base/APITable.svelte";
+  import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
   import { data } from "./data";
 
   const code: CodeBlock = {
@@ -18,10 +19,14 @@
 
   const PreviewComp = $derived(data.preview);
   const installUrl = $derived(`${page.url.origin}/r/${data.id}.json`);
+  const llmsTxtUrl = $derived(`${page.url}/llms.txt`);
 </script>
 
 <div>
-  <H1 id="introduction">{data.title}</H1>
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <H1 id="introduction">{data.title}</H1>
+    <CopyPageDropdown componentName={data.title} {llmsTxtUrl} />
+  </div>
   <Paragraph>
     {data.description}
   </Paragraph>

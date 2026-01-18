@@ -316,7 +316,7 @@
       <Button
         variant="ghost"
         size="icon"
-        href="https://github.com/SikandarJODD/ai-elements"
+        href="https://github.com/SikandarJODD/animations"
         target="_blank"
       >
         <Icons.GitHub class="size-4" />
