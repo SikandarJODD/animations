@@ -39,6 +39,7 @@
 		"runed": "^0.37.1",
 		"shadcn-svelte": "^1.1.0",
 		"shiki": "^3.21.0",
+		"svelte-sonner": "^1.0.7",
 		"svelte-toolbelt": "^0.10.6"
 	}
 }

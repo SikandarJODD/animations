@@ -1,5 +1,7 @@
 <script lang="ts" module>
-  // sample data
+  import { magicUIComponents } from "$lib/components/docs/registry/magic-ui";
+
+  // Build navigation from registry
   const data = {
     navMain: [
       {
@@ -20,12 +22,11 @@
       {
         title: "Text Animations",
         url: "#",
-        items: [
-          {
-            title: "Animated Gradient Text",
-            url: "/magic/docs/components/animated-gradient-text",
-          },
-        ],
+        items: magicUIComponents.map((c) => ({
+          title: c.name,
+          url: c.href,
+          badge: c.badge,
+        })),
       },
     ],
   };
@@ -59,7 +60,8 @@
             <Sidebar.Menu>
               {#each group.items as item (item.title)}
                 <Sidebar.MenuItem>
-                  <Sidebar.MenuButton isActive={item.isActive}>
+                  <Sidebar.MenuButton>
+                    <!-- isActive={item.isActive} -->
                     {#snippet child({ props })}
                       <a href={item.url} {...props}>{item.title}</a>
                     {/snippet}

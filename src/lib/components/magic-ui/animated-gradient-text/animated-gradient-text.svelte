@@ -8,7 +8,7 @@
     colorTo?: string;
     children: Snippet;
     class?: string;
-    rest: Record<string, any>;
+    rest?: Record<string, any>;
   };
 
   let {
