@@ -5,9 +5,11 @@
 	import ChevronsUpDownIcon from "@lucide/svelte/icons/chevrons-up-down";
 	import GalleryVerticalEndIcon from "@lucide/svelte/icons/gallery-vertical-end";
 
+	import { untrack } from "svelte";
+
 	let { versions, defaultVersion }: { versions: string[]; defaultVersion: string } = $props();
 
-	let selectedVersion = $state(defaultVersion);
+	let selectedVersion = $state(untrack(() => defaultVersion));
 </script>
 
 <Sidebar.Menu>

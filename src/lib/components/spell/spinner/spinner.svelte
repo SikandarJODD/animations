@@ -36,7 +36,7 @@
 	<svg
 		data-slot-icon
 		viewBox="0 0 24 24"
-		aria-hidden
+		aria-hidden="true"
 		aria-label="Loading"
 		role="presentation"
 		class="h-full w-full"

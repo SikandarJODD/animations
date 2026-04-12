@@ -31,8 +31,9 @@
 	}: Props = $props();
 
 	let cardEl: HTMLDivElement;
-	let transform = $state(
-		`perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`
+	let hoveredTransform = $state<string | null>(null);
+	const transform = $derived(
+		hoveredTransform ?? `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`
 	);
 	let spotlightPos = $state({ x: 50, y: 50 });
 	let isHovered = $state(false);
@@ -46,7 +47,7 @@
 		const py = (e.clientY - rect.top) / rect.height;
 		const xRot = (py - 0.5) * (tiltLimit * 2) * dir;
 		const yRot = (px - 0.5) * -(tiltLimit * 2) * dir;
-		transform = `perspective(${perspective}px) rotateX(${xRot}deg) rotateY(${yRot}deg) scale3d(${scale}, ${scale}, ${scale})`;
+		hoveredTransform = `perspective(${perspective}px) rotateX(${xRot}deg) rotateY(${yRot}deg) scale3d(${scale}, ${scale}, ${scale})`;
 		if (spotlight) {
 			spotlightPos = { x: px * 100, y: py * 100 };
 		}
@@ -57,7 +58,7 @@
 	}
 
 	function handlePointerLeave() {
-		transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+		hoveredTransform = null;
 		isHovered = false;
 	}
 </script>
