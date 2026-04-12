@@ -28,7 +28,6 @@ import FallbackAvatarPreview from "../../../../routes/spell/fallback-avatar/exam
 import FlowButtonPreview from "../../../../routes/spell/flow-button/examples/preview.svelte";
 import PopButtonPreview from "../../../../routes/spell/pop-button/examples/preview.svelte";
 import CopyButtonPreview from "../../../../routes/spell/copy-button/examples/preview.svelte";
-import TiltCardPreview from "../../../../routes/spell/tilt-card/examples/preview.svelte";
 import LightRaysPreview from "../../../../routes/spell/light-rays/examples/preview.svelte";
 import AnimatedGradientPreview from "../../../../routes/spell/animated-gradient/examples/preview.svelte";
 import SpinnerPreview from "../../../../routes/spell/spinner/examples/preview.svelte";
@@ -66,7 +65,6 @@ const previewById: Record<string, Component> = {
 	"flow-button": FlowButtonPreview,
 	"pop-button": PopButtonPreview,
 	"copy-button": CopyButtonPreview,
-	"tilt-card": TiltCardPreview,
 	"light-rays": LightRaysPreview,
 	"animated-gradient": AnimatedGradientPreview,
 	spinner: SpinnerPreview,

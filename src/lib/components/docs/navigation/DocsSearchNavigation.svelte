@@ -62,7 +62,7 @@
 			</Kbd.Root>
 			<Kbd.Root>K</Kbd.Root>
 		</Kbd.Group>
-		<span class="lg:hidden">
+		<span class="hidden">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="128"

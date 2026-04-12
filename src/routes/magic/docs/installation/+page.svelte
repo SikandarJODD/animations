@@ -110,7 +110,6 @@
 					filename: "example.svelte",
 				}}
 				showRetry={false}
-				lang="svelte"
 			>
 				<Preview />
 			</PreviewComponent>
