@@ -31,7 +31,7 @@
 </script>
 
 <Button
-	{...rest}
+	{...(rest as Record<string, unknown>)}
 	bind:ref
 	{variant}
 	{size}

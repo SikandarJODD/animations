@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Github from "@lucide/svelte/icons/github";
+	import Github from "@lucide/svelte/icons/git-branch";
 	import Cloud from "@lucide/svelte/icons/cloud";
 	import FileText from "@lucide/svelte/icons/file-text";
 	import MessageCircle from "@lucide/svelte/icons/message-circle";

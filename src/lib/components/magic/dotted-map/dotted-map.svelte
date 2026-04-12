@@ -6,6 +6,7 @@
 		lat: number;
 		lng: number;
 		size?: number;
+		[key: string]: unknown;
 	}
 
 	interface Props {
@@ -85,7 +86,7 @@
 		<circle
 			cx={marker.x + offsetX}
 			cy={marker.y}
-			r={marker.size ?? dotRadius}
+			r={(marker.size as number | undefined) ?? dotRadius}
 			fill={markerColor}
 		/>
 	{/each}

@@ -22,10 +22,10 @@
 	class={cn("size-7", className)}
 	type="button"
 	onclick={(e) => {
-		onclick?.(e);
+		onclick?.(e as MouseEvent & { currentTarget: EventTarget & HTMLButtonElement });
 		sidebar.toggle();
 	}}
-	{...restProps}
+	{...(restProps as Record<string, unknown>)}
 >
 	<PanelLeftIcon />
 	<span class="sr-only">Toggle Sidebar</span>
