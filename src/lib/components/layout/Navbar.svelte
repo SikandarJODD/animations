@@ -83,7 +83,7 @@
 </script>
 
 <header
-	class="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-40 border-b px-4 backdrop-blur md:px-6"
+	class="bg-background/95 supports-backdrop-filter:bg-background/60 absolute top-0 z-40 border-b px-4 backdrop-blur md:px-6"
 >
 	<div class="flex h-16 items-center justify-between gap-4">
 		<!-- Left side  -->
