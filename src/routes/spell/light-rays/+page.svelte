@@ -10,6 +10,7 @@
 	seo={data.seo}
 	preview={data.preview}
 	previewCode={data.previewCode}
+	previewClass="!p-0"
 	installCodeBlocks={data.installBlock?.installCode}
 	installPackages={data.installBlock?.packages}
 	installFolderStructure={data.installBlock?.folderStructure}

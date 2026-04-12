@@ -2,7 +2,10 @@
 	import { LightRays } from "$lib/components/spell/light-rays";
 </script>
 
-<div class="relative flex h-64 w-full items-center justify-center overflow-hidden rounded-xl">
-	<LightRays class="rounded-xl" />
-	<span class="relative z-10 text-2xl font-semibold text-white">Light Rays</span>
+<div class="relative min-h-[500px] w-full md:min-h-[350px] flex items-center justify-center">
+	<LightRays backgroundColor="var(--background)" style="z-index: 0;" />
+	<div class="z-10 flex h-full text-primary gap-2">
+		<p class="text-4xl font-semibold tracking-tighter">Beautiful</p>
+		<p class="text-4xl font-medium italic font-serif">Light Rays</p>
+	</div>
 </div>

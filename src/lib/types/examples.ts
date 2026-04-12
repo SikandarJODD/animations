@@ -13,4 +13,6 @@ export type Example = {
 	preview: Component;
 	/** Source code block(s) */
 	code: CodeBlock | CodeBlock[];
+	/** Extra classes forwarded to the PreviewComponent wrapper (e.g. "!p-0" for full-bleed backgrounds) */
+	previewClass?: string;
 };

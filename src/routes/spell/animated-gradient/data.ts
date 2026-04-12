@@ -66,6 +66,7 @@ export const data: ComponentDoc = {
 		{
 			name: "Presets",
 			preview: PresetsExample,
+			previewClass: "!p-0",
 			code: {
 				filename: "presets-example.svelte",
 				filecode: PresetsExampleRaw,

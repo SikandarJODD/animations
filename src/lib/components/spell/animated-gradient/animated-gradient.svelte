@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 
 	type PatternShape = 'Checks' | 'Stripes' | 'Edge';
 
@@ -386,7 +385,7 @@ void main() {
 }
 `;
 
-	onMount(() => {
+	$effect(() => {
 		if (!canvas || !container) return;
 
 		const params = getParams(config);

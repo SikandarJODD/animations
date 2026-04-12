@@ -34,6 +34,7 @@
 		animation?: AnimationConfig;
 		raysColor?: RaysColorConfig;
 		class?: string;
+		style?: string;
 	}
 
 	const RAY_Y_POSITION_1 = -0.4;
@@ -169,6 +170,7 @@ void main() {
 		animation = { animate: true, speed: 10 },
 		raysColor = { mode: "single", color: "#639AFF" },
 		class: className = "",
+		style = "",
 	}: Props = $props();
 
 	let containerEl: HTMLDivElement;
@@ -317,5 +319,5 @@ void main() {
 <div
 	bind:this={containerEl}
 	class={className}
-	style="position: absolute; inset: 0; z-index: -1; border-radius: {radius}; overflow: hidden; background-color: {backgroundColor};"
+	style="position: absolute; inset: 0; z-index: -1; border-radius: {radius}; overflow: hidden; background-color: {backgroundColor}; {style}"
 ></div>

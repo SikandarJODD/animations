@@ -22,11 +22,13 @@
 		size = "default",
 		borderColor = "var(--rotating-border-color, currentColor)",
 		class: className,
+		el = $bindable(null),
 		...restProps
 	}: HTMLButtonAttributes & {
 		children?: Snippet;
 		size?: SizeVariant;
 		borderColor?: string;
+		el?: HTMLButtonElement | null;
 	} = $props();
 
 	let buttonEl: HTMLButtonElement | null = $state(null);
@@ -34,10 +36,23 @@
 	let height = $state(0);
 
 	$effect(() => {
-		if (buttonEl) {
-			width = buttonEl.offsetWidth;
-			height = buttonEl.offsetHeight;
-		}
+		el = buttonEl;
+	});
+
+	$effect(() => {
+		if (!buttonEl) return;
+
+		const measure = () => {
+			width = buttonEl!.offsetWidth;
+			height = buttonEl!.offsetHeight;
+		};
+
+		measure();
+
+		const observer = new ResizeObserver(measure);
+		observer.observe(buttonEl);
+
+		return () => observer.disconnect();
 	});
 
 	function createRoundedRectPath(w: number, h: number, r: number): string {

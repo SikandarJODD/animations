@@ -119,6 +119,14 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A scrambled text reveal with optional viewport triggering and plain text or slotted content input.",
 	},
 	{
+		id: "shimmer-text",
+		name: "Shimmer Text",
+		href: "/spell/shimmer-text",
+		category: "Text Animations",
+		desc: "Text with an animated shimmer highlight that sweeps across on repeat.",
+		badge: "New",
+	},
+	{
 		id: "highlighted-text",
 		name: "Highlighted Text",
 		href: "/spell/highlighted-text",

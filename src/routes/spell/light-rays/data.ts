@@ -66,8 +66,9 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Custom Colors",
+			name: "Multi Color",
 			preview: CustomColorsExample,
+			previewClass: "!p-0",
 			code: {
 				filename: "custom-colors-example.svelte",
 				filecode: CustomColorsExampleRaw,

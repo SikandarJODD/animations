@@ -78,8 +78,8 @@
 			style="opacity: {isHovered ? 1 : 0}; transition: opacity 0.3s;"
 		>
 			<div
-				class="absolute h-[200%] w-[200%] rounded-full opacity-100 dark:opacity-50"
-				style="left: {spotlightPos.x}%; top: {spotlightPos.y}%; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 40%);"
+				class="absolute h-[200%] w-[200%] rounded-full opacity-100 dark:opacity-60"
+				style="left: {spotlightPos.x}%; top: {spotlightPos.y}%; transform: translate(-50%, -50%); transition: left 0.2s ease-out, top 0.2s ease-out; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 40%);"
 			></div>
 		</div>
 	{/if}

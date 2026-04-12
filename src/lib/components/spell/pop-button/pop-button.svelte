@@ -2,7 +2,7 @@
 	import { type VariantProps, tv } from "tailwind-variants";
 
 	export const popButtonVariants = tv({
-		base: "inline-flex select-none transition-all items-center justify-center whitespace-nowrap rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:border-b-2 active:scale-y-95 border-x-2 border-t-2 border-b-4 origin-bottom font-medium",
+		base: "font-pop inline-flex select-none transition-all items-center justify-center whitespace-nowrap rounded-xl ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:border-b-2 active:scale-y-95 border-x-2 border-t-2 border-b-4 origin-bottom",
 		variants: {
 			color: {
 				default:
