@@ -3,6 +3,8 @@
 @import "tw-animate-css";
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -148,7 +150,9 @@
 	/* Font */
 	--font-sans: "Geist", sans-serif;
 	--font-mono: "Geist Mono", monospace;
-	--font-pop: "Poppins", sans-serif;
+	--font-pop: "DynaPuff", sans-serif;
+	--font-serif: "Instrument Serif", serif;
+	--font-instrument: "Instrument Serif", serif;
 
 	/* Svelte Magic UI */
 	--animate-gradient: gradient 8s linear infinite;

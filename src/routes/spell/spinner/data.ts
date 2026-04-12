@@ -6,6 +6,10 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import SizesExample from "./examples/sizes-example.svelte";
 import SizesExampleRaw from "./examples/sizes-example.svelte?raw";
+import SpeedExample from "./examples/speed-example.svelte";
+import SpeedExampleRaw from "./examples/speed-example.svelte?raw";
+import ColorExample from "./examples/color-example.svelte";
+import ColorExampleRaw from "./examples/color-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spinner",
@@ -65,6 +69,24 @@ export const data: ComponentDoc = {
 				lang: "svelte",
 			},
 		},
+		{
+			name: "Speed",
+			preview: SpeedExample,
+			code: {
+				filename: "speed-example.svelte",
+				filecode: SpeedExampleRaw,
+				lang: "svelte",
+			},
+		},
+		{
+			name: "Color",
+			preview: ColorExample,
+			code: {
+				filename: "color-example.svelte",
+				filecode: ColorExampleRaw,
+				lang: "svelte",
+			},
+		},
 	],
 	seo,
 	props: [
@@ -74,16 +96,19 @@ export const data: ComponentDoc = {
 					name: "size",
 					type: '"sm" | "default" | "md" | "lg"',
 					default: '"md"',
+					description: "The size variant of the spinner.",
 				},
 				{
 					name: "speed",
 					type: '"slow" | "normal" | "fast"',
 					default: '"normal"',
+					description: "The animation speed of the spinner.",
 				},
 				{
 					name: "class",
 					type: "string | undefined",
 					default: "undefined",
+					description: "Additional CSS classes to apply to the spinner.",
 				},
 			],
 		},

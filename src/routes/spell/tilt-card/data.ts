@@ -4,8 +4,6 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import SpotlightExample from "./examples/spotlight-example.svelte";
-import SpotlightExampleRaw from "./examples/spotlight-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "tilt-card",
@@ -61,18 +59,7 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
-	examples: [
-		{
-			name: "Spotlight",
-			preview: SpotlightExample,
-			code: {
-				filename: "spotlight-example.svelte",
-				filecode: SpotlightExampleRaw,
-				lang: "svelte",
-				hideLines: true,
-			},
-		},
-	],
+	examples: [],
 	seo,
 	props: [
 		{

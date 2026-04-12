@@ -6,6 +6,6 @@
 	<LightRays backgroundColor="var(--background)" style="z-index: 0;" />
 	<div class="z-10 flex h-full text-primary gap-2">
 		<p class="text-4xl font-semibold tracking-tighter">Beautiful</p>
-		<p class="text-4xl font-medium italic font-serif">Light Rays</p>
+		<p class="text-4xl font-medium italic font-instrument">Light Rays</p>
 	</div>
 </div>

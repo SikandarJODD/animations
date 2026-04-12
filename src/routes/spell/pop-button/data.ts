@@ -6,6 +6,8 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import VariantsExample from "./examples/variants-example.svelte";
 import VariantsExampleRaw from "./examples/variants-example.svelte?raw";
+import SizeExample from "./examples/size-example.svelte";
+import SizeExampleRaw from "./examples/size-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "pop-button",
@@ -73,6 +75,15 @@ export const data: ComponentDoc = {
 				lang: "svelte",
 			},
 		},
+		{
+			name: "Sizes",
+			preview: SizeExample,
+			code: {
+				filename: "size-example.svelte",
+				filecode: SizeExampleRaw,
+				lang: "svelte",
+			},
+		},
 	],
 	seo,
 	props: [
@@ -82,21 +93,25 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
+					description: "The content to display inside the button.",
 				},
 				{
 					name: "color",
 					type: '"default" | "blue" | "purple" | "pink" | "red" | "orange" | "yellow" | "green" | "teal" | "cyan" | "indigo" | "violet" | "rose" | "amber" | "lime" | "sky" | "slate" | "gray" | "zinc" | "neutral" | "stone" | "fuchsia" | "emerald"',
 					default: '"default"',
+					description: "The color of the button — supports all Tailwind colors.",
 				},
 				{
 					name: "size",
 					type: '"sm" | "default" | "lg"',
 					default: '"default"',
+					description: "The size of the button.",
 				},
 				{
 					name: "class",
 					type: "string | undefined",
 					default: "undefined",
+					description: "Additional CSS classes to apply.",
 				},
 			],
 		},
