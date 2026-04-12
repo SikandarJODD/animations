@@ -1,5 +1,6 @@
 import TweetRaw from "$lib/components/spell/tweet/tweet.svelte?raw";
 import IndexTsRaw from "$lib/components/spell/tweet/index.ts?raw";
+import ApiRouteRaw from "../../api/tweet/[id]/+server.ts?raw";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
@@ -8,14 +9,14 @@ import PreviewCodeRaw from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "tweet",
 	title: "Tweet",
-	description: "A styled tweet card component for displaying social media content.",
+	description: "Fetch and render any tweet by ID, with media, entities, and live like counts.",
 	category: "spell",
 };
 
 const seo: SEO = {
 	title: "Tweet",
 	description:
-		"A styled tweet card component for displaying social media content in Svelte. No external API required — renders directly from props.",
+		"Fetch and render any X/Twitter post by ID in Svelte. Supports photos, videos, hashtags, mentions, and live like counts via a SvelteKit API route.",
 	keywords: ["Svelte", "Tweet", "Twitter", "X", "Card", "Spell", "Svelte Animations"],
 };
 
@@ -32,15 +33,25 @@ const installBlock: InstallComponentDocs = {
 			filecode: IndexTsRaw,
 			lang: "typescript",
 		},
+		{
+			filename: "api/tweet/[id]/+server.ts",
+			filecode: ApiRouteRaw,
+			lang: "typescript",
+		},
 	],
 	packages: [],
 	folderStructure: `src/
-└── lib/
-    └── components/
-        └── spell/
-            └── tweet/
-                ├── tweet.svelte
-                └── index.ts`,
+├── lib/
+│   └── components/
+│       └── spell/
+│           └── tweet/
+│               ├── tweet.svelte
+│               └── index.ts
+└── routes/
+    └── api/
+        └── tweet/
+            └── [id]/
+                └── +server.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -59,58 +70,28 @@ export const data: ComponentDoc = {
 		{
 			props: [
 				{
-					name: "authorName",
+					name: "id",
 					type: "string",
 					required: true,
-					description: "The display name of the tweet author.",
+					description: "The numeric tweet/post ID to fetch and display.",
 				},
 				{
-					name: "authorHandle",
-					type: "string",
-					required: true,
-					description: "The @handle of the tweet author (without the @ symbol).",
-				},
-				{
-					name: "text",
-					type: "string",
-					required: true,
-					description: "The tweet text content.",
-				},
-				{
-					name: "authorAvatar",
-					type: "string | undefined",
-					default: "undefined",
-					description: "URL of the author's avatar image. Falls back to initials when omitted.",
-				},
-				{
-					name: "date",
-					type: "string | undefined",
-					default: "undefined",
-					description: "Date string to display on the tweet card.",
-				},
-				{
-					name: "likes",
-					type: "number | undefined",
-					default: "undefined",
-					description: "Number of likes to display.",
-				},
-				{
-					name: "retweets",
-					type: "number | undefined",
-					default: "undefined",
-					description: "Number of retweets to display.",
-				},
-				{
-					name: "verified",
+					name: "showDate",
 					type: "boolean",
-					default: "false",
-					description: "Whether to show the verified checkmark badge.",
+					default: "true",
+					description: "Whether to show the tweet's timestamp below the body.",
 				},
 				{
-					name: "url",
-					type: "string | undefined",
-					default: "undefined",
-					description: "Optional URL to link the tweet card to.",
+					name: "showLikeButton",
+					type: "boolean",
+					default: "true",
+					description: "Whether to show the like count linking to the like intent.",
+				},
+				{
+					name: "showCopyLink",
+					type: "boolean",
+					default: "true",
+					description: "Whether to show the copy-link button in the footer.",
 				},
 				{
 					name: "class",

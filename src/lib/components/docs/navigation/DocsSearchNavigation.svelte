@@ -3,12 +3,15 @@
 	import Button from "$lib/components/ui/button/button.svelte";
 	import * as Command from "$lib/components/ui/command/index.js";
 	import * as Kbd from "$lib/components/ui/kbd/index.js";
+	import { useIsMac } from "$lib/hooks/use-is-mac.svelte.js";
 	import {
 		magicUIComponents,
 		spellUIComponents,
 		type MagicComponent,
 		type SpellComponent,
 	} from "../registry";
+
+	const isMac = useIsMac();
 
 	let open = $state(false);
 
@@ -51,7 +54,12 @@
 
 		<Kbd.Group class="hidden gap-1 md:flex">
 			<!-- <Kbd.Root>⌘</Kbd.Root> -->
-			<Kbd.Root>Ctrl</Kbd.Root>
+			<Kbd.Root>
+				{#if isMac}
+					⌘
+				{:else}
+					Ctrl{/if}
+			</Kbd.Root>
 			<Kbd.Root>K</Kbd.Root>
 		</Kbd.Group>
 		<span class="lg:hidden">

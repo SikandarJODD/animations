@@ -4,6 +4,8 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
+import TuningExample from "./examples/tuning-example.svelte";
+import TuningExampleRaw from "./examples/tuning-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "text-marquee",
@@ -60,6 +62,19 @@ export const data: ComponentDoc = {
 	},
 	installBlock,
 	seo,
+	examples: [
+		{
+			name: "Tuning",
+			description:
+				"A smaller viewport height and quicker cycle speed create a compact announcement strip.",
+			preview: TuningExample,
+			code: {
+				filename: "tuning-example.svelte",
+				filecode: TuningExampleRaw,
+				lang: "svelte",
+			},
+		},
+	],
 	props: [
 		{
 			props: [

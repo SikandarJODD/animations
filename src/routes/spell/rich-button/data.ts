@@ -6,6 +6,8 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import VariantsExample from "./examples/variants-example.svelte";
 import VariantsExampleRaw from "./examples/variants-example.svelte?raw";
+import SizeExample from "./examples/size-example.svelte";
+import SizeExampleRaw from "./examples/size-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "rich-button",
@@ -65,11 +67,20 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Color Variants",
+			name: "Color",
 			preview: VariantsExample,
 			code: {
 				filename: "variants-example.svelte",
 				filecode: VariantsExampleRaw,
+				lang: "svelte",
+			},
+		},
+		{
+			name: "Size",
+			preview: SizeExample,
+			code: {
+				filename: "size-example.svelte",
+				filecode: SizeExampleRaw,
 				lang: "svelte",
 			},
 		},
