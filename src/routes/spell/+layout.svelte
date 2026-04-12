@@ -35,10 +35,12 @@
 <Sidebar.Provider>
 	<SpellSidebar />
 	{#if isOverviewPage}
-		{@render children()}
+		<div class="min-w-0 flex-1">
+			{@render children()}
+		</div>
 	{:else}
 		<div
-			class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 px-4 py-6 sm:px-6 lg:pr-2 lg:pl-12 xl:grid-cols-[minmax(0,1fr)_14rem] xl:items-start xl:gap-x-14 xl:gap-y-0"
+			class="mx-auto grid min-w-0 flex-1 max-w-7xl grid-cols-1 gap-y-10 px-4 py-6 sm:px-6 lg:pr-4 lg:pl-10 xl:grid-cols-[minmax(0,1fr)_14rem] xl:items-start xl:gap-x-14 xl:gap-y-0"
 		>
 			<main
 				class="w-full max-w-5xl min-w-0 xl:justify-self-center 2xl:max-w-6xl"
@@ -48,7 +50,7 @@
 				<DocsNavigation previous={navigation.previous} next={navigation.next} />
 			</main>
 
-			<aside class="sticky top-24 hidden w-full xl:block">
+			<aside class="sticky top-20 hidden w-full xl:block">
 				<div>
 					<h2 class="mb-2 text-sm font-medium">On this page</h2>
 				</div>
