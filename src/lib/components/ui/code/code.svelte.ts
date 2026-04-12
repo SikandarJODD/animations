@@ -52,10 +52,6 @@ class CodeRootState {
 					pre: (el) => {
 						el.properties.style = "";
 
-						if (!this.opts.hideLines.current) {
-							el.properties.class += " line-numbers";
-						}
-
 						return el;
 					},
 					line: (node, line) => {

@@ -28,7 +28,7 @@
 	import type { Command, Agent } from "package-manager-detector";
 	import { resolveCommand } from "package-manager-detector/commands";
 	import CopyButton from "../copy-button/copy-button.svelte";
-	import ClipboardIcon from "@lucide/svelte/icons/clipboard";
+	import Copy from "@lucide/svelte/icons/copy";
 	import TerminalIcon from "@lucide/svelte/icons/terminal";
 	import * as Tooltip from "$lib/components/ui/tooltip";
 	import * as Tabs from "$lib/components/ui/tabs";
@@ -69,7 +69,7 @@
 					{#snippet child({ props })}
 						<CopyButton {...props} text={commandText} class="size-6 [&_svg]:size-3">
 							{#snippet icon()}
-								<ClipboardIcon />
+								<Copy />
 							{/snippet}
 						</CopyButton>
 					{/snippet}

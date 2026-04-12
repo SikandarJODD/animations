@@ -22,7 +22,7 @@
 	import WordsStaggerPreview from "../../../../routes/spell/words-stagger/examples/preview.svelte";
 </script>
 
-<section id="showcase" class="space-y-4 px-4 sm:px-6 lg:px-8">
+<section id="showcase" class="mb-6 space-y-4 px-4 sm:px-6 lg:px-8">
 	<!-- Row 1: Perspective Book + Spotify/Signature/Checkbox -->
 	<!-- single-col → lg: 2-col equal → xl: 6-col bento -->
 	<div class="grid h-full grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-6">
@@ -76,7 +76,7 @@
 
 	<!-- Row 2: Gradient Wave Text + QR Code + Special Text -->
 	<!-- single-col → md: 3-col equal → xl: 8-col bento -->
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-8 xl:min-h-56">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-3 xl:min-h-56 xl:grid-cols-8">
 		<div
 			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-3"
 		>
@@ -114,7 +114,7 @@
 
 	<!-- Row 3: Color Selector + Marquee + Label Input -->
 	<!-- single-col → md: 3-col equal → xl: 7-col bento -->
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-7 xl:min-h-56">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-3 xl:min-h-56 xl:grid-cols-7">
 		<div
 			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-2"
 		>
@@ -152,7 +152,7 @@
 
 	<!-- Row 4: Text Marquee + Exploding Input + Slide Up Text -->
 	<!-- single-col → lg: 2-col equal → xl: 6-col bento -->
-	<div class="grid h-full grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-6 xl:min-h-120">
+	<div class="grid h-full grid-cols-1 gap-4 lg:grid-cols-2 xl:min-h-120 xl:grid-cols-6">
 		<div
 			class="relative flex min-h-[220px] items-center justify-center rounded-xl border p-4 xl:col-span-3"
 		>
@@ -192,7 +192,7 @@
 
 	<!-- Row 5: Highlighted Text + Logo Carousel -->
 	<!-- single-col → md: 2-col equal → xl: 7-col bento -->
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-7 xl:min-h-60">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:min-h-60 xl:grid-cols-7">
 		<div
 			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-3"
 		>

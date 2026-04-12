@@ -118,7 +118,7 @@ importers:
         specifier: ^4.3.4
         version: 4.4.6(picomatch@4.0.4)(svelte@5.55.1)(typescript@5.9.3)
       tailwind-merge:
-        specifier: ^3.4.0
+        specifier: ^3.5.0
         version: 3.5.0
       tailwind-variants:
         specifier: ^3.2.2

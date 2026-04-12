@@ -12,8 +12,7 @@
 
 <span
 	bind:this={ref}
-	data-slot="command-shortcut"
-	class={cn("text-muted-foreground group-data-selected/command-item:text-foreground ml-auto text-xs tracking-widest", className)}
+	class={cn("text-muted-foreground gap-2 text-sm [&_svg:not([class*='size-'])]:size-4 flex items-center [&_svg]:pointer-events-none", className)}
 	{...restProps}
 >
 	{@render children?.()}

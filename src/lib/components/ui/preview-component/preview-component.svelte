@@ -1,7 +1,6 @@
 <script lang="ts">
 	import * as Tabs from "$lib/components/ui/tabs/index.js";
 	import type { Snippet } from "svelte";
-	import type { SupportedLanguage } from "$lib/components/ui/code/shiki";
 	import type { CodeBlock as MagicCode } from "$lib/components/ui/code/index";
 	import MultipleCode from "$lib/components/ui/code/multiple-code.svelte";
 	import SingleCodeFilename from "../code/single-code-filename.svelte";
