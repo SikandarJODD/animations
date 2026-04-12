@@ -31,7 +31,7 @@
 	<div class="flex min-h-full">
 		{#if !hideLines && lineCount > 0}
 			<div
-				class="font-mono select-none flex-shrink-0 text-right text-[oklch(0.556_0_0/50%)]"
+				class="font-mono select-none flex-shrink-0 pt-2 text-right text-[oklch(0.556_0_0/50%)]"
 				aria-hidden="true"
 			>
 				{#each Array(lineCount) as _, i}
@@ -39,7 +39,7 @@
 				{/each}
 			</div>
 		{/if}
-		<div class="min-w-0 flex-1 overflow-x-auto">
+		<div class="min-w-0 flex-1 overflow-x-auto pt-2">
 			{@html codeState.highlighted}
 		</div>
 	</div>
