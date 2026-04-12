@@ -1,32 +1,34 @@
 import FallbackAvatarRaw from "$lib/components/spell/fallback-avatar/fallback-avatar.svelte?raw";
 import IndexTsRaw from "$lib/components/spell/fallback-avatar/index.ts?raw";
+import UtilsRaw from "$lib/components/spell/fallback-avatar/utils.ts?raw";
+import WebGLRaw from "$lib/components/spell/fallback-avatar/webgl.ts?raw";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import SizesExample from "./examples/sizes-example.svelte";
-import SizesExampleRaw from "./examples/sizes-example.svelte?raw";
+import SizeExample from "./examples/size-example.svelte";
+import SizeExampleRaw from "./examples/size-example.svelte?raw";
+import AnimatedExample from "./examples/animated-example.svelte";
+import AnimatedExampleRaw from "./examples/animated-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "fallback-avatar",
 	title: "Fallback Avatar",
 	description:
-		"A procedurally generated avatar using WebGL. Each name produces a unique animated gradient — no images required.",
+		"A seeded avatar canvas that renders a deterministic color composition with hover-only animation and a built-in 2D fallback.",
 	category: "spell",
 };
 
 const seo: SEO = {
 	title: "Fallback Avatar",
 	description:
-		"A procedurally generated avatar component for Svelte that uses WebGL to render unique animated gradients based on a name string.",
+		"Learn how to use the Fallback Avatar spell component in Svelte, including deterministic seeded rendering, size control, and hover-only animation.",
 	keywords: [
-		"Svelte",
-		"Avatar",
+		"Svelte Spell UI",
 		"Fallback Avatar",
-		"Spell",
-		"Svelte Animations",
-		"WebGL",
-		"Procedural",
+		"Svelte Avatar",
+		"WebGL Avatar",
+		"Canvas Avatar",
 	],
 };
 
@@ -43,15 +45,26 @@ const installBlock: InstallComponentDocs = {
 			filecode: IndexTsRaw,
 			lang: "typescript",
 		},
+		{
+			filename: "utils.ts",
+			filecode: UtilsRaw,
+			lang: "typescript",
+		},
+		{
+			filename: "webgl.ts",
+			filecode: WebGLRaw,
+			lang: "typescript",
+		},
 	],
-	packages: [],
 	folderStructure: `src/
 └── lib/
     └── components/
         └── spell/
             └── fallback-avatar/
                 ├── fallback-avatar.svelte
-                └── index.ts`,
+                ├── index.ts
+                ├── utils.ts
+                └── webgl.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -66,11 +79,24 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Sizes",
-			preview: SizesExample,
+			name: "Size",
+			description:
+				"Use the same seeded avatar across multiple size values when you need tiny inline chips, default profile dots, or larger hero accents.",
+			preview: SizeExample,
 			code: {
-				filename: "sizes-example.svelte",
-				filecode: SizesExampleRaw,
+				filename: "size-example.svelte",
+				filecode: SizeExampleRaw,
+				lang: "svelte",
+			},
+		},
+		{
+			name: "Animated",
+			description:
+				"Compare hover-enabled rendering with a static variant when you want motion only in emphasis-heavy surfaces.",
+			preview: AnimatedExample,
+			code: {
+				filename: "animated-example.svelte",
+				filecode: AnimatedExampleRaw,
 				lang: "svelte",
 			},
 		},
@@ -83,25 +109,32 @@ export const data: ComponentDoc = {
 					name: "name",
 					type: "string",
 					required: true,
-					description: "The string used to deterministically derive unique colors and blob positions.",
+					description:
+						"The seed used to derive the avatar composition, color palette, and motion anchors.",
 				},
 				{
 					name: "size",
 					type: "number",
 					default: "32",
-					description: "Pixel size of the avatar.",
+					description: "Controls the rendered avatar size in CSS pixels.",
 				},
 				{
 					name: "animated",
 					type: "boolean",
 					default: "true",
-					description: "When true, blobs orbit and breathe on hover.",
+					description: "Enables the hover-only animation loop for the avatar surface.",
 				},
 				{
 					name: "class",
-					type: "string | undefined",
+					type: "ClassValue",
 					default: "undefined",
-					description: "Additional CSS classes to apply.",
+					description: "Custom classes merged onto the root canvas element.",
+				},
+				{
+					name: "style",
+					type: "string",
+					default: "undefined",
+					description: "Inline styles appended to the root canvas element.",
 				},
 			],
 		},

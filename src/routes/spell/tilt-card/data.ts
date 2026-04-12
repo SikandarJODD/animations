@@ -4,25 +4,31 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
+import ScaleExample from "./examples/scale-example.svelte";
+import ScaleExampleRaw from "./examples/scale-example.svelte?raw";
+import TiltLimitExample from "./examples/tilt-limit-example.svelte";
+import TiltLimitExampleRaw from "./examples/tilt-limit-example.svelte?raw";
+import PerspectiveExample from "./examples/perspective-example.svelte";
+import PerspectiveExampleRaw from "./examples/perspective-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "tilt-card",
 	title: "Tilt Card",
-	description: "A 3D tilt card with pointer-tracking rotation and an optional spotlight effect.",
+	description:
+		"A cursor-reactive card wrapper with configurable tilt depth, hover scale, perspective, and optional spotlight.",
 	category: "spell",
 };
 
 const seo: SEO = {
 	title: "Tilt Card",
 	description:
-		"Learn how to use the Tilt Card spell component in Svelte, including tilt direction, scale, and spotlight customization.",
+		"Learn how to use the Tilt Card spell component in Svelte, including scale, tilt limit, perspective, spotlight, and gravitate or evade behavior.",
 	keywords: [
 		"Svelte Spell UI",
 		"Tilt Card",
-		"Svelte Spell",
-		"Svelte Animations",
-		"3D Tilt",
-		"Hover Effect",
+		"Svelte Hover Card",
+		"3D Card Effect",
+		"Svelte Interaction",
 	],
 };
 
@@ -59,7 +65,6 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
-	examples: [],
 	seo,
 	props: [
 		{
@@ -68,44 +73,45 @@ export const data: ComponentDoc = {
 					name: "tiltLimit",
 					type: "number",
 					default: "15",
-					description: "Maximum tilt angle in degrees.",
+					description: "Sets the maximum rotation angle in degrees on both axes.",
 				},
 				{
 					name: "scale",
 					type: "number",
 					default: "1.05",
-					description: "Scale factor applied on hover.",
+					description: "Controls how much the card scales up while hovered.",
 				},
 				{
 					name: "perspective",
 					type: "number",
 					default: "1200",
-					description: "Perspective distance in pixels for the 3D transform.",
+					description: "Sets the CSS perspective distance used for the 3D depth effect.",
 				},
 				{
 					name: "effect",
 					type: '"gravitate" | "evade"',
 					default: '"evade"',
 					description:
-						'"gravitate" tilts toward the cursor; "evade" tilts away from it.',
+						"Determines whether the card tilts away from the cursor or follows it.",
 				},
 				{
 					name: "spotlight",
 					type: "boolean",
 					default: "true",
-					description: "Shows a radial gradient spotlight that follows the cursor.",
+					description:
+						"Toggles the radial highlight overlay that tracks the pointer position.",
 				},
 				{
 					name: "class",
-					type: "string",
-					default: "''",
-					description: "Additional classes forwarded to the card element.",
+					type: "ClassValue",
+					default: "undefined",
+					description: "Custom classes applied to the root tilt wrapper.",
 				},
 				{
 					name: "style",
 					type: "string",
-					default: "''",
-					description: "Inline styles forwarded to the card element.",
+					default: "undefined",
+					description: "Inline styles appended to the root wrapper.",
 				},
 			],
 		},

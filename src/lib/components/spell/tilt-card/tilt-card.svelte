@@ -1,28 +1,26 @@
 <script lang="ts">
 	import { cn } from "$lib/utils";
-	import type { HTMLAttributes } from "svelte/elements";
 	import type { Snippet } from "svelte";
+	import type { HTMLAttributes } from "svelte/elements";
+
+	type TiltEffect = "gravitate" | "evade";
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		/** Maximum tilt angle in degrees */
 		tiltLimit?: number;
-		/** Scale factor on hover */
 		scale?: number;
-		/** Perspective distance in pixels */
 		perspective?: number;
-		/** Tilt direction: "gravitate" follows cursor, "evade" tilts away */
-		effect?: "gravitate" | "evade";
-		/** Show a spotlight that follows the cursor on hover */
+		effect?: TiltEffect;
 		spotlight?: boolean;
 		children?: Snippet;
 		class?: string;
+		style?: string;
 	}
 
 	let {
 		tiltLimit = 15,
 		scale = 1.05,
 		perspective = 1200,
-		effect = "evade",
+		effect: tiltEffect = "evade",
 		spotlight = true,
 		children,
 		class: className,
@@ -30,27 +28,28 @@
 		...restProps
 	}: Props = $props();
 
-	let cardEl: HTMLDivElement;
-	let hoveredTransform = $state<string | null>(null);
-	const transform = $derived(
-		hoveredTransform ?? `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`
-	);
-	let spotlightPos = $state({ x: 50, y: 50 });
 	let isHovered = $state(false);
+	let pointerX = $state(0.5);
+	let pointerY = $state(0.5);
 
-	const dir = $derived(effect === "evade" ? -1 : 1);
+	function buildTransform(rotateX: number, rotateY: number, scaleValue: number) {
+		return `perspective(${perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(${scaleValue}, ${scaleValue}, ${scaleValue})`;
+	}
 
-	function handlePointerMove(e: PointerEvent) {
-		if (!cardEl) return;
-		const rect = cardEl.getBoundingClientRect();
-		const px = (e.clientX - rect.left) / rect.width;
-		const py = (e.clientY - rect.top) / rect.height;
-		const xRot = (py - 0.5) * (tiltLimit * 2) * dir;
-		const yRot = (px - 0.5) * -(tiltLimit * 2) * dir;
-		hoveredTransform = `perspective(${perspective}px) rotateX(${xRot}deg) rotateY(${yRot}deg) scale3d(${scale}, ${scale}, ${scale})`;
-		if (spotlight) {
-			spotlightPos = { x: px * 100, y: py * 100 };
-		}
+	function clamp(value: number, min: number, max: number) {
+		return Math.min(Math.max(value, min), max);
+	}
+
+	function handlePointerMove(event: PointerEvent) {
+		const element = event.currentTarget as HTMLDivElement | null;
+
+		if (!element) return;
+
+		const rect = element.getBoundingClientRect();
+		if (rect.width === 0 || rect.height === 0) return;
+
+		pointerX = clamp((event.clientX - rect.left) / rect.width, 0, 1);
+		pointerY = clamp((event.clientY - rect.top) / rect.height, 0, 1);
 	}
 
 	function handlePointerEnter() {
@@ -58,21 +57,38 @@
 	}
 
 	function handlePointerLeave() {
-		hoveredTransform = null;
 		isHovered = false;
 	}
+
+	let transform = $derived.by(() => {
+		if (!isHovered) {
+			return buildTransform(0, 0, 1);
+		}
+
+		const direction = tiltEffect === "evade" ? -1 : 1;
+		const rotateX = (pointerY - 0.5) * (tiltLimit * 2) * direction;
+		const rotateY = (pointerX - 0.5) * -(tiltLimit * 2) * direction;
+
+		return buildTransform(rotateX, rotateY, scale);
+	});
+
+	let rootStyle = $derived(
+		`transform: ${transform}; transition: transform 0.2s ease-out; transform-style: preserve-3d; ${style ?? ""}`
+	);
+	let spotlightLeft = $derived(`${pointerX * 100}%`);
+	let spotlightTop = $derived(`${pointerY * 100}%`);
 </script>
 
 <div
-	bind:this={cardEl}
+	class={cn("relative overflow-hidden will-change-transform", className)}
+	style={rootStyle}
 	onpointerenter={handlePointerEnter}
 	onpointermove={handlePointerMove}
 	onpointerleave={handlePointerLeave}
-	class={cn("relative overflow-hidden will-change-transform", className)}
-	style="transform: {transform}; transition: transform 0.2s ease-out; transform-style: preserve-3d; {style ?? ''}"
 	{...restProps}
 >
 	{@render children?.()}
+
 	{#if spotlight}
 		<div
 			class="pointer-events-none absolute inset-0 z-10 overflow-hidden"
@@ -80,7 +96,7 @@
 		>
 			<div
 				class="absolute h-[200%] w-[200%] rounded-full opacity-100 dark:opacity-60"
-				style="left: {spotlightPos.x}%; top: {spotlightPos.y}%; transform: translate(-50%, -50%); transition: left 0.2s ease-out, top 0.2s ease-out; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 40%);"
+				style="left: {spotlightLeft}; top: {spotlightTop}; transform: translate(-50%, -50%); transition: left 0.2s ease-out, top 0.2s ease-out; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 40%);"
 			></div>
 		</div>
 	{/if}

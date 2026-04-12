@@ -1,0 +1,19 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "backlight",
+	"title": "Backlight",
+	"type": "registry:block",
+	"description": "An SVG filter wrapper that adds a soft, saturated backlight glow around the content it wraps.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\r\n\timport type { Snippet } from \"svelte\";\r\n\r\n\ttype Props = {\r\n\t\tchildren?: Snippet;\r\n\t\tclass?: string;\r\n\t\tblur?: number;\r\n\t};\r\n\tlet { children, class: className, blur = 10 }: Props = $props();\r\n\tlet id = $props.id();\r\n</script>\r\n\r\n<div class={className}>\r\n\t<svg width=\"0\" height=\"0\" aria-hidden=\"true\">\r\n\t\t<filter {id} y=\"-50%\" x=\"-50%\" width=\"200%\" height=\"200%\">\r\n\t\t\t<feGaussianBlur in=\"SourceGraphic\" stdDeviation={blur} result=\"blurred\"\r\n\t\t\t></feGaussianBlur>\r\n\t\t\t<feColorMatrix type=\"saturate\" in=\"blurred\" values=\"4\"></feColorMatrix>\r\n\t\t\t<feComposite in=\"SourceGraphic\" operator=\"over\"></feComposite>\r\n\t\t</filter>\r\n\t</svg>\r\n\t<div style=\"filter: url(#{id})\">\r\n\t\t{@render children?.()}\r\n\t</div>\r\n</div>\r\n",
+			"type": "registry:component",
+			"target": "magic/backlight/backlight.svelte"
+		},
+		{
+			"content": "export { default as Backlight } from \"./backlight.svelte\";\n",
+			"type": "registry:file",
+			"target": "magic/backlight/index.ts"
+		}
+	]
+}

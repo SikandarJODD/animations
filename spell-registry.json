@@ -27,6 +27,54 @@
 			"registryDependencies": []
 		},
 		{
+			"name": "tilt-card",
+			"type": "registry:block",
+			"title": "Tilt Card",
+			"description": "A cursor-reactive tilt wrapper with configurable scale, tilt depth, perspective, and spotlight.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/tilt-card/tilt-card.svelte",
+					"type": "registry:component",
+					"target": "spell/tilt-card/tilt-card.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/tilt-card/index.ts",
+					"type": "registry:file",
+					"target": "spell/tilt-card/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "fallback-avatar",
+			"type": "registry:block",
+			"title": "Fallback Avatar",
+			"description": "A seeded canvas avatar with hover animation, WebGL rendering, and a deterministic 2D fallback path.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/fallback-avatar/fallback-avatar.svelte",
+					"type": "registry:component",
+					"target": "spell/fallback-avatar/fallback-avatar.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/fallback-avatar/index.ts",
+					"type": "registry:file",
+					"target": "spell/fallback-avatar/index.ts"
+				},
+				{
+					"path": "./src/lib/components/spell/fallback-avatar/utils.ts",
+					"type": "registry:file",
+					"target": "spell/fallback-avatar/utils.ts"
+				},
+				{
+					"path": "./src/lib/components/spell/fallback-avatar/webgl.ts",
+					"type": "registry:file",
+					"target": "spell/fallback-avatar/webgl.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
 			"name": "badge",
 			"type": "registry:block",
 			"title": "Badge",

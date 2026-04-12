@@ -1,4 +1,22 @@
 {
+	"files.exclude": {
+		"**/.svelte-kit": true,
+		"**/.vercel": true,
+		"**/node_modules": true,
+		"**/build": true
+	},
+	"files.watcherExclude": {
+		"**/.svelte-kit/**": true,
+		"**/.vercel/**": true,
+		"**/node_modules/**": true,
+		"**/build/**": true
+	},
+	"search.exclude": {
+		"**/.svelte-kit/**": true,
+		"**/.vercel/**": true,
+		"**/node_modules/**": true,
+		"**/build/**": true
+	},
 	"files.associations": {
 		"*.css": "tailwindcss"
 	}

@@ -147,6 +147,14 @@
 		"relativeUrl": "aurora-text.json"
 	},
 	{
+		"name": "backlight",
+		"title": "Backlight",
+		"type": "registry:block",
+		"description": "An SVG filter wrapper that adds a soft, saturated backlight glow around the content it wraps.",
+		"registryDependencies": [],
+		"relativeUrl": "backlight.json"
+	},
+	{
 		"name": "avatar-circles",
 		"title": "Avatar Circles",
 		"type": "registry:block",

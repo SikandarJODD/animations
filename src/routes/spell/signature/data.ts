@@ -6,6 +6,8 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import CustomSignatureExample from "./examples/custom-signature-example.svelte";
 import CustomSignatureExampleRaw from "./examples/custom-signature-example.svelte?raw";
+import SignatureSize from "./examples/signature-size-example.svelte";
+import SignatureSizeRaw from "./examples/signature-size-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "signature",
@@ -44,14 +46,14 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["opentype.js"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      signature/
-        index.ts
-        signature.svelte
+└── lib/
+    └── components/
+        └── spell/
+            └── signature/
+                ├── signature.svelte
+                └── index.ts
 static/
-  LastoriaBoldRegular.otf`,
+└── LastoriaBoldRegular.otf`,
 };
 
 export const data: ComponentDoc = {
@@ -74,6 +76,15 @@ export const data: ComponentDoc = {
 				lang: "svelte",
 			},
 		},
+		{
+			name: "Size",
+			preview: SignatureSize,
+			code: {
+				filename: "signature-size-example.svelte",
+				filecode: SignatureSizeRaw,
+				lang: "svelte",
+			}
+		}
 	],
 	seo,
 	props: [

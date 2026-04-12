@@ -12,6 +12,22 @@
 		"relativeUrl": "perspective-book.json"
 	},
 	{
+		"name": "tilt-card",
+		"title": "Tilt Card",
+		"type": "registry:block",
+		"description": "A cursor-reactive tilt wrapper with configurable scale, tilt depth, perspective, and spotlight.",
+		"registryDependencies": [],
+		"relativeUrl": "tilt-card.json"
+	},
+	{
+		"name": "fallback-avatar",
+		"title": "Fallback Avatar",
+		"type": "registry:block",
+		"description": "A seeded canvas avatar with hover animation, WebGL rendering, and a deterministic 2D fallback path.",
+		"registryDependencies": [],
+		"relativeUrl": "fallback-avatar.json"
+	},
+	{
 		"name": "badge",
 		"title": "Badge",
 		"type": "registry:block",

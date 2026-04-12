@@ -1,0 +1,19 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "tilt-card",
+	"title": "Tilt Card",
+	"type": "registry:block",
+	"description": "A cursor-reactive tilt wrapper with configurable scale, tilt depth, perspective, and spotlight.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\n\ttype TiltEffect = \"gravitate\" | \"evade\";\n\n\tinterface Props extends HTMLAttributes<HTMLDivElement> {\n\t\ttiltLimit?: number;\n\t\tscale?: number;\n\t\tperspective?: number;\n\t\teffect?: TiltEffect;\n\t\tspotlight?: boolean;\n\t\tchildren?: Snippet;\n\t\tclass?: string;\n\t\tstyle?: string;\n\t}\n\n\tlet {\n\t\ttiltLimit = 15,\n\t\tscale = 1.05,\n\t\tperspective = 1200,\n\t\teffect: tiltEffect = \"evade\",\n\t\tspotlight = true,\n\t\tchildren,\n\t\tclass: className,\n\t\tstyle,\n\t\t...restProps\n\t}: Props = $props();\n\n\tlet isHovered = $state(false);\n\tlet pointerX = $state(0.5);\n\tlet pointerY = $state(0.5);\n\n\tfunction buildTransform(rotateX: number, rotateY: number, scaleValue: number) {\n\t\treturn `perspective(${perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(${scaleValue}, ${scaleValue}, ${scaleValue})`;\n\t}\n\n\tfunction clamp(value: number, min: number, max: number) {\n\t\treturn Math.min(Math.max(value, min), max);\n\t}\n\n\tfunction handlePointerMove(event: PointerEvent) {\n\t\tconst element = event.currentTarget as HTMLDivElement | null;\n\n\t\tif (!element) return;\n\n\t\tconst rect = element.getBoundingClientRect();\n\t\tif (rect.width === 0 || rect.height === 0) return;\n\n\t\tpointerX = clamp((event.clientX - rect.left) / rect.width, 0, 1);\n\t\tpointerY = clamp((event.clientY - rect.top) / rect.height, 0, 1);\n\t}\n\n\tfunction handlePointerEnter() {\n\t\tisHovered = true;\n\t}\n\n\tfunction handlePointerLeave() {\n\t\tisHovered = false;\n\t}\n\n\tlet transform = $derived.by(() => {\n\t\tif (!isHovered) {\n\t\t\treturn buildTransform(0, 0, 1);\n\t\t}\n\n\t\tconst direction = tiltEffect === \"evade\" ? -1 : 1;\n\t\tconst rotateX = (pointerY - 0.5) * (tiltLimit * 2) * direction;\n\t\tconst rotateY = (pointerX - 0.5) * -(tiltLimit * 2) * direction;\n\n\t\treturn buildTransform(rotateX, rotateY, scale);\n\t});\n\n\tlet rootStyle = $derived(\n\t\t`transform: ${transform}; transition: transform 0.2s ease-out; transform-style: preserve-3d; ${style ?? \"\"}`\n\t);\n\tlet spotlightLeft = $derived(`${pointerX * 100}%`);\n\tlet spotlightTop = $derived(`${pointerY * 100}%`);\n</script>\n\n<div\n\tclass={cn(\"relative overflow-hidden will-change-transform\", className)}\n\tstyle={rootStyle}\n\tonpointerenter={handlePointerEnter}\n\tonpointermove={handlePointerMove}\n\tonpointerleave={handlePointerLeave}\n\t{...restProps}\n>\n\t{@render children?.()}\n\n\t{#if spotlight}\n\t\t<div\n\t\t\tclass=\"pointer-events-none absolute inset-0 z-10 overflow-hidden\"\n\t\t\tstyle=\"opacity: {isHovered ? 1 : 0}; transition: opacity 0.3s;\"\n\t\t>\n\t\t\t<div\n\t\t\t\tclass=\"absolute h-[200%] w-[200%] rounded-full opacity-100 dark:opacity-60\"\n\t\t\t\tstyle=\"left: {spotlightLeft}; top: {spotlightTop}; transform: translate(-50%, -50%); transition: left 0.2s ease-out, top 0.2s ease-out; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 40%);\"\n\t\t\t></div>\n\t\t</div>\n\t{/if}\n</div>\n",
+			"type": "registry:component",
+			"target": "spell/tilt-card/tilt-card.svelte"
+		},
+		{
+			"content": "import TiltCard from \"./tilt-card.svelte\";\r\nexport { TiltCard };",
+			"type": "registry:file",
+			"target": "spell/tilt-card/index.ts"
+		}
+	]
+}

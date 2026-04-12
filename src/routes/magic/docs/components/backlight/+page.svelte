@@ -16,5 +16,4 @@
 	installTailwindCode={data.installBlock?.tailwind}
 	examples={data.examples}
 	propsTables={data.props}
-	descriptionClass="max-w-xl"
 />

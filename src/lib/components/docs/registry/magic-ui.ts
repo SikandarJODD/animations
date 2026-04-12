@@ -58,6 +58,13 @@ export const magicUIComponents: MagicComponent[] = [
 		desc: "A text component with an animated aurora/northern lights effect.",
 	},
 	{
+		id: "backlight",
+		name: "Backlight",
+		href: "/magic/docs/components/backlight",
+		badge: "New",
+		desc: "An SVG filter wrapper that adds a soft glow around its content.",
+	},
+	{
 		id: "avatar-circles",
 		name: "Avatar Circles",
 		href: "/magic/docs/components/avatar-circles",
@@ -67,7 +74,6 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "bento-grid",
 		name: "Bento Grid",
 		href: "/magic/docs/components/bento-grid",
-		badge: "New",
 		desc: "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
 	},
 	{
@@ -106,7 +112,6 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "dock",
 		name: "Dock",
 		href: "/magic/docs/components/dock",
-		badge: "New",
 		desc: "An implementation of the MacOS dock using Svelte + tailwindcss + Motion SV",
 	},
 	{
@@ -150,14 +155,12 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "hyper-text",
 		name: "Hyper Text",
 		href: "/magic/docs/components/hyper-text",
-		badge: "New",
 		desc: "A text animation that scrambles letters before revealing the final text.",
 	},
 	{
 		id: "icon-cloud",
 		name: "Icon Cloud",
 		href: "/magic/docs/components/icon-cloud",
-		badge: "New",
 		desc: "An interactive 3D tag cloud component",
 	},
 	{
@@ -170,28 +173,24 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "lens",
 		name: "Lens",
 		href: "/magic/docs/components/lens",
-		badge: "New",
 		desc: "A interactive component that enables zooming into images, videos and other elements.",
 	},
 	{
 		id: "light-rays",
 		name: "Light Rays",
 		href: "/magic/docs/components/light-rays",
-		badge: "New",
 		desc: "A component with animated light rays which shine down from above.",
 	},
 	{
 		id: "line-shadow-text",
 		name: "Line Shadow Text",
 		href: "/magic/docs/components/line-shadow-text",
-		badge: "New",
 		desc: "A text component with a moving line shadow.",
 	},
 	{
 		id: "magic-card",
 		name: "Magic Card",
 		href: "/magic/docs/components/magic-card",
-		badge: "New",
 		desc: "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
 	},
 	{
@@ -204,7 +203,6 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "meteors",
 		name: "Meteors",
 		href: "/magic/docs/components/meteors",
-		badge: "New",
 		desc: "A meteor shower effect.",
 	},
 	{
@@ -225,7 +223,6 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "neon-gradient-card",
 		name: "Neon Gradient Card",
 		href: "/magic/docs/components/neon-gradient-card",
-		badge: "New",
 		desc: "A beautiful neon card effect.",
 	},
 	{
@@ -238,7 +235,6 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "orbiting-circles",
 		name: "Orbiting Circles",
 		href: "/magic/docs/components/orbiting-circles",
-		badge: "New",
 		desc: "A collection of circles which move in orbit along a circular path",
 	},
 	{
@@ -252,14 +248,12 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "pointer",
 		name: "Pointer",
 		href: "/magic/docs/components/pointer",
-		badge: "New",
 		desc: "A component that displays a pointer when hovering over an element",
 	},
 	{
 		id: "progressive-blur",
 		name: "Progressive Blur",
 		href: "/magic/docs/components/progressive-blur",
-		badge: "New",
 		desc: "Add a progressive blur effect to scrollable content",
 	},
 	{
@@ -278,7 +272,6 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "retro-grid",
 		name: "Retro Grid",
 		href: "/magic/docs/components/retro-grid",
-		badge: "New",
 		desc: "An animated scrolling retro grid effect",
 	},
 	{
@@ -309,7 +302,6 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "shine-border",
 		name: "Shine Border",
 		href: "/magic/docs/components/shine-border",
-		badge: "New",
 		desc: "Shine border is an animated background border effect.",
 	},
 	// {
@@ -323,7 +315,6 @@ export const magicUIComponents: MagicComponent[] = [
 		id: "smooth-cursor",
 		name: "Smooth Cursor",
 		href: "/magic/docs/components/smooth-cursor",
-		badge: "New",
 		desc: "A customizable, physics-based smooth cursor animation component for React applications.",
 	},
 	// {

@@ -43,10 +43,10 @@
 			size: 0.3,
 		}, // Beijing
 		{
-			lat: 28.6139,
-			lng: 77.209,
+			lat: 19.076,
+			lng: 72.8777,
 			size: 0.3,
-		}, // New Delhi
+		}, // Mumbai
 		{
 			lat: -23.5505,
 			lng: -46.6333,

@@ -11,7 +11,7 @@
 	interface PreviewComponentProps {
 		children: Snippet;
 		code?: MagicCode | MagicCode[];
-		lang?: SupportedLanguage;
+		// lang?: SupportedLanguage;
 		showRetry?: boolean;
 		isCentered?: boolean;
 		class?: string;
@@ -20,7 +20,6 @@
 	let {
 		code,
 		children,
-		lang = "svelte",
 		showRetry = true,
 		isCentered = true,
 		class: className = "",

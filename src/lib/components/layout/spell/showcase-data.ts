@@ -21,6 +21,7 @@ import SlideUpTextPreview from "../../../../routes/spell/slide-up-text/examples/
 import SpecialTextPreview from "../../../../routes/spell/special-text/examples/preview.svelte";
 import SpotifyCardPreview from "../../../../routes/spell/spotify-card/examples/preview.svelte";
 import TextMarqueePreview from "../../../../routes/spell/text-marquee/examples/preview.svelte";
+import TiltCardPreview from "../../../../routes/spell/tilt-card/examples/preview.svelte";
 import WordsStaggerPreview from "../../../../routes/spell/words-stagger/examples/preview.svelte";
 import TweetPreview from "../../../../routes/spell/tweet/examples/preview.svelte";
 import FallbackAvatarPreview from "../../../../routes/spell/fallback-avatar/examples/preview.svelte";
@@ -38,6 +39,7 @@ export type SpellShowcaseItem = SpellComponent & {
 
 const previewById: Record<string, Component> = {
 	"perspective-book": PerspectiveBookPreview,
+	"tilt-card": TiltCardPreview,
 	badge: BadgePreview,
 	"rich-button": RichButtonPreview,
 	"bar-spinner": BarSpinnerPreview,

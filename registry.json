@@ -408,6 +408,25 @@
 			}
 		},
 		{
+			"name": "backlight",
+			"type": "registry:block",
+			"title": "Backlight",
+			"description": "An SVG filter wrapper that adds a soft, saturated backlight glow around the content it wraps.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/backlight/backlight.svelte",
+					"type": "registry:component",
+					"target": "magic/backlight/backlight.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/backlight/index.ts",
+					"type": "registry:file",
+					"target": "magic/backlight/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
 			"name": "avatar-circles",
 			"type": "registry:block",
 			"title": "Avatar Circles",
