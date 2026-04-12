@@ -20,7 +20,7 @@
 	let {
 		children,
 		size = "default",
-		borderColor = "var(--rotating-border-color, currentColor)",
+		borderColor = "var(--rotating-border-color)",
 		class: className,
 		el = $bindable(null),
 		...restProps
@@ -85,7 +85,7 @@
 					stroke-width="1"
 					stroke-dasharray="6,4"
 					stroke-dashoffset="0"
-					class="group-hover:animate-[dash-flow_1s_linear_infinite]"
+					class="group-hover:animate-dash-flow"
 				/>
 			</svg>
 		{/if}
@@ -102,11 +102,3 @@
 		{@render children?.()}
 	</button>
 </div>
-
-<style>
-	@keyframes dash-flow {
-		to {
-			stroke-dashoffset: -10;
-		}
-	}
-</style>

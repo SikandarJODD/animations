@@ -6,6 +6,8 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import SizesExample from "./examples/sizes-example.svelte";
 import SizesExampleRaw from "./examples/sizes-example.svelte?raw";
+import ColorsExample from "./examples/colors-example.svelte";
+import ColorsExampleRaw from "./examples/colors-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "flow-button",
@@ -57,6 +59,15 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
+			name: "Colors",
+			preview: ColorsExample,
+			code: {
+				filename: "colors-example.svelte",
+				filecode: ColorsExampleRaw,
+				lang: "svelte",
+			},
+		},
+		{
 			name: "Sizes",
 			preview: SizesExample,
 			code: {
@@ -85,7 +96,7 @@ export const data: ComponentDoc = {
 				{
 					name: "borderColor",
 					type: "string",
-					default: '"var(--rotating-border-color, currentColor)"',
+					default: '"var(--rotating-border-color)"',
 					description: "The color of the flowing dashed border (CSS color value).",
 				},
 				{

@@ -3,5 +3,5 @@
 </script>
 
 <div class="flex items-center justify-center py-12">
-	<FlowButton>Click me</FlowButton>
+	<FlowButton>Learn more</FlowButton>
 </div>

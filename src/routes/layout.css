@@ -56,7 +56,7 @@
 	--code-highlight-bg: oklch(24.03% 0.02991 177.063 / 0.844);
 
 	/* Flow Button */
-	--rotating-border-color: oklch(0.556 0 0);
+	--rotating-border-color: var(--color-neutral-200);
 }
 
 .dark {
@@ -100,7 +100,7 @@
 	--color-5: hsl(90 100% 63%);
 
 	/* Flow Button */
-	--rotating-border-color: oklch(0.708 0 0);
+	--rotating-border-color: var(--muted);
 }
 
 @theme inline {
