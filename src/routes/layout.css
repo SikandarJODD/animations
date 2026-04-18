@@ -3,8 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
 
 @import "tailwindcss";
-
 @import "tw-animate-css";
+@import "@fontsource-variable/figtree";
 
 /* Pop Button — force-generate utilities the vite scanner misses inside tv() */
 @source inline(
@@ -151,6 +151,7 @@
 	--font-pop: "DynaPuff", sans-serif;
 	--font-serif: "Instrument Serif", serif;
 	--font-instrument: "Instrument Serif", serif;
+	--font-figtree: "Figtree Variable", sans-serif;
 
 	/* Svelte Magic UI */
 	--animate-gradient: gradient 8s linear infinite;

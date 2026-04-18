@@ -60,9 +60,7 @@
 		return cleanUrl;
 	};
 
-	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
-	// $inspect("Spell", isSpellRoute);
-	// $inspect("Install URL", isSpellRoute);
+	let llmsTxtUrl = $derived(`${getURLPath(page.url.href)}/llms.txt`);
 </script>
 
 <SEOComponent title={seo.title} description={seo.description} keywords={seo.keywords} />

@@ -42,6 +42,13 @@
 			icon: BookOpenIcon,
 			badge: "new",
 		},
+		{
+			href: "/fancy/media-between-text",
+			title: "Svelte Fancy Components",
+			description: "Unique, eye-catching components for Svelte.",
+			icon: BookOpenIcon,
+			badge: "new",
+		},
 	];
 
 	const componentsHasUpdates = navigationItems.some((item) => item.badge === "new");
@@ -125,7 +132,7 @@
 								{/if}
 							</NavigationMenuTrigger>
 							<NavigationMenuContent class="p-0">
-								<ul class="grid w-[18rem] gap-2 p-1 md:grid-cols-1">
+								<ul class="grid w-[22rem] gap-2 p-1 md:grid-cols-1">
 									{#each navigationItems as item (item.href)}
 										<li>
 											<NavigationMenuLink href={item.href}>

@@ -13,7 +13,7 @@
 
 <h1
 	{...restProps}
-	class={cn("text-foreground font-display scroll-m-24 text-3xl font-medium", className)}
+	class={cn("text-foreground scroll-m-24 text-3xl font-medium", className)}
 >
 	{@render children?.()}
 </h1>

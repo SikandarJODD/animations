@@ -42,9 +42,19 @@ Use `/s/` for Spell UI components.
 
 ## Credits
 
-- [Hanielu](https://github.com/hanielu) - For creating the amazing  `motion-sv` library that powers these animations.
+- [Hanielu](https://github.com/hanielu) - For creating the amazing `motion-sv` library that powers these animations.
 - [Magic UI](https://magic-ui.com/) - For inspiring the design and concept of the Magic UI components.
 - [Spell UI](https://spell.sh/) - Thankyou Tom 😊
+- [Fancy Components](https://fancycomponents.dev/) - I Love your work a lot Daniel 😊
+
+## Original Creators
+
+- [Tom](https://x.com/tomm_ui) : Creator of Spell UI
+- [Daniel Petho](https://x.com/nonzeroexitcode) : Creator of Fancy Components
+- [Dillon Verma](https://x.com/dillionverma) : Creator of Magic UI
+
+my project is inspired from above original creators work, my goal is to bring similar animation components to svelte 5 community.
+
 ## Support
 
 - Open issues: [Create New Issue / Report the Bug](https://github.com/SikandarJODD/animations/issues)

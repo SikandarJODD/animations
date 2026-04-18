@@ -108,7 +108,6 @@ export const data: ComponentDoc = {
 	],
 	// examples,
 	seo,
-	packages: ["motion-sv"],
 	props: [
 		{
 			name: "MagicCard",
