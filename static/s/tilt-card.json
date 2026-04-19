@@ -11,7 +11,7 @@
 			"target": "spell/tilt-card/tilt-card.svelte"
 		},
 		{
-			"content": "import TiltCard from \"./tilt-card.svelte\";\r\nexport { TiltCard };",
+			"content": "import TiltCard from \"./tilt-card.svelte\";\nexport { TiltCard };",
 			"type": "registry:file",
 			"target": "spell/tilt-card/index.ts"
 		}

@@ -11,7 +11,7 @@
 			"target": "spell/fallback-avatar/fallback-avatar.svelte"
 		},
 		{
-			"content": "import FallbackAvatar from \"./fallback-avatar.svelte\";\r\nexport { FallbackAvatar };\r\n",
+			"content": "import FallbackAvatar from \"./fallback-avatar.svelte\";\nexport { FallbackAvatar };\n",
 			"type": "registry:file",
 			"target": "spell/fallback-avatar/index.ts"
 		},

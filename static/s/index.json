@@ -232,5 +232,89 @@
 		"description": "A particle input companion that launches custom items outward from the cursor as you type.",
 		"registryDependencies": [],
 		"relativeUrl": "exploding-input.json"
+	},
+	{
+		"name": "animated-gradient",
+		"title": "Animated Gradient",
+		"type": "registry:block",
+		"description": "A WebGL2-powered animated gradient background with multiple presets and full customization.",
+		"registryDependencies": [],
+		"relativeUrl": "animated-gradient.json"
+	},
+	{
+		"name": "copy-button",
+		"title": "Copy Button",
+		"type": "registry:block",
+		"description": "A copy-to-clipboard button with animated icon transition between copy and check states.",
+		"dependencies": [
+			"lucide-svelte"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "copy-button.json"
+	},
+	{
+		"name": "flow-button",
+		"title": "Flow Button",
+		"type": "registry:block",
+		"description": "A button with an animated dashed SVG border that flows on hover.",
+		"registryDependencies": [],
+		"relativeUrl": "flow-button.json"
+	},
+	{
+		"name": "light-rays",
+		"title": "Light Rays",
+		"type": "registry:block",
+		"description": "A WebGL-powered light rays background effect with customizable colors, intensity, and animation.",
+		"dependencies": [
+			"three"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "light-rays.json"
+	},
+	{
+		"name": "pop-button",
+		"title": "Pop Button",
+		"type": "registry:block",
+		"description": "A button with a 3D pop effect and press animation, available in multiple color variants and sizes.",
+		"dependencies": [
+			"tailwind-variants"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "pop-button.json"
+	},
+	{
+		"name": "rich-button",
+		"title": "Rich Button",
+		"type": "registry:block",
+		"description": "A button with gradient backgrounds, text shadows, and 23 color variants.",
+		"dependencies": [
+			"tailwind-variants"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "rich-button.json"
+	},
+	{
+		"name": "shimmer-text",
+		"title": "Shimmer Text",
+		"type": "registry:block",
+		"description": "Text with an animated shimmer highlight that sweeps across on repeat.",
+		"registryDependencies": [],
+		"relativeUrl": "shimmer-text.json"
+	},
+	{
+		"name": "spinner",
+		"title": "Spinner",
+		"type": "registry:block",
+		"description": "A smooth gradient spinner built from an SVG arc, with size and speed variants for flexible loading states.",
+		"registryDependencies": [],
+		"relativeUrl": "spinner.json"
+	},
+	{
+		"name": "tweet",
+		"title": "Tweet",
+		"type": "registry:block",
+		"description": "Fetch and render any tweet by ID, with media, entities, and live like counts.",
+		"registryDependencies": [],
+		"relativeUrl": "tweet.json"
 	}
 ]

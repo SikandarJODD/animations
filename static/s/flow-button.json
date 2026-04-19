@@ -1,0 +1,19 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "flow-button",
+	"title": "Flow Button",
+	"type": "registry:block",
+	"description": "A button with an animated dashed SVG border that flows on hover.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLButtonAttributes } from \"svelte/elements\";\n\timport type { Snippet } from \"svelte\";\n\timport { cn } from \"$UTILS$\";\n\n\ttype SizeVariant = \"sm\" | \"default\" | \"lg\";\n\n\tconst sizeMap: Record<SizeVariant, string> = {\n\t\tsm: \"h-8 rounded-full gap-1.5 px-3 text-sm\",\n\t\tdefault: \"h-9 px-4 py-2 text-sm rounded-full\",\n\t\tlg: \"h-10 rounded-full px-6 text-sm\",\n\t};\n\n\tconst borderRadiusMap: Record<SizeVariant, number> = {\n\t\tsm: 16,\n\t\tdefault: 18,\n\t\tlg: 20,\n\t};\n\n\tlet {\n\t\tchildren,\n\t\tsize = \"default\",\n\t\tborderColor = \"var(--rotating-border-color)\",\n\t\tclass: className,\n\t\tel = $bindable(null),\n\t\t...restProps\n\t}: HTMLButtonAttributes & {\n\t\tchildren?: Snippet;\n\t\tsize?: SizeVariant;\n\t\tborderColor?: string;\n\t\tel?: HTMLButtonElement | null;\n\t} = $props();\n\n\tlet buttonEl: HTMLButtonElement | null = $state(null);\n\tlet width = $state(0);\n\tlet height = $state(0);\n\n\t$effect(() => {\n\t\tel = buttonEl;\n\t});\n\n\t$effect(() => {\n\t\tif (!buttonEl) return;\n\n\t\tconst measure = () => {\n\t\t\twidth = buttonEl!.offsetWidth;\n\t\t\theight = buttonEl!.offsetHeight;\n\t\t};\n\n\t\tmeasure();\n\n\t\tconst observer = new ResizeObserver(measure);\n\t\tobserver.observe(buttonEl);\n\n\t\treturn () => observer.disconnect();\n\t});\n\n\tfunction createRoundedRectPath(w: number, h: number, r: number): string {\n\t\treturn `M${r},0.5 H${w - r} A${r},${r} 0 0 1 ${w - 0.5},${r} V${h - r} A${r},${r} 0 0 1 ${w - r},${h - 0.5} H${r} A${r},${r} 0 0 1 0.5,${h - r} V${r} A${r},${r} 0 0 1 ${r},0.5 Z`;\n\t}\n\n\tconst buttonSize = $derived(sizeMap[size]);\n\tconst radius = $derived(borderRadiusMap[size]);\n\tconst pathD = $derived(width && height ? createRoundedRectPath(width, height, radius) : \"\");\n</script>\n\n<div class=\"group pointer-events-none relative inline-block\">\n\t<div\n\t\tclass=\"pointer-events-none absolute inset-[2px] z-10 opacity-0 transition-all duration-200 ease-out group-hover:inset-0 group-hover:opacity-100\"\n\t\tstyle:border-radius=\"{radius}px\"\n\t>\n\t\t{#if width && height}\n\t\t\t<svg\n\t\t\t\t{width}\n\t\t\t\t{height}\n\t\t\t\tviewBox=\"0 0 {width} {height}\"\n\t\t\t\taria-hidden=\"true\"\n\t\t\t\tpreserveAspectRatio=\"none\"\n\t\t\t\tclass=\"pointer-events-none absolute left-0 top-0 h-full w-full\"\n\t\t\t>\n\t\t\t\t<path\n\t\t\t\t\td={pathD}\n\t\t\t\t\tfill=\"none\"\n\t\t\t\t\tstroke={borderColor}\n\t\t\t\t\tstroke-width=\"1\"\n\t\t\t\t\tstroke-dasharray=\"6,4\"\n\t\t\t\t\tstroke-dashoffset=\"0\"\n\t\t\t\t\tclass=\"group-hover:animate-dash-flow\"\n\t\t\t\t/>\n\t\t\t</svg>\n\t\t{/if}\n\t</div>\n\t<button\n\t\tbind:this={buttonEl}\n\t\tclass={cn(\n\t\t\t\"pointer-events-auto relative z-0 inline-flex cursor-pointer shrink-0 items-center justify-center gap-2 whitespace-nowrap font-[550] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-neutral-100 dark:bg-muted/50 text-primary hover:bg-transparent dark:hover:bg-transparent [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n\t\t\tbuttonSize,\n\t\t\tclassName,\n\t\t)}\n\t\t{...restProps}\n\t>\n\t\t{@render children?.()}\n\t</button>\n</div>\n",
+			"type": "registry:component",
+			"target": "spell/flow-button/flow-button.svelte"
+		},
+		{
+			"content": "import FlowButton from \"./flow-button.svelte\";\nexport { FlowButton };\n",
+			"type": "registry:file",
+			"target": "spell/flow-button/index.ts"
+		}
+	]
+}

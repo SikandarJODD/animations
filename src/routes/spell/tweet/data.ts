@@ -5,6 +5,8 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
+import MinimalExample from "./examples/minimal-example.svelte";
+import MinimalExampleRaw from "./examples/minimal-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "tweet",
@@ -64,7 +66,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
-	examples: [],
+	examples: [
+		{
+			name: "Minimal",
+			description: "Hide footer controls for a cleaner embed.",
+			preview: MinimalExample,
+			code: {
+				filename: "minimal-example.svelte",
+				filecode: MinimalExampleRaw,
+				lang: "svelte",
+				hideLines: true,
+			},
+		},
+	],
 	seo,
 	props: [
 		{
