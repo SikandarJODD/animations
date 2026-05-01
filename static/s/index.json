@@ -316,5 +316,13 @@
 		"description": "Fetch and render any tweet by ID, with media, entities, and live like counts.",
 		"registryDependencies": [],
 		"relativeUrl": "tweet.json"
+	},
+	{
+		"name": "chart",
+		"title": "Chart",
+		"type": "registry:block",
+		"description": "Interactive line chart with cursor-tracked tooltip, snap-to-point hover, and X-axis labels.",
+		"registryDependencies": [],
+		"relativeUrl": "chart.json"
 	}
 ]

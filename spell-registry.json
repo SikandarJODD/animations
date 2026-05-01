@@ -668,6 +668,25 @@
 				}
 			],
 			"registryDependencies": []
+		},
+		{
+			"name": "chart",
+			"type": "registry:block",
+			"title": "Chart",
+			"description": "Interactive line chart with cursor-tracked tooltip, snap-to-point hover, and X-axis labels.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/chart/chart.svelte",
+					"type": "registry:component",
+					"target": "spell/chart/chart.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/chart/index.ts",
+					"type": "registry:file",
+					"target": "spell/chart/index.ts"
+				}
+			],
+			"registryDependencies": []
 		}
 	]
 }
