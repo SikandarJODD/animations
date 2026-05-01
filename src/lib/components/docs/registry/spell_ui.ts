@@ -38,6 +38,14 @@ export const spellUIComponents: SpellComponent[] = [
 
 	// ── Components ───────────────────────────────────────────────────────────
 	{
+		id: "chart",
+		name: "Chart",
+		href: "/spell/chart",
+		category: "Components",
+		desc: "An interactive line chart with cursor-tracked tooltip, snap-to-point hover, and built-in X-axis labels.",
+		badge: "New",
+	},
+	{
 		id: "perspective-book",
 		name: "Perspective Book",
 		href: "/spell/perspective-book",
@@ -100,14 +108,6 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/fallback-avatar",
 		category: "Components",
 		desc: "A procedurally generated WebGL avatar based on a name hash — deterministic, animated, and unique.",
-		badge: "New",
-	},
-	{
-		id: "chart",
-		name: "Chart",
-		href: "/spell/chart",
-		category: "Components",
-		desc: "An interactive line chart with cursor-tracked tooltip, snap-to-point hover, and built-in X-axis labels.",
 		badge: "New",
 	},
 
