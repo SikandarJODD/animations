@@ -104,6 +104,17 @@
 		"relativeUrl": "dot-pattern.json"
 	},
 	{
+		"name": "dia-text-reveal",
+		"title": "Dia Text Reveal",
+		"type": "registry:block",
+		"description": "A sweeping gradient text reveal with viewport triggering and rotating text support.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "dia-text-reveal.json"
+	},
+	{
 		"name": "cool-mode",
 		"title": "Cool Mode",
 		"type": "registry:block",

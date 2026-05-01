@@ -83,8 +83,8 @@ export const data: ComponentDoc = {
 				filename: "signature-size-example.svelte",
 				filecode: SignatureSizeRaw,
 				lang: "svelte",
-			}
-		}
+			},
+		},
 	],
 	seo,
 	props: [

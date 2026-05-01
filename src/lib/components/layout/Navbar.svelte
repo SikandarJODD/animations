@@ -19,6 +19,7 @@
 	import Badge from "../spell/badge/badge.svelte";
 	import { PersistedState } from "runed";
 	import { scale } from "svelte/transition";
+	import { BlocksIcon } from "@lucide/svelte";
 
 	type NavigationItem = {
 		href: string;
@@ -46,7 +47,7 @@
 			href: "/fancy/media-between-text",
 			title: "Svelte Fancy Components",
 			description: "Unique, eye-catching components for Svelte.",
-			icon: BookOpenIcon,
+			icon: BlocksIcon,
 			badge: "new",
 		},
 	];
@@ -116,7 +117,6 @@
 								Home
 							</NavigationMenuLink>
 						</NavigationMenuItem>
-
 						<NavigationMenuItem id="components">
 							<NavigationMenuTrigger
 								class="text-muted-foreground hover:text-primary focus:text-primary data-[state=open]:text-primary relative bg-transparent px-4 py-2 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent"
@@ -189,6 +189,14 @@
 									{/each}
 								</ul>
 							</NavigationMenuContent>
+						</NavigationMenuItem>
+						<NavigationMenuItem id="changelog">
+							<NavigationMenuLink
+								href="/changelog"
+								class="text-muted-foreground hover:text-primary focus:text-primary data-active:bg-accent/50 data-active:text-accent-foreground bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-transparent focus:bg-transparent"
+							>
+								Changelog
+							</NavigationMenuLink>
 						</NavigationMenuItem>
 					</NavigationMenuList>
 				</NavigationMenuRoot>

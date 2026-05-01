@@ -34,13 +34,13 @@ Use `triggerType="hover"` for hover previews, `triggerType="inView"` for scroll-
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `firstText` | `string` | required | Text rendered before the media reveal. |
-| `secondText` | `string` | required | Text rendered after the media reveal. |
-| `mediaUrl` | `string` | required | Image or video source URL. |
-| `mediaType` | `"image" \| "video"` | required | Controls whether an image or video is rendered. |
-| `mediaContainerClassName` | `string \| undefined` | `undefined` | Classes applied to the animated media wrapper. |
-| `triggerType` | `"hover" \| "ref" \| "inView"` | `"hover"` | Controls when the media reveal animation runs. |
-| `animationVariants` | `Variants` | `defaultAnimationVariants` | Motion variants used for the media reveal. |
-| `class` | `string \| undefined` | `undefined` | Classes merged onto the root container. |
+| Prop                      | Type                           | Default                    | Description                                     |
+| ------------------------- | ------------------------------ | -------------------------- | ----------------------------------------------- |
+| `firstText`               | `string`                       | required                   | Text rendered before the media reveal.          |
+| `secondText`              | `string`                       | required                   | Text rendered after the media reveal.           |
+| `mediaUrl`                | `string`                       | required                   | Image or video source URL.                      |
+| `mediaType`               | `"image" \| "video"`           | required                   | Controls whether an image or video is rendered. |
+| `mediaContainerClassName` | `string \| undefined`          | `undefined`                | Classes applied to the animated media wrapper.  |
+| `triggerType`             | `"hover" \| "ref" \| "inView"` | `"hover"`                  | Controls when the media reveal animation runs.  |
+| `animationVariants`       | `Variants`                     | `defaultAnimationVariants` | Motion variants used for the media reveal.      |
+| `class`                   | `string \| undefined`          | `undefined`                | Classes merged onto the root container.         |

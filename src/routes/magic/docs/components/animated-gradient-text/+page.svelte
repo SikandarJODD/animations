@@ -51,7 +51,9 @@
 	<H2 id="installation">Installation</H2>
 	<InstallComponent
 		{installUrl}
-		tailwindConfig={data.installBlock?.tailwind ? { code: data.installBlock.tailwind } : undefined}
+		tailwindConfig={data.installBlock?.tailwind
+			? { code: data.installBlock.tailwind }
+			: undefined}
 		codeBlocks={[code]}
 		folderStructure={data.folderStructure}
 		class="my-4"

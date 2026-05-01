@@ -3,6 +3,7 @@
 	import { Badge } from "$lib/components/ui/badge";
 	import { PanelLeftIcon } from "@lucide/svelte";
 	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
+	import HistoryIcon from "@lucide/svelte/icons/history";
 	import HomeIcon from "@lucide/svelte/icons/home";
 	import { magicUIComponents } from "$lib/components/docs/registry/magic-ui";
 	import { spellUIComponents } from "$lib/components/docs/registry/spell_ui";
@@ -97,6 +98,20 @@
 					<div class="flex items-center gap-2">
 						<HomeIcon class="size-4 shrink-0" />
 						<span>Home</span>
+					</div>
+				</a>
+				<a
+					href="/changelog"
+					onclick={handleLinkClick}
+					class="text-muted-foreground hover:text-primary block rounded-md px-3 py-2 text-sm font-medium transition-colors {isActive(
+						'/changelog'
+					)
+						? 'bg-accent text-accent-foreground'
+						: 'hover:bg-accent/50'}"
+				>
+					<div class="flex items-center gap-2">
+						<HistoryIcon class="size-4 shrink-0" />
+						<span>Changelog</span>
 					</div>
 				</a>
 			</div>

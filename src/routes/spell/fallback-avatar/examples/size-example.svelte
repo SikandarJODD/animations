@@ -4,7 +4,7 @@
 	const sizes = [20, 28, 36, 44] as const;
 </script>
 
-<div class="flex gap-6 items-end">
+<div class="flex items-end gap-6">
 	{#each sizes as size}
 		<div class="flex flex-col items-center gap-3">
 			<FallbackAvatar class="border" name="sun" {size} />

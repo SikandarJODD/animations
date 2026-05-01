@@ -1,4 +1,4 @@
-# Svelte 5 Animations
+# Svelte 5 Animations Components
 
 Beautiful, copy-paste animation components for Svelte 5.
 Built with [motion-sv](https://github.com/hanielu/motion-svelte), Tailwind CSS and Shadcn Svelte registry.
@@ -8,11 +8,11 @@ Built with [motion-sv](https://github.com/hanielu/motion-svelte), Tailwind CSS a
 ## New Stuff
 
 - `21` new Spell UI animation components
-- Now shipping `77` total components across both libraries
+- Now shipping `78` total components across both libraries
 
 ## What's Included
 
-1. `Svelte Magic UI` - `56` animation components
+1. `Svelte Magic UI` - `57` animation components
 2. `Svelte Spell UI` - `21` animation components
 
 Browse the library:
@@ -37,8 +37,9 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-te
 
 ## Registry Structure
 
-Use `/r/` for Magic UI components
-Use `/s/` for Spell UI components.
+- Use `/r/` for Magic UI components
+- Use `/s/` for Spell UI components.
+- Use `/f/` for Fancy Components (building...).
 
 ## Credits
 

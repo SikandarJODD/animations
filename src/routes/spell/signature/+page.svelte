@@ -70,7 +70,9 @@
 			<Item.Content>
 				<Item.Title>Download LastoriaBoldRegular.otf Font</Item.Title>
 				<Item.Description>
-					Place the font file inside your <code class='bg-secondary px-0.5 rounded-xs'>static</code> folder
+					Place the font file inside your <code class="bg-secondary rounded-xs px-0.5"
+						>static</code
+					> folder
 				</Item.Description>
 			</Item.Content>
 			<Item.Actions>

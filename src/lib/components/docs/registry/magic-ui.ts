@@ -102,6 +102,13 @@ export const magicUIComponents: MagicComponent[] = [
 		desc: "Add a fun particle effect that follows mouse interactions, with support for emojis, images, and custom shapes.",
 	},
 	{
+		id: "dia-text-reveal",
+		name: "Dia Text Reveal",
+		href: "/magic/docs/components/dia-text-reveal",
+		badge: "New",
+		desc: "A sweeping gradient text reveal with viewport triggering and rotating text support.",
+	},
+	{
 		id: "dither-shader",
 		name: "Dither Shader",
 		href: "/magic/docs/components/dither-shader",

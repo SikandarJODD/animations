@@ -89,7 +89,7 @@
 				<img
 					src="/svgs/media-between-text.svg"
 					alt="Media Between Text logic"
-					class="border-border h-90 w-fit mx-auto rounded-xl border"
+					class="border-border mx-auto w-fit rounded-xl border md:h-90"
 				/>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { MediaBetweenText } from "$lib/components/fancy/media-between-text";
-
+	import { MediaQuery } from "svelte/reactivity";
 	const elements = [
 		{
 			src: "https://github.com/rich-harris.png",
@@ -29,6 +29,7 @@
 	];
 
 	let ref: HTMLDivElement | null = $state(null);
+	let isLarge = new MediaQuery("(min-width: 1024px)");
 </script>
 
 <div
@@ -37,15 +38,15 @@
 >
 	<div class="relative flex h-full w-full">
 		<h3
-			class="absolute bottom-4 left-4 w-64 text-5xl tracking-wide sm:bottom-12 sm:left-12 sm:text-7xl"
+			class="absolute bottom-10 left-4 w-full text-3xl tracking-wide sm:bottom-12 sm:left-12 sm:text-7xl md:w-64"
 		>
 			Svelte Creators
 		</h3>
-		<p class="absolute right-4 bottom-4 sm:right-12 sm:bottom-12">Scroll down ↓</p>
+		<p class="absolute right-0 bottom-4 sm:right-12 sm:bottom-12">Scroll down ↓</p>
 	</div>
 
 	<div
-		class="mt-10 mb-64 flex h-full w-full flex-col items-center justify-center space-y-12 px-6 text-6xl"
+		class="mt-0 mb-0 flex h-full w-full flex-col items-center justify-center space-y-12 text-6xl sm:mt-10 sm:mb-64 md:px-6"
 	>
 		{#each elements as element}
 			<a href={element.url} target="_blank" rel="noreferrer">
@@ -67,7 +68,7 @@
 					animationVariants={{
 						initial: { width: 0 },
 						animate: {
-							width: "100px",
+							width: isLarge.current ? "100px" : "40px",
 							transition: {
 								duration: 1,
 								type: "spring",

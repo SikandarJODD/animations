@@ -37,7 +37,7 @@
 
 <div class={cn("border-border overflow-hidden rounded-lg border", className)}>
 	<div class="overflow-x-auto">
-		<table class="w-full min-w-[780px] table-fixed text-left text-sm">
+		<table class="w-full min-w-[780px] table-fixed text-left text-xs sm:text-sm">
 			<colgroup>
 				<col class="w-[20%]" />
 				<col class="w-[24%]" />
@@ -49,7 +49,7 @@
 					<th class="px-3 py-2 font-medium">Prop</th>
 					<th class="px-3 py-2 font-medium">Type</th>
 					<th class="px-3 py-2 font-medium">Default</th>
-					<th class="pl-2 py-2 font-medium">Description</th>
+					<th class="py-2 pl-2 font-medium">Description</th>
 				</tr>
 			</thead>
 			<tbody class="divide-border divide-y">
@@ -57,27 +57,27 @@
 					<tr class="align-top">
 						<td class="px-3 py-3">
 							<code
-								class="bg-muted/70 text-foreground inline-block max-w-full rounded-md px-1.5 py-0.5 font-mono leading-5 break-words whitespace-pre-wrap [overflow-wrap:anywhere]"
+								class="bg-muted/70 text-foreground inline-block max-w-full rounded-md px-1.5 py-0.5 font-mono leading-5 [overflow-wrap:anywhere] break-words whitespace-pre-wrap"
 							>
 								{row.name}
 							</code>
 						</td>
 						<td class="px-3 py-3">
 							<code
-								class="bg-muted/50 text-muted-foreground inline-block max-w-full rounded-md px-1.5 py-0.5 font-mono leading-5 text-xs break-words whitespace-pre-wrap [overflow-wrap:anywhere]"
+								class="bg-muted/50 text-muted-foreground inline-block max-w-full rounded-md px-1.5 py-0.5 font-mono text-xs leading-5 [overflow-wrap:anywhere] break-words whitespace-pre-wrap"
 							>
 								{row.type}
 							</code>
 						</td>
 						<td class="px-3 py-3">
 							<code
-								class="bg-muted/50 text-muted-foreground inline-block max-w-full rounded-md px-1.5 py-0.5 font-mono leading-5 text-xs break-words whitespace-pre-wrap [overflow-wrap:anywhere]"
+								class="bg-muted/50 text-muted-foreground inline-block max-w-full rounded-md px-1.5 py-0.5 font-mono text-xs leading-5 [overflow-wrap:anywhere] break-words whitespace-pre-wrap"
 							>
 								{row.required ? "required" : (row.default ?? "-")}
 							</code>
 						</td>
 						<td
-							class="text-muted-foreground pr-3 pl-2 py-3 leading-5 break-words [overflow-wrap:anywhere]"
+							class="text-muted-foreground py-3 pr-3 pl-2 leading-5 [overflow-wrap:anywhere] break-words"
 						>
 							{row.description ?? "-"}
 						</td>

@@ -56,7 +56,10 @@
 			<Tabs.Root bind:value={agent}>
 				<Tabs.List class="h-auto bg-transparent p-0">
 					{#each agents as pm (pm)}
-						<Tabs.Trigger value={pm} class="h-7 font-mono text-sm font-light border-none">
+						<Tabs.Trigger
+							value={pm}
+							class="h-7 border-none font-mono text-sm font-light"
+						>
 							{pm}
 						</Tabs.Trigger>
 					{/each}
@@ -79,7 +82,7 @@
 		</Tooltip.Provider>
 	</div>
 	<div class="no-scrollbar overflow-x-auto p-3">
-		<span class="text-primary  font-mono text-sm leading-none font-light text-nowrap">
+		<span class="text-primary font-mono text-xs leading-none font-light text-nowrap md:text-sm">
 			{commandText}
 		</span>
 	</div>

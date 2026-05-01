@@ -68,7 +68,7 @@
 		class: className,
 		leftTextClass,
 		rightTextClass,
-		isAnimating= $bindable(false),
+		isAnimating = $bindable(false),
 		...props
 	}: MediaBetweenTextProps = $props();
 

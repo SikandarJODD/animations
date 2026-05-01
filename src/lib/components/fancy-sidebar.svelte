@@ -25,7 +25,9 @@
 							<Sidebar.Menu>
 								{#each group.items as item (item.href)}
 									<Sidebar.MenuItem>
-										<Sidebar.MenuButton isActive={page.url.pathname === item.href}>
+										<Sidebar.MenuButton
+											isActive={page.url.pathname === item.href}
+										>
 											{#snippet child({ props })}
 												<a href={item.href} {...props}>
 													{item.name}
