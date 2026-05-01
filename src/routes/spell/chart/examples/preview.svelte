@@ -1,15 +1,40 @@
 <script lang="ts">
 	import { Chart } from "$lib/components/spell/chart";
 
-	const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-	const revenue = [12400, 18200, 15600, 24100, 22800, 31500, 28900, 36200, 43800, 38400, 49100, 57600];
+	const data = [
+		369, 438, 417, 448, 531, 673, 625, 575, 610, 701, 746, 964, 970, 1180, 1072,
+		1348, 2286, 2481, 2875, 4703, 4339, 6468, 10234, 14156, 10221, 10398, 6974,
+		9241, 7494, 6404, 7780, 7038, 6626, 6318, 4017, 3743, 3458, 3855, 4105,
+		5351, 8575, 10817, 10086, 9631, 8294, 9200, 7570, 7194, 9351, 8600, 6439,
+		8659, 9461, 9138, 11323, 11681, 10784, 13781, 19626, 29002, 33114, 45138,
+		58919, 57750, 37333, 35041, 41626, 47167, 43791, 61319, 57005, 46306, 38483,
+		43193, 45539, 37715, 31792, 19785, 23337, 20050, 19432, 20496, 17169, 16547,
+		23139, 23147, 28478, 29269, 27220, 30477, 29230, 25931, 26968, 34668, 37713,
+		42265, 42583, 61198, 71334, 60637, 67491, 62678, 64619, 58970, 63330, 70215,
+		96449, 93429, 102405, 84373, 82549, 94207, 104638, 107135, 115758, 108237,
+		114056, 109556, 90394, 87509, 78621, 66996, 68233, 75776, 76454,
+	];
+
+	const start = new Date(2016, 0, 1).getTime();
+	const end = new Date(2026, 3, 30).getTime();
+	const labels = data.map((_, i) => {
+		const t = start + (i / (data.length - 1)) * (end - start);
+		return new Date(t).toLocaleDateString("en-US", {
+			month: "short",
+			day: "numeric",
+			year: "numeric",
+		});
+	});
 </script>
 
-<div class="w-full max-w-2xl px-4">
-	<Chart
-		data={revenue}
-		labels={months}
-		name="Revenue"
-		formatValue={(v) => `$${(v / 1000).toFixed(1)}k`}
-	/>
-</div>
+<Chart
+	{data}
+	{labels}
+	name="BTC / USD"
+	formatValue={(v) =>
+		v.toLocaleString("en-US", {
+			style: "currency",
+			currency: "USD",
+			maximumFractionDigits: 0,
+		})}
+/>

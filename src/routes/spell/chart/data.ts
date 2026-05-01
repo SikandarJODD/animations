@@ -4,10 +4,14 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import ColorExample from "./examples/color-example.svelte";
-import ColorExampleRaw from "./examples/color-example.svelte?raw";
 import RevealExample from "./examples/reveal-example.svelte";
 import RevealExampleRaw from "./examples/reveal-example.svelte?raw";
+import FormatExample from "./examples/format-example.svelte";
+import FormatExampleRaw from "./examples/format-example.svelte?raw";
+import ColorExample from "./examples/color-example.svelte";
+import ColorExampleRaw from "./examples/color-example.svelte?raw";
+import StaticExample from "./examples/static-example.svelte";
+import StaticExampleRaw from "./examples/static-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "chart",
@@ -58,26 +62,51 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Custom Color",
-			description: "Pass any hex color to `color` — it applies to the line, dot, and tooltip indicator.",
-			preview: ColorExample,
-			code: {
-				filename: "color-example.svelte",
-				filecode: ColorExampleRaw,
-				lang: "svelte",
-				highlight: [7],
-			},
-		},
-		{
-			name: "Reveal",
+			name: "Reveal effect",
 			description:
-				"Move the cursor across the chart — the line reveals in color from left to the active point, staying gray beyond it.",
+				"Pass `reveal` to gray-out the line until the cursor passes over it — useful for decorative or marketing charts.",
 			preview: RevealExample,
 			code: {
 				filename: "reveal-example.svelte",
 				filecode: RevealExampleRaw,
 				lang: "svelte",
-				highlight: [8],
+				highlight: [42, 43, 44, 45, 46, 47, 48],
+			},
+		},
+		{
+			name: "Custom tooltip format",
+			description:
+				"`formatValue` receives the value and its index, so you can pair the data with labels.",
+			preview: FormatExample,
+			code: {
+				filename: "format-example.svelte",
+				filecode: FormatExampleRaw,
+				lang: "svelte",
+				highlight: [33, 34, 35, 36, 37, 38, 39],
+			},
+		},
+		{
+			name: "Custom color",
+			description:
+				"Pass any hex string via `color`. The line, dot, and gradient fill all derive from it.",
+			preview: ColorExample,
+			code: {
+				filename: "color-example.svelte",
+				filecode: ColorExampleRaw,
+				lang: "svelte",
+				highlight: [62],
+			},
+		},
+		{
+			name: "Without animation",
+			description:
+				"Set `animated={false}` to make the cursor, dot, and tooltip jump to the active point instantly with no transition.",
+			preview: StaticExample,
+			code: {
+				filename: "static-example.svelte",
+				filecode: StaticExampleRaw,
+				lang: "svelte",
+				highlight: [63],
 			},
 		},
 	],

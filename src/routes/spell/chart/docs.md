@@ -20,38 +20,36 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/s/chart.json
 <Chart {data} />
 ```
 
-## With Labels and Custom Formatting
+## Reveal effect
+
+Pass `reveal` to gray-out the line until the cursor passes over it — useful for decorative/marketing use, not for serious data viz.
 
 ```svelte
-<script lang="ts">
-  import { Chart } from "$lib/components/spell/chart";
-
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const revenue = [12400, 18200, 15600, 24100, 22800, 31500, 28900, 36200, 43800, 38400, 49100, 57600];
-</script>
-
-<Chart
-  data={revenue}
-  labels={months}
-  name="Revenue"
-  formatValue={(v) => `$${(v / 1000).toFixed(1)}k`}
-/>
+<Chart {data} {labels} name="BTC / USD" reveal formatValue={...} />
 ```
 
-## Custom Color
+## Custom tooltip format
 
-Pass any hex color to `color` — it applies to the line, dot, and tooltip indicator.
+`formatValue` receives the value and its index, so you can pair the data with labels.
 
 ```svelte
-<Chart data={[8, 14, 11, 19, 17, 25]} color="#10b981" name="Growth" />
+<Chart {data} {labels} name="ETH / USD" formatValue={(v) => v.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })} />
 ```
 
-## Reveal Effect
+## Custom color
 
-`reveal` grays out the line until the cursor passes over it — useful for decorative or marketing charts.
+Pass any hex string via `color`. The line, dot, and gradient fill all derive from it.
 
 ```svelte
-<Chart data={[42, 38, 51, 47, 63, 58, 71]} reveal />
+<Chart {data} {labels} name="AAPL" color="#EAB308" formatValue={...} />
+```
+
+## Without animation
+
+Set `animated={false}` to make the cursor, dot, and tooltip jump to the active point instantly with no transition.
+
+```svelte
+<Chart {data} {labels} name="NVDA" color="#A855F7" animated={false} formatValue={...} />
 ```
 
 ## Props
