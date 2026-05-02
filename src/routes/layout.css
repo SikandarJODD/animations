@@ -173,6 +173,7 @@
 	--animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
 	--animate-grid: grid 15s linear infinite;
 	--animate-dash-flow: dash-flow 1s linear infinite;
+	--animate-shiny-text: shiny-text var(--duration) infinite;
 }
 
 ::view-transition-old(root),
@@ -363,6 +364,19 @@
 	100% {
 		transform: rotate(var(--angle)) translateX(-500px);
 		opacity: 0;
+	}
+}
+
+/* Animated Shinry Text */
+@keyframes shiny-text {
+	0%,
+	90%,
+	100% {
+		background-position: calc(-100% - var(--shiny-width)) 0;
+	}
+	30%,
+	60% {
+		background-position: calc(100% + var(--shiny-width)) 0;
 	}
 }
 

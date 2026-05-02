@@ -14,7 +14,7 @@
 			"target": "magic/dia-text-reveal/dia-text-reveal.svelte"
 		},
 		{
-			"content": "import DiaTextReveal from \"./dia-text-reveal.svelte\";\r\nexport { DiaTextReveal };\r\n",
+			"content": "import DiaTextReveal from \"./dia-text-reveal.svelte\";\nexport { DiaTextReveal };\n",
 			"type": "registry:file",
 			"target": "magic/dia-text-reveal/index.ts"
 		}

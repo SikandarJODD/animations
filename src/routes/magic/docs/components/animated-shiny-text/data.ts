@@ -99,6 +99,18 @@ export const data: ComponentDoc = {
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},
+				{
+					name: "duration",
+					type: "number",
+					default: "8",
+					description: "The duration of the shimmer animation in seconds",
+				},
+				{
+					name: "children",
+					type: "string | Svelte snippet",
+					default: "",
+					description: "The text content to display with the shimmer effect",
+				},
 			],
 		},
 	],
