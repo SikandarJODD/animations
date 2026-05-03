@@ -10,6 +10,8 @@
 		delay?: number;
 		decimalPlaces?: number;
 		class?: string;
+		prefix?: string;
+		suffix?: string;
 	}
 
 	let {
@@ -19,6 +21,8 @@
 		delay = 0,
 		decimalPlaces = 0,
 		class: className,
+		prefix = "",
+		suffix = "",
 	}: NumberTickerProps = $props();
 
 	let spanRef: HTMLSpanElement | null = $state(null);
@@ -50,10 +54,10 @@
 
 			// Update display
 			if (spanRef) {
-				spanRef.textContent = Intl.NumberFormat("en-US", {
+				spanRef.textContent = `${prefix}${Intl.NumberFormat("en-US", {
 					minimumFractionDigits: decimalPlaces,
 					maximumFractionDigits: decimalPlaces,
-				}).format(Number(position.toFixed(decimalPlaces)));
+				}).format(Number(position.toFixed(decimalPlaces)))}${suffix}`;
 			}
 
 			// Continue animation if not settled
@@ -62,10 +66,10 @@
 				requestAnimationFrame(step);
 			} else if (spanRef) {
 				// Ensure final value is exact
-				spanRef.textContent = Intl.NumberFormat("en-US", {
+				spanRef.textContent = `${prefix}${Intl.NumberFormat("en-US", {
 					minimumFractionDigits: decimalPlaces,
 					maximumFractionDigits: decimalPlaces,
-				}).format(Number(target.toFixed(decimalPlaces)));
+				}).format(Number(target.toFixed(decimalPlaces)))}${suffix}`;
 			}
 		}
 
@@ -97,8 +101,10 @@
 	bind:this={spanRef}
 	class={cn("inline-block tracking-wider text-black tabular-nums dark:text-white", className)}
 >
+	{prefix}
 	{Intl.NumberFormat("en-US", {
 		minimumFractionDigits: decimalPlaces,
 		maximumFractionDigits: decimalPlaces,
 	}).format(Number((direction === "down" ? value : startValue).toFixed(decimalPlaces)))}
+	{suffix}
 </span>
