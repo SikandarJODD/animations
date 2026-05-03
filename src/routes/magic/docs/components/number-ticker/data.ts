@@ -159,6 +159,13 @@ export const data: ComponentDoc = {
 					default: '""',
 					description: "Suffix to display after the number.",
 				},
+				{
+					name: "once",
+					type: "boolean",
+					default: "true",
+					description:
+						"Whether to animate only the first time the component comes into view.",
+				},
 			],
 		},
 	],
