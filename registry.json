@@ -121,6 +121,30 @@
 			}
 		},
 		{
+			"name": "arc-timeline",
+			"type": "registry:block",
+			"title": "Arc Timeline",
+			"description": "A curved timeline that rotates through milestone steps with clickable markers, icons, and configurable spacing.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/arc-timeline/arc-timeline.svelte",
+					"type": "registry:component",
+					"target": "magic/arc-timeline/arc-timeline.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/arc-timeline/index.ts",
+					"type": "registry:file",
+					"target": "magic/arc-timeline/index.ts"
+				},
+				{
+					"path": "./src/lib/components/magic/arc-timeline/types.ts",
+					"type": "registry:file",
+					"target": "magic/arc-timeline/types.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
 			"name": "animated-circular-progress-bar",
 			"type": "registry:block",
 			"title": "Animated Circular Progress Bar",

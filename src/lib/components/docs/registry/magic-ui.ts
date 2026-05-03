@@ -52,6 +52,12 @@ export const magicUIComponents: MagicComponent[] = [
 		desc: "An Animated theme toggler component, fully customizable using Tailwind CSS.",
 	},
 	{
+		id: "arc-timeline",
+		name: "Arc Timeline",
+		href: "/magic/docs/components/arc-timeline",
+		desc: "A curved milestone timeline with clickable steps, icons, and configurable arc spacing.",
+	},
+	{
 		id: "aurora-text",
 		name: "Aurora Text",
 		href: "/magic/docs/components/aurora-text",
