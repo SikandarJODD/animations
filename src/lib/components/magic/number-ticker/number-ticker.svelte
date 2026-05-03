@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { inView } from "motion-sv";
+	import { useInView } from "motion-sv";
 	import { cn } from "$lib/utils";
 
 	interface NumberTickerProps {
@@ -12,6 +12,7 @@
 		class?: string;
 		prefix?: string;
 		suffix?: string;
+		once?: boolean;
 	}
 
 	let {
@@ -23,6 +24,7 @@
 		class: className,
 		prefix = "",
 		suffix = "",
+		once = true,
 	}: NumberTickerProps = $props();
 
 	let spanRef: HTMLSpanElement | null = $state(null);
@@ -76,24 +78,29 @@
 		requestAnimationFrame(step);
 	}
 
-	onMount(() => {
-		if (!spanRef) return;
-
-		const cleanup = inView(
-			spanRef,
-			() => {
-				const timer = setTimeout(() => {
-					const from = direction === "down" ? value : startValue;
-					const to = direction === "down" ? startValue : value;
-					animateValue(from, to);
-				}, delay * 1000);
-
-				return () => clearTimeout(timer);
-			},
-			{ margin: "0px" }
-		);
-
-		return cleanup;
+	const view = useInView(
+		() => spanRef!,
+		() =>
+			({
+				once: once,
+				margin: "0px",
+			}) as any
+	);
+	$effect(() => {
+		let timer: ReturnType<typeof setTimeout> | null = null;
+		if (view.current) {
+			timer = setTimeout(() => {
+				animateValue(
+					direction === "down" ? value : startValue,
+					direction === "down" ? startValue : value
+				);
+			}, delay);
+		}
+		return () => {
+			if (timer !== null) {
+				clearTimeout(timer);
+			}
+		};
 	});
 </script>
 

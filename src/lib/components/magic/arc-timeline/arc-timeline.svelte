@@ -30,9 +30,7 @@
 	let circleWidth = $derived(arcConfig.circleWidth ?? 5000);
 	let angleBetweenMinorSteps = $derived(arcConfig.angleBetweenMinorSteps ?? 0.35);
 	let lineCountFillBetweenSteps = $derived(arcConfig.lineCountFillBetweenSteps ?? 10);
-	let boundaryPlaceholderLinesCount = $derived(
-		arcConfig.boundaryPlaceholderLinesCount ?? 50
-	);
+	let boundaryPlaceholderLinesCount = $derived(arcConfig.boundaryPlaceholderLinesCount ?? 50);
 
 	function getInitialCircleRotation() {
 		const defaultActiveTime = defaultActiveStep.time ?? data[0]?.time;
@@ -89,12 +87,12 @@
 
 	function getPlaceholderAngles(isFirstStep: boolean, isLastStep: boolean, angle: number) {
 		const count =
-			isLastStep || isFirstStep
-				? boundaryPlaceholderLinesCount
-				: lineCountFillBetweenSteps;
+			isLastStep || isFirstStep ? boundaryPlaceholderLinesCount : lineCountFillBetweenSteps;
 
 		return Array.from({ length: count }, (_, index) =>
-			isFirstStep ? index * angleBetweenMinorSteps : angle + (index + 1) * angleBetweenMinorSteps
+			isFirstStep
+				? index * angleBetweenMinorSteps
+				: angle + (index + 1) * angleBetweenMinorSteps
 		);
 	}
 

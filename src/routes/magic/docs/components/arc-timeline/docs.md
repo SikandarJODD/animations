@@ -13,16 +13,22 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/arc-timeline.jso
 ```svelte
 <script lang="ts">
   import RocketIcon from "@lucide/svelte/icons/rocket";
-  import { ArcTimeline, type ArcTimelineItem } from "$lib/components/magic/arc-timeline";
+  import {
+    ArcTimeline,
+    type ArcTimelineItem,
+  } from "$lib/components/magic/arc-timeline";
 
   const timeline: ArcTimelineItem[] = [
     {
       time: "Q1",
       steps: [
         { icon: rocketIcon, content: "Kickoff and first prototype." },
-        { icon: rocketIcon, content: "Internal validation with design and product." }
-      ]
-    }
+        {
+          icon: rocketIcon,
+          content: "Internal validation with design and product.",
+        },
+      ],
+    },
   ];
 </script>
 
@@ -47,43 +53,43 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/arc-timeline.jso
 
 ### ArcTimeline Props
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `class` | `string` | `""` | Additional CSS classes applied to the root container. |
-| `ref` | `HTMLDivElement \| null` | `null` | Optional bindable reference to the root timeline element. |
-| `data` | `ArcTimelineItem[]` | required | Timeline groups and steps rendered around the arc. |
-| `arcConfig` | `ArcTimelineArcConfig` | `{}` | Overrides for circle size and line spacing. |
-| `defaultActiveStep` | `ArcTimelineDefaultActiveStep` | `{}` | Initial active milestone selected on mount. |
+| Prop                | Type                           | Default  | Description                                               |
+| ------------------- | ------------------------------ | -------- | --------------------------------------------------------- |
+| `class`             | `string`                       | `""`     | Additional CSS classes applied to the root container.     |
+| `ref`               | `HTMLDivElement \| null`       | `null`   | Optional bindable reference to the root timeline element. |
+| `data`              | `ArcTimelineItem[]`            | required | Timeline groups and steps rendered around the arc.        |
+| `arcConfig`         | `ArcTimelineArcConfig`         | `{}`     | Overrides for circle size and line spacing.               |
+| `defaultActiveStep` | `ArcTimelineDefaultActiveStep` | `{}`     | Initial active milestone selected on mount.               |
 
 ### ArcTimelineItem Props
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `time` | `ArcTimelineRenderable` | required | Group label rendered above the first step. Accepts a snippet or primitive value. |
-| `steps` | `ArcTimelineStep[]` | required | Milestone steps associated with the group. |
+| Prop    | Type                    | Default  | Description                                                                      |
+| ------- | ----------------------- | -------- | -------------------------------------------------------------------------------- |
+| `time`  | `ArcTimelineRenderable` | required | Group label rendered above the first step. Accepts a snippet or primitive value. |
+| `steps` | `ArcTimelineStep[]`     | required | Milestone steps associated with the group.                                       |
 
 ### ArcTimelineStep Props
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `icon` | `ArcTimelineRenderable` | required | Marker content. Accepts a snippet or primitive value. |
+| Prop      | Type                    | Default  | Description                                                    |
+| --------- | ----------------------- | -------- | -------------------------------------------------------------- |
+| `icon`    | `ArcTimelineRenderable` | required | Marker content. Accepts a snippet or primitive value.          |
 | `content` | `ArcTimelineRenderable` | required | Active step description. Accepts a snippet or primitive value. |
 
 ### ArcTimelineArcConfig Props
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `circleWidth` | `number` | `5000` | Diameter of the invisible circle used to position the arc lines. |
-| `angleBetweenMinorSteps` | `number` | `0.35` | Rotation increment in degrees between minor placeholder lines. |
-| `lineCountFillBetweenSteps` | `number` | `10` | Number of placeholder lines inserted between adjacent steps. |
-| `boundaryPlaceholderLinesCount` | `number` | `50` | Placeholder lines rendered before the first step and after the last step. |
+| Prop                            | Type     | Default | Description                                                               |
+| ------------------------------- | -------- | ------- | ------------------------------------------------------------------------- |
+| `circleWidth`                   | `number` | `5000`  | Diameter of the invisible circle used to position the arc lines.          |
+| `angleBetweenMinorSteps`        | `number` | `0.35`  | Rotation increment in degrees between minor placeholder lines.            |
+| `lineCountFillBetweenSteps`     | `number` | `10`    | Number of placeholder lines inserted between adjacent steps.              |
+| `boundaryPlaceholderLinesCount` | `number` | `50`    | Placeholder lines rendered before the first step and after the last step. |
 
 ### ArcTimelineDefaultActiveStep Props
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `time` | `ArcTimelineItem["time"]` | `data[0]?.time` | Time group to activate. Primitive labels like strings are the most practical for matching. |
-| `stepIndex` | `number` | `0` | Index of the step within the matching time group. |
+| Prop        | Type                      | Default         | Description                                                                                |
+| ----------- | ------------------------- | --------------- | ------------------------------------------------------------------------------------------ |
+| `time`      | `ArcTimelineItem["time"]` | `data[0]?.time` | Time group to activate. Primitive labels like strings are the most practical for matching. |
+| `stepIndex` | `number`                  | `0`             | Index of the step within the matching time group.                                          |
 
 ## Examples
 

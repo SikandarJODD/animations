@@ -3,10 +3,10 @@
 </script>
 
 <NumberTicker
-	value={100.50}
+	value={100.5}
 	decimalPlaces={2}
 	startValue={70}
-  prefix="$"
-  suffix="USD"
+	prefix="$"
+	suffix="USD"
 	class="text-8xl font-medium tracking-tighter whitespace-pre-wrap text-black dark:text-white"
 />

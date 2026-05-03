@@ -65,8 +65,7 @@
 			steps: [
 				{
 					icon: starIcon,
-					content:
-						"Rolled out AI-driven marketplace for personalized product discovery.",
+					content: "Rolled out AI-driven marketplace for personalized product discovery.",
 				},
 				{
 					icon: zapIcon,
@@ -74,8 +73,7 @@
 				},
 				{
 					icon: rocketIcon,
-					content:
-						"Showcased at CES with revolutionary AI-powered consumer products.",
+					content: "Showcased at CES with revolutionary AI-powered consumer products.",
 				},
 			],
 		},
@@ -88,13 +86,11 @@
 				},
 				{
 					icon: starIcon,
-					content:
-						"Launched AI-driven content creation tool for marketing teams.",
+					content: "Launched AI-driven content creation tool for marketing teams.",
 				},
 				{
 					icon: boxIcon,
-					content:
-						"Acquired a competitor in the AI space to strengthen market position.",
+					content: "Acquired a competitor in the AI space to strengthen market position.",
 				},
 			],
 		},
@@ -103,8 +99,7 @@
 			steps: [
 				{
 					icon: boxIcon,
-					content:
-						"Launched self-driving AI platform for industrial automation.",
+					content: "Launched self-driving AI platform for industrial automation.",
 				},
 				{
 					icon: sparklesIcon,
@@ -117,13 +112,11 @@
 			steps: [
 				{
 					icon: starIcon,
-					content:
-						"Introduced AI-driven analytics dashboard for enterprise clients.",
+					content: "Introduced AI-driven analytics dashboard for enterprise clients.",
 				},
 				{
 					icon: zapIcon,
-					content:
-						"Launched international expansion into Asian and European markets.",
+					content: "Launched international expansion into Asian and European markets.",
 				},
 				{
 					icon: rocketIcon,
@@ -136,18 +129,15 @@
 			steps: [
 				{
 					icon: settingsIcon,
-					content:
-						"Released API for developers to integrate AI into their applications.",
+					content: "Released API for developers to integrate AI into their applications.",
 				},
 				{
 					icon: starIcon,
-					content:
-						"Launched new AI-powered voice assistant with multi-language support.",
+					content: "Launched new AI-powered voice assistant with multi-language support.",
 				},
 				{
 					icon: globeIcon,
-					content:
-						"Partnered with government agencies for AI-driven policy making.",
+					content: "Partnered with government agencies for AI-driven policy making.",
 				},
 			],
 		},
@@ -156,22 +146,20 @@
 			steps: [
 				{
 					icon: settingsIcon,
-					content:
-						"Unveiled new AI-powered robotics platform for manufacturing.",
+					content: "Unveiled new AI-powered robotics platform for manufacturing.",
 				},
 				{
 					icon: sparklesIcon,
-					content:
-						"Introduced machine learning models for sustainable energy solutions.",
+					content: "Introduced machine learning models for sustainable energy solutions.",
 				},
 			],
 		},
 	];
 </script>
 
-<div class="w-full max-w-6xl rounded-[2rem] border bg-card px-4 py-10 shadow-sm sm:px-8">
+<div class="bg-card w-full max-w-6xl rounded-[2rem] border px-4 py-10 shadow-sm sm:px-8">
 	<ArcTimeline
-		class="[--step-line-active-color:#888888] [--step-line-inactive-color:#b1b1b1] [--placeholder-line-color:#a1a1a1] [--icon-active-color:#555555] [--icon-inactive-color:#a3a3a3] [--time-active-color:#555555] [--time-inactive-color:#a3a3a3] [--description-color:#555555] dark:[--step-line-active-color:#9780ff] dark:[--step-line-inactive-color:#737373] dark:[--placeholder-line-color:#737373] dark:[--icon-active-color:#d4d4d4] dark:[--icon-inactive-color:#a3a3a3] dark:[--time-active-color:#d4d4d4] dark:[--time-inactive-color:#a3a3a3] dark:[--description-color:#d4d4d4]"
+		class="[--description-color:#555555] [--icon-active-color:#555555] [--icon-inactive-color:#a3a3a3] [--placeholder-line-color:#a1a1a1] [--step-line-active-color:#888888] [--step-line-inactive-color:#b1b1b1] [--time-active-color:#555555] [--time-inactive-color:#a3a3a3] dark:[--description-color:#d4d4d4] dark:[--icon-active-color:#d4d4d4] dark:[--icon-inactive-color:#a3a3a3] dark:[--placeholder-line-color:#737373] dark:[--step-line-active-color:#9780ff] dark:[--step-line-inactive-color:#737373] dark:[--time-active-color:#d4d4d4] dark:[--time-inactive-color:#a3a3a3]"
 		data={TIMELINE}
 		defaultActiveStep={{ time: "2025 Q2", stepIndex: 0 }}
 		arcConfig={{

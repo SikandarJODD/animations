@@ -1,4 +1,4 @@
-import ArcTimeline from './arc-timeline.svelte';
+import ArcTimeline from "./arc-timeline.svelte";
 export type {
 	ArcTimelineArcConfig,
 	ArcTimelineDefaultActiveStep,
@@ -6,5 +6,5 @@ export type {
 	ArcTimelineProps,
 	ArcTimelineRenderable,
 	ArcTimelineStep,
-} from './types';
+} from "./types";
 export { ArcTimeline };

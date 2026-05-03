@@ -41,7 +41,8 @@
 			steps: [
 				{
 					icon: sparklesIcon,
-					content: "Opened a private beta with AI-assisted campaign drafts and tone presets.",
+					content:
+						"Opened a private beta with AI-assisted campaign drafts and tone presets.",
 				},
 				{
 					icon: calendarIcon,
@@ -99,9 +100,9 @@
 	];
 </script>
 
-<div class="w-full max-w-6xl rounded-[2rem] border bg-card px-4 py-10 shadow-sm sm:px-8">
+<div class="bg-card w-full max-w-6xl rounded-[2rem] border px-4 py-10 shadow-sm sm:px-8">
 	<ArcTimeline
-		class="[--step-line-active-color:#0f766e] [--step-line-inactive-color:#9ca3af] [--placeholder-line-color:#cbd5e1] [--icon-active-color:#0f172a] [--icon-inactive-color:#94a3b8] [--time-active-color:#0f172a] [--time-inactive-color:#94a3b8] [--description-color:#334155] dark:[--step-line-active-color:#5eead4] dark:[--step-line-inactive-color:#475569] dark:[--placeholder-line-color:#334155] dark:[--icon-active-color:#ecfeff] dark:[--icon-inactive-color:#94a3b8] dark:[--time-active-color:#ecfeff] dark:[--time-inactive-color:#94a3b8] dark:[--description-color:#cbd5e1]"
+		class="[--description-color:#334155] [--icon-active-color:#0f172a] [--icon-inactive-color:#94a3b8] [--placeholder-line-color:#cbd5e1] [--step-line-active-color:#0f766e] [--step-line-inactive-color:#9ca3af] [--time-active-color:#0f172a] [--time-inactive-color:#94a3b8] dark:[--description-color:#cbd5e1] dark:[--icon-active-color:#ecfeff] dark:[--icon-inactive-color:#94a3b8] dark:[--placeholder-line-color:#334155] dark:[--step-line-active-color:#5eead4] dark:[--step-line-inactive-color:#475569] dark:[--time-active-color:#ecfeff] dark:[--time-inactive-color:#94a3b8]"
 		data={ROADMAP}
 		defaultActiveStep={{ time: "Launch Week", stepIndex: 0 }}
 		arcConfig={{

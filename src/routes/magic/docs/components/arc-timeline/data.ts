@@ -151,8 +151,7 @@ export const data: ComponentDoc = {
 					name: "icon",
 					type: "ArcTimelineRenderable",
 					default: "required",
-					description:
-						"Icon marker content. Accepts a snippet or primitive value.",
+					description: "Icon marker content. Accepts a snippet or primitive value.",
 				},
 				{
 					name: "content",
