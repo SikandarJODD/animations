@@ -23,6 +23,242 @@
 			],
 			"registryDependencies": [],
 			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "letter-3d-swap",
+			"type": "registry:block",
+			"title": "Letter 3D Swap",
+			"author": "SikandarJODD",
+			"description": "Rotate each character on hover with a 3D flip and configurable stagger direction.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/letter-3d-swap/letter-3d-swap.svelte",
+					"type": "registry:component",
+					"target": "fancy/letter-3d-swap/letter-3d-swap.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/letter-3d-swap/charbox.svelte",
+					"type": "registry:file",
+					"target": "fancy/letter-3d-swap/charbox.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/letter-3d-swap/index.ts",
+					"type": "registry:file",
+					"target": "fancy/letter-3d-swap/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "letter-swap",
+			"type": "registry:block",
+			"title": "Letter Swap",
+			"author": "SikandarJODD",
+			"description": "Slide each letter into a second copy on hover with directional staggered motion.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/letter-swap/letter-swap.svelte",
+					"type": "registry:component",
+					"target": "fancy/letter-swap/letter-swap.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/letter-swap/index.ts",
+					"type": "registry:file",
+					"target": "fancy/letter-swap/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "letter-swap-ping-pong",
+			"type": "registry:block",
+			"title": "Letter Swap Ping Pong",
+			"author": "SikandarJODD",
+			"description": "Swap letters on hover and reverse them on exit with debounced ping-pong motion.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/letter-swap-ping-pong/letter-swap-ping-pong.svelte",
+					"type": "registry:component",
+					"target": "fancy/letter-swap-ping-pong/letter-swap-ping-pong.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/letter-swap-ping-pong/index.ts",
+					"type": "registry:file",
+					"target": "fancy/letter-swap-ping-pong/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv", "runed"]
+		},
+		{
+			"name": "random-letter-swap",
+			"type": "registry:block",
+			"title": "Random Letter Swap",
+			"author": "SikandarJODD",
+			"description": "Reveal a second letter layer in a shuffled hover order for a randomized swap effect.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/random-letter-swap/random-letter-swap.svelte",
+					"type": "registry:component",
+					"target": "fancy/random-letter-swap/random-letter-swap.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/random-letter-swap/index.ts",
+					"type": "registry:file",
+					"target": "fancy/random-letter-swap/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv", "runed"]
+		},
+		{
+			"name": "random-letter-swap-ping-pong",
+			"type": "registry:block",
+			"title": "Random Letter Swap Ping Pong",
+			"author": "SikandarJODD",
+			"description": "Animate randomized letter swaps on hover in and out using a persistent shuffled order.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/random-letter-swap-ping-pong/random-letter-swap-ping-pong.svelte",
+					"type": "registry:component",
+					"target": "fancy/random-letter-swap-ping-pong/random-letter-swap-ping-pong.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/random-letter-swap-ping-pong/index.ts",
+					"type": "registry:file",
+					"target": "fancy/random-letter-swap-ping-pong/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv", "runed"]
+		},
+		{
+			"name": "scramble-hover",
+			"type": "registry:block",
+			"title": "Scramble Hover",
+			"author": "SikandarJODD",
+			"description": "Scramble text on hover with sequential or iterative reveals and custom character sets.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/scramble-hover/scramble-hover.svelte",
+					"type": "registry:component",
+					"target": "fancy/scramble-hover/scramble-hover.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/scramble-hover/index.ts",
+					"type": "registry:file",
+					"target": "fancy/scramble-hover/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "scramble-in",
+			"type": "registry:block",
+			"title": "Scramble In",
+			"author": "SikandarJODD",
+			"description": "Animate text in by revealing real characters through a configurable scramble pass.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/scramble-in/scramble-in.svelte",
+					"type": "registry:component",
+					"target": "fancy/scramble-in/scramble-in.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/scramble-in/index.ts",
+					"type": "registry:file",
+					"target": "fancy/scramble-in/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "text-along-path",
+			"type": "registry:block",
+			"title": "Text Along Path",
+			"author": "SikandarJODD",
+			"description": "Render animated text that loops or tracks scroll progress along any SVG path.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/text-along-path/text-along-path.svelte",
+					"type": "registry:component",
+					"target": "fancy/text-along-path/text-along-path.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/text-along-path/index.ts",
+					"type": "registry:file",
+					"target": "fancy/text-along-path/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "text-highlighter",
+			"type": "registry:block",
+			"title": "Text Highlighter",
+			"author": "SikandarJODD",
+			"description": "Sweep a highlight background across inline text on hover, in view, or on demand.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/text-highlighter/text-highlighter.svelte",
+					"type": "registry:component",
+					"target": "fancy/text-highlighter/text-highlighter.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/text-highlighter/index.ts",
+					"type": "registry:file",
+					"target": "fancy/text-highlighter/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "underline-to-background",
+			"type": "registry:block",
+			"title": "Underline To Background",
+			"author": "SikandarJODD",
+			"description": "Expand an underline into a full background fill while transitioning the text color.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/underline-to-background/underline-to-background.svelte",
+					"type": "registry:component",
+					"target": "fancy/underline-to-background/underline-to-background.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/underline-to-background/index.ts",
+					"type": "registry:file",
+					"target": "fancy/underline-to-background/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "vertical-cut-reveal",
+			"type": "registry:block",
+			"title": "Vertical Cut Reveal",
+			"author": "SikandarJODD",
+			"description": "Reveal text from vertical cuts with word, character, or line-based staggering.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/vertical-cut-reveal/vertical-cut-reveal.svelte",
+					"type": "registry:component",
+					"target": "fancy/vertical-cut-reveal/vertical-cut-reveal.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/vertical-cut-reveal/index.ts",
+					"type": "registry:file",
+					"target": "fancy/vertical-cut-reveal/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		}
 	]
 }

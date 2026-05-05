@@ -1,0 +1,24 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "letter-swap-ping-pong",
+	"title": "Letter Swap Ping Pong",
+	"type": "registry:block",
+	"author": "SikandarJODD",
+	"description": "Swap letters on hover and reverse them on exit with debounced ping-pong motion.",
+	"dependencies": [
+		"motion-sv",
+		"runed"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { motion, useAnimate, stagger, type AnimationOptions } from 'motion-sv';\n\timport { Debounced } from 'runed';\n\timport { cn } from '$UTILS$';\n\timport type { HTMLAttributes } from 'svelte/elements';\n\n\tinterface LetterSwapPingPongProps extends HTMLAttributes<HTMLSpanElement> {\n\t\tlabel: string;\n\t\treverse?: boolean;\n\t\ttransition?: AnimationOptions;\n\t\tstaggerDuration?: number;\n\t\tfrom?: 'first' | 'last' | 'center' | number;\n\t\tclass?: string;\n\t}\n\n\tlet {\n\t\tlabel,\n\t\treverse = true,\n\t\ttransition = {\n\t\t\ttype: 'spring',\n\t\t\tduration: 0.7\n\t\t},\n\t\tstaggerDuration = 0.03,\n\t\tfrom = 'first',\n\t\tclass: className,\n\t\tonclick,\n\t\t...props\n\t}: LetterSwapPingPongProps = $props();\n\n\tlet [scope, animate] = useAnimate();\n\tlet hovered = $state(false);\n\tlet letters = $derived(label.split(''));\n\n\tlet hoverStartTick = $state(0);\n\tlet hoverEndTick = $state(0);\n\n\tconst hoverStartDebounced = new Debounced(() => hoverStartTick, 100);\n\tconst hoverEndDebounced = new Debounced(() => hoverEndTick, 100);\n\n\tlet mergeTransition = (baseTransition: AnimationOptions) => ({\n\t\t...baseTransition,\n\t\tdelay: stagger(staggerDuration, {\n\t\t\tfrom\n\t\t})\n\t});\n\n\tlet animatePrimary = (nextHovered: boolean) =>\n\t\tanimate(\n\t\t\t'.letter',\n\t\t\t{\n\t\t\t\ty: nextHovered ? (reverse ? '100%' : '-100%') : 0\n\t\t\t},\n\t\t\tmergeTransition(transition) as any\n\t\t);\n\n\tlet animateSecondary = (nextHovered: boolean) =>\n\t\tanimate(\n\t\t\t'.letter-secondary',\n\t\t\t{\n\t\t\t\ttop: nextHovered ? '0%' : reverse ? '-100%' : '100%'\n\t\t\t},\n\t\t\tmergeTransition(transition) as any\n\t\t);\n\n\tlet hoverStart = () => {\n\t\tif (hovered || hoverStartDebounced.pending) return;\n\n\t\thovered = true;\n\t\thoverStartTick += 1;\n\n\t\tanimatePrimary(true);\n\t\tanimateSecondary(true);\n\t};\n\n\tlet hoverEnd = () => {\n\t\tif (!hovered || hoverEndDebounced.pending) return;\n\n\t\thovered = false;\n\t\thoverEndTick += 1;\n\n\t\tanimatePrimary(false);\n\t\tanimateSecondary(false);\n\t};\n</script>\n\n<span\n\tbind:this={scope.current}\n\tclass={cn('relative flex items-center justify-center overflow-hidden', className)}\n\tonmouseenter={hoverStart}\n\tonmouseleave={hoverEnd}\n\t{onclick}\n\t{...props}\n>\n\t<span class=\"sr-only\">{label}</span>\n\n\t{#each letters as letter, index (`${letter}-${index}`)}\n\t\t<span class=\"relative flex whitespace-pre\" aria-hidden=\"true\">\n\t\t\t<motion.span class=\"letter relative\" style={{ top: 0 }}>\n\t\t\t\t{letter}\n\t\t\t</motion.span>\n\t\t\t<motion.span class=\"letter-secondary absolute\" style={{ top: reverse ? '-100%' : '100%' }}>\n\t\t\t\t{letter}\n\t\t\t</motion.span>\n\t\t</span>\n\t{/each}\n</span>\n",
+			"type": "registry:component",
+			"target": "fancy/letter-swap-ping-pong/letter-swap-ping-pong.svelte"
+		},
+		{
+			"content": "export { default as LetterSwapPingPong } from './letter-swap-ping-pong.svelte';\n",
+			"type": "registry:file",
+			"target": "fancy/letter-swap-ping-pong/index.ts"
+		}
+	]
+}

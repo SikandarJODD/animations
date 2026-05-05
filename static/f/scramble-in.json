@@ -1,0 +1,23 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "scramble-in",
+	"title": "Scramble In",
+	"type": "registry:block",
+	"author": "SikandarJODD",
+	"description": "Animate text in by revealing real characters through a configurable scramble pass.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { motion } from 'motion-sv';\n\timport type { HTMLAttributes } from 'svelte/elements';\n\n\tinterface ScrambleInProps extends HTMLAttributes<HTMLSpanElement> {\n\t\ttext: string;\n\t\tscrambleSpeed?: number;\n\t\tscrambledLetterCount?: number;\n\t\tcharacters?: string;\n\t\tclass?: string;\n\t\tscrambledClassName?: string;\n\t\tautoStart?: boolean;\n\t\tonStart?: () => void;\n\t\tonComplete?: () => void;\n\t}\n\n\tconst DEFAULT_CHARACTERS = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+';\n\n\tlet {\n\t\ttext,\n\t\tscrambleSpeed = 50,\n\t\tscrambledLetterCount = 2,\n\t\tcharacters = DEFAULT_CHARACTERS,\n\t\tclass: className,\n\t\tscrambledClassName,\n\t\tautoStart = true,\n\t\tonStart,\n\t\tonComplete,\n\t\t...props\n\t}: ScrambleInProps = $props();\n\n\tfunction splitIntoGraphemes(value: string) {\n\t\tif (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {\n\t\t\tconst segmenter = new Intl.Segmenter(undefined, { granularity: 'grapheme' });\n\t\t\treturn Array.from(segmenter.segment(value), ({ segment }) => segment);\n\t\t}\n\n\t\treturn Array.from(value);\n\t}\n\n\tfunction joinSegments(segments: string[]) {\n\t\treturn segments.join('');\n\t}\n\n\tfunction getRandomSegment(pool: string[]) {\n\t\tif (pool.length === 0) {\n\t\t\treturn '';\n\t\t}\n\n\t\treturn pool[Math.floor(Math.random() * pool.length)] ?? '';\n\t}\n\n\tfunction createScrambledPart(pool: string[], count: number) {\n\t\treturn Array.from({ length: count }, () => getRandomSegment(pool)).join('');\n\t}\n\n\tlet displayText = $state('');\n\tlet isAnimating = $state(false);\n\tlet visibleLetterCount = $state(0);\n\tlet scrambleOffset = $state(0);\n\n\tlet sourceSegments = $derived.by(() => splitIntoGraphemes(text));\n\tlet displaySegments = $derived.by(() => splitIntoGraphemes(displayText));\n\tlet scrambleSegments = $derived.by(() => splitIntoGraphemes(characters));\n\tlet revealedText = $derived.by(() => joinSegments(displaySegments.slice(0, visibleLetterCount)));\n\tlet scrambledText = $derived.by(() => joinSegments(displaySegments.slice(visibleLetterCount)));\n\n\tlet previousAutoStart = false;\n\n\texport function start() {\n\t\tdisplayText = '';\n\t\tvisibleLetterCount = 0;\n\t\tscrambleOffset = 0;\n\t\tisAnimating = true;\n\t\tonStart?.();\n\t}\n\n\texport function reset() {\n\t\tdisplayText = '';\n\t\tvisibleLetterCount = 0;\n\t\tscrambleOffset = 0;\n\t\tisAnimating = false;\n\t}\n\n\t$effect(() => {\n\t\tif (autoStart && !previousAutoStart) {\n\t\t\tqueueMicrotask(() => start());\n\t\t}\n\n\t\tpreviousAutoStart = autoStart;\n\t});\n\n\t$effect(() => {\n\t\tif (!isAnimating) {\n\t\t\treturn;\n\t\t}\n\n\t\tconst intervalDelay = Math.max(0, scrambleSpeed);\n\t\tconst totalSegments = sourceSegments.length;\n\t\tconst maxScrambledLetters = Math.max(0, Math.trunc(scrambledLetterCount));\n\t\tconst randomPool = scrambleSegments;\n\n\t\tconst intervalId = setInterval(() => {\n\t\t\tconst currentVisibleLetterCount = visibleLetterCount;\n\t\t\tconst currentScrambleOffset = scrambleOffset;\n\n\t\t\tif (currentVisibleLetterCount < totalSegments) {\n\t\t\t\tvisibleLetterCount = currentVisibleLetterCount + 1;\n\t\t\t} else if (currentScrambleOffset < maxScrambledLetters) {\n\t\t\t\tscrambleOffset = currentScrambleOffset + 1;\n\t\t\t} else {\n\t\t\t\tisAnimating = false;\n\t\t\t\tonComplete?.();\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tconst remainingSpace = Math.max(0, totalSegments - currentVisibleLetterCount);\n\t\t\tconst currentScrambleCount = Math.min(remainingSpace, maxScrambledLetters);\n\t\t\tconst scrambledPart = createScrambledPart(randomPool, currentScrambleCount);\n\n\t\t\tdisplayText = joinSegments(sourceSegments.slice(0, currentVisibleLetterCount)) + scrambledPart;\n\t\t}, intervalDelay);\n\n\t\treturn () => clearInterval(intervalId);\n\t});\n</script>\n\n<span {...props}>\n\t<span class=\"sr-only\">{text}</span>\n\n\t<motion.span class=\"inline-block whitespace-pre-wrap\" aria-hidden=\"true\">\n\t\t<span class={className}>{revealedText}</span>\n\t\t<span class={scrambledClassName}>{scrambledText}</span>\n\t</motion.span>\n</span>\n",
+			"type": "registry:component",
+			"target": "fancy/scramble-in/scramble-in.svelte"
+		},
+		{
+			"content": "import ScrambleIn from './scramble-in.svelte'\r\nexport { ScrambleIn }",
+			"type": "registry:file",
+			"target": "fancy/scramble-in/index.ts"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "underline-to-background",
+	"title": "Underline To Background",
+	"type": "registry:block",
+	"author": "SikandarJODD",
+	"description": "Expand an underline into a full background fill while transitioning the text color.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { onMount } from 'svelte';\n\timport type { Snippet } from 'svelte';\n\timport type { SvelteHTMLElements } from 'svelte/elements';\n\timport { motion, type Transition, type Variants } from 'motion-sv';\n\n\timport { cn } from '$UTILS$';\n\n\ttype ElementType = keyof SvelteHTMLElements;\n\n\tinterface UnderlineToBackgroundProps {\n\t\tchildren?: Snippet;\n\t\tas?: ElementType;\n\t\tclass?: string;\n\t\ttransition?: Transition;\n\t\ttargetTextColor?: string;\n\t\tunderlineHeightRatio?: number;\n\t\tunderlinePaddingRatio?: number;\n\t\t[key: string]: any;\n\t}\n\n\tconst defaultTransition: Transition = {\n\t\ttype: 'spring',\n\t\tdamping: 30,\n\t\tstiffness: 300\n\t};\n\n\tlet {\n\t\tchildren,\n\t\tas = 'span',\n\t\tclass: className,\n\t\ttransition = defaultTransition,\n\t\ttargetTextColor = '#fef',\n\t\tunderlineHeightRatio = 0.1,\n\t\tunderlinePaddingRatio = 0.01,\n\t\t...props\n\t}: UnderlineToBackgroundProps = $props();\n\n\tlet element = $state<HTMLElement | null>(null);\n\n\tlet MotionComponent = $derived(motion[as]);\n\n\tfunction updateUnderlineStyles() {\n\t\tif (!element) {\n\t\t\treturn;\n\t\t}\n\n\t\tconst fontSize = parseFloat(getComputedStyle(element).fontSize);\n\n\t\tif (Number.isNaN(fontSize)) {\n\t\t\treturn;\n\t\t}\n\n\t\telement.style.setProperty('--underline-height', `${fontSize * underlineHeightRatio}px`);\n\t\telement.style.setProperty('--underline-padding', `${fontSize * underlinePaddingRatio}px`);\n\t}\n\n\tonMount(() => {\n\t\tif (!element) {\n\t\t\treturn;\n\t\t}\n\n\t\tconst resizeObserver = new ResizeObserver(() => {\n\t\t\tupdateUnderlineStyles();\n\t\t});\n\n\t\tresizeObserver.observe(element);\n\t\tupdateUnderlineStyles();\n\n\t\treturn () => {\n\t\t\tresizeObserver.disconnect();\n\t\t};\n\t});\n\n\t$effect(() => {\n\t\telement;\n\t\tunderlineHeightRatio;\n\t\tunderlinePaddingRatio;\n\n\t\tupdateUnderlineStyles();\n\t});\n\n\tlet underlineVariants = $derived.by(\n\t\t() =>\n\t\t\t({\n\t\t\t\tinitial: {\n\t\t\t\t\theight: 'var(--underline-height, 0px)'\n\t\t\t\t},\n\t\t\t\ttarget: {\n\t\t\t\t\theight: '100%',\n\t\t\t\t\ttransition\n\t\t\t\t}\n\t\t\t}) satisfies Variants\n\t);\n\n\tlet textVariants = $derived.by(\n\t\t() =>\n\t\t\t({\n\t\t\t\tinitial: {\n\t\t\t\t\tcolor: 'currentColor'\n\t\t\t\t},\n\t\t\t\ttarget: {\n\t\t\t\t\tcolor: targetTextColor,\n\t\t\t\t\ttransition\n\t\t\t\t}\n\t\t\t}) satisfies Variants\n\t);\n</script>\n\n<MotionComponent\n\tbind:ref={element}\n\tclass={cn('relative inline-block cursor-pointer', className)}\n\tinitial=\"initial\"\n\twhileHover=\"target\"\n\t{...props}\n>\n\t<motion.div\n\t\tclass=\"absolute w-full bg-current\"\n\t\tstyle={{\n\t\t\theight: 'var(--underline-height, 0px)',\n\t\t\tbottom: 'calc(-1 * var(--underline-padding, 0px))'\n\t\t}}\n\t\tvariants={underlineVariants}\n\t\taria-hidden=\"true\"\n\t/>\n\n\t<motion.span variants={textVariants} class=\"relative text-current\">\n\t\t{@render children?.()}\n\t</motion.span>\n</MotionComponent>\n",
+			"type": "registry:component",
+			"target": "fancy/underline-to-background/underline-to-background.svelte"
+		},
+		{
+			"content": "import UnderlineToBackground from \"./underline-to-background.svelte\";\r\nexport { UnderlineToBackground };",
+			"type": "registry:file",
+			"target": "fancy/underline-to-background/index.ts"
+		}
+	]
+}
