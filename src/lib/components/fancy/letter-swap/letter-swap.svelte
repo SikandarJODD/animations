@@ -8,7 +8,7 @@
 		reverse?: boolean;
 		transition?: AnimationOptions;
 		staggerDuration?: number;
-		from?: 'first' | 'last' | 'center' | number;
+		staggerFrom?: 'first' | 'last' | 'center' | number;
 		class?: string;
 	}
 
@@ -20,7 +20,7 @@
 			duration: 0.7
 		},
 		staggerDuration = 0.03,
-		from = 'first',
+		staggerFrom = 'first',
 		class: className,
 		onclick,
 		...props
@@ -38,7 +38,7 @@
 		let mergeTransition = (baseTransition: AnimationOptions) => ({
 			...baseTransition,
 			delay: stagger(staggerDuration, {
-				from: from
+				from: staggerFrom
 			})
 		});
 
