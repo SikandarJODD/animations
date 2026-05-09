@@ -8,7 +8,7 @@
 </script>
 
 <script lang="ts">
-	import { setContext, getContext } from "svelte";
+	import { setContext, getContext, untrack } from "svelte";
 	import { cn } from "$lib/utils";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
@@ -65,8 +65,8 @@
 		...props
 	}: TreeProps = $props();
 
-	let selectedId = $state(initialSelectedId);
-	let expandedItems = $state<string[]>(initialExpandedItems);
+	let selectedId = $state(untrack(() => initialSelectedId));
+	let expandedItems = $state<string[]>(untrack(() => initialExpandedItems));
 
 	const selectItem = (id: string) => {
 		selectedId = id;
@@ -84,7 +84,7 @@
 		expandedItems = items;
 	};
 
-	const direction = dir === "rtl" ? "rtl" : "ltr";
+	const direction = $derived(dir === "rtl" ? "rtl" : "ltr");
 
 	setContext("tree", {
 		selectedId: () => selectedId,
@@ -92,10 +92,10 @@
 		handleExpand,
 		selectItem,
 		setExpandedItems,
-		indicator,
-		openIcon,
-		closeIcon,
-		direction,
+		get indicator() { return indicator; },
+		get openIcon() { return openIcon; },
+		get closeIcon() { return closeIcon; },
+		get direction() { return direction; },
 	});
 </script>
 

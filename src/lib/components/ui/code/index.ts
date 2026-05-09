@@ -8,7 +8,7 @@ import type { CodeCopyButtonProps, CodeRootProps } from "./types";
 import type { SupportedLanguage } from "./shiki";
 
 export const codeVariants = tv({
-	base: "not-prose relative h-full overflow-auto rounded-lg border",
+	base: "not-prose relative h-full overflow-y-auto rounded-lg border",
 	variants: {
 		variant: {
 			default: "border-border bg-card",

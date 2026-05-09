@@ -6,7 +6,7 @@
 
 <Sidebar.Provider>
 	<AppSidebar />
-	<!-- <Sidebar.Inset> -->
-	{@render children()}
-	<!-- </Sidebar.Inset> -->
+	<div class="flex-1 min-w-0">
+		{@render children()}
+	</div>
 </Sidebar.Provider>

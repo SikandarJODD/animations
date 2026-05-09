@@ -1,6 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "@fontsource-variable/figtree";
+
+/* Pop Button — force-generate utilities the vite scanner misses inside tv() */
+@source inline(
+	"border-x-2 border-t-2 border-b-4 border-neutral-300 dark:border-neutral-600 active:border-b-2 border-blue-800 border-purple-800 border-pink-800 border-red-800 border-orange-800 border-yellow-800 border-green-800 border-teal-800 border-cyan-800 border-indigo-800 border-violet-800 border-rose-800 border-amber-800 border-lime-800 border-sky-800 border-slate-800 border-gray-800 border-zinc-800 border-neutral-800 border-stone-800 border-fuchsia-800 border-emerald-800"
+);
 
 @custom-variant dark (&:is(.dark *));
 
@@ -47,6 +56,9 @@
 
 	/* Code highlight */
 	--code-highlight-bg: oklch(24.03% 0.02991 177.063 / 0.844);
+
+	/* Flow Button */
+	--rotating-border-color: var(--color-neutral-200);
 }
 
 .dark {
@@ -88,6 +100,9 @@
 	--color-3: hsl(210 100% 63%);
 	--color-4: hsl(195 100% 63%);
 	--color-5: hsl(90 100% 63%);
+
+	/* Flow Button */
+	--rotating-border-color: var(--muted);
 }
 
 @theme inline {
@@ -127,19 +142,15 @@
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
 
-	/* Rainbow Button */
-	--color-1: var(--color-1);
-	--color-2: var(--color-2);
-	--color-3: var(--color-3);
-	--color-4: var(--color-4);
-	--color-5: var(--color-5);
-
 	/* Code highlight */
 	--color-highlight-bg: var(--code-highlight-bg);
 
 	/* Font */
 	--font-sans: "Geist", sans-serif;
 	--font-mono: "Geist Mono", monospace;
+	--font-pop: "DynaPuff", sans-serif;
+	--font-serif: "Instrument Serif", serif;
+	--font-instrument: "Instrument Serif", serif;
 	--font-figtree: "Figtree Variable", sans-serif;
 
 	/* Svelte Magic UI */
@@ -161,6 +172,7 @@
 	--animate-meteor: meteor 5s linear infinite;
 	--animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
 	--animate-grid: grid 15s linear infinite;
+	--animate-dash-flow: dash-flow 1s linear infinite;
 	--animate-shiny-text: shiny-text var(--duration) infinite;
 }
 
@@ -507,6 +519,12 @@
 	}
 }
 
+@keyframes dash-flow {
+	to {
+		stroke-dashoffset: -10;
+	}
+}
+
 /* @custom-variant data-open {
 	&:where([data-state="open"]),
 	&:where([data-open]:not([data-open="false"])) {
@@ -580,4 +598,16 @@
 ::selection {
 	background-color: var(--color-primary);
 	color: var(--color-background);
+}
+
+
+/* Shiki dual-theme: activate dark colors when .dark is on html */
+.dark .shiki span {
+	color: var(--shiki-dark) !important;
+	font-style: var(--shiki-dark-font-style) !important;
+	font-weight: var(--shiki-dark-font-weight) !important;
+	text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+.dark .shiki code {
+	color: var(--shiki-dark) !important;
 }

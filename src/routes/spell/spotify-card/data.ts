@@ -7,6 +7,8 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import WidthExample from "./examples/width-example.svelte";
 import WidthExampleRaw from "./examples/width-example.svelte?raw";
+import CarouselExample from "./examples/carousel-example.svelte";
+import CarouselExampleRaw from "./examples/carousel-example.svelte?raw";
 import type { CodeBlock } from "$lib/components/ui/code";
 
 export const meta: ComponentMeta = {
@@ -78,6 +80,19 @@ export const data: ComponentDoc = {
 	},
 	installBlock,
 	seo,
+	examples: [
+		{
+			name: "Multiple Songs w/ Carousel",
+			description:
+				"Auto-advancing carousel that cycles through multiple tracks every two seconds. Dot indicators show the current position.",
+			preview: CarouselExample,
+			code: {
+				filename: "carousel-example.svelte",
+				filecode: CarouselExampleRaw,
+				lang: "svelte",
+			},
+		},
+	],
 	props: [
 		{
 			props: [

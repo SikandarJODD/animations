@@ -21,7 +21,7 @@
 
 <ModeWatcher defaultMode="dark" />
 
-<main class="w-full">
+<main class="w-full pt-16">
 	<Navbar />
 	{@render children()}
 </main>

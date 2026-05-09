@@ -97,8 +97,8 @@
 		className
 	)}
 >
-	<span bind:this={text1Ref} class="absolute inset-x-0 top-0 m-auto inline-block w-full" />
-	<span bind:this={text2Ref} class="absolute inset-x-0 top-0 m-auto inline-block w-full" />
+	<span bind:this={text1Ref} class="absolute inset-x-0 top-0 m-auto inline-block w-full"></span>
+	<span bind:this={text2Ref} class="absolute inset-x-0 top-0 m-auto inline-block w-full"></span>
 
 	<svg id="filters" class="fixed h-0 w-0" preserveAspectRatio="xMidYMid slice">
 		<defs>

@@ -3,6 +3,7 @@
 	import Button from "$lib/components/ui/button/button.svelte";
 	import * as Command from "$lib/components/ui/command/index.js";
 	import * as Kbd from "$lib/components/ui/kbd/index.js";
+	import { useIsMac } from "$lib/hooks/use-is-mac.svelte.js";
 	import {
 		fancyUIComponents,
 		magicUIComponents,
@@ -11,6 +12,8 @@
 		type MagicComponent,
 		type SpellComponent,
 	} from "../registry";
+
+	const isMac = useIsMac();
 
 	let open = $state(false);
 
@@ -50,17 +53,22 @@
 	<Button
 		variant="ghost"
 		size="sm"
-		class="bg-secondary dark:bg-muted/60 flex justify-between px-1.5 md:min-w-46  md:pr-1"
+		class="bg-secondary dark:bg-muted/60 flex h-8 justify-between px-1.5 md:min-w-46 md:pr-1"
 		onclick={() => (open = true)}
 	>
 		<span class="hidden pl-1 md:block"> Search... </span>
 
 		<Kbd.Group class="hidden gap-1 md:flex">
 			<!-- <Kbd.Root>⌘</Kbd.Root> -->
-			<Kbd.Root>Ctrl</Kbd.Root>
+			<Kbd.Root>
+				{#if isMac}
+					⌘
+				{:else}
+					Ctrl{/if}
+			</Kbd.Root>
 			<Kbd.Root>K</Kbd.Root>
 		</Kbd.Group>
-		<span class="lg:hidden">
+		<span class="hidden">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="128"

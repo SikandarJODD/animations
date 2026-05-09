@@ -5,7 +5,7 @@
 	import {
 		OpenIn,
 		OpenInContent,
-		OpenInLabel,
+		// OpenInLabel,
 		OpenInSeparator,
 		OpenInChatGPT,
 		OpenInClaude,

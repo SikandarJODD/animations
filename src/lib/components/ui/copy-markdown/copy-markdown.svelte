@@ -33,13 +33,7 @@
 	}
 </script>
 
-<Button
-	variant="secondary"
-	onclick={copyMarkdown}
-	class="gap-2"
-	aria-label="Copy as Markdown"
-	{size}
->
+<Button variant="secondary" onclick={copyMarkdown} aria-label="Copy as Markdown" {size}>
 	{#if copied}
 		<Check class="size-4" />
 	{:else}

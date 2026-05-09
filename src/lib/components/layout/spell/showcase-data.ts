@@ -2,6 +2,7 @@ import type { Component } from "svelte";
 import { spellUIComponents, type SpellComponent } from "$lib/components/docs/registry/spell_ui";
 import AnimatedCheckboxPreview from "../../../../routes/spell/animated-checkbox/examples/preview.svelte";
 import BadgePreview from "../../../../routes/spell/badge/examples/preview.svelte";
+import RichButtonPreview from "../../../../routes/spell/rich-button/examples/preview.svelte";
 import BarSpinnerPreview from "../../../../routes/spell/bar-spinner/examples/preview.svelte";
 import BlurRevealPreview from "../../../../routes/spell/blur-reveal/examples/preview.svelte";
 import ColorSelectorPreview from "../../../../routes/spell/color-selector/examples/preview.svelte";
@@ -22,6 +23,14 @@ import SpotifyCardPreview from "../../../../routes/spell/spotify-card/examples/p
 import TextMarqueePreview from "../../../../routes/spell/text-marquee/examples/preview.svelte";
 import TiltCardPreview from "../../../../routes/spell/tilt-card/examples/preview.svelte";
 import WordsStaggerPreview from "../../../../routes/spell/words-stagger/examples/preview.svelte";
+import TweetPreview from "../../../../routes/spell/tweet/examples/preview.svelte";
+import FallbackAvatarPreview from "../../../../routes/spell/fallback-avatar/examples/preview.svelte";
+import FlowButtonPreview from "../../../../routes/spell/flow-button/examples/preview.svelte";
+import PopButtonPreview from "../../../../routes/spell/pop-button/examples/preview.svelte";
+import CopyButtonPreview from "../../../../routes/spell/copy-button/examples/preview.svelte";
+import LightRaysPreview from "../../../../routes/spell/light-rays/examples/preview.svelte";
+import AnimatedGradientPreview from "../../../../routes/spell/animated-gradient/examples/preview.svelte";
+import SpinnerPreview from "../../../../routes/spell/spinner/examples/preview.svelte";
 
 export type SpellShowcaseItem = SpellComponent & {
 	preview: Component;
@@ -31,6 +40,7 @@ const previewById: Record<string, Component> = {
 	"perspective-book": PerspectiveBookPreview,
 	"tilt-card": TiltCardPreview,
 	badge: BadgePreview,
+	"rich-button": RichButtonPreview,
 	"bar-spinner": BarSpinnerPreview,
 	kbd: KbdPreview,
 	marquee: MarqueePreview,
@@ -50,6 +60,14 @@ const previewById: Record<string, Component> = {
 	"label-input": LabelInputPreview,
 	"animated-checkbox": AnimatedCheckboxPreview,
 	"exploding-input": ExplodingInputPreview,
+	tweet: TweetPreview,
+	"fallback-avatar": FallbackAvatarPreview,
+	"flow-button": FlowButtonPreview,
+	"pop-button": PopButtonPreview,
+	"copy-button": CopyButtonPreview,
+	"light-rays": LightRaysPreview,
+	"animated-gradient": AnimatedGradientPreview,
+	spinner: SpinnerPreview,
 };
 
 export const spellOverviewShowcaseItems: SpellShowcaseItem[] = spellUIComponents

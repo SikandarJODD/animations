@@ -6,6 +6,7 @@
 		lat: number;
 		lng: number;
 		size?: number;
+		[key: string]: unknown;
 	}
 
 	interface Props {
