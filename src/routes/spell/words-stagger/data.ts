@@ -9,6 +9,8 @@ import WordsStaggerSpeedExample from "./examples/words-stagger-speed-example.sve
 import WordsStaggerSpeedExampleRaw from "./examples/words-stagger-speed-example.svelte?raw";
 import WordsStaggerExample from "./examples/words-stagger-example.svelte";
 import WordsStaggerExampleRaw from "./examples/words-stagger-example.svelte?raw";
+import ViewTriggerExample from "./examples/view-trigger-example.svelte";
+import ViewTriggerExampleRaw from "./examples/view-trigger-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "words-stagger",
@@ -88,6 +90,17 @@ export const data: ComponentDoc = {
 			code: {
 				filename: "stagger-example.svelte",
 				filecode: WordsStaggerExampleRaw,
+				lang: "svelte",
+			},
+		},
+		{
+			name: "View Trigger",
+			description:
+				"Scroll the block out of frame and back to replay the stagger and watch the lifecycle counters update.",
+			preview: ViewTriggerExample,
+			code: {
+				filename: "view-trigger-example.svelte",
+				filecode: ViewTriggerExampleRaw,
 				lang: "svelte",
 			},
 		},

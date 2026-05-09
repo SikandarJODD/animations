@@ -9,7 +9,7 @@
 		"@lucide/svelte"
 	],
 	"devDependencies": [
-		"@lucide/svelte@^0.561.0",
+		"@lucide/svelte@^1.8.0",
 		"tailwind-variants@^3.2.2"
 	],
 	"files": [

@@ -6,6 +6,8 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import SizeVariationExample from "./examples/size-variation-example.svelte";
 import SizeVariationExampleRaw from "./examples/size-variation-example.svelte?raw";
+import CallbackExample from "./examples/callback-example.svelte";
+import CallbackExampleRaw from "./examples/callback-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "color-selector",
@@ -63,6 +65,17 @@ export const data: ComponentDoc = {
 	},
 	installBlock,
 	examples: [
+		{
+			name: "Callback",
+			description:
+				"Use the onColorSelect callback to track the selected color in parent state.",
+			preview: CallbackExample,
+			code: {
+				filename: "callback-example.svelte",
+				filecode: CallbackExampleRaw,
+				lang: "svelte",
+			},
+		},
 		{
 			name: "Size Variation",
 			description:

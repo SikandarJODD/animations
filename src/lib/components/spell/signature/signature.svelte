@@ -193,28 +193,30 @@
 	}
 </script>
 
-<motion.svg
-	{width}
-	{height}
-	viewBox={`0 0 ${width} ${height}`}
-	fill="none"
-	class={cn("overflow-visible", className)}
-	initial="hidden"
-	whileInView={inView ? "visible" : undefined}
-	animate={inView ? undefined : "visible"}
-	inViewOptions={{ once, amount: 0.35 }}
->
-	{#each paths as path (path.id)}
-		<motion.path
-			d={path.d}
-			stroke={color}
-			stroke-width={2}
-			fill={color}
-			variants={pathVariants}
-			transition={getTransition(path.delay)}
-			vector-effect="non-scaling-stroke"
-			stroke-linecap="butt"
-			stroke-linejoin="round"
-		/>
-	{/each}
-</motion.svg>
+<div class="pointer-events-none">
+	<motion.svg
+		{width}
+		{height}
+		viewBox={`0 0 ${width} ${height}`}
+		fill="none"
+		class={cn("overflow-visible", className)}
+		initial="hidden"
+		whileInView={inView ? "visible" : undefined}
+		animate={inView ? undefined : "visible"}
+		inViewOptions={{ once, amount: 0.35 }}
+	>
+		{#each paths as path (path.id)}
+			<motion.path
+				d={path.d}
+				stroke={color}
+				stroke-width={2}
+				fill={color}
+				variants={pathVariants}
+				transition={getTransition(path.delay)}
+				vector-effect="non-scaling-stroke"
+				stroke-linecap="butt"
+				stroke-linejoin="round"
+			/>
+		{/each}
+	</motion.svg>
+</div>
