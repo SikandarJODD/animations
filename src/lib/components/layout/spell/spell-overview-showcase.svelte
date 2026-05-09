@@ -22,11 +22,9 @@
 	import WordsStaggerPreview from "../../../../routes/spell/words-stagger/examples/preview.svelte";
 </script>
 
-<section id="showcase" class="mb-6 space-y-4 px-4 sm:px-6 lg:px-8">
-	<!-- Row 1: Perspective Book + Spotify/Signature/Checkbox -->
-	<!-- single-col → lg: 2-col equal → xl: 6-col bento -->
-	<div class="grid h-full grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-6">
-		<div class="relative flex items-center justify-center rounded-xl border p-4 xl:col-span-2">
+<section id="showcase" class="space-y-4 px-4 sm:px-6 md:px-2 lg:px-8">
+	<div class="grid h-full grid-cols-1 gap-4 md:grid-cols-6">
+		<div class="relative flex items-center justify-center rounded-xl border p-4 md:col-span-2">
 			<a
 				href="/spell/perspective-book"
 				class="bg-background/90 text-muted-foreground hover:text-foreground focus-visible:ring-ring absolute top-3 left-3 z-10 inline-flex rounded-full border px-2.5 py-1 text-[11px] font-medium tracking-[0.02em] backdrop-blur-sm transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
@@ -35,7 +33,7 @@
 			</a>
 			<PerspectiveBookPreview />
 		</div>
-		<div class="flex h-full flex-col gap-4 xl:col-span-4">
+		<div class="flex h-full flex-col gap-4 md:col-span-4">
 			<div
 				class="relative flex min-h-[240px] items-center justify-center rounded-xl border lg:h-1/2"
 			>
@@ -73,12 +71,9 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- Row 2: Gradient Wave Text + QR Code + Special Text -->
-	<!-- single-col → md: 3-col equal → xl: 8-col bento -->
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-3 xl:min-h-56 xl:grid-cols-8">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-8 lg:min-h-56">
 		<div
-			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-3"
+			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 md:col-span-3"
 		>
 			<a
 				href="/spell/gradient-wave-text"
@@ -89,7 +84,7 @@
 			<GradientWaveTextPreview />
 		</div>
 		<div
-			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-2"
+			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 md:col-span-2"
 		>
 			<a
 				href="/spell/qrcode"
@@ -100,7 +95,7 @@
 			<QRCodePreview />
 		</div>
 		<div
-			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-3"
+			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 md:col-span-3"
 		>
 			<a
 				href="/spell/special-text"
@@ -111,12 +106,9 @@
 			<SpecialTextPreview />
 		</div>
 	</div>
-
-	<!-- Row 3: Color Selector + Marquee + Label Input -->
-	<!-- single-col → md: 3-col equal → xl: 7-col bento -->
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-3 xl:min-h-56 xl:grid-cols-7">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-7 lg:min-h-56">
 		<div
-			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-2"
+			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 md:col-span-2"
 		>
 			<a
 				href="/spell/color-selector"
@@ -127,7 +119,7 @@
 			<ColorSelectorPreview />
 		</div>
 		<div
-			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-3"
+			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 md:col-span-3"
 		>
 			<a
 				href="/spell/marquee"
@@ -138,7 +130,7 @@
 			<MarqueePreview />
 		</div>
 		<div
-			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-2"
+			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 md:col-span-2"
 		>
 			<a
 				href="/spell/label-input"
@@ -149,12 +141,9 @@
 			<LabelInputPreview />
 		</div>
 	</div>
-
-	<!-- Row 4: Text Marquee + Exploding Input + Slide Up Text -->
-	<!-- single-col → lg: 2-col equal → xl: 6-col bento -->
-	<div class="grid h-full grid-cols-1 gap-4 lg:grid-cols-2 xl:min-h-120 xl:grid-cols-6">
+	<div class="grid h-full grid-cols-1 gap-4 md:grid-cols-6 lg:min-h-120">
 		<div
-			class="relative flex min-h-[220px] items-center justify-center rounded-xl border p-4 xl:col-span-3"
+			class="relative flex min-h-[220px] items-center justify-center rounded-xl border p-4 md:col-span-3"
 		>
 			<a
 				href="/spell/text-marquee"
@@ -164,7 +153,7 @@
 			</a>
 			<TextMarqueePreview />
 		</div>
-		<div class="flex h-full flex-col gap-4 xl:col-span-3">
+		<div class="flex h-full flex-col gap-4 md:col-span-3">
 			<div
 				class="relative flex min-h-[220px] items-center justify-center rounded-xl border lg:h-1/2"
 			>
@@ -189,12 +178,9 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- Row 5: Highlighted Text + Logo Carousel -->
-	<!-- single-col → md: 2-col equal → xl: 7-col bento -->
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:min-h-60 xl:grid-cols-7">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-7 lg:min-h-60">
 		<div
-			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-3"
+			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 md:col-span-3"
 		>
 			<a
 				href="/spell/highlighted-text"
@@ -205,7 +191,7 @@
 			<HighlightedTextPreview />
 		</div>
 		<div
-			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 xl:col-span-4"
+			class="relative flex min-h-[200px] items-center justify-center rounded-lg border p-4 md:col-span-4"
 		>
 			<a
 				href="/spell/logo-carousel"
