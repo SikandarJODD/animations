@@ -1,6 +1,14 @@
 export type SpellBadgeType = "Beta" | "New" | "Updated";
 
-export type SpellCategory = "Overview" | "Components" | "Text Animations" | "Inputs" | "Spinner";
+export type SpellCategory =
+	| "Overview"
+	| "Components"
+	| "Text Animations"
+	| "Buttons"
+	| "Inputs"
+	| "Feedback"
+	| "Backgrounds"
+	| "Interactive";
 
 export interface SpellComponent {
 	id: string;
@@ -12,6 +20,7 @@ export interface SpellComponent {
 }
 
 export const spellUIComponents: SpellComponent[] = [
+	// ── Overview ─────────────────────────────────────────────────────────────
 	{
 		id: "overview",
 		name: "Overview",
@@ -25,6 +34,16 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/introduction",
 		category: "Overview",
 		desc: "Learn what Spell UI for Svelte is, why it exists, and where the project draws inspiration.",
+	},
+
+	// ── Components ───────────────────────────────────────────────────────────
+	{
+		id: "chart",
+		name: "Chart",
+		href: "/spell/chart",
+		category: "Components",
+		desc: "An interactive line chart with cursor-tracked tooltip, snap-to-point hover, and built-in X-axis labels.",
+		badge: "New",
 	},
 	{
 		id: "perspective-book",
@@ -40,7 +59,6 @@ export const spellUIComponents: SpellComponent[] = [
 		category: "Components",
 		desc: "A compact pill badge with multi-color variants, optional link mode, and size presets.",
 	},
-
 	{
 		id: "kbd",
 		name: "Keyboard Shortcuts",
@@ -56,18 +74,19 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A reusable horizontal or vertical marquee with optional fade edges and hover pause.",
 	},
 	{
+		id: "tweet",
+		name: "Tweet",
+		href: "/spell/tweet",
+		category: "Components",
+		desc: "A styled tweet card for embedding social media content with author, text, likes, and copy-link.",
+		badge: "New",
+	},
+	{
 		id: "spotify-card",
 		name: "Spotify Card",
 		href: "/spell/spotify-card",
 		category: "Components",
 		desc: "A Spotify preview card with blurred artwork, playback controls, and server-fetched metadata.",
-	},
-	{
-		id: "qrcode",
-		name: "QRCode",
-		href: "/spell/qrcode",
-		category: "Components",
-		desc: "A rounded QR code renderer with circular modules and stylized finder patterns.",
 	},
 	{
 		id: "logo-carousel",
@@ -77,12 +96,22 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
 	},
 	{
-		id: "bar-spinner",
-		name: "Bar Spinner",
-		href: "/spell/bar-spinner",
+		id: "qrcode",
+		name: "QRCode",
+		href: "/spell/qrcode",
 		category: "Components",
-		desc: "A compact loading spinner built from twelve fading bars for inline waits, cards, and dialogs.",
+		desc: "A rounded QR code renderer with circular modules and stylized finder patterns.",
 	},
+	{
+		id: "fallback-avatar",
+		name: "Fallback Avatar",
+		href: "/spell/fallback-avatar",
+		category: "Components",
+		desc: "A procedurally generated WebGL avatar based on a name hash — deterministic, animated, and unique.",
+		badge: "New",
+	},
+
+	// ── Text Animations ───────────────────────────────────────────────────────
 	{
 		id: "blur-reveal",
 		name: "Blur Reveal",
@@ -96,6 +125,14 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/special-text",
 		category: "Text Animations",
 		desc: "A scrambled text reveal with optional viewport triggering and plain text or slotted content input.",
+	},
+	{
+		id: "shimmer-text",
+		name: "Shimmer Text",
+		href: "/spell/shimmer-text",
+		category: "Text Animations",
+		desc: "Text with an animated shimmer highlight that sweeps across on repeat.",
+		badge: "New",
 	},
 	{
 		id: "highlighted-text",
@@ -148,6 +185,42 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A flowing gradient text effect with radial or linear bands, custom colors, and view-triggered playback.",
 		badge: "New",
 	},
+
+	// ── Buttons ───────────────────────────────────────────────────────────────
+	{
+		id: "rich-button",
+		name: "Rich Button",
+		href: "/spell/rich-button",
+		category: "Buttons",
+		desc: "A gradient button with 23 color variants, text shadows, and size presets.",
+		badge: "New",
+	},
+	{
+		id: "flow-button",
+		name: "Flow Button",
+		href: "/spell/flow-button",
+		category: "Buttons",
+		desc: "A button with an animated dashed SVG border that flows on hover.",
+		badge: "New",
+	},
+	{
+		id: "copy-button",
+		name: "Copy Button",
+		href: "/spell/copy-button",
+		category: "Buttons",
+		desc: "A clipboard copy button with icon transition feedback and size variants.",
+		badge: "New",
+	},
+	{
+		id: "pop-button",
+		name: "Pop Button",
+		href: "/spell/pop-button",
+		category: "Buttons",
+		desc: "A 3D pop-style button with color variants that compresses on click.",
+		badge: "New",
+	},
+
+	// ── Inputs ────────────────────────────────────────────────────────────────
 	{
 		id: "color-selector",
 		name: "Color Selector",
@@ -177,14 +250,62 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A particle input companion that explodes emoji or custom items as you type.",
 		badge: "Beta",
 	},
+
+	// ── Feedback ──────────────────────────────────────────────────────────────
+	{
+		id: "spinner",
+		name: "Spinner",
+		href: "/spell/spinner",
+		category: "Feedback",
+		desc: "An SVG spinner with size and speed variants, built with dual gradient definitions.",
+		badge: "New",
+	},
+	{
+		id: "bar-spinner",
+		name: "Bar Spinner",
+		href: "/spell/bar-spinner",
+		category: "Feedback",
+		desc: "A compact loading spinner built from twelve fading bars for inline waits, cards, and dialogs.",
+	},
+
+	// ── Backgrounds ───────────────────────────────────────────────────────────
+	{
+		id: "light-rays",
+		name: "Light Rays",
+		href: "/spell/light-rays",
+		category: "Backgrounds",
+		desc: "Three.js animated light rays effect with configurable intensity, reach, and colors.",
+		badge: "New",
+	},
+	{
+		id: "animated-gradient",
+		name: "Animated Gradient",
+		href: "/spell/animated-gradient",
+		category: "Backgrounds",
+		desc: "A WebGL2 animated gradient background with six built-in presets and custom color support.",
+		badge: "New",
+	},
+
+	// ── Interactive ───────────────────────────────────────────────────────────
+	{
+		id: "tilt-card",
+		name: "Tilt Card",
+		href: "/spell/tilt-card",
+		category: "Interactive",
+		desc: "A 3D tilt card that responds to pointer movement with an optional spotlight effect.",
+		badge: "New",
+	},
 ];
 
 const spellUICategoryOrder: SpellCategory[] = [
 	"Overview",
 	"Components",
 	"Text Animations",
+	"Buttons",
 	"Inputs",
-	"Spinner",
+	"Feedback",
+	"Backgrounds",
+	"Interactive",
 ];
 
 export const spellUISidebarGroups = spellUICategoryOrder

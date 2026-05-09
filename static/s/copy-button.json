@@ -1,0 +1,22 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "copy-button",
+	"title": "Copy Button",
+	"type": "registry:block",
+	"description": "A copy-to-clipboard button with animated icon transition between copy and check states.",
+	"dependencies": [
+		"lucide-svelte"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { CheckIcon, CopyIcon } from \"lucide-svelte\";\n\timport { cn, type WithElementRef } from \"$UTILS$.js\";\n\timport type { HTMLButtonAttributes } from \"svelte/elements\";\n\n\ttype SizeVariant = \"sm\" | \"default\" | \"lg\";\n\n\tconst sizeMap: Record<SizeVariant, { button: string; icon: number }> = {\n\t\tsm: { button: \"h-8 w-8\", icon: 14 },\n\t\tdefault: { button: \"h-9 w-9\", icon: 16 },\n\t\tlg: { button: \"h-12 w-12\", icon: 20 },\n\t};\n\n\ttype Props = WithElementRef<HTMLButtonAttributes, HTMLButtonElement> & {\n\t\ttext?: string;\n\t\tsize?: SizeVariant;\n\t};\n\n\tlet {\n\t\tref = $bindable(null),\n\t\ttext,\n\t\tsize = \"default\",\n\t\tclass: className,\n\t\tonclick,\n\t\t...restProps\n\t}: Props = $props();\n\n\tlet copied = $state(false);\n\tlet timeoutId: ReturnType<typeof setTimeout> | undefined;\n\n\tfunction handleCopy(event: MouseEvent & { currentTarget: HTMLButtonElement }) {\n\t\tif (text) {\n\t\t\tnavigator.clipboard.writeText(text).catch(() => {});\n\t\t}\n\t\tcopied = true;\n\t\tclearTimeout(timeoutId);\n\t\ttimeoutId = setTimeout(() => {\n\t\t\tcopied = false;\n\t\t}, 1500);\n\t\tif (typeof onclick === \"function\") {\n\t\t\tonclick(event);\n\t\t}\n\t}\n\n\t$effect(() => {\n\t\treturn () => clearTimeout(timeoutId);\n\t});\n\n\tlet buttonSize = $derived(sizeMap[size].button);\n\tlet iconSize = $derived(sizeMap[size].icon);\n</script>\n\n<button\n\tbind:this={ref}\n\ttype=\"button\"\n\tonclick={handleCopy}\n\taria-label={copied ? \"Copied\" : \"Copy to clipboard\"}\n\tdisabled={copied}\n\tclass={cn(\n\t\t\"relative cursor-pointer active:scale-[0.97] transition-all ease-out duration-200 inline-flex items-center justify-center rounded-md text-neutral-900 disabled:pointer-events-none disabled:opacity-100 dark:text-neutral-50\",\n\t\tbuttonSize,\n\t\tclassName,\n\t)}\n\t{...restProps}\n>\n\t<div\n\t\tclass={cn(\n\t\t\t\"transition-all duration-200\",\n\t\t\tcopied ? \"scale-100 opacity-100 blur-none\" : \"scale-[0.7] opacity-0 blur-[2px]\",\n\t\t)}\n\t>\n\t\t<CheckIcon size={iconSize} strokeWidth={2} aria-hidden=\"true\" />\n\t</div>\n\t<div\n\t\tclass={cn(\n\t\t\t\"absolute transition-all duration-200\",\n\t\t\tcopied ? \"scale-0 opacity-0 blur-[2px]\" : \"scale-100 opacity-100 blur-none\",\n\t\t)}\n\t>\n\t\t<CopyIcon size={iconSize} strokeWidth={2} aria-hidden=\"true\" />\n\t</div>\n</button>\n",
+			"type": "registry:component",
+			"target": "spell/copy-button/copy-button.svelte"
+		},
+		{
+			"content": "import CopyButton from \"./copy-button.svelte\";\nexport { CopyButton };\n",
+			"type": "registry:file",
+			"target": "spell/copy-button/index.ts"
+		}
+	]
+}

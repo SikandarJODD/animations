@@ -1,0 +1,19 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "spinner",
+	"title": "Spinner",
+	"type": "registry:block",
+	"description": "A smooth gradient spinner built from an SVG arc, with size and speed variants for flexible loading states.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$.js\";\n\timport type { SVGAttributes } from \"svelte/elements\";\n\n\ttype SizeVariant = \"sm\" | \"default\" | \"md\" | \"lg\";\n\ttype SpeedVariant = \"slow\" | \"normal\" | \"fast\";\n\n\ttype Props = SVGAttributes<SVGSVGElement> & {\n\t\tsize?: SizeVariant;\n\t\tspeed?: SpeedVariant;\n\t\tclass?: string;\n\t};\n\n\tconst sizeClasses: Record<SizeVariant, string> = {\n\t\tsm: \"h-4 w-4\",\n\t\tdefault: \"h-5 w-5\",\n\t\tmd: \"h-6 w-6\",\n\t\tlg: \"h-8 w-8\",\n\t};\n\n\tconst speedClasses: Record<SpeedVariant, string> = {\n\t\tslow: \"animate-[spin_2s_linear_infinite]\",\n\t\tnormal: \"animate-spin\",\n\t\tfast: \"animate-[spin_0.5s_linear_infinite]\",\n\t};\n\n\tlet { size = \"md\", speed = \"normal\", class: className, ...restProps }: Props = $props();\n\n\tconst gradientId = `spinner-gradient-${Math.random().toString(36).slice(2, 9)}`;\n</script>\n\n<span\n\tdata-spinner\n\tclass={cn(\"inline-block\", speedClasses[speed], sizeClasses[size], className)}\n>\n\t<svg\n\t\tdata-slot-icon\n\t\tviewBox=\"0 0 24 24\"\n\t\taria-hidden=\"true\"\n\t\taria-label=\"Loading\"\n\t\trole=\"presentation\"\n\t\tclass=\"h-full w-full\"\n\t\t{...restProps}\n\t>\n\t\t<defs>\n\t\t\t<linearGradient\n\t\t\t\tid={`gradient-1-${gradientId}`}\n\t\t\t\tx1=\"50%\"\n\t\t\t\tx2=\"50%\"\n\t\t\t\ty1=\"5.271%\"\n\t\t\t\ty2=\"91.793%\"\n\t\t\t>\n\t\t\t\t<stop offset=\"0%\" stop-color=\"currentColor\" />\n\t\t\t\t<stop offset=\"100%\" stop-color=\"currentColor\" stop-opacity={0.55} />\n\t\t\t</linearGradient>\n\t\t\t<linearGradient\n\t\t\t\tid={`gradient-2-${gradientId}`}\n\t\t\t\tx1=\"50%\"\n\t\t\t\tx2=\"50%\"\n\t\t\t\ty1=\"15.24%\"\n\t\t\t\ty2=\"87.15%\"\n\t\t\t>\n\t\t\t\t<stop offset=\"0%\" stop-color=\"currentColor\" stop-opacity={0} />\n\t\t\t\t<stop offset=\"100%\" stop-color=\"currentColor\" stop-opacity={0.55} />\n\t\t\t</linearGradient>\n\t\t</defs>\n\t\t<g fill=\"none\">\n\t\t\t<path\n\t\t\t\td=\"M8.749.021a1.5 1.5 0 0 1 .497 2.958A7.5 7.5 0 0 0 3 10.375a7.5 7.5 0 0 0 7.5 7.5v3c-5.799 0-10.5-4.7-10.5-10.5C0 5.23 3.726.865 8.749.021\"\n\t\t\t\tfill={`url(#gradient-1-${gradientId})`}\n\t\t\t\ttransform=\"translate(1.5 1.625)\"\n\t\t\t/>\n\t\t\t<path\n\t\t\t\td=\"M15.392 2.673a1.5 1.5 0 0 1 2.119-.115A10.48 10.48 0 0 1 21 10.375c0 5.8-4.701 10.5-10.5 10.5v-3a7.5 7.5 0 0 0 5.007-13.084a1.5 1.5 0 0 1-.115-2.118\"\n\t\t\t\tfill={`url(#gradient-2-${gradientId})`}\n\t\t\t\ttransform=\"translate(1.5 1.625)\"\n\t\t\t/>\n\t\t</g>\n\t</svg>\n</span>\n",
+			"type": "registry:component",
+			"target": "spell/spinner/spinner.svelte"
+		},
+		{
+			"content": "import Spinner from \"./spinner.svelte\";\nexport { Spinner };\nexport type { };\n",
+			"type": "registry:file",
+			"target": "spell/spinner/index.ts"
+		}
+	]
+}
