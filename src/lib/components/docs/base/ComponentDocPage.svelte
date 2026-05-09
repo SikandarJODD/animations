@@ -12,6 +12,7 @@
 		seo: SEO;
 		preview?: Component;
 		previewCode?: CodeBlock | CodeBlock[];
+		previewClass?: string;
 		installCodeBlocks?: CodeBlock | CodeBlock[];
 		installPackages?: string[];
 		installFolderStructure?: string;
@@ -39,6 +40,7 @@
 		seo,
 		preview,
 		previewCode,
+		previewClass = "",
 		installCodeBlocks,
 		installPackages = [],
 		installFolderStructure,
@@ -58,13 +60,11 @@
 		return cleanUrl;
 	};
 
-	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
-	// $inspect("Spell", isSpellRoute);
-	// $inspect("Install URL", isSpellRoute);
+	let llmsTxtUrl = $derived(`${getURLPath(page.url.href)}/llms.txt`);
 </script>
 
 <SEOComponent title={seo.title} description={seo.description} keywords={seo.keywords} />
-<div class="space-y-8 md:space-y-8">
+<div class="space-y-6 md:space-y-8">
 	<section>
 		<div class="flex flex-col justify-between gap-3 md:flex-row md:items-center md:gap-4">
 			<H1 id="introduction">{title}</H1>
@@ -80,7 +80,7 @@
 	</section>
 
 	<section>
-		<PreviewComponent code={previewCode}>
+		<PreviewComponent code={previewCode} class={previewClass}>
 			{#if PreviewComp}
 				<PreviewComp />
 			{/if}
@@ -113,7 +113,7 @@
 								{example.description}
 							</Paragraph>
 						{/if} -->
-						<PreviewComponent code={example.code}>
+						<PreviewComponent code={example.code} class={example.previewClass}>
 							<example.preview />
 						</PreviewComponent>
 					</div>

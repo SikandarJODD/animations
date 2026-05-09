@@ -23,10 +23,26 @@
 		highlight: box.with(() => highlight),
 		lang: box.with(() => lang),
 	});
+
+	const lineCount = $derived(code.replace(/\n$/, "").split("\n").length);
 </script>
 
 <div {...rest} bind:this={ref} class={cn(codeVariants({ variant }), className)}>
-	{@html codeState.highlighted}
+	<div class="flex min-h-full">
+		{#if !hideLines && lineCount > 0}
+			<div
+				class="font-mono select-none flex-shrink-0 pt-2 text-right text-[oklch(0.556_0_0/50%)]"
+				aria-hidden="true"
+			>
+				{#each Array(lineCount) as _, i}
+					<span class="block px-4">{i + 1}</span>
+				{/each}
+			</div>
+		{/if}
+		<div class="min-w-0 flex-1 overflow-x-auto pt-2">
+			{@html codeState.highlighted}
+		</div>
+	</div>
 	{@render children?.()}
 </div>
 
@@ -51,7 +67,7 @@
 	}
 
 	:global(pre.shiki) {
-		@apply overflow-x-auto rounded-lg bg-inherit py-2 text-sm;
+		@apply overflow-x-auto rounded-lg bg-inherit py-2 text-xs sm:text-sm;
 		-ms-overflow-style: none;
 		scrollbar-width: none;
 	}

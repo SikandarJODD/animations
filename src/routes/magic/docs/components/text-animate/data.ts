@@ -144,7 +144,6 @@ export const data: ComponentDoc = {
 	installBlock: {
 		packages: ["motion-sv"],
 	},
-	packages: ["motion-sv"],
 	props: [
 		{
 			name: "TextAnimate",

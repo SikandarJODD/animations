@@ -5,7 +5,7 @@
 	import {
 		OpenIn,
 		OpenInContent,
-		OpenInLabel,
+		// OpenInLabel,
 		OpenInSeparator,
 		OpenInChatGPT,
 		OpenInClaude,
@@ -25,7 +25,7 @@
 	let { componentName, llmsTxtUrl, class: className }: Props = $props();
 
 	// Create the query for AI assistants
-	const query = $derived(
+	let query = $derived(
 		`Read ${llmsTxtUrl} and help me understand the ${componentName} component`
 	);
 </script>

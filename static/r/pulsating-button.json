@@ -5,23 +5,41 @@
 	"type": "registry:block",
 	"description": "A button component with a pulsating ring effect that expands and fades around the button.",
 	"css": {
-		"@keyframes pulse-ring": {
+		"@keyframes pulse-slow": {
 			"0%": {
 				"box-shadow": "0 0 0 0 var(--pulse-color)"
 			},
 			"100%": {
-				"box-shadow": "0 0 0 8px transparent"
+				"box-shadow": "0 0 0 var(--distance) transparent"
+			}
+		},
+		"@keyframes pulse-ring": {
+			"0%, 100%": {
+				"box-shadow": "0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5))"
+			},
+			"50%": {
+				"box-shadow": "0 0 0 var(--distance) var(--pulse-color, oklch(from var(--bg) l c h / 0.5))"
+			}
+		},
+		"@keyframes pulse-ripple": {
+			"0%": {
+				"box-shadow": "0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1)"
+			},
+			"100%": {
+				"box-shadow": "0 0 0 var(--distance) oklch(from var(--pulse-color, var(--bg)) l c h / 0)"
 			}
 		}
 	},
 	"cssVars": {
 		"theme": {
-			"animate-pulse-ring": "pulse-ring var(--duration) ease-out infinite"
+			"animate-pulse-slow": "pulse-slow var(--duration) ease-out infinite",
+			"animate-pulse-ring": "pulse-ring var(--duration) ease-out infinite",
+			"animate-pulse-ripple": "pulse-ripple var(--duration) cubic-bezier(0.16, 1, 0.3, 1) infinite"
 		}
 	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\n\tinterface PulsatingButtonProps {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t\tpulseColor?: string;\n\t\tduration?: string;\n\t}\n\n\tlet {\n\t\tclass: className,\n\t\tchildren,\n\t\tpulseColor = \"#808080\",\n\t\tduration = \"1.5s\",\n\t\t...props\n\t}: PulsatingButtonProps = $props();\n</script>\n\n<button\n\tclass={cn(\n\t\t\"bg-primary text-primary-foreground relative flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-center\",\n\t\tclassName\n\t)}\n\tstyle=\"--pulse-color: {pulseColor}; --duration: {duration};\"\n\t{...props}\n>\n\t<div class=\"relative z-10\">\n\t\t{@render children()}\n\t</div>\n\t<div\n\t\tclass=\"animate-pulse-ring absolute top-1/2 left-1/2 size-full -translate-x-1/2 -translate-y-1/2 rounded-lg bg-inherit\"\n\t></div>\n</button>\n",
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\n\tinterface PulsatingButtonProps {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t\tpulseColor?: string;\n\t\tduration?: string;\n\t\tdistance?: string;\n\t\tvariant?: \"slow\" | \"ring\" | \"ripple\";\n\t}\n\n\tlet {\n\t\tclass: className,\n\t\tchildren,\n\t\tpulseColor = \"#808080\",\n\t\tduration = \"1.5s\",\n\t\tdistance = \"8px\",\n\t\tvariant = \"slow\",\n\t\t...props\n\t}: PulsatingButtonProps = $props();\n</script>\n\n<button\n\tclass={cn(\n\t\t\"bg-primary text-primary-foreground relative flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-center\",\n\t\tclassName\n\t)}\n\tstyle=\"--pulse-color: {pulseColor}; --duration: {duration}; --distance: {distance};\"\n\t{...props}\n>\n\t<div class=\"relative z-10\">\n\t\t{@render children()}\n\t</div>\n\t<span\n\t\taria-hidden=\"true\"\n\t\tclass={cn(\n\t\t\t\"pointer-events-none absolute inset-0 rounded-[inherit] bg-inherit\",\n\t\t\tvariant === \"ripple\" && \"animate-pulse-ripple\",\n\t\t\tvariant === \"ring\" && \"animate-pulse-ring\",\n\t\t\tvariant === \"slow\" && \"animate-pulse-slow\"\n\t\t)}\n\t></span>\n</button>\n",
 			"type": "registry:component",
 			"target": "magic/pulsating-button/pulsating-button.svelte"
 		},

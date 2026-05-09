@@ -19,6 +19,7 @@
 	import Badge from "../spell/badge/badge.svelte";
 	import { PersistedState } from "runed";
 	import { scale } from "svelte/transition";
+	import { BlocksIcon } from "@lucide/svelte";
 
 	type NavigationItem = {
 		href: string;
@@ -40,6 +41,13 @@
 			title: "Svelte Spell UI",
 			description: "Refined UI components for Design Engineers.",
 			icon: BookOpenIcon,
+			badge: "new",
+		},
+		{
+			href: "/fancy/media-between-text",
+			title: "Svelte Fancy Components",
+			description: "Unique, eye-catching components for Svelte.",
+			icon: BlocksIcon,
 			badge: "new",
 		},
 	];
@@ -83,7 +91,7 @@
 </script>
 
 <header
-	class="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-40 border-b px-4 backdrop-blur md:px-6"
+	class="bg-background/95 supports-backdrop-filter:bg-background/60 fixed top-0 right-0 left-0 z-40 border-b px-4 backdrop-blur md:px-6"
 >
 	<div class="flex h-16 items-center justify-between gap-4">
 		<!-- Left side  -->
@@ -109,7 +117,6 @@
 								Home
 							</NavigationMenuLink>
 						</NavigationMenuItem>
-
 						<NavigationMenuItem id="components">
 							<NavigationMenuTrigger
 								class="text-muted-foreground hover:text-primary focus:text-primary data-[state=open]:text-primary relative bg-transparent px-4 py-2 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent"
@@ -125,7 +132,7 @@
 								{/if}
 							</NavigationMenuTrigger>
 							<NavigationMenuContent class="p-0">
-								<ul class="grid w-[18rem] gap-2 p-1 md:grid-cols-1">
+								<ul class="grid w-[22rem] gap-2 p-1 md:grid-cols-1">
 									{#each navigationItems as item (item.href)}
 										<li>
 											<NavigationMenuLink href={item.href}>
@@ -182,6 +189,14 @@
 									{/each}
 								</ul>
 							</NavigationMenuContent>
+						</NavigationMenuItem>
+						<NavigationMenuItem id="changelog">
+							<NavigationMenuLink
+								href="/changelog"
+								class="text-muted-foreground hover:text-primary focus:text-primary data-active:bg-accent/50 data-active:text-accent-foreground bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-transparent focus:bg-transparent"
+							>
+								Changelog
+							</NavigationMenuLink>
 						</NavigationMenuItem>
 					</NavigationMenuList>
 				</NavigationMenuRoot>

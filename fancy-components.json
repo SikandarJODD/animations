@@ -1,0 +1,28 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry.json",
+	"name": "sv-fancy",
+	"homepage": "https://sv-animations.vercel.app/fancy",
+	"items": [
+		{
+			"name": "media-between-text",
+			"type": "registry:block",
+			"title": "Media Between Text",
+			"author": "SikandarJODD",
+			"description": "Reveal image or video media between two pieces of text with hover, view, or manual triggers.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/media-between-text/media-between-text.svelte",
+					"type": "registry:component",
+					"target": "fancy/media-between-text/media-between-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/media-between-text/index.ts",
+					"type": "registry:file",
+					"target": "fancy/media-between-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		}
+	]
+}

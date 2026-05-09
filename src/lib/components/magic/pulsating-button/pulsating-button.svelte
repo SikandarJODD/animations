@@ -7,6 +7,8 @@
 		class?: string;
 		pulseColor?: string;
 		duration?: string;
+		distance?: string;
+		variant?: "slow" | "ring" | "ripple";
 	}
 
 	let {
@@ -14,6 +16,8 @@
 		children,
 		pulseColor = "#808080",
 		duration = "1.5s",
+		distance = "8px",
+		variant = "slow",
 		...props
 	}: PulsatingButtonProps = $props();
 </script>
@@ -23,13 +27,19 @@
 		"bg-primary text-primary-foreground relative flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-center",
 		className
 	)}
-	style="--pulse-color: {pulseColor}; --duration: {duration};"
+	style="--pulse-color: {pulseColor}; --duration: {duration}; --distance: {distance};"
 	{...props}
 >
 	<div class="relative z-10">
 		{@render children()}
 	</div>
-	<div
-		class="animate-pulse-ring absolute top-1/2 left-1/2 size-full -translate-x-1/2 -translate-y-1/2 rounded-lg bg-inherit"
-	></div>
+	<span
+		aria-hidden="true"
+		class={cn(
+			"pointer-events-none absolute inset-0 rounded-[inherit] bg-inherit",
+			variant === "ripple" && "animate-pulse-ripple",
+			variant === "ring" && "animate-pulse-ring",
+			variant === "slow" && "animate-pulse-slow"
+		)}
+	></span>
 </button>

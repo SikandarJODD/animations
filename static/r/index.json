@@ -104,6 +104,17 @@
 		"relativeUrl": "dot-pattern.json"
 	},
 	{
+		"name": "dia-text-reveal",
+		"title": "Dia Text Reveal",
+		"type": "registry:block",
+		"description": "A sweeping gradient text reveal with viewport triggering and rotating text support.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "dia-text-reveal.json"
+	},
+	{
 		"name": "cool-mode",
 		"title": "Cool Mode",
 		"type": "registry:block",
@@ -145,6 +156,14 @@
 		"description": "A text component with animated aurora gradient effect that smoothly transitions between customizable colors.",
 		"registryDependencies": [],
 		"relativeUrl": "aurora-text.json"
+	},
+	{
+		"name": "backlight",
+		"title": "Backlight",
+		"type": "registry:block",
+		"description": "An SVG filter wrapper that adds a soft, saturated backlight glow around the content it wraps.",
+		"registryDependencies": [],
+		"relativeUrl": "backlight.json"
 	},
 	{
 		"name": "avatar-circles",

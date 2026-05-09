@@ -54,7 +54,7 @@
 		{installUrl}
 		codeBlocks={[code]}
 		folderStructure={data.folderStructure}
-		packages={data.packages}
+		packages={data.installBlock?.packages}
 		class="my-4"
 	/>
 

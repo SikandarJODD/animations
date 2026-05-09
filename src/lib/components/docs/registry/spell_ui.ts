@@ -1,6 +1,14 @@
 export type SpellBadgeType = "Beta" | "New" | "Updated";
 
-export type SpellCategory = "Overview" | "Components" | "Text Animations" | "Inputs" | "Spinner";
+export type SpellCategory =
+	| "Overview"
+	| "Components"
+	| "Text Animations"
+	| "Buttons"
+	| "Inputs"
+	| "Feedback"
+	| "Backgrounds"
+	| "Interactive";
 
 export interface SpellComponent {
 	id: string;
@@ -12,6 +20,7 @@ export interface SpellComponent {
 }
 
 export const spellUIComponents: SpellComponent[] = [
+	// ── Overview ─────────────────────────────────────────────────────────────
 	{
 		id: "overview",
 		name: "Overview",
@@ -26,6 +35,8 @@ export const spellUIComponents: SpellComponent[] = [
 		category: "Overview",
 		desc: "Learn what Spell UI for Svelte is, why it exists, and where the project draws inspiration.",
 	},
+
+	// ── Components ───────────────────────────────────────────────────────────
 	{
 		id: "perspective-book",
 		name: "Perspective Book",
@@ -40,7 +51,6 @@ export const spellUIComponents: SpellComponent[] = [
 		category: "Components",
 		desc: "A compact pill badge with multi-color variants, optional link mode, and size presets.",
 	},
-
 	{
 		id: "kbd",
 		name: "Keyboard Shortcuts",
@@ -63,13 +73,6 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A Spotify preview card with blurred artwork, playback controls, and server-fetched metadata.",
 	},
 	{
-		id: "qrcode",
-		name: "QRCode",
-		href: "/spell/qrcode",
-		category: "Components",
-		desc: "A rounded QR code renderer with circular modules and stylized finder patterns.",
-	},
-	{
 		id: "logo-carousel",
 		name: "Logo Carousel",
 		href: "/spell/logo-carousel",
@@ -77,12 +80,14 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
 	},
 	{
-		id: "bar-spinner",
-		name: "Bar Spinner",
-		href: "/spell/bar-spinner",
+		id: "qrcode",
+		name: "QRCode",
+		href: "/spell/qrcode",
 		category: "Components",
-		desc: "A compact loading spinner built from twelve fading bars for inline waits, cards, and dialogs.",
+		desc: "A rounded QR code renderer with circular modules and stylized finder patterns.",
 	},
+
+	// ── Text Animations ───────────────────────────────────────────────────────
 	{
 		id: "blur-reveal",
 		name: "Blur Reveal",
@@ -148,6 +153,8 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A flowing gradient text effect with radial or linear bands, custom colors, and view-triggered playback.",
 		badge: "New",
 	},
+
+	// ── Inputs ────────────────────────────────────────────────────────────────
 	{
 		id: "color-selector",
 		name: "Color Selector",
@@ -177,14 +184,26 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A particle input companion that explodes emoji or custom items as you type.",
 		badge: "Beta",
 	},
+
+	// ── Feedback ──────────────────────────────────────────────────────────────
+	{
+		id: "bar-spinner",
+		name: "Bar Spinner",
+		href: "/spell/bar-spinner",
+		category: "Feedback",
+		desc: "A compact loading spinner built from twelve fading bars for inline waits, cards, and dialogs.",
+	},
 ];
 
 const spellUICategoryOrder: SpellCategory[] = [
 	"Overview",
 	"Components",
 	"Text Animations",
+	"Buttons",
 	"Inputs",
-	"Spinner",
+	"Feedback",
+	"Backgrounds",
+	"Interactive",
 ];
 
 export const spellUISidebarGroups = spellUICategoryOrder

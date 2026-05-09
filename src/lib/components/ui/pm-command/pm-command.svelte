@@ -28,13 +28,13 @@
 	import type { Command, Agent } from "package-manager-detector";
 	import { resolveCommand } from "package-manager-detector/commands";
 	import CopyButton from "../copy-button/copy-button.svelte";
-	import ClipboardIcon from "@lucide/svelte/icons/clipboard";
+	import Copy from "@lucide/svelte/icons/copy";
 	import TerminalIcon from "@lucide/svelte/icons/terminal";
 	import * as Tooltip from "$lib/components/ui/tooltip";
 	import * as Tabs from "$lib/components/ui/tabs";
 
 	let {
-		variant = "default",
+		variant = "secondary",
 		class: className,
 		command,
 		agents = ["npm", "pnpm", "yarn", "bun"],
@@ -56,7 +56,10 @@
 			<Tabs.Root bind:value={agent}>
 				<Tabs.List class="h-auto bg-transparent p-0">
 					{#each agents as pm (pm)}
-						<Tabs.Trigger value={pm} class="h-7 font-mono text-sm font-light">
+						<Tabs.Trigger
+							value={pm}
+							class="h-7 border-none font-mono text-sm font-light"
+						>
 							{pm}
 						</Tabs.Trigger>
 					{/each}
@@ -69,7 +72,7 @@
 					{#snippet child({ props })}
 						<CopyButton {...props} text={commandText} class="size-6 [&_svg]:size-3">
 							{#snippet icon()}
-								<ClipboardIcon />
+								<Copy />
 							{/snippet}
 						</CopyButton>
 					{/snippet}
@@ -79,7 +82,7 @@
 		</Tooltip.Provider>
 	</div>
 	<div class="no-scrollbar overflow-x-auto p-3">
-		<span class="text-muted-foreground font-mono text-sm leading-none font-light text-nowrap">
+		<span class="text-primary font-mono text-xs leading-none font-light text-nowrap md:text-sm">
 			{commandText}
 		</span>
 	</div>

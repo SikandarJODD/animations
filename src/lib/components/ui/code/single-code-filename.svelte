@@ -23,8 +23,10 @@
 					<CSS />
 				{:else if code.lang === "markdown"}
 					<Markdown />
-				{:else}
+				{:else if code.lang === "bash"}
 					<Terminal />
+				{:else}
+					<Svelte />
 				{/if}
 				<span class="text-sm font-normal">{code.filename}</span>
 			</div>
@@ -35,7 +37,7 @@
 		{#if code.isExpand}
 			<Code.Overflow collapsed={true}>
 				<Code.Root
-					lang={code.lang}
+					lang={code.lang || "svelte"}
 					class="bg-background w-full rounded-none border-none"
 					code={code.filecode}
 					highlight={code.highlight}
@@ -46,7 +48,7 @@
 			</Code.Overflow>
 		{:else}
 			<Code.Root
-				lang={code.lang}
+				lang={code.lang || "svelte"}
 				class="bg-background w-full rounded-none border-none"
 				code={code.filecode}
 				highlight={code.highlight}

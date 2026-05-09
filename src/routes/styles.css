@@ -1,0 +1,36 @@
+@theme inline {
+	--animate-pulse-slow: pulse-slow var(--duration) ease-out infinite;
+	--animate-pulse-ring: pulse-ring var(--duration) ease-out infinite;
+	--animate-pulse-ripple: pulse-ripple var(--duration) cubic-bezier(0.16, 1, 0.3, 1) infinite;
+
+	/* Pulsating Button Animations - Original */
+	@keyframes pulse-slow {
+		0% {
+			box-shadow: 0 0 0 0 var(--pulse-color);
+		}
+		100% {
+			box-shadow: 0 0 0 var(--distance) transparent;
+		}
+	}
+
+	/* New Variant */
+	@keyframes pulse-ring {
+		0%,
+		100% {
+			box-shadow: 0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5));
+		}
+		50% {
+			box-shadow: 0 0 0 var(--distance) var(--pulse-color, oklch(from var(--bg) l c h / 0.5));
+		}
+	}
+
+	/* Ripple Variant */
+	@keyframes pulse-ripple {
+		0% {
+			box-shadow: 0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1);
+		}
+		100% {
+			box-shadow: 0 0 0 var(--distance) oklch(from var(--pulse-color, var(--bg)) l c h / 0);
+		}
+	}
+}

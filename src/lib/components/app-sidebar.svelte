@@ -38,8 +38,6 @@
 </script>
 
 <script lang="ts">
-	// import SearchForm from "./search-form.svelte";
-	// import VersionSwitcher from "./version-switcher.svelte";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import { ScrollArea, ScrollFadeEffect } from "$lib/components/ui/scroll-area/index.js";
 	import Badge from "$lib/components/ui/badge/badge.svelte";
@@ -51,27 +49,6 @@
 </script>
 
 <Sidebar.Root class="mt-16" {...restProps} bind:ref>
-	<!-- <Sidebar.Header>
-		<Sidebar.Menu>
-			<Sidebar.MenuItem>
-				<Sidebar.MenuButton size="lg">
-					{#snippet child({ props })}
-						<a href="##" {...props}>
-							<div
-								class="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg"
-							>
-								<GalleryVerticalEndIcon class="size-4" />
-							</div>
-							<div class="flex flex-col gap-0.5 leading-none">
-								<span class="font-medium">Documentation</span>
-								<span class="">v1.0.0</span>
-							</div>
-						</a>
-					{/snippet}
-				</Sidebar.MenuButton>
-			</Sidebar.MenuItem>
-		</Sidebar.Menu>
-	</Sidebar.Header> -->
 	<ScrollArea
 		class="max-h-[calc(100vh-6rem)] py-4 pr-1"
 		scrollbarXClasses="hidden"

@@ -3,9 +3,11 @@
 	import { Badge } from "$lib/components/ui/badge";
 	import { PanelLeftIcon } from "@lucide/svelte";
 	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
+	import HistoryIcon from "@lucide/svelte/icons/history";
 	import HomeIcon from "@lucide/svelte/icons/home";
 	import { magicUIComponents } from "$lib/components/docs/registry/magic-ui";
 	import { spellUIComponents } from "$lib/components/docs/registry/spell_ui";
+	import { fancyUIComponents } from "$lib/components/docs/registry/fancy_ui";
 	import { Separator } from "$lib/components/ui/separator";
 	import { page } from "$app/state";
 
@@ -45,7 +47,15 @@
 		badge: component.badge,
 	}));
 
+	const fancyItems: MobileNavItem[] = fancyUIComponents.map((component) => ({
+		href: component.href,
+		label: component.name,
+		description: component.desc,
+		badge: component.badge,
+	}));
+
 	const hasSpellUIUpdates = spellItems.some((item) => item.badge === "New");
+	const hasFancyUIUpdates = fancyItems.some((item) => item.badge === "New");
 
 	function isActive(href: string) {
 		const pathname = page.url.pathname;
@@ -90,11 +100,25 @@
 						<span>Home</span>
 					</div>
 				</a>
+				<a
+					href="/changelog"
+					onclick={handleLinkClick}
+					class="text-muted-foreground hover:text-primary block rounded-md px-3 py-2 text-sm font-medium transition-colors {isActive(
+						'/changelog'
+					)
+						? 'bg-accent text-accent-foreground'
+						: 'hover:bg-accent/50'}"
+				>
+					<div class="flex items-center gap-2">
+						<HistoryIcon class="size-4 shrink-0" />
+						<span>Changelog</span>
+					</div>
+				</a>
 			</div>
 
 			<Separator class="my-4" />
 			<div class="space-y-2">
-				{#each [{ title: "Get Started", items: getStartedItems, open: true, badge: undefined }, { title: "Components", items: componentItems, open: isSectionOpen(componentItems), badge: undefined }, { title: "Svelte Spell UI", items: spellItems, open: isSectionOpen(spellItems), badge: hasSpellUIUpdates ? "New" : undefined }] as section (section.title)}
+				{#each [{ title: "Get Started", items: getStartedItems, open: true, badge: undefined }, { title: "Components", items: componentItems, open: isSectionOpen(componentItems), badge: undefined }, { title: "Svelte Spell UI", items: spellItems, open: isSectionOpen(spellItems), badge: hasSpellUIUpdates ? "New" : undefined }, { title: "Svelte Fancy Components", items: fancyItems, open: isSectionOpen(fancyItems), badge: hasFancyUIUpdates ? "New" : undefined }] as section (section.title)}
 					<details
 						class="group border-border overflow-hidden rounded-lg border"
 						open={section.open}
@@ -118,7 +142,7 @@
 							/>
 						</summary>
 						<div class="space-y-1 px-2 pb-2">
-							{#each section.items as item}
+							{#each section.items as item (item.href)}
 								<a
 									href={item.href}
 									onclick={handleLinkClick}

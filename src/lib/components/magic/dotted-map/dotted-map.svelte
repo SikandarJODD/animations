@@ -2,10 +2,11 @@
 	import { createMap } from "piri";
 	import { cn } from "$lib/utils.js";
 
-	interface Marker {
+	interface Marker extends Record<string, unknown> {
 		lat: number;
 		lng: number;
 		size?: number;
+		[key: string]: unknown;
 	}
 
 	interface Props {
@@ -34,39 +35,20 @@
 		style,
 	}: Props = $props();
 
-	let { points, addMarkers } = $derived(
+	let map = $derived(
 		createMap({
 			width,
 			height,
 			mapSamples,
+			radius: dotRadius,
+			grid: stagger ? "diagonal" : "vertical",
 		})
 	);
 
-	let processedMarkers = $derived(addMarkers(markers));
-
-	let staggerHelpers = $derived.by(() => {
-		const sorted = [...points].sort((a, b) => a.y - b.y || a.x - b.x);
-		const rowMap = new Map<number, number>();
-		let step = 0;
-		let prevY = Number.NaN;
-		let prevXInRow = Number.NaN;
-
-		for (const p of sorted) {
-			if (p.y !== prevY) {
-				// new row
-				prevY = p.y;
-				prevXInRow = Number.NaN;
-				if (!rowMap.has(p.y)) rowMap.set(p.y, rowMap.size);
-			}
-			if (!Number.isNaN(prevXInRow)) {
-				const delta = p.x - prevXInRow;
-				if (delta > 0) step = step === 0 ? delta : Math.min(step, delta);
-			}
-			prevXInRow = p.x;
-		}
-
-		return { xStep: step || 1, yToRowIndex: rowMap };
-	});
+	let points = $derived(map.points);
+	let processedMarkers = $derived(
+		map.addMarkers(markers) as Array<{ x: number; y: number; size?: number }>
+	);
 </script>
 
 <svg
@@ -74,19 +56,10 @@
 	class={cn("text-gray-500 dark:text-gray-500", className)}
 	style="width: 100%; height: 100%; {style || ''}"
 >
-	{#each points as point, index}
-		{@const rowIndex = staggerHelpers.yToRowIndex.get(point.y) ?? 0}
-		{@const offsetX = stagger && rowIndex % 2 === 1 ? staggerHelpers.xStep / 2 : 0}
-		<circle cx={point.x + offsetX} cy={point.y} r={dotRadius} fill={dotColor} />
+	{#each points as point}
+		<circle cx={point.x} cy={point.y} r={dotRadius} fill={dotColor} />
 	{/each}
-	{#each processedMarkers as marker, index}
-		{@const rowIndex = staggerHelpers.yToRowIndex.get(marker.y) ?? 0}
-		{@const offsetX = stagger && rowIndex % 2 === 1 ? staggerHelpers.xStep / 2 : 0}
-		<circle
-			cx={marker.x + offsetX}
-			cy={marker.y}
-			r={marker.size ?? dotRadius}
-			fill={markerColor}
-		/>
+	{#each processedMarkers as marker}
+		<circle cx={marker.x} cy={marker.y} r={marker.size ?? dotRadius} fill={markerColor} />
 	{/each}
 </svg>

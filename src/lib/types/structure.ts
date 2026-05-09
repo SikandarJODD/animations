@@ -36,14 +36,11 @@ export type InstallComponentDocs = {
 
 export type ComponentDoc = ComponentMeta & {
 	preview?: Component;
-	installBlock?: InstallComponentDocs;
 	previewCode?: CodeBlock | CodeBlock[];
+	previewClass?: string;
+	installBlock?: InstallComponentDocs;
 	examples?: Example[];
 	seo: SEO;
-	/** @deprecated Use installBlock.tailwind instead */
-	tailwind?: CodeBlock;
 	props?: PropsTable[];
 	folderStructure?: string;
-	/** @deprecated Use installBlock.packages instead */
-	packages?: string[];
 };

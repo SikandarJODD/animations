@@ -255,6 +255,26 @@
 			"dependencies": ["motion-sv"]
 		},
 		{
+			"name": "dia-text-reveal",
+			"type": "registry:block",
+			"title": "Dia Text Reveal",
+			"description": "A sweeping gradient text reveal with viewport triggering and rotating text support.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/dia-text-reveal/dia-text-reveal.svelte",
+					"type": "registry:component",
+					"target": "magic/dia-text-reveal/dia-text-reveal.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/dia-text-reveal/index.ts",
+					"type": "registry:file",
+					"target": "magic/dia-text-reveal/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
 			"name": "cool-mode",
 			"type": "registry:block",
 			"title": "Cool Mode",
@@ -406,6 +426,25 @@
 					}
 				}
 			}
+		},
+		{
+			"name": "backlight",
+			"type": "registry:block",
+			"title": "Backlight",
+			"description": "An SVG filter wrapper that adds a soft, saturated backlight glow around the content it wraps.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/backlight/backlight.svelte",
+					"type": "registry:component",
+					"target": "magic/backlight/backlight.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/backlight/index.ts",
+					"type": "registry:file",
+					"target": "magic/backlight/index.ts"
+				}
+			],
+			"registryDependencies": []
 		},
 		{
 			"name": "avatar-circles",
@@ -873,16 +912,34 @@
 			"registryDependencies": [],
 			"cssVars": {
 				"theme": {
-					"animate-pulse-ring": "pulse-ring var(--duration) ease-out infinite"
+					"animate-pulse-slow": "pulse-slow var(--duration) ease-out infinite",
+					"animate-pulse-ring": "pulse-ring var(--duration) ease-out infinite",
+					"animate-pulse-ripple": "pulse-ripple var(--duration) cubic-bezier(0.16, 1, 0.3, 1) infinite"
 				}
 			},
 			"css": {
-				"@keyframes pulse-ring": {
+				"@keyframes pulse-slow": {
 					"0%": {
 						"box-shadow": "0 0 0 0 var(--pulse-color)"
 					},
 					"100%": {
-						"box-shadow": "0 0 0 8px transparent"
+						"box-shadow": "0 0 0 var(--distance) transparent"
+					}
+				},
+				"@keyframes pulse-ring": {
+					"0%, 100%": {
+						"box-shadow": "0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5))"
+					},
+					"50%": {
+						"box-shadow": "0 0 0 var(--distance) var(--pulse-color, oklch(from var(--bg) l c h / 0.5))"
+					}
+				},
+				"@keyframes pulse-ripple": {
+					"0%": {
+						"box-shadow": "0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1)"
+					},
+					"100%": {
+						"box-shadow": "0 0 0 var(--distance) oklch(from var(--pulse-color, var(--bg)) l c h / 0)"
 					}
 				}
 			}

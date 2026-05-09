@@ -70,8 +70,8 @@ export const data: ComponentDoc = {
 	seo,
 	installBlock: {
 		packages: [],
+		tailwind,
 	},
-	tailwind,
 	props: [
 		{
 			name: "AnimatedGradientText",

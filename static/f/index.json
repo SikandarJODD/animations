@@ -1,0 +1,14 @@
+[
+	{
+		"name": "media-between-text",
+		"title": "Media Between Text",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Reveal image or video media between two pieces of text with hover, view, or manual triggers.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "media-between-text.json"
+	}
+]
