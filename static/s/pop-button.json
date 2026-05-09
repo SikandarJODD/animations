@@ -1,0 +1,25 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "pop-button",
+	"title": "Pop Button",
+	"type": "registry:block",
+	"description": "A button with a 3D pop effect and press animation, available in multiple color variants and sizes.",
+	"dependencies": [
+		"tailwind-variants"
+	],
+	"devDependencies": [
+		"tailwind-variants@^3.2.2"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport { type VariantProps, tv } from \"tailwind-variants\";\n\n\texport const popButtonVariants = tv({\n\t\tbase: \"font-pop inline-flex select-none transition-all items-center justify-center whitespace-nowrap rounded-xl ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:border-b-2 active:scale-y-95 border-x-2 border-t-2 border-b-4 origin-bottom\",\n\t\tvariants: {\n\t\t\tcolor: {\n\t\t\t\tdefault:\n\t\t\t\t\t\"bg-white hover:bg-gray-50 border-neutral-300 text-neutral-900 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-100\",\n\t\t\t\tblue: \"bg-blue-500 hover:bg-blue-600 border-blue-800 text-white\",\n\t\t\t\tpurple: \"bg-purple-500 hover:bg-purple-600 border-purple-800 text-white\",\n\t\t\t\tpink: \"bg-pink-500 hover:bg-pink-600 border-pink-800 text-white\",\n\t\t\t\tred: \"bg-red-500 hover:bg-red-600 border-red-800 text-white\",\n\t\t\t\torange: \"bg-orange-500 hover:bg-orange-600 border-orange-800 text-white\",\n\t\t\t\tyellow: \"bg-yellow-500 hover:bg-yellow-600 border-yellow-800 text-white\",\n\t\t\t\tgreen: \"bg-green-500 hover:bg-green-600 border-green-800 text-white\",\n\t\t\t\tteal: \"bg-teal-500 hover:bg-teal-600 border-teal-800 text-white\",\n\t\t\t\tcyan: \"bg-cyan-500 hover:bg-cyan-600 border-cyan-800 text-white\",\n\t\t\t\tindigo: \"bg-indigo-500 hover:bg-indigo-600 border-indigo-800 text-white\",\n\t\t\t\tviolet: \"bg-violet-500 hover:bg-violet-600 border-violet-800 text-white\",\n\t\t\t\trose: \"bg-rose-500 hover:bg-rose-600 border-rose-800 text-white\",\n\t\t\t\tamber: \"bg-amber-500 hover:bg-amber-600 border-amber-800 text-white\",\n\t\t\t\tlime: \"bg-lime-500 hover:bg-lime-600 border-lime-800 text-white\",\n\t\t\t\tsky: \"bg-sky-500 hover:bg-sky-600 border-sky-800 text-white\",\n\t\t\t\tslate: \"bg-slate-500 hover:bg-slate-600 border-slate-800 text-white\",\n\t\t\t\tgray: \"bg-gray-500 hover:bg-gray-600 border-gray-800 text-white\",\n\t\t\t\tzinc: \"bg-zinc-500 hover:bg-zinc-600 border-zinc-800 text-white\",\n\t\t\t\tneutral: \"bg-neutral-500 hover:bg-neutral-600 border-neutral-800 text-white\",\n\t\t\t\tstone: \"bg-stone-500 hover:bg-stone-600 border-stone-800 text-white\",\n\t\t\t\tfuchsia: \"bg-fuchsia-500 hover:bg-fuchsia-600 border-fuchsia-800 text-white\",\n\t\t\t\temerald: \"bg-emerald-500 hover:bg-emerald-600 border-emerald-800 text-white\",\n\t\t\t},\n\t\t\tsize: {\n\t\t\t\tsm: \"h-9 px-2 py-1 text-sm\",\n\t\t\t\tdefault: \"h-10 px-4 py-2\",\n\t\t\t\tlg: \"h-14 px-8 py-3 text-lg\",\n\t\t\t},\n\t\t},\n\t\tdefaultVariants: {\n\t\t\tcolor: \"default\",\n\t\t\tsize: \"default\",\n\t\t},\n\t});\n\n\texport type PopButtonColor = VariantProps<typeof popButtonVariants>[\"color\"];\n\texport type PopButtonSize = VariantProps<typeof popButtonVariants>[\"size\"];\n</script>\n\n<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport type { Snippet } from \"svelte\";\n\timport { cn } from \"$UTILS$.js\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tcolor = \"default\",\n\t\tsize = \"default\",\n\t\tchildren,\n\t\t...restProps\n\t}: HTMLAttributes<HTMLButtonElement> & {\n\t\tref?: HTMLButtonElement | null;\n\t\tcolor?: PopButtonColor;\n\t\tsize?: PopButtonSize;\n\t\tchildren?: Snippet;\n\t} = $props();\n</script>\n\n<button\n\tbind:this={ref}\n\tdata-slot=\"pop-button\"\n\tclass={cn(popButtonVariants({ color, size }), className)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</button>\n",
+			"type": "registry:component",
+			"target": "spell/pop-button/pop-button.svelte"
+		},
+		{
+			"content": "import PopButton from \"./pop-button.svelte\";\n\nexport { PopButton };\nexport {\n\tpopButtonVariants,\n\ttype PopButtonColor,\n\ttype PopButtonSize,\n} from \"./pop-button.svelte\";\n",
+			"type": "registry:file",
+			"target": "spell/pop-button/index.ts"
+		}
+	]
+}

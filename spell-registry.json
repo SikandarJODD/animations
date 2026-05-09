@@ -488,6 +488,205 @@
 				}
 			],
 			"registryDependencies": []
+		},
+		{
+			"name": "animated-gradient",
+			"type": "registry:block",
+			"title": "Animated Gradient",
+			"description": "A WebGL2-powered animated gradient background with multiple presets and full customization.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/animated-gradient/animated-gradient.svelte",
+					"type": "registry:component",
+					"target": "spell/animated-gradient/animated-gradient.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/animated-gradient/index.ts",
+					"type": "registry:file",
+					"target": "spell/animated-gradient/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "copy-button",
+			"type": "registry:block",
+			"title": "Copy Button",
+			"description": "A copy-to-clipboard button with animated icon transition between copy and check states.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/copy-button/copy-button.svelte",
+					"type": "registry:component",
+					"target": "spell/copy-button/copy-button.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/copy-button/index.ts",
+					"type": "registry:file",
+					"target": "spell/copy-button/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["lucide-svelte"]
+		},
+		{
+			"name": "flow-button",
+			"type": "registry:block",
+			"title": "Flow Button",
+			"description": "A button with an animated dashed SVG border that flows on hover.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/flow-button/flow-button.svelte",
+					"type": "registry:component",
+					"target": "spell/flow-button/flow-button.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/flow-button/index.ts",
+					"type": "registry:file",
+					"target": "spell/flow-button/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "light-rays",
+			"type": "registry:block",
+			"title": "Light Rays",
+			"description": "A WebGL-powered light rays background effect with customizable colors, intensity, and animation.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/light-rays/light-rays.svelte",
+					"type": "registry:component",
+					"target": "spell/light-rays/light-rays.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/light-rays/index.ts",
+					"type": "registry:file",
+					"target": "spell/light-rays/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["three"]
+		},
+		{
+			"name": "pop-button",
+			"type": "registry:block",
+			"title": "Pop Button",
+			"description": "A button with a 3D pop effect and press animation, available in multiple color variants and sizes.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/pop-button/pop-button.svelte",
+					"type": "registry:component",
+					"target": "spell/pop-button/pop-button.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/pop-button/index.ts",
+					"type": "registry:file",
+					"target": "spell/pop-button/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["tailwind-variants"]
+		},
+		{
+			"name": "rich-button",
+			"type": "registry:block",
+			"title": "Rich Button",
+			"description": "A button with gradient backgrounds, text shadows, and 23 color variants.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/rich-button/rich-button.svelte",
+					"type": "registry:component",
+					"target": "spell/rich-button/rich-button.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/rich-button/index.ts",
+					"type": "registry:file",
+					"target": "spell/rich-button/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["tailwind-variants"]
+		},
+		{
+			"name": "shimmer-text",
+			"type": "registry:block",
+			"title": "Shimmer Text",
+			"description": "Text with an animated shimmer highlight that sweeps across on repeat.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/shimmer-text/shimmer-text.svelte",
+					"type": "registry:component",
+					"target": "spell/shimmer-text/shimmer-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/shimmer-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/shimmer-text/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "spinner",
+			"type": "registry:block",
+			"title": "Spinner",
+			"description": "A smooth gradient spinner built from an SVG arc, with size and speed variants for flexible loading states.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/spinner/spinner.svelte",
+					"type": "registry:component",
+					"target": "spell/spinner/spinner.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/spinner/index.ts",
+					"type": "registry:file",
+					"target": "spell/spinner/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "tweet",
+			"type": "registry:block",
+			"title": "Tweet",
+			"description": "Fetch and render any tweet by ID, with media, entities, and live like counts.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/tweet/tweet.svelte",
+					"type": "registry:component",
+					"target": "spell/tweet/tweet.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/tweet/index.ts",
+					"type": "registry:file",
+					"target": "spell/tweet/index.ts"
+				},
+				{
+					"path": "./src/routes/api/tweet/[id]/+server.ts",
+					"type": "registry:page",
+					"target": "src/routes/api/tweet/[id]/+server.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "chart",
+			"type": "registry:block",
+			"title": "Chart",
+			"description": "Interactive line chart with cursor-tracked tooltip, snap-to-point hover, and X-axis labels.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/chart/chart.svelte",
+					"type": "registry:component",
+					"target": "spell/chart/chart.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/chart/index.ts",
+					"type": "registry:file",
+					"target": "spell/chart/index.ts"
+				}
+			],
+			"registryDependencies": []
 		}
 	]
 }
