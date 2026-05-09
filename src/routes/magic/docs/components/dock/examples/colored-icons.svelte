@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Twitter from "@lucide/svelte/icons/twitter";
-	import Instagram from "@lucide/svelte/icons/instagram";
-	import Youtube from "@lucide/svelte/icons/youtube";
-	import Twitch from "@lucide/svelte/icons/twitch";
-	import Linkedin from "@lucide/svelte/icons/linkedin";
-	import Facebook from "@lucide/svelte/icons/facebook";
+	import Twitter from "@lucide/svelte/icons/message-circle";
+	import Instagram from "@lucide/svelte/icons/camera";
+	import Youtube from "@lucide/svelte/icons/video";
+	import Twitch from "@lucide/svelte/icons/gamepad-2";
+	import Linkedin from "@lucide/svelte/icons/briefcase";
+	import Facebook from "@lucide/svelte/icons/users";
 
 	import { Dock, DockIcon } from "$lib/components/magic/dock";
 </script>
