@@ -39,6 +39,14 @@
 		"relativeUrl": "animated-theme-toggler.json"
 	},
 	{
+		"name": "arc-timeline",
+		"title": "Arc Timeline",
+		"type": "registry:block",
+		"description": "A curved timeline that rotates through milestone steps with clickable markers, icons, and configurable spacing.",
+		"registryDependencies": [],
+		"relativeUrl": "arc-timeline.json"
+	},
+	{
 		"name": "animated-circular-progress-bar",
 		"title": "Animated Circular Progress Bar",
 		"type": "registry:block",

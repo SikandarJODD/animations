@@ -6,10 +6,14 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import NumberPickerStartValue from "./examples/number-picker-start-value.svelte";
-import NumberPickerStartValueCode from "./examples/number-picker-start-value.svelte?raw";
+import NumberPickerStartValue from "./examples/number-ticker-start-value.svelte";
+import NumberPickerStartValueCode from "./examples/number-ticker-start-value.svelte?raw";
 import NumberTickerDecimal from "./examples/number-ticker-decimal.svelte";
 import NumberTickerDecimalCode from "./examples/number-ticker-decimal.svelte?raw";
+import NumberPickerPrefixSuffix from "./examples/number-ticker-prefix-suffix.svelte";
+import NumberPickerPrefixSuffixCode from "./examples/number-ticker-prefix-suffix.svelte?raw";
+import NumberTickerTrigger from "./examples/number-ticker-trigger.svelte";
+import NumberTickerTriggerCode from "./examples/number-ticker-trigger.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -36,6 +40,24 @@ const examples: Example[] = [
 		code: {
 			filename: "number-ticker.svelte",
 			filecode: NumberPickerStartValueCode,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "With Prefix and Suffix",
+		preview: NumberPickerPrefixSuffix,
+		code: {
+			filename: "number-ticker.svelte",
+			filecode: NumberPickerPrefixSuffixCode,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Trigger On View (without once)",
+		preview: NumberTickerTrigger,
+		code: {
+			filename: "number-ticker.svelte",
+			filecode: NumberTickerTriggerCode,
 			lang: "svelte",
 		},
 	},
@@ -124,6 +146,25 @@ export const data: ComponentDoc = {
 					type: "string",
 					default: '""',
 					description: "Additional CSS classes to apply.",
+				},
+				{
+					name: "prefix",
+					type: "string",
+					default: '""',
+					description: "Prefix to display before the number.",
+				},
+				{
+					name: "suffix",
+					type: "string",
+					default: '""',
+					description: "Suffix to display after the number.",
+				},
+				{
+					name: "once",
+					type: "boolean",
+					default: "true",
+					description:
+						"Whether to animate only the first time the component comes into view.",
 				},
 			],
 		},

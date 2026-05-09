@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { inView } from "motion-sv";
+	import { useInView } from "motion-sv";
 	import { cn } from "$lib/utils";
 
 	interface NumberTickerProps {
@@ -10,6 +10,9 @@
 		delay?: number;
 		decimalPlaces?: number;
 		class?: string;
+		prefix?: string;
+		suffix?: string;
+		once?: boolean;
 	}
 
 	let {
@@ -19,6 +22,9 @@
 		delay = 0,
 		decimalPlaces = 0,
 		class: className,
+		prefix = "",
+		suffix = "",
+		once = true,
 	}: NumberTickerProps = $props();
 
 	let spanRef: HTMLSpanElement | null = $state(null);
@@ -50,10 +56,10 @@
 
 			// Update display
 			if (spanRef) {
-				spanRef.textContent = Intl.NumberFormat("en-US", {
+				spanRef.textContent = `${prefix}${Intl.NumberFormat("en-US", {
 					minimumFractionDigits: decimalPlaces,
 					maximumFractionDigits: decimalPlaces,
-				}).format(Number(position.toFixed(decimalPlaces)));
+				}).format(Number(position.toFixed(decimalPlaces)))}${suffix}`;
 			}
 
 			// Continue animation if not settled
@@ -62,34 +68,39 @@
 				requestAnimationFrame(step);
 			} else if (spanRef) {
 				// Ensure final value is exact
-				spanRef.textContent = Intl.NumberFormat("en-US", {
+				spanRef.textContent = `${prefix}${Intl.NumberFormat("en-US", {
 					minimumFractionDigits: decimalPlaces,
 					maximumFractionDigits: decimalPlaces,
-				}).format(Number(target.toFixed(decimalPlaces)));
+				}).format(Number(target.toFixed(decimalPlaces)))}${suffix}`;
 			}
 		}
 
 		requestAnimationFrame(step);
 	}
 
-	onMount(() => {
-		if (!spanRef) return;
-
-		const cleanup = inView(
-			spanRef,
-			() => {
-				const timer = setTimeout(() => {
-					const from = direction === "down" ? value : startValue;
-					const to = direction === "down" ? startValue : value;
-					animateValue(from, to);
-				}, delay * 1000);
-
-				return () => clearTimeout(timer);
-			},
-			{ margin: "0px" }
-		);
-
-		return cleanup;
+	const view = useInView(
+		() => spanRef!,
+		() =>
+			({
+				once: once,
+				margin: "0px",
+			}) as any
+	);
+	$effect(() => {
+		let timer: ReturnType<typeof setTimeout> | null = null;
+		if (view.current) {
+			timer = setTimeout(() => {
+				animateValue(
+					direction === "down" ? value : startValue,
+					direction === "down" ? startValue : value
+				);
+			}, delay);
+		}
+		return () => {
+			if (timer !== null) {
+				clearTimeout(timer);
+			}
+		};
 	});
 </script>
 
@@ -97,8 +108,10 @@
 	bind:this={spanRef}
 	class={cn("inline-block tracking-wider text-black tabular-nums dark:text-white", className)}
 >
+	{prefix}
 	{Intl.NumberFormat("en-US", {
 		minimumFractionDigits: decimalPlaces,
 		maximumFractionDigits: decimalPlaces,
 	}).format(Number((direction === "down" ? value : startValue).toFixed(decimalPlaces)))}
+	{suffix}
 </span>

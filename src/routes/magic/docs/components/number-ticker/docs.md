@@ -102,6 +102,18 @@ Copy and paste the component source code into your project.
 />
 ```
 
+### With Prefix and Suffix
+
+```svelte
+<NumberTicker
+  value={75}
+  startValue={0}
+  prefix="$"
+  suffix="USD"
+  class="text-4xl font-bold"
+/>
+```
+
 ## Notes
 
 - Uses spring physics (damping: 60, stiffness: 100) for smooth animation

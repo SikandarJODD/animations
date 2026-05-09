@@ -24,12 +24,12 @@
 	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\n\timport { motion } from \"motion-sv\";\n\timport { cn } from \"$UTILS$\";\n\n\ttype ElementType = \"span\" | \"div\" | \"p\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\";\n\n\tinterface LineShadowTextProps {\n\t\tcontent: string;\n\t\tclass?: string;\n\t\tshadowColor?: string;\n\t\tas?: ElementType;\n\t}\n\n\tlet {\n\t\tcontent,\n\t\tclass: className,\n\t\tshadowColor = \"black\",\n\t\tas = \"span\",\n\t}: LineShadowTextProps = $props();\n\n\tlet MotionComponent = $derived(motion[as]);\n</script>\n\n<MotionComponent\n\tstyle={{ \"--shadow-color\": shadowColor }}\n\tclass={cn(\n\t\t\"relative z-0 inline-block whitespace-pre\",\n\t\t\"after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]\",\n\t\t\"after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]\",\n\t\t\"after:-z-10 after:bg-size-[0.06em_0.06em] after:bg-clip-text after:text-transparent\",\n\t\t\"after:animate-line-shadow\",\n\t\tclassName\n\t)}\n\tdata-text={content}\n>\n\t{content}\n</MotionComponent>\n",
+			"content": "<script lang=\"ts\">\r\n\timport { motion } from \"motion-sv\";\r\n\timport { cn } from \"$UTILS$\";\r\n\r\n\ttype ElementType = \"span\" | \"div\" | \"p\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\";\r\n\r\n\tinterface LineShadowTextProps {\r\n\t\tcontent: string;\r\n\t\tclass?: string;\r\n\t\tshadowColor?: string;\r\n\t\tas?: ElementType;\r\n\t}\r\n\r\n\tlet {\r\n\t\tcontent,\r\n\t\tclass: className,\r\n\t\tshadowColor = \"black\",\r\n\t\tas = \"span\",\r\n\t}: LineShadowTextProps = $props();\r\n\r\n\tlet MotionComponent = $derived(motion[as]);\r\n</script>\r\n\r\n<MotionComponent\r\n\tstyle={{ \"--shadow-color\": shadowColor }}\r\n\tclass={cn(\r\n\t\t\"relative z-0 inline-block whitespace-pre\",\r\n\t\t\"after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]\",\r\n\t\t\"after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]\",\r\n\t\t\"after:-z-10 after:bg-size-[0.06em_0.06em] after:bg-clip-text after:text-transparent\",\r\n\t\t\"after:animate-line-shadow\",\r\n\t\tclassName\r\n\t)}\r\n\tdata-text={content}\r\n>\r\n\t{content}\r\n</MotionComponent>\r\n",
 			"type": "registry:component",
 			"target": "magic/line-shadow-text/line-shadow-text.svelte"
 		},
 		{
-			"content": "import LineShadowText from \"./line-shadow-text.svelte\";\nexport { LineShadowText };\n",
+			"content": "import LineShadowText from \"./line-shadow-text.svelte\";\r\nexport { LineShadowText };\r\n",
 			"type": "registry:file",
 			"target": "magic/line-shadow-text/index.ts"
 		}
