@@ -18,7 +18,7 @@
 		useOriginalCharsOnly?: boolean;
 		characters?: string;
 		class?: string;
-		scrambledClassName?: string;
+		scrambledClass?: string;
 	}
 
 	const DEFAULT_CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+';
@@ -32,7 +32,7 @@
 		useOriginalCharsOnly = false,
 		characters = DEFAULT_CHARACTERS,
 		class: className,
-		scrambledClassName,
+		scrambledClass,
 		onmouseenter,
 		onmouseleave,
 		...props
@@ -283,7 +283,7 @@
 
 	<span aria-hidden="true">
 		{#each renderedSegments as segment, index (index)}
-			<span class={isCharacterScrambled(index) ? scrambledClassName : undefined}>{segment}</span>
+			<span class={isCharacterScrambled(index) ? scrambledClass : undefined}>{segment}</span>
 		{/each}
 	</span>
 </motion.span>

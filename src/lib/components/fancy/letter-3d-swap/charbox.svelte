@@ -5,15 +5,15 @@
 
 	interface CharBoxProps {
 		char: string;
-		frontFaceClassName?: string;
-		secondFaceClassName?: string;
+		frontFaceClass?: string;
+		secondFaceClass?: string;
 		rotateDirection: RotateDirection;
 	}
 
 	let {
 		char,
-		frontFaceClassName,
-		secondFaceClassName,
+		frontFaceClass = '',
+		secondFaceClass = '',
 		rotateDirection
 	}: CharBoxProps = $props();
 
@@ -52,11 +52,11 @@
 </script>
 
 <span
-	class="letter-3d-swap-char-box-item relative inline-block [transform-style:preserve-3d]"
+	class="letter-3d-swap-char-box-item relative align-top transform-3d"
 	style:transform={outerTransform}
 >
 	<span
-		class={cn('relative inline-block h-[1lh] [backface-visibility:hidden]', frontFaceClassName)}
+		class={cn('relative h-lh backface-hidden!', frontFaceClass)}
 		style:transform={frontFaceTransform}
 	>
 		{char}
@@ -64,8 +64,8 @@
 
 	<span
 		class={cn(
-			'absolute top-0 left-0 inline-block h-[1lh] [backface-visibility:hidden]',
-			secondFaceClassName
+			'absolute top-0 left-0 h-lh backface-hidden!',
+			secondFaceClass
 		)}
 		style:transform={secondFaceTransform}
 	>

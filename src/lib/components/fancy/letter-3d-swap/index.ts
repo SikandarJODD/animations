@@ -1,2 +1,2 @@
-import Letter3dSwap from "./letter-3d-swap.svelte";
-export { Letter3dSwap };
+import Letter3DSwap from "./letter-3d-swap.svelte";
+export { Letter3DSwap };

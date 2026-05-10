@@ -30,9 +30,9 @@
 	interface Letter3DSwapProps extends HTMLAttributes<HTMLElement> {
 		children?: Snippet;
 		as?: ElementType;
-		mainClassName?: string;
-		frontFaceClassName?: string;
-		secondFaceClassName?: string;
+		mainClass?: string;
+		frontFaceClass?: string;
+		secondFaceClass?: string;
 		staggerDuration?: number;
 		staggerFrom?: StaggerFrom;
 		transition?: AnimationOptions;
@@ -49,9 +49,9 @@
 	let {
 		children,
 		as = 'p',
-		mainClassName,
-		frontFaceClassName,
-		secondFaceClassName,
+		mainClass,
+		frontFaceClass,
+		secondFaceClass,
 		staggerDuration = 0.05,
 		staggerFrom = 'first',
 		transition = defaultTransition,
@@ -89,6 +89,14 @@
 			default:
 				return 'rotateY(-90deg)';
 		}
+	});
+
+	let restTransform = $derived.by(() => {
+		if (rotateDirection === 'top' || rotateDirection === 'bottom') {
+			return 'translateZ(-0.5lh)';
+		}
+
+		return 'rotateY(90deg) translateX(50%) rotateY(-90deg)';
 	});
 
 	let segments = $derived.by<TextSegment[]>(() => {
@@ -162,7 +170,7 @@
 
 		await animate(
 			'.letter-3d-swap-char-box-item',
-			{ transform: 'rotateX(0deg) rotateY(0deg)' },
+			{ transform: restTransform },
 			{ duration: 0 }
 		);
 
@@ -197,7 +205,7 @@
 <svelte:element
 	this={as}
 	bind:this={scope.current}
-	class={cn('relative flex flex-wrap [perspective:1000px]', mainClassName, className)}
+	class={cn('relative flex flex-wrap', mainClass, className)}
 	onmouseenter={handleHoverStart}
 	onmouseleave={handleHoverEnd}
 	{onclick}
@@ -219,8 +227,8 @@
 				{#each segment.data.characters as char, charIndex (`char-${segment.data.startIndex + charIndex}`)}
 					<CharBox
 						{char}
-						{frontFaceClassName}
-						{secondFaceClassName}
+						{frontFaceClass}
+						{secondFaceClass}
 						{rotateDirection}
 					/>
 				{/each}

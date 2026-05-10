@@ -54,7 +54,7 @@
 	</section>
 
 	<section>
-		<div class="my-10">
+		<div class="my-10 text-lg">
 			<p class="font-figtree mb-6">
 				There are two types of animations available for this component:
 			</p>

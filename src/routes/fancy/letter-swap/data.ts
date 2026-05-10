@@ -11,6 +11,8 @@ import StaggerFromExample from "./examples/stagger-from-example.svelte";
 import StaggerFromExampleRaw from "./examples/stagger-from-example.svelte?raw";
 import LineSwapExample from "./examples/line-swap-example.svelte";
 import LineSwapExampleRaw from "./examples/line-swap-example.svelte?raw";
+import PingPongExample from "./examples/ping-pong-example.svelte";
+import PingPongExampleRaw from "./examples/ping-pong-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "letter-swap",
@@ -49,6 +51,15 @@ let examples: Example[] = [
 			highlight: [11, 12],
 		},
 	},
+	{
+		name: "Ping Pong",
+		preview: PingPongExample,
+		code: {
+			filename: "ping-pong-example.svelte",
+			filecode: PingPongExampleRaw,
+			lang: "svelte",
+		}
+	}
 ];
 
 export const data: ComponentDoc = {
