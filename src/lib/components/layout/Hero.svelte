@@ -1,14 +1,9 @@
 <script>
 	import Button from "$lib/components/ui/button/button.svelte";
-	import { spellUIComponents } from "$lib/components/docs/registry/spell_ui";
 	import { cn } from "$lib/utils";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import GridPattern from "../magic/grid-pattern/grid-pattern.svelte";
 	import * as Icons from "$lib/components/icons";
-
-	const spellComponentCount = spellUIComponents.filter(
-		(component) => component.category !== "Overview"
-	).length;
 </script>
 
 <div>
@@ -25,7 +20,7 @@
 					<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 						<div class="mt-0">
 							<a
-								href="/spell"
+								href="/fancy/letter-swap"
 								class="hover:bg-muted dark:hover:border-t-border bg-muted dark:bg-muted/60 group mx-auto flex w-fit max-w-[min(100%,30rem)] items-center gap-2 rounded-full border p-1 pl-3 shadow-md shadow-zinc-950/5 backdrop-blur-xs transition-colors duration-300 sm:pl-4 dark:border-t-white/5 dark:shadow-zinc-950"
 							>
 								<span
@@ -51,7 +46,7 @@
 										></path>
 									</svg>
 									<span class="font-mono leading-snug text-balance">
-										{spellComponentCount}+ New Components
+										New Fancy Components
 									</span>
 								</span>
 								<div

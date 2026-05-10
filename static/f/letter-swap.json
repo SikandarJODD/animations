@@ -1,0 +1,23 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "letter-swap",
+	"title": "Letter Swap",
+	"type": "registry:block",
+	"author": "SikandarJODD",
+	"description": "Slide each letter into a second copy on hover with directional staggered motion.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\r\n\timport { motion, useAnimate, stagger, type AnimationOptions } from 'motion-sv';\r\n\timport { cn } from '$UTILS$';\r\n\timport type { HTMLAttributes } from 'svelte/elements';\r\n\r\n\tinterface LetterSwapProps extends HTMLAttributes<HTMLSpanElement> {\r\n\t\tlabel: string;\r\n\t\treverse?: boolean;\r\n\t\ttransition?: AnimationOptions;\r\n\t\tstaggerDuration?: number;\r\n\t\tstaggerFrom?: 'first' | 'last' | 'center' | number;\r\n\t\tclass?: string;\r\n\t}\r\n\r\n\tlet {\r\n\t\tlabel,\r\n\t\treverse = true,\r\n\t\ttransition = {\r\n\t\t\ttype: 'spring',\r\n\t\t\tduration: 0.7\r\n\t\t},\r\n\t\tstaggerDuration = 0.03,\r\n\t\tstaggerFrom = 'first',\r\n\t\tclass: className,\r\n\t\tonclick,\r\n\t\t...props\r\n\t}: LetterSwapProps = $props();\r\n\r\n\tlet [scope, animate] = useAnimate();\r\n\tlet blocked = $state(false);\r\n\tlet letters = $derived(label.split(''));\r\n\r\n\tlet hoverStart = () => {\r\n\t\tif (blocked) return;\r\n\t\tblocked = true;\r\n\r\n\t\t// Function to merge user transition with stagger and delay\r\n\t\tlet mergeTransition = (baseTransition: AnimationOptions) => ({\r\n\t\t\t...baseTransition,\r\n\t\t\tdelay: stagger(staggerDuration, {\r\n\t\t\t\tfrom: staggerFrom\r\n\t\t\t})\r\n\t\t});\r\n\r\n\t\tanimate('.letter', { y: reverse ? '100%' : '-100%' }, mergeTransition(transition) as any).then(\r\n\t\t\t() => {\r\n\t\t\t\tanimate(\r\n\t\t\t\t\t'.letter',\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\ty: 0\r\n\t\t\t\t\t},\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tduration: 0\r\n\t\t\t\t\t}\r\n\t\t\t\t).then(() => {\r\n\t\t\t\t\tblocked = false;\r\n\t\t\t\t});\r\n\t\t\t}\r\n\t\t);\r\n\r\n\t\tanimate(\r\n\t\t\t'.letter-secondary',\r\n\t\t\t{\r\n\t\t\t\ttop: '0%'\r\n\t\t\t},\r\n\t\t\tmergeTransition(transition) as any\r\n\t\t).then(() => {\r\n\t\t\tanimate(\r\n\t\t\t\t'.letter-secondary',\r\n\t\t\t\t{\r\n\t\t\t\t\ttop: reverse ? '-100%' : '100%'\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\tduration: 0\r\n\t\t\t\t}\r\n\t\t\t);\r\n\t\t});\r\n\t};\r\n</script>\r\n\r\n<span\r\n\tbind:this={scope.current}\r\n\tclass={cn('relative flex items-center justify-center overflow-hidden', className)}\r\n\tonmouseenter={hoverStart}\r\n\t{onclick}\r\n\t{...props}\r\n>\r\n\t<span class=\"sr-only\">{label}</span>\r\n\r\n\t{#each letters as letter}\r\n\t\t<span class=\"relative flex whitespace-pre\" aria-hidden=\"true\">\r\n\t\t\t<motion.span class=\"letter relative\" style={{ top: 0 }}>\r\n\t\t\t\t{letter}\r\n\t\t\t</motion.span>\r\n\t\t\t<motion.span class=\"letter-secondary absolute\" style={{ top: reverse ? '-100%' : '100%' }}>\r\n\t\t\t\t{letter}\r\n\t\t\t</motion.span>\r\n\t\t</span>\r\n\t{/each}\r\n</span>\r\n",
+			"type": "registry:component",
+			"target": "fancy/letter-swap/letter-swap.svelte"
+		},
+		{
+			"content": "export { default as LetterSwap } from './letter-swap.svelte';\r\n",
+			"type": "registry:file",
+			"target": "fancy/letter-swap/index.ts"
+		}
+	]
+}

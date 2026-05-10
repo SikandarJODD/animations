@@ -10,5 +10,140 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "media-between-text.json"
+	},
+	{
+		"name": "letter-3d-swap",
+		"title": "Letter 3D Swap",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Rotate each character on hover with a 3D flip and configurable stagger direction.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "letter-3d-swap.json"
+	},
+	{
+		"name": "letter-swap",
+		"title": "Letter Swap",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Slide each letter into a second copy on hover with directional staggered motion.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "letter-swap.json"
+	},
+	{
+		"name": "letter-swap-ping-pong",
+		"title": "Letter Swap Ping Pong",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Swap letters on hover and reverse them on exit with debounced ping-pong motion.",
+		"dependencies": [
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "letter-swap-ping-pong.json"
+	},
+	{
+		"name": "random-letter-swap",
+		"title": "Random Letter Swap",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Reveal a second letter layer in a shuffled hover order for a randomized swap effect.",
+		"dependencies": [
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "random-letter-swap.json"
+	},
+	{
+		"name": "random-letter-swap-ping-pong",
+		"title": "Random Letter Swap Ping Pong",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Animate randomized letter swaps on hover in and out using a persistent shuffled order.",
+		"dependencies": [
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "random-letter-swap-ping-pong.json"
+	},
+	{
+		"name": "scramble-hover",
+		"title": "Scramble Hover",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Scramble text on hover with sequential or iterative reveals and custom character sets.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "scramble-hover.json"
+	},
+	{
+		"name": "scramble-in",
+		"title": "Scramble In",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Animate text in by revealing real characters through a configurable scramble pass.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "scramble-in.json"
+	},
+	{
+		"name": "text-along-path",
+		"title": "Text Along Path",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Render animated text that loops or tracks scroll progress along any SVG path.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "text-along-path.json"
+	},
+	{
+		"name": "text-highlighter",
+		"title": "Text Highlighter",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Sweep a highlight background across inline text on hover, in view, or on demand.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "text-highlighter.json"
+	},
+	{
+		"name": "underline-to-background",
+		"title": "Underline To Background",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Expand an underline into a full background fill while transitioning the text color.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "underline-to-background.json"
+	},
+	{
+		"name": "vertical-cut-reveal",
+		"title": "Vertical Cut Reveal",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Reveal text from vertical cuts with word, character, or line-based staggering.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "vertical-cut-reveal.json"
 	}
 ]

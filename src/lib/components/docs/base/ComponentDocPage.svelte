@@ -10,6 +10,7 @@
 		title: string;
 		description: string;
 		seo: SEO;
+		installPathPrefix?: "r" | "s" | "f";
 		preview?: Component;
 		previewCode?: CodeBlock | CodeBlock[];
 		installCodeBlocks?: CodeBlock | CodeBlock[];
@@ -37,6 +38,7 @@
 		title,
 		description,
 		seo,
+		installPathPrefix,
 		preview,
 		previewCode,
 		installCodeBlocks,
@@ -50,7 +52,9 @@
 
 	let PreviewComp = $derived(preview);
 	let isSpellRoute = $derived(page.url.pathname.split("/").includes("spell"));
-	let installUrl = $derived(`${page.url.origin}/${isSpellRoute ? "s" : "r"}/${id}.json`);
+	let installUrl = $derived(
+		`${page.url.origin}/${installPathPrefix ?? (isSpellRoute ? "s" : "r")}/${id}.json`
+	);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -101,7 +105,7 @@
 		<section>
 			<H2 id="examples">Examples</H2>
 			<div class="mt-4 space-y-8">
-				{#each examples as example}
+				{#each examples as example (example.name)}
 					<div class="space-y-0">
 						<H3 id={example.name.toLowerCase().replace(/\s+/g, "-")} class="mt-0">
 							{example.name}
@@ -125,7 +129,7 @@
 			<H2 id="props">Props</H2>
 			<div class="mt-3 space-y-6">
 				<div>
-					{#each propsTables as prop}
+					{#each propsTables as prop, index (prop.name ?? index)}
 						<APITable data={prop} />
 					{/each}
 				</div>
