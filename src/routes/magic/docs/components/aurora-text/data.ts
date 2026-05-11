@@ -4,6 +4,8 @@ import IndexTs from "$lib/components/magic/aurora-text/index.ts?raw";
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import DemoExample from "./examples/demo-example.svelte";
+import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -29,6 +31,18 @@ const seo: SEO = {
 		"Gradient Text",
 	],
 };
+
+let examples: Example[] = [
+	{
+		name: "Demo",
+		preview: DemoExample,
+		code: {
+			filename: "demo-example.svelte",
+			filecode: DemoExampleRaw,
+			lang: "svelte",
+		},
+	},
+];
 
 let installBlock: InstallComponentDocs = {
 	packages: [],
@@ -94,6 +108,7 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	examples,
 	seo,
 	props: [
 		{

@@ -43,12 +43,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-+-- lib/
-    +-- components/
-        +-- fancy/
-            +-- text-highlighter/
-				|-- text-highlighter.svelte
-                +-- index.ts`,
+└── lib/
+    └── components/
+        └── fancy/
+            └── text-highlighter/
+                ├── text-highlighter.svelte
+                └── index.ts`,
 };
 
 const examples: Example[] = [

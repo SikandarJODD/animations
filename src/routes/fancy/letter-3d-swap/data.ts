@@ -71,13 +71,13 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-+-- lib/
-    +-- components/
-        +-- fancy/
-            +-- letter-3d-swap/
-                |-- letter-3d-swap.svelte
-                |-- charbox.svelte
-                +-- index.ts`,
+└── lib/
+    └── components/
+        └── fancy/
+            └── letter-3d-swap/
+                ├── letter-3d-swap.svelte
+				├── charbox.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

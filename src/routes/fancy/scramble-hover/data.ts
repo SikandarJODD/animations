@@ -44,12 +44,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-+-- lib/
-    +-- components/
-        +-- fancy/
-            +-- scramble-hover/
-                |-- scramble-hover.svelte
-                +-- index.ts`,
+└── lib/
+    └── components/
+        └── fancy/
+            └── scramble-hover/
+                ├── scramble-hover.svelte
+                └── index.ts`,
 };
 
 let examples: Example[] = [
