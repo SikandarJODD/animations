@@ -46,7 +46,7 @@
 	</section>
 
 	<section>
-		<PreviewComponent code={data.previewCode}>
+		<PreviewComponent code={data.previewCode} class={data.previewClass}>
 			{#if PreviewComp}
 				<PreviewComp />
 			{/if}

@@ -61,6 +61,7 @@ let examples: Example[] = [
 			filecode: NewCharsExampleRaw,
 			lang: "svelte",
 		},
+		previewClass: "p-0",
 	},
 	{
 		name: "Special Symbols Example",
@@ -69,7 +70,8 @@ let examples: Example[] = [
 			filename: "special-symbols-example.svelte",
 			filecode: SpecialSymbolsExampleRaw,
 			lang: "svelte",
-		}
+		},
+		previewClass: "p-0",
 	},
 	{
 		name: "Position Example",
@@ -78,8 +80,9 @@ let examples: Example[] = [
 			filename: "position-example.svelte",
 			filecode: PositionExampleRaw,
 			lang: "svelte",
-		}
-	}
+		},
+		previewClass: "p-0",
+	},
 ];
 
 export const data: ComponentDoc = {
@@ -92,5 +95,6 @@ export const data: ComponentDoc = {
 		filecode: PreviewRaw,
 		lang: "svelte",
 	},
+	previewClass: "p-0",
 	examples,
 };

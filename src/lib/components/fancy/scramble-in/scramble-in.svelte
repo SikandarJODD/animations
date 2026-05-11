@@ -1,14 +1,16 @@
 <script lang="ts">
 	import { motion } from 'motion-sv';
+	import { untrack } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	interface ScrambleInProps extends HTMLAttributes<HTMLSpanElement> {
 		text: string;
+		scrambleDelay?: number;
 		scrambleSpeed?: number;
 		scrambledLetterCount?: number;
 		characters?: string;
 		class?: string;
-		scrambledClassName?: string;
+		scrambledClass?: string;
 		autoStart?: boolean;
 		onStart?: () => void;
 		onComplete?: () => void;
@@ -18,11 +20,12 @@
 
 	let {
 		text,
+		scrambleDelay = 0,
 		scrambleSpeed = 50,
 		scrambledLetterCount = 2,
 		characters = DEFAULT_CHARACTERS,
 		class: className,
-		scrambledClassName,
+		scrambledClass,
 		autoStart = true,
 		onStart,
 		onComplete,
@@ -66,16 +69,39 @@
 	let scrambledText = $derived.by(() => joinSegments(displaySegments.slice(visibleLetterCount)));
 
 	let previousAutoStart = false;
+	let startTimeout: ReturnType<typeof setTimeout> | null = null;
+
+	function clearStartTimeout() {
+		if (startTimeout !== null) {
+			clearTimeout(startTimeout);
+			startTimeout = null;
+		}
+	}
 
 	export function start() {
+		clearStartTimeout();
 		displayText = '';
 		visibleLetterCount = 0;
 		scrambleOffset = 0;
-		isAnimating = true;
-		onStart?.();
+		isAnimating = false;
+
+		const delay = Math.max(0, scrambleDelay);
+
+		if (delay === 0) {
+			isAnimating = true;
+			onStart?.();
+			return;
+		}
+
+		startTimeout = setTimeout(() => {
+			startTimeout = null;
+			isAnimating = true;
+			onStart?.();
+		}, delay);
 	}
 
 	export function reset() {
+		clearStartTimeout();
 		displayText = '';
 		visibleLetterCount = 0;
 		scrambleOffset = 0;
@@ -84,11 +110,13 @@
 
 	$effect(() => {
 		if (autoStart && !previousAutoStart) {
-			queueMicrotask(() => start());
+			queueMicrotask(() => untrack(() => start()));
 		}
 
 		previousAutoStart = autoStart;
 	});
+
+	$effect(() => clearStartTimeout);
 
 	$effect(() => {
 		if (!isAnimating) {
@@ -130,6 +158,6 @@
 
 	<motion.span class="inline-block whitespace-pre-wrap" aria-hidden="true">
 		<span class={className}>{revealedText}</span>
-		<span class={scrambledClassName}>{scrambledText}</span>
+		<span class={scrambledClass}>{scrambledText}</span>
 	</motion.span>
 </span>

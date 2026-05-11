@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { page } from "$app/state";
+	import * as Item from "$lib/components/ui/item/index.js";
+	import { Button } from "$lib/components/ui/button";
 	import CompactPropsTable from "$lib/components/docs/base/CompactPropsTable.svelte";
 	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
 	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
 	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
 	import { H1, H2, H3, Paragraph } from "$lib/components/docs/markdown/index";
 	import { PreviewComponent } from "$lib/components/ui/preview-component";
+	import { Separator } from "$lib/components/ui/separator";
 	import SEOComponent from "$lib/seo/SEO.svelte";
 	import { data } from "./data";
 
@@ -55,36 +58,44 @@
 			folderStructure={data.installBlock?.folderStructure}
 			class="mt-4"
 		/>
+		<Item.Root variant="muted" class="mt-4">
+			<Item.Content>
+				<Item.Title id="visit-original-docs">Visit Original Docs</Item.Title>
+				<Item.Description>
+					For more deeper understaing visit fancy components documentation.
+				</Item.Description>
+			</Item.Content>
+			<Item.Actions>
+				<Button
+					variant="outline"
+					size="sm"
+					target="_blank"
+					href="https://www.fancycomponents.dev/docs/components/blocks/media-between-text#installation"
+				>
+					Docs
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</Button>
+			</Item.Actions>
+		</Item.Root>
 	</section>
 
 	<section class="font-figtree mt-14">
 		<H2 id="logic" class="font-figtree">Logic Image</H2>
-		<div class="mt-3 space-y-4">
-			<!-- <Paragraph class="font-figtree">
-				The component renders
-				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm"
-					>firstText</code
-				>,
-				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm">media</code
-				>, then
-				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm"
-					>secondText</code
-				>.
-			</Paragraph>
-			<Paragraph>
-				Use
-				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm"
-					>triggerType</code
-				>
-				as
-				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm">hover</code
-				>,
-				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm"
-					>inView</code
-				>, or
-				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm">ref</code
-				>.</Paragraph
-			> -->
+		<div class="mt-6 space-y-4">
 			<div>
 				<img
 					src="/svgs/media-between-text.svg"
@@ -94,7 +105,6 @@
 			</div>
 		</div>
 	</section>
-
 	{#if data.examples && data.examples.length > 0}
 		<section class="mt-14">
 			<H2 id="examples">Examples</H2>
