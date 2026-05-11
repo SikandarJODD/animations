@@ -50,12 +50,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["motion-sv"],
 	folderStructure: `src/
-+-- lib/
-    +-- components/
-        +-- fancy/
-            +-- media-between-text/
-                |-- media-between-text.svelte
-                +-- index.ts`,
+└── lib/
+    └── components/
+        └── fancy/
+            └── media-between-text/
+                ├── media-between-text.svelte
+                └── index.ts`,
 };
 
 let examples: Example[] = [

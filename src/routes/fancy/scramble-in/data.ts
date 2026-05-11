@@ -43,12 +43,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-+-- lib/
-    +-- components/
-        +-- fancy/
-            +-- scramble-in/
-                |-- scramble-in.svelte
-                +-- index.ts`,
+└── lib/
+    └── components/
+        └── fancy/
+            └── scramble-in/
+                ├── scramble-in.svelte
+                └── index.ts`,
 };
 
 let examples: Example[] = [

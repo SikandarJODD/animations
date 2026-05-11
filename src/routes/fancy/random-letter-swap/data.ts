@@ -82,12 +82,12 @@ export let randomLetterSwapInstallation: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-+-- lib/
-	+-- components/
-		+-- fancy/
-			+-- random-letter-swap/
-				|-- random-letter-swap.svelte
-				+-- index.ts`,
+└── lib/
+    └── components/
+        └── fancy/
+            └── random-letter-swap/
+                ├── random-letter-swap.svelte
+                └── index.ts`,
 };
 
 export let randomLetterSwapPingPongInstallation: InstallComponentDocs = {
@@ -106,10 +106,10 @@ export let randomLetterSwapPingPongInstallation: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-+-- lib/
-	+-- components/
-		+-- fancy/
-			+-- random-letter-swap/
-				|-- random-letter-swap.svelte
-				+-- index.ts`,
+└── lib/
+    └── components/
+        └── fancy/
+            └── random-letter-swap-ping-pong/
+                ├── random-letter-swap-ping-pong.svelte
+                └── index.ts`,
 };
