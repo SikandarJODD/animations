@@ -39,6 +39,7 @@ let examples: Example[] = [
 			lang: "svelte",
 			highlight: [8, 9, 10],
 		},
+		previewClass: "p-0",
 	},
 	{
 		name: "Line Swap",
@@ -50,6 +51,7 @@ let examples: Example[] = [
 			lang: "svelte",
 			highlight: [11, 12],
 		},
+		previewClass: "p-0",
 	},
 	{
 		name: "Ping Pong",
@@ -58,14 +60,16 @@ let examples: Example[] = [
 			filename: "ping-pong-example.svelte",
 			filecode: PingPongExampleRaw,
 			lang: "svelte",
-		}
-	}
+		},
+		previewClass: "p-0",
+	},
 ];
 
 export const data: ComponentDoc = {
 	...meta,
 	seo,
 	preview: Preview,
+	previewClass: "p-0",
 	previewCode: {
 		filename: "preview.svelte",
 		filecode: PreviewRaw,

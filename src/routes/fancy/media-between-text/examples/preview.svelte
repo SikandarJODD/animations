@@ -3,8 +3,8 @@
 </script>
 
 <MediaBetweenText
-	firstText="Mañgo"
-	secondText="Time"
+	firstText="Hover"
+	secondText="Me"
 	mediaUrl="https://i.pinimg.com/736x/09/66/63/0966639167069429771428b4d4fd4c2a.jpg"
 	mediaType="image"
 	alt="Abstract landscape used in the Media Between Text preview"

@@ -1,2 +1,2 @@
-import TextAlongPath from "./text-along-path.svelte";
-export { TextAlongPath };
+import AnimatedPathText from "./text-along-path.svelte";
+export { AnimatedPathText };

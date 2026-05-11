@@ -176,9 +176,34 @@
 	}
 	html {
 		scroll-behavior: smooth;
+		@apply scroll-smooth;
 	}
 	body {
 		@apply bg-background text-foreground;
+	}
+
+	/* Custom scrollbar styling. Thanks @pranathiperii. */
+	::-webkit-scrollbar {
+		width: 5px;
+		height: 5px;
+	}
+
+	::-webkit-scrollbar-corner {
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply bg-muted-foreground/40 rounded-md;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		@apply bg-muted-foreground/60;
+	}
+	::-webkit-scrollbar-thumb:active {
+		@apply bg-muted-foreground/80;
 	}
 }
 

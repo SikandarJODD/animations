@@ -14,7 +14,9 @@
 
 	let PreviewComp = $derived(data.preview);
 	let installRandomLetterSwap = $derived(`${page.url.origin}/f/random-letter-swap.json`);
-	let installRandomLetterSwapPingPong = $derived(`${page.url.origin}/f/random-letter-swap-ping-pong.json`);
+	let installRandomLetterSwapPingPong = $derived(
+		`${page.url.origin}/f/random-letter-swap-ping-pong.json`
+	);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -46,7 +48,7 @@
 	</section>
 
 	<section>
-		<PreviewComponent code={data.previewCode}>
+		<PreviewComponent code={data.previewCode} class={data.previewClass}>
 			{#if PreviewComp}
 				<PreviewComp />
 			{/if}
@@ -138,7 +140,7 @@
 								{example.name}
 							</H3>
 							{#if example.description}
-								<Paragraph class='mt-1'>
+								<Paragraph class="mt-1">
 									{example.description}
 								</Paragraph>
 							{/if}

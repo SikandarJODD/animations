@@ -28,6 +28,7 @@ let examples: Example[] = [
 			filecode: PositionExampleRaw,
 			lang: "svelte",
 		},
+		previewClass: "p-0",
 	},
 	{
 		name: "Rotation Example",
@@ -37,6 +38,7 @@ let examples: Example[] = [
 			filecode: RotationExampleRaw,
 			lang: "svelte",
 		},
+		previewClass: "p-0",
 	},
 ];
 
@@ -89,5 +91,6 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		highlight: [[14, 24]],
 	},
+	previewClass: "p-0",
 	examples,
 };

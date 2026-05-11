@@ -63,6 +63,7 @@ export const data: ComponentDoc = {
 		filecode: PreviewRaw,
 		lang: "svelte",
 	},
+	previewClass: "p-0",
 };
 
 export let randomLetterSwapInstallation: InstallComponentDocs = {

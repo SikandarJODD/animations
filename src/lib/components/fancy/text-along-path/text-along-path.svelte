@@ -1,86 +1,124 @@
 <script lang="ts">
-	import { motion, useScroll, useTransform, type Transition, type UseScrollOptions } from 'motion-sv';
-	import type { SVGAttributes } from 'svelte/elements';
+	import { useScroll, type UseScrollOptions } from "motion-sv";
+	import type { SVGAttributes } from "svelte/elements";
 
-	interface TextAlongPathProps extends Omit<SVGAttributes<SVGSVGElement>, 'transition'> {
+	type PreserveAspectRatioAlign =
+		| "none"
+		| "xMinYMin"
+		| "xMidYMin"
+		| "xMaxYMin"
+		| "xMinYMid"
+		| "xMidYMid"
+		| "xMaxYMid"
+		| "xMinYMax"
+		| "xMidYMax"
+		| "xMaxYMax";
+
+	type PreserveAspectRatioMeetOrSlice = "meet" | "slice";
+	type PreserveAspectRatio =
+		| PreserveAspectRatioAlign
+		| `${Exclude<PreserveAspectRatioAlign, "none">} ${PreserveAspectRatioMeetOrSlice}`;
+
+	interface TextAlongPathProps extends SVGAttributes<SVGSVGElement> {
 		path: string;
-		text: string;
 		pathId?: string;
 		pathClass?: string;
-		textClass?: string;
+		preserveAspectRatio?: PreserveAspectRatio;
 		showPath?: boolean;
-		textAnchor?: 'start' | 'middle' | 'end';
-		animationType?: 'auto' | 'scroll';
+		width?: string | number;
+		height?: string | number;
+		viewBox?: string;
+		svgClass?: string;
+		text: string;
+		textClass?: string;
+		textAnchor?: "start" | "middle" | "end";
+		animationType?: "auto" | "scroll";
+		duration?: number;
+		repeatCount?: number | "indefinite";
+		easingFunction?: {
+			calcMode?: string;
+			keyTimes?: string;
+			keySplines?: string;
+		};
 		scrollContainer?: HTMLElement | null;
-		scrollOffset?: UseScrollOptions['offset'];
+		scrollOffset?: UseScrollOptions["offset"];
 		scrollTransformValues?: [number, number];
-		transition?: Transition;
 	}
 
-	const defaultAutoTransition: Transition = {
-		duration: 4,
-		ease: 'linear',
-		repeat: Infinity,
-		repeatType: 'loop'
-	};
-
-	const defaultScrollOffset: UseScrollOptions['offset'] = ['start end', 'end end'];
-
-	const componentId = $props.id();
+	const defaultScrollOffset: UseScrollOptions["offset"] = ["start end", "end end"];
 
 	let {
 		path,
-		text,
 		pathId,
 		pathClass,
-		textClass,
+		preserveAspectRatio = "xMidYMid meet",
 		showPath = false,
-		textAnchor = 'start',
-		animationType = 'auto',
-		scrollContainer = null,
+		width = "100%",
+		height = "100%",
+		viewBox = "0 0 100 100",
+		svgClass,
+		text,
+		textClass,
+		textAnchor = "start",
+		animationType = "auto",
+		duration = 4,
+		repeatCount = "indefinite",
+		easingFunction = {},
+		scrollContainer,
 		scrollOffset = defaultScrollOffset,
 		scrollTransformValues = [0, 100],
-		transition,
-		width = '100%',
-		height = '100%',
-		viewBox = '0 0 100 100',
-		preserveAspectRatio = 'xMidYMid meet',
-		class: className,
 		...props
 	}: TextAlongPathProps = $props();
 
-	let resolvedPathId = $derived(pathId ?? `${componentId}-path`);
-	let isAuto = $derived(animationType === 'auto');
-	let autoTransition = $derived({
-		...defaultAutoTransition,
-		...(transition ?? {})
-	});
+	const componentId = $props.id();
 
-	// motion-sv supports getter-based scroll options at runtime, but its current
-	// Svelte type only accepts the resolved options object.
-	let scroll = useScroll(
-		(() => ({
-			container: scrollContainer,
-			offset: scrollOffset
-		})) as unknown as UseScrollOptions
-	);
+	let primaryTextPath = $state<SVGTextPathElement | undefined>();
+	let secondaryTextPath = $state<SVGTextPathElement | undefined>();
 
-	let scrollStartOffset = useTransform(() => {
-		if (animationType !== 'scroll') {
-			return '0%';
+	let resolvedPathId = $derived(pathId ?? `animated-path-${componentId}`);
+	let isAuto = $derived(animationType === "auto");
+	let autoDuration = $derived(`${duration}s`);
+
+	// `motion-sv` accepts getter-based scroll options at runtime even though the
+	// current Svelte type only exposes the resolved object form.
+	let scroll = useScroll((() => ({
+		container: scrollContainer,
+		offset: scrollOffset,
+	})) as unknown as UseScrollOptions);
+
+	function updateStartOffsets(offset: string) {
+		primaryTextPath?.setAttribute("startOffset", offset);
+		secondaryTextPath?.setAttribute("startOffset", offset);
+	}
+
+	$effect(() => {
+		if (animationType !== "scroll") {
+			return;
 		}
 
-		const progress = Math.min(1, Math.max(0, scroll.scrollYProgress.get()));
-		const [start, end] = scrollTransformValues;
-		const offset = start + (end - start) * progress;
+		primaryTextPath;
+		secondaryTextPath;
+		scrollContainer;
+		scrollOffset;
+		scrollTransformValues;
 
-		return `${offset}%`;
+		const updateFromScroll = () => {
+			const progress = Math.min(1, Math.max(0, scroll.scrollYProgress.get()));
+			const [start, end] = scrollTransformValues;
+			const offset = start + (end - start) * progress;
+
+			updateStartOffsets(`${offset}%`);
+		};
+
+		updateFromScroll();
+
+		return scroll.scrollYProgress.on("change", updateFromScroll);
 	});
 </script>
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	class={className}
+	class={svgClass}
 	{width}
 	{height}
 	{viewBox}
@@ -91,41 +129,55 @@
 		id={resolvedPathId}
 		class={pathClass}
 		d={path}
-		stroke={showPath ? 'currentColor' : 'none'}
+		stroke={showPath ? "currentColor" : "none"}
 		fill="none"
 	/>
 
 	<text text-anchor={textAnchor} fill="currentColor">
-		{#if isAuto}
-			<motion.textPath
-				class={textClass}
-				href={`#${resolvedPathId}`}
-				startOffset="0%"
-				initial={{ startOffset: '0%' }}
-				animate={{ startOffset: '100%' }}
-				transition={autoTransition}
-			>
-				{text}
-			</motion.textPath>
-		{:else}
-			<motion.textPath class={textClass} href={`#${resolvedPathId}`} startOffset={scrollStartOffset}>
-				{text}
-			</motion.textPath>
-		{/if}
+		<textPath
+			bind:this={primaryTextPath}
+			class={textClass}
+			href={`#${resolvedPathId}`}
+			startOffset="0%"
+		>
+			{#if isAuto}
+				<animate
+					attributeName="startOffset"
+					from="0%"
+					to="100%"
+					begin="0s"
+					dur={autoDuration}
+					repeatCount={repeatCount}
+					calcMode={easingFunction.calcMode}
+					keyTimes={easingFunction.keyTimes}
+					keySplines={easingFunction.keySplines}
+				/>
+			{/if}
+			{text}
+		</textPath>
 	</text>
 
 	{#if isAuto}
 		<text text-anchor={textAnchor} fill="currentColor">
-			<motion.textPath
+			<textPath
+				bind:this={secondaryTextPath}
 				class={textClass}
 				href={`#${resolvedPathId}`}
 				startOffset="-100%"
-				initial={{ startOffset: '-100%' }}
-				animate={{ startOffset: '0%' }}
-				transition={autoTransition}
 			>
+				<animate
+					attributeName="startOffset"
+					from="-100%"
+					to="0%"
+					begin="0s"
+					dur={autoDuration}
+					repeatCount={repeatCount}
+					calcMode={easingFunction.calcMode}
+					keyTimes={easingFunction.keyTimes}
+					keySplines={easingFunction.keySplines}
+				/>
 				{text}
-			</motion.textPath>
+			</textPath>
 		</text>
 	{/if}
 </svg>
