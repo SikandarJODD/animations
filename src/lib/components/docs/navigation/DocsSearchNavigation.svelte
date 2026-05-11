@@ -165,7 +165,7 @@
 		<Command.Group heading="Spell UI">
 			{#each spellComponents as component (component.id)}
 				<Command.LinkItem
-					value={component.id}
+					value={component.id + "spell"}
 					onclick={() => (open = false)}
 					href={component.href}
 					class="justify-between gap-3"
@@ -200,7 +200,7 @@
 		<Command.Group heading="Fancy Components">
 			{#each fancyComponents as component (component.id)}
 				<Command.LinkItem
-					value={component.id}
+					value={component.id + "fancy"}
 					onclick={() => (open = false)}
 					href={component.href}
 					class="justify-between gap-3"

@@ -43,9 +43,26 @@
 	import Badge from "$lib/components/ui/badge/badge.svelte";
 	import { page } from "$app/state";
 	import type { ComponentProps } from "svelte";
-	import { GalleryVerticalEndIcon } from "@lucide/svelte";
+	import { watch } from "runed";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
+	let contentRef = $state<HTMLElement | null>(null);
+	let pathname = $derived(page.url.pathname);
+
+	watch(
+		() => pathname,
+		() => {
+			let activeItem = contentRef?.querySelector<HTMLElement>(
+				'[data-sidebar="menu-button"][data-active="true"]'
+			);
+
+			activeItem?.scrollIntoView({
+				block: "nearest",
+				inline: "nearest",
+				behavior: "smooth",
+			});
+		}
+	);
 </script>
 
 <Sidebar.Root class="mt-16" {...restProps} bind:ref>
@@ -54,7 +71,7 @@
 		scrollbarXClasses="hidden"
 		scrollbarYClasses="hidden"
 	>
-		<Sidebar.Content>
+		<Sidebar.Content bind:ref={contentRef}>
 			<!-- We create a Sidebar.Group for each parent. -->
 			{#each data.navMain as group (group.title)}
 				<Sidebar.Group>
@@ -63,7 +80,7 @@
 						<Sidebar.Menu>
 							{#each group.items as item}
 								<Sidebar.MenuItem>
-									<Sidebar.MenuButton isActive={page.url.pathname === item.url}>
+									<Sidebar.MenuButton isActive={page.url.pathname === item.url} class='scroll-mt-10 scroll-mb-40'>
 										{#snippet child({ props })}
 											<a href={item.url} {...props}>
 												{item.title}

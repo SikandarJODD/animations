@@ -3,7 +3,7 @@
 	import * as Icons from "$lib/components/icons";
 	import BookOpenIcon from "@lucide/svelte/icons/book-open";
 	import SparklesIcon from "@lucide/svelte/icons/sparkles";
-	import { onMount, type Component } from "svelte";
+	import { type Component } from "svelte";
 	import {
 		NavigationMenuContent,
 		NavigationMenuItem,
@@ -16,7 +16,7 @@
 	import DocsSearchNavigation from "../docs/navigation/DocsSearchNavigation.svelte";
 	import MobileNavbarSheet from "./MobileNavbarSheet.svelte";
 	import { cn } from "$lib/utils";
-	import Badge from "../spell/badge/badge.svelte";
+	import Badge, { type BadgeVariant } from "../spell/badge/badge.svelte";
 	import { PersistedState } from "runed";
 	import { scale } from "svelte/transition";
 	import { BlocksIcon } from "@lucide/svelte";
@@ -26,7 +26,8 @@
 		title: string;
 		description: string;
 		icon?: Component;
-		badge?: "new";
+		badge?: "new" | "beta" | "updated";
+		badgeVariant?: BadgeVariant;
 	};
 
 	const navigationItems: NavigationItem[] = [
@@ -42,20 +43,28 @@
 			description: "Refined UI components for Design Engineers.",
 			icon: BookOpenIcon,
 			badge: "new",
+			badgeVariant: "sky",
 		},
 		{
 			href: "/fancy/media-between-text",
 			title: "Svelte Fancy Components",
 			description: "Unique, eye-catching components for Svelte.",
 			icon: BlocksIcon,
-			badge: "new",
+			badge: "beta",
+			badgeVariant: "yellow",
 		},
 	];
 
 	const componentsHasUpdates = navigationItems.some((item) => item.badge === "new");
 
 	function formatBadgeLabel(badge?: NavigationItem["badge"]) {
-		return badge === "new" ? "New" : "";
+		return badge === "new"
+			? "New"
+			: badge === "beta"
+				? "Beta"
+				: badge === "updated"
+					? "Updated"
+					: "";
 	}
 	/*
 	// {
@@ -107,7 +116,7 @@
 					viewport={false}
 					onValueChange={(v) => updateIsNew()}
 				>
-					<NavigationMenuList class="gap-1">
+					<NavigationMenuList>
 						<!-- Home Link -->
 						<NavigationMenuItem id="home">
 							<NavigationMenuLink
@@ -132,7 +141,7 @@
 								{/if}
 							</NavigationMenuTrigger>
 							<NavigationMenuContent class="p-0">
-								<ul class="grid w-[22rem] gap-2 p-1 md:grid-cols-1">
+								<ul class="grid w-[22rem] gap-0 p-1 md:grid-cols-1">
 									{#each navigationItems as item (item.href)}
 										<li>
 											<NavigationMenuLink href={item.href}>
@@ -166,7 +175,7 @@
 																	</div>
 																	{#if item.badge}
 																		<Badge
-																			variant="green"
+																			variant={item.badgeVariant || "default"}
 																			size="sm"
 																		>
 																			{formatBadgeLabel(

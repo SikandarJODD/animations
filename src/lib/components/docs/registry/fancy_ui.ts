@@ -25,7 +25,6 @@ export const fancyUIComponents: FancyComponent[] = [
 		href: "/fancy/media-between-text",
 		category: "Components",
 		desc: "Reveal image or video media between two pieces of text with hover, view, or manual triggers.",
-		badge: "New",
 	},
 	{
 		id: "letter-swap",
