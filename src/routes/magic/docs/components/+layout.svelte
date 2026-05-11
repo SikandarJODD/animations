@@ -2,6 +2,7 @@
 	import { page } from "$app/state";
 	import Toc from "$lib/components/docs/base/toc/toc.svelte";
 	import DocsNavigation from "$lib/components/docs/navigation/DocsNavigation.svelte";
+	import ContributeCard from "$lib/components/layout/contribute-card.svelte";
 	import { UseToc } from "$lib/hooks/use-toc.svelte";
 	import { getPrevNext } from "$lib/components/docs/registry/magic-ui";
 
@@ -30,7 +31,7 @@
 	<!-- <aside class="sticky top-8 hidden w-44 shrink-0 lg:block">
   </aside> -->
 
-	<main class="w-full sm:max-w-4xl" bind:this={toc.ref}>
+	<main class="w-full sm:max-w-5xl" bind:this={toc.ref}>
 		<!-- Main area -->
 		{@render children()}
 
@@ -39,9 +40,14 @@
 	</main>
 
 	<aside class="sticky top-24 hidden w-56 shrink-0 xl:block">
-		<div>
-			<h2 class="mb-2 text-sm font-medium">On this page</h2>
+		<div class="flex max-h-[calc(100vh-7rem)] min-h-0 flex-col">
+			<div>
+				<h2 class="mb-2 text-sm font-medium">On this page</h2>
+			</div>
+			<div class="min-h-0 flex-1 overflow-y-auto pr-2">
+				<Toc toc={toc.current}></Toc>
+			</div>
+			<ContributeCard class="mt-auto" />
 		</div>
-		<Toc toc={toc.current}></Toc>
 	</aside>
 </div>

@@ -4,18 +4,37 @@
 	import Badge from "$lib/components/ui/badge/badge.svelte";
 	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import { watch } from "runed";
 	import type { ComponentProps } from "svelte";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
+
+	let contentRef = $state<HTMLElement | null>(null);
+	let pathname = $derived(page.url.pathname);
+
+	watch(
+		() => pathname,
+		() => {
+			let activeItem = contentRef?.querySelector<HTMLElement>(
+				'[data-sidebar="menu-button"][data-active="true"]'
+			);
+
+			activeItem?.scrollIntoView({
+				block: "nearest",
+				inline: "nearest",
+				behavior: "smooth",
+			});
+		}
+	);
 </script>
 
 <Sidebar.Root class="mt-16 border-none" {...restProps} bind:ref>
 	<ScrollArea
-		class="max-h-[calc(100vh-6rem)] pt-4 pr-1 pb-8"
+		class="max-h-[calc(100vh-3.5rem)] pt-4 pr-1 pb-8"
 		scrollbarXClasses="hidden"
 		scrollbarYClasses="hidden"
 	>
-		<Sidebar.Content>
+		<Sidebar.Content bind:ref={contentRef}>
 			{#each spellUISidebarGroups as group (group.title)}
 				{#if group.items.length}
 					<Sidebar.Group>
@@ -26,6 +45,7 @@
 									<Sidebar.MenuItem>
 										<Sidebar.MenuButton
 											isActive={page.url.pathname === item.href}
+											class="scroll-mt-10 scroll-mb-40"
 										>
 											{#snippet child({ props })}
 												<a href={item.href} {...props}>

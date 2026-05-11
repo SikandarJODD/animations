@@ -2,6 +2,7 @@
 	import { page } from "$app/state";
 	import Toc from "$lib/components/docs/base/toc/toc.svelte";
 	import DocsNavigation from "$lib/components/docs/navigation/DocsNavigation.svelte";
+	import ContributeCard from "$lib/components/layout/contribute-card.svelte";
 	import { getPrevNext } from "$lib/components/docs/registry/spell_ui";
 	import SpellSidebar from "$lib/components/spell-sidebar.svelte";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
@@ -49,10 +50,15 @@
 			</main>
 
 			<aside class="sticky top-24 hidden w-full xl:block">
-				<div>
-					<h2 class="mb-2 text-sm font-medium">On this page</h2>
+				<div class="flex max-h-[calc(100vh-7rem)] min-h-0 flex-col">
+					<div>
+						<h2 class="mb-2 text-sm font-medium">On this page</h2>
+					</div>
+					<div class="min-h-0 flex-1 overflow-y-auto pr-2">
+						<Toc toc={toc.current} />
+					</div>
+					<ContributeCard class="mt-auto" />
 				</div>
-				<Toc toc={toc.current} />
 			</aside>
 		</div>
 	{/if}
