@@ -2,6 +2,8 @@ import IndexTsRaw from "$lib/components/fancy/underline-to-background/index.ts?r
 import UnderlineToBackgroundRaw from "$lib/components/fancy/underline-to-background/underline-to-background.svelte?raw";
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import Preview from "./examples/preview.svelte";
+import PreviewRaw from "./examples/preview.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "underline-to-background",
@@ -53,4 +55,11 @@ export const data: ComponentDoc = {
 	...meta,
 	seo,
 	installBlock,
+	preview: Preview,
+	previewClass: 'p-0',
+	previewCode:{
+		filename: "preview.svelte",
+		filecode: PreviewRaw,
+		lang: "svelte",
+	}
 };

@@ -75,20 +75,22 @@ export const fancyUIComponents: FancyComponent[] = [
 		category: "Components",
 		desc: "Sweep a highlight background across inline text on hover, in view, or on demand.",
 	},
-	// {
-	// 	id: "underline-to-background",
-	// 	name: "Underline To Background",
-	// 	href: "/fancy/underline-to-background",
-	// 	category: "Components",
-	// 	desc: "Expand an underline into a full background fill while transitioning the text color.",
-	// },
-	// {
-	// 	id: "vertical-cut-reveal",
-	// 	name: "Vertical Cut Reveal",
-	// 	href: "/fancy/vertical-cut-reveal",
-	// 	category: "Components",
-	// 	desc: "Reveal text from vertical cuts with word, character, or line-based staggering.",
-	// },
+	{
+		id: "underline-to-background",
+		name: "Underline To Background",
+		href: "/fancy/underline-to-background",
+		category: "Components",
+		desc: "Expand an underline into a full background fill while transitioning the text color.",
+		badge: "New",
+	},
+	{
+		id: "vertical-cut-reveal",
+		name: "Vertical Cut Reveal",
+		href: "/fancy/vertical-cut-reveal",
+		category: "Components",
+		desc: "Reveal text from vertical cuts with word, character, or line-based staggering.",
+		badge: "New",
+	},
 ];
 
 const fancyUICategoryOrder: FancyCategory[] = ["Overview", "Components"];
