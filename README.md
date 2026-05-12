@@ -7,18 +7,21 @@ Built with [motion-sv](https://github.com/hanielu/motion-svelte), Tailwind CSS a
 
 ## New Stuff
 
-- `21` new Spell UI animation components
-- Now shipping `78` total components across both libraries
+- `21` New Spell UI animation components
+- `10` New Fancy Components
+- Now shipping `88` total components across both libraries
 
 ## What's Included
 
 1. `Svelte Magic UI` - `57` animation components
 2. `Svelte Spell UI` - `21` animation components
+3. `Svelte Fancy Components` - `10` Unique Animation Components
 
 Browse the library:
 
 - Main docs: [sv-animations.vercel.app](https://sv-animations.vercel.app)
 - Spell UI: [sv-animations.vercel.app/spell](https://sv-animations.vercel.app/spell)
+- Fancy Components: [sv-animations.vercel.app/fancy](https://sv-animations.vercel.app/fancy/scramble-hover)
 
 ## Quick Start
 

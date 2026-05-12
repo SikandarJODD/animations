@@ -20,9 +20,9 @@
 		splitBy?: SplitBy;
 		staggerDuration?: number;
 		staggerFrom?: StaggerFrom;
-		containerClassName?: string;
-		wordLevelClassName?: string;
-		elementLevelClassName?: string;
+		containerClass?: string;
+		wordLevelClass?: string;
+		elementLevelClass?: string;
 		onStart?: () => void;
 		onComplete?: () => void;
 		autoStart?: boolean;
@@ -42,9 +42,9 @@
 		splitBy = 'words',
 		staggerDuration = 0.2,
 		staggerFrom = 'first',
-		containerClassName,
-		wordLevelClassName,
-		elementLevelClassName,
+		containerClass,
+		wordLevelClass,
+		elementLevelClass,
 		onclick,
 		onStart,
 		onComplete,
@@ -198,7 +198,7 @@
 	class={cn(
 		'flex flex-wrap whitespace-pre-wrap',
 		splitBy === 'lines' && 'flex-col',
-		containerClassName,
+		containerClass,
 		className
 	)}
 	{onclick}
@@ -215,13 +215,13 @@
 	</span>
 
 	{#each renderGroups as group, groupIndex (`group-${groupIndex}`)}
-		<span aria-hidden="true" class={cn('inline-flex overflow-hidden', wordLevelClassName)}>
+		<span aria-hidden="true" class={cn('inline-flex overflow-hidden', wordLevelClass)}>
 			{#each group.characters as character, characterIndex (`${groupIndex}-${characterIndex}`)}
 				{@const previousCharsCount = renderGroups
 					.slice(0, groupIndex)
 					.reduce((sum, item) => sum + item.characters.length, 0)}
 
-				<span class={cn('relative whitespace-pre-wrap', elementLevelClassName)}>
+				<span class={cn('relative whitespace-pre-wrap', elementLevelClass)}>
 					<motion.span
 						class="inline-block"
 						initial="hidden"
@@ -244,7 +244,7 @@
 			{/each}
 
 			{#if group.needsSpace}
-				<span> </span>
+				<span aria-hidden="true" class="whitespace-pre">{' '}</span>
 			{/if}
 		</span>
 	{/each}
