@@ -5,6 +5,7 @@
 	import ContributeCard from "$lib/components/layout/contribute-card.svelte";
 	import { UseToc } from "$lib/hooks/use-toc.svelte";
 	import { getPrevNext } from "$lib/components/docs/registry/magic-ui";
+	import SupportWork from "$lib/components/docs/base/support-work.svelte";
 
 	let { children } = $props();
 
@@ -27,11 +28,10 @@
 	});
 </script>
 
-<div class="mx-auto flex w-full max-w-7xl items-start gap-x-8 px-4 py-6 sm:px-6 lg:pr-4 lg:pl-8">
-	<!-- <aside class="sticky top-8 hidden w-44 shrink-0 lg:block">
-  </aside> -->
-
-	<main class="w-full sm:max-w-5xl" bind:this={toc.ref}>
+<div
+	class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 px-4 py-6 sm:px-6 lg:pr-2 lg:pl-12 xl:grid-cols-[minmax(0,1fr)_16rem] xl:gap-x-14 xl:gap-y-0"
+>
+	<main class="w-full max-w-5xl min-w-0 xl:justify-self-center 2xl:max-w-6xl" bind:this={toc.ref}>
 		<!-- Main area -->
 		{@render children()}
 
@@ -39,15 +39,20 @@
 		<DocsNavigation previous={navigation.previous} next={navigation.next} />
 	</main>
 
-	<aside class="sticky top-24 hidden w-56 shrink-0 xl:block">
-		<div class="flex max-h-[calc(100vh-7rem)] min-h-0 flex-col">
-			<div>
-				<h2 class="mb-2 text-sm font-medium">On this page</h2>
+	<aside class="hidden h-full w-full xl:block">
+		<div class="sticky top-24">
+			<div class="flex h-[calc(100vh-8rem)] min-h-0 flex-col">
+				<div>
+					<h2 class="mb-2 text-sm font-medium">On this page</h2>
+				</div>
+				<div class="min-h-0 overflow-y-auto pr-2">
+					<Toc toc={toc.current} />
+				</div>
+				<ContributeCard />
+				<div class="mt-auto">
+					<SupportWork />
+				</div>
 			</div>
-			<div class="min-h-0 flex-1 overflow-y-auto pr-2">
-				<Toc toc={toc.current}></Toc>
-			</div>
-			<ContributeCard class="mt-auto" />
 		</div>
 	</aside>
 </div>

@@ -9,10 +9,16 @@
 	} from "$lib/components/docs/markdown";
 	import * as Icons from "$lib/components/icons";
 	import { StripedPattern } from "$lib/components/magic/striped-pattern";
-	import SEO from "$lib/seo/SEO.svelte";
 	import { Avatar, AvatarFallback, AvatarImage } from "$lib/components/ui/avatar";
 	import { Button } from "$lib/components/ui/button";
 	import * as Breadcrumb from "$lib/components/ui/breadcrumb";
+	import { page } from "$app/state";
+	import { MetaTags } from "svelte-meta-tags";
+	import {
+		buildSpellKeywords,
+		SPELL_SOCIAL_IMAGE,
+		SPELL_TITLE_TEMPLATE,
+	} from "$lib/seo/spell";
 
 	const creator = {
 		name: "tom",
@@ -21,21 +27,51 @@
 		twitter: "https://x.com/tomm_ui",
 		website: "https://spell.sh",
 	};
+
+	const title = "Introduction";
+	const description =
+		"Introduction to Svelte Spell UI, a refined Svelte 5 component collection inspired by Spell UI and adapted for modern product interfaces.";
+	const keywords = buildSpellKeywords([
+		"Spell UI introduction",
+		"Svelte Spell UI introduction",
+		"Svelte UI inspiration",
+		"Svelte product interface components",
+		"Svelte design engineering patterns",
+	]);
+	const socialTitle = `${title} | Svelte Spell UI`;
+
+	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
 </script>
 
-<SEO
-	title="Svelte Spell UI"
-	description="Port of Spell UI for Svelte, built to bring the Spell UI aesthetic and ideas into the Svelte ecosystem."
-	keywords={[
-		"Svelte Spell UI",
-		"Spell UI",
-		"Svelte Animations Components",
-		"Svelte Animations",
-		"Svelte 5",
-		"Motion SV",
-		"Motion Svelte",
-		"Svelte Motion",
-	]}
+<MetaTags
+	{title}
+	titleTemplate={SPELL_TITLE_TEMPLATE}
+	{description}
+	{keywords}
+	{canonical}
+	robots="index,follow"
+	additionalRobotsProps={{
+		maxSnippet: -1,
+		maxImagePreview: "large",
+		maxVideoPreview: -1,
+	}}
+	openGraph={{
+		url: canonical,
+		title: socialTitle,
+		description,
+		type: "article",
+		siteName: "Svelte Spell UI",
+		images: [SPELL_SOCIAL_IMAGE],
+	}}
+	twitter={{
+		cardType: "summary_large_image",
+		title: socialTitle,
+		description,
+		image: SPELL_SOCIAL_IMAGE.url,
+		imageAlt: SPELL_SOCIAL_IMAGE.alt,
+		site: "@Sikandar_Bhide",
+		creator: "@Sikandar_Bhide",
+	}}
 />
 
 <div class="space-y-8 md:space-y-10">

@@ -49,17 +49,19 @@
 			{/if}
 		</main>
 
-		<aside class="sticky top-24 hidden h-full w-full border xl:block">
-			<div class="flex max-h-[calc(100vh-7rem)] min-h-0 flex-col">
-				<div>
-					<h2 class="mb-2 text-sm font-medium">On this page</h2>
-				</div>
-				<div class="min-h-0 flex-1 overflow-y-auto pr-2">
-					<Toc toc={toc.current} />
-				</div>
-				<ContributeCard class="mt-auto" />
-				<div class="">
-					<SupportWork />
+		<aside class="hidden h-full w-full xl:block">
+			<div class='sticky top-24'>
+				<div class="flex h-[calc(100vh-8rem)] min-h-0 flex-col">
+					<div>
+						<h2 class="mb-2 text-sm font-medium">On this page</h2>
+					</div>
+					<div class="min-h-0 overflow-y-auto pr-2">
+						<Toc toc={toc.current} />
+					</div>
+					<ContributeCard />
+					<div class="mt-auto">
+						<SupportWork />
+					</div>
 				</div>
 			</div>
 		</aside>

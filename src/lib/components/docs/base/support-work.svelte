@@ -18,7 +18,7 @@
 					alt="Bhide Svelte"
 				/></span
 			>
-			<span class="text-sky-600 dark:text-white">Thankyouuuu soo much 😍</span>
+			<span class="text-sky-600 dark:text-white">Thankyouu soo much 😍</span>
 		</div>
 	</div>
 {/if}
