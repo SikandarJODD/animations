@@ -61,10 +61,5 @@
 		"svelte-meta-tags": "^4.5.0",
 		"svelte-sonner": "^1.0.7",
 		"svelte-toolbelt": "^0.10.6"
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild"
-		]
 	}
 }

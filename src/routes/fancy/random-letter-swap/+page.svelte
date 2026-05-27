@@ -30,7 +30,9 @@
 <SEOComponent
 	title={data.seo.title}
 	description={data.seo.description}
+	titleTemplate={data.seo.titleTemplate}
 	keywords={data.seo.keywords}
+	images={data.seo.images}
 />
 <div class="space-y-6 md:space-y-8">
 	<section>

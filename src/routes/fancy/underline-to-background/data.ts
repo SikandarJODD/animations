@@ -4,6 +4,7 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
+import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
 
 export const meta: ComponentMeta = {
 	id: "underline-to-background",
@@ -18,12 +19,17 @@ const seo: SEO = {
 	title: "Underline To Background",
 	description:
 		"Learn how to use the Underline To Background Fancy component in Svelte for underline-to-fill hover transitions.",
+	titleTemplate: FANCY_TITLE_TEMPLATE,
+	images: FANCY_OG_IMAGES,
 	keywords: [
-		"Svelte",
 		"Underline To Background",
-		"Fancy UI",
 		"Svelte Fancy Components",
-		"motion-sv",
+		"Fancy Components",
+		"Svelte 5",
+		"Motion SV",
+		"Underline Hover Effect",
+		"Background Fill",
+		"Text Highlight Animation",
 	],
 };
 

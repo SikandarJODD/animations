@@ -46,7 +46,7 @@
 			badgeVariant: "sky",
 		},
 		{
-			href: "/fancy/media-between-text",
+			href: "/fancy",
 			title: "Svelte Fancy Components",
 			description: "Unique, eye-catching components for Svelte.",
 			icon: BlocksIcon,

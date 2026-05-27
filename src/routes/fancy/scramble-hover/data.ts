@@ -11,6 +11,7 @@ import SpecialSymbolsExample from "./examples/special-symbols-example.svelte";
 import NewCharsExampleRaw from "./examples/new-chars-example.svelte?raw";
 import PositionExampleRaw from "./examples/position-example.svelte?raw";
 import SpecialSymbolsExampleRaw from "./examples/special-symbols-example.svelte?raw";
+import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
 
 export const meta: ComponentMeta = {
 	id: "scramble-hover",
@@ -25,7 +26,18 @@ const seo: SEO = {
 	title: "Scramble Hover",
 	description:
 		"Learn how to use the Scramble Hover Fancy component in Svelte for hover-triggered text scrambling and reveal sequences.",
-	keywords: ["Svelte", "Scramble Hover", "Fancy UI", "Svelte Fancy Components", "motion-sv"],
+	titleTemplate: FANCY_TITLE_TEMPLATE,
+	images: FANCY_OG_IMAGES,
+	keywords: [
+		"Scramble Hover",
+		"Svelte Fancy Components",
+		"Fancy Components",
+		"Svelte 5",
+		"Motion SV",
+		"Hover Text Effect",
+		"Scramble Text",
+		"Interactive Text",
+	],
 };
 
 const installBlock: InstallComponentDocs = {

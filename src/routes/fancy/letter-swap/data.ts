@@ -13,6 +13,7 @@ import LineSwapExample from "./examples/line-swap-example.svelte";
 import LineSwapExampleRaw from "./examples/line-swap-example.svelte?raw";
 import PingPongExample from "./examples/ping-pong-example.svelte";
 import PingPongExampleRaw from "./examples/ping-pong-example.svelte?raw";
+import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
 
 export const meta: ComponentMeta = {
 	id: "letter-swap",
@@ -26,7 +27,17 @@ const seo: SEO = {
 	title: "Letter Swap",
 	description:
 		"Learn how to use the Letter Swap Fancy component in Svelte for staggered hover-driven letter transitions.",
-	keywords: ["Svelte", "Letter Swap", "Svelte Fancy UI", "Svelte Fancy Components", "motion-sv"],
+	titleTemplate: FANCY_TITLE_TEMPLATE,
+	images: FANCY_OG_IMAGES,
+	keywords: [
+		"Letter Swap",
+		"Svelte Fancy Components",
+		"Fancy Components",
+		"Svelte 5",
+		"Motion SV",
+		"Letter Animation",
+		"Hover Text Effect",
+	],
 };
 
 let examples: Example[] = [

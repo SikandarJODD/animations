@@ -10,6 +10,7 @@ import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import RotationExample from "./examples/rotation-example.svelte";
 import RotationExampleRaw from "./examples/rotation-example.svelte?raw";
+import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
 
 export const meta: ComponentMeta = {
 	id: "letter-3d-swap",
@@ -46,7 +47,18 @@ const seo: SEO = {
 	title: "Letter 3D Swap",
 	description:
 		"Learn how to use the Letter 3D Swap Fancy component in Svelte for 3D character flips with configurable stagger and rotation direction.",
-	keywords: ["Svelte", "Letter 3D Swap", "Fancy UI", "Svelte Fancy Components", "motion-sv"],
+	titleTemplate: FANCY_TITLE_TEMPLATE,
+	images: FANCY_OG_IMAGES,
+	keywords: [
+		"Letter 3D Swap",
+		"Svelte Fancy Components",
+		"Fancy Components",
+		"Svelte 5",
+		"Motion SV",
+		"3D Text Animation",
+		"Character Flip",
+		"Hover Text Effect",
+	],
 };
 
 const installBlock: InstallComponentDocs = {

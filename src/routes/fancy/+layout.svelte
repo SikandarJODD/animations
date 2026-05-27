@@ -7,6 +7,7 @@
 	import FancySidebar from "$lib/components/fancy-sidebar.svelte";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import { UseToc } from "$lib/hooks/use-toc.svelte";
+	import SupportWork from "$lib/components/docs/base/support-work.svelte";
 
 	let { children } = $props();
 
@@ -35,31 +36,32 @@
 
 <Sidebar.Provider>
 	<FancySidebar />
-	{#if isOverviewPage}
-		{@render children()}
-	{:else}
-		<div
-			class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 px-4 py-6 sm:px-6 lg:pr-2 lg:pl-12 xl:grid-cols-[minmax(0,1fr)_14rem] xl:items-start xl:gap-x-14 xl:gap-y-0"
+	<div
+		class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 px-4 py-6 sm:px-6 lg:pr-2 lg:pl-12 xl:grid-cols-[minmax(0,1fr)_16rem] xl:items-start xl:gap-x-14 xl:gap-y-0"
+	>
+		<main
+			class="w-full max-w-5xl min-w-0 xl:justify-self-center 2xl:max-w-6xl"
+			bind:this={toc.ref}
 		>
-			<main
-				class="w-full max-w-5xl min-w-0 xl:justify-self-center 2xl:max-w-6xl"
-				bind:this={toc.ref}
-			>
-				{@render children()}
+			{@render children()}
+			{#if !isOverviewPage || navigation.next || navigation.previous}
 				<DocsNavigation previous={navigation.previous} next={navigation.next} />
-			</main>
+			{/if}
+		</main>
 
-			<aside class="sticky top-24 hidden w-full xl:block">
-				<div class="flex max-h-[calc(100vh-7rem)] min-h-0 flex-col">
-					<div>
-						<h2 class="mb-2 text-sm font-medium">On this page</h2>
-					</div>
-					<div class="min-h-0 flex-1 overflow-y-auto pr-2">
-						<Toc toc={toc.current} />
-					</div>
-					<ContributeCard class="mt-auto" />
+		<aside class="sticky top-24 hidden h-full w-full border xl:block">
+			<div class="flex max-h-[calc(100vh-7rem)] min-h-0 flex-col">
+				<div>
+					<h2 class="mb-2 text-sm font-medium">On this page</h2>
 				</div>
-			</aside>
-		</div>
-	{/if}
+				<div class="min-h-0 flex-1 overflow-y-auto pr-2">
+					<Toc toc={toc.current} />
+				</div>
+				<ContributeCard class="mt-auto" />
+				<div class="">
+					<SupportWork />
+				</div>
+			</div>
+		</aside>
+	</div>
 </Sidebar.Provider>

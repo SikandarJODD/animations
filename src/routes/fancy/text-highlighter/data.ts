@@ -11,6 +11,7 @@ import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import ProgramticControlExample from "./examples/programtic-control.svelte";
 import ProgramticControlExampleRaw from "./examples/programtic-control.svelte?raw";
+import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
 
 export const meta: ComponentMeta = {
 	id: "text-highlighter",
@@ -24,7 +25,18 @@ const seo: SEO = {
 	title: "Text Highlighter",
 	description:
 		"Learn how to use the Text Highlighter Fancy component in Svelte for animated inline emphasis triggered by hover, viewport entry, or imperative calls.",
-	keywords: ["Svelte", "Text Highlighter", "Fancy UI", "Svelte Fancy Components", "motion-sv"],
+	titleTemplate: FANCY_TITLE_TEMPLATE,
+	images: FANCY_OG_IMAGES,
+	keywords: [
+		"Text Highlighter",
+		"Svelte Fancy Components",
+		"Fancy Components",
+		"Svelte 5",
+		"Motion SV",
+		"Inline Highlight",
+		"Text Emphasis",
+		"Hover Highlight",
+	],
 };
 
 const installBlock: InstallComponentDocs = {

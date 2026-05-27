@@ -11,6 +11,7 @@ import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import SpecialCharactersExample from "./examples/special-characters-example.svelte";
 import SpecialCharactersExampleRaw from "./examples/special-characters-example.svelte?raw";
+import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
 
 export const meta: ComponentMeta = {
 	id: "scramble-in",
@@ -24,7 +25,18 @@ const seo: SEO = {
 	title: "Scramble In",
 	description:
 		"Learn how to use the Scramble In Fancy component in Svelte for text reveals driven by progressive character scrambling.",
-	keywords: ["Svelte", "Scramble In", "Svelte Fancy UI", "Svelte Fancy Components", "motion-sv"],
+	titleTemplate: FANCY_TITLE_TEMPLATE,
+	images: FANCY_OG_IMAGES,
+	keywords: [
+		"Scramble In",
+		"Svelte Fancy Components",
+		"Fancy Components",
+		"Svelte 5",
+		"Motion SV",
+		"Text Reveal",
+		"Scramble Text",
+		"Character Animation",
+	],
 };
 
 const installBlock: InstallComponentDocs = {

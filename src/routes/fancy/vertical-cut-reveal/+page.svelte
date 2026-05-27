@@ -19,7 +19,9 @@
 <SEOComponent
 	title={data.seo.title}
 	description={data.seo.description}
+	titleTemplate={data.seo.titleTemplate}
 	keywords={data.seo.keywords}
+	images={data.seo.images}
 />
 
 <div class="">
