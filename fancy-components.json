@@ -219,6 +219,27 @@
 			"dependencies": ["motion-sv"]
 		},
 		{
+			"name": "text-rotate",
+			"type": "registry:block",
+			"title": "Text Rotate",
+			"author": "SikandarJODD",
+			"description": "Rotate through multiple text strings with per-character, per-word, or per-line motion and imperative controls.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/text-rotate/text-rotate.svelte",
+					"type": "registry:component",
+					"target": "fancy/text-rotate/text-rotate.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/text-rotate/index.ts",
+					"type": "registry:file",
+					"target": "fancy/text-rotate/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
 			"name": "underline-to-background",
 			"type": "registry:block",
 			"title": "Underline To Background",

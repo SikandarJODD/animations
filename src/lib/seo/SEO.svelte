@@ -4,6 +4,7 @@
 	type Props = {
 		title: string;
 		description: string;
+		titleTemplate?: string;
 		keywords?: string[];
 		images?: {
 			url: string;
@@ -15,6 +16,7 @@
 	let {
 		title,
 		description,
+		titleTemplate='%s | Svelte Animations',
 		keywords,
 		images = [
 			{
@@ -48,7 +50,7 @@
 
 <MetaTags
 	{title}
-	titleTemplate="%s - Svelte Animations"
+	{titleTemplate}
 	{keywords}
 	{description}
 	{canonical}
@@ -65,7 +67,7 @@
 		cardType: "summary_large_image",
 		title: title,
 		description: description,
-		// image: images && images[0] ? images[0].url : "https://sv-animations.vercel.app/svelte.svg",
+		image: images && images[0] ? images[0].url : "https://sv-animations.vercel.app/og.png",
 		imageAlt: images && images[0] ? images[0].alt : "Svelte Animations",
 	}}
 />

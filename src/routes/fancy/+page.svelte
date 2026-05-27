@@ -1,60 +1,107 @@
 <script lang="ts">
-	import SEO from "$lib/seo/SEO.svelte";
-	import ArrowRightIcon from "@lucide/svelte/icons/arrow-right";
-	import ImageIcon from "@lucide/svelte/icons/image";
+	import { page } from "$app/state";
+	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import {
+		H1,
+		H2,
+		Link,
+		ListItem,
+		Paragraph,
+		Strong,
+		UnorderedList,
+	} from "$lib/components/docs/markdown";
+	import { MetaTags } from "svelte-meta-tags";
+
+	const title = "Introduction";
+	const description = "Introduction to Svelte Fancy Components.";
+	const keywords = [
+		"Introduction",
+		"Svelte Fancy Components",
+		"Fancy Components",
+		"Svelte 5 components",
+		"text animations",
+		"media animations",
+		"animation components",
+	];
+	const socialImage = {
+		url: "https://sv-animations.vercel.app/fancy-og.png",
+		width: 1200,
+		height: 630,
+		alt: "Svelte Fancy Components",
+	};
+
+	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
+	let llmsTxtUrl = $derived(`${canonical}/llms.txt`);
 </script>
 
-<SEO
-	title="Svelte Fancy UI"
-	description="A focused collection of polished Svelte components for expressive media and text interfaces."
-	keywords={["Fancy UI", "Svelte Fancy UI", "Svelte 5", "media components", "text effects"]}
+<MetaTags
+	{title}
+	{description}
+	titleTemplate="%s | Svelte Fancy Components"
+	{keywords}
+	{canonical}
+	openGraph={{
+		url: canonical,
+		title,
+		description,
+		type: "website",
+		siteName: "Svelte Animations",
+		images: [socialImage],
+	}}
+	twitter={{
+		cardType: "summary_large_image",
+		title,
+		description,
+		image: socialImage.url,
+		imageAlt: socialImage.alt,
+		site: "@Sikandar_Bhide",
+		creator: "@Sikandar_Bhide",
+	}}
 />
 
-<section class="w-full px-4 py-12 sm:px-6 lg:px-12">
-	<div
-		class="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end"
-	>
-		<div class="max-w-3xl space-y-6">
-			<div
-				class="border-border bg-background text-muted-foreground inline-flex items-center gap-2 rounded-md border px-3 py-1 text-sm"
-			>
-				<ImageIcon class="size-4" />
-				<span>Fancy UI</span>
-			</div>
-			<div class="space-y-4">
-				<h1
-					class="text-4xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl"
-				>
-					Expressive media components for Svelte.
-				</h1>
-				<p class="text-muted-foreground max-w-2xl text-base leading-7 sm:text-lg">
-					A growing library for polished interactions where typography, motion, and media
-					need to work together.
-				</p>
-			</div>
+<div class="space-y-8 md:space-y-6">
+	<section class="space-y-4">
+		<div class="flex flex-col justify-between gap-3 md:flex-row md:items-center md:gap-4">
+			<H1 id="introduction">Introduction</H1>
+			<CopyPageDropdown componentName={title} {llmsTxtUrl} />
 		</div>
 
-		<a
-			href="/fancy/media-between-text"
-			class="border-border bg-card text-card-foreground hover:bg-accent hover:text-accent-foreground group block rounded-lg border p-5 transition-colors"
-		>
-			<div class="mb-6 flex items-center justify-between gap-4">
-				<div
-					class="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-md"
-				>
-					<ImageIcon class="size-5" />
-				</div>
-				<ArrowRightIcon
-					class="text-muted-foreground size-5 transition-transform group-hover:translate-x-1"
-				/>
-			</div>
-			<div class="space-y-2">
-				<h2 class="text-lg font-semibold">Media Between Text</h2>
-				<p class="text-muted-foreground text-sm leading-6">
-					Reveal image or video media between two text fragments with hover, view, or
-					manual triggers.
-				</p>
-			</div>
-		</a>
-	</div>
-</section>
+		<div class="max-w-3xl space-y-3">
+			<Paragraph>
+				Svelte Fancy Components is a focused collection of expressive text and media
+				components ported from Fancy Components with patterns that fit naturally into the
+				Svelte ecosystem.
+			</Paragraph>
+		</div>
+	</section>
+
+	<section class="space-y-3">
+		<H2 id="goal">Goal</H2>
+		<div class="max-w-3xl space-y-3">
+			<Paragraph>Bring Fancy Components to Svelte Ecosystem 😁.</Paragraph>
+		</div>
+	</section>
+
+	<section class="space-y-3">
+		<H2 id="credits">Credits</H2>
+		<UnorderedList class="mt-0">
+			<ListItem>
+				<Strong>Original Website:</Strong>
+				<Link href="https://www.fancycomponents.dev" target="_blank" rel="noreferrer">
+					fancycomponents.dev
+				</Link>
+			</ListItem>
+			<ListItem>
+				<Strong>Creator:</Strong>
+				<Link href="https://x.com/nonzeroexitcode" target="_blank" rel="noreferrer">
+					Daniel Petho
+				</Link>
+			</ListItem>
+		</UnorderedList>
+
+		<Paragraph class="mt-4">
+			All credits for design and original implementation go to Daniel Petho. This project is
+			a port of his work to the Svelte ecosystem.
+		</Paragraph>
+	</section>
+</div>

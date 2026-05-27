@@ -1,13 +1,86 @@
-<script>
+<script lang="ts">
 	import Button from "$lib/components/ui/button/button.svelte";
 	import { cn } from "$lib/utils";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import GridPattern from "../magic/grid-pattern/grid-pattern.svelte";
-	import * as Icons from "$lib/components/icons";
+	import Badge from "../spell/badge/badge.svelte";
+	import gsap from "gsap";
+	import { SplitText } from "gsap/SplitText";
+
+	let animateEffect = (node: HTMLElement) => {
+		let h1tag = node.getElementsByTagName("h1")[0];
+		let ctas = node.querySelectorAll("#svelte-animations-cta > a");
+		let tools = node.querySelectorAll("#tools .card");
+		let ptag = node.getElementsByTagName("p")[0];
+		let fancy_badge = node.querySelector("#fancy-badge");
+
+		gsap.registerPlugin(SplitText);
+		let chars = new SplitText(h1tag, { type: "chars", mask: "chars" }).chars;
+
+		let tl = gsap
+			.timeline({})
+			.from(chars, {
+				y: 60,
+				opacity: 0,
+				stagger: 0.03,
+				duration: 0.6,
+				ease: "power4.out",
+			})
+			.from(
+				ptag,
+				{
+					y: 20,
+					opacity: 0,
+				},
+				"-=0.5"
+			)
+			.fromTo(
+				ctas,
+				{
+					y: 20,
+					opacity: 0,
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.1,
+					duration: 0.6,
+					ease: "elastic.out(1, 0.5)",
+				},
+				"-=0.1"
+			)
+			.fromTo(
+				tools,
+				{
+					y: 20,
+					opacity: 0,
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.1,
+					duration: 0.6,
+					ease: "elastic.out(1, 0.5)",
+				},
+				"-=0.5"
+			)
+			.to(
+				fancy_badge,
+				{
+					keyframes: [
+						{ scale: 1.4, duration: 0.15 },
+						{ scale: 0.9, duration: 0.15 },
+						{ scale: 1, duration: 0.2 },
+					],
+				},
+				"+=0.2"
+			);
+		// i want after small delay new badge scale a bit then come to original scale to draw attention
+	};
 </script>
 
-<div>
-	<main class="relative min-h-[calc(100dvh-4.1rem)] overflow-hidden">
+<div {@attach animateEffect}>
+	<main class="min-h-[calc(100dvh-4.1rem)] overflow-hidden">
 		<GridPattern
 			width={45}
 			height={45}
@@ -15,7 +88,7 @@
 			class={cn("mask-[radial-gradient(800px_circle_at_top_center,white,transparent)]")}
 		/>
 		<section>
-			<div class="relative pt-14 md:pt-20">
+			<div class="pt-14 md:pt-15">
 				<div class="mx-auto max-w-7xl px-2 md:px-6">
 					<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 						<div class="mt-0">
@@ -138,7 +211,10 @@
 									></path></svg
 								>
 							</div>
-							<h1 class="text-3xl md:text-4xl xl:text-6xl/tight">
+							<h1
+								id="svelte-animations"
+								class="text-primary text-3xl md:text-4xl xl:text-6xl/tight"
+							>
 								Svelte Animations
 							</h1>
 							<!-- <h2
@@ -148,6 +224,7 @@
 							</h2> -->
 						</div>
 						<p
+							id="svelte-animations-desc"
 							class="text-muted-foreground mx-auto mt-6 max-w-3xl px-1 text-base text-balance md:mt-10 md:px-0 md:text-lg"
 						>
 							50+ free and open-source animated components and effects built with
@@ -155,43 +232,82 @@
 						</p>
 
 						<div
-							class="mt-10 flex flex-col items-center justify-center gap-4 md:mt-9 md:flex-row"
+							id="svelte-animations-cta"
+							class="mt-18 flex flex-col items-center justify-center gap-4 md:mt-14 md:flex-row"
 						>
-							<!-- <div
-                class="bg-foreground border p-0.5"
-                style="border-radius: calc(0.5rem + 0.125rem + 4px);"
-              > -->
 							<Button
 								href="/magic/docs/components/animated-beam"
 								size="lg"
-								class="px-5 text-base"
+								class="rounded-full bg-fuchsia-500 px-5 text-base text-fuchsia-50 opacity-0 transition-none duration-0 hover:bg-fuchsia-600 dark:bg-fuchsia-400 dark:text-fuchsia-950 dark:hover:bg-fuchsia-500"
 							>
-								<span class="text-nowrap">Explore Components</span>
+								<span class="text-nowrap">Magic UI</span>
 							</Button>
-							<!-- </div> -->
-
 							<Button
-								href="https://github.com/SikandarJODD/animations"
-								target="_blank"
-								variant="outline"
+								href="/spell"
 								size="lg"
-								class="dark:border-primary/40 border-primary bg-muted border-dashed px-5 shadow-md"
+								class="rounded-full bg-yellow-500 px-5 text-base text-yellow-50 opacity-0 transition-none duration-0 hover:bg-yellow-600 dark:bg-yellow-400 dark:text-yellow-950 dark:hover:bg-yellow-500"
 							>
-								<span>
-									<Icons.GitHub class="size-4" />
-								</span>
-								<span class="text-nowrap">GitHub</span>
+								<span class="text-nowrap">Spell UI</span>
+							</Button>
+							<Button
+								href="/fancy"
+								size="lg"
+								class="relative rounded-full bg-emerald-400 px-5 text-base text-emerald-50 opacity-0 transition-none duration-0 hover:bg-emerald-500 dark:bg-emerald-500 dark:text-emerald-950 dark:hover:bg-emerald-600"
+							>
+								<Badge
+									id="fancy-badge"
+									class="absolute -top-4 right-2.5 rotate-6 rounded-full dark:bg-orange-600 dark:text-orange-50"
+									variant="orange">New</Badge
+								>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									><g fill="currentColor"
+										><circle
+											cx="14.5"
+											cy="8.5"
+											r="2.5"
+											fill="currentColor"
+											stroke="currentColor"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+										></circle><rect
+											x="5"
+											y="12"
+											width="5"
+											height="5"
+											rx="1"
+											ry="1"
+											stroke="currentColor"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											fill="currentColor"
+										></rect><path
+											d="m5.1889,3.7146l-2.1169,3.5282c-.2.3333.0401.7572.4287.7572h4.2338c.3886,0,.6287-.424.4287-.7572l-2.1169-3.5282c-.1942-.3237-.6633-.3237-.8575,0Z"
+											stroke="currentColor"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											fill="currentColor"
+										></path></g
+									></svg
+								>
+								<span class="text-nowrap">Fancy Components</span>
 							</Button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section class="bg-background pt-0 pb-0 md:pb-10">
+		<section id="tools" class="bg-background pt-0 pb-0 md:pb-10">
 			<div class="relative m-auto max-w-5xl px-6">
 				<div class="mx-auto mt-4 flex max-w-2xl justify-center gap-4 lg:mt-16">
 					<div
-						class="hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 backdrop-blur-sm transition-all duration-200"
+						class="card hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 opacity-0 backdrop-blur-sm"
 					>
 						<svg
 							viewBox="0 0 256 308"
@@ -208,7 +324,7 @@
 						>
 					</div>
 					<div
-						class="hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 backdrop-blur-sm transition-all duration-200"
+						class="card hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 opacity-0 backdrop-blur-sm"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -229,12 +345,12 @@
 						>
 					</div>
 					<div
-						class="hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 backdrop-blur-sm transition-all duration-200"
+						class="card hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 opacity-0 backdrop-blur-sm"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 256 256"
-							class="mx-autp h-10 w-10"
+							class="mx-auto h-10 w-10"
 							><path fill="none" d="M0 0h256v256H0z" /><path
 								fill="none"
 								class="stroke-[#EB4F27]"

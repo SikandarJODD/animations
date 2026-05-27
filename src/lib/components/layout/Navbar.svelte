@@ -3,7 +3,7 @@
 	import * as Icons from "$lib/components/icons";
 	import BookOpenIcon from "@lucide/svelte/icons/book-open";
 	import SparklesIcon from "@lucide/svelte/icons/sparkles";
-	import { type Component } from "svelte";
+	import { onMount, type Component } from "svelte";
 	import {
 		NavigationMenuContent,
 		NavigationMenuItem,
@@ -46,7 +46,7 @@
 			badgeVariant: "sky",
 		},
 		{
-			href: "/fancy/media-between-text",
+			href: "/fancy",
 			title: "Svelte Fancy Components",
 			description: "Unique, eye-catching components for Svelte.",
 			icon: BlocksIcon,
@@ -93,7 +93,7 @@
 		// },
 	*/
 
-	let isNew = new PersistedState("is_new_present", true);
+	let isNew = new PersistedState("is_new", true);
 	let updateIsNew = () => {
 		isNew.current = false;
 	};
@@ -102,7 +102,7 @@
 <header
 	class="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-40 border-b px-4 backdrop-blur md:px-6"
 >
-	<div class="flex h-16 items-center justify-between gap-4">
+	<div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4">
 		<!-- Left side  -->
 		<div class="flex items-center gap-2">
 			<!-- Mobile menu trigger  -->
@@ -175,7 +175,8 @@
 																	</div>
 																	{#if item.badge}
 																		<Badge
-																			variant={item.badgeVariant || "default"}
+																			variant={item.badgeVariant ||
+																				"default"}
 																			size="sm"
 																		>
 																			{formatBadgeLabel(

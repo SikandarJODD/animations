@@ -15,6 +15,7 @@ import SplitByWordsExample from "./examples/split-by-words-example.svelte";
 import SplitByWordsExampleRaw from "./examples/split-by-words-example.svelte?raw";
 import StaggerFromExample from "./examples/stagger-from-example.svelte";
 import StaggerFromExampleRaw from "./examples/stagger-from-example.svelte?raw";
+import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
 
 export const meta: ComponentMeta = {
 	id: "vertical-cut-reveal",
@@ -28,7 +29,18 @@ const seo: SEO = {
 	title: "Vertical Cut Reveal",
 	description:
 		"Learn how to use the Vertical Cut Reveal Fancy component in Svelte for staggered vertical text entrances across words, characters, or lines.",
-	keywords: ["Svelte", "Vertical Cut Reveal", "Fancy UI", "Svelte Fancy Components", "motion-sv"],
+	titleTemplate: FANCY_TITLE_TEMPLATE,
+	images: FANCY_OG_IMAGES,
+	keywords: [
+		"Vertical Cut Reveal",
+		"Svelte Fancy Components",
+		"Fancy Components",
+		"Svelte 5",
+		"Motion SV",
+		"Text Reveal Animation",
+		"Staggered Text",
+		"Split Text Animation",
+	],
 };
 
 const installBlock: InstallComponentDocs = {

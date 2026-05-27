@@ -11,6 +11,7 @@ import OpenCloseTrigger from "./examples/open-close-trigger.svelte";
 import OpenCloseTriggerRaw from "./examples/open-close-trigger.svelte?raw";
 import VerticalOpen from "./examples/vertical-open.svelte";
 import VerticalOpenRaw from "./examples/vertical-open.svelte?raw";
+import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
 
 export const meta: ComponentMeta = {
 	id: "media-between-text",
@@ -24,13 +25,17 @@ const seo: SEO = {
 	title: "Media Between Text",
 	description:
 		"Learn how to use the Media Between Text Fancy component in Svelte, including image and video media reveals between text fragments.",
+	titleTemplate: FANCY_TITLE_TEMPLATE,
+	images: FANCY_OG_IMAGES,
 	keywords: [
-		"Svelte",
 		"Media Between Text",
-		"Fancy UI",
-		"Svelte Fancy UI",
+		"Svelte Fancy Components",
+		"Fancy Components",
+		"Svelte 5",
 		"Motion SV",
 		"Media Reveal",
+		"Image Reveal",
+		"Video Reveal",
 	],
 };
 

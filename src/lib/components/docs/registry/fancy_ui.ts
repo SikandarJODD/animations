@@ -12,13 +12,13 @@ export interface FancyComponent {
 }
 
 export const fancyUIComponents: FancyComponent[] = [
-	// {
-	// 	id: "overview",
-	// 	name: "Overview",
-	// 	href: "/fancy",
-	// 	category: "Overview",
-	// 	desc: "A landing page for the Fancy component collection.",
-	// },
+	{
+		id: "overview",
+		name: "Introduction",
+		href: "/fancy",
+		category: "Overview",
+		desc: "Introduction",
+	},
 	{
 		id: "media-between-text",
 		name: "Media Between Text",
@@ -74,6 +74,14 @@ export const fancyUIComponents: FancyComponent[] = [
 		href: "/fancy/text-highlighter",
 		category: "Components",
 		desc: "Sweep a highlight background across inline text on hover, in view, or on demand.",
+	},
+	{
+		id: "text-rotate",
+		name: "Text Rotate",
+		href: "/fancy/text-rotate",
+		category: "Components",
+		desc: "Rotate through multiple text strings with per-character, per-word, or per-line motion and imperative controls.",
+		badge: "New",
 	},
 	{
 		id: "underline-to-background",

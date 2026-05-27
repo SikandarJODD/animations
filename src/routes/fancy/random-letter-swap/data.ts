@@ -6,6 +6,7 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
+import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
 
 export const meta: ComponentMeta = {
 	id: "random-letter-swap",
@@ -19,12 +20,16 @@ const seo: SEO = {
 	title: "Random Letter Swap",
 	description:
 		"Learn how to use the Random Letter Swap Fancy component in Svelte for randomized hover-driven letter transitions.",
+	titleTemplate: FANCY_TITLE_TEMPLATE,
+	images: FANCY_OG_IMAGES,
 	keywords: [
-		"Svelte",
 		"Random Letter Swap",
-		"Fancy UI",
 		"Svelte Fancy Components",
-		"motion-sv",
+		"Fancy Components",
+		"Svelte 5",
+		"Motion SV",
+		"Randomized Text Animation",
+		"Hover Text Effect",
 		"runed",
 	],
 };

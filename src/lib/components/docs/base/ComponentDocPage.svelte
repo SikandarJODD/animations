@@ -31,7 +31,12 @@
 	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
 	import APITable from "$lib/components/docs/base/APITable.svelte";
 	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
-	import SEOComponent from "$lib/seo/SEO.svelte";
+	import { MetaTags } from "svelte-meta-tags";
+	import {
+		buildSpellKeywords,
+		SPELL_SOCIAL_IMAGE,
+		SPELL_TITLE_TEMPLATE,
+	} from "$lib/seo/spell";
 
 	let {
 		id,
@@ -55,6 +60,25 @@
 	let installUrl = $derived(
 		`${page.url.origin}/${installPathPrefix ?? (isSpellRoute ? "s" : "r")}/${id}.json`
 	);
+	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
+	let resolvedTitleTemplate = $derived(
+		seo.titleTemplate ?? (isSpellRoute ? SPELL_TITLE_TEMPLATE : "%s | Svelte Animations")
+	);
+	let resolvedKeywords = $derived(
+		isSpellRoute
+			? buildSpellKeywords(seo.keywords, [
+					seo.title,
+					`${seo.title} Svelte component`,
+					`${seo.title} Spell UI`,
+				])
+			: seo.keywords
+	);
+	let resolvedSocialTitle = $derived(
+		isSpellRoute ? `${seo.title} | Svelte Spell UI` : seo.title
+	);
+	let resolvedImages = $derived(
+		seo.images ?? (isSpellRoute ? [SPELL_SOCIAL_IMAGE] : undefined)
+	);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -65,7 +89,36 @@
 	let llmsTxtUrl = $derived(`${getURLPath(page.url.href)}/llms.txt`);
 </script>
 
-<SEOComponent title={seo.title} description={seo.description} keywords={seo.keywords} />
+<MetaTags
+	title={seo.title}
+	titleTemplate={resolvedTitleTemplate}
+	description={seo.description}
+	keywords={resolvedKeywords}
+	{canonical}
+	robots="index,follow"
+	additionalRobotsProps={{
+		maxSnippet: -1,
+		maxImagePreview: "large",
+		maxVideoPreview: -1,
+	}}
+	openGraph={{
+		url: canonical,
+		title: resolvedSocialTitle,
+		description: seo.description,
+		type: "article",
+		siteName: isSpellRoute ? "Svelte Spell UI" : "Svelte Animations",
+		images: resolvedImages,
+	}}
+	twitter={{
+		creator: "@Sikandar_Bhide",
+		site: "@Sikandar_Bhide",
+		cardType: "summary_large_image",
+		title: resolvedSocialTitle,
+		description: seo.description,
+		image: resolvedImages?.[0]?.url,
+		imageAlt: resolvedImages?.[0]?.alt,
+	}}
+/>
 <div class="space-y-6 md:space-y-8">
 	<section>
 		<div class="flex flex-col justify-between gap-3 md:flex-row md:items-center md:gap-4">

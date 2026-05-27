@@ -1,26 +1,19 @@
 <script lang="ts">
-	import { data } from "./data";
-	import * as Item from "$lib/components/ui/item/index.js";
 	import { page } from "$app/state";
-	import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
+	import * as Item from "$lib/components/ui/item/index.js";
+	import { Button } from "$lib/components/ui/button";
+	import CompactPropsTable from "$lib/components/docs/base/CompactPropsTable.svelte";
 	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
 	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
-	import APITable from "$lib/components/docs/base/APITable.svelte";
 	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import { H1, H2, H3, Paragraph } from "$lib/components/docs/markdown/index";
+	import { PreviewComponent } from "$lib/components/ui/preview-component";
 	import SEOComponent from "$lib/seo/SEO.svelte";
-	import { Button } from "$lib/components/ui/button";
+	import { data } from "./data";
 
 	let PreviewComp = $derived(data.preview);
-	let installUrl = $derived(`${page.url.origin}/f/letter-3d-swap.json`);
-
-	let getURLPath = (url: string) => {
-		// clean url by removing query params and hash
-		let cleanUrl = url.split("?")[0].split("#")[0];
-		return cleanUrl;
-	};
-
-	let llmsTxtUrl = $derived(`${getURLPath(page.url.href)}/llms.txt`);
+	let installUrl = $derived(`${page.url.origin}/f/${data.id}.json`);
+	let llmsTxtUrl = $derived(`${page.url.href.split("?")[0].split("#")[0]}/llms.txt`);
 </script>
 
 <SEOComponent
@@ -30,40 +23,42 @@
 	keywords={data.seo.keywords}
 	images={data.seo.images}
 />
-<div class="space-y-6 md:space-y-8">
+
+<div class="">
 	<section>
 		<div class="flex flex-col justify-between gap-3 md:flex-row md:items-center md:gap-4">
-			<H1 id="introduction">{data.title}</H1>
+			<H1 id="introduction" class="font-figtree">{data.title}</H1>
 			<CopyPageDropdown componentName={data.title} {llmsTxtUrl} />
 		</div>
 
 		<div class="mt-3 max-w-2xl">
-			<Paragraph>
+			<Paragraph class="font-figtree">
 				{data.description}
 			</Paragraph>
-			<PackageBadges packages={["motion-sv"]} />
+			<PackageBadges packages={data.installBlock?.packages ?? []} />
 		</div>
 	</section>
 
-	<section>
-		<PreviewComponent code={data.previewCode}>
+	<section class="mt-6">
+		<PreviewComponent code={data.previewCode} class={data.previewClass}>
 			{#if PreviewComp}
 				<PreviewComp />
 			{/if}
 		</PreviewComponent>
 	</section>
 
-	<section>
+	<section class="mt-6">
 		<H2 id="installation">Installation</H2>
 		<InstallComponent
 			{installUrl}
+			tailwindConfig={data.installBlock?.tailwind
+				? { code: data.installBlock.tailwind }
+				: undefined}
 			codeBlocks={data.installBlock?.installCode}
 			packages={data.installBlock?.packages}
 			folderStructure={data.installBlock?.folderStructure}
 			class="mt-4"
 		/>
-
-		<!-- Visit Original Docs - This is best way to learn and understand component  -->
 		<Item.Root variant="muted" class="mt-4">
 			<Item.Content>
 				<Item.Title id="visit-original-docs">Visit Original Docs</Item.Title>
@@ -76,7 +71,7 @@
 					variant="outline"
 					size="sm"
 					target="_blank"
-					href="https://www.fancycomponents.dev/docs/components/text/letter-3d-swap#understanding-the-component"
+					href="https://www.fancycomponents.dev/docs/components/text/text-rotate#understanding-the-component"
 				>
 					Docs
 					<svg
@@ -99,22 +94,15 @@
 		</Item.Root>
 	</section>
 
-	{#if data?.examples && data.examples.length > 0}
-		<section>
+	{#if data.examples && data.examples.length > 0}
+		<section class="mt-14">
 			<H2 id="examples">Examples</H2>
 			<div class="mt-4 space-y-8">
 				{#each data.examples as example (example.name)}
 					<div class="space-y-0">
-						<div>
-							<H3 id={example.name.toLowerCase().replace(/\s+/g, "-")} class="mt-0">
-								{example.name}
-							</H3>
-							{#if example.description}
-								<Paragraph class="mt-1">
-									{example.description}
-								</Paragraph>
-							{/if}
-						</div>
+						<H3 id={example.name.toLowerCase().replace(/\s+/g, "-")} class="mt-0">
+							{example.name}
+						</H3>
 						<PreviewComponent code={example.code} class={example.previewClass}>
 							<example.preview />
 						</PreviewComponent>
@@ -124,15 +112,13 @@
 		</section>
 	{/if}
 
-	{#if data?.props && data.props.length > 0}
+	{#if data.props && data.props.length > 0}
 		<section>
 			<H2 id="props">Props</H2>
 			<div class="mt-3 space-y-6">
-				<div>
-					{#each data.props as prop, index (prop.name ?? index)}
-						<APITable data={prop} />
-					{/each}
-				</div>
+				{#each data.props as prop, index (prop.name ?? index)}
+					<CompactPropsTable data={prop} />
+				{/each}
 			</div>
 		</section>
 	{/if}

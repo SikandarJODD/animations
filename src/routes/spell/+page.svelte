@@ -1,19 +1,67 @@
 <script lang="ts">
+	import { page } from "$app/state";
 	import SpellOverviewHero from "$lib/components/layout/spell/spell-overview-hero.svelte";
 	import SpellOverviewShowcase from "$lib/components/layout/spell/spell-overview-showcase.svelte";
-	import SEO from "$lib/seo/SEO.svelte";
+	import {
+		buildSpellKeywords,
+		SPELL_SOCIAL_IMAGE,
+		SPELL_TITLE_TEMPLATE,
+	} from "$lib/seo/spell";
+	import { MetaTags } from "svelte-meta-tags";
+
+	const title = "Refined Svelte 5 Components for Design Engineers";
+	const description =
+		"Explore Svelte Spell UI, a polished collection of refined Svelte 5 components inspired by Spell UI and built with Tailwind CSS and Motion SV for modern product interfaces.";
+	const keywords = buildSpellKeywords([
+		"Svelte 5 UI components",
+		"Svelte design system",
+		"polished Svelte components",
+		"modern Svelte interface",
+		"Svelte frontend components",
+		"interactive Svelte UI",
+		"Svelte animation components",
+		"reusable Svelte components",
+		"UI components for design engineers",
+		"product interface components",
+	]);
+	const socialTitle = `${title} | Svelte Spell UI`;
+
+	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
 </script>
 
-<SEO
-	title="Svelte Spell UI"
-	description="High Quality Svelte Animations for your projects."
-	keywords={["Spell UI", "Svelte Spell UI", "Svelte 5", "UI components", "Design engineering"]}
-	images={[
+<MetaTags
+	{title}
+	titleTemplate={SPELL_TITLE_TEMPLATE}
+	{description}
+	{keywords}
+	{canonical}
+	robots="index,follow"
+	additionalRobotsProps={{
+		maxSnippet: -1,
+		maxImagePreview: "large",
+		maxVideoPreview: -1,
+	}}
+	openGraph={{
+		url: canonical,
+		title: socialTitle,
+		description,
+		type: "website",
+		siteName: "Svelte Spell UI",
+		images: [SPELL_SOCIAL_IMAGE],
+	}}
+	twitter={{
+		cardType: "summary_large_image",
+		title: socialTitle,
+		description,
+		image: SPELL_SOCIAL_IMAGE.url,
+		imageAlt: SPELL_SOCIAL_IMAGE.alt,
+		site: "@Sikandar_Bhide",
+		creator: "@Sikandar_Bhide",
+	}}
+	additionalMetaTags={[
 		{
-			url: "https://sv-animations.vercel.app/og.png",
-			width: 1200,
-			height: 630,
-			alt: "Svelte Spell UI",
+			name: "author",
+			content: "Sikandar Jodd",
 		},
 	]}
 />

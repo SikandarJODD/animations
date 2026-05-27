@@ -7,7 +7,12 @@
 	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
 	import APITable from "$lib/components/docs/base/APITable.svelte";
 	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
-	import SEOComponent from "$lib/seo/SEO.svelte";
+	import { MetaTags } from "svelte-meta-tags";
+	import {
+		buildSpellKeywords,
+		SPELL_SOCIAL_IMAGE,
+		SPELL_TITLE_TEMPLATE,
+	} from "$lib/seo/spell";
 
 	import { apiRouteCode, data } from "./data";
 	let PreviewComp = $derived(data.preview);
@@ -21,14 +26,47 @@
 	};
 
 	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
+	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
+	const keywords = buildSpellKeywords(data.seo.keywords, [
+		data.title,
+		"Spotify embed card",
+		"Svelte music UI component",
+		"album art card",
+	]);
+	const socialTitle = `${data.seo.title} | Svelte Spell UI`;
 	// $inspect("Spell", isSpellRoute);
 	// $inspect("Install URL", installUrl);
 </script>
 
-<SEOComponent
+<MetaTags
 	title={data.seo.title}
+	titleTemplate={SPELL_TITLE_TEMPLATE}
 	description={data.seo.description}
-	keywords={data.seo.keywords}
+	{keywords}
+	{canonical}
+	robots="index,follow"
+	additionalRobotsProps={{
+		maxSnippet: -1,
+		maxImagePreview: "large",
+		maxVideoPreview: -1,
+	}}
+	openGraph={{
+		url: canonical,
+		title: socialTitle,
+		description: data.seo.description,
+		type: "article",
+		siteName: "Svelte Spell UI",
+		images: [SPELL_SOCIAL_IMAGE],
+	}}
+	twitter={{
+		cardType: "summary_large_image",
+		title: socialTitle,
+		description: data.seo.description,
+		image: SPELL_SOCIAL_IMAGE.url,
+		imageAlt: SPELL_SOCIAL_IMAGE.alt,
+		site: "@Sikandar_Bhide",
+		creator: "@Sikandar_Bhide",
+	}}
 />
 <div class="space-y-8 md:space-y-8">
 	<section>
@@ -81,7 +119,7 @@
 		<section>
 			<H2 id="examples">Examples</H2>
 			<div class="mt-4 space-y-8">
-				{#each data.examples as example}
+				{#each data.examples as example (example.name)}
 					<div class="space-y-3">
 						<H3 id={example.name.toLowerCase().replace(/\s+/g, "-")} class="mt-0">
 							{example.name}
@@ -100,7 +138,7 @@
 			<H2 id="props">Props</H2>
 			<div class="mt-3 space-y-6">
 				<div>
-					{#each data.props as prop}
+					{#each data.props as prop (prop.name)}
 						<APITable data={prop} />
 					{/each}
 				</div>

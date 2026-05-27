@@ -11,6 +11,7 @@ import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import ScrollDrivenExample from "./examples/scroll-driven-example.svelte";
 import ScrollDrivenExampleRaw from "./examples/scroll-driven-example.svelte?raw";
+import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
 
 export const meta: ComponentMeta = {
 	id: "text-along-path",
@@ -24,7 +25,18 @@ const seo: SEO = {
 	title: "Text Along Path",
 	description:
 		"Learn how to use the Text Along Path Fancy component in Svelte to animate SVG text along a custom path.",
-	keywords: ["Svelte", "Text Along Path", "Fancy UI", "Svelte Fancy Components", "motion-sv"],
+	titleTemplate: FANCY_TITLE_TEMPLATE,
+	images: FANCY_OG_IMAGES,
+	keywords: [
+		"Text Along Path",
+		"Svelte Fancy Components",
+		"Fancy Components",
+		"Svelte 5",
+		"Motion SV",
+		"SVG Text Animation",
+		"Path Animation",
+		"Scroll Text",
+	],
 };
 
 const installBlock: InstallComponentDocs = {
