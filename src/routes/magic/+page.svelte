@@ -3,24 +3,24 @@
 	import { H1, Paragraph } from "$lib/components/docs/markdown";
 	import { MetaTags } from "svelte-meta-tags";
 
-	const title = "Svelte Fancy Components";
+	const title = "Svelte Magic UI";
 	const description =
-		"Explore Svelte Fancy Components, a collection of expressive text and media-driven components for Svelte 5 with distinctive interaction design.";
+		"Explore Svelte Magic UI, a curated collection of animated Svelte 5 components and motion-driven effects built for modern product interfaces.";
 	const keywords = [
-		"Svelte Fancy Components",
-		"Svelte text animations",
-		"Svelte media components",
-		"expressive Svelte UI",
-		"Svelte motion components",
-		"interactive typography",
-		"creative Svelte components",
-		"Svelte 5 animation library",
+		"Svelte Magic UI",
+		"Svelte 5 animation components",
+		"Svelte UI effects",
+		"motion-sv components",
+		"Tailwind CSS animations",
+		"animated Svelte components",
+		"reusable Svelte effects",
+		"interactive Svelte UI",
 	];
 	const socialImage = {
-		url: "https://sv-animations.vercel.app/fancy-og.png",
+		url: "https://sv-animations.vercel.app/og.png",
 		width: 1200,
 		height: 630,
-		alt: "Svelte Fancy Components",
+		alt: "Svelte Magic UI",
 	};
 
 	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
@@ -37,7 +37,7 @@
 		},
 		about: {
 			"@type": "Thing",
-			name: "Svelte Fancy Components",
+			name: "Svelte Magic UI",
 		},
 	});
 </script>
@@ -64,7 +64,7 @@
 		title,
 		description,
 		type: "website",
-		siteName: "Svelte Fancy Components",
+		siteName: "Svelte Magic UI",
 		images: [socialImage],
 	}}
 	twitter={{
@@ -86,10 +86,10 @@
 
 <div class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
 	<section class="space-y-4">
-		<H1 id="overview" class="font-semibold">Svelte Fancy Components</H1>
+		<H1 id="overview" class="font-semibold">Svelte Magic UI</H1>
 		<Paragraph class="max-w-3xl text-balance">
-			A minimal landing page for the Svelte Fancy Components collection, featuring expressive
-			text and media interactions adapted for Svelte 5.
+			A focused landing page for the Svelte Magic UI collection, with reusable animated
+			components, visual effects, and installation-ready examples for Svelte 5.
 		</Paragraph>
 	</section>
 </div>

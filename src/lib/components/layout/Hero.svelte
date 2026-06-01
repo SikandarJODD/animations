@@ -93,7 +93,7 @@
 					<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 						<div class="mt-0">
 							<a
-								href="/fancy/letter-swap"
+								href="/fancy"
 								class="hover:bg-muted dark:hover:border-t-border bg-muted dark:bg-muted/60 group mx-auto flex w-fit max-w-[min(100%,30rem)] items-center gap-2 rounded-full border p-1 pl-3 shadow-md shadow-zinc-950/5 backdrop-blur-xs transition-colors duration-300 sm:pl-4 dark:border-t-white/5 dark:shadow-zinc-950"
 							>
 								<span
@@ -236,7 +236,7 @@
 							class="mt-18 flex flex-col items-center justify-center gap-4 md:mt-14 md:flex-row"
 						>
 							<Button
-								href="/magic/docs/components/animated-beam"
+								href="/magic"
 								size="lg"
 								class="rounded-full bg-fuchsia-500 px-5 text-base text-fuchsia-50 opacity-0 transition-none duration-0 hover:bg-fuchsia-600 dark:bg-fuchsia-400 dark:text-fuchsia-950 dark:hover:bg-fuchsia-500"
 							>

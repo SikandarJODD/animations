@@ -1,5 +1,5 @@
 import type { RequestHandler } from "./$types";
-import docs from "../docs.md?raw";
+import docs from "../../docs.md?raw";
 
 export const GET: RequestHandler = async () => {
 	return new Response(docs, {

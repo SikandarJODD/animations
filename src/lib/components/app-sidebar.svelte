@@ -15,6 +15,10 @@
 				url: "#",
 				items: [
 					{
+						title: "Overview",
+						url: "/magic",
+					},
+					{
 						title: "Introduction",
 						url: "/magic/docs",
 					},

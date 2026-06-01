@@ -22,6 +22,11 @@
 
 	const getStartedItems: MobileNavItem[] = [
 		{
+			href: "/magic",
+			label: "Overview",
+			description: "Main landing page for Svelte Magic UI",
+		},
+		{
 			href: "/magic/docs",
 			label: "Introduction",
 			description: "Get started with Magic UI components",

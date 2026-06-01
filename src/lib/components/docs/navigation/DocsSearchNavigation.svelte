@@ -8,7 +8,6 @@
 		magicUIComponents,
 		spellUIComponents,
 		type FancyComponent,
-		type MagicComponent,
 		type SpellComponent,
 	} from "../registry";
 
@@ -21,17 +20,37 @@
 		}
 	}
 
-	// For Now we would use Magic UI - Components, Later on we would update it
-	let docs: MagicComponent[] = [
+	type SearchDoc = {
+		id: string;
+		name: string;
+		href: string;
+	};
+
+	let docs: SearchDoc[] = [
 		{
-			id: "getting-started",
-			name: "Getting Started",
+			id: "magic-overview",
+			name: "Magic UI Overview",
+			href: "/magic",
+		},
+		{
+			id: "magic-introduction",
+			name: "Magic UI Introduction",
 			href: "/magic/docs",
 		},
 		{
-			id: "installation",
-			name: "Installation",
+			id: "magic-installation",
+			name: "Magic UI Installation",
 			href: "/magic/docs/installation",
+		},
+		{
+			id: "fancy-overview",
+			name: "Fancy Components Overview",
+			href: "/fancy",
+		},
+		{
+			id: "fancy-introduction",
+			name: "Fancy Components Introduction",
+			href: "/fancy/introduction",
 		},
 	];
 
@@ -40,7 +59,7 @@
 	);
 
 	const fancyComponents: FancyComponent[] = fancyUIComponents.filter(
-		(component) => component.category !== "Overview"
+		(component) => component.category !== "Overview" && component.id !== "introduction"
 	);
 </script>
 

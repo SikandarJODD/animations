@@ -14,10 +14,17 @@ export interface FancyComponent {
 export const fancyUIComponents: FancyComponent[] = [
 	{
 		id: "overview",
-		name: "Introduction",
+		name: "Overview",
 		href: "/fancy",
 		category: "Overview",
-		desc: "Introduction",
+		desc: "A landing page for Svelte Fancy Components with a minimal introduction and collection overview.",
+	},
+	{
+		id: "introduction",
+		name: "Introduction",
+		href: "/fancy/introduction",
+		category: "Overview",
+		desc: "Learn what Svelte Fancy Components is, why it exists, and where the original work comes from.",
 	},
 	{
 		id: "media-between-text",

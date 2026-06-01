@@ -32,7 +32,7 @@
 
 	const navigationItems: NavigationItem[] = [
 		{
-			href: "/magic/docs/components/animated-beam",
+			href: "/magic",
 			title: "Svelte Magic UI",
 			description: "50+ Animations & Effects for Svelte",
 			icon: SparklesIcon,
