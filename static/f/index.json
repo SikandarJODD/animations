@@ -1,5 +1,14 @@
 [
 	{
+		"name": "animated-gradient-svg",
+		"title": "Animated Gradient Svg",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "An animated SVG gradient background built from moving blurred circles.",
+		"registryDependencies": [],
+		"relativeUrl": "animated-gradient-svg.json"
+	},
+	{
 		"name": "media-between-text",
 		"title": "Media Between Text",
 		"type": "registry:block",
@@ -121,6 +130,18 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "text-highlighter.json"
+	},
+	{
+		"name": "text-rotate",
+		"title": "Text Rotate",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Rotate through multiple text strings with per-character, per-word, or per-line motion and imperative controls.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "text-rotate.json"
 	},
 	{
 		"name": "underline-to-background",

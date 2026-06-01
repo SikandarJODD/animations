@@ -15,9 +15,9 @@
 		"create:routes": "node scripts/create-routes.js",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"build:blocks": "pnpm shadcn-svelte registry build",
-		"build:spell": "pnpm shadcn-svelte registry build ./spell-registry.json -o ./static/s",
-		"build:fancy": "pnpm shadcn-svelte registry build ./fancy-components.json -o ./static/f",
+		"magic:blocks": "pnpm shadcn-svelte registry build",
+		"spell:blocks": "pnpm shadcn-svelte registry build ./spell-registry.json -o ./static/s",
+		"fancy:blocks": "pnpm shadcn-svelte registry build ./fancy-components.json -o ./static/f",
 		"lint": "prettier --check .",
 		"format": "prettier --write ."
 	},

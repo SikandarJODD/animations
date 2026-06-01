@@ -4,6 +4,55 @@
 	"homepage": "https://sv-animations.vercel.app/fancy",
 	"items": [
 		{
+			"name": "animated-gradient-svg",
+			"type": "registry:block",
+			"title": "Animated Gradient Svg",
+			"author": "SikandarJODD",
+			"description": "An animated SVG gradient background built from moving blurred circles.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/animated-gradient-svg/animated-gradient-svg.svelte",
+					"type": "registry:component",
+					"target": "fancy/animated-gradient-svg/animated-gradient-svg.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/animated-gradient-svg/index.ts",
+					"type": "registry:file",
+					"target": "fancy/animated-gradient-svg/index.ts"
+				},
+				{
+					"type": "registry:hook",
+					"path": "./src/lib/hooks/use-dimension.svelte.ts"
+				}
+			],
+			"registryDependencies": [],
+			"cssVars": {
+				"theme": {
+					"animate-background-gradient": "background-gradient"
+				}
+			},
+			"css": {
+				"@keyframes background-gradient": {
+					"0%, 100%": {
+						"transform": "translate(0, 0)",
+						"animationDelay": "var(--background-gradient-delay, 0s)"
+					},
+					"20%": {
+						"transform": "translate(calc(100% * var(--tx-1, 1)), calc(100% * var(--ty-1, 1)))"
+					},
+					"40%": {
+						"transform": "translate(calc(100% * var(--tx-2, -1)), calc(100% * var(--ty-2, 1)))"
+					},
+					"60%": {
+						"transform": "translate(calc(100% * var(--tx-3, 1)), calc(100% * var(--ty-3, -1)))"
+					},
+					"80%": {
+						"transform": "translate(calc(100% * var(--tx-4, -1)), calc(100% * var(--ty-4, -1)))"
+					}
+				}
+			}
+		},
+		{
 			"name": "media-between-text",
 			"type": "registry:block",
 			"title": "Media Between Text",
@@ -22,7 +71,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "letter-3d-swap",
@@ -48,7 +99,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "letter-swap",
@@ -69,7 +122,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "letter-swap-ping-pong",
@@ -90,7 +145,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv", "runed"]
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			]
 		},
 		{
 			"name": "random-letter-swap",
@@ -111,7 +169,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv", "runed"]
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			]
 		},
 		{
 			"name": "random-letter-swap-ping-pong",
@@ -132,7 +193,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv", "runed"]
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			]
 		},
 		{
 			"name": "scramble-hover",
@@ -153,7 +217,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "scramble-in",
@@ -174,7 +240,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "text-along-path",
@@ -195,7 +263,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "text-highlighter",
@@ -216,7 +286,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "text-rotate",
@@ -237,7 +309,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "underline-to-background",
@@ -258,7 +332,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "vertical-cut-reveal",
@@ -279,7 +355,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		}
 	]
 }
