@@ -99,6 +99,14 @@ export const fancyUIComponents: FancyComponent[] = [
 		desc: "Reveal text from vertical cuts with word, character, or line-based staggering.",
 		badge: "New",
 	},
+	{
+		id: "animated-gradient-svg",
+		name: "Animated Gradient SVG",
+		href: "/fancy/animated-gradient-svg",
+		category: "Components",
+		desc: "Create animated gradient effects using SVG filters and animations.",
+		badge: "New",
+	}
 ];
 
 const fancyUICategoryOrder: FancyCategory[] = ["Overview", "Components"];

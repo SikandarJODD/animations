@@ -11,6 +11,8 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
+		"create:route": "node scripts/create-route.js",
+		"create:routes": "node scripts/create-routes.js",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"build:blocks": "pnpm shadcn-svelte registry build",

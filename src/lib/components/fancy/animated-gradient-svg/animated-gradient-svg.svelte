@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { HTMLAttributes } from "svelte/elements";
 
-	import { useDimensions } from '$lib/hooks/use-dimension.svelte';
-	import { cn } from '$lib/utils';
+	import { useDimensions } from "$lib/hooks/use-dimension.svelte";
+	import { cn } from "$lib/utils";
 
-	type BlurStrength = 'light' | 'medium' | 'heavy';
+	type BlurStrength = "light" | "medium" | "heavy";
 
 	interface AnimatedGradientSvgProps extends HTMLAttributes<HTMLDivElement> {
 		colors: string[];
@@ -32,7 +32,7 @@
 	let {
 		colors,
 		speed = 5,
-		blur = 'light',
+		blur = "light",
 		class: className,
 		...props
 	}: AnimatedGradientSvgProps = $props();
@@ -43,7 +43,7 @@
 
 	const circleSize = $derived(Math.max(dimensions.width, dimensions.height));
 	const blurClass = $derived(
-		blur === 'light' ? 'blur-2xl' : blur === 'medium' ? 'blur-3xl' : 'blur-[100px]'
+		blur === "light" ? "blur-2xl" : blur === "medium" ? "blur-3xl" : "blur-[100px]"
 	);
 
 	function hashString(value: string) {
@@ -73,7 +73,7 @@
 		return min + (max - min) * random();
 	}
 
-	const blobConfigs = $derived.by<BlobConfig[]>(() =>
+	let blobConfigs = $derived.by<BlobConfig[]>(() =>
 		colors.map((color, index) => {
 			const random = createSeededRandom(hashString(`${color}-${index}`));
 
@@ -90,15 +90,15 @@
 				tx3: randomBetween(random, -0.5, 0.5),
 				ty3: randomBetween(random, -0.5, 0.5),
 				tx4: randomBetween(random, -0.5, 0.5),
-				ty4: randomBetween(random, -0.5, 0.5)
+				ty4: randomBetween(random, -0.5, 0.5),
 			};
 		})
 	);
 </script>
 
-<div bind:this={containerRef} class={cn('absolute inset-0 overflow-hidden', className)} {...props}>
-	<div class={cn('absolute inset-0', blurClass)}>
-		{#each blobConfigs as blob, index (`${blob.color}-${index}`)}
+<div bind:this={containerRef} class={cn("absolute inset-0 overflow-hidden", className)} {...props}>
+	<div class={cn("absolute inset-0", blurClass)}>
+		{#each blobConfigs as blob, index}
 			<svg
 				class="absolute"
 				width={circleSize * blob.widthFactor}
