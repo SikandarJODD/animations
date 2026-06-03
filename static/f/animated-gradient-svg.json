@@ -1,0 +1,50 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "animated-gradient-svg",
+	"title": "Animated Gradient Svg",
+	"type": "registry:block",
+	"author": "SikandarJODD",
+	"description": "An animated SVG gradient background built from moving blurred circles.",
+	"css": {
+		"@keyframes background-gradient": {
+			"0%, 100%": {
+				"transform": "translate(0, 0)",
+				"animationDelay": "var(--background-gradient-delay, 0s)"
+			},
+			"20%": {
+				"transform": "translate(calc(100% * var(--tx-1, 1)), calc(100% * var(--ty-1, 1)))"
+			},
+			"40%": {
+				"transform": "translate(calc(100% * var(--tx-2, -1)), calc(100% * var(--ty-2, 1)))"
+			},
+			"60%": {
+				"transform": "translate(calc(100% * var(--tx-3, 1)), calc(100% * var(--ty-3, -1)))"
+			},
+			"80%": {
+				"transform": "translate(calc(100% * var(--tx-4, -1)), calc(100% * var(--ty-4, -1)))"
+			}
+		}
+	},
+	"cssVars": {
+		"theme": {
+			"animate-background-gradient": "background-gradient"
+		}
+	},
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\n\timport { useDimensions } from \"$lib/hooks/use-dimension.svelte\";\n\timport { cn } from \"$UTILS$\";\n\n\ttype BlurStrength = \"light\" | \"medium\" | \"heavy\";\n\n\tinterface AnimatedGradientSvgProps extends HTMLAttributes<HTMLDivElement> {\n\t\tcolors: string[];\n\t\tspeed?: number;\n\t\tblur?: BlurStrength;\n\t\tclass?: string;\n\t}\n\n\tinterface BlobConfig {\n\t\tcolor: string;\n\t\twidthFactor: number;\n\t\theightFactor: number;\n\t\ttop: string;\n\t\tleft: string;\n\t\ttx1: number;\n\t\tty1: number;\n\t\ttx2: number;\n\t\tty2: number;\n\t\ttx3: number;\n\t\tty3: number;\n\t\ttx4: number;\n\t\tty4: number;\n\t}\n\n\tlet {\n\t\tcolors,\n\t\tspeed = 5,\n\t\tblur = \"light\",\n\t\tclass: className,\n\t\t...props\n\t}: AnimatedGradientSvgProps = $props();\n\n\tlet containerRef = $state<HTMLDivElement | null>(null);\n\n\tconst dimensions = useDimensions(() => containerRef);\n\n\tconst circleSize = $derived(Math.max(dimensions.width, dimensions.height));\n\tconst blurClass = $derived(\n\t\tblur === \"light\" ? \"blur-2xl\" : blur === \"medium\" ? \"blur-3xl\" : \"blur-[100px]\"\n\t);\n\n\tfunction hashString(value: string) {\n\t\tlet hash = 2166136261;\n\n\t\tfor (let index = 0; index < value.length; index += 1) {\n\t\t\thash ^= value.charCodeAt(index);\n\t\t\thash = Math.imul(hash, 16777619);\n\t\t}\n\n\t\treturn hash >>> 0;\n\t}\n\n\tfunction createSeededRandom(seed: number) {\n\t\treturn () => {\n\t\t\tseed += 0x6d2b79f5;\n\n\t\t\tlet t = seed;\n\t\t\tt = Math.imul(t ^ (t >>> 15), t | 1);\n\t\t\tt ^= t + Math.imul(t ^ (t >>> 7), t | 61);\n\n\t\t\treturn ((t ^ (t >>> 14)) >>> 0) / 4294967296;\n\t\t};\n\t}\n\n\tfunction randomBetween(random: () => number, min: number, max: number) {\n\t\treturn min + (max - min) * random();\n\t}\n\n\tlet blobConfigs = $derived.by<BlobConfig[]>(() =>\n\t\tcolors.map((color, index) => {\n\t\t\tconst random = createSeededRandom(hashString(`${color}-${index}`));\n\n\t\t\treturn {\n\t\t\t\tcolor,\n\t\t\t\twidthFactor: randomBetween(random, 0.5, 1.5),\n\t\t\t\theightFactor: randomBetween(random, 0.5, 1.5),\n\t\t\t\ttop: `${randomBetween(random, 0, 50)}%`,\n\t\t\t\tleft: `${randomBetween(random, 0, 50)}%`,\n\t\t\t\ttx1: randomBetween(random, -0.5, 0.5),\n\t\t\t\tty1: randomBetween(random, -0.5, 0.5),\n\t\t\t\ttx2: randomBetween(random, -0.5, 0.5),\n\t\t\t\tty2: randomBetween(random, -0.5, 0.5),\n\t\t\t\ttx3: randomBetween(random, -0.5, 0.5),\n\t\t\t\tty3: randomBetween(random, -0.5, 0.5),\n\t\t\t\ttx4: randomBetween(random, -0.5, 0.5),\n\t\t\t\tty4: randomBetween(random, -0.5, 0.5),\n\t\t\t};\n\t\t})\n\t);\n</script>\n\n<div bind:this={containerRef} class={cn(\"absolute inset-0 overflow-hidden\", className)} {...props}>\n\t<div class={cn(\"absolute inset-0\", blurClass)}>\n\t\t{#each blobConfigs as blob, index}\n\t\t\t<svg\n\t\t\t\tclass=\"absolute\"\n\t\t\t\twidth={circleSize * blob.widthFactor}\n\t\t\t\theight={circleSize * blob.heightFactor}\n\t\t\t\tviewBox=\"0 0 100 100\"\n\t\t\t\tstyle:top={blob.top}\n\t\t\t\tstyle:left={blob.left}\n\t\t\t\tstyle:animation={`background-gradient ${speed}s infinite ease-in-out`}\n\t\t\t\tstyle:--tx-1={blob.tx1}\n\t\t\t\tstyle:--ty-1={blob.ty1}\n\t\t\t\tstyle:--tx-2={blob.tx2}\n\t\t\t\tstyle:--ty-2={blob.ty2}\n\t\t\t\tstyle:--tx-3={blob.tx3}\n\t\t\t\tstyle:--ty-3={blob.ty3}\n\t\t\t\tstyle:--tx-4={blob.tx4}\n\t\t\t\tstyle:--ty-4={blob.ty4}\n\t\t\t\taria-hidden=\"true\"\n\t\t\t>\n\t\t\t\t<circle cx=\"50\" cy=\"50\" r=\"50\" fill={blob.color} />\n\t\t\t</svg>\n\t\t{/each}\n\t</div>\n</div>\n",
+			"type": "registry:component",
+			"target": "fancy/animated-gradient-svg/animated-gradient-svg.svelte"
+		},
+		{
+			"content": "import AnimatedGradientSvg from \"./animated-gradient-svg.svelte\";\r\nexport { AnimatedGradientSvg };",
+			"type": "registry:file",
+			"target": "fancy/animated-gradient-svg/index.ts"
+		},
+		{
+			"content": "import { onMount } from 'svelte';\r\n\r\nexport interface Dimensions {\r\n    width: number;\r\n    height: number;\r\n}\r\n\r\nexport function useDimensions(getElement: () => HTMLElement | SVGElement | null): Dimensions {\r\n    const dimensions = $state<Dimensions>({\r\n        width: 0,\r\n        height: 0\r\n    });\r\n\r\n    onMount(() => {\r\n        const element = getElement();\r\n\r\n        if (!element) {\r\n            return;\r\n        }\r\n\r\n        const updateDimensions = () => {\r\n            const { width, height } = element.getBoundingClientRect();\r\n            dimensions.width = width;\r\n            dimensions.height = height;\r\n        };\r\n\r\n        const resizeObserver = new ResizeObserver(updateDimensions);\r\n\r\n        resizeObserver.observe(element);\r\n        window.addEventListener('resize', updateDimensions);\r\n        updateDimensions();\r\n\r\n        return () => {\r\n            resizeObserver.disconnect();\r\n            window.removeEventListener('resize', updateDimensions);\r\n        };\r\n    });\r\n\r\n    return dimensions;\r\n}\r\n",
+			"type": "registry:hook",
+			"target": "use-dimension.svelte.ts"
+		}
+	]
+}

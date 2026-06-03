@@ -14,10 +14,17 @@ export interface FancyComponent {
 export const fancyUIComponents: FancyComponent[] = [
 	{
 		id: "overview",
-		name: "Introduction",
+		name: "Overview",
 		href: "/fancy",
 		category: "Overview",
-		desc: "Introduction",
+		desc: "A landing page for Svelte Fancy Components with a minimal introduction and collection overview.",
+	},
+	{
+		id: "introduction",
+		name: "Introduction",
+		href: "/fancy/introduction",
+		category: "Overview",
+		desc: "Learn what Svelte Fancy Components is, why it exists, and where the original work comes from.",
 	},
 	{
 		id: "media-between-text",
@@ -99,6 +106,14 @@ export const fancyUIComponents: FancyComponent[] = [
 		desc: "Reveal text from vertical cuts with word, character, or line-based staggering.",
 		badge: "New",
 	},
+	{
+		id: "animated-gradient-svg",
+		name: "Animated Gradient SVG",
+		href: "/fancy/animated-gradient-svg",
+		category: "Components",
+		desc: "Create animated gradient effects using SVG filters and animations.",
+		badge: "New",
+	}
 ];
 
 const fancyUICategoryOrder: FancyCategory[] = ["Overview", "Components"];

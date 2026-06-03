@@ -13,6 +13,7 @@
 		installPathPrefix?: "r" | "s" | "f";
 		preview?: Component;
 		previewCode?: CodeBlock | CodeBlock[];
+		previewClass?: string;
 		installCodeBlocks?: CodeBlock | CodeBlock[];
 		installPackages?: string[];
 		installFolderStructure?: string;
@@ -46,6 +47,7 @@
 		installPathPrefix,
 		preview,
 		previewCode,
+		previewClass,
 		installCodeBlocks,
 		installPackages = [],
 		installFolderStructure,
@@ -135,7 +137,7 @@
 	</section>
 
 	<section>
-		<PreviewComponent code={previewCode}>
+		<PreviewComponent code={previewCode} class={previewClass}>
 			{#if PreviewComp}
 				<PreviewComp />
 			{/if}

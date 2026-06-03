@@ -2,20 +2,18 @@
 	import { cn } from "$lib/utils";
 	import type { Snippet } from "svelte";
 
-	let {
-		class: className,
-		children,
-		title,
-		titleBaseClass,
-	} = $props<{
+	type Props = {
+		id?: string;
 		class?: string;
-		children?: Snippet;
 		title?: string;
 		titleBaseClass?: string;
-	}>();
+		children?: Snippet;
+		[prop: string]: unknown;
+	};
+	let { id = "", class: className, children, title, titleBaseClass }: Props = $props();
 </script>
 
-<div class={cn("relative pb-10 pl-8", className)}>
+<div class={cn("relative pb-10 pl-8", className)} {id}>
 	{#if title}
 		<div class={cn("mb-2 flex h-8 items-center", titleBaseClass)}>
 			<span

@@ -8,7 +8,6 @@
 		magicUIComponents,
 		spellUIComponents,
 		type FancyComponent,
-		type MagicComponent,
 		type SpellComponent,
 	} from "../registry";
 
@@ -21,18 +20,43 @@
 		}
 	}
 
-	// For Now we would use Magic UI - Components, Later on we would update it
-	let docs: MagicComponent[] = [
+	type SearchDoc = {
+		id: string;
+		name: string;
+		href: string;
+	};
+
+	let docs: SearchDoc[] = [
 		{
-			id: "getting-started",
-			name: "Getting Started",
-			href: "/magic/docs",
+			id: "magic-overview",
+			name: "Svelte Magic UI",
+			href: "/magic",
 		},
 		{
-			id: "installation",
-			name: "Installation",
+			id: "magic-installation",
+			name: "Magic UI Installation",
 			href: "/magic/docs/installation",
 		},
+		{
+			id: "spell-overview",
+			name: "Svelte Spell UI",
+			href: "/spell",
+		},
+		{
+			id: "fancy-overview",
+			name: "Svelte Fancy Components",
+			href: "/fancy",
+		},
+		// {
+		// 	id: "fancy-overview",
+		// 	name: "Fancy Components Overview",
+		// 	href: "/fancy",
+		// },
+		// {
+		// 	id: "fancy-introduction",
+		// 	name: "Fancy Components Introduction",
+		// 	href: "/fancy/introduction",
+		// },
 	];
 
 	const spellComponents: SpellComponent[] = spellUIComponents.filter(
@@ -40,7 +64,7 @@
 	);
 
 	const fancyComponents: FancyComponent[] = fancyUIComponents.filter(
-		(component) => component.category !== "Overview"
+		(component) => component.category !== "Overview" && component.id !== "introduction"
 	);
 </script>
 
@@ -235,7 +259,7 @@
 						</svg>
 						<span>{component.name}</span>
 					</span>
-					<Badge variant="fuchsia" class="rounded-full">Fancy</Badge>
+					<Badge variant="orange" class="rounded-full">Fancy</Badge>
 				</Command.LinkItem>
 			{/each}
 		</Command.Group>

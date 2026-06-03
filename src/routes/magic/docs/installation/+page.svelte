@@ -1,33 +1,51 @@
 <script lang="ts">
+	import { page } from "$app/state";
+	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
 	import {
+		Blockquote,
 		H1,
 		H2,
-		Paragraph,
-		Steps,
-		Step,
 		Link,
-		Blockquote,
+		Paragraph,
+		Step,
+		Steps,
 	} from "$lib/components/docs/markdown";
 	import { PMCommand } from "$lib/components/ui/pm-command";
 	import * as Code from "$lib/components/ui/code";
-	import * as Alert from "$lib/components/ui/alert/index.js";
 	import { MetaTags } from "svelte-meta-tags";
-	import MessageCircleIcon from "@lucide/svelte/icons/message-circle";
 	import Preview from "../components/morphing-text/examples/preview.svelte";
 	import { PreviewComponent } from "$lib/components/ui/preview-component";
 
 	const exampleCode = `<script lang="ts">
 	import { MorphingText } from "$lib/components/magic/morphing-text";
+	const texts = [
+		"Hello",
+		"Morphing",
+		"Text",
+		"Animation",
+		"Svelte",
+		"Component",
+		"Smooth",
+		"Transition",
+		"Engaging",
+	];
+\<\/script\>
 
-	const texts = ["Hello", "World", "Morphing", "Text"];
-<\/script>
+<MorphingText {texts} />
+`;
 
-<MorphingText {texts} />`;
+	const title = "Installation";
+	const description = "How to install dependencies and structure your app.";
+	const socialTitle = "Installation - Svelte Magic UI";
+
+	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
+	let llmsTxtUrl = $derived(`${canonical}/llms.txt`);
 </script>
 
 <MetaTags
-	title="Installation - Svelte Magic UI"
-	description="How to install dependencies and structure your app."
+	{title}
+	titleTemplate="%s - Svelte Magic UI"
+	{description}
 	keywords={[
 		"Svelte Magic UI",
 		"Installation",
@@ -38,28 +56,38 @@
 		"Shadcn Svelte",
 		"Motion SV",
 	]}
+	{canonical}
 	openGraph={{
-		title: "Installation - Svelte Magic UI",
-		description: "How to install dependencies and structure your app.",
-		url: "https://sv-animations.vercel.app/magic/docs/installation",
-		type: "website",
+		title: socialTitle,
+		description,
+		url: canonical,
+		type: "article",
 	}}
 	twitter={{
-		title: "Installation - Svelte Magic UI",
-		description: "How to install dependencies and structure your app.",
+		title: socialTitle,
+		description,
 		cardType: "summary_large_image",
 		site: "@Sikandar_Bhide",
 		creator: "@Sikandar_Bhide",
 	}}
-></MetaTags>
+/>
 
-<div class="flex w-full max-w-4xl items-start gap-x-8 px-4 py-6 sm:px-6 lg:pr-4 lg:pl-8">
-	<div class="w-full">
-		<H1>Installation</H1>
-		<Paragraph>How to install dependencies and structure your app.</Paragraph>
+<div class="space-y-8 md:space-y-6">
+	<section class="space-y-4">
+		<div class="flex flex-col justify-between gap-3 md:flex-row md:items-center md:gap-4">
+			<H1 id="installation">Installation</H1>
+			<CopyPageDropdown componentName={title} {llmsTxtUrl} />
+		</div>
 
-		<Steps class="mt-8">
-			<Step title="Create Project">
+		<div class="max-w-3xl space-y-3">
+			<Paragraph>{description}</Paragraph>
+		</div>
+	</section>
+
+	<section class="space-y-4">
+		<H2 id="getting-started">Getting Started</H2>
+		<Steps class="mt-0" data-toc-ignore>
+			<Step title="Create Project" id="create-project">
 				<Paragraph>Create a new Svelte project using the official SvelteKit CLI:</Paragraph>
 				<PMCommand command="execute" args={["sv", "create", "my-app"]} class="my-4" />
 				<Blockquote class="mt-4">
@@ -97,12 +125,14 @@
 				/>
 			</Step>
 		</Steps>
+	</section>
 
-		<H2 class="mt-12">Usage Example</H2>
+	<section class="space-y-4">
+		<H2 id="usage-example">Usage Example</H2>
 		<Paragraph>Here's how to use the Morphing Text component:</Paragraph>
-		<Code.Root code={exampleCode} lang="svelte" class="my-6" />
+		<Code.Root code={exampleCode} lang="svelte" class="my-2" />
 
-		<div class="my-8">
+		<div class="pt-2">
 			<PreviewComponent
 				code={{
 					lang: "svelte",
@@ -114,5 +144,5 @@
 				<Preview />
 			</PreviewComponent>
 		</div>
-	</div>
+	</section>
 </div>
