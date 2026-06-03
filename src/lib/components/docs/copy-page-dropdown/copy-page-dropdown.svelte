@@ -29,6 +29,17 @@
 		href: string;
 	} | null;
 
+	const magicDocsPages = [
+		{
+			name: "Introduction",
+			href: "/magic/docs",
+		},
+		{
+			name: "Installation",
+			href: "/magic/docs/installation",
+		},
+	] as const;
+
 	interface Props {
 		componentName: string;
 		llmsTxtUrl: string;
@@ -38,13 +49,27 @@
 	let { componentName, llmsTxtUrl, class: className }: Props = $props();
 
 	// Create the query for AI assistants
-	let query = $derived(
-		`Read ${llmsTxtUrl} and help me understand the ${componentName} component`
-	);
+	let query = $derived(`Read ${llmsTxtUrl} and help me understand ${componentName}`);
+
+	function getPrevNextFromLinks(currentHref: string, links: readonly Exclude<NavLink, null>[]) {
+		const index = links.findIndex((link) => link.href === currentHref);
+
+		return {
+			prev: index > 0 ? links[index - 1] : null,
+			next: index >= 0 && index < links.length - 1 ? links[index + 1] : null,
+		};
+	}
 
 	let nav = $derived.by(() => {
 		const pathname = page.url.pathname;
 		const currentId = pathname.split("/").filter(Boolean).at(-1) ?? "";
+
+		if (pathname === "/magic/docs" || pathname === "/magic/docs/installation") {
+			return {
+				isSupported: true,
+				...getPrevNextFromLinks(pathname, magicDocsPages),
+			};
+		}
 
 		if (pathname.startsWith("/magic/docs/components/")) {
 			return {
@@ -151,13 +176,13 @@
 								href={nav.prev?.href}
 								variant="secondary"
 								size="icon-sm"
-								aria-label={`Previous component: ${nav.prev?.name}`}
+								aria-label={`Previous item: ${nav.prev?.name}`}
 							>
 								<ChevronLeft class="size-4" />
 							</Button>
 						{/snippet}
 					</Tooltip.Trigger>
-					<Tooltip.Content side='bottom' class="space-y-1 px-2! pt-1.5!">
+					<Tooltip.Content side="bottom" class="space-y-1 px-2! pt-1.5!">
 						<div class="text-sm font-medium">{nav.prev?.name}</div>
 						<div class="text-background/80 flex items-center gap-2 text-xs">
 							<span>Press</span>
@@ -170,7 +195,7 @@
 					variant="secondary"
 					size="icon-sm"
 					disabled
-					aria-label="Previous component unavailable"
+					aria-label="Previous item unavailable"
 				>
 					<ChevronLeft class="size-4" />
 				</Button>
@@ -185,13 +210,13 @@
 								href={nav.next?.href}
 								variant="secondary"
 								size="icon-sm"
-								aria-label={`Next component: ${nav.next?.name}`}
+								aria-label={`Next item: ${nav.next?.name}`}
 							>
 								<ChevronRight class="size-4" />
 							</Button>
 						{/snippet}
 					</Tooltip.Trigger>
-					<Tooltip.Content side='bottom' class="space-y-1 px-2! pt-1.5!">
+					<Tooltip.Content side="bottom" class="space-y-1 px-2! pt-1.5!">
 						<div class="text-sm font-medium">{nav.next?.name}</div>
 						<div class="text-background/80 flex items-center gap-2 text-xs">
 							<span>Press</span>
@@ -204,7 +229,7 @@
 					variant="secondary"
 					size="icon-sm"
 					disabled
-					aria-label="Next component unavailable"
+					aria-label="Next item unavailable"
 				>
 					<ChevronRight class="size-4" />
 				</Button>

@@ -4,7 +4,7 @@
 </script>
 
 <MetaTags
-	title="Svelte 5 Animations"
+	title="Svelte Animations Components"
 	description="50+ free and open-source animated components and effects built with Svelte 5, Typescript, Tailwind CSS, and Motion SV."
 	keywords={[
 		"svelte animations",
@@ -19,24 +19,24 @@
 	]}
 	openGraph={{
 		url: "https://sv-animations.vercel.app/",
-		title: "Svelte 5 Animations",
+		title: "Svelte Animations Components",
 		description:
 			"50+ free and open-source animated components and effects built with Svelte 5, Typescript, Tailwind CSS, and Motion SV.",
-		siteName: "Svelte 5 Animations",
+		siteName: "Svelte Animations Components",
 		images: [
 			{
 				url: "https://sv-animations.vercel.app/og.png",
-				alt: "Svelte 5 Animations",
+				alt: "Svelte Animations Components",
 			},
 		],
 	}}
 	twitter={{
 		cardType: "summary_large_image",
-		title: "Svelte 5 Animations",
+		title: "Svelte Animations Components",
 		description:
 			"50+ free and open-source animated components and effects built with Svelte 5, Typescript, Tailwind CSS, and Motion SV.",
 		image: "https://sv-animations.vercel.app/og.png",
-		imageAlt: "Svelte 5 Animations",
+		imageAlt: "Svelte Animations Components",
 		site: "@Sikandar_Bhide",
 		creator: "@Sikandar_Bhide",
 	}}

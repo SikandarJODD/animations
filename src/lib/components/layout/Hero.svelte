@@ -227,7 +227,7 @@
 							id="svelte-animations-desc"
 							class="text-muted-foreground mx-auto mt-6 max-w-3xl px-1 text-base text-balance md:mt-10 md:px-0 md:text-lg"
 						>
-							50+ free and open-source animated components and effects built with
+							50+ free and open-source animated components and effects. Built with
 							Svelte, Typescript, Tailwind CSS, and Motion SV.
 						</p>
 

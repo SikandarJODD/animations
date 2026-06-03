@@ -33,6 +33,11 @@
 			href: "/magic",
 		},
 		{
+			id: "magic-installation",
+			name: "Magic UI Installation",
+			href: "/magic/docs/installation",
+		},
+		{
 			id: "spell-overview",
 			name: "Svelte Spell UI",
 			href: "/spell",
@@ -42,11 +47,6 @@
 			name: "Svelte Fancy Components",
 			href: "/fancy",
 		},
-		// {
-		// 	id: "magic-installation",
-		// 	name: "Magic UI Installation",
-		// 	href: "/magic/docs/installation",
-		// },
 		// {
 		// 	id: "fancy-overview",
 		// 	name: "Fancy Components Overview",

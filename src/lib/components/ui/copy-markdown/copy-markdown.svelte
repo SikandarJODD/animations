@@ -45,5 +45,5 @@
 	{:else}
 		<Copy class="size-4" />
 	{/if}
-	<span>Copy Markdown</span>
+	<span>Copy Page</span>
 </Button>
