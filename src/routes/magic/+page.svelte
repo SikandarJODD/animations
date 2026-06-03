@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { H1, Paragraph } from "$lib/components/docs/markdown";
+	import MagicOverviewHero from "$lib/components/layout/magic/magic-overview-hero.svelte";
+	import MagicOverviewShowcase from "$lib/components/layout/magic/magic-overview-showcase.svelte";
 	import { MetaTags } from "svelte-meta-tags";
 
 	const title = "Svelte Magic UI";
@@ -85,11 +86,6 @@
 />
 
 <div class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-	<section class="space-y-4">
-		<H1 id="overview" class="font-semibold">Svelte Magic UI</H1>
-		<Paragraph class="max-w-3xl text-balance">
-			A focused landing page for the Svelte Magic UI collection, with reusable animated
-			components, visual effects, and installation-ready examples for Svelte 5.
-		</Paragraph>
-	</section>
+	<MagicOverviewHero />
+	<MagicOverviewShowcase />
 </div>

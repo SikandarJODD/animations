@@ -29,29 +29,34 @@
 	let docs: SearchDoc[] = [
 		{
 			id: "magic-overview",
-			name: "Magic UI Overview",
+			name: "Svelte Magic UI",
 			href: "/magic",
 		},
 		{
-			id: "magic-introduction",
-			name: "Magic UI Introduction",
-			href: "/magic/docs",
-		},
-		{
-			id: "magic-installation",
-			name: "Magic UI Installation",
-			href: "/magic/docs/installation",
+			id: "spell-overview",
+			name: "Svelte Spell UI",
+			href: "/spell",
 		},
 		{
 			id: "fancy-overview",
-			name: "Fancy Components Overview",
+			name: "Svelte Fancy Components",
 			href: "/fancy",
 		},
-		{
-			id: "fancy-introduction",
-			name: "Fancy Components Introduction",
-			href: "/fancy/introduction",
-		},
+		// {
+		// 	id: "magic-installation",
+		// 	name: "Magic UI Installation",
+		// 	href: "/magic/docs/installation",
+		// },
+		// {
+		// 	id: "fancy-overview",
+		// 	name: "Fancy Components Overview",
+		// 	href: "/fancy",
+		// },
+		// {
+		// 	id: "fancy-introduction",
+		// 	name: "Fancy Components Introduction",
+		// 	href: "/fancy/introduction",
+		// },
 	];
 
 	const spellComponents: SpellComponent[] = spellUIComponents.filter(
@@ -254,7 +259,7 @@
 						</svg>
 						<span>{component.name}</span>
 					</span>
-					<Badge variant="fuchsia" class="rounded-full">Fancy</Badge>
+					<Badge variant="orange" class="rounded-full">Fancy</Badge>
 				</Command.LinkItem>
 			{/each}
 		</Command.Group>
