@@ -85,7 +85,7 @@
 		style:-webkit-backdrop-filter="blur({blurLevels[0]}px)"
 		style:mask-image={getFirstLayerMask()}
 		style:-webkit-mask-image={getFirstLayerMask()}
-	/>
+	></div>
 
 	<!-- Middle blur layers -->
 	{#each divElements as _, index (index)}
@@ -98,7 +98,7 @@
 			style:-webkit-backdrop-filter="blur({blurLevels[blurIndex]}px)"
 			style:mask-image={maskGradient}
 			style:-webkit-mask-image={maskGradient}
-		/>
+		></div>
 	{/each}
 
 	<!-- Last blur layer -->
@@ -109,5 +109,5 @@
 		style:-webkit-backdrop-filter="blur({blurLevels[blurLevels.length - 1]}px)"
 		style:mask-image={getLastLayerMask()}
 		style:-webkit-mask-image={getLastLayerMask()}
-	/>
+	></div>
 </div>

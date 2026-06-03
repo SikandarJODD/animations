@@ -19,7 +19,7 @@
 	{#each avatarUrls as url, index}
 		<a href={url.profileUrl} target="_blank" rel="noopener noreferrer">
 			<img
-				class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800"
+				class="h-10 w-10 rounded-full border-2 dark:border-gray-800"
 				src={url.imageUrl}
 				width="40"
 				height="40"
@@ -29,8 +29,8 @@
 	{/each}
 	{#if (numPeople ?? 0) > 0}
 		<a
-			class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-black text-center text-xs font-medium text-white hover:bg-gray-600 dark:border-gray-800 dark:bg-white dark:text-black"
-			href=""
+			class="flex h-10 w-10 items-center justify-center rounded-full border-2 bg-black text-center text-xs font-medium text-white hover:bg-gray-600 dark:border-gray-800 dark:bg-white dark:text-black"
+			href="/"
 		>
 			+{numPeople}
 		</a>
