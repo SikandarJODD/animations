@@ -1,7 +1,15 @@
 <script lang="ts">
-	import type { Globe } from "cobe";
+	import type { COBEOptions, Globe } from "cobe";
 	import { Spring } from "svelte/motion";
 	import { onDestroy, onMount } from "svelte";
+	import { cn } from "$lib/utils";
+
+	interface Props {
+		class?: string;
+		config?: Partial<COBEOptions>;
+	}
+
+	let { class: className, config = {} }: Props = $props();
 
 	const size = 300;
 	const baseTheta = 0.2;
@@ -20,6 +28,9 @@
 	let dragStart: { x: number; y: number; phi: number; theta: number } | null = null;
 	let lastPointer: { x: number; y: number; t: number } | null = null;
 	let releaseVelocity = { phi: 0, theta: 0 };
+
+	const initialPhi = $derived(config.phi ?? 0);
+	const initialTheta = $derived(config.theta ?? baseTheta);
 
 	const phiOffset = new Spring(0, {
 		stiffness: 0.12,
@@ -146,7 +157,8 @@
 				{ location: [37.78, -122.44], size: 0.03, id: "sf" },
 				{ location: [40.71, -74.01], size: 0.03, id: "nyc" },
 			],
-		});
+			...config,
+		} satisfies COBEOptions);
 
 		animate();
 	}
@@ -165,8 +177,8 @@
 		}
 
 		globe.update({
-			phi: autoPhi + phiOffset.current,
-			theta: baseTheta + thetaOffset.current,
+			phi: initialPhi + autoPhi + phiOffset.current,
+			theta: initialTheta + thetaOffset.current,
 		});
 
 		frame = requestAnimationFrame(animate);
@@ -221,7 +233,7 @@
 	});
 </script>
 
-<div class="globe-container relative mx-auto aspect-square w-full max-w-150">
+<div class={cn("globe-container relative mx-auto aspect-square w-full max-w-150", className)}>
 	<div class="globe">
 		<canvas bind:this={canvas} class:dragging={isDragging} onpointerdown={handlePointerDown}
 		></canvas>
