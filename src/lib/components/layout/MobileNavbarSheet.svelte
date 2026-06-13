@@ -5,7 +5,7 @@
 	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
 	import HistoryIcon from "@lucide/svelte/icons/history";
 	import HomeIcon from "@lucide/svelte/icons/home";
-	import { magicUIComponents } from "$lib/components/docs/registry/magic-ui";
+	import { magicUISidebarGroups } from "$lib/components/docs/registry/magic-ui";
 	import { spellUIComponents } from "$lib/components/docs/registry/spell_ui";
 	import { fancyUIComponents } from "$lib/components/docs/registry/fancy_ui";
 	import { Separator } from "$lib/components/ui/separator";
@@ -38,11 +38,14 @@
 		},
 	];
 
-	const componentItems: MobileNavItem[] = magicUIComponents.map((component) => ({
-		href: component.href,
-		label: component.name,
-		description: component.desc,
-		badge: component.badge,
+	const magicSections = magicUISidebarGroups.map((group) => ({
+		title: group.title,
+		items: group.items.map((component) => ({
+			href: component.href,
+			label: component.name,
+			description: component.desc,
+			badge: component.badge,
+		})) as MobileNavItem[],
 	}));
 
 	const spellItems: MobileNavItem[] = spellUIComponents.map((component) => ({
@@ -74,6 +77,27 @@
 	function handleLinkClick() {
 		open = false;
 	}
+
+	const sections = [
+		{ title: "Get Started", items: getStartedItems, open: true, badge: undefined },
+		...magicSections.map((section) => ({
+			...section,
+			open: isSectionOpen(section.items),
+			badge: undefined,
+		})),
+		{
+			title: "Svelte Spell UI",
+			items: spellItems,
+			open: isSectionOpen(spellItems),
+			badge: hasSpellUIUpdates ? "New" : undefined,
+		},
+		{
+			title: "Svelte Fancy Components",
+			items: fancyItems,
+			open: isSectionOpen(fancyItems),
+			badge: hasFancyUIUpdates ? "New" : undefined,
+		},
+	];
 </script>
 
 <Sheet.Root bind:open>
@@ -123,7 +147,7 @@
 
 			<Separator class="my-4" />
 			<div class="space-y-2">
-				{#each [{ title: "Get Started", items: getStartedItems, open: true, badge: undefined }, { title: "Components", items: componentItems, open: isSectionOpen(componentItems), badge: undefined }, { title: "Svelte Spell UI", items: spellItems, open: isSectionOpen(spellItems), badge: hasSpellUIUpdates ? "New" : undefined }, { title: "Svelte Fancy Components", items: fancyItems, open: isSectionOpen(fancyItems), badge: hasFancyUIUpdates ? "New" : undefined }] as section (section.title)}
+				{#each sections as section (section.title)}
 					<details
 						class="group border-border overflow-hidden rounded-lg border"
 						open={section.open}

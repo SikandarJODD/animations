@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { magicUIComponents, type BadgeType } from "$lib/components/docs/registry/magic-ui";
+	import { magicUISidebarGroups, type BadgeType } from "$lib/components/docs/registry/magic-ui";
 
 	type NavItem = {
 		title: string;
@@ -28,22 +28,22 @@
 					},
 				] as NavItem[],
 			},
-			{
-				title: "Components",
+			...magicUISidebarGroups.map((group) => ({
+				title: group.title,
 				url: "#",
-				items: magicUIComponents.map((c) => ({
-					title: c.name,
-					url: c.href,
-					badge: c.badge,
+				items: group.items.map((item) => ({
+					title: item.name,
+					url: item.href,
+					badge: item.badge,
 				})) as NavItem[],
-			},
+			})),
 		],
 	};
 </script>
 
 <script lang="ts">
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import { ScrollArea, ScrollFadeEffect } from "$lib/components/ui/scroll-area/index.js";
+	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
 	import Badge from "$lib/components/ui/badge/badge.svelte";
 	import { page } from "$app/state";
 	import type { ComponentProps } from "svelte";
@@ -82,9 +82,12 @@
 					<Sidebar.GroupLabel>{group.title}</Sidebar.GroupLabel>
 					<Sidebar.GroupContent>
 						<Sidebar.Menu>
-							{#each group.items as item}
+							{#each group.items as item (item.url)}
 								<Sidebar.MenuItem>
-									<Sidebar.MenuButton isActive={page.url.pathname === item.url} class='scroll-mt-10 scroll-mb-40'>
+									<Sidebar.MenuButton
+										isActive={page.url.pathname === item.url}
+										class="scroll-mt-10 scroll-mb-40"
+									>
 										{#snippet child({ props })}
 											<a href={item.url} {...props}>
 												{item.title}
