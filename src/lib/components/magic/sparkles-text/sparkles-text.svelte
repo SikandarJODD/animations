@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
+	import { untrack } from "svelte";
 	import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
 	import { motion } from "motion-sv";
 	import { cn } from "$lib/utils";
@@ -57,7 +58,9 @@
 		sparkles = Array.from({ length: sparklesCount }, generateStar);
 
 		const interval = setInterval(() => {
-			sparkles = sparkles.map((star) => {
+			const currentSparkles = untrack(() => sparkles);
+
+			sparkles = currentSparkles.map((star) => {
 				if (star.lifespan <= 0) {
 					return generateStar();
 				}
