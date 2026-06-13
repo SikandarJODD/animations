@@ -1,2 +1,2 @@
-import HexagonPatten from "./hexagon-patten.svelte";
-export { HexagonPatten };
+import HexagonPattern from "./hexagon-pattern.svelte";
+export { HexagonPattern };
