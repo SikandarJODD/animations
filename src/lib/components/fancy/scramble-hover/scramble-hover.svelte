@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { motion, type MotionHTMLAttributes, type MotionProps } from 'motion-sv';
-	import { SvelteSet } from 'svelte/reactivity';
+	import { motion, type MotionHTMLAttributes, type MotionProps } from "motion-sv";
+	import { SvelteSet } from "svelte/reactivity";
 
-	import { cn } from '$lib/utils';
+	import { cn } from "$lib/utils";
 
-	type RevealDirection = 'start' | 'end' | 'center';
-	type MotionSpanProps = Omit<MotionProps<'span'>, 'as' | 'asChild'> & MotionHTMLAttributes<'span'>;
-	type MouseEnterEvent = Parameters<NonNullable<MotionSpanProps['onmouseenter']>>[0];
-	type MouseLeaveEvent = Parameters<NonNullable<MotionSpanProps['onmouseleave']>>[0];
+	type RevealDirection = "start" | "end" | "center";
+	type MotionSpanProps = Omit<MotionProps<"span">, "as" | "asChild"> &
+		MotionHTMLAttributes<"span">;
+	type MouseEnterEvent = Parameters<NonNullable<MotionSpanProps["onmouseenter"]>>[0];
+	type MouseLeaveEvent = Parameters<NonNullable<MotionSpanProps["onmouseleave"]>>[0];
 
 	interface ScrambleHoverProps extends MotionSpanProps {
 		text: string;
@@ -21,14 +22,14 @@
 		scrambledClass?: string;
 	}
 
-	const DEFAULT_CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+';
+	const DEFAULT_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+";
 
 	let {
 		text,
 		scrambleSpeed = 50,
 		maxIterations = 10,
 		sequential = false,
-		revealDirection = 'start',
+		revealDirection = "start",
 		useOriginalCharsOnly = false,
 		characters = DEFAULT_CHARACTERS,
 		class: className,
@@ -39,8 +40,8 @@
 	}: ScrambleHoverProps = $props();
 
 	function splitGraphemes(value: string) {
-		if (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {
-			const segmenter = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+		if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
+			const segmenter = new Intl.Segmenter(undefined, { granularity: "grapheme" });
 			return Array.from(segmenter.segment(value), ({ segment }) => segment);
 		}
 
@@ -63,7 +64,9 @@
 	let sourceSegments = $derived.by(() => splitGraphemes(text));
 	let availableCharacters = $derived.by(() => {
 		if (useOriginalCharsOnly) {
-			return Array.from(new Set(sourceSegments.filter((segment) => !isWhitespaceSegment(segment))));
+			return Array.from(
+				new Set(sourceSegments.filter((segment) => !isWhitespaceSegment(segment)))
+			);
 		}
 
 		const providedCharacters = splitGraphemes(characters).filter(
@@ -74,7 +77,9 @@
 			return providedCharacters;
 		}
 
-		return Array.from(new Set(sourceSegments.filter((segment) => !isWhitespaceSegment(segment))));
+		return Array.from(
+			new Set(sourceSegments.filter((segment) => !isWhitespaceSegment(segment)))
+		);
 	});
 
 	let displaySegments = $state<string[]>([]);
@@ -111,11 +116,11 @@
 
 	function getNextRevealIndex(length: number, direction: RevealDirection) {
 		switch (direction) {
-			case 'start':
+			case "start":
 				return revealedIndices.size;
-			case 'end':
+			case "end":
 				return length - 1 - revealedIndices.size;
-			case 'center': {
+			case "center": {
 				const middle = Math.floor(length / 2);
 				const offset = Math.floor(revealedIndices.size / 2);
 				const nextIndex =
@@ -142,7 +147,7 @@
 				segment,
 				index,
 				isWhitespace: isWhitespaceSegment(segment),
-				isRevealed: revealedIndices.has(index)
+				isRevealed: revealedIndices.has(index),
 			}));
 
 			const scrambledCharacters = shuffleArray(
@@ -257,7 +262,11 @@
 				return;
 			}
 
-			displaySegments = scrambleTextSegments(segments, randomPool, activeUseOriginalCharsOnly);
+			displaySegments = scrambleTextSegments(
+				segments,
+				randomPool,
+				activeUseOriginalCharsOnly
+			);
 			currentIteration += 1;
 
 			if (currentIteration >= activeMaxIterations) {
@@ -274,7 +283,7 @@
 </script>
 
 <motion.span
-	class={cn('inline-block whitespace-pre-wrap', className)}
+	class={cn("inline-block whitespace-pre-wrap", className)}
 	onmouseenter={handleMouseEnter}
 	onmouseleave={handleMouseLeave}
 >

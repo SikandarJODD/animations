@@ -50,6 +50,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create Dither Shader effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Dither Shader", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

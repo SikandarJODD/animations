@@ -74,6 +74,7 @@ const seo: SEO = {
 		"Grid Animation",
 		"Web Design",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

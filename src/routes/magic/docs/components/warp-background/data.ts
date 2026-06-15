@@ -23,6 +23,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create Warp Background effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Warp Background", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

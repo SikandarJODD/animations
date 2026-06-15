@@ -33,6 +33,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create Pulsating Button effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Pulsating Button", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

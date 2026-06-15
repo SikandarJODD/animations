@@ -62,10 +62,10 @@ export const data: ComponentDoc = {
 	seo,
 	installBlock,
 	preview: Preview,
-	previewClass: 'p-0',
-	previewCode:{
+	previewClass: "p-0",
+	previewCode: {
 		filename: "preview.svelte",
 		filecode: PreviewRaw,
 		lang: "svelte",
-	}
+	},
 };

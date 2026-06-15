@@ -1,8 +1,5 @@
 import type { Component } from "svelte";
-import {
-	getComponentById,
-	type MagicComponent,
-} from "$lib/components/docs/registry/magic-ui";
+import { getComponentById, type MagicComponent } from "$lib/components/docs/registry/magic-ui";
 import AnimatedShinyTextPreview from "./examples/animated-shiny-text-preview.svelte";
 import AuroraTextPreview from "./examples/aurora-text-preview.svelte";
 import BorderBeamPreview from "./examples/border-beam-preview.svelte";

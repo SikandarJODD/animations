@@ -48,7 +48,9 @@
 	});
 </script>
 
-<div class="relative flex h-60 rounded-xl md:h-100 w-2xl items-center justify-center bg-white text-[#0015ff]">
+<div
+	class="relative flex h-60 w-2xl items-center justify-center rounded-xl bg-white text-[#0015ff] md:h-100"
+>
 	<AnimatedPathText
 		path={rectPath}
 		svgClass="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 py-2 sm:py-8"

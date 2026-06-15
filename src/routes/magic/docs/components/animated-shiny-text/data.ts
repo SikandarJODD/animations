@@ -23,6 +23,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create shimmering text effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Animated Shiny Text", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 const tailwind: CodeBlock = {

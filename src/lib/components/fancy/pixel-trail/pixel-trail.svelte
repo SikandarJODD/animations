@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { ClassValue } from 'clsx';
+	import type { ClassValue } from "clsx";
 
-	import { useDimensions } from '$lib/hooks/use-dimension.svelte';
-	import { cn } from '$lib/utils';
+	import { useDimensions } from "$lib/hooks/use-dimension.svelte";
+	import { cn } from "$lib/utils";
 
-	import PixelDot from './pixel-dot.svelte';
+	import PixelDot from "./pixel-dot.svelte";
 
 	interface PixelTrailProps {
 		pixelSize?: number;
@@ -23,7 +23,7 @@
 		fadeDuration = 500,
 		delay = 0,
 		class: className,
-		pixelClassName
+		pixelClassName,
 	}: PixelTrailProps = $props();
 
 	let containerRef = $state<HTMLDivElement | null>(null);
@@ -54,12 +54,7 @@
 		const columnIndex = Math.floor((event.clientX - rect.left) / pixelSize);
 		const rowIndex = Math.floor((event.clientY - rect.top) / pixelSize);
 
-		if (
-			columnIndex < 0 ||
-			columnIndex >= columns ||
-			rowIndex < 0 ||
-			rowIndex >= rows
-		) {
+		if (columnIndex < 0 || columnIndex >= columns || rowIndex < 0 || rowIndex >= rows) {
 			return;
 		}
 
@@ -70,7 +65,7 @@
 <div
 	bind:this={containerRef}
 	role="presentation"
-	class={cn('absolute inset-0 h-full w-full pointer-events-auto', className)}
+	class={cn("pointer-events-auto absolute inset-0 h-full w-full", className)}
 	onmousemove={handleMouseMove}
 >
 	{#each rowIndices as rowIndex (`row-${rowIndex}`)}

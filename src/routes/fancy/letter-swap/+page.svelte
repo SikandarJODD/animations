@@ -143,7 +143,7 @@
 								{example.name}
 							</H3>
 							{#if example.description}
-								<Paragraph class='mt-1'>
+								<Paragraph class="mt-1">
 									{example.description}
 								</Paragraph>
 							{/if}

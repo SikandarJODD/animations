@@ -14,11 +14,7 @@
 	import * as Breadcrumb from "$lib/components/ui/breadcrumb";
 	import { page } from "$app/state";
 	import { MetaTags } from "svelte-meta-tags";
-	import {
-		buildSpellKeywords,
-		SPELL_SOCIAL_IMAGE,
-		SPELL_TITLE_TEMPLATE,
-	} from "$lib/seo/spell";
+	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
 
 	const creator = {
 		name: "tom",

@@ -43,7 +43,7 @@
 		<div class="sticky top-24">
 			<div class="flex h-[calc(100vh-8rem)] min-h-0 flex-col">
 				<div>
-					<h2 class="mb-2 text-sm font-medium">On this page</h2>
+					<h2 class="mb-1 text-xs font-medium">On this page</h2>
 				</div>
 				<div class="min-h-0 overflow-y-auto pr-2">
 					<Toc toc={toc.current} />

@@ -61,6 +61,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create Magic Card effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Magic Card", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

@@ -23,6 +23,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create interactive dotted world maps with markers in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Dotted Map", "World Map", "Svelte 5 Animations", "Visualization", "SVG"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 const examples: Example[] = [

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { motion, useAnimationControls } from 'motion-sv';
-	import type { ClassValue } from 'clsx';
+	import { motion, useAnimationControls } from "motion-sv";
+	import type { ClassValue } from "clsx";
 
-	import { cn } from '$lib/utils';
+	import { cn } from "$lib/utils";
 
 	interface PixelDotProps {
 		size: number;
@@ -23,17 +23,17 @@
 			opacity: [1, 0],
 			transition: {
 				duration: fadeDuration / 1000,
-				delay: delay / 1000
-			}
+				delay: delay / 1000,
+			},
 		});
 	}
 </script>
 
 <motion.div
-	class={cn('pointer-events-none', className)}
+	class={cn("pointer-events-none", className)}
 	style={{
 		width: `${size}px`,
-		height: `${size}px`
+		height: `${size}px`,
 	}}
 	initial={{ opacity: 0 }}
 	animate={controls}

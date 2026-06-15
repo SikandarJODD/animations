@@ -43,6 +43,7 @@ const seo: SEO = {
 		"Milestones",
 		"Lucide Icons",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

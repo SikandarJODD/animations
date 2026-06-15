@@ -1,1 +1,1 @@
-export { default as PixelTrail } from './pixel-trail.svelte';
+export { default as PixelTrail } from "./pixel-trail.svelte";

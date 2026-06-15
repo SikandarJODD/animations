@@ -35,12 +35,12 @@
 	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\r\n\timport { cn } from \"$UTILS$\";\r\n\timport type { Snippet } from \"svelte\";\r\n\r\n\ttype AuroraTextProps = {\r\n\t\tchildren: Snippet;\r\n\t\tclass?: string;\r\n\t\tcolors?: string[];\r\n\t\tspeed?: number;\r\n\t};\r\n\r\n\tlet {\r\n\t\tchildren,\r\n\t\tclass: className = \"\",\r\n\t\tcolors = [\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"],\r\n\t\tspeed = 1,\r\n\t}: AuroraTextProps = $props();\r\n</script>\r\n\r\n<span class={cn(\"relative inline-block\", className)}>\r\n\t<span class=\"sr-only\">{@render children()}</span>\r\n\t<span\r\n\t\tclass=\"animate-aurora relative bg-size-[200%_auto] bg-clip-text text-transparent\"\r\n\t\taria-hidden=\"true\"\r\n\t\tstyle=\"\r\n    background-image: linear-gradient(135deg, {colors.join(', ')}, {colors[0]});\r\n    webkit-background-clip: text;\r\n    webkit-text-fill-color: transparent;\r\n    animation-duration: {10 / speed}s;\"\r\n\t>\r\n\t\t{@render children()}\r\n\t</span>\r\n</span>\r\n",
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\n\ttype AuroraTextProps = {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t\tcolors?: string[];\n\t\tspeed?: number;\n\t};\n\n\tlet {\n\t\tchildren,\n\t\tclass: className = \"\",\n\t\tcolors = [\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"],\n\t\tspeed = 1,\n\t}: AuroraTextProps = $props();\n</script>\n\n<span class={cn(\"relative inline-block\", className)}>\n\t<span class=\"sr-only\">{@render children()}</span>\n\t<span\n\t\tclass=\"animate-aurora relative bg-size-[200%_auto] bg-clip-text text-transparent\"\n\t\taria-hidden=\"true\"\n\t\tstyle=\"\n    background-image: linear-gradient(135deg, {colors.join(', ')}, {colors[0]});\n    webkit-background-clip: text;\n    webkit-text-fill-color: transparent;\n    animation-duration: {10 / speed}s;\"\n\t>\n\t\t{@render children()}\n\t</span>\n</span>\n",
 			"type": "registry:component",
 			"target": "magic/aurora-text/aurora-text.svelte"
 		},
 		{
-			"content": "import AuroraText from \"./aurora-text.svelte\";\r\nexport { AuroraText };\r\n",
+			"content": "import AuroraText from \"./aurora-text.svelte\";\nexport { AuroraText };\n",
 			"type": "registry:file",
 			"target": "magic/aurora-text/index.ts"
 		}

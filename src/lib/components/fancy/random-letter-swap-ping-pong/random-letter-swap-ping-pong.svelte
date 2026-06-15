@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { motion, useAnimate, type AnimationOptions } from 'motion-sv';
-	import { Debounced } from 'runed';
-	import { cn } from '$lib/utils';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import { motion, useAnimate, type AnimationOptions } from "motion-sv";
+	import { Debounced } from "runed";
+	import { cn } from "$lib/utils";
+	import type { HTMLAttributes } from "svelte/elements";
 
 	interface RandomLetterSwapPingPongProps extends HTMLAttributes<HTMLSpanElement> {
 		label: string;
@@ -16,8 +16,8 @@
 		label,
 		reverse = true,
 		transition = {
-			type: 'spring',
-			duration: 0.8
+			type: "spring",
+			duration: 0.8,
 		},
 		staggerDuration = 0.02,
 		class: className,
@@ -27,7 +27,7 @@
 
 	let [scope, animate] = useAnimate();
 	let blocked = $state(false);
-	let letters = $derived(label.split(''));
+	let letters = $derived(label.split(""));
 	let shuffledIndices = $state<number[]>([]);
 
 	let hoverStartTick = $state(0);
@@ -38,7 +38,7 @@
 
 	let mergeTransition = (baseTransition: AnimationOptions, index: number) => ({
 		...baseTransition,
-		delay: index * staggerDuration
+		delay: index * staggerDuration,
 	});
 
 	let getShuffledIndices = () =>
@@ -60,7 +60,7 @@
 			animate(
 				`.letter-${randomIndex}`,
 				{
-					y: reverse ? '100%' : '-100%'
+					y: reverse ? "100%" : "-100%",
 				},
 				mergeTransition(transition, orderIndex) as any
 			);
@@ -68,7 +68,7 @@
 			animate(
 				`.letter-secondary-${randomIndex}`,
 				{
-					top: '0%'
+					top: "0%",
 				},
 				mergeTransition(transition, orderIndex) as any
 			);
@@ -89,7 +89,7 @@
 			animate(
 				`.letter-${randomIndex}`,
 				{
-					y: 0
+					y: 0,
 				},
 				mergeTransition(transition, orderIndex) as any
 			);
@@ -97,7 +97,7 @@
 			animate(
 				`.letter-secondary-${randomIndex}`,
 				{
-					top: reverse ? '-100%' : '100%'
+					top: reverse ? "-100%" : "100%",
 				},
 				mergeTransition(transition, orderIndex) as any
 			);
@@ -107,7 +107,7 @@
 
 <span
 	bind:this={scope.current}
-	class={cn('relative flex items-center justify-center overflow-hidden', className)}
+	class={cn("relative flex items-center justify-center overflow-hidden", className)}
 	onmouseenter={hoverStart}
 	onmouseleave={hoverEnd}
 	{onclick}
@@ -122,7 +122,7 @@
 			</motion.span>
 			<motion.span
 				class={`letter-secondary-${index} absolute`}
-				style={{ top: reverse ? '-100%' : '100%' }}
+				style={{ top: reverse ? "-100%" : "100%" }}
 			>
 				{letter}
 			</motion.span>

@@ -14,7 +14,7 @@
 </script>
 
 <article class="group h-full">
-	<Frame.Root class="h-full bg-card/70">
+	<Frame.Root class="bg-card/70 h-full">
 		<Frame.Header class="gap-3 py-1 pr-1 pl-3 sm:flex-row sm:items-center sm:justify-between">
 			<div class="min-w-0 space-y-1">
 				<Frame.Title class="font-figtree text-sm font-medium tracking-[-0.01em]">

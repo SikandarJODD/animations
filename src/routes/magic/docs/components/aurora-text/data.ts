@@ -30,6 +30,7 @@ const seo: SEO = {
 		"Web Design",
 		"Gradient Text",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let examples: Example[] = [

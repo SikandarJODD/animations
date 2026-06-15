@@ -37,6 +37,7 @@ const seo: SEO = {
 	description:
 		"A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
 	keywords: ["Svelte", "Flickering Grid", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

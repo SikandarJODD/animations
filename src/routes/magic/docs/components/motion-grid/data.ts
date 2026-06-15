@@ -63,6 +63,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create frame-based grid animations in Svelte using MotionGrid and MotionGridCells.",
 	keywords: ["Svelte", "Motion Grid", "Svelte 5 Animations", "Animation", "Motion SV", "Grid"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

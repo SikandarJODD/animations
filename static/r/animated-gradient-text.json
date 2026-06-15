@@ -18,12 +18,12 @@
 	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\r\n\timport { cn } from \"$UTILS$\";\r\n\timport type { Snippet } from \"svelte\";\r\n\r\n\ttype AnimatedGradientTextProps = {\r\n\t\tspeed?: number;\r\n\t\tcolorFrom?: string;\r\n\t\tcolorTo?: string;\r\n\t\tchildren: Snippet;\r\n\t\tclass?: string;\r\n\t\trest?: Record<string, any>;\r\n\t};\r\n\r\n\tlet {\r\n\t\tspeed = 1,\r\n\t\tcolorFrom = \"#ffaa40\",\r\n\t\tcolorTo = \"#9c40ff\",\r\n\t\tchildren,\r\n\t\tclass: className = \"\",\r\n\t\t...rest\r\n\t}: AnimatedGradientTextProps = $props();\r\n</script>\r\n\r\n<span\r\n\tstyle=\"--color-from:{colorFrom}; --color-to:{colorTo}; --bg-size:{300 * speed}%\"\r\n\t{...rest}\r\n\tclass={cn(\r\n\t\t`animate-gradient inline bg-linear-to-r from-(--color-from) via-(--color-to) to-(--color-from) bg-size-[var(--bg-size)_100%] bg-clip-text text-transparent`,\r\n\t\tclassName\r\n\t)}\r\n>\r\n\t{@render children?.()}\r\n</span>\r\n",
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\n\ttype AnimatedGradientTextProps = {\n\t\tspeed?: number;\n\t\tcolorFrom?: string;\n\t\tcolorTo?: string;\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t\trest?: Record<string, any>;\n\t};\n\n\tlet {\n\t\tspeed = 1,\n\t\tcolorFrom = \"#ffaa40\",\n\t\tcolorTo = \"#9c40ff\",\n\t\tchildren,\n\t\tclass: className = \"\",\n\t\t...rest\n\t}: AnimatedGradientTextProps = $props();\n</script>\n\n<span\n\tstyle=\"--color-from:{colorFrom}; --color-to:{colorTo}; --bg-size:{300 * speed}%\"\n\t{...rest}\n\tclass={cn(\n\t\t`animate-gradient inline bg-linear-to-r from-(--color-from) via-(--color-to) to-(--color-from) bg-size-[var(--bg-size)_100%] bg-clip-text text-transparent`,\n\t\tclassName\n\t)}\n>\n\t{@render children?.()}\n</span>\n",
 			"type": "registry:component",
 			"target": "magic/animated-gradient-text/animated-gradient-text.svelte"
 		},
 		{
-			"content": "import AnimatedGradientText from \"./animated-gradient-text.svelte\";\r\nexport { AnimatedGradientText };\r\n",
+			"content": "import AnimatedGradientText from \"./animated-gradient-text.svelte\";\nexport { AnimatedGradientText };\n",
 			"type": "registry:file",
 			"target": "magic/animated-gradient-text/index.ts"
 		}

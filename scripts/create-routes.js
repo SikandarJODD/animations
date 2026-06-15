@@ -407,8 +407,7 @@ function getRouteInfo(sourceRelativePath, routeSlug) {
 	const segments = sourceRelativePath.split("/").filter(Boolean);
 	const [library = "components", ...rest] = segments;
 	const sourceParents = rest.slice(0, -1);
-	const installPathPrefix =
-		library === "spell" ? "s" : library === "fancy" ? "f" : "r";
+	const installPathPrefix = library === "spell" ? "s" : library === "fancy" ? "f" : "r";
 
 	const routeDirectory =
 		library === "magic"
@@ -735,7 +734,9 @@ export async function generateRoutes(specInputs, options = {}) {
 
 	for (const routePlan of routePlans) {
 		await writeGeneratedFiles(routePlan.files);
-		console.log(`Created route ${toPosixPath(path.relative(ROOT_DIR, routePlan.routeDirectory))}`);
+		console.log(
+			`Created route ${toPosixPath(path.relative(ROOT_DIR, routePlan.routeDirectory))}`
+		);
 	}
 
 	return { routePlans };

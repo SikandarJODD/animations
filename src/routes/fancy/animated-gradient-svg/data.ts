@@ -20,12 +20,16 @@ const seo: SEO = {
 	keywords: ["Svelte", "Animated Gradient Svg", "Svelte Fancy Components"],
 };
 
-
 const installBlock: InstallComponentDocs = {
 	packages: [],
 	installCode: [
-		{ filename: "animated-gradient-svg.svelte", filecode: AnimatedGradientSvgSvelteRaw, lang: "svelte", isExpand: true, },
-		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", }
+		{
+			filename: "animated-gradient-svg.svelte",
+			filecode: AnimatedGradientSvgSvelteRaw,
+			lang: "svelte",
+			isExpand: true,
+		},
+		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
 	],
 	tailwind: {
 		filename: "layout.css",
@@ -50,9 +54,10 @@ const installBlock: InstallComponentDocs = {
         transform: translate(calc(100% * var(--tx-4, -1)), calc(100% * var(--ty-4, -1)));
       }
     }
-}`
+}`,
 	},
-	folderStructure: "src/\n`-- lib/\n    `-- components/\n        `-- fancy/\n            `-- animated-gradient-svg/\n                |-- animated-gradient-svg.svelte\n                `-- index.ts",
+	folderStructure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- fancy/\n            `-- animated-gradient-svg/\n                |-- animated-gradient-svg.svelte\n                `-- index.ts",
 };
 
 export const data: ComponentDoc = {

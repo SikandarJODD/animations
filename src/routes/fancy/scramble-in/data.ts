@@ -66,7 +66,8 @@ const installBlock: InstallComponentDocs = {
 let examples: Example[] = [
 	{
 		name: "Programmatic Controls",
-		description: "Control the exported start and reset methods through bind:this and react to completion.",
+		description:
+			"Control the exported start and reset methods through bind:this and react to completion.",
 		preview: BindThisControlsExample,
 		code: {
 			filename: "bind-this-controls-example.svelte",
@@ -76,7 +77,8 @@ let examples: Example[] = [
 	},
 	{
 		name: "Delay And Speed",
-		description: "Compare how scrambleDelay and scrambleSpeed change pacing across multiple lines.",
+		description:
+			"Compare how scrambleDelay and scrambleSpeed change pacing across multiple lines.",
 		preview: DelayAndSpeedExample,
 		code: {
 			filename: "delay-and-speed-example.svelte",
@@ -86,7 +88,8 @@ let examples: Example[] = [
 	},
 	{
 		name: "Special Characters",
-		description: "Use a custom scramble character pool for terminal commands, URLs, and punctuation-heavy strings.",
+		description:
+			"Use a custom scramble character pool for terminal commands, URLs, and punctuation-heavy strings.",
 		preview: SpecialCharactersExample,
 		code: {
 			filename: "special-characters-example.svelte",

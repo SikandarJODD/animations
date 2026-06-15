@@ -1,3 +1,3 @@
-import TextRotate from './text-rotate.svelte';
+import TextRotate from "./text-rotate.svelte";
 
 export { TextRotate };

@@ -20,6 +20,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create animated list effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Animated List", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

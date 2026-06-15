@@ -1,2 +1,2 @@
-import ScrambleIn from './scramble-in.svelte'
-export { ScrambleIn }
+import ScrambleIn from "./scramble-in.svelte";
+export { ScrambleIn };

@@ -37,6 +37,7 @@ const seo: SEO = {
 	title: "ShineBorder",
 	description: "Shine border is an animated background border effect.",
 	keywords: ["Svelte", "ShineBorder", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

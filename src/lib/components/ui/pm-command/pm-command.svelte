@@ -16,6 +16,7 @@
 	export type PMCommandProps = {
 		variant?: Variant;
 		class?: string;
+		title?: string;
 		agents?: Agent[];
 		agent?: Agent;
 		command: Command;
@@ -32,9 +33,11 @@
 	import TerminalIcon from "@lucide/svelte/icons/terminal";
 	import * as Tooltip from "$lib/components/ui/tooltip";
 	import * as Tabs from "$lib/components/ui/tabs";
+	import { page } from "$app/state";
 
 	let {
 		variant = "secondary",
+		title,
 		class: className,
 		command,
 		agents = ["npm", "pnpm", "yarn", "bun"],
@@ -45,6 +48,13 @@
 	const cmd = $derived(resolveCommand(agent, command, args));
 
 	const commandText = $derived(`${cmd?.command} ${cmd?.args.join(" ")}`);
+
+	let componentName = $derived.by(() => {
+		if (title) return title;
+		let urlID = page.url.pathname.split("/").filter(Boolean).slice(-1)[0];
+		console.log("URL ID:", urlID);
+		return urlID ? decodeURIComponent(urlID) : "Command";
+	});
 </script>
 
 <div class={cn(style({ variant }), className)}>
@@ -70,7 +80,12 @@
 			<Tooltip.Root>
 				<Tooltip.Trigger>
 					{#snippet child({ props })}
-						<CopyButton {...props} text={commandText} class="size-6 [&_svg]:size-3">
+						<CopyButton
+							title={componentName}
+							{...props}
+							text={commandText}
+							class="size-6 [&_svg]:size-3"
+						>
 							{#snippet icon()}
 								<ClipboardIcon />
 							{/snippet}

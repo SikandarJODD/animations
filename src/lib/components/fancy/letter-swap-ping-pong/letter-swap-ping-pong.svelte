@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { motion, useAnimate, stagger, type AnimationOptions } from 'motion-sv';
-	import { Debounced } from 'runed';
-	import { cn } from '$lib/utils';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import { motion, useAnimate, stagger, type AnimationOptions } from "motion-sv";
+	import { Debounced } from "runed";
+	import { cn } from "$lib/utils";
+	import type { HTMLAttributes } from "svelte/elements";
 
 	interface LetterSwapPingPongProps extends HTMLAttributes<HTMLSpanElement> {
 		label: string;
 		reverse?: boolean;
 		transition?: AnimationOptions;
 		staggerDuration?: number;
-		staggerFrom?: 'first' | 'last' | 'center' | number;
+		staggerFrom?: "first" | "last" | "center" | number;
 		class?: string;
 	}
 
@@ -17,11 +17,11 @@
 		label,
 		reverse = true,
 		transition = {
-			type: 'spring',
-			duration: 0.7
+			type: "spring",
+			duration: 0.7,
 		},
 		staggerDuration = 0.03,
-		staggerFrom = 'first',
+		staggerFrom = "first",
 		class: className,
 		onclick,
 		...props
@@ -29,7 +29,7 @@
 
 	let [scope, animate] = useAnimate();
 	let hovered = $state(false);
-	let letters = $derived(label.split(''));
+	let letters = $derived(label.split(""));
 
 	let hoverStartTick = $state(0);
 	let hoverEndTick = $state(0);
@@ -40,24 +40,24 @@
 	let mergeTransition = (baseTransition: AnimationOptions) => ({
 		...baseTransition,
 		delay: stagger(staggerDuration, {
-			from: staggerFrom
-		})
+			from: staggerFrom,
+		}),
 	});
 
 	let animatePrimary = (nextHovered: boolean) =>
 		animate(
-			'.letter',
+			".letter",
 			{
-				y: nextHovered ? (reverse ? '100%' : '-100%') : 0
+				y: nextHovered ? (reverse ? "100%" : "-100%") : 0,
 			},
 			mergeTransition(transition) as any
 		);
 
 	let animateSecondary = (nextHovered: boolean) =>
 		animate(
-			'.letter-secondary',
+			".letter-secondary",
 			{
-				top: nextHovered ? '0%' : reverse ? '-100%' : '100%'
+				top: nextHovered ? "0%" : reverse ? "-100%" : "100%",
 			},
 			mergeTransition(transition) as any
 		);
@@ -85,7 +85,7 @@
 
 <span
 	bind:this={scope.current}
-	class={cn('relative flex items-center justify-center overflow-hidden', className)}
+	class={cn("relative flex items-center justify-center overflow-hidden", className)}
 	onmouseenter={hoverStart}
 	onmouseleave={hoverEnd}
 	{onclick}
@@ -98,7 +98,10 @@
 			<motion.span class="letter relative" style={{ top: 0 }}>
 				{letter}
 			</motion.span>
-			<motion.span class="letter-secondary absolute" style={{ top: reverse ? '-100%' : '100%' }}>
+			<motion.span
+				class="letter-secondary absolute"
+				style={{ top: reverse ? "-100%" : "100%" }}
+			>
 				{letter}
 			</motion.span>
 		</span>

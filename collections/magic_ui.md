@@ -1,74 +1,103 @@
 Magic UI
 
-Total number of components: 66
-
 Complete List of Components
 
-- Android - SVG + Tailwind CSS
-- Animated Beam - Motion/React
-- Animated Circular Progress Bar - SVG + Tailwind CSS
-- Animated Gradient Text - Tailwind CSS - done
-- Animated Grid Pattern - SVG + Tailwind CSS
-- Animated List - Motion/React
-- Animated Shiny Text - Tailwind CSS
-- Animated Theme Toggler - Tailwind CSS
-- Aurora Text - Tailwind CSS - done
-- Avatar Circles - Tailwind CSS - done
-- Bento Grid - Tailwind CSS
-- Blur Fade - Motion/React + Tailwind CSS
-- Border Beam - Motion/React + Tailwind CSS
-- Code Comparison - Shiki + Tailwind CSS
-- Comic Text - Motion/React + Tailwind CSS
-- Confetti - Canvas-Confetti + Tailwind CSS
-- Cool Mode - Tailwind CSS
-- Dock - Motion/React + Tailwind CSS
-- Dot Pattern - SVG + Tailwind CSS + additional Motion/React Version
-- Dotted Map - SVG Dotter MAP + Tailwind CSS
-- File Tree - Tailwind CSS
-- Flickering Grid - SVG + Tailwind CSS
-- Globe - Cobe + Motion/React
-- Grid Pattern - SVG + Tailwind CSS
-- Hero Video Dialog - Motion/React + Tailwind CSS
-- Text Highlighter - Rough Notation + Tailwind CSS
-- Hyper Text - Motion/React + Tailwind CSS
-- Icon Cloud - Tailwind CSS
-- Interactive Grid Pattern
-- Interactive Hover Button
-- iPhone
-- Lens
-- Light Rays
-- Line Shadow Text
-- Magic Card
-- Marquee
-- Meteors
-- Morphing Text
-- Neon Gradient Card
-- Number Ticker
-- Orbiting Circles
-- Particles
-- Pixel Image
-- Pointer
-- Progressive Blur
-- Pulsating Button
-- Rainbow Button
-- Retro Grid
-- Ripple Button
-- Ripple
-- Safari
-- Scroll Based Velocity
-- Scroll Progress
-- Shimmer Button
-- Shine Border
-- Shiny Button
-- Smooth Cursor
-- Sparkles Text
-- Spinning Text
-- Striped Pattern
-- Terminal
-- Text Animate
-- Text Reveal
-- Tweet Card
-- Typing Animation
-- Video Text
-- Warp Background
-- Word Rotate
+## Components
+
+Marquee - done
+Terminal
+Hero Video Dialog - done
+Bento Grid - done
+Animated List - done
+Dock - done
+Globe - done
+Tweet Card
+Orbiting Circles - done
+Avatar Circles - done
+Icon Cloud - done
+Lens - done
+Pointer - done
+Smooth Cursor - done
+Progressive Blur - done
+Dotted Map - done - add more examples
+
+---
+
+## Special Effects
+
+Animated Beam - done
+Border Beam - done
+Shine Border - done
+Magic Card - done
+Glare Hover - done
+Meteors - done
+Confetti
+Particles
+Animated Theme Toggler - done
+
+## Animations
+
+Blur Fade - done
+
+## Text Animations
+
+Text Animate - done
+Typing Animation
+Line Shadow Text - done
+Aurora Text - done
+Video Text - done
+Number Ticker
+Animated Shiny Text - done
+Animated Gradient Text - done
+Text Reveal
+Dia Text Reveal - done
+Hyper Text - done
+Word Rotate
+Scroll Base velocity
+Sparkles Text - done
+Morphing Text - done
+Text Highlighter
+Text 3D Flip
+
+## Devices Mocks
+
+Safari
+Iphone
+Android
+
+## Buttons
+
+Rainbow Button - done
+Shimmer Button - done
+Ripple Button - done
+
+## Backgrounds
+
+Flickering Grid - done
+Animated Grid Pattern - done
+Retro Grid - done
+Ripple - done
+Dot Pattern - done
+Grid Pattern - done
+Hexagon Pattern - done
+Striped Pattern - done
+Interactive Grid Pattern
+Light Rays - done
+Noise Texture - done
+
+## Community
+
+Shiny Button
+File Tree
+Code Comparison
+Scroll Progress - done
+Neon Gradient Card
+Comic Text
+Kinetic Text
+Cool Mode - done
+Pixel Image - done
+Pulsating Button - done
+Warp Background - done
+Interactive Hover Button - done
+Animated Circular Progress Bar - done
+Backlight - done

@@ -20,7 +20,7 @@
 </script>
 
 <div
-	class="text-foreground dark:text-muted flex h-80 md:h-130 rounded-xl w-full flex-col items-end justify-center overflow-hidden bg-white px-8 py-20 text-right text-sm font-normal sm:px-16 sm:text-lg md:px-24 md:text-xl lg:px-32"
+	class="text-foreground dark:text-muted flex h-80 w-full flex-col items-end justify-center overflow-hidden rounded-xl bg-white px-8 py-20 text-right text-sm font-normal sm:px-16 sm:text-lg md:h-130 md:px-24 md:text-xl lg:px-32"
 >
 	{#each models as model, index}
 		<motion.div

@@ -66,6 +66,7 @@ const seo: SEO = {
 		"Text Reveal",
 		"Gradient Text",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

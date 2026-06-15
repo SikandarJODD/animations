@@ -2,9 +2,7 @@
 	import { TextHighlighter } from "$lib/components/fancy/text-highlighter";
 </script>
 
-<div
-	class="flex  min-h-80 items-center rounded-xl bg-[#fffdf7] px-6 py-8 text-slate-900 sm:px-8"
->
+<div class="flex min-h-80 items-center rounded-xl bg-[#fffdf7] px-6 py-8 text-slate-900 sm:px-8">
 	<p class="max-w-lg text-lg leading-8 sm:text-xl">
 		A small overview card can still feel editorial when the
 		<TextHighlighter

@@ -24,6 +24,7 @@ const seo: SEO = {
 	description:
 		"A background striped pattern made with SVGs, fully customizable using Tailwind CSS.",
 	keywords: ["Svelte", "", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

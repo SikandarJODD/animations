@@ -5,7 +5,7 @@
 	import * as Kbd from "$lib/components/ui/kbd/index.js";
 	import {
 		fancyUIComponents,
-		magicUIComponents,
+		magicUISidebarGroups,
 		spellUIComponents,
 		type FancyComponent,
 		type SpellComponent,
@@ -156,36 +156,39 @@
 				>
 			{/each}
 		</Command.Group>
-		<Command.Group heading="Components">
-			{#each magicUIComponents as component (component.id)}
-				<Command.LinkItem
-					value={component.id}
-					onclick={() => (open = false)}
-					href={component.href}
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="16"
-						height="16"
-						viewBox="0 0 24 24"
-						fill="none"
-						role="img"
-						color="currentColor"
+		{#each magicUISidebarGroups as group (group.title)}
+			<Command.Group heading={group.title}>
+				{#each group.items as component (component.id)}
+					<Command.LinkItem
+						value={component.id}
+						onclick={() => (open = false)}
+						href={component.href}
 					>
-						<circle opacity="0.2" cx="12" cy="12" r="10" fill="currentColor"></circle>
-						<circle
-							cx="12"
-							cy="12"
-							r="10"
-							stroke="currentColor"
-							stroke-width="1.5"
-							stroke-linejoin="round"
-						></circle>
-					</svg>
-					{component.name}
-				</Command.LinkItem>
-			{/each}
-		</Command.Group>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							role="img"
+							color="currentColor"
+						>
+							<circle opacity="0.2" cx="12" cy="12" r="10" fill="currentColor"
+							></circle>
+							<circle
+								cx="12"
+								cy="12"
+								r="10"
+								stroke="currentColor"
+								stroke-width="1.5"
+								stroke-linejoin="round"
+							></circle>
+						</svg>
+						{component.name}
+					</Command.LinkItem>
+				{/each}
+			</Command.Group>
+		{/each}
 		<Command.Group heading="Spell UI">
 			{#each spellComponents as component (component.id)}
 				<Command.LinkItem

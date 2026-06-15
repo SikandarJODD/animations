@@ -1,24 +1,24 @@
 <script lang="ts">
-	import { tick } from 'svelte';
-	import { cn } from '$lib/utils';
+	import { tick } from "svelte";
+	import { cn } from "$lib/utils";
 	import {
 		AnimatePresence,
 		createLayoutMotion,
 		motion,
 		type AnimatePresenceProps,
 		type MotionProps,
-		type Transition
-	} from 'motion-sv';
-	import type { HTMLAttributes, SvelteHTMLElements } from 'svelte/elements';
+		type Transition,
+	} from "motion-sv";
+	import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
 
 	type ElementType = keyof SvelteHTMLElements;
-	type SplitBy = 'words' | 'characters' | 'lines' | string;
-	type StaggerFrom = 'first' | 'last' | 'center' | 'random' | number;
+	type SplitBy = "words" | "characters" | "lines" | string;
+	type StaggerFrom = "first" | "last" | "center" | "random" | number;
 	type MotionState<T extends keyof MotionProps> = MotionProps[T] | MotionProps[T][];
 	type RootAttributes = {
 		[K in keyof HTMLAttributes<HTMLElement>]?: Exclude<HTMLAttributes<HTMLElement>[K], null>;
 	} & {
-		style?: MotionProps['style'];
+		style?: MotionProps["style"];
 	};
 
 	interface RenderGroup {
@@ -32,10 +32,10 @@
 		texts: string[];
 		as?: ElementType;
 		rotationInterval?: number;
-		initial?: MotionState<'initial'>;
-		animate?: MotionState<'animate'>;
-		exit?: MotionState<'exit'>;
-		animatePresenceMode?: AnimatePresenceProps['mode'];
+		initial?: MotionState<"initial">;
+		animate?: MotionState<"animate">;
+		exit?: MotionState<"exit">;
+		animatePresenceMode?: AnimatePresenceProps["mode"];
 		animatePresenceInitial?: boolean;
 		staggerDuration?: number;
 		staggerFrom?: StaggerFrom;
@@ -51,14 +51,14 @@
 	}
 
 	const defaultTransition: Transition = {
-		type: 'spring',
+		type: "spring",
 		damping: 25,
-		stiffness: 300
+		stiffness: 300,
 	};
 
 	function splitIntoCharacters(text: string) {
-		if (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {
-			const segmenter = new Intl.Segmenter('en', { granularity: 'grapheme' });
+		if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
+			const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
 			return Array.from(segmenter.segment(text), ({ segment }) => segment);
 		}
 
@@ -70,8 +70,8 @@
 			return [];
 		}
 
-		if (splitMode === 'characters') {
-			const words = text.split(' ');
+		if (splitMode === "characters") {
+			const words = text.split(" ");
 			let offset = 0;
 
 			return words.map((word, index) => {
@@ -80,7 +80,7 @@
 					characters,
 					needsSpace: index !== words.length - 1,
 					offset,
-					key: `${indexSeed}-${index}-${word}`
+					key: `${indexSeed}-${index}-${word}`,
 				};
 
 				offset += characters.length;
@@ -89,10 +89,10 @@
 		}
 
 		const segments =
-			splitMode === 'words'
-				? text.split(' ')
-				: splitMode === 'lines'
-					? text.replace(/\r\n?/g, '\n').split('\n')
+			splitMode === "words"
+				? text.split(" ")
+				: splitMode === "lines"
+					? text.replace(/\r\n?/g, "\n").split("\n")
 					: text.split(splitMode);
 
 		let offset = 0;
@@ -100,9 +100,9 @@
 		return segments.map((segment, index) => {
 			const group = {
 				characters: [segment],
-				needsSpace: splitMode === 'words' && index !== segments.length - 1,
+				needsSpace: splitMode === "words" && index !== segments.length - 1,
 				offset,
-				key: `${indexSeed}-${index}-${segment}`
+				key: `${indexSeed}-${index}-${segment}`,
 			};
 
 			offset += 1;
@@ -120,19 +120,19 @@
 
 	let {
 		texts,
-		as = 'p',
+		as = "p",
 		rotationInterval = 2000,
-		initial = { y: '100%', opacity: 0 },
+		initial = { y: "100%", opacity: 0 },
 		animate = { y: 0, opacity: 1 },
-		exit = { y: '-120%', opacity: 0 },
-		animatePresenceMode = 'wait',
+		exit = { y: "-120%", opacity: 0 },
+		animatePresenceMode = "wait",
 		animatePresenceInitial = false,
 		staggerDuration = 0,
-		staggerFrom = 'first',
+		staggerFrom = "first",
 		transition = defaultTransition,
 		loop = true,
 		auto = true,
-		splitBy = 'characters',
+		splitBy = "characters",
 		onNext,
 		mainClassName,
 		splitLevelClassName,
@@ -152,7 +152,7 @@
 	let LayoutComponent = $derived(layout[as as keyof typeof layout]);
 
 	function getTextWidth(index: number) {
-		return textWidths[index] ?? splitIntoCharacters(texts[index] ?? '').length;
+		return textWidths[index] ?? splitIntoCharacters(texts[index] ?? "").length;
 	}
 
 	const applyIndexChange = layout.update.with((newIndex: number) => {
@@ -167,9 +167,9 @@
 		onNext?.(newIndex);
 	});
 
-	let currentText = $derived(texts[currentTextIndex] ?? '');
-	let measuredText = $derived(texts[measuredTextIndex] ?? '');
-	let widthProbeText = $derived(texts[widthProbeIndex] ?? '');
+	let currentText = $derived(texts[currentTextIndex] ?? "");
+	let measuredText = $derived(texts[measuredTextIndex] ?? "");
+	let widthProbeText = $derived(texts[widthProbeIndex] ?? "");
 
 	let renderGroups = $derived.by<RenderGroup[]>(() =>
 		buildRenderGroups(currentText, currentTextIndex, splitBy)
@@ -188,15 +188,15 @@
 	function getStaggerDelay(index: number, totalCharacters: number) {
 		const total = Math.max(totalCharacters, 1);
 
-		if (staggerFrom === 'first') return index * staggerDuration;
-		if (staggerFrom === 'last') return (total - 1 - index) * staggerDuration;
+		if (staggerFrom === "first") return index * staggerDuration;
+		if (staggerFrom === "last") return (total - 1 - index) * staggerDuration;
 
-		if (staggerFrom === 'center') {
+		if (staggerFrom === "center") {
 			const center = Math.floor(total / 2);
 			return Math.abs(center - index) * staggerDuration;
 		}
 
-		if (staggerFrom === 'random') {
+		if (staggerFrom === "random") {
 			const randomIndex = Math.floor(Math.random() * total);
 			return Math.abs(randomIndex - index) * staggerDuration;
 		}
@@ -206,9 +206,9 @@
 
 	function getAnimationProps(index: number) {
 		return {
-			initial: pickMotionState(initial, index) as MotionProps['initial'],
-			animate: pickMotionState(animate, index) as MotionProps['animate'],
-			exit: pickMotionState(exit, index) as MotionProps['exit']
+			initial: pickMotionState(initial, index) as MotionProps["initial"],
+			animate: pickMotionState(animate, index) as MotionProps["animate"],
+			exit: pickMotionState(exit, index) as MotionProps["exit"],
 		};
 	}
 
@@ -218,7 +218,11 @@
 		}
 
 		const nextIndex =
-			currentTextIndex === texts.length - 1 ? (loop ? 0 : currentTextIndex) : currentTextIndex + 1;
+			currentTextIndex === texts.length - 1
+				? loop
+					? 0
+					: currentTextIndex
+				: currentTextIndex + 1;
 
 		if (nextIndex !== currentTextIndex) {
 			applyIndexChange(nextIndex);
@@ -231,7 +235,11 @@
 		}
 
 		const previousIndex =
-			currentTextIndex === 0 ? (loop ? texts.length - 1 : currentTextIndex) : currentTextIndex - 1;
+			currentTextIndex === 0
+				? loop
+					? texts.length - 1
+					: currentTextIndex
+				: currentTextIndex - 1;
 
 		if (previousIndex !== currentTextIndex) {
 			applyIndexChange(previousIndex);
@@ -311,13 +319,16 @@
 	});
 </script>
 
-<span class="pointer-events-none fixed top-0 left-[-10000px] invisible whitespace-pre-wrap" aria-hidden="true">
+<span
+	class="pointer-events-none invisible fixed top-0 left-[-10000px] whitespace-pre-wrap"
+	aria-hidden="true"
+>
 	<span
 		bind:this={widthProbeRef}
-		class={cn('flex flex-wrap', splitBy === 'lines' && 'flex-col w-full')}
+		class={cn("flex flex-wrap", splitBy === "lines" && "w-full flex-col")}
 	>
 		{#each widthProbeRenderGroups as group (`probe-${group.key}`)}
-			<span class={cn('inline-flex', splitBy === 'lines' && 'w-full', splitLevelClassName)}>
+			<span class={cn("inline-flex", splitBy === "lines" && "w-full", splitLevelClassName)}>
 				{#each group.characters as character, charIndex (`probe-${group.key}-${charIndex}`)}
 					<span class={cn(elementLevelClassName)}>{character}</span>
 				{/each}
@@ -331,27 +342,23 @@
 </span>
 
 <LayoutComponent
-	class={cn(
-		'relative inline-grid whitespace-pre-wrap',
-		mainClassName,
-		className
-	)}
+	class={cn("relative inline-grid whitespace-pre-wrap", mainClassName, className)}
 	layout
 	layoutDependency={currentTextIndex}
-	transition={transition}
-	{...(props as Record<string, unknown>)}
+	{transition}
+	{...props as Record<string, unknown>}
 >
 	<span class="sr-only">{currentText}</span>
 
 	<span
 		aria-hidden="true"
 		class={cn(
-			'invisible pointer-events-none col-start-1 row-start-1 flex flex-wrap',
-			splitBy === 'lines' && 'flex-col w-full'
+			"pointer-events-none invisible col-start-1 row-start-1 flex flex-wrap",
+			splitBy === "lines" && "w-full flex-col"
 		)}
 	>
 		{#each measuredRenderGroups as group (`measure-${group.key}`)}
-			<span class={cn('inline-flex', splitBy === 'lines' && 'w-full', splitLevelClassName)}>
+			<span class={cn("inline-flex", splitBy === "lines" && "w-full", splitLevelClassName)}>
 				{#each group.characters as character, charIndex (`measure-${group.key}-${charIndex}`)}
 					<span class={cn(elementLevelClassName)}>{character}</span>
 				{/each}
@@ -381,13 +388,20 @@
 	>
 		{#key currentTextIndex}
 			<motion.span
-				class={cn('col-start-1 row-start-1 flex flex-wrap', splitBy === 'lines' && 'flex-col w-full')}
+				class={cn(
+					"col-start-1 row-start-1 flex flex-wrap",
+					splitBy === "lines" && "w-full flex-col"
+				)}
 				aria-hidden="true"
 				layout
 			>
 				{#each renderGroups as group (group.key)}
 					<span
-						class={cn('inline-flex', splitBy === 'lines' && 'w-full', splitLevelClassName)}
+						class={cn(
+							"inline-flex",
+							splitBy === "lines" && "w-full",
+							splitLevelClassName
+						)}
 					>
 						{#each group.characters as character, charIndex (`${group.key}-${charIndex}`)}
 							{@const totalIndex = group.offset + charIndex}
@@ -400,7 +414,7 @@
 									exit={animationProps.exit}
 									transition={{
 										...transition,
-										delay: getStaggerDelay(totalIndex, totalCharacters)
+										delay: getStaggerDelay(totalIndex, totalCharacters),
 									}}
 									class="inline-block"
 								>

@@ -44,6 +44,7 @@ const seo: SEO = {
 		"Particles",
 		"Interactive",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

@@ -257,6 +257,25 @@
 		"relativeUrl": "grid-pattern.json"
 	},
 	{
+		"name": "glare-hover",
+		"title": "Glare Hover",
+		"type": "registry:block",
+		"description": "A glare hover effect that adds a subtle shine to elements when hovered.",
+		"registryDependencies": [],
+		"relativeUrl": "glare-hover.json"
+	},
+	{
+		"name": "globe",
+		"title": "Globe",
+		"type": "registry:block",
+		"description": "An autorotating, interactive, and highly performant globe made using WebGL.",
+		"dependencies": [
+			"cobe"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "globe.json"
+	},
+	{
 		"name": "hero-video-dialog",
 		"title": "Hero Video Dialog",
 		"type": "registry:block",
@@ -267,6 +286,14 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "hero-video-dialog.json"
+	},
+	{
+		"name": "hexagon-pattern",
+		"title": "Hexagon Pattern",
+		"type": "registry:block",
+		"description": "An SVG-based hexagon pattern background component with configurable radius, gap, direction, and highlighted cells.",
+		"registryDependencies": [],
+		"relativeUrl": "hexagon-pattern.json"
 	},
 	{
 		"name": "hyper-text",
@@ -347,6 +374,14 @@
 		"description": "A card component with animated neon gradient borders and customizable colors, border size, and radius.",
 		"registryDependencies": [],
 		"relativeUrl": "neon-gradient-card.json"
+	},
+	{
+		"name": "noise-texture",
+		"title": "Noise Texture",
+		"type": "registry:block",
+		"description": "An SVG fractal noise layer using feTurbulence for subtle texture overlays.",
+		"registryDependencies": [],
+		"relativeUrl": "noise-texture.json"
 	},
 	{
 		"name": "number-ticker",
@@ -571,6 +606,17 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "smooth-cursor.json"
+	},
+	{
+		"name": "sparkles-text",
+		"title": "Sparkles Text",
+		"type": "registry:block",
+		"description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "sparkles-text.json"
 	},
 	{
 		"name": "stagger-text",

@@ -6,29 +6,29 @@
 	let isHovered = $state(false);
 </script>
 
-{#if isHovered}
-	<div in:fly={{ y: 20, duration: 280 }} out:fly={{ duration: 200, y: 20 }} class="w-full left-0">
-		<div
-			class="h-7 flex items-center w-[80%] mx-auto gap-1.5 rounded-t-md border-t border-x border-sky-600/80 bg-sky-50 dark:bg-sky-800/20 px-4 text-white text-xs font-medium"
+<!-- {#if isHovered} -->
+<div in:fly={{ y: 20, duration: 280 }} out:fly={{ duration: 200, y: 20 }} class="left-0 w-full">
+	<div
+		class="mx-auto flex h-7 w-[80%] items-center justify-center gap-1.5 rounded-t-lg border-x border-t border-emerald-600/80 bg-emerald-50 px-4 text-xs font-medium text-white dark:bg-emerald-800/20"
+	>
+		<span
+			><img
+				src="https://github.com/SikandarJODD.png"
+				class="size-4 rounded-full"
+				alt="Bhide Svelte"
+			/></span
 		>
-			<span
-				><img
-					src="https://github.com/SikandarJODD.png"
-					class="size-4 rounded-full"
-					alt="Bhide Svelte"
-				/></span
-			>
-			<span class="text-sky-600 dark:text-white">Thankyouu soo much 😍</span>
-		</div>
+		<span class="text-emerald-600 dark:text-white">Built by Bhide Svelte</span>
 	</div>
-{/if}
+</div>
+<!-- {/if} -->
 
 <Card.Root
 	onmouseenter={() => (isHovered = true)}
 	onmouseleave={() => (isHovered = false)}
-	class="relative gap-2 py-4 ring-0 dark:bg-card z-50 border border-sky-500 dark:border-sky-700/60"
+	class="dark:bg-card relative z-50 gap-2 border border-emerald-500 py-4 ring-0 dark:border-emerald-700/60"
 >
-	<Card.Header class="px-4 z-50">
+	<Card.Header class="z-50 px-4">
 		<Card.Title class="text-sm">
 			<span>Sponsor My Work</span>
 		</Card.Title>
@@ -38,12 +38,13 @@
 	</Card.Header>
 	<Card.Content class="mt-2 border-none px-4!">
 		<Button
-			class="w-full"
+			class="hover:bg-green-450! w-full bg-green-400! text-green-950 hover:text-green-950/90"
 			target="_blank"
+			variant="outline"
 			data-s-event="sponsor_click"
 			href="https://github.com/sponsors/SikandarJODD"
 		>
-			Sponsor Bhide Svelte
+			Sponsor Me
 		</Button>
 	</Card.Content>
 </Card.Root>

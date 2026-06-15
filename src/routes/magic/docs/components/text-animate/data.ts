@@ -127,6 +127,7 @@ const seo: SEO = {
 		"Web Design",
 		"Framer Motion",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 export const data: ComponentDoc = {

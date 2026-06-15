@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="text-light flex h-60 md:h-90 w-dvw flex-col items-center justify-center space-y-20 overflow-hidden bg-black p-0 md:p-12 text-sm font-normal text-white  sm:text-xl  md:text-2xl"
+	class="text-light flex h-60 w-dvw flex-col items-center justify-center space-y-20 overflow-hidden bg-black p-0 text-sm font-normal text-white sm:text-xl md:h-90 md:p-12 md:text-2xl"
 >
 	<div class="w-full text-left">
 		<ScrambleHover

@@ -99,6 +99,7 @@ const seo: SEO = {
 		"Text Animation",
 		"Typewriter Effect",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

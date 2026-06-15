@@ -689,6 +689,45 @@
 			"registryDependencies": []
 		},
 		{
+			"name": "glare-hover",
+			"type": "registry:block",
+			"title": "Glare Hover",
+			"description": "A glare hover effect that adds a subtle shine to elements when hovered.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/glare-hover/glare-hover.svelte",
+					"type": "registry:component",
+					"target": "magic/glare-hover/glare-hover.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/glare-hover/index.ts",
+					"type": "registry:file",
+					"target": "magic/glare-hover/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "globe",
+			"type": "registry:block",
+			"title": "Globe",
+			"description": "An autorotating, interactive, and highly performant globe made using WebGL.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/globe/globe.svelte",
+					"type": "registry:component",
+					"target": "magic/globe/globe.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/globe/index.ts",
+					"type": "registry:file",
+					"target": "magic/globe/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["cobe"]
+		},
+		{
 			"name": "hero-video-dialog",
 			"type": "registry:block",
 			"title": "Hero Video Dialog",
@@ -707,6 +746,25 @@
 			],
 			"registryDependencies": [],
 			"dependencies": ["@lucide/svelte", "motion-sv"]
+		},
+		{
+			"name": "hexagon-pattern",
+			"type": "registry:block",
+			"title": "Hexagon Pattern",
+			"description": "An SVG-based hexagon pattern background component with configurable radius, gap, direction, and highlighted cells.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/hexagon-pattern/hexagon-pattern.svelte",
+					"type": "registry:component",
+					"target": "magic/hexagon-pattern/hexagon-pattern.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/hexagon-pattern/index.ts",
+					"type": "registry:file",
+					"target": "magic/hexagon-pattern/index.ts"
+				}
+			],
+			"registryDependencies": []
 		},
 		{
 			"name": "hyper-text",
@@ -892,6 +950,25 @@
 					"path": "./src/lib/components/magic/neon-gradient-card/index.ts",
 					"type": "registry:file",
 					"target": "magic/neon-gradient-card/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "noise-texture",
+			"type": "registry:block",
+			"title": "Noise Texture",
+			"description": "An SVG fractal noise layer using feTurbulence for subtle texture overlays.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/noise-texture/noise-texture.svelte",
+					"type": "registry:component",
+					"target": "magic/noise-texture/noise-texture.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/noise-texture/index.ts",
+					"type": "registry:file",
+					"target": "magic/noise-texture/index.ts"
 				}
 			],
 			"registryDependencies": []
@@ -1497,6 +1574,26 @@
 					"path": "./src/lib/components/magic/smooth-cursor/index.ts",
 					"type": "registry:file",
 					"target": "magic/smooth-cursor/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "sparkles-text",
+			"type": "registry:block",
+			"title": "Sparkles Text",
+			"description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/sparkles-text/sparkles-text.svelte",
+					"type": "registry:component",
+					"target": "magic/sparkles-text/sparkles-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/sparkles-text/index.ts",
+					"type": "registry:file",
+					"target": "magic/sparkles-text/index.ts"
 				}
 			],
 			"registryDependencies": [],

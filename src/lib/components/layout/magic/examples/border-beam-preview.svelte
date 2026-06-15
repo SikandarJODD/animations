@@ -7,7 +7,11 @@
 		class="bg-background/90 relative w-full max-w-sm overflow-hidden rounded-xl border p-2 shadow-sm"
 	>
 		<div class="space-y-5">
-			<a href="https://bhide.dev?utm_source=sv-animations" target="_blank" class="flex items-center gap-4">
+			<a
+				href="https://bhide.dev?utm_source=sv-animations"
+				target="_blank"
+				class="flex items-center gap-4"
+			>
 				<img
 					src="https://github.com/SikandarJODD.png"
 					alt="Bhide Svelte"

@@ -131,7 +131,6 @@
 			bottom: "calc(-1 * var(--underline-padding, 0px))",
 			backgroundColor: baseTextColor,
 			willChange: "height",
-
 		}}
 		variants={underlineVariants}
 		aria-hidden="true"

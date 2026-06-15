@@ -20,6 +20,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create Word Rotate effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Word Rotate", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {
