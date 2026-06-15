@@ -220,6 +220,7 @@ export const magicUIComponents: MagicComponent[] = [
 		href: "/magic/docs/components/hexagon-pattern",
 		category: "Backgrounds",
 		desc: "A background hexagon pattern made with SVGs, fully customizable using Tailwind CSS.",
+		badge: "New"
 	},
 	{
 		id: "hyper-text",
