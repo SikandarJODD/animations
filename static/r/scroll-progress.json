@@ -9,12 +9,12 @@
 	],
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\r\n\timport { motion, useScroll } from \"motion-sv\";\r\n\timport { cn } from \"$UTILS$\";\r\n\r\n\tinterface ScrollProgressProps {\r\n\t\tclass?: string;\r\n\t}\r\n\r\n\tlet { class: className }: ScrollProgressProps = $props();\r\n\r\n\tlet scroll = $derived(useScroll());\r\n</script>\r\n\r\n<motion.div\r\n\tclass={cn(\r\n\t\t\"fixed inset-x-0 top-0 z-50 h-1 origin-top-left bg-linear-to-r from-[#A97CF8] via-[#F38CB8] to-[#FDCC92]\",\r\n\t\tclassName\r\n\t)}\r\n\tstyle={{\r\n\t\tscaleX: scroll.scrollYProgress,\r\n\t}}\r\n/>\r\n",
+			"content": "<script lang=\"ts\">\n\timport { motion, useScroll } from \"motion-sv\";\n\timport { cn } from \"$UTILS$\";\n\n\tinterface ScrollProgressProps {\n\t\tclass?: string;\n\t}\n\n\tlet { class: className }: ScrollProgressProps = $props();\n\n\tlet scroll = $derived(useScroll());\n</script>\n\n<motion.div\n\tclass={cn(\n\t\t\"fixed inset-x-0 top-0 z-50 h-1 origin-top-left bg-linear-to-r from-[#A97CF8] via-[#F38CB8] to-[#FDCC92]\",\n\t\tclassName\n\t)}\n\tstyle={{\n\t\tscaleX: scroll.scrollYProgress,\n\t}}\n/>\n",
 			"type": "registry:component",
 			"target": "magic/scroll-progress/scroll-progress.svelte"
 		},
 		{
-			"content": "import ScrollProgress from \"./scroll-progress.svelte\";\r\nexport { ScrollProgress };\r\n",
+			"content": "import ScrollProgress from \"./scroll-progress.svelte\";\nexport { ScrollProgress };\n",
 			"type": "registry:file",
 			"target": "magic/scroll-progress/index.ts"
 		}

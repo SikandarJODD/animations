@@ -1,0 +1,19 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "glare-hover",
+	"title": "Glare Hover",
+	"type": "registry:block",
+	"description": "A glare hover effect that adds a subtle shine to elements when hovered.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport type { Snippet } from \"svelte\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn } from \"$UTILS$\";\n\n\ttype Color = `#${string}`;\n\ttype RGBA = `rgba(${number},${number},${number},${number})`;\n\n\tinterface GlareHoverProps extends HTMLAttributes<HTMLDivElement> {\n\t\tchildren?: Snippet;\n\t\twidth?: string;\n\t\theight?: string;\n\t\tbackground?: string;\n\t\tcolor?: Color;\n\t\topacity?: number;\n\t\tangle?: number;\n\t\tsize?: number;\n\t\tduration?: number;\n\t\tplayOnce?: boolean;\n\t}\n\n\tfunction parseHEX(color: Color, opacity: number): RGBA | Color {\n\t\tconst hex = color.replace(\"#\", \"\");\n\t\tconst parse = (h: string) => Number.parseInt(h, 16);\n\n\t\tif (/^[0-9A-Fa-f]{6}$/.test(hex)) {\n\t\t\treturn `rgba(${parse(hex.slice(0, 2))},${parse(hex.slice(2, 4))},${parse(hex.slice(4, 6))},${opacity})`;\n\t\t}\n\n\t\tif (/^[0-9A-Fa-f]{3}$/.test(hex)) {\n\t\t\treturn `rgba(${parse(hex[0] + hex[0])},${parse(hex[1] + hex[1])},${parse(hex[2] + hex[2])},${opacity})`;\n\t\t}\n\n\t\treturn color;\n\t}\n\n\tlet {\n\t\tchildren,\n\t\twidth,\n\t\theight,\n\t\tbackground = \"#000\",\n\t\tcolor = \"#ffffff\",\n\t\topacity = 0.5,\n\t\tangle = -45,\n\t\tsize = 250,\n\t\tduration = 650,\n\t\tplayOnce = false,\n\t\tclass: className,\n\t\tstyle: styleProp,\n\t\t...restProps\n\t}: GlareHoverProps = $props();\n\n\tconst rgba = $derived(parseHEX(color, opacity));\n\tconst rootStyle = $derived(\n\t\t[\n\t\t\t`--gh-angle: ${angle}deg`,\n\t\t\t`--gh-duration: ${duration}ms`,\n\t\t\t`--gh-size: ${size}%`,\n\t\t\t`--gh-rgba: ${rgba}`,\n\t\t\t`background: ${background}`,\n\t\t\tstyleProp,\n\t\t\twidth !== undefined ? `width: ${width}` : undefined,\n\t\t\theight !== undefined ? `height: ${height}` : undefined,\n\t\t]\n\t\t\t.filter(\n\t\t\t\t(value): value is string => value !== undefined && value !== null && value !== \"\"\n\t\t\t)\n\t\t\t.join(\"; \")\n\t);\n</script>\n\n<div\n\tclass={cn(\n\t\t\"relative grid size-fit cursor-pointer place-items-center overflow-hidden bg-transparent\",\n\t\t\"before:pointer-events-none before:absolute before:inset-0 before:z-10 before:bg-no-repeat before:content-['']\",\n\t\t\"before:bg-[linear-gradient(var(--gh-angle),transparent_60%,var(--gh-rgba)_70%,transparent,transparent_100%)]\",\n\t\t\"before:bg-size-[var(--gh-size)_var(--gh-size),100%_100%]\",\n\t\t\"before:bg-position-[-100%_-100%,0_0]\",\n\t\t!playOnce &&\n\t\t\t\"before:transition-[background-position] before:duration-(--gh-duration) before:ease-in-out\",\n\t\tplayOnce &&\n\t\t\t\"before:transition-none hover:before:transition-[background-position] hover:before:duration-(--gh-duration)\",\n\t\t\"hover:before:bg-position-[100%_100%,0_0]\",\n\t\tclassName\n\t)}\n\tstyle={rootStyle}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "magic/glare-hover/glare-hover.svelte"
+		},
+		{
+			"content": "import GlareHover from './glare-hover.svelte'\r\nexport { GlareHover }",
+			"type": "registry:file",
+			"target": "magic/glare-hover/index.ts"
+		}
+	]
+}

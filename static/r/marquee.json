@@ -30,12 +30,12 @@
 	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\r\n\timport { cn } from \"$UTILS$\";\r\n\timport type { Snippet } from \"svelte\";\r\n\r\n\tinterface MarqueeProps {\r\n\t\tchildren: Snippet;\r\n\t\tclass?: string;\r\n\t\treverse?: boolean;\r\n\t\tpauseOnHover?: boolean;\r\n\t\tvertical?: boolean;\r\n\t\trepeat?: number;\r\n\t\t[key: string]: any;\r\n\t}\r\n\r\n\tlet {\r\n\t\tchildren,\r\n\t\tclass: className = \"\",\r\n\t\treverse = false,\r\n\t\tpauseOnHover = false,\r\n\t\tvertical = false,\r\n\t\trepeat = 4,\r\n\t\t...rest\r\n\t}: MarqueeProps = $props();\r\n</script>\r\n\r\n<div\r\n\t{...rest}\r\n\tclass={cn(\r\n\t\t\"group flex gap-(--gap) overflow-hidden p-2 [--duration:40s] [--gap:1rem]\",\r\n\t\t{\r\n\t\t\t\"flex-row\": !vertical,\r\n\t\t\t\"flex-col\": vertical,\r\n\t\t},\r\n\t\tclassName\r\n\t)}\r\n>\r\n\t{#each Array(repeat).fill(0) as _, i (i)}\r\n\t\t<div\r\n\t\t\tclass={cn(\"flex shrink-0 justify-around gap-(--gap)\", {\r\n\t\t\t\t\"animate-marquee flex-row\": !vertical,\r\n\t\t\t\t\"animate-marquee-vertical flex-col\": vertical,\r\n\t\t\t\t\"group-hover:paused\": pauseOnHover,\r\n\t\t\t\t\"direction-[reverse]\": reverse,\r\n\t\t\t})}\r\n\t\t>\r\n\t\t\t{@render children?.()}\r\n\t\t</div>\r\n\t{/each}\r\n</div>\r\n",
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\n\tinterface MarqueeProps {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t\treverse?: boolean;\n\t\tpauseOnHover?: boolean;\n\t\tvertical?: boolean;\n\t\trepeat?: number;\n\t\t[key: string]: any;\n\t}\n\n\tlet {\n\t\tchildren,\n\t\tclass: className = \"\",\n\t\treverse = false,\n\t\tpauseOnHover = false,\n\t\tvertical = false,\n\t\trepeat = 4,\n\t\t...rest\n\t}: MarqueeProps = $props();\n</script>\n\n<div\n\t{...rest}\n\tclass={cn(\n\t\t\"group flex gap-(--gap) overflow-hidden p-2 [--duration:40s] [--gap:1rem]\",\n\t\t{\n\t\t\t\"flex-row\": !vertical,\n\t\t\t\"flex-col\": vertical,\n\t\t},\n\t\tclassName\n\t)}\n>\n\t{#each Array(repeat).fill(0) as _, i (i)}\n\t\t<div\n\t\t\tclass={cn(\"flex shrink-0 justify-around gap-(--gap)\", {\n\t\t\t\t\"animate-marquee flex-row\": !vertical,\n\t\t\t\t\"animate-marquee-vertical flex-col\": vertical,\n\t\t\t\t\"group-hover:paused\": pauseOnHover,\n\t\t\t\t\"direction-[reverse]\": reverse,\n\t\t\t})}\n\t\t>\n\t\t\t{@render children?.()}\n\t\t</div>\n\t{/each}\n</div>\n",
 			"type": "registry:component",
 			"target": "magic/marquee/marquee.svelte"
 		},
 		{
-			"content": "import Marquee from \"./marquee.svelte\";\r\nexport { Marquee };\r\n",
+			"content": "import Marquee from \"./marquee.svelte\";\nexport { Marquee };\n",
 			"type": "registry:file",
 			"target": "magic/marquee/index.ts"
 		}

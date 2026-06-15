@@ -1,0 +1,22 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "sparkles-text",
+	"title": "Sparkles Text",
+	"type": "registry:block",
+	"description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport type { Snippet } from \"svelte\";\n\timport { untrack } from \"svelte\";\n\timport type { HTMLAttributes, SvelteHTMLElements } from \"svelte/elements\";\n\timport { motion } from \"motion-sv\";\n\timport { cn } from \"$UTILS$\";\n\n\tinterface Sparkle {\n\t\tid: string;\n\t\tx: string;\n\t\ty: string;\n\t\tcolor: string;\n\t\tdelay: number;\n\t\tscale: number;\n\t\tlifespan: number;\n\t}\n\n\tinterface SparklesTextProps extends HTMLAttributes<HTMLElement> {\n\t\tas?: keyof SvelteHTMLElements;\n\t\tclass?: string;\n\t\tchildren: Snippet;\n\t\tsparklesCount?: number;\n\t\tcolors?: {\n\t\t\tfirst: string;\n\t\t\tsecond: string;\n\t\t};\n\t}\n\n\tlet {\n\t\tas = \"div\",\n\t\tchildren,\n\t\tclass: className,\n\t\tstyle: styleProp,\n\t\tsparklesCount = 10,\n\t\tcolors = { first: \"#9E7AFF\", second: \"#FE8BBB\" },\n\t\t...restProps\n\t}: SparklesTextProps = $props();\n\n\tlet sparkles = $state<Sparkle[]>([]);\n\n\tfunction generateStar(): Sparkle {\n\t\tconst starX = `${Math.random() * 100}%`;\n\t\tconst starY = `${Math.random() * 100}%`;\n\t\tconst color = Math.random() > 0.5 ? colors.first : colors.second;\n\t\tconst delay = Math.random() * 2;\n\t\tconst scale = Math.random() * 1 + 0.3;\n\t\tconst lifespan = Math.random() * 10 + 5;\n\t\tconst id = `${starX}-${starY}-${Date.now()}`;\n\n\t\treturn { id, x: starX, y: starY, color, delay, scale, lifespan };\n\t}\n\n\t$effect(() => {\n\t\tcolors.first;\n\t\tcolors.second;\n\t\tsparklesCount;\n\n\t\tsparkles = Array.from({ length: sparklesCount }, generateStar);\n\n\t\tconst interval = setInterval(() => {\n\t\t\tconst currentSparkles = untrack(() => sparkles);\n\n\t\t\tsparkles = currentSparkles.map((star) => {\n\t\t\t\tif (star.lifespan <= 0) {\n\t\t\t\t\treturn generateStar();\n\t\t\t\t}\n\n\t\t\t\treturn { ...star, lifespan: star.lifespan - 0.1 };\n\t\t\t});\n\t\t}, 100);\n\n\t\treturn () => clearInterval(interval);\n\t});\n\n\tconst rootStyle = $derived(\n\t\t[\n\t\t\t`--sparkles-first-color: ${colors.first}`,\n\t\t\t`--sparkles-second-color: ${colors.second}`,\n\t\t\tstyleProp,\n\t\t]\n\t\t\t.filter(\n\t\t\t\t(value): value is string => value !== undefined && value !== null && value !== \"\"\n\t\t\t)\n\t\t\t.join(\"; \")\n\t);\n</script>\n\n<svelte:element\n\tthis={as}\n\tclass={cn(\"text-6xl font-medium\", className)}\n\tstyle={rootStyle}\n\t{...restProps}\n>\n\t<span class=\"relative inline-block\">\n\t\t{#each sparkles as sparkle (sparkle.id)}\n\t\t\t<motion.svg\n\t\t\t\tclass=\"pointer-events-none absolute z-20\"\n\t\t\t\tinitial={{ opacity: 0 }}\n\t\t\t\tanimate={{\n\t\t\t\t\topacity: [0, 1, 0],\n\t\t\t\t\tscale: [0, sparkle.scale, 0],\n\t\t\t\t\trotate: [75, 120, 150],\n\t\t\t\t}}\n\t\t\t\ttransition={{ duration: 0.8, repeat: Infinity, delay: sparkle.delay }}\n\t\t\t\tstyle={{ left: sparkle.x, top: sparkle.y }}\n\t\t\t\twidth=\"21\"\n\t\t\t\theight=\"21\"\n\t\t\t\tviewBox=\"0 0 21 21\"\n\t\t\t>\n\t\t\t\t<path\n\t\t\t\t\td=\"M9.82531 0.843845C10.0553 0.215178 10.9446 0.215178 11.1746 0.843845L11.8618 2.72026C12.4006 4.19229 12.3916 6.39157 13.5 7.5C14.6084 8.60843 16.8077 8.59935 18.2797 9.13822L20.1561 9.82534C20.7858 10.0553 20.7858 10.9447 20.1561 11.1747L18.2797 11.8618C16.8077 12.4007 14.6084 12.3916 13.5 13.5C12.3916 14.6084 12.4006 16.8077 11.8618 18.2798L11.1746 20.1562C10.9446 20.7858 10.0553 20.7858 9.82531 20.1562L9.13819 18.2798C8.59932 16.8077 8.60843 14.6084 7.5 13.5C6.39157 12.3916 4.19225 12.4007 2.72023 11.8618L0.843814 11.1747C0.215148 10.9447 0.215148 10.0553 0.843814 9.82534L2.72023 9.13822C4.19225 8.59935 6.39157 8.60843 7.5 7.5C8.60843 6.39157 8.59932 4.19229 9.13819 2.72026L9.82531 0.843845Z\"\n\t\t\t\t\tfill={sparkle.color}\n\t\t\t\t/>\n\t\t\t</motion.svg>\n\t\t{/each}\n\t\t<strong>{@render children()}</strong>\n\t</span>\n</svelte:element>\n",
+			"type": "registry:component",
+			"target": "magic/sparkles-text/sparkles-text.svelte"
+		},
+		{
+			"content": "import SparklesText from \"./sparkles-text.svelte\";\r\nexport { SparklesText };",
+			"type": "registry:file",
+			"target": "magic/sparkles-text/index.ts"
+		}
+	]
+}

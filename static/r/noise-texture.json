@@ -1,0 +1,19 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "noise-texture",
+	"title": "Noise Texture",
+	"type": "registry:block",
+	"description": "An SVG fractal noise layer using feTurbulence for subtle texture overlays.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\r\n\timport type { SVGAttributes } from \"svelte/elements\";\r\n\timport { cn } from \"$UTILS$\";\r\n\r\n\tinterface NoiseTextureProps extends SVGAttributes<SVGSVGElement> {\r\n\t\tclass?: string;\r\n\t\t/**\r\n\t\t * `baseFrequency` for `feTurbulence`; higher values yield finer-grained noise.\r\n\t\t * @default 0.4\r\n\t\t */\r\n\t\tfrequency?: number;\r\n\t\t/**\r\n\t\t * `numOctaves` for `feTurbulence`; more octaves add detail at smaller scales.\r\n\t\t * @default 6\r\n\t\t */\r\n\t\toctaves?: number;\r\n\t\t/**\r\n\t\t * Linear slope on each channel after desaturation; adjusts contrast of the noise.\r\n\t\t * @default 0.15\r\n\t\t */\r\n\t\tslope?: number;\r\n\t\t/**\r\n\t\t * Opacity of the filled noise layer (`rect`).\r\n\t\t * @default 0.6\r\n\t\t */\r\n\t\tnoiseOpacity?: number;\r\n\t}\r\n\r\n\tlet {\r\n\t\tclass: className,\r\n\t\tfrequency = 0.4,\r\n\t\toctaves = 6,\r\n\t\tslope = 0.15,\r\n\t\tnoiseOpacity = 0.6,\r\n        ...props\r\n\t}: NoiseTextureProps = $props();\r\n\r\n    let filterId = $props.id();\r\n</script>\r\n\r\n<svg\r\n\tclass={cn(\r\n\t\t\"pointer-events-none absolute inset-0 z-0 size-full opacity-50 select-none dark:opacity-[0.75]\",\r\n\t\tclassName\r\n\t)}\r\n\txmlns=\"http://www.w3.org/2000/svg\"\r\n\t{...props}\r\n>\r\n\t<filter id={filterId}>\r\n\t\t<feTurbulence\r\n\t\t\ttype=\"fractalNoise\"\r\n\t\t\tbaseFrequency={frequency}\r\n\t\t\tnumOctaves={octaves}\r\n\t\t\tstitchTiles=\"stitch\"\r\n\t\t/>\r\n\t\t<feColorMatrix type=\"saturate\" values=\"0\" />\r\n\t\t<feComponentTransfer>\r\n\t\t\t<feFuncR type=\"linear\" {slope} />\r\n\t\t\t<feFuncG type=\"linear\" {slope} />\r\n\t\t\t<feFuncB type=\"linear\" {slope} />\r\n\t\t</feComponentTransfer>\r\n\t</filter>\r\n\t<rect width=\"100%\" height=\"100%\" filter={`url(#${filterId})`} opacity={noiseOpacity} />\r\n</svg>\r\n",
+			"type": "registry:component",
+			"target": "magic/noise-texture/noise-texture.svelte"
+		},
+		{
+			"content": "import NoiseTexture from \"./noise-texture.svelte\";\r\nexport { NoiseTexture };",
+			"type": "registry:file",
+			"target": "magic/noise-texture/index.ts"
+		}
+	]
+}
