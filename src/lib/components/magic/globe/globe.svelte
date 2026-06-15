@@ -11,7 +11,8 @@
 
 	let { class: className, config = {} }: Props = $props();
 
-	const size = 300;
+	let size = $derived(config.width ?? 300);
+
 	const baseTheta = 0.2;
 	const thetaOffsetMin = -0.4;
 	const thetaOffsetMax = 0.4;
@@ -147,16 +148,17 @@
 			phi: 0,
 			theta: baseTheta,
 			dark: 0,
-			diffuse: 1.2,
-			mapSamples: 16000,
+			diffuse: 1.7,
+			mapSamples: 13000,
 			mapBrightness: 6,
 			baseColor: [1, 1, 1],
-			markerColor: [0.2, 0.4, 1],
+			markerColor: [0.9, 0.4, 0.1],
 			glowColor: [1, 1, 1],
 			markers: [
-				{ location: [37.78, -122.44], size: 0.03, id: "sf" },
-				{ location: [40.71, -74.01], size: 0.03, id: "nyc" },
+				{ location: [37.78, -122.44], size: 0.026, id: "sf" },
+				{ location: [40.71, -74.01], size: 0.026, id: "nyc" },
 			],
+			markerElevation: 0,
 			...config,
 		} satisfies COBEOptions);
 
@@ -233,31 +235,15 @@
 	});
 </script>
 
-<div class={cn("globe-container relative mx-auto aspect-square w-full max-w-150", className)}>
-	<div class="globe">
-		<canvas bind:this={canvas} class:dragging={isDragging} onpointerdown={handlePointerDown}
-		></canvas>
-	</div>
+<div
+	class={cn("globe-container absolute inset-0 mx-auto aspect-square w-full max-w-150", className)}
+>
+	<canvas
+		bind:this={canvas}
+		class={cn(
+			"block size-full cursor-grab touch-none contain-[layout_paint_size] select-none",
+			isDragging && "cursor-grabbing"
+		)}
+		onpointerdown={handlePointerDown}
+	></canvas>
 </div>
-
-<style>
-	.globe {
-		position: relative;
-		width: 300px;
-		height: 300px;
-	}
-
-	canvas {
-		display: block;
-		width: 100%;
-		height: 100%;
-		cursor: grab;
-		touch-action: none;
-		user-select: none;
-		/* border: 1px solid #d4d4d8; */
-	}
-
-	canvas.dragging {
-		cursor: grabbing;
-	}
-</style>

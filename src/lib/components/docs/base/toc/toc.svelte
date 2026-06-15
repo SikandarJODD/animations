@@ -15,7 +15,7 @@
 	let { toc, isChild = false, class: className }: TocProps = $props();
 </script>
 
-<ul class={cn("m-0 list-none text-sm font-normal", { "pl-4": isChild })}>
+<ul class={cn("m-0 list-none text-xs font-normal", { "pl-4": isChild })}>
 	{#each toc as heading, i (i)}
 		<li
 			class={cn("text-muted-foreground mt-0 pt-2 transition-all", {

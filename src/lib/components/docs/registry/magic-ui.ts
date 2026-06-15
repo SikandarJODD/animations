@@ -422,9 +422,9 @@ export const magicUIComponents: MagicComponent[] = [
 		desc: "A customizable, physics-based smooth cursor animation component for React applications.",
 	},
 	{
-		id: "sparkle-text",
-		name: "Sparkle Text",
-		href: "/magic/docs/components/sparkle-text",
+		id: "sparkles-text",
+		name: "Sparkles Text",
+		href: "/magic/docs/components/sparkles-text",
 		category: "Text Animations",
 		desc: "A text component with animated sparkles that appear and disappear randomly.",
 		badge: "New",

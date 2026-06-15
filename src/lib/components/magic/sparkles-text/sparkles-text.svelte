@@ -87,7 +87,7 @@
 
 <svelte:element
 	this={as}
-	class={cn("text-6xl font-bold", className)}
+	class={cn("text-6xl font-medium", className)}
 	style={rootStyle}
 	{...restProps}
 >

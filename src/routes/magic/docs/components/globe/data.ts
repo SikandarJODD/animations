@@ -9,24 +9,24 @@ import PreviewCodeRaw from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "globe",
 	title: "Globe",
-	description: "TODO: document Globe.",
+	description: "An autorotating, interactive, and highly performant globe made using WebGL.",
 	category: "magic",
 };
 
 const seo: SEO = {
 	title: "Globe",
-	description: "TODO: add an SEO description for Globe.",
+	description: "An autorotating, interactive, and highly performant globe made using WebGL.",
 	keywords: ["Svelte", "Globe", "Magic"],
 	titleTemplate: "%s | Svelte Magic UI",
 };
 
 const installBlock: InstallComponentDocs = {
-	packages: [],
+	packages: ["cobe"],
 	installCode: [
 		{ filename: "globe.svelte", filecode: GlobeSvelteRaw, lang: "svelte", isExpand: true, },
 		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", }
 	],
-	folderStructure: "src/\n`-- lib/\n    `-- components/\n        `-- magic/\n            `-- globe/\n                |-- globe.svelte\n                `-- index.ts",
+	folderStructure: ''
 };
 
 export const data: ComponentDoc = {

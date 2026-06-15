@@ -7,13 +7,13 @@
 </script>
 
 <div class={`mt-6 border-t border-border/60 pt-6 ${className}`}>
-	<h2 class="text-sm font-medium">Contribute</h2>
+	<h2 class="text-xs font-medium">Contribute</h2>
 
 	<nav class="mt-3">
 		<ul class="space-y-1.5">
 			<li>
 				<a
-					class="text-muted-foreground hover:text-foreground inline-flex items-center gap-2.5 text-sm transition-colors"
+					class="text-muted-foreground hover:text-foreground inline-flex items-center gap-2.5 text-xs transition-colors"
 					href={`${githubBase}/issues/new?template=bug_report.md`}
 					target="_blank"
 					rel="noreferrer"
@@ -24,7 +24,7 @@
 			</li>
 			<li>
 				<a
-					class="text-muted-foreground hover:text-foreground inline-flex items-center gap-2.5 text-sm transition-colors"
+					class="text-muted-foreground hover:text-foreground inline-flex items-center gap-2.5 text-xs transition-colors"
 					href={`${githubBase}/issues/new?template=feature_request.md`}
 					target="_blank"
 					rel="noreferrer"
