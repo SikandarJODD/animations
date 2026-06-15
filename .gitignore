@@ -28,3 +28,4 @@ vite.config.ts.timestamp-*
 /src/lib/components/magic/flow
 /src/lib/styles
 commands.md
+docs-guide.md

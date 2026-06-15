@@ -111,4 +111,58 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 	},
 	examples,
+	props: [
+		{
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					default: "undefined",
+					description: "Inline content rendered inside the animated highlight span.",
+				},
+				{
+					name: "as",
+					type: "keyof SvelteHTMLElements",
+					default: '"span"',
+					description: "HTML element used for the outer wrapper.",
+				},
+				{
+					name: "triggerType",
+					type: '"hover" | "ref" | "inView" | "auto"',
+					default: '"inView"',
+					description: "Controls whether the highlight responds to hover, viewport, binding, or immediately.",
+				},
+				{
+					name: "transition",
+					type: "Transition",
+					default: '{ type: "spring", duration: 1, delay: 0, bounce: 0 }',
+					description: "Motion transition used for the highlight sweep animation.",
+				},
+				{
+					name: "useInViewOptions",
+					type: "{ once?: boolean; amount?: \"some\" | \"all\" | number; margin?: string; root?: HTMLElement | Document }",
+					default: "{ once: true, amount: 0.1 }",
+					description: "Observer options used when `triggerType` is `inView`.",
+				},
+				{
+					name: "highlightColor",
+					type: "string",
+					default: '"hsl(25, 90%, 80%)"',
+					description: "Color used to draw the animated background highlight.",
+				},
+				{
+					name: "direction",
+					type: '"ltr" | "rtl" | "ttb" | "btt"',
+					default: '"ltr"',
+					description: "Direction the highlight expands from.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to both the wrapper element and animated inline span.",
+				},
+			],
+		},
+	],
 };

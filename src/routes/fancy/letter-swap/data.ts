@@ -87,6 +87,50 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 	},
 	examples,
+	props: [
+		{
+			name: "Shared Props",
+			desc: "These props apply to both the forward and ping-pong Letter Swap variants shown on this page.",
+			props: [
+				{
+					name: "label",
+					type: "string",
+					required: true,
+					description: "Text string split into characters and animated on hover.",
+				},
+				{
+					name: "reverse",
+					type: "boolean",
+					default: "true",
+					description: "Reverses the vertical swap direction for the entering characters.",
+				},
+				{
+					name: "transition",
+					type: "AnimationOptions",
+					default: '{ type: "spring", duration: 0.7 }',
+					description: "Motion options used for the character swap animation.",
+				},
+				{
+					name: "staggerDuration",
+					type: "number",
+					default: "0.03",
+					description: "Delay in seconds between adjacent character swaps.",
+				},
+				{
+					name: "staggerFrom",
+					type: '"first" | "last" | "center" | number',
+					default: '"first"',
+					description: "Starting point used when calculating stagger delays.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Classes merged onto the interactive text wrapper.",
+				},
+			],
+		},
+	],
 };
 
 // Letter Swap Installation

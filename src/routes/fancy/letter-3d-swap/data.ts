@@ -105,4 +105,70 @@ export const data: ComponentDoc = {
 	},
 	previewClass: "p-0",
 	examples,
+	props: [
+		{
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					default: "undefined",
+					description: "Snippet content flattened into grapheme-safe characters for the 3D flip.",
+				},
+				{
+					name: "as",
+					type: "keyof SvelteHTMLElements",
+					default: '"p"',
+					description: "HTML element used for the interactive text wrapper.",
+				},
+				{
+					name: "mainClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to the root flex wrapper before `class` is merged in.",
+				},
+				{
+					name: "frontFaceClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to the visible face of each 3D character box.",
+				},
+				{
+					name: "secondFaceClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to the rotating second face of each character box.",
+				},
+				{
+					name: "staggerDuration",
+					type: "number",
+					default: "0.05",
+					description: "Delay in seconds between adjacent character flips.",
+				},
+				{
+					name: "staggerFrom",
+					type: '"first" | "last" | "center" | "random" | number',
+					default: '"first"',
+					description: "Starting point used to compute the per-character stagger delay.",
+				},
+				{
+					name: "transition",
+					type: "AnimationOptions",
+					default: '{ type: "spring", damping: 30, stiffness: 300 }',
+					description: "Motion options used when rotating the characters.",
+				},
+				{
+					name: "rotateDirection",
+					type: '"top" | "right" | "bottom" | "left"',
+					default: '"right"',
+					description: "Direction each character box rotates toward on hover.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes merged onto the root wrapper.",
+				},
+			],
+		},
+	],
 };

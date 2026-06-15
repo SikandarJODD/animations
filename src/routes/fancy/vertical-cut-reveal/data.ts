@@ -139,4 +139,88 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 	},
 	examples,
+	props: [
+		{
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					default: "undefined",
+					description: "Snippet content observed and split into animated units.",
+				},
+				{
+					name: "reverse",
+					type: "boolean",
+					default: "false",
+					description: "Reverses the reveal direction so units enter from above instead of below.",
+				},
+				{
+					name: "transition",
+					type: "AnimationOptions",
+					default: '{ type: "spring", stiffness: 190, damping: 22 }',
+					description: "Motion options used for each revealed unit.",
+				},
+				{
+					name: "splitBy",
+					type: '"words" | "characters" | "lines" | string',
+					default: '"words"',
+					description: "Controls whether the text is split by words, characters, lines, or a custom delimiter.",
+				},
+				{
+					name: "staggerDuration",
+					type: "number",
+					default: "0.2",
+					description: "Delay in seconds between animated units.",
+				},
+				{
+					name: "staggerFrom",
+					type: '"first" | "last" | "center" | "random" | number',
+					default: '"first"',
+					description: "Starting point used when calculating stagger delays.",
+				},
+				{
+					name: "containerClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to the outer flex container.",
+				},
+				{
+					name: "wordLevelClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to each overflow-hidden group wrapper.",
+				},
+				{
+					name: "elementLevelClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to each individual animated unit wrapper.",
+				},
+				{
+					name: "onStart",
+					type: "() => void",
+					default: "undefined",
+					description: "Called when the reveal animation begins.",
+				},
+				{
+					name: "onComplete",
+					type: "() => void",
+					default: "undefined",
+					description: "Called after the final visible unit finishes animating.",
+				},
+				{
+					name: "autoStart",
+					type: "boolean",
+					default: "true",
+					description: "Starts the reveal automatically instead of waiting for `startAnimation()`.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes merged onto the outer container.",
+				},
+			],
+		},
+	],
 };

@@ -1,143 +1,56 @@
-````markdown
 # Word Rotate
 
-A component that cycles through an array of words with smooth fade and slide animations between transitions.
+A vertical rotation of words
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/word-rotate.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/word-rotate.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/word-rotate.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/word-rotate.json
 ```
 
-  </Tab>
-  <Tab value="Manual">
-
-### Manual Installation
-
-```bash
-# Using npm
-npm install motion-sv
-
-# Using pnpm
-pnpm add motion-sv
-
-# Using yarn
-yarn add motion-sv
-```
-
-Copy and paste the component source code into your project.
-
-  </Tab>
-</Tabs>
-
-## Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { WordRotate } from "$lib/components/magic/word-rotate";
+	import { WordRotate } from "$lib/components/magic/word-rotate";
 </script>
 
-<WordRotate words={["Fast", "Modern", "Beautiful", "Simple"]} />
+<WordRotate class="text-4xl font-bold text-black dark:text-white" words={["Word", "Rotate"]} />
 ```
-
-## Props
-
-| Prop          | Type          | Default                                | Description                            |
-| ------------- | ------------- | -------------------------------------- | -------------------------------------- |
-| `words`       | `string[]`    | Required                               | Array of words to rotate through       |
-| `duration`    | `number`      | `2500`                                 | Duration each word stays visible (ms)  |
-| `class`       | `string`      | `""`                                   | Additional CSS classes to apply        |
-| `motionProps` | `MotionProps` | `{initial, animate, exit, transition}` | Custom motion animation properties     |
-| `as`          | `ElementType` | `"h1"`                                 | HTML element type (h1, h2, span, etc.) |
-
-### Default Motion Props
-
-```typescript
-{
-  initial: { opacity: 0, y: -50 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: 50 },
-  transition: { duration: 0.25, ease: "easeOut" }
-}
-```
-
-## Features
-
-- Smooth word rotation with fade and slide
-- Customizable transition duration
-- AnimatePresence for enter/exit animations
-- Configurable motion properties
-- Support for any HTML text element
-- Infinite cycling through word array
-- Automatic cleanup on unmount
 
 ## Examples
 
-### Basic Usage
+### 1. Default Example
 
 ```svelte
-<WordRotate
-  words={["Innovation", "Excellence", "Quality"]}
-  class="text-primary text-4xl font-bold"
-/>
+<script lang="ts">
+	import { WordRotate } from "$lib/components/magic/word-rotate";
+</script>
+
+<WordRotate class="text-4xl font-bold text-black dark:text-white" words={["Word", "Rotate"]} />
 ```
 
-### Fast Rotation
+## Usage
 
-```svelte
-<WordRotate
-  words={["Quick", "Fast", "Rapid", "Swift"]}
-  duration={1500}
-  class="text-3xl"
-/>
-```
+Import `WordRotate` from `$lib/components/magic/word-rotate` and pass the props you need for your use case.
 
-### Slow Rotation
+## Props
 
-```svelte
-<WordRotate
-  words={["Patience", "Calm", "Peace"]}
-  duration={4000}
-  class="text-5xl font-light"
-/>
-```
+A component for Word Rotate.
 
-### Custom Element
-
-```svelte
-<WordRotate
-  words={["Hello", "Bonjour", "Hola"]}
-  as="span"
-  class="inline-block text-2xl"
-/>
-```
-
-### Custom Motion
-
-```svelte
-<WordRotate
-  words={["Slide", "In", "Out"]}
-  motionProps={{
-    initial: { opacity: 0, x: -100 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 100 },
-    transition: { duration: 0.5 },
-  }}
-/>
-```
-
-## Notes
-
-- Uses setInterval for word rotation
-- AnimatePresence handles smooth transitions
-- Overflow hidden prevents layout shifts
-- Py-2 padding prevents clipping during animation
-- Default animations: slide up on enter, slide down on exit
-- Interval automatically clears on component unmount
-- Word index cycles back to 0 after reaching the end
-````
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `class` | `string` | `""` | Additional CSS classes to apply |
+| `words` | `string[]` | `required` | Array of words to rotate through |
+| `duration` | `number` | `2500` | Duration between word changes in milliseconds |
+| `motionProps` | `MotionProps` | `{ initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0, y: 50 }, transition: { duration: 0.25, ease: 'easeOut' } }` | Motion animation properties |

@@ -1,233 +1,159 @@
 # Dotted Map
 
-The Dotted Map component renders an interactive SVG-based world map using dots. It's perfect for visualizing global data, showing office locations, highlighting service areas, or creating stunning hero sections with geographic context.
-
-## Features
-
-- **SVG-Based**: Lightweight, scalable vector graphics that look crisp at any size
-- **Customizable Markers**: Add location markers with latitude/longitude coordinates
-- **Dot Styling**: Control dot size, color, and density
-- **Staggered Rows**: Optional honeycomb-style staggered dot pattern
-- **Responsive**: Automatically scales to fit container
-- **Performant**: Efficient rendering using `piri` library
+An interactive world map visualization with customizable markers and styling.
 
 ## Installation
 
-### CLI Installation
+```bash
+# npm
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dotted-map.json
 
-Use the shadcn-svelte CLI to install the component:
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dotted-map.json
 
-::: code-group
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dotted-map.json
 
-```bash [npx]
-npx shadcn-svelte@latest add "https://animations.sikandarjodd.com/r/dotted-map.json"
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dotted-map.json
 ```
 
-```bash [pnpm]
-pnpm dlx shadcn-svelte@latest add "https://animations.sikandarjodd.com/r/dotted-map.json"
+## Preview
+
+```svelte
+<script lang="ts">
+	import DottedMap from "$lib/components/magic/dotted-map/dotted-map.svelte";
+
+	const markers = [
+		{
+			lat: 40.7128,
+			lng: -74.006,
+			size: 0.3,
+		}, // New York
+		{
+			lat: 34.0522,
+			lng: -118.2437,
+			size: 0.3,
+		}, // Los Angeles
+		{
+			lat: 51.5074,
+			lng: -0.1278,
+			size: 0.3,
+		}, // London
+		{
+			lat: -33.8688,
+			lng: 151.2093,
+			size: 0.3,
+		}, // Sydney
+		{
+			lat: 48.8566,
+			lng: 2.3522,
+			size: 0.3,
+		}, // Paris
+		{
+			lat: 35.6762,
+			lng: 139.6503,
+			size: 0.3,
+		}, // Tokyo
+		{
+			lat: 55.7558,
+			lng: 37.6176,
+			size: 0.3,
+		}, // Moscow
+		{
+			lat: 39.9042,
+			lng: 116.4074,
+			size: 0.3,
+		}, // Beijing
+		{
+			lat: 19.076,
+			lng: 72.8777,
+			size: 0.3,
+		}, // Mumbai
+		{
+			lat: -23.5505,
+			lng: -46.6333,
+			size: 0.3,
+		}, // São Paulo
+		{
+			lat: 1.3521,
+			lng: 103.8198,
+			size: 0.3,
+		}, // Singapore
+		{
+			lat: 25.2048,
+			lng: 55.2708,
+			size: 0.3,
+		}, // Dubai
+		{
+			lat: 52.52,
+			lng: 13.405,
+			size: 0.3,
+		}, // Berlin
+		{
+			lat: 19.4326,
+			lng: -99.1332,
+			size: 0.3,
+		}, // Mexico City
+		{
+			lat: -26.2041,
+			lng: 28.0473,
+			size: 0.3,
+		}, // Johannesburg
+	];
+</script>
+
+<div class="relative mx-auto h-125 w-full">
+	<div class="to-background absolute inset-0 bg-radial from-transparent to-70%"></div>
+	<DottedMap {markers} />
+</div>
 ```
 
-```bash [bun]
-bunx shadcn-svelte@latest add "https://animations.sikandarjodd.com/r/dotted-map.json"
-```
+## Examples
 
-:::
+### 1. Custom Dot Radius
 
-### Manual Installation
+Customize the size of the dots on the map for a finer or coarser appearance.
 
-#### 1. Install Dependencies
+```svelte
+<script lang="ts">
+	import DottedMap from "$lib/components/magic/dotted-map/dotted-map.svelte";
+</script>
 
-The component requires the `piri` package:
-
-::: code-group
-
-```bash [npm]
-npm install piri
-```
-
-```bash [pnpm]
-pnpm add piri
-```
-
-```bash [yarn]
-yarn add piri
-```
-
-```bash [bun]
-bun add piri
-```
-
-:::
-
-#### 2. Copy the Component
-
-Copy the `DottedMap` component to your project:
-
-```
-src/
-└── lib/
-    └── components/
-        └── magic/
-            └── dotted-map/
-                ├── dotted-map.svelte
-                └── index.ts
+<div class="relative mx-auto h-125 w-full overflow-hidden rounded-lg border">
+	<DottedMap dotRadius={0.2} dotColor="#3DECFF" />
+</div>
 ```
 
 ## Usage
 
-### Basic Usage
-
-```svelte
-<script lang="ts">
-  import { DottedMap } from "$lib/components/magic/dotted-map";
-</script>
-
-<div class="h-[500px] w-full">
-  <DottedMap />
-</div>
-```
-
-### With Markers
-
-Add markers to highlight specific locations on the map using latitude and longitude coordinates:
-
-```svelte
-<script lang="ts">
-  import { DottedMap } from "$lib/components/magic/dotted-map";
-
-  const markers = [
-    { lat: 40.7128, lng: -74.006, size: 0.3 }, // New York
-    { lat: 51.5074, lng: -0.1278, size: 0.3 }, // London
-    { lat: 35.6762, lng: 139.6503, size: 0.3 }, // Tokyo
-    { lat: -33.8688, lng: 151.2093, size: 0.3 }, // Sydney
-  ];
-</script>
-
-<div class="h-[500px] w-full overflow-hidden rounded-lg border">
-  <DottedMap {markers} markerColor="#FF6900" />
-</div>
-```
-
-### Custom Styling
-
-Customize the appearance with dot color, radius, and map density:
-
-```svelte
-<script lang="ts">
-  import { DottedMap } from "$lib/components/magic/dotted-map";
-</script>
-
-<div class="h-[500px] w-full">
-  <DottedMap dotRadius={0.15} dotColor="#3DECFF" mapSamples={8000} />
-</div>
-```
-
-### With Overlay Effect
-
-Create a beautiful fading effect with a radial gradient overlay:
-
-```svelte
-<script lang="ts">
-  import { DottedMap } from "$lib/components/magic/dotted-map";
-
-  const markers = [
-    { lat: 40.7128, lng: -74.006, size: 0.3 },
-    { lat: 34.0522, lng: -118.2437, size: 0.3 },
-    { lat: 51.5074, lng: -0.1278, size: 0.3 },
-  ];
-</script>
-
-<div class="relative h-[500px] w-full overflow-hidden rounded-lg border">
-  <!-- Radial gradient overlay -->
-  <div
-    class="to-background absolute inset-0 bg-radial from-transparent to-70%"
-  />
-  <DottedMap {markers} />
-</div>
-```
+Import `DottedMap` from `$lib/components/magic/dotted-map` and pass the props you need for your use case.
 
 ## Props
 
 ### DottedMap
 
-| Prop          | Type       | Default          | Description                                       |
-| ------------- | ---------- | ---------------- | ------------------------------------------------- |
-| `width`       | `number`   | `150`            | Width of the SVG viewBox                          |
-| `height`      | `number`   | `75`             | Height of the SVG viewBox                         |
-| `mapSamples`  | `number`   | `5000`           | Number of dots to render (higher = more detail)   |
-| `markers`     | `Marker[]` | `[]`             | Array of marker objects with lat, lng coordinates |
-| `dotColor`    | `string`   | `"currentColor"` | Color of the map dots                             |
-| `markerColor` | `string`   | `"#FF6900"`      | Color of the location markers                     |
-| `dotRadius`   | `number`   | `0.2`            | Radius of each dot                                |
-| `stagger`     | `boolean`  | `true`           | Whether to stagger alternating rows (honeycomb)   |
-| `class`       | `string`   | `""`             | Additional CSS classes to apply to the SVG        |
-| `style`       | `string`   | `""`             | Inline styles to apply to the SVG                 |
+An SVG-based world map with dots and customizable markers.
 
-### Marker Interface
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `width` | `number` | `150` | Width of the map |
+| `height` | `number` | `75` | Height of the map |
+| `mapSamples` | `number` | `5000` | Number of dots to render on the map |
+| `markers` | `Marker[]` | `[]` | Array of marker objects with lat, lng, and optional size |
+| `dotColor` | `string` | `undefined` | Color of the dots (uses currentColor if not specified) |
+| `markerColor` | `string` | `#FF6900` | Color of the marker dots |
+| `dotRadius` | `number` | `0.2` | Radius of each dot |
+| `stagger` | `boolean` | `true` | Whether to stagger alternating rows |
+| `class` | `string` | `""` | Additional CSS classes to apply |
+| `style` | `string` | `""` | Inline styles to apply |
 
-| Property | Type     | Required | Description                                      |
-| -------- | -------- | -------- | ------------------------------------------------ |
-| `lat`    | `number` | Yes      | Latitude of the marker (-90 to 90)               |
-| `lng`    | `number` | Yes      | Longitude of the marker (-180 to 180)            |
-| `size`   | `number` | No       | Custom size for this marker (default: dotRadius) |
+### Marker
 
-## Guidance
+Marker object interface for specifying locations on the map.
 
-### Choosing Map Samples
-
-The `mapSamples` prop controls the density of dots on the map:
-
-- **Low (2000-3000)**: Faster rendering, abstract appearance
-- **Medium (5000)**: Good balance of detail and performance (default)
-- **High (8000-10000)**: More detailed map, slower initial render
-
-### Dot Radius Tips
-
-- Use smaller values (`0.1-0.2`) for a finer, more detailed look
-- Use larger values (`0.3-0.5`) for a bolder, more stylized appearance
-- Marker size should typically be slightly larger than dot radius for visibility
-
-### Common Marker Coordinates
-
-Here are some commonly used city coordinates for reference:
-
-| City        | Latitude | Longitude |
-| ----------- | -------- | --------- |
-| New York    | 40.7128  | -74.006   |
-| Los Angeles | 34.0522  | -118.2437 |
-| London      | 51.5074  | -0.1278   |
-| Paris       | 48.8566  | 2.3522    |
-| Tokyo       | 35.6762  | 139.6503  |
-| Sydney      | -33.8688 | 151.2093  |
-| Dubai       | 25.2048  | 55.2708   |
-| Singapore   | 1.3521   | 103.8198  |
-| Berlin      | 52.52    | 13.405    |
-| São Paulo   | -23.5505 | -46.6333  |
-
-### Styling Tips
-
-1. **Container Sizing**: Always wrap the component in a container with defined dimensions
-2. **Overflow Hidden**: Use `overflow-hidden` on the container for clean edges
-3. **Dark Mode**: The default dot color uses `currentColor`, which adapts to text color
-4. **Overlays**: Add gradient overlays for depth and visual interest
-5. **Border Radius**: Round the container corners for a modern look
-
-### Performance Considerations
-
-- For hero sections with many markers, keep `mapSamples` at default (5000)
-- Use CSS transitions for smooth marker animations rather than re-rendering
-- Consider lazy loading the map for below-the-fold content
-
-## Examples
-
-### Global Office Locations
-
-Perfect for showcasing company presence around the world.
-
-### Service Coverage Map
-
-Highlight regions where your service is available.
-
-### Interactive Dashboard
-
-Use as a backdrop for data visualization dashboards.
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `lat` | `number` | `required` | Latitude of the marker |
+| `lng` | `number` | `required` | Longitude of the marker |
+| `size` | `number` | `dotRadius` | Optional custom size for this marker |

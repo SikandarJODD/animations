@@ -1,91 +1,76 @@
-````markdown
 # Morphing Text
 
-A text component that smoothly morphs between multiple text strings with a blur transition effect.
+A dynamic text morphing component for Magic UI.
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-text.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-text.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-text.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-text.json
 ```
 
-  </Tab>
-  <Tab value="Manual">
-
-### Manual Installation
-
-No additional dependencies required. Copy and paste the component source code into your project.
-
-  </Tab>
-</Tabs>
-
-## Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { MorphingText } from "$lib/components/magic/morphing-text";
+	import { MorphingText } from "$lib/components/magic/morphing-text";
+	const texts = [
+		"Hello",
+		"Morphing",
+		"Text",
+		"Animation",
+		"Svelte",
+		"Component",
+		"Smooth",
+		"Transition",
+		"Engaging",
+	];
 </script>
 
-<MorphingText
-  texts={["Hello", "World", "Morphing", "Text"]}
-  class="text-4xl font-bold"
-/>
+<MorphingText {texts} />
 ```
-
-## Props
-
-| Prop    | Type       | Default  | Description                            |
-| ------- | ---------- | -------- | -------------------------------------- |
-| `texts` | `string[]` | Required | Array of text strings to morph between |
-| `class` | `string`   | `""`     | Additional CSS classes to apply        |
-
-## Features
-
-- Smooth morphing transition between texts
-- Automatic cycling through text array
-- Blur effect during transitions
-- Customizable morph and cooldown timing
-- Lightweight vanilla implementation
-- No external animation libraries required
 
 ## Examples
 
-### Multiple Words
+### 1. Default Example
 
 ```svelte
-<MorphingText
-  texts={["Innovation", "Creativity", "Excellence", "Quality"]}
-  class="text-primary text-6xl font-black"
-/>
+<script lang="ts">
+	import { MorphingText } from "$lib/components/magic/morphing-text";
+	const texts = [
+		"Hello",
+		"Morphing",
+		"Text",
+		"Animation",
+		"Svelte",
+		"Component",
+		"Smooth",
+		"Transition",
+		"Engaging",
+	];
+</script>
+
+<MorphingText {texts} />
 ```
 
-### Short Phrases
+## Usage
 
-```svelte
-<MorphingText
-  texts={["Welcome", "Bienvenue", "Bienvenido", "Willkommen"]}
-  class="text-5xl"
-/>
-```
+Import `MorphingText` from `$lib/components/magic/morphing-text` and pass the props you need for your use case.
 
-### Brand Messages
+## Props
 
-```svelte
-<MorphingText
-  texts={["Build Fast", "Ship Faster", "Scale Better"]}
-  class="text-7xl font-bold"
-/>
-```
+A component for Morphing Text.
 
-## Notes
-
-- The component uses requestAnimationFrame for smooth animations
-- Morph time is set to 1.5 seconds with a 0.5 second cooldown
-- Automatically handles text length differences
-- Filter and opacity transitions create the morphing effect
-````
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `class` | `string` | `""` | Additional CSS classes to apply |
+| `texts` | `string[]` | `[]` | Array of texts to morph through |

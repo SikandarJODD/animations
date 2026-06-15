@@ -1,95 +1,107 @@
-````markdown
 # Grid Pattern
 
-An SVG-based grid pattern background component with support for highlighted squares and customizable grid dimensions.
+A background grid pattern made with SVGs, fully customizable using Tailwind CSS.
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/grid-pattern.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/grid-pattern.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/grid-pattern.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/grid-pattern.json
 ```
 
-  </Tab>
-  <Tab value="Manual">
-
-### Manual Installation
-
-No additional dependencies required. Copy and paste the component source code into your project.
-
-  </Tab>
-</Tabs>
-
-## Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { GridPattern } from "$lib/components/magic/grid-pattern";
+	import { GridPattern } from "$lib/components/magic/grid-pattern";
+	import { cn } from "$lib/utils";
 </script>
 
-<div class="relative h-[400px] w-full overflow-hidden rounded-lg border">
-  <GridPattern
-    width={20}
-    height={20}
-    x={-1}
-    y={-1}
-    class="stroke-muted-foreground/30"
-  />
+<div
+	class="bg-background relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
+>
+	<GridPattern
+		squares={[
+			[4, 4],
+			[5, 1],
+			[8, 2],
+			[5, 3],
+			[5, 5],
+			[10, 10],
+			[12, 15],
+			[15, 10],
+			[10, 15],
+			[15, 10],
+			[10, 15],
+			[15, 10],
+		]}
+		class={cn(
+			"[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+			"inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+		)}
+	/>
 </div>
 ```
 
-## Props
-
-| Prop              | Type                      | Default | Description                             |
-| ----------------- | ------------------------- | ------- | --------------------------------------- |
-| `class`           | `string`                  | `""`    | Additional CSS classes to apply         |
-| `width`           | `number`                  | `40`    | The width of each grid cell             |
-| `height`          | `number`                  | `40`    | The height of each grid cell            |
-| `x`               | `number`                  | `-1`    | The x-offset of the pattern             |
-| `y`               | `number`                  | `-1`    | The y-offset of the pattern             |
-| `squares`         | `Array<[number, number]>` | `[]`    | Array of [x, y] coordinates for squares |
-| `strokeDasharray` | `string`                  | `"0"`   | Stroke dash array for dashed lines      |
-
-## Features
-
-- SVG-based for crisp rendering at any size
-- Customizable grid cell dimensions
-- Support for highlighted squares at specific coordinates
-- Dashed line support
-- Lightweight and performant
-
 ## Examples
 
-### With Highlighted Squares
+### 1. Default Example
 
 ```svelte
-<GridPattern
-  width={20}
-  height={20}
-  x={-1}
-  y={-1}
-  squares={[
-    [0, 1],
-    [1, 3],
-    [3, 0],
-    [5, 2],
-  ]}
-  class="stroke-muted-foreground/30 fill-muted/30"
-/>
+<script lang="ts">
+	import { GridPattern } from "$lib/components/magic/grid-pattern";
+	import { cn } from "$lib/utils";
+</script>
+
+<div
+	class="bg-background relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
+>
+	<GridPattern
+		squares={[
+			[4, 4],
+			[5, 1],
+			[8, 2],
+			[5, 3],
+			[5, 5],
+			[10, 10],
+			[12, 15],
+			[15, 10],
+			[10, 15],
+			[15, 10],
+			[10, 15],
+			[15, 10],
+		]}
+		class={cn(
+			"[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+			"inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+		)}
+	/>
+</div>
 ```
 
-### Dashed Grid
+## Usage
 
-```svelte
-<GridPattern
-  width={30}
-  height={30}
-  strokeDasharray="4 2"
-  class="stroke-muted-foreground/20"
-/>
-```
-````
+Import `GridPattern` from `$lib/components/magic/grid-pattern` and pass the props you need for your use case.
+
+## Props
+
+Props for the GridPattern component
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `width` | `number` | `40` | The width of each grid cell |
+| `height` | `number` | `40` | The height of each grid cell |
+| `x` | `number` | `-1` | The x-offset of the pattern |
+| `y` | `number` | `-1` | The y-offset of the pattern |
+| `squares` | `Array<[x: number, y: number]>` | `undefined` | Array of [x, y] coordinates for highlighted squares |
+| `strokeDasharray` | `string` | `"0"` | Stroke dash array for dashed lines |
+| `class` | `string` | `undefined` | Additional CSS classes |

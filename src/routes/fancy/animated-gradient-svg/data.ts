@@ -71,5 +71,34 @@ export const data: ComponentDoc = {
 	},
 	installBlock,
 	seo,
-	props: [],
+	props: [
+		{
+			props: [
+				{
+					name: "colors",
+					type: "string[]",
+					required: true,
+					description: "List of blob colors used to generate the animated gradient field.",
+				},
+				{
+					name: "speed",
+					type: "number",
+					default: "5",
+					description: "Animation duration in seconds shared by each SVG blob.",
+				},
+				{
+					name: "blur",
+					type: '"light" | "medium" | "heavy"',
+					default: '"light"',
+					description: "Controls the blur strength applied to the full gradient layer.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Classes merged onto the outer absolute-positioned wrapper.",
+				},
+			],
+		},
+	],
 };

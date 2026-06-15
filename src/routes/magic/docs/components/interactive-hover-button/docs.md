@@ -1,97 +1,54 @@
-````markdown
 # Interactive Hover Button
 
-A button with an interactive hover effect featuring an expanding dot and sliding text animation with an arrow.
+A visually engaging button component that responds to hover with dynamic transitions, adapting smoothly between light and dark modes for enhanced user interactivity.
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive-hover-button.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive-hover-button.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive-hover-button.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive-hover-button.json
 ```
 
-  </Tab>
-  <Tab value="Manual">
-
-### Manual Installation
-
-```bash
-# Using npm
-npm install lucide-svelte
-
-# Using pnpm
-pnpm add lucide-svelte
-
-# Using yarn
-yarn add lucide-svelte
-```
-
-Copy and paste the component source code into your project.
-
-  </Tab>
-</Tabs>
-
-## Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { InteractiveHoverButton } from "$lib/components/magic/interactive-hover-button";
+	import { InteractiveHoverButton } from "$lib/components/magic/interactive-hover-button";
 </script>
 
-<InteractiveHoverButton>Get Started</InteractiveHoverButton>
+<InteractiveHoverButton>Hover Me</InteractiveHoverButton>
 ```
-
-## Props
-
-| Prop    | Type     | Default | Description                     |
-| ------- | -------- | ------- | ------------------------------- |
-| `class` | `string` | `""`    | Additional CSS classes to apply |
-
-All standard button HTML attributes are supported.
-
-## Features
-
-- Smooth hover animations with expanding dot effect
-- Sliding text transition
-- Arrow icon reveal on hover
-- Fully customizable styling
-- Built-in Lucide icon support
-- Accessible button element
 
 ## Examples
 
-### Custom Styling
+### 1. Default Example
 
 ```svelte
-<InteractiveHoverButton class="bg-primary text-white">
-  Click Me
-</InteractiveHoverButton>
+<script lang="ts">
+	import { InteractiveHoverButton } from "$lib/components/magic/interactive-hover-button";
+</script>
+
+<InteractiveHoverButton>Hover Me</InteractiveHoverButton>
 ```
 
-### With Click Handler
+## Usage
 
-```svelte
-<InteractiveHoverButton onclick={() => console.log("Clicked!")}>
-  Submit
-</InteractiveHoverButton>
-```
+Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
-### Large Button
+## Props
 
-```svelte
-<InteractiveHoverButton class="px-8 py-4 text-lg">
-  Learn More
-</InteractiveHoverButton>
-```
+A component for Interactive Hover Button.
 
-## Notes
-
-- The component uses CSS transitions for smooth animations
-- Arrow icon (ArrowRight) is included from lucide-svelte
-- Works well with Tailwind CSS utility classes
-- Maintains accessibility with proper button semantics
-````
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `class` | `string` | `""` | Additional CSS classes to apply |
+| `children` | `Snippet` | `required` | The content to display inside the button |

@@ -1,53 +1,71 @@
 # Spotify Card
 
-A Spotify preview card for spell-style media sections, with blurred artwork, optional audio preview playback, and server-fetched metadata.
+Display Spotify tracks with album art and blurred background.
 
 ## Installation
 
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/s/spotify-card.json
-```
+npm install spotify-url-info
 
-Install the required package:
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/s/spotify-card.json
+yarn add spotify-url-info
 
-```bash
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/spotify-card.json
 pnpm add spotify-url-info
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/spotify-card.json
+bun add spotify-url-info
 ```
 
-## Required API Route
-
-This component fetches metadata from `/api/spotify`, so you also need the helper route below in your app.
-
-```ts
-// src/routes/api/spotify/+server.ts
-import { json } from "@sveltejs/kit";
-import type { RequestHandler } from "./$types";
-import spotifyUrlInfo, { type Preview } from "spotify-url-info";
-```
-
-Use the full server file from the docs install block or registry install output.
-
-## Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { SpotifyCard } from "$lib/components/spell/spotify-card";
+	import { SpotifyCard } from "$lib/components/spell/spotify-card";
 </script>
 
-<div class="max-w-sm">
-  <SpotifyCard url="https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp" />
+<SpotifyCard
+	url="https://open.spotify.com/track/4n7jnSxVLd8QioibtTDBDq"
+	class="max-h-25 max-w-100"
+/>
+```
+
+## Examples
+
+### 1. Width Example
+
+```svelte
+<script lang="ts">
+	import { SpotifyCard } from "$lib/components/spell/spotify-card";
+</script>
+
+<div class="bg-card mx-auto flex w-full max-w-2xl flex-col gap-4 rounded-3xl border p-6 shadow-sm">
+	<div class="space-y-1">
+		<h3 class="text-sm font-medium tracking-tight">Featured listen</h3>
+		<p class="text-muted-foreground text-sm">
+			Drop the card into a narrower column or media shelf by constraining its width with
+			utility classes.
+		</p>
+	</div>
+
+	<div class="max-w-[360px]">
+		<SpotifyCard url="https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b" class="w-full" />
+	</div>
 </div>
 ```
 
-## Notes
+## Usage
 
-- Preview audio is optional and depends on what Spotify exposes for the selected URL.
-- The component renders a loading skeleton while the API request is in flight.
-- If the request fails, it falls back to an error state instead of rendering partial metadata.
+Import `SpotifyCard` from `$lib/components/spell/spotify-card` and pass the props you need for your use case.
 
 ## Props
 
-| Prop    | Type                  | Default     | Description                                                 |
-| ------- | --------------------- | ----------- | ----------------------------------------------------------- |
-| `url`   | `string`              | required    | The Spotify URL sent to the API route for preview metadata. |
-| `class` | `string \| undefined` | `undefined` | Custom classes merged onto the root card wrapper.           |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `url` | `string` | `required` | The Spotify track, album, playlist, or episode URL sent to the API route for preview metadata. |
+| `class` | `string` | `''` | Custom classes merged onto the root card wrapper. |

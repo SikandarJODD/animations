@@ -111,4 +111,70 @@ export const data: ComponentDoc = {
 	},
 	previewClass: "p-0",
 	examples,
+	props: [
+		{
+			props: [
+				{
+					name: "text",
+					type: "string",
+					required: true,
+					description: "Source text progressively revealed from left to right.",
+				},
+				{
+					name: "scrambleDelay",
+					type: "number",
+					default: "0",
+					description: "Delay in milliseconds before the scramble reveal starts.",
+				},
+				{
+					name: "scrambleSpeed",
+					type: "number",
+					default: "50",
+					description: "Interval in milliseconds between reveal updates.",
+				},
+				{
+					name: "scrambledLetterCount",
+					type: "number",
+					default: "2",
+					description: "Maximum number of trailing scrambled characters shown during the reveal.",
+				},
+				{
+					name: "characters",
+					type: "string",
+					default: '"abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+"',
+					description: "Character pool used to build the temporary scrambled suffix.",
+				},
+				{
+					name: "scrambledClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to the still-scrambled trailing portion of the text.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to the revealed portion of the text.",
+				},
+				{
+					name: "autoStart",
+					type: "boolean",
+					default: "true",
+					description: "Starts the reveal automatically when the component mounts.",
+				},
+				{
+					name: "onStart",
+					type: "() => void",
+					default: "undefined",
+					description: "Called when a reveal cycle begins after any configured delay.",
+				},
+				{
+					name: "onComplete",
+					type: "() => void",
+					default: "undefined",
+					description: "Called after the full text has been completely revealed.",
+				},
+			],
+		},
+	],
 };

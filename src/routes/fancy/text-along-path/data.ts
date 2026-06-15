@@ -108,4 +108,126 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 	},
 	examples,
+	props: [
+		{
+			props: [
+				{
+					name: "path",
+					type: "string",
+					required: true,
+					description: "SVG path data string used as the motion track for the text.",
+				},
+				{
+					name: "text",
+					type: "string",
+					required: true,
+					description: "Text content rendered along the path.",
+				},
+				{
+					name: "pathId",
+					type: "string",
+					default: "auto-generated",
+					description: "Optional id used to link the `<path>` and `<textPath>` nodes.",
+				},
+				{
+					name: "pathClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to the underlying SVG path element.",
+				},
+				{
+					name: "preserveAspectRatio",
+					type: "PreserveAspectRatio",
+					default: '"xMidYMid meet"',
+					description: "SVG preserveAspectRatio value forwarded to the root element.",
+				},
+				{
+					name: "showPath",
+					type: "boolean",
+					default: "false",
+					description: "Displays the underlying guide path using the current text color.",
+				},
+				{
+					name: "width",
+					type: "string | number",
+					default: '"100%"',
+					description: "Width forwarded to the root SVG element.",
+				},
+				{
+					name: "height",
+					type: "string | number",
+					default: '"100%"',
+					description: "Height forwarded to the root SVG element.",
+				},
+				{
+					name: "viewBox",
+					type: "string",
+					default: '"0 0 100 100"',
+					description: "SVG viewBox used to size and scale the path scene.",
+				},
+				{
+					name: "svgClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to the root SVG element.",
+				},
+				{
+					name: "textClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied to each `<textPath>` instance.",
+				},
+				{
+					name: "textAnchor",
+					type: '"start" | "middle" | "end"',
+					default: '"start"',
+					description: "Anchor alignment used for the rendered SVG text.",
+				},
+				{
+					name: "animationType",
+					type: '"auto" | "scroll"',
+					default: '"auto"',
+					description:
+						"Uses SVG `<animate>` loops in `auto` mode or maps scroll progress to `startOffset` in `scroll` mode.",
+				},
+				{
+					name: "duration",
+					type: "number",
+					default: "4",
+					description: "Duration in seconds for the automatic looping animation.",
+				},
+				{
+					name: "repeatCount",
+					type: 'number | "indefinite"',
+					default: '"indefinite"',
+					description: "Repeat count forwarded to the SVG animate elements in auto mode.",
+				},
+				{
+					name: "easingFunction",
+					type: '{ calcMode?: string; keyTimes?: string; keySplines?: string }',
+					default: "{}",
+					description:
+						"Optional SVG animation timing settings forwarded to both auto animation tracks.",
+				},
+				{
+					name: "scrollContainer",
+					type: "HTMLElement | null",
+					default: "undefined",
+					description: "Optional scroll container observed when `animationType` is `scroll`.",
+				},
+				{
+					name: "scrollOffset",
+					type: 'UseScrollOptions["offset"]',
+					default: '["start end", "end end"]',
+					description: "Offset pair used by `motion-sv` when tracking scroll progress.",
+				},
+				{
+					name: "scrollTransformValues",
+					type: "[number, number]",
+					default: "[0, 100]",
+					description: "Maps scroll progress to the text path start offset percentage range.",
+				},
+			],
+		},
+	],
 };

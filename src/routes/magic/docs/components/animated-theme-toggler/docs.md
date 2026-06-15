@@ -1,39 +1,64 @@
-﻿# Animated Theme Toggler
+# Theme Toggler
 
-A smooth animated theme toggler that uses the View Transition API to create a circular reveal effect when switching between light and dark themes.
+An Animated theme toggler component, fully customizable using Tailwind CSS.
 
 ## Installation
 
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-theme-toggler.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-theme-toggler.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-theme-toggler.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-theme-toggler.json
 ```
 
-## Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { AnimatedThemeToggler } from "$lib/components/magic/animated-theme-toggler";
+	import { AnimatedThemeToggler } from "$lib/components/magic/animated-theme-toggler";
 </script>
 
 <AnimatedThemeToggler />
 ```
 
+## Examples
+
+### 1. Default Example
+
+```svelte
+<script lang="ts">
+	import { AnimatedThemeToggler } from "$lib/components/magic/animated-theme-toggler";
+</script>
+
+<AnimatedThemeToggler />
+```
+
+## Usage
+
+Import `AnimatedThemeToggler` from `$lib/components/magic/animated-theme-toggler` and pass the props you need for your use case.
+
+If the component depends on global CSS, add the following styles:
+
+```css
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+```
+
 ## Props
 
-| Prop       | Type     | Default | Description                               |
-| ---------- | -------- | ------- | ----------------------------------------- |
-| `class`    | `string` | `""`    | Additional CSS classes to apply           |
-| `duration` | `number` | `400`   | Duration of the animation in milliseconds |
+A component for smooth theme switching with circular reveal animation.
 
-## Features
-
-- **Smooth Transitions**: Uses the View Transition API for seamless theme switching
-- **Circular Reveal**: Creates a beautiful circular animation expanding from the button
-- **Automatic Detection**: Detects current theme from document class
-- **Persistent Storage**: Saves theme preference to localStorage
-- **Fallback Support**: Works on browsers without View Transition API support
-- **Accessibility**: Includes screen reader support with proper ARIA labels
-
-## Browser Support
-
-The component uses the View Transition API, which is supported in modern browsers. For browsers without support, it falls back to instant theme switching without animation.
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `class` | `string` | `""` | Additional CSS classes to apply |
+| `duration` | `number` | `400` | Duration of the animation in milliseconds |

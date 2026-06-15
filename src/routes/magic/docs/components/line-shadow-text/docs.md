@@ -1,43 +1,70 @@
-````markdown
 # Line Shadow Text
 
-A text component with an animated diagonal line shadow effect that moves across the text.
+A text component with a moving line shadow.
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-text.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-text.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-text.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-text.json
 ```
 
-  </Tab>
-  <Tab value="Manual">
+## Preview
 
-### Manual Installation
+```svelte
+<script lang="ts">
+	import { LineShadowText } from "$lib/components/magic/line-shadow-text";
+	import { mode } from "mode-watcher";
+</script>
 
-```bash
-# Using npm
-npm install motion-sv
-
-# Using pnpm
-pnpm add motion-sv
-
-# Using yarn
-yarn add motion-sv
+<h1
+	class="text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl"
+>
+	Ship
+	<LineShadowText
+		content="Fast"
+		class="italic"
+		shadowColor={mode.current === "dark" ? "white" : "black"}
+	></LineShadowText>
+</h1>
 ```
 
-Copy and paste the component source code into your project.
+## Examples
 
-  </Tab>
-</Tabs>
+### 1. Default Example
 
-## Tailwind CSS Configuration
+```svelte
+<script lang="ts">
+	import { LineShadowText } from "$lib/components/magic/line-shadow-text";
+	import { mode } from "mode-watcher";
+</script>
 
-Add the following to your `layout.css` or global CSS file:
+<h1
+	class="text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl"
+>
+	Ship
+	<LineShadowText
+		content="Fast"
+		class="italic"
+		shadowColor={mode.current === "dark" ? "white" : "black"}
+	></LineShadowText>
+</h1>
+```
+
+## Usage
+
+Import `LineShadowText` from `$lib/components/magic/line-shadow-text` and pass the props you need for your use case.
+
+If the component depends on global CSS, add the following styles:
 
 ```css
 @theme inline {
@@ -54,67 +81,13 @@ Add the following to your `layout.css` or global CSS file:
 }
 ```
 
-## Usage
-
-```svelte
-<script lang="ts">
-  import { LineShadowText } from "$lib/components/magic/line-shadow-text";
-</script>
-
-<LineShadowText
-  content="Animated Shadow"
-  class="text-6xl font-bold"
-  shadowColor="black"
-/>
-```
-
 ## Props
 
-| Prop          | Type          | Default   | Description                             |
-| ------------- | ------------- | --------- | --------------------------------------- |
-| `content`     | `string`      | Required  | The text content to display             |
-| `class`       | `string`      | `""`      | Additional CSS classes to apply         |
-| `shadowColor` | `string`      | `"black"` | Color of the shadow effect              |
-| `as`          | `ElementType` | `"span"`  | HTML element type (span, div, h1, etc.) |
+A component for Line Shadow Text.
 
-## Features
-
-- Animated diagonal line shadow effect
-- Customizable shadow color
-- Support for any HTML text element
-- Pure CSS animation for performance
-- Configurable typography
-
-## Examples
-
-### Large Heading with Shadow
-
-```svelte
-<LineShadowText
-  content="Hello World"
-  as="h1"
-  class="text-8xl font-black"
-  shadowColor="#333"
-/>
-```
-
-### Colored Shadow
-
-```svelte
-<LineShadowText
-  content="Gradient Text"
-  class="text-5xl"
-  shadowColor="#ff0066"
-/>
-```
-
-### Paragraph Text
-
-```svelte
-<LineShadowText
-  content="Animated paragraph text with moving shadow."
-  as="p"
-  class="text-2xl"
-/>
-```
-````
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `class` | `string` | `""` | Additional CSS classes to apply |
+| `shadowColor` | `string` | `"black"` | Color of the shadow |
+| `as` | `ElementType` | `"span"` | HTML element to render as |
+| `content` | `string` | `""` | Content of the text |

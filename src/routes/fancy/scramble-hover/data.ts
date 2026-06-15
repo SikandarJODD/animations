@@ -109,4 +109,67 @@ export const data: ComponentDoc = {
 	},
 	previewClass: "p-0",
 	examples,
+	props: [
+		{
+			props: [
+				{
+					name: "text",
+					type: "string",
+					required: true,
+					description: "Source text shown when idle and revealed again after scrambling.",
+				},
+				{
+					name: "scrambleSpeed",
+					type: "number",
+					default: "50",
+					description: "Interval in milliseconds between scramble updates while hovering.",
+				},
+				{
+					name: "maxIterations",
+					type: "number",
+					default: "10",
+					description:
+						"Maximum number of random refresh cycles used when `sequential` is disabled.",
+				},
+				{
+					name: "sequential",
+					type: "boolean",
+					default: "false",
+					description:
+						"Reveals one character position at a time instead of running a fixed number of scramble passes.",
+				},
+				{
+					name: "revealDirection",
+					type: '"start" | "end" | "center"',
+					default: '"start"',
+					description: "Direction used for sequential reveals.",
+				},
+				{
+					name: "useOriginalCharsOnly",
+					type: "boolean",
+					default: "false",
+					description:
+						"Restricts scrambling to characters already present in the source text.",
+				},
+				{
+					name: "characters",
+					type: "string",
+					default: '"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+"',
+					description: "Character pool used when generating random scramble symbols.",
+				},
+				{
+					name: "scrambledClass",
+					type: "string",
+					default: "undefined",
+					description: "Classes applied only to character positions that are currently scrambled.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Classes merged onto the rendered motion span.",
+				},
+			],
+		},
+	],
 };
