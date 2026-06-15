@@ -23,6 +23,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create grid pattern effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Grid Pattern", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

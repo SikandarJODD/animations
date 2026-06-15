@@ -54,6 +54,7 @@ const seo: SEO = {
 		"Web Design",
 		"Background",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

@@ -39,6 +39,7 @@ const seo: SEO = {
 		"CSS Effects",
 		"Web Design",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 const tailwind: CodeBlock = {

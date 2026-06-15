@@ -78,6 +78,7 @@ const seo: SEO = {
 		"macOS Dock",
 		"Magnification",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

@@ -72,6 +72,7 @@ const seo: SEO = {
 		"Web Design",
 		"Infinite Scroll",
 	],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

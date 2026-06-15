@@ -23,6 +23,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create Shiny Button effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Shiny Button", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

@@ -26,6 +26,7 @@ const seo: SEO = {
 	description:
 		"Learn how to wrap content with a soft backlight glow effect in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Backlight", "Glow Effect", "SVG Filter", "Svelte 5 Animations"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 const examples: Example[] = [

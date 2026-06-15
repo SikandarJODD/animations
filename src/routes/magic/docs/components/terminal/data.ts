@@ -23,6 +23,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create Terminal effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Terminal", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

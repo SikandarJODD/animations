@@ -66,6 +66,7 @@ const seo: SEO = {
 	title: "Meteors",
 	description: "Learn how to create meteors in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Meteors", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 export const data: ComponentDoc = {

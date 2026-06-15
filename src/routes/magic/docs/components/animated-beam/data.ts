@@ -148,6 +148,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create animated beam effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Animated Beam", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 export const data: ComponentDoc = {

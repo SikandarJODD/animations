@@ -17,6 +17,7 @@ const seo: SEO = {
 	title: "Hexagon Pattern",
 	description: "TODO: add an SEO description for Hexagon Pattern.",
 	keywords: ["Svelte", "Hexagon Pattern", "Magic"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 const installBlock: InstallComponentDocs = {

@@ -23,6 +23,7 @@ const seo: SEO = {
 	description:
 		"Learn how to create Retro Grid effects in Svelte using the Svelte 5 Animations library.",
 	keywords: ["Svelte", "Retro Grid", "Svelte 5 Animations", "Animation", "Web Design"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 let installBlock: InstallComponentDocs = {

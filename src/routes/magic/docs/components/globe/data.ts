@@ -17,6 +17,7 @@ const seo: SEO = {
 	title: "Globe",
 	description: "TODO: add an SEO description for Globe.",
 	keywords: ["Svelte", "Globe", "Magic"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 const installBlock: InstallComponentDocs = {

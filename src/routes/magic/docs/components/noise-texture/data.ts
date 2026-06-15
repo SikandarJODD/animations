@@ -17,6 +17,7 @@ const seo: SEO = {
 	title: "Noise Texture",
 	description: "TODO: add an SEO description for Noise Texture.",
 	keywords: ["Svelte", "Noise Texture", "Magic"],
+	titleTemplate: "%s | Svelte Magic UI",
 };
 
 const installBlock: InstallComponentDocs = {
