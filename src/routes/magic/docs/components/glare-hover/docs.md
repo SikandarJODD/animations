@@ -1,6 +1,6 @@
 # Glare Hover
 
-Starter docs for Glare Hover.
+A glare hover effect that adds a subtle shine to elements when hovered.
 
 ## Usage
 
@@ -12,7 +12,3 @@ Starter docs for Glare Hover.
 <GlareHover />
 ```
 
-## Notes
-
-- Replace this placeholder with real usage details.
-- Add examples, props, and caveats as needed.

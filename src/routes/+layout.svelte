@@ -19,7 +19,7 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<ModeWatcher defaultMode="dark" />
+<ModeWatcher defaultMode="system" />
 
 <main class="w-full">
 	<Navbar />

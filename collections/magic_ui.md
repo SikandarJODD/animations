@@ -9,7 +9,7 @@ Hero Video Dialog - done
 Bento Grid - done
 Animated List - done
 Dock - done
-Globe
+Globe - done
 Tweet Card
 Orbiting Circles - done
 Avatar Circles - done
@@ -26,7 +26,7 @@ Animated Beam - done
 Border Beam - done
 Shine Border - done
 Magic Card - done
-Glare Hover
+Glare Hover - done
 Meteors - done
 Confetti
 Particles 
@@ -49,7 +49,7 @@ Dia Text Reveal - done
 Hyper Text - done
 Word Rotate
 Scroll Base velocity
-Sparkles Text
+Sparkles Text - done
 Morphing Text - done
 Text Highlighter 
 Text 3D Flip
@@ -72,24 +72,24 @@ Retro Grid - done
 Ripple - done
 Dot Pattern - done
 Grid Pattern - done
-Hexagon Pattern 
+Hexagon Pattern - done
 Striped Pattern - done
 Interactive Grid Pattern 
 Light Rays - done
-Noise Texture  
+Noise Texture  - done
 
 ## Community
 Shiny Button
 File Tree
 Code Comparison
-Scroll Progress
+Scroll Progress - done
 Neon Gradient Card
 Comic Text
 Kinetic Text 
-Cool Mode
-Pixel Image
-Pulsating Button
-Warp Background
-Interactive Hover Button
-Animated Circular Progress Bar
-Backlight 
+Cool Mode - done
+Pixel Image - done
+Pulsating Button - done
+Warp Background - done
+Interactive Hover Button - done
+Animated Circular Progress Bar - done
+Backlight - done
