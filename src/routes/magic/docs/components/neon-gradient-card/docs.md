@@ -1,100 +1,87 @@
-````markdown
 # Neon Gradient Card
 
-A card component with animated neon gradient borders and customizable colors, border size, and radius.
+A beautiful neon card effect
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/neon-gradient-card.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/neon-gradient-card.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/neon-gradient-card.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/neon-gradient-card.json
 ```
 
-  </Tab>
-  <Tab value="Manual">
-
-### Manual Installation
-
-No additional dependencies required. Copy and paste the component source code into your project.
-
-  </Tab>
-</Tabs>
-
-## Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { NeonGradientCard } from "$lib/components/magic/neon-gradient-card";
+	import { NeonGradientCard } from "$lib/components/magic/neon-gradient-card";
 </script>
 
-<NeonGradientCard borderSize={2} borderRadius={20}>
-  <div class="p-8">
-    <h3 class="text-2xl font-bold">Card Title</h3>
-    <p>Your content here</p>
-  </div>
+<NeonGradientCard class="my-32 max-w-sm items-center justify-center text-center">
+	<span
+		class="pointer-events-none z-10 h-full bg-linear-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-3xl leading-none font-bold tracking-tight text-balance whitespace-pre-wrap text-transparent md:text-5xl xl:text-6xl dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]"
+	>
+		Svelte Is Amazing
+	</span>
 </NeonGradientCard>
+```
+
+## Examples
+
+### 1. Default Example
+
+```svelte
+<script lang="ts">
+	import { NeonGradientCard } from "$lib/components/magic/neon-gradient-card";
+</script>
+
+<NeonGradientCard class="my-32 max-w-sm items-center justify-center text-center">
+	<span
+		class="pointer-events-none z-10 h-full bg-linear-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-3xl leading-none font-bold tracking-tight text-balance whitespace-pre-wrap text-transparent md:text-5xl xl:text-6xl dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]"
+	>
+		Svelte Is Amazing
+	</span>
+</NeonGradientCard>
+```
+
+## Usage
+
+Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
+
+If the component depends on global CSS, add the following styles:
+
+```css
+@theme inline {
+  --animate-background-position-spin: background-position-spin 3000ms infinite
+    alternate;
+
+  @keyframes background-position-spin {
+    0% {
+      background-position: top center;
+    }
+    100% {
+      background-position: bottom center;
+    }
+  }
+}
 ```
 
 ## Props
 
-| Prop           | Type              | Default                                           | Description                     |
-| -------------- | ----------------- | ------------------------------------------------- | ------------------------------- |
-| `class`        | `string`          | `""`                                              | Additional CSS classes to apply |
-| `borderSize`   | `number`          | `2`                                               | Border thickness in pixels      |
-| `borderRadius` | `number`          | `20`                                              | Border radius in pixels         |
-| `neonColors`   | `NeonColorsProps` | `{firstColor: "#ff00aa", secondColor: "#00FFF1"}` | Neon gradient colors            |
+A component for Neon Gradient Card.
 
-### NeonColorsProps
-
-| Property      | Type     | Description           |
-| ------------- | -------- | --------------------- |
-| `firstColor`  | `string` | First gradient color  |
-| `secondColor` | `string` | Second gradient color |
-
-## Features
-
-- Animated neon gradient border effect
-- Customizable gradient colors
-- Adjustable border thickness and radius
-- Responsive to container size changes
-- Canvas-based rendering for smooth animations
-- Automatic dimension updates
-
-## Examples
-
-### Custom Colors
-
-```svelte
-<NeonGradientCard
-  neonColors={{ firstColor: "#00ff00", secondColor: "#0000ff" }}
-  borderSize={3}
->
-  <div class="p-6">Custom green-blue gradient</div>
-</NeonGradientCard>
-```
-
-### Thick Border
-
-```svelte
-<NeonGradientCard borderSize={4} borderRadius={30}>
-  <div class="p-10">Thick neon border</div>
-</NeonGradientCard>
-```
-
-### Purple Theme
-
-```svelte
-<NeonGradientCard
-  neonColors={{ firstColor: "#9333ea", secondColor: "#ec4899" }}
-  class="max-w-md"
->
-  <div class="p-8 text-center">
-    <h2 class="text-3xl font-bold">Purple Glow</h2>
-  </div>
-</NeonGradientCard>
-```
-````
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `class` | `string` | `""` | Additional CSS classes to apply |
+| `borderSize` | `number` | `2` | Size of the border |
+| `borderRadius` | `number` | `20` | Radius of the border |
+| `neonColors` | `NeonColorsProps` | `{ firstColor: "#ff00aa", secondColor: "#00FFF1" }` | Colors of the neon effect |
+| `children` | `Snippet` | `required` | The content to display inside the card |

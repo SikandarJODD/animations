@@ -138,7 +138,7 @@ export const data: ComponentDoc = {
 				{
 					name: "mediaContainerClass",
 					type: "string",
-					default: "''",
+					default: "undefined",
 					description: "Classes applied to the animated media wrapper.",
 				},
 				{
@@ -209,21 +209,28 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "leftTextClass",
-					type: "string",
-					default: "''",
+					type: "ClassValue",
+					default: "undefined",
 					description: "Classes applied to the first text fragment.",
 				},
 				{
 					name: "rightTextClass",
 					type: "string",
-					default: "''",
+					default: "undefined",
 					description: "Classes applied to the second text fragment.",
 				},
 				{
 					name: "class",
 					type: "string",
-					default: "''",
+					default: "undefined",
 					description: "Classes merged onto the root container.",
+				},
+				{
+					name: "isAnimating",
+					type: "boolean",
+					default: "false",
+					description:
+						"Bindable flag used with `triggerType=\"ref\"` to programmatically open or close the media reveal.",
 				},
 			],
 		},

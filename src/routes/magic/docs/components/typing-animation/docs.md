@@ -1,134 +1,178 @@
-﻿# Typing Animation
+# Typing Animation
 
-A customizable typing animation component that creates typewriter effects with support for single text, multiple words, various cursor styles, and comprehensive animation controls.
+A customizable typing animation component with support for multiple words, cursor styles, and animation controls.
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/typing-animation.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/typing-animation.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/typing-animation.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/typing-animation.json
 ```
 
-</Tab>
-<Tab value="Manual">
-
-**1. Install dependencies:**
-
-```bash
-pnpm add motion-sv runed
-```
-
-**2. Add utility function:**
-
-```ts title="lib/utils.ts"
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-```
-
-**3. Add the cursor blink animation to your `tailwind.config.js`:**
-
-```js title="tailwind.config.js"
-module.exports = {
-  theme: {
-    extend: {
-      animation: {
-        "blink-cursor": "blink-cursor 1s step-end infinite",
-      },
-      keyframes: {
-        "blink-cursor": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0" },
-        },
-      },
-    },
-  },
-};
-```
-
-**4. Copy the component code:**
-
-Copy the `typing-animation.svelte` component into your project at `$lib/components/magic/typing-animation/`.
-
-</Tab>
-</Tabs>
-
-## Usage
-
-### Basic Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { TypingAnimation } from "$lib/components/magic/typing-animation";
+	import { TypingAnimation } from "$lib/components/magic/typing-animation";
 </script>
 
-<TypingAnimation content="Hello World! 👋" />
+<TypingAnimation content="Hello World! 👋"></TypingAnimation>
 ```
-
-### Multiple Words
-
-```svelte
-<TypingAnimation words={["Design", "Build", "Ship"]} loop />
-```
-
-### Custom Styling
-
-```svelte
-<TypingAnimation
-  words={["Fast typing", "Slow delete"]}
-  typeSpeed={50}
-  deleteSpeed={150}
-  pauseDelay={2000}
-  loop
-  class="text-primary text-4xl font-bold"
-/>
-```
-
-## Props
-
-| Prop          | Type                                | Default         | Description                                                          |
-| ------------- | ----------------------------------- | --------------- | -------------------------------------------------------------------- |
-| `content`     | `string`                            | `undefined`     | Single text string to type (use this OR words)                       |
-| `words`       | `string[]`                          | `undefined`     | Array of words to cycle through (use this OR content)                |
-| `class`       | `string`                            | `""`            | Additional CSS classes to apply                                      |
-| `duration`    | `number`                            | `100`           | Default duration for typing speed (ms per character)                 |
-| `typeSpeed`   | `number`                            | `duration`      | Speed for typing characters (ms per character)                       |
-| `deleteSpeed` | `number`                            | `typeSpeed / 2` | Speed for deleting characters (ms per character)                     |
-| `delay`       | `number`                            | `0`             | Initial delay before animation starts (ms)                           |
-| `pauseDelay`  | `number`                            | `1000`          | Delay between typing and deleting (ms)                               |
-| `loop`        | `boolean`                           | `false`         | Whether to loop the animation continuously                           |
-| `startOnView` | `boolean`                           | `true`          | Start animation when element enters viewport                         |
-| `showCursor`  | `boolean`                           | `true`          | Show the typing cursor                                               |
-| `blinkCursor` | `boolean`                           | `true`          | Make the cursor blink during pause                                   |
-| `cursorStyle` | `'line' \| 'block' \| 'underscore'` | `'line'`        | Style of the cursor (`'line'`: \|, `'block'`: ▌, `'underscore'`: \_) |
 
 ## Examples
 
-### Cursor Blinking
+### 1. Cursor Blinking
 
-Control whether the cursor blinks or remains static during the pause phase. This is particularly useful for different visual effects.
+```svelte
+<script lang="ts">
+	import { TypingAnimation } from "$lib/components/magic/typing-animation";
+</script>
 
-### Cursor Style
+<div class="flex-1 space-y-8">
+	<div>
+		<p class="text-muted-foreground mb-2 text-sm">
+			With blinking cursor (default) - watch during pause
+		</p>
+		<TypingAnimation
+			words={["Type", "Pause", "Delete"]}
+			blinkCursor={true}
+			pauseDelay={2000}
+			loop
+			class="text-4xl font-bold"
+		>
+			Blinking cursor
+		</TypingAnimation>
+	</div>
+	<div>
+		<p class="text-muted-foreground mb-2 text-sm">
+			Without blinking cursor - static during pause
+		</p>
+		<TypingAnimation
+			words={["Type", "Pause", "Delete"]}
+			blinkCursor={false}
+			pauseDelay={2000}
+			loop
+			class="text-4xl font-bold"
+		>
+			Static cursor
+		</TypingAnimation>
+	</div>
+</div>
+```
 
-Choose between three cursor styles: line (\|), block (▌), or underscore (\_). Different styles can match your design aesthetic.
+### 2. Cursor Style
 
-### Single Play
+```svelte
+<script lang="ts">
+	import { TypingAnimation } from "$lib/components/magic/typing-animation";
+</script>
 
-Set `loop={false}` to play the animation once without repeating. Perfect for one-time effects or introductions.
+<div class="flex-1 space-y-8">
+	<div>
+		<p class="text-muted-foreground mb-2 text-sm">Line cursor (default)</p>
+		<TypingAnimation
+			words={["Line cursor"]}
+			cursorStyle="line"
+			loop
+			class="text-4xl font-bold"
+		/>
+	</div>
+	<div>
+		<p class="text-muted-foreground mb-2 text-sm">Block cursor (VSCode style)</p>
+		<TypingAnimation
+			words={["Block cursor"]}
+			cursorStyle="block"
+			loop
+			class="text-4xl font-bold"
+		/>
+	</div>
+	<div>
+		<p class="text-muted-foreground mb-2 text-sm">Underscore cursor</p>
+		<TypingAnimation
+			words={["Underscore cursor"]}
+			cursorStyle="underscore"
+			loop
+			class="text-4xl font-bold"
+		/>
+	</div>
+</div>
+```
 
-### Custom Speed
+### 3. Single Play
 
-Customize the typing and deleting speeds independently to create unique animation rhythms. Make typing fast and deleting slow, or vice versa.
+```svelte
+<script lang="ts">
+	import { TypingAnimation } from "$lib/components/magic/typing-animation";
+</script>
 
-### Multiple Words with Emojis
+<TypingAnimation words={["First", "Second", "Final"]} loop={false} />
+```
 
-The component supports emojis and special characters. Create engaging animations by cycling through words with emojis.
+### 4. Custom Speed
 
-### Start On View
+```svelte
+<script lang="ts">
+	import { TypingAnimation } from "$lib/components/magic/typing-animation";
+</script>
 
-Control when the animation starts. Use `startOnView={true}` to trigger the animation only when the element enters the viewport, perfect for scroll-based animations.
+<TypingAnimation
+	words={["Fast typing", "Slow delete"]}
+	typeSpeed={50}
+	deleteSpeed={150}
+	pauseDelay={2000}
+	loop
+/>
+```
+
+### 5. Multiple Words with Emojis
+
+```svelte
+<script lang="ts">
+	import { TypingAnimation } from "$lib/components/magic/typing-animation";
+</script>
+
+<TypingAnimation words={["Design 🎨", "Build 🔨", "Ship 🚀"]} loop />
+```
+
+### 6. Start On View
+
+```svelte
+<script lang="ts">
+	import { TypingAnimation } from "$lib/components/magic/typing-animation";
+</script>
+
+<TypingAnimation startOnView>Starts typing when in view</TypingAnimation>
+```
+
+## Usage
+
+Import `TypingAnimation` from `$lib/components/magic/typing-animation` and pass the props you need for your use case.
+
+## Props
+
+A versatile typing animation component with support for single text, multiple words, cursor customization, and animation controls.
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | `undefined` | Single text string to type (use this OR words) |
+| `words` | `string[]` | `undefined` | Array of words to cycle through (use this OR content) |
+| `class` | `string` | `""` | Additional CSS classes to apply |
+| `duration` | `number` | `100` | Default duration for typing speed (ms per character) |
+| `typeSpeed` | `number` | `duration` | Speed for typing characters (ms per character) |
+| `deleteSpeed` | `number` | `typeSpeed / 2` | Speed for deleting characters (ms per character) |
+| `delay` | `number` | `0` | Initial delay before animation starts (ms) |
+| `pauseDelay` | `number` | `1000` | Delay between typing and deleting (ms) |
+| `loop` | `boolean` | `false` | Whether to loop the animation continuously |
+| `startOnView` | `boolean` | `true` | Start animation when element enters viewport |
+| `showCursor` | `boolean` | `true` | Show the typing cursor |
+| `blinkCursor` | `boolean` | `true` | Make the cursor blink during pause |
+| `cursorStyle` | `'line' \| 'block' \| 'underscore'` | `'line'` | Style of the cursor ('line': \|, 'block': ▌, 'underscore': _) |

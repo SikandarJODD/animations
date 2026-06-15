@@ -69,6 +69,44 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 	},
 	previewClass: "p-0",
+	props: [
+		{
+			name: "Shared Props",
+			desc: "These props apply to both the forward and ping-pong Random Letter Swap variants shown on this page.",
+			props: [
+				{
+					name: "label",
+					type: "string",
+					required: true,
+					description: "Text string split into characters and shuffled into a random reveal order.",
+				},
+				{
+					name: "reverse",
+					type: "boolean",
+					default: "true",
+					description: "Reverses the vertical swap direction for the entering characters.",
+				},
+				{
+					name: "transition",
+					type: "AnimationOptions",
+					default: '{ type: "spring", duration: 0.8 }',
+					description: "Motion options used for each randomly ordered character swap.",
+				},
+				{
+					name: "staggerDuration",
+					type: "number",
+					default: "0.02",
+					description: "Delay in seconds between characters in the shuffled animation order.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Classes merged onto the interactive text wrapper.",
+				},
+			],
+		},
+	],
 };
 
 export let randomLetterSwapInstallation: InstallComponentDocs = {

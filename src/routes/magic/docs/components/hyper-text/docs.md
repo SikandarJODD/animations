@@ -1,98 +1,60 @@
-````markdown
 # Hyper Text
 
-An animated text component that creates a glitch effect by cycling through random characters before revealing the final text.
+A text animation that scrambles letters before revealing the final text.
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/hyper-text.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/hyper-text.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/hyper-text.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/hyper-text.json
 ```
 
-  </Tab>
-  <Tab value="Manual">
-
-### Manual Installation
-
-```bash
-# Using npm
-npm install motion-sv
-
-# Using pnpm
-pnpm add motion-sv
-
-# Using yarn
-yarn add motion-sv
-```
-
-Copy and paste the component source code into your project.
-
-  </Tab>
-</Tabs>
-
-## Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { HyperText } from "$lib/components/magic/hyper-text";
+	import { HyperText } from "$lib/components/magic/hyper-text";
 </script>
 
-<HyperText text="Hyper Text" class="text-4xl font-bold" />
+<HyperText text="Hover Me!"></HyperText>
 ```
-
-## Props
-
-| Prop             | Type          | Default       | Description                              |
-| ---------------- | ------------- | ------------- | ---------------------------------------- |
-| `text`           | `string`      | Required      | The text to display                      |
-| `class`          | `string`      | `""`          | Additional CSS classes to apply          |
-| `duration`       | `number`      | `800`         | Duration of animation in milliseconds    |
-| `delay`          | `number`      | `0`           | Delay before animation starts (ms)       |
-| `as`             | `ElementType` | `"div"`       | HTML element type (div, span, h1, etc.)  |
-| `startOnView`    | `boolean`     | `false`       | Start animation when element in viewport |
-| `animateOnHover` | `boolean`     | `true`        | Trigger animation on hover               |
-| `characterSet`   | `string[]`    | `A-Z letters` | Array of characters to cycle through     |
-
-## Features
-
-- Glitch-style text reveal effect
-- Customizable character set for scrambling
-- Hover or viewport-based trigger options
-- Adjustable animation speed and delay
-- Support for any HTML text element
-- Intersection observer support
 
 ## Examples
 
-### Auto-play on View
+### 1. Default Example
 
 ```svelte
-<HyperText
-  text="Animate on Scroll"
-  startOnView={true}
-  animateOnHover={false}
-  class="text-3xl"
-/>
+<script lang="ts">
+	import { HyperText } from "$lib/components/magic/hyper-text";
+</script>
+
+<HyperText text="Hover Me!"></HyperText>
 ```
 
-### Custom Character Set
+## Usage
 
-```svelte
-<HyperText
-  text="01010101"
-  characterSet={["0", "1"]}
-  class="font-mono text-2xl"
-/>
-```
+Import `HyperText` from `$lib/components/magic/hyper-text` and pass the props you need for your use case.
 
-### Fast Animation
+## Props
 
-```svelte
-<HyperText text="Quick Flash" duration={400} class="text-xl font-semibold" />
-```
-````
+A component for Hyper Text.
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `text` | `string` | `undefined` | The text content to be animated |
+| `class` | `string` | `""` | Additional CSS classes to apply |
+| `duration` | `number` | `800` | Duration of the animation in milliseconds |
+| `delay` | `number` | `0` | Delay before animation starts in milliseconds |
+| `as` | `"div" \| "span" \| "p" \| "h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"` | `"div"` | Component to render as |
+| `startOnView` | `boolean` | `false` | Whether to start animation when element comes into view |
+| `animateOnHover` | `boolean` | `true` | Whether to trigger animation on hover |
+| `characterSet` | `string[] \| readonly string[]` | `ABCDEFGHIJKLMNOPQRSTUVWXYZ` | Custom character set for scramble effect |

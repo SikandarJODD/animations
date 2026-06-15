@@ -94,6 +94,27 @@ export const data: ComponentDoc = {
 					description: "Delay in milliseconds between automatic text changes.",
 				},
 				{
+					name: "initial",
+					type: 'MotionProps["initial"] | MotionProps["initial"][]',
+					default: '{ y: "100%", opacity: 0 }',
+					description:
+						"Initial motion state for each rendered segment. Arrays rotate through multiple states by index.",
+				},
+				{
+					name: "animate",
+					type: 'MotionProps["animate"] | MotionProps["animate"][]',
+					default: "{ y: 0, opacity: 1 }",
+					description:
+						"Visible motion state for each rendered segment. Arrays rotate through multiple states by index.",
+				},
+				{
+					name: "exit",
+					type: 'MotionProps["exit"] | MotionProps["exit"][]',
+					default: '{ y: "-120%", opacity: 0 }',
+					description:
+						"Exit motion state used when the current text leaves. Arrays rotate through multiple states by index.",
+				},
+				{
 					name: "auto",
 					type: "boolean",
 					default: "true",
@@ -129,7 +150,7 @@ export const data: ComponentDoc = {
 					type: "Transition",
 					default: '{ type: "spring", damping: 25, stiffness: 300 }',
 					description:
-						"Motion transition shared by the layout wrapper and text segments.",
+						"Motion transition shared by the layout wrapper and per-segment animations.",
 				},
 				{
 					name: "animatePresenceMode",
@@ -168,6 +189,12 @@ export const data: ComponentDoc = {
 					type: "string",
 					default: "undefined",
 					description: "Classes applied around each animated character or segment.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes merged onto the root layout wrapper.",
 				},
 			],
 		},

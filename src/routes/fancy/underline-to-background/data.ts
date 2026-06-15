@@ -68,4 +68,52 @@ export const data: ComponentDoc = {
 		filecode: PreviewRaw,
 		lang: "svelte",
 	},
+	props: [
+		{
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					default: "undefined",
+					description: "Snippet content displayed inside the animated underline/fill treatment.",
+				},
+				{
+					name: "as",
+					type: "keyof SvelteHTMLElements",
+					default: '"span"',
+					description: "HTML element used for the hoverable text wrapper.",
+				},
+				{
+					name: "transition",
+					type: "Transition",
+					default: '{ type: "spring", damping: 30, stiffness: 300 }',
+					description: "Motion transition used for both the underline growth and text-color change.",
+				},
+				{
+					name: "targetTextColor",
+					type: "string",
+					default: '"#fef"',
+					description: "Text color applied while the underline has expanded into the background.",
+				},
+				{
+					name: "underlineHeightRatio",
+					type: "number",
+					default: "0.1",
+					description: "Ratio of the current font size used as the resting underline thickness.",
+				},
+				{
+					name: "underlinePaddingRatio",
+					type: "number",
+					default: "0.01",
+					description: "Ratio of the current font size used to offset the underline below the text baseline.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Classes merged onto the motion-enabled wrapper element.",
+				},
+			],
+		},
+	],
 };

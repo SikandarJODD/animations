@@ -1,32 +1,68 @@
-````markdown
 # Ripple
 
-A component that creates expanding ripple circles with customizable size, opacity, and number of circles.
+An animated ripple effect typically used behind elements to emphasize them.
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple.json
 ```
 
-  </Tab>
-  <Tab value="Manual">
+## Preview
 
-### Manual Installation
+```svelte
+<script lang="ts">
+	import { Ripple } from "$lib/components/magic/ripple";
+</script>
 
-No additional dependencies required. Copy and paste the component source code into your project.
+<div
+	class="bg-background relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
+>
+	<p
+		class="z-10 text-center text-5xl font-medium tracking-tighter whitespace-pre-wrap text-white"
+	>
+		Ripple
+	</p>
+	<Ripple />
+</div>
+```
 
-  </Tab>
-</Tabs>
+## Examples
 
-## Tailwind CSS Configuration
+### 1. Default Example
 
-Add the following to your `layout.css` or global CSS file:
+```svelte
+<script lang="ts">
+	import { Ripple } from "$lib/components/magic/ripple";
+</script>
+
+<div
+	class="bg-background relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
+>
+	<p
+		class="z-10 text-center text-5xl font-medium tracking-tighter whitespace-pre-wrap text-white"
+	>
+		Ripple
+	</p>
+	<Ripple />
+</div>
+```
+
+## Usage
+
+Import `Ripple` from `$lib/components/magic/ripple` and pass the props you need for your use case.
+
+If the component depends on global CSS, add the following styles:
 
 ```css
 @theme inline {
@@ -45,74 +81,13 @@ Add the following to your `layout.css` or global CSS file:
 }
 ```
 
-## Usage
-
-```svelte
-<script lang="ts">
-  import { Ripple } from "$lib/components/magic/ripple";
-</script>
-
-<div class="relative h-screen w-full">
-  <Ripple mainCircleSize={210} numCircles={8} />
-</div>
-```
-
 ## Props
 
-| Prop                | Type     | Default | Description                            |
-| ------------------- | -------- | ------- | -------------------------------------- |
-| `class`             | `string` | `""`    | Additional CSS classes to apply        |
-| `mainCircleSize`    | `number` | `210`   | Size of the innermost circle in pixels |
-| `mainCircleOpacity` | `number` | `0.24`  | Opacity of the innermost circle        |
-| `numCircles`        | `number` | `8`     | Number of ripple circles to display    |
+A component for Ripple.
 
-## Features
-
-- Multiple expanding ripple circles
-- Staggered animation delays
-- Decreasing opacity for outer circles
-- Centered positioning
-- Customizable size and count
-- Pure CSS animations
-- Gradient mask support
-
-## Examples
-
-### Large Ripples
-
-```svelte
-<Ripple mainCircleSize={300} numCircles={10} mainCircleOpacity={0.3} />
-```
-
-### Subtle Effect
-
-```svelte
-<Ripple
-  mainCircleSize={150}
-  numCircles={5}
-  mainCircleOpacity={0.15}
-  class="opacity-50"
-/>
-```
-
-### With Container
-
-```svelte
-<div
-  class="relative h-[600px] w-full bg-gradient-to-br from-blue-50 to-purple-50"
->
-  <Ripple mainCircleSize={250} numCircles={7} />
-  <div class="relative z-10 flex h-full items-center justify-center">
-    <h1 class="text-6xl font-bold">Content Over Ripples</h1>
-  </div>
-</div>
-```
-
-## Notes
-
-- Each ripple circle increases in size by 70px
-- Opacity decreases by 0.03 for each outer circle
-- Animation delay increases by 0.06s per circle
-- Uses absolute positioning - requires a positioned parent
-- Pointer-events disabled for non-interactive overlay
-````
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `class` | `string` | `""` | Additional CSS classes to apply |
+| `mainCircleSize` | `number` | `210` | The size of the main circle |
+| `mainCircleOpacity` | `number` | `0.24` | The opacity of the main circle |
+| `numCircles` | `number` | `8` | The number of ripple circles |

@@ -1,123 +1,114 @@
-````markdown
 # Number Ticker
 
-An animated number counter component with spring physics that smoothly animates from a start value to an end value.
+Animate numbers to count up or down to a target number
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/number-ticker.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/number-ticker.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/number-ticker.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/number-ticker.json
 ```
 
-  </Tab>
-  <Tab value="Manual">
-
-### Manual Installation
-
-```bash
-# Using npm
-npm install motion-sv
-
-# Using pnpm
-pnpm add motion-sv
-
-# Using yarn
-yarn add motion-sv
-```
-
-Copy and paste the component source code into your project.
-
-  </Tab>
-</Tabs>
-
-## Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { NumberTicker } from "$lib/components/magic/number-ticker";
+	import { NumberTicker } from "$lib/components/magic/number-ticker";
 </script>
 
-<NumberTicker value={1000} class="text-4xl font-bold" />
+<NumberTicker
+	value={100}
+	class="text-8xl font-medium tracking-tighter whitespace-pre-wrap text-black dark:text-white"
+/>
 ```
-
-## Props
-
-| Prop            | Type             | Default  | Description                         |
-| --------------- | ---------------- | -------- | ----------------------------------- |
-| `value`         | `number`         | Required | The target number to count to       |
-| `startValue`    | `number`         | `0`      | The starting number to count from   |
-| `direction`     | `"up" \| "down"` | `"up"`   | Count direction (up or down)        |
-| `delay`         | `number`         | `0`      | Delay before animation starts (ms)  |
-| `decimalPlaces` | `number`         | `0`      | Number of decimal places to display |
-| `class`         | `string`         | `""`     | Additional CSS classes to apply     |
-
-## Features
-
-- Spring physics for natural motion
-- Customizable start and end values
-- Count up or down
-- Decimal place support
-- Delayed start option
-- Intersection observer (animates when in view)
-- Smooth easing with spring damping
 
 ## Examples
 
-### Count from 0 to 100
+### 1. With Decimal Places
 
 ```svelte
-<NumberTicker value={100} class="text-primary text-5xl font-bold" />
-```
+<script>
+	import { NumberTicker } from "$lib/components/magic/number-ticker";
+</script>
 
-### Countdown
-
-```svelte
-<NumberTicker value={0} startValue={100} direction="down" class="text-4xl" />
-```
-
-### With Decimals
-
-```svelte
-<NumberTicker value={99.99} decimalPlaces={2} class="text-3xl font-semibold" />
-```
-
-### Delayed Start
-
-```svelte
-<NumberTicker value={500} delay={1000} class="text-6xl font-black" />
-```
-
-### Large Numbers
-
-```svelte
 <NumberTicker
-  value={1000000}
-  startValue={0}
-  class="text-7xl font-extrabold tabular-nums"
+	value={5.67}
+	decimalPlaces={2}
+	class="text-8xl font-medium tracking-tighter whitespace-pre-wrap text-black dark:text-white"
 />
 ```
 
-### With Prefix and Suffix
+### 2. With Start Value
 
 ```svelte
+<script lang="ts">
+	import { NumberTicker } from "$lib/components/magic/number-ticker";
+</script>
+
 <NumberTicker
-  value={75}
-  startValue={0}
-  prefix="$"
-  suffix="USD"
-  class="text-4xl font-bold"
+	value={100}
+	startValue={80}
+	class="text-8xl font-medium tracking-tighter whitespace-pre-wrap text-black dark:text-white"
 />
 ```
 
-## Notes
+### 3. With Prefix and Suffix
 
-- Uses spring physics (damping: 60, stiffness: 100) for smooth animation
-- Automatically formats numbers with appropriate decimal places
-- Animation triggers when element enters viewport
-- Duration is approximately 2 seconds with spring easing
-````
+```svelte
+<script lang="ts">
+	import { NumberTicker } from "$lib/components/magic/number-ticker";
+</script>
+
+<NumberTicker
+	value={100.5}
+	decimalPlaces={2}
+	startValue={70}
+	prefix="$"
+	suffix="USD"
+	class="text-8xl font-medium tracking-tighter whitespace-pre-wrap text-black dark:text-white"
+/>
+```
+
+### 4. Trigger On View (without once)
+
+```svelte
+<script>
+	import { NumberTicker } from "$lib/components/magic/number-ticker";
+</script>
+
+<NumberTicker
+	value={5.67}
+	decimalPlaces={2}
+	once={false}
+	class="text-4xl font-medium tracking-tighter whitespace-pre-wrap text-black md:text-6xl dark:text-white"
+/>
+```
+
+## Usage
+
+Import `NumberTicker` from `$lib/components/magic/number-ticker` and pass the props you need for your use case.
+
+## Props
+
+A component for animating numbers to count up or down to a target value.
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `number` | `undefined` | The target number to animate to. |
+| `startValue` | `number` | `0` | The starting number for the animation. |
+| `direction` | `"up" \| "down"` | `"up"` | The direction of the animation. |
+| `delay` | `number` | `0` | Delay before starting the animation in seconds. |
+| `decimalPlaces` | `number` | `0` | Number of decimal places to display. |
+| `class` | `string` | `""` | Additional CSS classes to apply. |
+| `prefix` | `string` | `""` | Prefix to display before the number. |
+| `suffix` | `string` | `""` | Suffix to display after the number. |
+| `once` | `boolean` | `true` | Whether to animate only the first time the component comes into view. |

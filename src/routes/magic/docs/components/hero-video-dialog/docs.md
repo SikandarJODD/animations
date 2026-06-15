@@ -1,100 +1,94 @@
-````markdown
 # Hero Video Dialog
 
-A video dialog component with animated entrance effects, thumbnail support, and customizable animation styles.
+A hero video dialog component.
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
-
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/hero-video-dialog.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/hero-video-dialog.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/hero-video-dialog.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/hero-video-dialog.json
 ```
 
-  </Tab>
-  <Tab value="Manual">
-
-### Manual Installation
-
-```bash
-# Using npm
-npm install motion-sv
-
-# Using pnpm
-pnpm add motion-sv
-
-# Using yarn
-yarn add motion-sv
-```
-
-Copy and paste the component source code into your project.
-
-  </Tab>
-</Tabs>
-
-## Usage
+## Preview
 
 ```svelte
 <script lang="ts">
-  import { HeroVideoDialog } from "$lib/components/magic/hero-video-dialog";
+	import { HeroVideoDialog } from "$lib/components/magic/hero-video-dialog";
 </script>
 
-<HeroVideoDialog
-  animationStyle="from-center"
-  videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ"
-  thumbnailSrc="/thumbnail.jpg"
-  thumbnailAlt="Video thumbnail"
-/>
+<div class="relative">
+	<HeroVideoDialog
+		class="block dark:hidden"
+		animationStyle="from-center"
+		videoSrc="https://www.youtube.com/embed/rv3Yq-B8qp4?si=VgqpxuoBVCw2QLqT"
+		thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+		thumbnailAlt="Hero Video"
+	/>
+	<HeroVideoDialog
+		class="hidden dark:block"
+		animationStyle="from-center"
+		videoSrc="https://www.youtube.com/embed/rv3Yq-B8qp4?si=VgqpxuoBVCw2QLqT"
+		thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+		thumbnailAlt="Hero Video"
+	/>
+</div>
 ```
-
-## Props
-
-| Prop             | Type             | Default             | Description                     |
-| ---------------- | ---------------- | ------------------- | ------------------------------- |
-| `class`          | `string`         | `""`                | Additional CSS classes to apply |
-| `animationStyle` | `AnimationStyle` | `"from-center"`     | Animation entrance style        |
-| `videoSrc`       | `string`         | Required            | URL of the video to display     |
-| `thumbnailSrc`   | `string`         | Required            | URL of the thumbnail image      |
-| `thumbnailAlt`   | `string`         | `"Video thumbnail"` | Alt text for thumbnail          |
-
-### Animation Styles
-
-- `from-bottom` - Slides in from bottom
-- `from-center` - Scales from center
-- `from-top` - Slides in from top
-- `from-left` - Slides in from left
-- `from-right` - Slides in from right
-- `fade` - Simple fade in
-- `top-in-bottom-out` - Slides in from top, exits to bottom
-- `left-in-right-out` - Slides in from left, exits to right
-
-## Features
-
-- Multiple animation entrance styles
-- Fullscreen video playback
-- Click-to-play functionality
-- Keyboard escape to close
-- Smooth AnimatePresence transitions
-- Mobile-friendly controls
 
 ## Examples
 
-### Different Animation Styles
+### 1. Top In Bottom Out
+
+Hero video dialog with top-in-bottom-out animation
 
 ```svelte
-<HeroVideoDialog
-  animationStyle="from-bottom"
-  videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ"
-  thumbnailSrc="/thumbnail.jpg"
-/>
+<script lang="ts">
+	import { HeroVideoDialog } from "$lib/components/magic/hero-video-dialog";
+</script>
 
-<HeroVideoDialog
-  animationStyle="fade"
-  videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ"
-  thumbnailSrc="/thumbnail.jpg"
-/>
+<div>
+	<div class="relative">
+		<HeroVideoDialog
+			class="block dark:hidden"
+			animationStyle="top-in-bottom-out"
+			videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+			thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+			thumbnailAlt="Hero Video"
+		/>
+		<HeroVideoDialog
+			class="hidden dark:block"
+			animationStyle="top-in-bottom-out"
+			videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+			thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+			thumbnailAlt="Hero Video"
+		/>
+	</div>
+</div>
+
+<style>
+</style>
 ```
-````
+
+## Usage
+
+Import `HeroVideoDialog` from `$lib/components/magic/hero-video-dialog` and pass the props you need for your use case.
+
+## Props
+
+Props for the HeroVideoDialog component
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `animationStyle` | `"from-bottom" \| "from-center" \| "from-top" \| "from-left" \| "from-right" \| "fade" \| "top-in-bottom-out" \| "left-in-right-out"` | `"from-center"` | The animation style for the dialog |
+| `videoSrc` | `string` | `undefined` | The source URL of the video to play |
+| `thumbnailSrc` | `string` | `undefined` | The source URL of the thumbnail image |
+| `thumbnailAlt` | `string` | `"Video thumbnail"` | Alt text for the thumbnail image |
+| `class` | `string` | `undefined` | Additional CSS classes |

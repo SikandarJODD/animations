@@ -1,84 +1,328 @@
 # Tilt Card
 
-A cursor-reactive wrapper that gives cards and panels a polished 3D hover response with configurable tilt, scale, perspective, and an optional spotlight.
+A cursor-reactive card wrapper with configurable tilt depth, hover scale, perspective, and optional spotlight.
 
 ## Installation
 
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/s/tilt-card.json
+
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/s/tilt-card.json
+
+# pnpm
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/tilt-card.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/tilt-card.json
+```
+
+## Preview
+
+```svelte
+<script lang="ts">
+	import { TiltCard } from "$lib/components/spell/tilt-card";
+</script>
+
+{#snippet spellLogo()}
+	<svg
+		aria-hidden="true"
+		width="24"
+		height="24"
+		viewBox="0 0 262 278"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		class="size-6 text-neutral-950 dark:text-white"
+	>
+		<path
+			d="M57.6541 65.6418C58.8281 64.8226 60.4465 65.2097 61.2647 66.3823C64.3285 70.7734 68.3982 73.8437 73.2472 75.6378L73.3016 75.6581L92.6744 82.6771C95.575 83.7281 97.8595 86.0054 98.9135 88.896L105.957 108.209L105.978 108.263C107.777 113.094 111.016 117.262 115.261 120.205C119.507 123.148 124.556 124.727 129.729 124.727C134.902 124.727 139.951 123.148 144.197 120.205C148.443 117.262 151.681 113.094 153.48 108.263L153.521 108.155L160.545 88.8977C161.599 86.0081 163.882 83.7316 166.782 82.6805C176.525 79.148 187.434 82.5762 193.381 91.039L223.505 133.91C223.516 133.925 223.524 133.942 223.534 133.957C228.045 140.476 226.441 149.411 219.921 153.96L117.032 225.751C111.613 229.533 110.798 237.692 115.213 243.976C119.63 250.261 127.604 252.292 133.024 248.51L239.241 174.706C245.791 170.156 254.802 171.748 259.381 178.266C263.973 184.801 262.368 193.81 255.801 198.374L149.632 272.144C132.954 283.78 108.421 277.536 94.8322 258.199C93.5324 256.349 92.381 254.445 91.3741 252.506C91.3172 252.396 91.1589 252.398 91.1049 252.509C91.055 252.612 90.9129 252.623 90.8473 252.53L3.77438 128.615C-2.83414 119.21 -0.539816 106.247 8.89813 99.6622L21.4057 90.9343C21.4336 90.9148 21.472 90.9217 21.4914 90.9496C21.513 90.9807 21.5574 90.985 21.5848 90.9588C21.9663 90.5947 22.3802 90.2545 22.8263 89.9432L57.6541 65.6418Z"
+			fill="currentColor"
+		/>
+		<path
+			d="M184.781 55.435C184.793 57.0601 184.298 58.6488 183.363 59.9801C182.428 61.3115 181.1 62.3194 179.564 62.8638L160.243 69.8673C152.51 72.6702 146.42 78.741 143.609 86.4472L136.586 105.703C136.021 107.22 135.004 108.528 133.672 109.451C132.34 110.375 130.756 110.87 129.133 110.87C127.51 110.87 125.926 110.375 124.594 109.451C123.262 108.528 122.245 107.22 121.68 105.703L114.657 86.4455C111.846 78.7374 105.754 72.6654 98.0192 69.8629L78.7019 62.8638C77.1805 62.3009 75.8684 61.2874 74.9418 59.9594C74.0152 58.6314 73.5186 57.0526 73.5186 55.435C73.5186 53.8174 74.0152 52.2386 74.9418 50.9106C75.8684 49.5826 77.1805 48.5691 78.7019 48.0062L98.0192 41.0071C105.754 38.2046 111.846 32.1326 114.657 24.4245L121.68 5.16662C122.245 3.65013 123.262 2.34224 124.594 1.41864C125.926 0.49505 127.51 0 129.133 0C130.756 0 132.34 0.49505 133.672 1.41864C135.004 2.34224 136.021 3.65013 136.586 5.16662L143.613 24.4281C146.424 32.1342 152.515 38.2044 160.248 41.0066L179.564 48.0062C181.1 48.5506 182.428 49.5585 183.363 50.8899C184.298 52.2213 184.793 53.8099 184.781 55.435Z"
+			fill="currentColor"
+		/>
+	</svg>
+{/snippet}
+
+{#snippet visaLogo()}
+	<svg
+		aria-hidden="true"
+		width="50"
+		height="16"
+		viewBox="0 0 72 23"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		class="h-4 w-auto text-neutral-950/85 dark:text-white/90"
+	>
+		<path
+			d="M35.6495 0.413261L30.841 22.6604H25.0219L29.8376 0.413261H35.6495ZM60.1288 14.7776L63.1897 6.42214L64.9541 14.7776H60.1288ZM66.6178 22.6604H72L67.3044 0.413261H62.3374C62.3302 0.413261 62.3206 0.413261 62.3134 0.413261C61.2115 0.413261 60.2657 1.08065 59.8672 2.02829L59.86 2.04492L51.1336 22.6604H57.2409L58.4556 19.3353H65.9192L66.6178 22.6604ZM51.4337 15.3975C51.4577 9.52396 43.2259 9.20095 43.2835 6.57652C43.3028 5.7785 44.0686 4.92823 45.749 4.7121C46.0611 4.68123 46.4212 4.66223 46.7861 4.66223C48.4929 4.66223 50.111 5.04698 51.5514 5.73575L51.4865 5.70725L52.5068 0.988022C50.8912 0.368134 49.0211 0.00712515 47.067 0H47.0646C41.3126 0 37.2675 3.02819 37.2315 7.35791C37.1955 10.5595 40.1195 12.3431 42.3257 13.4119C44.5943 14.5021 45.3553 15.2027 45.3433 16.1741C45.3289 17.6704 43.538 18.3259 41.8624 18.352C41.7855 18.3544 41.6919 18.3544 41.6007 18.3544C39.5097 18.3544 37.5412 17.8343 35.8224 16.9151L35.8872 16.946L34.8333 21.8196C36.7202 22.5677 38.9072 23 41.1974 23C41.2334 23 41.2694 23 41.3054 23H41.3006C47.4126 23 51.4097 20.0146 51.4313 15.3903L51.4337 15.3975ZM27.3361 0.413261L17.9112 22.6604H11.7607L7.1227 4.90211C7.03388 4.03759 6.49853 3.31557 5.75433 2.95456L5.73993 2.94744C4.08829 2.14467 2.16778 1.49153 0.158443 1.08065L0 1.05452L0.139237 0.410885H10.0395C11.3886 0.410885 12.5097 1.38703 12.7186 2.66243L12.721 2.67668L15.172 15.5518L21.2265 0.408509L27.3361 0.413261Z"
+			fill="currentColor"
+		/>
+	</svg>
+{/snippet}
+
+<div class="flex min-h-80 items-center justify-center">
+	<TiltCard
+		tiltLimit={10}
+		scale={1.05}
+		perspective={1200}
+		class="flex aspect-video w-90 cursor-pointer flex-col justify-between overflow-hidden rounded-2xl bg-linear-to-br from-neutral-100 via-neutral-200 to-neutral-300 p-6 shadow-[0px_8px_16px_rgba(0,0,0,0.08),0px_16px_32px_rgba(0,0,0,0.06),0px_24px_48px_rgba(0,0,0,0.04),inset_0_0_0_1px_rgba(0,0,0,0.06)] dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900 dark:shadow-[0px_8px_16px_rgba(0,0,0,0.3),0px_16px_32px_rgba(0,0,0,0.2),0px_24px_48px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.06)]"
+	>
+		<div class="flex items-start justify-between">
+			{@render spellLogo()}
+			{@render visaLogo()}
+		</div>
+
+		<div class="flex items-end justify-between">
+			<div>
+				<p class="text-muted-foreground text-xs">John Doe</p>
+				<p class="font-mono text-sm font-medium tracking-tight tabular-nums">
+					5367 4567 8901 2345
+				</p>
+			</div>
+			<div class="text-left">
+				<p class="text-muted-foreground text-xs">Exp.</p>
+				<p class="font-mono text-sm font-medium tabular-nums">12/25</p>
+			</div>
+		</div>
+	</TiltCard>
+</div>
+```
+
+## Examples
+
+### 1. Perspective Example
+
+```svelte
+<script lang="ts">
+	import { TiltCard } from "$lib/components/spell/tilt-card";
+
+	const cards = [
+		{
+			label: "Closer camera",
+			value: "perspective 700",
+			perspective: 700,
+			gradient:
+				"from-emerald-100 via-teal-100 to-cyan-100 dark:from-emerald-950 dark:via-teal-950 dark:to-cyan-950",
+		},
+		{
+			label: "Deeper camera",
+			value: "perspective 1800",
+			perspective: 1800,
+			gradient:
+				"from-indigo-100 via-slate-100 to-blue-100 dark:from-slate-950 dark:via-indigo-950 dark:to-blue-950",
+		},
+	];
+</script>
+
+<div class="grid gap-4 py-6 sm:grid-cols-2">
+	{#each cards as card}
+		<div class="space-y-2">
+			<div class="px-1">
+				<p class="text-sm font-medium">{card.label}</p>
+				<p class="text-muted-foreground text-xs">{card.value}</p>
+			</div>
+
+			<TiltCard
+				perspective={card.perspective}
+				scale={1.05}
+				tiltLimit={12}
+				spotlight={false}
+				class={`relative h-52 rounded-[1.4rem] border border-black/5 p-5 shadow-[0_16px_40px_rgba(0,0,0,0.08)] dark:border-white/8 dark:shadow-[0_18px_48px_rgba(0,0,0,0.28)] ${card.gradient}`}
+			>
+				<div
+					class="pointer-events-none absolute inset-4 rounded-[1.1rem] border border-white/35 dark:border-white/10"
+				></div>
+				<div class="relative flex h-full flex-col justify-between">
+					<div class="flex items-start justify-between">
+						<div>
+							<p
+								class="text-[0.7rem] font-semibold tracking-[0.24em] text-neutral-600 uppercase dark:text-neutral-300"
+							>
+								Depth
+							</p>
+							<p
+								class="mt-2 text-xl font-semibold tracking-tight text-neutral-950 dark:text-white"
+							>
+								Perspective tuning
+							</p>
+						</div>
+						<div
+							class="rounded-2xl border border-black/8 bg-white/40 px-3 py-2 text-xs font-medium dark:border-white/10 dark:bg-white/6"
+						>
+							3D
+						</div>
+					</div>
+
+					<p class="max-w-[22ch] text-sm text-neutral-600 dark:text-neutral-300">
+						Lower perspective exaggerates motion. Higher perspective feels flatter and
+						calmer.
+					</p>
+				</div>
+			</TiltCard>
+		</div>
+	{/each}
+</div>
+```
+
+### 2. Scale Example
+
+```svelte
+<script lang="ts">
+	import { TiltCard } from "$lib/components/spell/tilt-card";
+
+	const cards = [
+		{
+			label: "Subtle lift",
+			value: "scale 1.02",
+			scale: 1.02,
+			gradient:
+				"from-stone-100 via-stone-200 to-stone-300 dark:from-stone-800 dark:via-stone-900 dark:to-black",
+			accent: "bg-stone-950/10 dark:bg-white/10",
+		},
+		{
+			label: "Stronger lift",
+			value: "scale 1.12",
+			scale: 1.12,
+			gradient:
+				"from-sky-100 via-cyan-100 to-teal-100 dark:from-slate-900 dark:via-cyan-950 dark:to-teal-950",
+			accent: "bg-cyan-500/15 dark:bg-cyan-400/15",
+		},
+	];
+</script>
+
+<div class="grid gap-4 py-6 sm:grid-cols-2">
+	{#each cards as card}
+		<div class="space-y-2">
+			<div class="px-1">
+				<p class="text-sm font-medium">{card.label}</p>
+				<p class="text-muted-foreground text-xs">{card.value}</p>
+			</div>
+
+			<TiltCard
+				scale={card.scale}
+				tiltLimit={10}
+				perspective={1200}
+				spotlight={false}
+				class={`relative h-52 rounded-[1.4rem] border border-black/5 p-5 shadow-[0_16px_40px_rgba(0,0,0,0.08)] dark:border-white/8 dark:shadow-[0_18px_48px_rgba(0,0,0,0.28)] ${card.gradient}`}
+			>
+				<div class="flex h-full flex-col justify-between">
+					<div class="flex items-start justify-between">
+						<div class={`h-10 w-10 rounded-2xl ${card.accent}`}></div>
+						<span
+							class="text-[0.65rem] font-semibold tracking-[0.26em] text-neutral-600 uppercase dark:text-neutral-300"
+						>
+							Hover
+						</span>
+					</div>
+
+					<div class="space-y-2">
+						<p
+							class="text-lg font-semibold tracking-tight text-neutral-950 dark:text-white"
+						>
+							Calibrated scale
+						</p>
+						<p class="text-sm text-neutral-600 dark:text-neutral-300">
+							Use lower values for restrained UI and higher values for stronger card
+							emphasis.
+						</p>
+					</div>
+				</div>
+			</TiltCard>
+		</div>
+	{/each}
+</div>
+```
+
+### 3. Tilt Limit Example
+
+```svelte
+<script lang="ts">
+	import { TiltCard } from "$lib/components/spell/tilt-card";
+
+	const cards = [
+		{
+			label: "Gentle",
+			value: "tiltLimit 6",
+			tiltLimit: 6,
+			gradient:
+				"from-zinc-100 via-neutral-100 to-zinc-200 dark:from-zinc-900 dark:via-neutral-900 dark:to-zinc-950",
+			tag: "Product",
+		},
+		{
+			label: "Dramatic",
+			value: "tiltLimit 18",
+			tiltLimit: 18,
+			gradient:
+				"from-orange-100 via-amber-100 to-yellow-100 dark:from-stone-950 dark:via-orange-950 dark:to-amber-950",
+			tag: "Hero",
+		},
+	];
+</script>
+
+<div class="grid gap-4 py-6 sm:grid-cols-2">
+	{#each cards as card}
+		<div class="space-y-2">
+			<div class="px-1">
+				<p class="text-sm font-medium">{card.label} tilt</p>
+				<p class="text-muted-foreground text-xs">{card.value}</p>
+			</div>
+
+			<TiltCard
+				tiltLimit={card.tiltLimit}
+				scale={1.05}
+				perspective={1200}
+				spotlight={false}
+				class={`h-52 rounded-[1.4rem] border border-black/5 p-5 shadow-[0_16px_40px_rgba(0,0,0,0.08)] dark:border-white/8 dark:shadow-[0_18px_48px_rgba(0,0,0,0.28)] ${card.gradient}`}
+			>
+				<div class="flex h-full flex-col justify-between">
+					<div class="flex items-center justify-between">
+						<span
+							class="rounded-full border border-black/8 bg-white/40 px-3 py-1 text-[0.68rem] font-medium tracking-[0.18em] uppercase dark:border-white/10 dark:bg-white/6"
+						>
+							{card.tag}
+						</span>
+						<div class="flex gap-1.5">
+							<div
+								class="h-2.5 w-2.5 rounded-full bg-black/15 dark:bg-white/20"
+							></div>
+							<div
+								class="h-2.5 w-2.5 rounded-full bg-black/10 dark:bg-white/10"
+							></div>
+						</div>
+					</div>
+
+					<div class="space-y-2">
+						<p
+							class="text-lg font-semibold tracking-tight text-neutral-950 dark:text-white"
+						>
+							Tilt depth controls attitude
+						</p>
+						<p class="text-sm text-neutral-600 dark:text-neutral-300">
+							Low values feel stable. Higher values feel more playful and cinematic.
+						</p>
+					</div>
+				</div>
+			</TiltCard>
+		</div>
+	{/each}
+</div>
 ```
 
 ## Usage
 
-```svelte
-<script lang="ts">
-  import { TiltCard } from "$lib/components/spell/tilt-card";
-</script>
-
-<div class="flex min-h-[320px] items-center justify-center">
-  <TiltCard
-    tiltLimit={10}
-    scale={1.05}
-    perspective={1200}
-    class="aspect-video w-[360px] rounded-2xl bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-300 p-6 shadow-[0px_8px_16px_rgba(0,0,0,0.08),0px_16px_32px_rgba(0,0,0,0.06),0px_24px_48px_rgba(0,0,0,0.04),inset_0_0_0_1px_rgba(0,0,0,0.06)] dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900 dark:shadow-[0px_8px_16px_rgba(0,0,0,0.3),0px_16px_32px_rgba(0,0,0,0.2),0px_24px_48px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.06)]"
-  >
-    <div class="flex h-full flex-col justify-between">
-      <div class="flex items-start justify-between">
-        <span class="text-sm font-semibold">Spell</span>
-        <span class="text-xs font-medium tracking-[0.28em] uppercase"
-          >Visa</span
-        >
-      </div>
-
-      <div class="flex items-end justify-between">
-        <div>
-          <p class="text-xs text-neutral-600 dark:text-neutral-400">
-            John Doe
-          </p>
-          <p class="font-mono text-sm font-medium tracking-tight tabular-nums">
-            5367 4567 8901 2345
-          </p>
-        </div>
-        <div>
-          <p class="text-xs text-neutral-600 dark:text-neutral-400">Exp.</p>
-          <p class="font-mono text-sm font-medium tabular-nums">12/25</p>
-        </div>
-      </div>
-    </div>
-  </TiltCard>
-</div>
-```
-
-## Effect Modes
-
-Use `effect="evade"` for a card that leans away from the pointer, or `effect="gravitate"` if you want the surface to follow the cursor direction.
-
-```svelte
-<TiltCard effect="gravitate">...</TiltCard>
-```
-
-## Spotlight
-
-The spotlight is enabled by default and adds a soft radial highlight that follows the pointer. Disable it when you want a cleaner or flatter presentation.
-
-```svelte
-<TiltCard spotlight={false}>...</TiltCard>
-```
-
-## Tuning Guidance
-
-- Use a lower `scale` like `1.02` for subtle UI, or a higher value like `1.1` when you want stronger hover emphasis.
-- Keep `tiltLimit` around `6` to `12` for restrained product cards, and increase it for more dramatic hero treatments.
-- Lower `perspective` values feel closer and more exaggerated, while higher values flatten the depth and feel calmer.
+Import `TiltCard` from `$lib/components/spell/tilt-card` and pass the props you need for your use case.
 
 ## Props
 
-| Prop          | Type                      | Default     | Description                                                            |
-| ------------- | ------------------------- | ----------- | ---------------------------------------------------------------------- |
-| `tiltLimit`   | `number`                  | `15`        | Sets the maximum rotation angle in degrees on both axes.               |
-| `scale`       | `number`                  | `1.05`      | Controls how much the card scales up while hovered.                    |
-| `perspective` | `number`                  | `1200`      | Sets the CSS perspective distance used for the 3D depth effect.        |
-| `effect`      | `"gravitate" \| "evade"`  | `"evade"`   | Determines whether the card tilts away from the cursor or follows it.  |
-| `spotlight`   | `boolean`                 | `true`      | Toggles the radial highlight overlay that tracks the pointer position. |
-| `class`       | `ClassValue \| undefined` | `undefined` | Custom classes applied to the root tilt wrapper.                       |
-| `style`       | `string \| undefined`     | `undefined` | Inline styles appended to the root wrapper.                            |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `tiltLimit` | `number` | `15` | Sets the maximum rotation angle in degrees on both axes. |
+| `scale` | `number` | `1.05` | Controls how much the card scales up while hovered. |
+| `perspective` | `number` | `1200` | Sets the CSS perspective distance used for the 3D depth effect. |
+| `effect` | `"gravitate" \| "evade"` | `"evade"` | Determines whether the card tilts away from the cursor or follows it. |
+| `spotlight` | `boolean` | `true` | Toggles the radial highlight overlay that tracks the pointer position. |
+| `class` | `ClassValue` | `undefined` | Custom classes applied to the root tilt wrapper. |
+| `style` | `string` | `undefined` | Inline styles appended to the root wrapper. |

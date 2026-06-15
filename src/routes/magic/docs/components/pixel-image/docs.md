@@ -1,148 +1,114 @@
-﻿# Pixel Image
+# Pixel Image
 
-A stunning image reveal animation component that splits an image into a grid of pieces, animating them in with staggered delays and an optional grayscale-to-color transition effect.
-
-## Features
-
-- **Grid-based Animation**: Splits images into customizable grid pieces for unique reveal effects
-- **Staggered Animations**: Each piece animates with random delays for an organic feel
-- **Grayscale Transition**: Optional grayscale-to-color reveal for dramatic effect
-- **Predefined Grids**: Multiple built-in grid configurations (6x4, 8x8, 8x3, 4x6, 3x8)
-- **Custom Grids**: Define your own grid dimensions for complete control
-- **Configurable Timing**: Adjust fade duration, animation delay, and color reveal timing
+A stunning image reveal animation that splits images into grid pieces with staggered fade-in and grayscale-to-color transitions.
 
 ## Installation
 
 ```bash
+# npm
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pixel-image.json
-```
 
-```bash
+# yarn
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pixel-image.json
+
+# pnpm
 pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pixel-image.json
+
+# bun
+bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/pixel-image.json
 ```
 
-```bash
-npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pixel-image.json
+## Preview
+
+```svelte
+<script lang="ts">
+	import PixelImage from "$lib/components/magic/pixel-image/pixel-image.svelte";
+	import Image from "$lib/assets/pixel-image-demo.jpg";
+</script>
+
+<PixelImage src={Image} customGrid={{ rows: 4, cols: 6 }} grayscaleAnimation />
 ```
 
-```bash
-npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pixel-image.json
+## Examples
+
+### 1. Color Only (Once)
+
+Pixel image with once={true} - animation plays only once and stays visible.
+
+```svelte
+<script lang="ts">
+	import PixelImage from "$lib/components/magic/pixel-image/pixel-image.svelte";
+	import Image from "$lib/assets/pixel-image-demo.jpg";
+</script>
+
+<PixelImage
+	src={Image}
+	customGrid={{ rows: 5, cols: 7 }}
+	grayscaleAnimation={false}
+	pixelFadeInDuration={800}
+	maxAnimationDelay={1000}
+	once
+/>
 ```
 
-```bash
-bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pixel-image.json
+### 2. Fast Reveal (Replay)
+
+Quick animation that replays each time you scroll into view (default once={false}).
+
+```svelte
+<script lang="ts">
+	import PixelImage from "$lib/components/magic/pixel-image/pixel-image.svelte";
+	import Image from "$lib/assets/pixel-image-demo.jpg";
+</script>
+
+<PixelImage
+	src={Image}
+	grid="6x4"
+	pixelFadeInDuration={500}
+	maxAnimationDelay={600}
+	colorRevealDelay={700}
+	grayscaleAnimation
+/>
+```
+
+### 3. Grid Variations
+
+Compare different grid sizes - see how 8x8 vs 8x3 grids affect the animation.
+
+```svelte
+<script lang="ts">
+	import PixelImage from "$lib/components/magic/pixel-image/pixel-image.svelte";
+	import Image from "$lib/assets/pixel-image-demo.jpg";
+</script>
+
+<div class="flex flex-wrap items-center justify-center gap-12">
+	<div class="flex flex-col items-center gap-4">
+		<PixelImage src={Image} grid="8x8" />
+		<p class="text-muted-foreground text-sm">8x8 Grid</p>
+	</div>
+
+	<div class="flex flex-col items-center gap-4">
+		<PixelImage src={Image} grid="8x3" />
+		<p class="text-muted-foreground text-sm">8x3 Grid</p>
+	</div>
+</div>
 ```
 
 ## Usage
 
-```svelte
-<script lang="ts">
-  import { PixelImage } from "$lib/components/magic/pixel-image";
-</script>
-
-<PixelImage src="/path/to/your-image.jpg" />
-```
+Import `PixelImage` from `$lib/components/magic/pixel-image` and pass the props you need for your use case.
 
 ## Props
 
-| Prop                  | Type                                        | Default  | Description                                     |
-| --------------------- | ------------------------------------------- | -------- | ----------------------------------------------- |
-| `src`                 | `string`                                    | Required | The image source URL                            |
-| `grid`                | `"6x4" \| "8x8" \| "8x3" \| "4x6" \| "3x8"` | `"6x4"`  | Predefined grid configuration                   |
-| `customGrid`          | `{ rows: number; cols: number }`            | -        | Custom grid dimensions (overrides `grid` prop)  |
-| `grayscaleAnimation`  | `boolean`                                   | `true`   | Enable grayscale-to-color transition effect     |
-| `pixelFadeInDuration` | `number`                                    | `1000`   | Duration of each piece's fade-in animation (ms) |
-| `maxAnimationDelay`   | `number`                                    | `1200`   | Maximum random delay for piece animations (ms)  |
-| `colorRevealDelay`    | `number`                                    | `1300`   | Delay before color reveal begins (ms)           |
+A component that creates stunning image reveal animations by splitting images into a grid of pieces with staggered fade-in effects.
 
-## Examples
-
-### Basic Usage
-
-Simple pixel image reveal with default settings.
-
-```svelte
-<script lang="ts">
-  import { PixelImage } from "$lib/components/magic/pixel-image";
-  import MyImage from "$lib/assets/my-image.jpg";
-</script>
-
-<PixelImage src={MyImage} />
-```
-
-### Custom Grid
-
-Use a custom grid configuration for more control over the pixel effect.
-
-```svelte
-<script lang="ts">
-  import { PixelImage } from "$lib/components/magic/pixel-image";
-  import MyImage from "$lib/assets/my-image.jpg";
-</script>
-
-<PixelImage
-  src={MyImage}
-  customGrid={{ rows: 4, cols: 6 }}
-  grayscaleAnimation
-/>
-```
-
-### Predefined Grid Patterns
-
-Choose from built-in grid configurations.
-
-```svelte
-<script lang="ts">
-  import { PixelImage } from "$lib/components/magic/pixel-image";
-  import MyImage from "$lib/assets/my-image.jpg";
-</script>
-
-<!-- Square grid -->
-<PixelImage src={MyImage} grid="8x8" />
-
-<!-- Wide grid -->
-<PixelImage src={MyImage} grid="8x3" />
-
-<!-- Tall grid -->
-<PixelImage src={MyImage} grid="3x8" />
-```
-
-### Custom Animation Timing
-
-Adjust the animation timing for different effects.
-
-```svelte
-<script lang="ts">
-  import { PixelImage } from "$lib/components/magic/pixel-image";
-  import MyImage from "$lib/assets/my-image.jpg";
-</script>
-
-<!-- Slower, more dramatic reveal -->
-<PixelImage
-  src={MyImage}
-  pixelFadeInDuration={1500}
-  maxAnimationDelay={2000}
-  colorRevealDelay={2200}
-/>
-
-<!-- Quick, snappy reveal -->
-<PixelImage
-  src={MyImage}
-  pixelFadeInDuration={500}
-  maxAnimationDelay={600}
-  colorRevealDelay={700}
-/>
-```
-
-### Without Grayscale Effect
-
-Disable the grayscale-to-color transition for a simpler reveal.
-
-```svelte
-<script lang="ts">
-  import { PixelImage } from "$lib/components/magic/pixel-image";
-  import MyImage from "$lib/assets/my-image.jpg";
-</script>
-
-<PixelImage src={MyImage} grayscaleAnimation={false} />
-```
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `src` | `string` | `Required` | The image source URL |
+| `grid` | `"6x4" \| "8x8" \| "8x3" \| "4x6" \| "3x8"` | `"6x4"` | Predefined grid configuration |
+| `customGrid` | `{ rows: number; cols: number }` | `-` | Custom grid dimensions (overrides grid prop) |
+| `grayscaleAnimation` | `boolean` | `true` | Enable grayscale-to-color transition effect |
+| `pixelFadeInDuration` | `number` | `1000` | Duration of each piece's fade-in animation (ms) |
+| `maxAnimationDelay` | `number` | `1200` | Maximum random delay for piece animations (ms) |
+| `colorRevealDelay` | `number` | `1300` | Delay before color reveal begins (ms) |
+| `once` | `boolean` | `false` | If true, animation plays only once. If false, replays each time element enters view |
