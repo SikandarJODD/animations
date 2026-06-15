@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="text font-overused-grotesk flex h-80 md:h-120 w-dvw items-center justify-center bg-white p-10 text-[#0015ff] md:p-16 md:text-xl lg:p-24"
+	class="text font-overused-grotesk flex h-80 w-dvw items-center justify-center bg-white p-10 text-[#0015ff] md:h-120 md:p-16 md:text-xl lg:p-24"
 >
 	<VerticalCutReveal
 		splitBy="characters"

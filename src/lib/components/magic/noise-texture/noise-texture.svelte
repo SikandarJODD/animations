@@ -32,10 +32,10 @@
 		octaves = 6,
 		slope = 0.15,
 		noiseOpacity = 0.6,
-        ...props
+		...props
 	}: NoiseTextureProps = $props();
 
-    let filterId = $props.id();
+	let filterId = $props.id();
 </script>
 
 <svg

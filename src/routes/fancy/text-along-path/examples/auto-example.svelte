@@ -14,7 +14,7 @@
 	];
 </script>
 
-<div  class="relative h-80 md:h-160 w-dvw overflow-hidden bg-white">
+<div class="relative h-80 w-dvw overflow-hidden bg-white md:h-160">
 	<div class="absolute flex h-full w-full flex-col">
 		{#each paths as path, i}
 			<AnimatedPathText

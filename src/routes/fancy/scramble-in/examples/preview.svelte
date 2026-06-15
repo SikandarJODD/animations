@@ -20,7 +20,7 @@
 </script>
 
 <div
-	class="text-foreground dark:text-muted rounded-xl flex h-120 w-dvw flex-col items-start justify-center overflow-hidden bg-white px-2 py-16 text-left md:text-center text-sm font-normal sm:px-16 md:px-20 md:text-lg lg:px-24 lg:text-lg xl:text-xl"
+	class="text-foreground dark:text-muted flex h-120 w-dvw flex-col items-start justify-center overflow-hidden rounded-xl bg-white px-2 py-16 text-left text-sm font-normal sm:px-16 md:px-20 md:text-center md:text-lg lg:px-24 lg:text-lg xl:text-xl"
 >
 	{#each titles as model, index}
 		<ScrambleIn

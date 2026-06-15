@@ -71,9 +71,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "letter-3d-swap",
@@ -99,9 +97,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "letter-swap",
@@ -122,9 +118,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "letter-swap-ping-pong",
@@ -145,10 +139,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv",
-				"runed"
-			]
+			"dependencies": ["motion-sv", "runed"]
 		},
 		{
 			"name": "random-letter-swap",
@@ -169,10 +160,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv",
-				"runed"
-			]
+			"dependencies": ["motion-sv", "runed"]
 		},
 		{
 			"name": "random-letter-swap-ping-pong",
@@ -193,10 +181,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv",
-				"runed"
-			]
+			"dependencies": ["motion-sv", "runed"]
 		},
 		{
 			"name": "scramble-hover",
@@ -217,9 +202,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "scramble-in",
@@ -240,9 +223,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "text-along-path",
@@ -263,9 +244,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "text-highlighter",
@@ -286,9 +265,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "text-rotate",
@@ -309,9 +286,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "underline-to-background",
@@ -332,9 +307,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "vertical-cut-reveal",
@@ -355,9 +328,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		}
 	]
 }

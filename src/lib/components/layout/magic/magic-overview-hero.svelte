@@ -14,13 +14,16 @@
 	<div class="border-border absolute inset-3 rounded-3xl border border-dashed opacity-70"></div>
 
 	<div class="relative mx-auto max-w-3xl">
-		<H1 id="overview" class="text-3xl leading-16 font-semibold font-figtree sm:text-5xl md:text-6xl">
+		<H1
+			id="overview"
+			class="font-figtree text-3xl leading-16 font-semibold sm:text-5xl md:text-6xl"
+		>
 			Svelte Magic UI
 		</H1>
 
 		<Paragraph
 			id="description"
-			class="text-muted-foreground mx-auto font-figtree mt-5 max-w-2xl text-base leading-8 text-balance"
+			class="text-muted-foreground font-figtree mx-auto mt-5 max-w-2xl text-base leading-8 text-balance"
 		>
 			50+ Free and Open-Source animated components and effects Built with Svelte 5,
 			Typescript, Tailwind CSS V4 and Motion Svelte.

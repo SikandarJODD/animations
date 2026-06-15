@@ -1,2 +1,2 @@
-import AnimatedTabs from './animated-tabs.svelte';
+import AnimatedTabs from "./animated-tabs.svelte";
 export { AnimatedTabs };

@@ -26,10 +26,10 @@ const seo: SEO = {
 const installBlock: InstallComponentDocs = {
 	packages: [],
 	installCode: [
-		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ filename: "noise-texture.svelte", filecode: NoiseTextureSvelteRaw, lang: "svelte", }
+		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true },
+		{ filename: "noise-texture.svelte", filecode: NoiseTextureSvelteRaw, lang: "svelte" },
 	],
-	folderStructure: ''
+	folderStructure: "",
 };
 
 const examples: Example[] = [
@@ -40,10 +40,10 @@ const examples: Example[] = [
 			filename: "newsletter-example.svelte",
 			filecode: NewsletterExampleRaw,
 			lang: "svelte",
-			highlight: [11]
-		}
-	}
-]
+			highlight: [11],
+		},
+	},
+];
 
 export const data: ComponentDoc = {
 	...meta,
@@ -78,7 +78,8 @@ export const data: ComponentDoc = {
 					name: "slope",
 					type: "number",
 					default: "0.15",
-					description: "Linear channel slope applied after desaturation to control contrast.",
+					description:
+						"Linear channel slope applied after desaturation to control contrast.",
 				},
 				{
 					name: "noiseOpacity",

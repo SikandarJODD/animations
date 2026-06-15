@@ -7,7 +7,7 @@
 </script>
 
 <div class="flex justify-center p-4">
-	<Card.Root class="bg-card/80 relative w-full md:w-120 overflow-hidden border">
+	<Card.Root class="bg-card/80 relative w-full overflow-hidden border md:w-120">
 		<NoiseTexture noiseOpacity={0.45} />
 		<Card.Header class="relative z-10 space-y-1 pb-4">
 			<Card.Title class="text-xl">The weekly digest</Card.Title>

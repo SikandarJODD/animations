@@ -63,7 +63,7 @@
 				</Button>
 			</div>
 		</Frame.Header>
-		<Frame.Panel class="h-full min-h-80 w-full rounded-xl overflow-hidden p-0">
+		<Frame.Panel class="h-full min-h-80 w-full overflow-hidden rounded-xl p-0">
 			{#key retry}
 				{@render children?.()}
 			{/key}

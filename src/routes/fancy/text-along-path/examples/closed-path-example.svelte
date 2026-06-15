@@ -5,7 +5,7 @@
 	const circlePath = "M 100 100 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0";
 </script>
 
-<div class="relative flex h-80 md:h-100 w-dvw items-center justify-center">
+<div class="relative flex h-80 w-dvw items-center justify-center md:h-100">
 	{#each [0, 90, 180, 270] as rotation, i}
 		<AnimatedPathText
 			path={circlePath}

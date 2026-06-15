@@ -179,7 +179,7 @@
 	});
 </script>
 
-<div class="relative h-80 md:h-130 w-dvw bg-[#fff] p-0 text-black">
+<div class="relative h-80 w-dvw bg-[#fff] p-0 text-black md:h-130">
 	<div
 		class="absolute bottom-8 left-1/2 z-20 flex w-8 -translate-x-1/2 items-center justify-center rounded-full border border-black/80 px-2 pb-0.5 text-sm tabular-nums sm:bottom-12 sm:w-10 sm:px-3 sm:text-base md:bottom-16 lg:bottom-20"
 	>

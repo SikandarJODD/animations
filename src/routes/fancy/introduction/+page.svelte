@@ -107,8 +107,8 @@
 		</UnorderedList>
 
 		<Paragraph class="mt-4">
-			All credits for design and original implementation go to Daniel Petho. This project is
-			a port of his work to the Svelte ecosystem.
+			All credits for design and original implementation go to Daniel Petho. This project is a
+			port of his work to the Svelte ecosystem.
 		</Paragraph>
 	</section>
 </div>

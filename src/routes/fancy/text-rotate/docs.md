@@ -37,17 +37,17 @@ Bind the component instance with `bind:this` to call `next`, `previous`, `jumpTo
 
 ## Props
 
-| Prop                    | Type                                         | Default                                            | Description                                        |
-| ----------------------- | -------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| `texts`                 | `string[]`                                   | required                                           | Array of strings rotated through by the component. |
-| `as`                    | `keyof SvelteHTMLElements`                   | `"p"`                                              | HTML element used for the animated wrapper.        |
-| `rotationInterval`      | `number`                                     | `2000`                                             | Delay in milliseconds between automatic rotations. |
-| `auto`                  | `boolean`                                    | `true`                                             | Enables interval-driven rotation.                  |
-| `loop`                  | `boolean`                                    | `true`                                             | Wraps back to the first text after the last.       |
-| `splitBy`               | `"characters" \| "words" \| "lines" \| string` | `"characters"`                                   | Controls how each string is segmented.             |
-| `staggerDuration`       | `number`                                     | `0`                                                | Delay added between animated segments.             |
-| `staggerFrom`           | `"first" \| "last" \| "center" \| "random" \| number` | `"first"`                                | Starting point for stagger delay calculation.      |
-| `transition`            | `Transition`                                 | `{ type: "spring", damping: 25, stiffness: 300 }` | Shared motion transition configuration.            |
-| `mainClassName`         | `string \| undefined`                        | `undefined`                                        | Classes merged onto the root wrapper.              |
-| `splitLevelClassName`   | `string \| undefined`                        | `undefined`                                        | Classes applied to each word or segment wrapper.   |
-| `elementLevelClassName` | `string \| undefined`                        | `undefined`                                        | Classes applied around each animated unit.         |
+| Prop                    | Type                                                  | Default                                           | Description                                        |
+| ----------------------- | ----------------------------------------------------- | ------------------------------------------------- | -------------------------------------------------- |
+| `texts`                 | `string[]`                                            | required                                          | Array of strings rotated through by the component. |
+| `as`                    | `keyof SvelteHTMLElements`                            | `"p"`                                             | HTML element used for the animated wrapper.        |
+| `rotationInterval`      | `number`                                              | `2000`                                            | Delay in milliseconds between automatic rotations. |
+| `auto`                  | `boolean`                                             | `true`                                            | Enables interval-driven rotation.                  |
+| `loop`                  | `boolean`                                             | `true`                                            | Wraps back to the first text after the last.       |
+| `splitBy`               | `"characters" \| "words" \| "lines" \| string`        | `"characters"`                                    | Controls how each string is segmented.             |
+| `staggerDuration`       | `number`                                              | `0`                                               | Delay added between animated segments.             |
+| `staggerFrom`           | `"first" \| "last" \| "center" \| "random" \| number` | `"first"`                                         | Starting point for stagger delay calculation.      |
+| `transition`            | `Transition`                                          | `{ type: "spring", damping: 25, stiffness: 300 }` | Shared motion transition configuration.            |
+| `mainClassName`         | `string \| undefined`                                 | `undefined`                                       | Classes merged onto the root wrapper.              |
+| `splitLevelClassName`   | `string \| undefined`                                 | `undefined`                                       | Classes applied to each word or segment wrapper.   |
+| `elementLevelClassName` | `string \| undefined`                                 | `undefined`                                       | Classes applied around each animated unit.         |

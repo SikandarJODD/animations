@@ -9,11 +9,7 @@
 	import APITable from "$lib/components/docs/base/APITable.svelte";
 	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
 	import { MetaTags } from "svelte-meta-tags";
-	import {
-		buildSpellKeywords,
-		SPELL_SOCIAL_IMAGE,
-		SPELL_TITLE_TEMPLATE,
-	} from "$lib/seo/spell";
+	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
 	import { data, textureDownloadUrl } from "./data";
 
 	let PreviewComp = $derived(data.preview);

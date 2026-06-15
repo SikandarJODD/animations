@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="font-figtree flex h-80 md:h-100 w-full flex-col items-center justify-center bg-[#0015ff] p-10 text-lg font-bold tracking-wide text-white md:text-3xl"
+	class="font-figtree flex h-80 w-full flex-col items-center justify-center bg-[#0015ff] p-10 text-lg font-bold tracking-wide text-white md:h-100 md:text-3xl"
 >
 	<VerticalCutReveal
 		splitBy="words"

@@ -10,12 +10,9 @@
 	import VerticalCutRevealPreview from "./examples/vertical-cut-reveal-preview.svelte";
 </script>
 
-<section id="showcase" class="space-y-4 mt-6">
+<section id="showcase" class="mt-6 space-y-4">
 	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-		<FancyShowcaseCard
-			title="Vertical Cut Reveal"
-			href="/fancy/vertical-cut-reveal"
-		>
+		<FancyShowcaseCard title="Vertical Cut Reveal" href="/fancy/vertical-cut-reveal">
 			<VerticalCutRevealPreview />
 		</FancyShowcaseCard>
 
@@ -23,7 +20,7 @@
 			<LetterSwapPreview />
 		</FancyShowcaseCard>
 
-		<FancyShowcaseCard title="Scramble In" href="/fancy/scramble-in" >
+		<FancyShowcaseCard title="Scramble In" href="/fancy/scramble-in">
 			<ScrambleInListPreview />
 		</FancyShowcaseCard>
 
@@ -37,30 +34,21 @@
 	</div>
 
 	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-		<FancyShowcaseCard title="Scramble In" href="/fancy/scramble-in" >
+		<FancyShowcaseCard title="Scramble In" href="/fancy/scramble-in">
 			<ScrambleInHeadlinePreview />
 		</FancyShowcaseCard>
 
-		<FancyShowcaseCard
-			title="Underline To Background"
-			href="/fancy/underline-to-background"
-		>
+		<FancyShowcaseCard title="Underline To Background" href="/fancy/underline-to-background">
 			<UnderlineToBackgroundPreview />
 		</FancyShowcaseCard>
 	</div>
 
 	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-		<FancyShowcaseCard
-			title="Text Highlighter"
-			href="/fancy/text-highlighter"
-		>
+		<FancyShowcaseCard title="Text Highlighter" href="/fancy/text-highlighter">
 			<TextHighlighterPreview />
 		</FancyShowcaseCard>
 
-		<FancyShowcaseCard
-			title="Media Between Text"
-			href="/fancy/media-between-text"
-		>
+		<FancyShowcaseCard title="Media Between Text" href="/fancy/media-between-text">
 			<MediaBetweenTextPreview />
 		</FancyShowcaseCard>
 	</div>

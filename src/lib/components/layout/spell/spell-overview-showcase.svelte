@@ -29,22 +29,22 @@
 			<a href="/spell/perspective-book" class={showcaseTagClass}>
 				Perspective Book
 				<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</span>
 			</a>
 			<PerspectiveBookPreview />
 		</div>
@@ -81,22 +81,22 @@
 					<a href="/spell/signature" class={showcaseTagClass}>
 						Signature
 						<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="14"
+								height="14"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="1.4"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-external-link-icon lucide-external-link"
+								><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+									d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+								/></svg
+							>
+						</span>
 					</a>
 					<SignaturePreview />
 				</div>
@@ -106,22 +106,22 @@
 					<a href="/spell/animated-checkbox" class={showcaseTagClass}>
 						Animated Checkbox
 						<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="14"
+								height="14"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="1.4"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-external-link-icon lucide-external-link"
+								><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+									d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+								/></svg
+							>
+						</span>
 					</a>
 					<AnimatedCheckboxPreview />
 				</div>
@@ -135,22 +135,22 @@
 			<a href="/spell/gradient-wave-text" class={showcaseTagClass}>
 				Gradient Wave Text
 				<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</span>
 			</a>
 			<GradientWaveTextPreview />
 		</div>
@@ -160,22 +160,22 @@
 			<a href="/spell/qrcode" class={showcaseTagClass}>
 				QR Code
 				<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</span>
 			</a>
 			<QRCodePreview />
 		</div>
@@ -185,22 +185,22 @@
 			<a href="/spell/special-text" class={showcaseTagClass}>
 				Special Text
 				<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</span>
 			</a>
 			<SpecialTextPreview />
 		</div>
@@ -212,22 +212,22 @@
 			<a href="/spell/color-selector" class={showcaseTagClass}>
 				Color Selector
 				<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</span>
 			</a>
 			<ColorSelectorPreview />
 		</div>
@@ -237,22 +237,22 @@
 			<a href="/spell/marquee" class={showcaseTagClass}>
 				Marquee
 				<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</span>
 			</a>
 			<MarqueePreview />
 		</div>
@@ -262,22 +262,22 @@
 			<a href="/spell/label-input" class={showcaseTagClass}>
 				Label Input
 				<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</span>
 			</a>
 			<LabelInputPreview />
 		</div>
@@ -289,22 +289,22 @@
 			<a href="/spell/text-marquee" class={showcaseTagClass}>
 				Text Marquee
 				<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</span>
 			</a>
 			<TextMarqueePreview />
 		</div>
@@ -368,22 +368,22 @@
 			<a href="/spell/highlighted-text" class={showcaseTagClass}>
 				Highlighted Text
 				<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</span>
 			</a>
 			<HighlightedTextPreview />
 		</div>
@@ -393,22 +393,22 @@
 			<a href="/spell/logo-carousel" class={showcaseTagClass}>
 				Logo Carousel
 				<span aria-hidden="true" class={showcaseTagArrowClass}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="14"
-							height="14"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.4"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-external-link-icon lucide-external-link"
-							><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-								d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-							/></svg
-						>
-					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-external-link-icon lucide-external-link"
+						><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
+							d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+						/></svg
+					>
+				</span>
 			</a>
 			<LogoCarouselPreview />
 		</div>

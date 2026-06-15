@@ -116,7 +116,8 @@ const examples: Example[] = [
 	{
 		name: "Scroll Trigger",
 		preview: ScrollDemoExample,
-		description: "Animate the Vertical Cut Reveal when the text enters the viewport using the useInView function from motion-sv.",
+		description:
+			"Animate the Vertical Cut Reveal when the text enters the viewport using the useInView function from motion-sv.",
 		previewClass: "p-0",
 		code: {
 			filename: "scroll-demo-example.svelte",

@@ -104,8 +104,8 @@
 			>.
 		</Paragraph>
 		<Paragraph>
-			This project adapts the original ideas for the Svelte ecosystem while
-			keeping the source credit visible in the docs.
+			This project adapts the original ideas for the Svelte ecosystem while keeping the source
+			credit visible in the docs.
 		</Paragraph>
 	</section>
 

@@ -20,7 +20,9 @@
 		<AnimatedGradientSvg colors={gradientColors} speed={10} blur="medium" />
 	</span>
 	<div
-		class="relative z-10 flex-1 {align === "center" ? "items-center text-center" : "items-start text-left"} flex h-full w-full flex-col justify-between"
+		class="relative z-10 flex-1 {align === 'center'
+			? 'items-center text-center'
+			: 'items-start text-left'} flex h-full w-full flex-col justify-between"
 	>
 		<div>
 			<div class="-mb-0.5 text-xs font-semibold text-white sm:text-sm md:text-base">

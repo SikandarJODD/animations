@@ -11,4 +11,3 @@ A glare hover effect that adds a subtle shine to elements when hovered.
 
 <GlareHover />
 ```
-

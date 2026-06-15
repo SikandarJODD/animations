@@ -7,7 +7,7 @@
 		mainClass="text-2xl sm:text-5xl bg-background lowercase"
 		frontFaceClass="bg-background text-foreground"
 		secondFaceClass="bg-background text-foreground"
-		rotateDirection='left'
+		rotateDirection="left"
 		staggerDuration={0.03}
 		staggerFrom="first"
 		transition={{ type: "spring", damping: 25, stiffness: 160 }}
@@ -18,7 +18,7 @@
 		mainClass="text-2xl sm:text-5xl bg-background lowercase"
 		frontFaceClass="bg-background text-foreground"
 		secondFaceClass="bg-background text-foreground"
-		rotateDirection='right'
+		rotateDirection="right"
 		staggerDuration={0.03}
 		staggerFrom="first"
 		transition={{ type: "spring", damping: 25, stiffness: 160 }}
@@ -42,7 +42,7 @@
 		secondFaceClass="bg-background text-foreground"
 		rotateDirection="bottom"
 		staggerDuration={0.03}
-		staggerFrom='first'
+		staggerFrom="first"
 		transition={{ type: "spring", damping: 25, stiffness: 160 }}
 	>
 		Goes to Bottom

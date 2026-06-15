@@ -3,7 +3,7 @@
 	let debug = $state(false);
 </script>
 
-<div class="font-serif flex max-w-2xl flex-col items-center">
+<div class="flex max-w-2xl flex-col items-center font-serif">
 	<button
 		class="bg-background text-foreground hover:bg-muted absolute top-4 left-4 cursor-pointer rounded-md border px-2 py-1 text-[8px]"
 		onclick={() => (debug = !debug)}

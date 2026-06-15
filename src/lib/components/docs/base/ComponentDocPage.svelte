@@ -33,11 +33,7 @@
 	import APITable from "$lib/components/docs/base/APITable.svelte";
 	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
 	import { MetaTags } from "svelte-meta-tags";
-	import {
-		buildSpellKeywords,
-		SPELL_SOCIAL_IMAGE,
-		SPELL_TITLE_TEMPLATE,
-	} from "$lib/seo/spell";
+	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
 
 	let {
 		id,
@@ -75,12 +71,8 @@
 				])
 			: seo.keywords
 	);
-	let resolvedSocialTitle = $derived(
-		isSpellRoute ? `${seo.title} | Svelte Spell UI` : seo.title
-	);
-	let resolvedImages = $derived(
-		seo.images ?? (isSpellRoute ? [SPELL_SOCIAL_IMAGE] : undefined)
-	);
+	let resolvedSocialTitle = $derived(isSpellRoute ? `${seo.title} | Svelte Spell UI` : seo.title);
+	let resolvedImages = $derived(seo.images ?? (isSpellRoute ? [SPELL_SOCIAL_IMAGE] : undefined));
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash

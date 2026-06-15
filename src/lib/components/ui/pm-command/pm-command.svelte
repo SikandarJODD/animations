@@ -49,12 +49,12 @@
 
 	const commandText = $derived(`${cmd?.command} ${cmd?.args.join(" ")}`);
 
-	let componentName = $derived.by(()=>{
-		if(title) return title;
+	let componentName = $derived.by(() => {
+		if (title) return title;
 		let urlID = page.url.pathname.split("/").filter(Boolean).slice(-1)[0];
 		console.log("URL ID:", urlID);
 		return urlID ? decodeURIComponent(urlID) : "Command";
-	})
+	});
 </script>
 
 <div class={cn(style({ variant }), className)}>
@@ -80,7 +80,12 @@
 			<Tooltip.Root>
 				<Tooltip.Trigger>
 					{#snippet child({ props })}
-						<CopyButton title={componentName} {...props} text={commandText} class="size-6 [&_svg]:size-3">
+						<CopyButton
+							title={componentName}
+							{...props}
+							text={commandText}
+							class="size-6 [&_svg]:size-3"
+						>
 							{#snippet icon()}
 								<ClipboardIcon />
 							{/snippet}

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { motion } from 'motion-sv';
-	import { untrack } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import { motion } from "motion-sv";
+	import { untrack } from "svelte";
+	import type { HTMLAttributes } from "svelte/elements";
 
 	interface ScrambleInProps extends HTMLAttributes<HTMLSpanElement> {
 		text: string;
@@ -16,7 +16,7 @@
 		onComplete?: () => void;
 	}
 
-	const DEFAULT_CHARACTERS = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+';
+	const DEFAULT_CHARACTERS = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+";
 
 	let {
 		text,
@@ -33,8 +33,8 @@
 	}: ScrambleInProps = $props();
 
 	function splitIntoGraphemes(value: string) {
-		if (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {
-			const segmenter = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+		if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
+			const segmenter = new Intl.Segmenter(undefined, { granularity: "grapheme" });
 			return Array.from(segmenter.segment(value), ({ segment }) => segment);
 		}
 
@@ -42,22 +42,22 @@
 	}
 
 	function joinSegments(segments: string[]) {
-		return segments.join('');
+		return segments.join("");
 	}
 
 	function getRandomSegment(pool: string[]) {
 		if (pool.length === 0) {
-			return '';
+			return "";
 		}
 
-		return pool[Math.floor(Math.random() * pool.length)] ?? '';
+		return pool[Math.floor(Math.random() * pool.length)] ?? "";
 	}
 
 	function createScrambledPart(pool: string[], count: number) {
-		return Array.from({ length: count }, () => getRandomSegment(pool)).join('');
+		return Array.from({ length: count }, () => getRandomSegment(pool)).join("");
 	}
 
-	let displayText = $state('');
+	let displayText = $state("");
 	let isAnimating = $state(false);
 	let visibleLetterCount = $state(0);
 	let scrambleOffset = $state(0);
@@ -65,7 +65,9 @@
 	let sourceSegments = $derived.by(() => splitIntoGraphemes(text));
 	let displaySegments = $derived.by(() => splitIntoGraphemes(displayText));
 	let scrambleSegments = $derived.by(() => splitIntoGraphemes(characters));
-	let revealedText = $derived.by(() => joinSegments(displaySegments.slice(0, visibleLetterCount)));
+	let revealedText = $derived.by(() =>
+		joinSegments(displaySegments.slice(0, visibleLetterCount))
+	);
 	let scrambledText = $derived.by(() => joinSegments(displaySegments.slice(visibleLetterCount)));
 
 	let previousAutoStart = false;
@@ -80,7 +82,7 @@
 
 	export function start() {
 		clearStartTimeout();
-		displayText = '';
+		displayText = "";
 		visibleLetterCount = 0;
 		scrambleOffset = 0;
 		isAnimating = false;
@@ -102,7 +104,7 @@
 
 	export function reset() {
 		clearStartTimeout();
-		displayText = '';
+		displayText = "";
 		visibleLetterCount = 0;
 		scrambleOffset = 0;
 		isAnimating = false;
@@ -146,7 +148,8 @@
 			const currentScrambleCount = Math.min(remainingSpace, maxScrambledLetters);
 			const scrambledPart = createScrambledPart(randomPool, currentScrambleCount);
 
-			displayText = joinSegments(sourceSegments.slice(0, currentVisibleLetterCount)) + scrambledPart;
+			displayText =
+				joinSegments(sourceSegments.slice(0, currentVisibleLetterCount)) + scrambledPart;
 		}, intervalDelay);
 
 		return () => clearInterval(intervalId);

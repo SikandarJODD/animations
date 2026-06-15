@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
+	import { cn } from "$lib/utils";
 
-	export type RotateDirection = 'top' | 'right' | 'bottom' | 'left';
+	export type RotateDirection = "top" | "right" | "bottom" | "left";
 
 	interface CharBoxProps {
 		char: string;
@@ -12,41 +12,41 @@
 
 	let {
 		char,
-		frontFaceClass = '',
-		secondFaceClass = '',
-		rotateDirection
+		frontFaceClass = "",
+		secondFaceClass = "",
+		rotateDirection,
 	}: CharBoxProps = $props();
 
 	let outerTransform = $derived(
-		rotateDirection === 'top' || rotateDirection === 'bottom'
-			? 'translateZ(-0.5lh)'
-			: 'rotateY(90deg) translateX(50%) rotateY(-90deg)'
+		rotateDirection === "top" || rotateDirection === "bottom"
+			? "translateZ(-0.5lh)"
+			: "rotateY(90deg) translateX(50%) rotateY(-90deg)"
 	);
 
 	let frontFaceTransform = $derived.by(() => {
-		if (rotateDirection === 'top' || rotateDirection === 'bottom') {
-			return 'translateZ(0.5lh)';
+		if (rotateDirection === "top" || rotateDirection === "bottom") {
+			return "translateZ(0.5lh)";
 		}
 
-		if (rotateDirection === 'left') {
-			return 'rotateY(90deg) translateX(50%) rotateY(-90deg)';
+		if (rotateDirection === "left") {
+			return "rotateY(90deg) translateX(50%) rotateY(-90deg)";
 		}
 
-		return 'rotateY(-90deg) translateX(50%) rotateY(90deg)';
+		return "rotateY(-90deg) translateX(50%) rotateY(90deg)";
 	});
 
 	let secondFaceTransform = $derived.by(() => {
 		switch (rotateDirection) {
-			case 'top':
-				return 'rotateX(-90deg) translateZ(0.5lh)';
-			case 'right':
-				return 'rotateY(90deg) translateX(50%) rotateY(-90deg) translateX(-50%) rotateY(-90deg) translateX(50%)';
-			case 'bottom':
-				return 'rotateX(90deg) translateZ(0.5lh)';
-			case 'left':
-				return 'rotateY(90deg) translateX(50%) rotateY(-90deg) translateX(50%) rotateY(-90deg) translateX(50%)';
+			case "top":
+				return "rotateX(-90deg) translateZ(0.5lh)";
+			case "right":
+				return "rotateY(90deg) translateX(50%) rotateY(-90deg) translateX(-50%) rotateY(-90deg) translateX(50%)";
+			case "bottom":
+				return "rotateX(90deg) translateZ(0.5lh)";
+			case "left":
+				return "rotateY(90deg) translateX(50%) rotateY(-90deg) translateX(50%) rotateY(-90deg) translateX(50%)";
 			default:
-				return 'rotateY(90deg) translateZ(1ch)';
+				return "rotateY(90deg) translateZ(1ch)";
 		}
 	});
 </script>
@@ -56,17 +56,14 @@
 	style:transform={outerTransform}
 >
 	<span
-		class={cn('relative h-lh backface-hidden!', frontFaceClass)}
+		class={cn("relative h-lh backface-hidden!", frontFaceClass)}
 		style:transform={frontFaceTransform}
 	>
 		{char}
 	</span>
 
 	<span
-		class={cn(
-			'absolute top-0 left-0 h-lh backface-hidden!',
-			secondFaceClass
-		)}
+		class={cn("absolute top-0 left-0 h-lh backface-hidden!", secondFaceClass)}
 		style:transform={secondFaceTransform}
 	>
 		{char}

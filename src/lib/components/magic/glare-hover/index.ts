@@ -1,2 +1,2 @@
-import GlareHover from './glare-hover.svelte'
-export { GlareHover }
+import GlareHover from "./glare-hover.svelte";
+export { GlareHover };

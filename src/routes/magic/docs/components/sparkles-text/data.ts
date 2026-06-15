@@ -9,21 +9,23 @@ import PreviewCodeRaw from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "sparkles-text",
 	title: "Sparkles Text",
-	description: "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+	description:
+		"A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
 	category: "magic",
 };
 
 const seo: SEO = {
 	title: "Sparkles Text",
-	description: "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+	description:
+		"A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
 	keywords: ["Svelte", "Sparkles Text", "Magic"],
 };
 
 const installBlock: InstallComponentDocs = {
 	packages: [],
 	installCode: [
-		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ filename: "sparkles-text.svelte", filecode: SparklesTextSvelteRaw, lang: "svelte", }
+		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true },
+		{ filename: "sparkles-text.svelte", filecode: SparklesTextSvelteRaw, lang: "svelte" },
 	],
 	folderStructure: "",
 };

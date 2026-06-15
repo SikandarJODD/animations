@@ -16,7 +16,7 @@
 	let {
 		title,
 		description,
-		titleTemplate='%s | Svelte Animations',
+		titleTemplate = "%s | Svelte Animations",
 		keywords,
 		images = [
 			{

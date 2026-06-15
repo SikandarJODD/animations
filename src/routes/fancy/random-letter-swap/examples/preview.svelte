@@ -15,7 +15,11 @@
 		<RandomLetterSwap label="Bottom To Top Animation" reverse={false} class="px-4 italic" />
 
 		<!-- Ping Pong  -->
-		<RandomLetterSwapPingPong label="Ping Pong Animation" class='text-blue-600' />
-		<RandomLetterSwapPingPong label="Comes From The Bottom" reverse={false} class="italic text-blue-600" />
+		<RandomLetterSwapPingPong label="Ping Pong Animation" class="text-blue-600" />
+		<RandomLetterSwapPingPong
+			label="Comes From The Bottom"
+			reverse={false}
+			class="text-blue-600 italic"
+		/>
 	</div>
 </div>

@@ -8,10 +8,7 @@
 
 	const uid = $props.id();
 
-	let {
-		tabs = [],
-		value = $bindable<string | undefined>(),
-	}: Props = $props();
+	let { tabs = [], value = $bindable<string | undefined>() }: Props = $props();
 
 	let containerRef = $state<HTMLDivElement | null>(null);
 	let activeTabRef = $state<HTMLDivElement | null>(null);
@@ -51,8 +48,7 @@
 		const leftInset = (clipLeft / track.offsetWidth) * 100;
 		const rightInset = 100 - (clipRight / track.offsetWidth) * 100;
 
-		container.style.clipPath =
-			`inset(0 ${rightInset.toFixed(3)}% 0 ${leftInset.toFixed(3)}% round 17px)`;
+		container.style.clipPath = `inset(0 ${rightInset.toFixed(3)}% 0 ${leftInset.toFixed(3)}% round 17px)`;
 	}
 
 	$effect(() => {
@@ -85,11 +81,11 @@
 		aria-hidden="true"
 		class="pointer-events-none absolute z-10 w-full overflow-hidden [clip-path:inset(0_75%_0_0_round_17px)] [transition:clip-path_0.25s_ease]"
 	>
-		<div class="relative flex w-full justify-center bg-primary">
+		<div class="bg-primary relative flex w-full justify-center">
 			{#each tabs as tab, index (index)}
 				<button
 					type="button"
-					class="flex h-8 items-center rounded-full p-3 font-medium whitespace-nowrap text-primary-foreground text-sm/5.5 max-sm:last:hidden"
+					class="text-primary-foreground flex h-8 items-center rounded-full p-3 text-sm/5.5 font-medium whitespace-nowrap max-sm:last:hidden"
 					tabindex={-1}
 				>
 					{tab}
@@ -103,7 +99,7 @@
 			<button
 				bind:this={tabButtons[index]}
 				type="button"
-				class="flex h-8 items-center rounded-full p-3 font-medium whitespace-nowrap text-muted-foreground text-sm/5.5 transition-colors focus-visible:outline-none focus-visible:ring-2 max-sm:last:hidden"
+				class="text-muted-foreground flex h-8 items-center rounded-full p-3 text-sm/5.5 font-medium whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:outline-none max-sm:last:hidden"
 				aria-pressed={selectedTab === tab}
 				data-state={selectedTab === tab ? "active" : "inactive"}
 				id={`${uid}-tab-${index}`}

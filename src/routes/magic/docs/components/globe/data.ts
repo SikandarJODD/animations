@@ -23,10 +23,10 @@ const seo: SEO = {
 const installBlock: InstallComponentDocs = {
 	packages: ["cobe"],
 	installCode: [
-		{ filename: "globe.svelte", filecode: GlobeSvelteRaw, lang: "svelte", isExpand: true, },
-		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", }
+		{ filename: "globe.svelte", filecode: GlobeSvelteRaw, lang: "svelte", isExpand: true },
+		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
 	],
-	folderStructure: ''
+	folderStructure: "",
 };
 
 export const data: ComponentDoc = {

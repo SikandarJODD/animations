@@ -113,7 +113,7 @@ export const fancyUIComponents: FancyComponent[] = [
 		category: "Components",
 		desc: "Create animated gradient effects using SVG filters and animations.",
 		badge: "New",
-	}
+	},
 ];
 
 const fancyUICategoryOrder: FancyCategory[] = ["Overview", "Components"];

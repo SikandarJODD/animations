@@ -41,13 +41,13 @@ const examples: Example[] = [
 	{
 		name: "Cta Example",
 		preview: CtaExample,
-		previewClass: 'py-20',
+		previewClass: "py-20",
 		code: {
 			filename: "cta-example.svelte",
 			filecode: CtaExampleRaw,
 			lang: "svelte",
-		}
-	}
+		},
+	},
 ];
 
 export const data: ComponentDoc = {
@@ -125,7 +125,8 @@ export const data: ComponentDoc = {
 					name: "playOnce",
 					type: "boolean",
 					default: "false",
-					description: "Runs the glare only on hover instead of maintaining a reusable transition state.",
+					description:
+						"Runs the glare only on hover instead of maintaining a reusable transition state.",
 				},
 				{
 					name: "class",

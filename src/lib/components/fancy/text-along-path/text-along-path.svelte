@@ -147,7 +147,7 @@
 					to="100%"
 					begin="0s"
 					dur={autoDuration}
-					repeatCount={repeatCount}
+					{repeatCount}
 					calcMode={easingFunction.calcMode}
 					keyTimes={easingFunction.keyTimes}
 					keySplines={easingFunction.keySplines}
@@ -171,7 +171,7 @@
 					to="0%"
 					begin="0s"
 					dur={autoDuration}
-					repeatCount={repeatCount}
+					{repeatCount}
 					calcMode={easingFunction.calcMode}
 					keyTimes={easingFunction.keyTimes}
 					keySplines={easingFunction.keySplines}

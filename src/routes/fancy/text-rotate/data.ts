@@ -97,7 +97,8 @@ export const data: ComponentDoc = {
 					name: "auto",
 					type: "boolean",
 					default: "true",
-					description: "Whether the component should rotate automatically on an interval.",
+					description:
+						"Whether the component should rotate automatically on an interval.",
 				},
 				{
 					name: "loop",
@@ -127,13 +128,15 @@ export const data: ComponentDoc = {
 					name: "transition",
 					type: "Transition",
 					default: '{ type: "spring", damping: 25, stiffness: 300 }',
-					description: "Motion transition shared by the layout wrapper and text segments.",
+					description:
+						"Motion transition shared by the layout wrapper and text segments.",
 				},
 				{
 					name: "animatePresenceMode",
 					type: '"sync" | "wait" | "popLayout"',
 					default: '"wait"',
-					description: "AnimatePresence mode used when swapping from one text string to the next.",
+					description:
+						"AnimatePresence mode used when swapping from one text string to the next.",
 				},
 				{
 					name: "animatePresenceInitial",
@@ -145,7 +148,8 @@ export const data: ComponentDoc = {
 					name: "onNext",
 					type: "(index: number) => void",
 					default: "undefined",
-					description: "Callback invoked after the component rotates to a new text index.",
+					description:
+						"Callback invoked after the component rotates to a new text index.",
 				},
 				{
 					name: "mainClassName",

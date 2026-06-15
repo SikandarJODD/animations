@@ -23,10 +23,16 @@ const seo: SEO = {
 const installBlock: InstallComponentDocs = {
 	packages: [],
 	installCode: [
-		{ filename: "hexagon-pattern.svelte", filecode: HexagonPatternSvelteRaw, lang: "svelte", isExpand: true, },
-		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", }
+		{
+			filename: "hexagon-pattern.svelte",
+			filecode: HexagonPatternSvelteRaw,
+			lang: "svelte",
+			isExpand: true,
+		},
+		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
 	],
-	folderStructure: "src/\n`-- lib/\n    `-- components/\n        `-- magic/\n            `-- hexagon-pattern/\n                |-- hexagon-pattern.svelte\n                `-- index.ts",
+	folderStructure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- magic/\n            `-- hexagon-pattern/\n                |-- hexagon-pattern.svelte\n                `-- index.ts",
 };
 
 export const data: ComponentDoc = {
