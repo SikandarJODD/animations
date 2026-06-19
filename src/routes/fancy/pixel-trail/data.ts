@@ -92,7 +92,7 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
-	examples,
+	// examples,
 	seo,
 	props: [],
 };

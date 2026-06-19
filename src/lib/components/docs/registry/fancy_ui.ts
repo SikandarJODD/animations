@@ -117,6 +117,14 @@ export const fancyUIComponents: FancyComponent[] = [
 		category: "Components",
 		desc: "A pixelated trail effect that recolors grid pixels as you move your cursor.",
 		badge: "New",
+	},
+	{
+		id: "pixelate-svg-filter",
+		name: "Pixelate SVG Filter",
+		href: "/fancy/pixelate-svg-filter",
+		category: "Components",
+		desc: "A pixelated effect that can be applied to any element using an SVG filter.",
+		badge: "New",
 	}
 ];
 
