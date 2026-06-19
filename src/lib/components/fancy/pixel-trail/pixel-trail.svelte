@@ -11,7 +11,7 @@
 		fadeDuration?: number;
 		delay?: number;
 		class?: ClassValue;
-		pixelClassName?: ClassValue;
+		pixelClass?: ClassValue;
 	}
 
 	type PixelDotHandle = {
@@ -23,7 +23,7 @@
 		fadeDuration = 500,
 		delay = 0,
 		class: className,
-		pixelClassName,
+		pixelClass,
 	}: PixelTrailProps = $props();
 
 	let containerRef = $state<HTMLDivElement | null>(null);
@@ -76,7 +76,7 @@
 					size={pixelSize}
 					{fadeDuration}
 					{delay}
-					class={pixelClassName}
+					class={pixelClass}
 				/>
 			{/each}
 		</div>
