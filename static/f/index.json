@@ -21,6 +21,51 @@
 		"relativeUrl": "media-between-text.json"
 	},
 	{
+		"name": "pixel-trail",
+		"title": "Pixel Trail",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "A pixelated trail effect that recolors grid pixels as you move your cursor.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "pixel-trail.json"
+	},
+	{
+		"name": "pixelate-svg-filter",
+		"title": "Pixelate Svg Filter",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "An SVG filter definition component for applying configurable pixelation effects.",
+		"registryDependencies": [],
+		"relativeUrl": "pixelate-svg-filter.json"
+	},
+	{
+		"name": "scroll-and-swap",
+		"title": "Scroll And Swap",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Swap duplicated text vertically based on scroll progress within a target container.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "scroll-and-swap.json"
+	},
+	{
+		"name": "stacking-cards",
+		"title": "Stacking Cards",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Create sticky stacked cards that scale progressively as the container scrolls.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "stacking-cards.json"
+	},
+	{
 		"name": "letter-3d-swap",
 		"title": "Letter 3D Swap",
 		"type": "registry:block",

@@ -74,6 +74,104 @@
 			"dependencies": ["motion-sv"]
 		},
 		{
+			"name": "pixel-trail",
+			"type": "registry:block",
+			"title": "Pixel Trail",
+			"author": "SikandarJODD",
+			"description": "A pixelated trail effect that recolors grid pixels as you move your cursor.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/pixel-trail/pixel-trail.svelte",
+					"type": "registry:component",
+					"target": "fancy/pixel-trail/pixel-trail.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/pixel-trail/pixel-dot.svelte",
+					"type": "registry:file",
+					"target": "fancy/pixel-trail/pixel-dot.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/pixel-trail/index.ts",
+					"type": "registry:file",
+					"target": "fancy/pixel-trail/index.ts"
+				},
+				{
+					"path": "./src/lib/hooks/use-dimension.svelte.ts",
+					"type": "registry:hook",
+					"target": "use-dimension.svelte.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "pixelate-svg-filter",
+			"type": "registry:block",
+			"title": "Pixelate Svg Filter",
+			"author": "SikandarJODD",
+			"description": "An SVG filter definition component for applying configurable pixelation effects.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/pixelate-svg-filter/pixelate-svg-filter.svelte",
+					"type": "registry:component",
+					"target": "fancy/pixelate-svg-filter/pixelate-svg-filter.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/pixelate-svg-filter/index.ts",
+					"type": "registry:file",
+					"target": "fancy/pixelate-svg-filter/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "scroll-and-swap",
+			"type": "registry:block",
+			"title": "Scroll And Swap",
+			"author": "SikandarJODD",
+			"description": "Swap duplicated text vertically based on scroll progress within a target container.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/scroll-and-swap/scroll-and-swap.svelte",
+					"type": "registry:component",
+					"target": "fancy/scroll-and-swap/scroll-and-swap.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/scroll-and-swap/index.ts",
+					"type": "registry:file",
+					"target": "fancy/scroll-and-swap/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "stacking-cards",
+			"type": "registry:block",
+			"title": "Stacking Cards",
+			"author": "SikandarJODD",
+			"description": "Create sticky stacked cards that scale progressively as the container scrolls.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/stacking-cards/stacking-cards.svelte",
+					"type": "registry:component",
+					"target": "fancy/stacking-cards/stacking-cards.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/stacking-cards/stacking-card-item.svelte",
+					"type": "registry:file",
+					"target": "fancy/stacking-cards/stacking-card-item.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/stacking-cards/index.ts",
+					"type": "registry:file",
+					"target": "fancy/stacking-cards/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
 			"name": "letter-3d-swap",
 			"type": "registry:block",
 			"title": "Letter 3D Swap",

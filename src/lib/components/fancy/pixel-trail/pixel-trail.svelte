@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { ClassValue } from "clsx";
-
 	import { useDimensions } from "$lib/hooks/use-dimension.svelte";
 	import { cn } from "$lib/utils";
 
@@ -27,7 +26,6 @@
 	}: PixelTrailProps = $props();
 
 	let containerRef = $state<HTMLDivElement | null>(null);
-	let pixelDots = $state<(PixelDotHandle | null)[]>([]);
 
 	const dimensions = useDimensions(() => containerRef);
 
@@ -35,11 +33,7 @@
 	let rows = $derived(Math.ceil(dimensions.height / pixelSize));
 	let rowIndices = $derived(Array.from({ length: rows }, (_, index) => index));
 	let columnIndices = $derived(Array.from({ length: columns }, (_, index) => index));
-	let totalPixels = $derived(rows * columns);
-
-	$effect(() => {
-		pixelDots.length = totalPixels;
-	});
+	let pixelDots = $state<(PixelDotHandle | null)[]>([]);
 
 	function getPixelIndex(columnIndex: number, rowIndex: number) {
 		return rowIndex * columns + columnIndex;

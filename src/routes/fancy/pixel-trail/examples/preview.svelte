@@ -1,8 +1,5 @@
 <script lang="ts">
 	import { PixelTrail } from "$lib/components/fancy/pixel-trail";
-	import { MediaQuery } from "svelte/reactivity";
-
-	let large = new MediaQuery("min-width: 800px");
 </script>
 
 <div>

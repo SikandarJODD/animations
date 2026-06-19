@@ -157,11 +157,11 @@
 						<H3 id={example.name.toLowerCase().replace(/\s+/g, "-")} class="mt-0">
 							{example.name}
 						</H3>
-						<!-- {#if example.description}
+						{#if example.description}
 							<Paragraph>
 								{example.description}
 							</Paragraph>
-						{/if} -->
+						{/if}
 						<PreviewComponent code={example.code} class={example.previewClass}>
 							<example.preview />
 						</PreviewComponent>

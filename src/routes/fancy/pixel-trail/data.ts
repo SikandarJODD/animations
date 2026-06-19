@@ -6,6 +6,15 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
+import type { Example } from "$lib/types/examples";
+import WithoutFading from "./examples/without-fading.svelte";
+import PixelCircleExample from "./examples/pixel-circle-example.svelte";
+import HiddenCursorPixel from "./examples/hidden-cursor-pixel.svelte";
+import CustomizePixelExample from "./examples/customize-pixel-example.svelte";
+import WithoutFadingRaw from "./examples/without-fading.svelte?raw";
+import PixelCircleExampleRaw from "./examples/pixel-circle-example.svelte?raw";
+import HiddenCursorPixelRaw from "./examples/hidden-cursor-pixel.svelte?raw";
+import CustomizePixelExampleRaw from "./examples/customize-pixel-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "pixel-trail",
@@ -30,6 +39,49 @@ const installBlock: InstallComponentDocs = {
 	folderStructure: "",
 };
 
+const examples: Example[] = [
+	{
+		name: 'Without Fading',
+		description: "If you set the fadeDuration prop to 0, and increase the delay prop, you can create a trail effect that doesn't fade.",
+		preview: WithoutFading,
+		code: {
+			filename: "without-fading.svelte",
+			filecode: WithoutFadingRaw,
+			lang: "svelte",
+		}
+	},
+	{
+		name: 'Pixel Circle',
+		description: "You can create a pixel circle effect by setting the pixelClass prop to a class that has a border-radius of 50%.",
+		preview: PixelCircleExample,
+		code: {
+			filename: "pixel-circle-example.svelte",
+			filecode: PixelCircleExampleRaw,
+			lang: "svelte",
+		}
+	},
+	{
+		name: 'Hidden Cursor Pixel',
+		description: "You can hide the cursor and create a pixel trail effect by setting the class prop to 'cursor-none'.",
+		preview: HiddenCursorPixel,
+		code: {
+			filename: "hidden-cursor-pixel.svelte",
+			filecode: HiddenCursorPixelRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: 'Customize Pixel Size and Color',
+		description: "You can customize the pixel size and color by setting the pixelSize and pixelClass props.",
+		preview: CustomizePixelExample,
+		code: {
+			filename: "customize-pixel-example.svelte",
+			filecode: CustomizePixelExampleRaw,
+			lang: "svelte",
+		}
+	}
+]
+
 export const data: ComponentDoc = {
 	...meta,
 	preview: Preview,
@@ -40,7 +92,7 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
-	examples: [],
+	examples,
 	seo,
 	props: [],
 };

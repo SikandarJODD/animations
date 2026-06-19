@@ -1,0 +1,36 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "pixel-trail",
+	"title": "Pixel Trail",
+	"type": "registry:block",
+	"author": "SikandarJODD",
+	"description": "A pixelated trail effect that recolors grid pixels as you move your cursor.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"devDependencies": [
+		"clsx@^2.1.1"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport type { ClassValue } from \"clsx\";\n\timport { useDimensions } from \"$lib/hooks/use-dimension.svelte\";\n\timport { cn } from \"$UTILS$\";\n\n\timport PixelDot from \"./pixel-dot.svelte\";\n\n\tinterface PixelTrailProps {\n\t\tpixelSize?: number;\n\t\tfadeDuration?: number;\n\t\tdelay?: number;\n\t\tclass?: ClassValue;\n\t\tpixelClass?: ClassValue;\n\t}\n\n\ttype PixelDotHandle = {\n\t\tflash: () => Promise<unknown>;\n\t};\n\n\tlet {\n\t\tpixelSize = 20,\n\t\tfadeDuration = 500,\n\t\tdelay = 0,\n\t\tclass: className,\n\t\tpixelClass,\n\t}: PixelTrailProps = $props();\n\n\tlet containerRef = $state<HTMLDivElement | null>(null);\n\n\tconst dimensions = useDimensions(() => containerRef);\n\n\tlet columns = $derived(Math.ceil(dimensions.width / pixelSize));\n\tlet rows = $derived(Math.ceil(dimensions.height / pixelSize));\n\tlet rowIndices = $derived(Array.from({ length: rows }, (_, index) => index));\n\tlet columnIndices = $derived(Array.from({ length: columns }, (_, index) => index));\n\tlet pixelDots = $state<(PixelDotHandle | null)[]>([]);\n\n\tfunction getPixelIndex(columnIndex: number, rowIndex: number) {\n\t\treturn rowIndex * columns + columnIndex;\n\t}\n\n\tfunction handleMouseMove(event: MouseEvent) {\n\t\tif (!containerRef) {\n\t\t\treturn;\n\t\t}\n\n\t\tconst rect = containerRef.getBoundingClientRect();\n\t\tconst columnIndex = Math.floor((event.clientX - rect.left) / pixelSize);\n\t\tconst rowIndex = Math.floor((event.clientY - rect.top) / pixelSize);\n\n\t\tif (columnIndex < 0 || columnIndex >= columns || rowIndex < 0 || rowIndex >= rows) {\n\t\t\treturn;\n\t\t}\n\n\t\tpixelDots[getPixelIndex(columnIndex, rowIndex)]?.flash();\n\t}\n</script>\n\n<div\n\tbind:this={containerRef}\n\trole=\"presentation\"\n\tclass={cn(\"pointer-events-auto absolute inset-0 h-full w-full\", className)}\n\tonmousemove={handleMouseMove}\n>\n\t{#each rowIndices as rowIndex (`row-${rowIndex}`)}\n\t\t<div class=\"flex\">\n\t\t\t{#each columnIndices as columnIndex (`pixel-${columnIndex}-${rowIndex}`)}\n\t\t\t\t<PixelDot\n\t\t\t\t\tbind:this={pixelDots[getPixelIndex(columnIndex, rowIndex)]}\n\t\t\t\t\tsize={pixelSize}\n\t\t\t\t\t{fadeDuration}\n\t\t\t\t\t{delay}\n\t\t\t\t\tclass={pixelClass}\n\t\t\t\t/>\n\t\t\t{/each}\n\t\t</div>\n\t{/each}\n</div>\n",
+			"type": "registry:component",
+			"target": "fancy/pixel-trail/pixel-trail.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport { motion, useAnimationControls } from \"motion-sv\";\n\timport type { ClassValue } from \"clsx\";\n\n\timport { cn } from \"$UTILS$\";\n\n\tinterface PixelDotProps {\n\t\tsize: number;\n\t\tfadeDuration: number;\n\t\tdelay: number;\n\t\tclass?: ClassValue;\n\t}\n\n\tlet { size, fadeDuration, delay, class: className }: PixelDotProps = $props();\n\n\tconst controls = useAnimationControls();\n\n\texport function flash() {\n\t\tcontrols.stop();\n\t\tcontrols.set({ opacity: 1 });\n\n\t\treturn controls.start({\n\t\t\topacity: [1, 0],\n\t\t\ttransition: {\n\t\t\t\tduration: fadeDuration / 1000,\n\t\t\t\tdelay: delay / 1000,\n\t\t\t},\n\t\t});\n\t}\n</script>\n\n<motion.div\n\tclass={cn(\"pointer-events-none\", className)}\n\tstyle={{\n\t\twidth: `${size}px`,\n\t\theight: `${size}px`,\n\t}}\n\tinitial={{ opacity: 0 }}\n\tanimate={controls}\n/>\n",
+			"type": "registry:file",
+			"target": "fancy/pixel-trail/pixel-dot.svelte"
+		},
+		{
+			"content": "export { default as PixelTrail } from \"./pixel-trail.svelte\";\n",
+			"type": "registry:file",
+			"target": "fancy/pixel-trail/index.ts"
+		},
+		{
+			"content": "import { onMount } from \"svelte\";\n\nexport interface Dimensions {\n\twidth: number;\n\theight: number;\n}\n\nexport function useDimensions(getElement: () => HTMLElement | SVGElement | null): Dimensions {\n\tlet dimensions = $state<Dimensions>({\n\t\twidth: 0,\n\t\theight: 0,\n\t});\n\n\tonMount(() => {\n\t\tconst element = getElement();\n\n\t\tif (!element) {\n\t\t\treturn;\n\t\t}\n\n\t\tconst updateDimensions = () => {\n\t\t\tconst { width, height } = element.getBoundingClientRect();\n\t\t\tdimensions.width = width;\n\t\t\tdimensions.height = height;\n\t\t};\n\n\t\tconst resizeObserver = new ResizeObserver(updateDimensions);\n\n\t\tresizeObserver.observe(element);\n\t\twindow.addEventListener(\"resize\", updateDimensions);\n\t\tupdateDimensions();\n\n\t\treturn () => {\n\t\t\tresizeObserver.disconnect();\n\t\t\twindow.removeEventListener(\"resize\", updateDimensions);\n\t\t};\n\t});\n\n\treturn dimensions;\n}\n",
+			"type": "registry:hook",
+			"target": "use-dimension.svelte.ts"
+		}
+	]
+}

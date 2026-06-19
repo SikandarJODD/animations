@@ -6,7 +6,7 @@ export interface Dimensions {
 }
 
 export function useDimensions(getElement: () => HTMLElement | SVGElement | null): Dimensions {
-	const dimensions = $state<Dimensions>({
+	let dimensions = $state<Dimensions>({
 		width: 0,
 		height: 0,
 	});

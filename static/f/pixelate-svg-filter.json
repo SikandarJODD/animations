@@ -1,0 +1,20 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "pixelate-svg-filter",
+	"title": "Pixelate Svg Filter",
+	"type": "registry:block",
+	"author": "SikandarJODD",
+	"description": "An SVG filter definition component for applying configurable pixelation effects.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\r\n\ttype PixelateSvgFilterProps = {\r\n\t\tid: string;\r\n\t\tsize?: number;\r\n\t\tcrossLayers?: boolean;\r\n\t};\r\n\tlet {\r\n\t\tid = \"pixelate-filter\",\r\n\t\tsize = 16,\r\n\t\tcrossLayers = false,\r\n\t}: PixelateSvgFilterProps = $props();\r\n</script>\r\n\r\n<svg class=\"absolute inset-0\">\r\n\t<defs>\r\n\t\t<filter {id} x=\"0\" y=\"0\" width=\"1\" height=\"1\">\r\n\t\t\t{\"First layer: Normal pixelation effect\"}\r\n\t\t\t<feConvolveMatrix\r\n\t\t\t\tkernelMatrix=\"1 1 1\r\n                          1 1 1\r\n                          1 1 1\"\r\n\t\t\t\tresult=\"AVG\"\r\n\t\t\t/>\r\n\t\t\t<feFlood x=\"1\" y=\"1\" width=\"1\" height=\"1\" />\r\n\t\t\t<feComposite\r\n\t\t\t\toperator=\"arithmetic\"\r\n\t\t\t\tk1=\"0\"\r\n\t\t\t\tk2=\"1\"\r\n\t\t\t\tk3=\"0\"\r\n\t\t\t\tk4=\"0\"\r\n\t\t\t\twidth={size}\r\n\t\t\t\theight={size}\r\n\t\t\t/>\r\n\t\t\t<feTile result=\"TILE\" />\r\n\t\t\t<feComposite in=\"AVG\" in2=\"TILE\" operator=\"in\" k1=\"0\" k2=\"1\" k3=\"0\" k4=\"0\" />\r\n\t\t\t<feMorphology operator=\"dilate\" radius={size / 2} result={\"NORMAL\"} />\r\n\t\t\t{#if crossLayers}\r\n\t\t\t\t{\"Second layer: Fallback with full-width tiling\"}\r\n\t\t\t\t<feConvolveMatrix\r\n\t\t\t\t\tkernelMatrix=\"1 1 1\r\n                              1 1 1\r\n                              1 1 1\"\r\n\t\t\t\t\tresult=\"AVG\"\r\n\t\t\t\t/>\r\n\t\t\t\t<feFlood x=\"1\" y=\"1\" width=\"1\" height=\"1\" />\r\n\t\t\t\t<feComposite\r\n\t\t\t\t\tin2=\"SourceGraphic\"\r\n\t\t\t\t\toperator=\"arithmetic\"\r\n\t\t\t\t\tk1=\"0\"\r\n\t\t\t\t\tk2=\"1\"\r\n\t\t\t\t\tk3=\"0\"\r\n\t\t\t\t\tk4=\"0\"\r\n\t\t\t\t\twidth={size / 2}\r\n\t\t\t\t\theight={size}\r\n\t\t\t\t/>\r\n\t\t\t\t<feTile result=\"TILE\" />\r\n\t\t\t\t<feComposite in=\"AVG\" in2=\"TILE\" operator=\"in\" k1=\"0\" k2=\"1\" k3=\"0\" k4=\"0\" />\r\n\t\t\t\t<feMorphology operator=\"dilate\" radius={size / 2} result={\"FALLBACKX\"} />\r\n\t\t\t\t{\"Third layer: Fallback with full-height tiling\"}\r\n\t\t\t\t<feConvolveMatrix\r\n\t\t\t\t\tkernelMatrix=\"1 1 1\r\n                              1 1 1\r\n                              1 1 1\"\r\n\t\t\t\t\tresult=\"AVG\"\r\n\t\t\t\t/>\r\n\t\t\t\t<feFlood x=\"1\" y=\"1\" width=\"1\" height=\"1\" />\r\n\t\t\t\t<feComposite\r\n\t\t\t\t\tin2=\"SourceGraphic\"\r\n\t\t\t\t\toperator=\"arithmetic\"\r\n\t\t\t\t\tk1=\"0\"\r\n\t\t\t\t\tk2=\"1\"\r\n\t\t\t\t\tk3=\"0\"\r\n\t\t\t\t\tk4=\"0\"\r\n\t\t\t\t\twidth={size}\r\n\t\t\t\t\theight={size / 2}\r\n\t\t\t\t/>\r\n\t\t\t\t<feTile result=\"TILE\" />\r\n\t\t\t\t<feComposite in=\"AVG\" in2=\"TILE\" operator=\"in\" k1=\"0\" k2=\"1\" k3=\"0\" k4=\"0\" />\r\n\t\t\t\t<feMorphology operator=\"dilate\" radius={size / 2} result={\"FALLBACKY\"} />\r\n\t\t\t\t<feMerge>\r\n\t\t\t\t\t<feMergeNode in=\"FALLBACKX\" />\r\n\t\t\t\t\t<feMergeNode in=\"FALLBACKY\" />\r\n\t\t\t\t\t<feMergeNode in=\"NORMAL\" />\r\n\t\t\t\t</feMerge>\r\n\t\t\t{/if}\r\n\t\t\t{#if !crossLayers}\r\n\t\t\t\t<feMergeNode in=\"NORMAL\" />\r\n\t\t\t{/if}\r\n\t\t</filter>\r\n\t</defs>\r\n</svg>\r\n",
+			"type": "registry:component",
+			"target": "fancy/pixelate-svg-filter/pixelate-svg-filter.svelte"
+		},
+		{
+			"content": "import PixelateSvgFilter from \"./pixelate-svg-filter.svelte\";\r\nexport { PixelateSvgFilter };",
+			"type": "registry:file",
+			"target": "fancy/pixelate-svg-filter/index.ts"
+		}
+	]
+}
