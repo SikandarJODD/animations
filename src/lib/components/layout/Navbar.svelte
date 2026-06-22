@@ -3,7 +3,7 @@
 	import * as Icons from "$lib/components/icons";
 	import BookOpenIcon from "@lucide/svelte/icons/book-open";
 	import SparklesIcon from "@lucide/svelte/icons/sparkles";
-	import { onMount, type Component } from "svelte";
+	import { type Component } from "svelte";
 	import {
 		NavigationMenuContent,
 		NavigationMenuItem,
@@ -42,16 +42,14 @@
 			title: "Svelte Spell UI",
 			description: "Refined UI components for Design Engineers.",
 			icon: BookOpenIcon,
-			badge: "new",
-			badgeVariant: "sky",
 		},
 		{
 			href: "/fancy",
 			title: "Svelte Fancy Components",
 			description: "Unique, eye-catching components for Svelte.",
 			icon: BlocksIcon,
-			badge: "beta",
-			badgeVariant: "yellow",
+			badge: "new",
+			badgeVariant: "lime",
 		},
 	];
 
@@ -159,7 +157,7 @@
 																	)}
 																>
 																	<Icon
-																		class="size-4"
+																		class={cn("size-4")}
 																		strokeWidth={1.6}
 																	/>
 																</div>
@@ -169,7 +167,9 @@
 																	class="flex items-center gap-2"
 																>
 																	<div
-																		class="text-sm leading-none font-medium"
+																		class={cn(
+																			"text-sm leading-none font-medium"
+																		)}
 																	>
 																		{item.title}
 																	</div>

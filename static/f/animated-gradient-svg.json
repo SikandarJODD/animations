@@ -37,12 +37,12 @@
 			"target": "fancy/animated-gradient-svg/animated-gradient-svg.svelte"
 		},
 		{
-			"content": "import AnimatedGradientSvg from \"./animated-gradient-svg.svelte\";\r\nexport { AnimatedGradientSvg };",
+			"content": "import AnimatedGradientSvg from \"./animated-gradient-svg.svelte\";\nexport { AnimatedGradientSvg };\n",
 			"type": "registry:file",
 			"target": "fancy/animated-gradient-svg/index.ts"
 		},
 		{
-			"content": "import { onMount } from 'svelte';\r\n\r\nexport interface Dimensions {\r\n    width: number;\r\n    height: number;\r\n}\r\n\r\nexport function useDimensions(getElement: () => HTMLElement | SVGElement | null): Dimensions {\r\n    const dimensions = $state<Dimensions>({\r\n        width: 0,\r\n        height: 0\r\n    });\r\n\r\n    onMount(() => {\r\n        const element = getElement();\r\n\r\n        if (!element) {\r\n            return;\r\n        }\r\n\r\n        const updateDimensions = () => {\r\n            const { width, height } = element.getBoundingClientRect();\r\n            dimensions.width = width;\r\n            dimensions.height = height;\r\n        };\r\n\r\n        const resizeObserver = new ResizeObserver(updateDimensions);\r\n\r\n        resizeObserver.observe(element);\r\n        window.addEventListener('resize', updateDimensions);\r\n        updateDimensions();\r\n\r\n        return () => {\r\n            resizeObserver.disconnect();\r\n            window.removeEventListener('resize', updateDimensions);\r\n        };\r\n    });\r\n\r\n    return dimensions;\r\n}\r\n",
+			"content": "import { onMount } from \"svelte\";\n\nexport interface Dimensions {\n\twidth: number;\n\theight: number;\n}\n\nexport function useDimensions(getElement: () => HTMLElement | SVGElement | null): Dimensions {\n\tlet dimensions = $state<Dimensions>({\n\t\twidth: 0,\n\t\theight: 0,\n\t});\n\n\tonMount(() => {\n\t\tconst element = getElement();\n\n\t\tif (!element) {\n\t\t\treturn;\n\t\t}\n\n\t\tconst updateDimensions = () => {\n\t\t\tconst { width, height } = element.getBoundingClientRect();\n\t\t\tdimensions.width = width;\n\t\t\tdimensions.height = height;\n\t\t};\n\n\t\tconst resizeObserver = new ResizeObserver(updateDimensions);\n\n\t\tresizeObserver.observe(element);\n\t\twindow.addEventListener(\"resize\", updateDimensions);\n\t\tupdateDimensions();\n\n\t\treturn () => {\n\t\t\tresizeObserver.disconnect();\n\t\t\twindow.removeEventListener(\"resize\", updateDimensions);\n\t\t};\n\t});\n\n\treturn dimensions;\n}\n",
 			"type": "registry:hook",
 			"target": "use-dimension.svelte.ts"
 		}

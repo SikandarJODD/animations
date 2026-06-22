@@ -88,7 +88,6 @@ export const fancyUIComponents: FancyComponent[] = [
 		href: "/fancy/text-rotate",
 		category: "Components",
 		desc: "Rotate through multiple text strings with per-character, per-word, or per-line motion and imperative controls.",
-		badge: "New",
 	},
 	{
 		id: "underline-to-background",
@@ -96,7 +95,6 @@ export const fancyUIComponents: FancyComponent[] = [
 		href: "/fancy/underline-to-background",
 		category: "Components",
 		desc: "Expand an underline into a full background fill while transitioning the text color.",
-		badge: "New",
 	},
 	{
 		id: "vertical-cut-reveal",
@@ -104,7 +102,6 @@ export const fancyUIComponents: FancyComponent[] = [
 		href: "/fancy/vertical-cut-reveal",
 		category: "Components",
 		desc: "Reveal text from vertical cuts with word, character, or line-based staggering.",
-		badge: "New",
 	},
 	{
 		id: "animated-gradient-svg",
@@ -112,8 +109,23 @@ export const fancyUIComponents: FancyComponent[] = [
 		href: "/fancy/animated-gradient-svg",
 		category: "Components",
 		desc: "Create animated gradient effects using SVG filters and animations.",
+	},
+	{
+		id: "pixel-trail",
+		name: "Pixel Trail",
+		href: "/fancy/pixel-trail",
+		category: "Components",
+		desc: "A pixelated trail effect that recolors grid pixels as you move your cursor.",
 		badge: "New",
 	},
+	{
+		id: "pixelate-svg-filter",
+		name: "Pixelate SVG Filter",
+		href: "/fancy/pixelate-svg-filter",
+		category: "Components",
+		desc: "A pixelated effect that can be applied to any element using an SVG filter.",
+		badge: "New",
+	}
 ];
 
 const fancyUICategoryOrder: FancyCategory[] = ["Overview", "Components"];

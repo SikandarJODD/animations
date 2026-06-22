@@ -2,7 +2,7 @@
 	import { page } from "$app/state";
 	import { fancyUISidebarGroups } from "$lib/components/docs/registry/fancy_ui";
 	import Badge from "$lib/components/ui/badge/badge.svelte";
-	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
+	import { ScrollArea, ScrollFadeEffect } from "$lib/components/ui/scroll-area/index.js";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import type { ComponentProps } from "svelte";
 
@@ -10,11 +10,8 @@
 </script>
 
 <Sidebar.Root class="mt-16 border-none" {...restProps} bind:ref>
-	<ScrollArea
+	<ScrollFadeEffect
 		class="max-h-[calc(100vh-6rem)] pt-4 pr-1 pb-8"
-		scrollbarXClasses="hidden"
-		scrollbarYClasses="hidden"
-		fadeEffect={false}
 	>
 		<Sidebar.Content>
 			{#each fancyUISidebarGroups as group (group.title)}
@@ -58,5 +55,5 @@
 				{/if}
 			{/each}
 		</Sidebar.Content>
-	</ScrollArea>
+	</ScrollFadeEffect>
 </Sidebar.Root>

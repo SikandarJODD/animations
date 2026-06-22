@@ -1,0 +1,23 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "scroll-and-swap",
+	"title": "Scroll And Swap",
+	"type": "registry:block",
+	"author": "SikandarJODD",
+	"description": "Swap duplicated text vertically based on scroll progress within a target container.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { motion, useScroll, useSpring, useTransform, type UseScrollOptions } from \"motion-sv\";\n\timport type { MotionValue, SpringOptions } from \"motion-sv\";\n\timport { untrack, type Snippet } from \"svelte\";\n\timport type { HTMLAttributes, SvelteHTMLElements } from \"svelte/elements\";\n\timport { cn } from \"$UTILS$\";\n\n\ttype ElementType = keyof SvelteHTMLElements;\n\n\tinterface ScrollAndSwapProps extends HTMLAttributes<HTMLElement> {\n\t\tchildren?: Snippet;\n\t\ttext?: string;\n\t\tas?: ElementType;\n\t\tscrollContainer?: HTMLElement | null;\n\t\toffset?: UseScrollOptions[\"offset\"];\n\t\tspringConfig?: SpringOptions;\n\t\tclass?: string;\n\t}\n\n\tconst defaultOffset: UseScrollOptions[\"offset\"] = [\"0 0\", \"0 1\"];\n\tconst defaultSpringConfig: SpringOptions = {\n\t\tstiffness: 200,\n\t\tdamping: 30,\n\t};\n\n\tlet {\n\t\tchildren,\n\t\ttext,\n\t\tas = \"span\",\n\t\tscrollContainer = null,\n\t\toffset = defaultOffset,\n\t\tspringConfig = defaultSpringConfig,\n\t\tclass: className,\n\t\t...props\n\t}: ScrollAndSwapProps = $props();\n\n\tlet root = $state<HTMLElement | null>(null);\n\tlet contentProbe = $state<HTMLSpanElement | null>(null);\n\tlet slottedText = $state(\"\");\n\n\tfunction toGraphemeSafeText(value: string) {\n\t\tif (typeof Intl !== \"undefined\" && \"Segmenter\" in Intl) {\n\t\t\tconst segmenter = new Intl.Segmenter(undefined, { granularity: \"grapheme\" });\n\t\t\treturn Array.from(segmenter.segment(value), ({ segment }) => segment).join(\"\");\n\t\t}\n\n\t\treturn Array.from(value).join(\"\");\n\t}\n\n\tlet resolvedText = $derived(text !== undefined ? text : slottedText);\n\n\tlet scroll = useScroll({\n\t\tcontainer: untrack(() => scrollContainer),\n\t\ttarget: untrack(() => root),\n\t\toffset: untrack(() => offset),\n\t});\n\n\tlet springScrollYProgress = useSpring(scroll.scrollYProgress, () => springConfig);\n\tlet top = useTransform(springScrollYProgress as MotionValue<number>, [0, 1], [\"0%\", \"-100%\"]);\n\tlet bottom = useTransform(springScrollYProgress as MotionValue<number>, [0, 1], [\"100%\", \"0%\"]);\n\n\t$effect(() => {\n\t\tif (text !== undefined || !contentProbe) {\n\t\t\tslottedText = \"\";\n\t\t\treturn;\n\t\t}\n\n\t\tconst probe = contentProbe;\n\n\t\tconst syncText = () => {\n\t\t\tslottedText = toGraphemeSafeText(probe.textContent ?? \"\");\n\t\t};\n\n\t\tsyncText();\n\n\t\tconst observer = new MutationObserver(() => syncText());\n\t\tobserver.observe(probe, { childList: true, characterData: true, subtree: true });\n\n\t\treturn () => observer.disconnect();\n\t});\n</script>\n\n<svelte:element\n\tthis={as}\n\tbind:this={root}\n\tclass={cn(\"relative inline-flex items-center justify-center overflow-hidden p-0\", className)}\n\t{...props}\n>\n\t<span class=\"relative whitespace-pre-wrap text-transparent\">{resolvedText}</span>\n\n\t<motion.span class=\"absolute whitespace-pre-wrap\" style={{ top }} aria-hidden=\"true\">\n\t\t{resolvedText}\n\t</motion.span>\n\n\t<motion.span class=\"absolute whitespace-pre-wrap\" style={{ top: bottom }} aria-hidden=\"true\">\n\t\t{resolvedText}\n\t</motion.span>\n\n\t{#if text === undefined}\n\t\t<span\n\t\t\tbind:this={contentProbe}\n\t\t\taria-hidden=\"true\"\n\t\t\tclass=\"pointer-events-none absolute whitespace-pre-wrap opacity-0\"\n\t\t>\n\t\t\t{@render children?.()}\n\t\t</span>\n\t{/if}\n</svelte:element>\n",
+			"type": "registry:component",
+			"target": "fancy/scroll-and-swap/scroll-and-swap.svelte"
+		},
+		{
+			"content": "import ScrollAndSwap from \"./scroll-and-swap.svelte\";\n\nexport { ScrollAndSwap };\n",
+			"type": "registry:file",
+			"target": "fancy/scroll-and-swap/index.ts"
+		}
+	]
+}

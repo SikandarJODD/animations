@@ -1,0 +1,28 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "stacking-cards",
+	"title": "Stacking Cards",
+	"type": "registry:block",
+	"author": "SikandarJODD",
+	"description": "Create sticky stacked cards that scale progressively as the container scrolls.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { Snippet } from \"svelte\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport type { UseScrollOptions } from \"motion-sv\";\n\n\texport interface StackingCardsProps extends HTMLAttributes<HTMLDivElement> {\n\t\tchildren?: Snippet;\n\t\tscrollOptions?: Omit<UseScrollOptions, \"target\">;\n\t\tscaleMultiplier?: number;\n\t\ttotalCards: number;\n\t\tclass?: string;\n\t}\n</script>\n\n<script lang=\"ts\">\n\timport { useScroll, type UseScrollOptions as RuntimeUseScrollOptions } from \"motion-sv\";\n\timport { setContext } from \"svelte\";\n\n\tconst DEFAULT_SCALE_MULTIPLIER = 0.03;\n\tconst DEFAULT_OFFSET: NonNullable<RuntimeUseScrollOptions[\"offset\"]> = [\n\t\t\"start start\",\n\t\t\"end end\",\n\t];\n\n\ttype StackingCardsContext = {\n\t\tprogress: ReturnType<typeof useScroll>[\"scrollYProgress\"];\n\t\tscaleMultiplier: number;\n\t\ttotalCards: number;\n\t};\n\n\tlet {\n\t\tchildren,\n\t\tscrollOptions,\n\t\tscaleMultiplier = DEFAULT_SCALE_MULTIPLIER,\n\t\ttotalCards,\n\t\tclass: className,\n\t\t...props\n\t}: StackingCardsProps = $props();\n\n\tlet root = $state<HTMLDivElement | null>(null);\n\n\t// motion-sv supports getter-based scroll options at runtime, but its current\n\t// Svelte type only accepts the resolved options object.\n\tlet scroll = useScroll((() => ({\n\t\toffset: DEFAULT_OFFSET,\n\t\t...scrollOptions,\n\t\ttarget: root,\n\t})) as unknown as RuntimeUseScrollOptions);\n\n\tsetContext<StackingCardsContext>(\"stacking-cards\", {\n\t\tget progress() {\n\t\t\treturn scroll.scrollYProgress;\n\t\t},\n\t\tget scaleMultiplier() {\n\t\t\treturn scaleMultiplier;\n\t\t},\n\t\tget totalCards() {\n\t\t\treturn totalCards;\n\t\t},\n\t});\n</script>\n\n<div bind:this={root} class={className} {...props}>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "fancy/stacking-cards/stacking-cards.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { Snippet } from \"svelte\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\n\texport interface StackingCardItemProps extends HTMLAttributes<HTMLDivElement> {\n\t\tchildren?: Snippet;\n\t\tindex: number;\n\t\ttopPosition?: string;\n\t\tclass?: string;\n\t}\n</script>\n\n<script lang=\"ts\">\n\timport { motion, useScroll, useTransform } from \"motion-sv\";\n\timport { getContext } from \"svelte\";\n\timport { cn } from \"$UTILS$\";\n\n\ttype StackingCardsContext = {\n\t\tprogress: ReturnType<typeof useScroll>[\"scrollYProgress\"];\n\t\tscaleMultiplier: number;\n\t\ttotalCards: number;\n\t};\n\n\tlet {\n\t\tchildren,\n\t\tindex,\n\t\ttopPosition,\n\t\tclass: className,\n\t\t...props\n\t}: StackingCardItemProps = $props();\n\n\tconst stackingCardsContext = getContext<StackingCardsContext | undefined>(\"stacking-cards\");\n\n\tif (!stackingCardsContext) {\n\t\tthrow new Error(\"StackingCardItem must be used within StackingCards\");\n\t}\n\n\tlet safeTotalCards = $derived(Math.max(stackingCardsContext.totalCards, 1));\n\tlet scaleTo = $derived(1 - (safeTotalCards - index) * stackingCardsContext.scaleMultiplier);\n\tlet rangeScaleStart = $derived(index * (1 / safeTotalCards));\n\tlet scale = useTransform(() => {\n\t\tconst progress = stackingCardsContext.progress.get();\n\t\tconst clampedProgress = Math.min(1, Math.max(rangeScaleStart, progress));\n\t\tconst normalizedProgress =\n\t\t\trangeScaleStart === 1\n\t\t\t\t? Number(progress >= 1)\n\t\t\t\t: (clampedProgress - rangeScaleStart) / (1 - rangeScaleStart);\n\n\t\treturn 1 + (scaleTo - 1) * normalizedProgress;\n\t});\n\tlet top = $derived(topPosition ?? `${5 + index * 3}%`);\n</script>\n\n<div class={cn(\"sticky top-0 h-full\", className)} {...props}>\n\t<motion.div class=\"relative h-full origin-top\" style={{ top, scale }}>\n\t\t{@render children?.()}\n\t</motion.div>\n</div>\n",
+			"type": "registry:file",
+			"target": "fancy/stacking-cards/stacking-card-item.svelte"
+		},
+		{
+			"content": "import StackingCards from \"./stacking-cards.svelte\";\nimport StackignCardItem from \"./stacking-card-item.svelte\";\n\nexport { StackingCards, StackignCardItem };\n",
+			"type": "registry:file",
+			"target": "fancy/stacking-cards/index.ts"
+		}
+	]
+}
