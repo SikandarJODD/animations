@@ -168,10 +168,7 @@
 																>
 																	<div
 																		class={cn(
-																			"text-sm leading-none font-medium",
-																			item.href ===
-																				"/fancy" &&
-																				"text-lime-400"
+																			"text-sm leading-none font-medium"
 																		)}
 																	>
 																		{item.title}

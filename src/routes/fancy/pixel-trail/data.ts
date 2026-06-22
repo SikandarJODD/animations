@@ -48,7 +48,9 @@ const examples: Example[] = [
 			filename: "without-fading.svelte",
 			filecode: WithoutFadingRaw,
 			lang: "svelte",
-		}
+			highlight: [[11, 13]]
+		},
+		previewClass: 'p-0'
 	},
 	{
 		name: 'Pixel Circle',
@@ -58,18 +60,19 @@ const examples: Example[] = [
 			filename: "pixel-circle-example.svelte",
 			filecode: PixelCircleExampleRaw,
 			lang: "svelte",
+			highlight: [[6, 8]]
 		}
 	},
-	{
-		name: 'Hidden Cursor Pixel',
-		description: "You can hide the cursor and create a pixel trail effect by setting the class prop to 'cursor-none'.",
-		preview: HiddenCursorPixel,
-		code: {
-			filename: "hidden-cursor-pixel.svelte",
-			filecode: HiddenCursorPixelRaw,
-			lang: "svelte",
-		},
-	},
+	// {
+	// 	name: 'Hidden Cursor Pixel',
+	// 	description: "You can hide the cursor and create a pixel trail effect by setting the class prop to 'cursor-none'.",
+	// 	preview: HiddenCursorPixel,
+	// 	code: {
+	// 		filename: "hidden-cursor-pixel.svelte",
+	// 		filecode: HiddenCursorPixelRaw,
+	// 		lang: "svelte",
+	// 	},
+	// },
 	{
 		name: 'Customize Pixel Size and Color',
 		description: "You can customize the pixel size and color by setting the pixelSize and pixelClass props.",
@@ -78,6 +81,7 @@ const examples: Example[] = [
 			filename: "customize-pixel-example.svelte",
 			filecode: CustomizePixelExampleRaw,
 			lang: "svelte",
+			highlight: [[6, 9], [18, 20]]
 		}
 	}
 ]
@@ -91,8 +95,9 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	previewClass: '!p-0',
 	installBlock,
-	// examples,
+	examples,
 	seo,
 	props: [],
 };

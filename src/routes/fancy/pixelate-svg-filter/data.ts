@@ -5,17 +5,21 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
+import type { Example } from "$lib/types/examples";
+import VideoPixelateDemo from "./examples/video-pixelate-demo.svelte";
+import VideoPixelateDemoRaw from "./examples/video-pixelate-demo.svelte?raw";
+import ImagePixelatedDemo from "./examples/image-pixelated-demo.svelte";
 
 export const meta: ComponentMeta = {
 	id: "pixelate-svg-filter",
 	title: "Pixelate Svg Filter",
-	description: "TODO: document Pixelate Svg Filter.",
+	description: "A filter component that applies a pixelation effect with an SVG filter. Safari is not supported.",
 	category: "fancy",
 };
 
 const seo: SEO = {
 	title: "Pixelate Svg Filter",
-	description: "TODO: add an SEO description for Pixelate Svg Filter.",
+	description: "A filter component that applies a pixelation effect with an SVG filter. Safari is not supported.",
 	keywords: ["Svelte", "Pixelate Svg Filter", "Fancy"],
 };
 
@@ -25,8 +29,31 @@ const installBlock: InstallComponentDocs = {
 		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true, },
 		{ filename: "pixelate-svg-filter.svelte", filecode: PixelateSvgFilterSvelteRaw, lang: "svelte", }
 	],
-	folderStructure: "src/\n`-- lib/\n    `-- components/\n        `-- fancy/\n            `-- pixelate-svg-filter/\n                |-- index.ts\n                `-- pixelate-svg-filter.svelte",
+	folderStructure: ""
 };
+
+const examples: Example[] = [
+	{
+		name: "Video Pixelate Demo",
+		preview: VideoPixelateDemo,
+		code: {
+			filename: "video-pixelate-demo.svelte",
+			filecode: VideoPixelateDemoRaw,
+			lang: "svelte",
+			hideLines: true,
+		}
+	},
+	{
+		name: "Image Pixelate Demo",
+		preview: ImagePixelatedDemo,
+		code: {
+			filename: "image-pixelated-demo.svelte",
+			filecode: "",
+			lang: "svelte",
+			hideLines: true,
+		}
+	}
+]
 
 export const data: ComponentDoc = {
 	...meta,
@@ -38,7 +65,7 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
-	examples: [],
+	examples,
 	seo,
 	props: [],
 };
