@@ -14,7 +14,7 @@
 			"target": "magic/globe/globe.svelte"
 		},
 		{
-			"content": "import Globe from \"./globe.svelte\";\r\nexport { Globe };",
+			"content": "import Globe from \"./globe.svelte\";\nexport { Globe };\n",
 			"type": "registry:file",
 			"target": "magic/globe/index.ts"
 		}

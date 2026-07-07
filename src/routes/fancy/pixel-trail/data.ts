@@ -36,7 +36,13 @@ const installBlock: InstallComponentDocs = {
 		{ filename: "pixel-dot.svelte", filecode: PixelDotSvelteRaw, lang: "svelte", },
 		{ filename: "pixel-trail.svelte", filecode: PixelTrailSvelteRaw, lang: "svelte", }
 	],
-	folderStructure: "",
+	folderStructure: `src/
+└── lib/
+    └── components/
+        └── fancy/
+            └── pixel-trail/
+                ├── pixel-trail.svelte
+                └── index.ts`,
 };
 
 const examples: Example[] = [

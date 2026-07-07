@@ -27,7 +27,13 @@ const installBlock: InstallComponentDocs = {
 		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true },
 		{ filename: "sparkles-text.svelte", filecode: SparklesTextSvelteRaw, lang: "svelte" },
 	],
-	folderStructure: "",
+	folderStructure: `src/
+└── lib/
+    └── components/
+        └── magic/
+            └── sparkles-text/
+                ├── sparkles-text.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

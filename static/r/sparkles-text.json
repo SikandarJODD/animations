@@ -14,7 +14,7 @@
 			"target": "magic/sparkles-text/sparkles-text.svelte"
 		},
 		{
-			"content": "import SparklesText from \"./sparkles-text.svelte\";\r\nexport { SparklesText };",
+			"content": "import SparklesText from \"./sparkles-text.svelte\";\nexport { SparklesText };\n",
 			"type": "registry:file",
 			"target": "magic/sparkles-text/index.ts"
 		}

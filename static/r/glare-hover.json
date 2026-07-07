@@ -11,7 +11,7 @@
 			"target": "magic/glare-hover/glare-hover.svelte"
 		},
 		{
-			"content": "import GlareHover from './glare-hover.svelte'\r\nexport { GlareHover }",
+			"content": "import GlareHover from \"./glare-hover.svelte\";\nexport { GlareHover };\n",
 			"type": "registry:file",
 			"target": "magic/glare-hover/index.ts"
 		}

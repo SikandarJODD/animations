@@ -52,7 +52,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["runed", "motion-sv"]
+			"dependencies": [
+				"runed",
+				"motion-sv"
+			]
 		},
 		{
 			"name": "animated-beam",
@@ -92,7 +95,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "animated-theme-toggler",
@@ -181,7 +186,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "blur-fade",
@@ -201,7 +208,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["runed", "motion-sv"]
+			"dependencies": [
+				"runed",
+				"motion-sv"
+			]
 		},
 		{
 			"name": "border-beam",
@@ -221,7 +231,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "file-tree",
@@ -256,7 +268,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["@lucide/svelte", "motion-sv"]
+			"dependencies": [
+				"@lucide/svelte",
+				"motion-sv"
+			]
 		},
 		{
 			"name": "dot-pattern",
@@ -276,7 +291,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "dia-text-reveal",
@@ -296,7 +313,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "cool-mode",
@@ -372,7 +391,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "animated-shiny-text",
@@ -507,7 +528,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["piri"]
+			"dependencies": [
+				"piri"
+			]
 		},
 		{
 			"name": "marquee",
@@ -609,7 +632,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv", "runed"]
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			]
 		},
 		{
 			"name": "striped-pattern",
@@ -648,7 +674,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["runed", "motion-sv"]
+			"dependencies": [
+				"runed",
+				"motion-sv"
+			]
 		},
 		{
 			"name": "flickering-grid",
@@ -725,7 +754,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["cobe"]
+			"dependencies": [
+				"cobe"
+			]
 		},
 		{
 			"name": "hero-video-dialog",
@@ -745,7 +776,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["@lucide/svelte", "motion-sv"]
+			"dependencies": [
+				"@lucide/svelte",
+				"motion-sv"
+			]
 		},
 		{
 			"name": "hexagon-pattern",
@@ -784,7 +818,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "icon-cloud",
@@ -824,7 +860,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["@lucide/svelte"]
+			"dependencies": [
+				"@lucide/svelte"
+			]
 		},
 		{
 			"name": "light-rays",
@@ -844,7 +882,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "line-shadow-text",
@@ -864,7 +904,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"],
+			"dependencies": [
+				"motion-sv"
+			],
 			"cssVars": {
 				"theme": {
 					"animate-line-shadow": "line-shadow 15s linear infinite"
@@ -914,7 +956,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "morphing-text",
@@ -991,7 +1035,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "pulsating-button",
@@ -1063,7 +1109,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["bits-ui", "tailwind-variants"],
+			"dependencies": [
+				"bits-ui",
+				"tailwind-variants"
+			],
 			"cssVars": {
 				"theme": {
 					"animate-rainbow": "rainbow var(--speed, 2s) infinite linear"
@@ -1132,7 +1181,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["runed"],
+			"dependencies": [
+				"runed"
+			],
 			"cssVars": {
 				"theme": {
 					"animate-rippling": "rippling var(--duration) ease-out"
@@ -1169,7 +1220,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "shimmer-button",
@@ -1235,7 +1288,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "terminal",
@@ -1265,7 +1320,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["runed"],
+			"dependencies": [
+				"runed"
+			],
 			"cssVars": {
 				"theme": {
 					"animate-blink-cursor": "blink-cursor 1.2s step-end infinite"
@@ -1300,7 +1357,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["runed"]
+			"dependencies": [
+				"runed"
+			]
 		},
 		{
 			"name": "warp-background",
@@ -1320,7 +1379,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "word-rotate",
@@ -1340,7 +1401,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "bento-grid",
@@ -1365,7 +1428,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["@lucide/svelte"]
+			"dependencies": [
+				"@lucide/svelte"
+			]
 		},
 		{
 			"name": "dither-shader",
@@ -1410,7 +1475,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "lens",
@@ -1430,7 +1497,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "magic-card",
@@ -1450,7 +1519,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "orbiting-circles",
@@ -1504,7 +1575,10 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv", "runed"]
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			]
 		},
 		{
 			"name": "progressive-blur",
@@ -1577,7 +1651,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "sparkles-text",
@@ -1597,7 +1673,9 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
 		},
 		{
 			"name": "stagger-text",
@@ -1617,7 +1695,31 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["motion-sv"]
+			"dependencies": [
+				"motion-sv"
+			]
+		},
+		{
+			"name": "glyph-matrix",
+			"type": "registry:block",
+			"title": "Glyph Matrix",
+			"description": "An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/glyph-matrix/glyph-matrix.svelte",
+					"type": "registry:component",
+					"target": "magic/glyph-matrix/glyph-matrix.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/glyph-matrix/index.ts",
+					"type": "registry:file",
+					"target": "magic/glyph-matrix/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": [
+				"runed"
+			]
 		}
 	]
 }

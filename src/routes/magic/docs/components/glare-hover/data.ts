@@ -34,7 +34,13 @@ const installBlock: InstallComponentDocs = {
 		},
 		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
 	],
-	folderStructure: "",
+	folderStructure: `src/
+└── lib/
+    └── components/
+        └── magic/
+            └── glare-hover/
+                ├── glare-hover.svelte
+                └── index.ts`,
 };
 
 const examples: Example[] = [

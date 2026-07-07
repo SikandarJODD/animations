@@ -628,5 +628,16 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "stagger-text.json"
+	},
+	{
+		"name": "glyph-matrix",
+		"title": "Glyph Matrix",
+		"type": "registry:block",
+		"description": "An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "glyph-matrix.json"
 	}
 ]
