@@ -14,8 +14,10 @@
 		interval?: number;
 		/** Fade out toward bottom (0 = no fade) */
 		fadeBottom?: number;
-		/** Glyph color (any CSS color). Pass a theme-aware value from the consumer. */
+		/** Glyph color (any CSS color). Use a lighter color for a brighter matrix look. */
 		color?: string;
+		/** Brightness multiplier. 1 = original, 1.15-1.25 = subtle, 1.4-1.6 = strong, 1.8+ = very bright. */
+		boost?: number;
 		class?: string;
 	}
 
@@ -38,12 +40,14 @@
 		class: className = "",
 		fadeBottom = 0.6,
 		color = DEFAULT_COLOR,
+		boost = 1.2,
 		style,
 		...props
 	}: GlyphMatrixProps = $props();
 
 	let canvas: HTMLCanvasElement | null = $state(null);
 	let rgba = DEFAULT_RGBA;
+	let alphaBoost = 1;
 
 	function randomGlyph(pool: string) {
 		return pool[Math.floor(Math.random() * pool.length)] ?? " ";
@@ -53,8 +57,24 @@
 		return 0.05 + Math.random() * range;
 	}
 
+	function normalizeBoost(amount: number) {
+		return Math.max(0, amount);
+	}
+
+	function boostChannel(value: number, amount: number) {
+		const normalized = normalizeBoost(amount);
+		const mix = Math.max(0, normalized - 1);
+		return Math.min(255, Math.round(value + (255 - value) * mix));
+	}
+
+	function getAlphaBoost(amount: number) {
+		const normalized = normalizeBoost(amount);
+		return normalized <= 1 ? normalized : 1 + (normalized - 1) * 1.75;
+	}
+
 	// Resolve CSS colors once so the draw loop can stay cheap.
-	function resolveColor(value: string): RGBA {
+	// `boost` brightens the glyph color and also makes the glyphs read more clearly.
+	function resolveColor(value: string, amount: number): RGBA {
 		if (typeof document === "undefined") return DEFAULT_RGBA;
 
 		const probe = document.createElement("canvas");
@@ -67,13 +87,19 @@
 		context.fillRect(0, 0, 1, 1);
 
 		const [r, g, b, a] = context.getImageData(0, 0, 1, 1).data;
-		return { r, g, b, a: a / 255 };
+		return {
+			r: boostChannel(r, amount),
+			g: boostChannel(g, amount),
+			b: boostChannel(b, amount),
+			a: a / 255,
+		};
 	}
 
 	watch(
-		() => color,
-		(nextColor) => {
-			rgba = resolveColor(nextColor);
+		[() => color, () => boost],
+		([nextColor, nextBoost]) => {
+			alphaBoost = getAlphaBoost(nextBoost);
+			rgba = resolveColor(nextColor, nextBoost);
 		}
 	);
 
@@ -138,7 +164,7 @@
 
 					for (let x = 0; x < cols; x++) {
 						const index = y * cols + x;
-						const alpha = alphas[index] * fade * colorAlpha;
+						const alpha = Math.min(1, alphas[index] * fade * colorAlpha * alphaBoost);
 
 						context.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
 						context.fillText(cells[index] ?? " ", x * currentCellSize, y * currentCellSize);

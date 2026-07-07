@@ -435,6 +435,7 @@ function renderPageSvelte(installPathPrefix) {
 \tinstallPathPrefix=${JSON.stringify(installPathPrefix)}
 \tpreview={data.preview}
 \tpreviewCode={data.previewCode}
+\tpreviewClass={data.previewClass}
 \tinstallCodeBlocks={data.installBlock?.installCode}
 \tinstallPackages={data.installBlock?.packages}
 \tinstallFolderStructure={data.installBlock?.folderStructure}

@@ -34,10 +34,23 @@ export type InstallComponentDocs = {
 	packages?: string[];
 };
 
+export type View = {
+	component: Component;
+	code: CodeBlock | CodeBlock[];
+	class: string;
+	showRetry: boolean;
+}
+
+export type UsageCode = {
+	code: CodeBlock | CodeBlock[];
+}
+
 export type ComponentDoc = ComponentMeta & {
 	preview?: Component;
 	previewCode?: CodeBlock | CodeBlock[];
 	previewClass?: string;
+	view?: View;
+	usage?: UsageCode;
 	installBlock?: InstallComponentDocs;
 	examples?: Example[];
 	seo: SEO;

@@ -26,6 +26,7 @@ export type CodeBlock = {
 	isExpand?: boolean;
 	highlight?: (number | [number, number])[];
 	hideLines?: boolean;
+	variant?: CodeVariant;
 };
 
 export {

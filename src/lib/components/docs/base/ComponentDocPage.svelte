@@ -21,6 +21,7 @@
 		examples?: Example[];
 		propsTables?: PropsTable[];
 		descriptionClass?: string;
+		showRetry?: boolean;
 	};
 </script>
 
@@ -51,6 +52,7 @@
 		examples = [],
 		propsTables = [],
 		descriptionClass = "",
+		showRetry = true,
 	}: ComponentDocPageProps = $props();
 
 	let PreviewComp = $derived(preview);
@@ -129,7 +131,7 @@
 	</section>
 
 	<section>
-		<PreviewComponent code={previewCode} class={previewClass}>
+		<PreviewComponent code={previewCode} class={previewClass} {showRetry}>
 			{#if PreviewComp}
 				<PreviewComp />
 			{/if}
@@ -162,7 +164,7 @@
 								{example.description}
 							</Paragraph>
 						{/if}
-						<PreviewComponent code={example.code} class={example.previewClass}>
+						<PreviewComponent code={example.code} class={example.previewClass} showRetry={example.showRetry}>
 							<example.preview />
 						</PreviewComponent>
 					</div>

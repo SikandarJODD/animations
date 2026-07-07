@@ -488,6 +488,14 @@ export const magicUIComponents: MagicComponent[] = [
 		badge: "Beta",
 		desc: "A vertical rotation of words",
 	},
+	{
+		id: "glyph-matrix",
+		name: "Glyph Matrix",
+		href: "/magic/docs/components/glyph-matrix",
+		category: "Components",
+		badge: "New",
+		desc: "An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
+	}
 ];
 
 export const magicUICategoryOrder: MagicCategory[] = [

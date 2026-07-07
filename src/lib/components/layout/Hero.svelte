@@ -93,7 +93,7 @@
 					<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 						<div class="mt-0">
 							<a
-								href="/fancy"
+								href="/magic/docs/components/glyph-matrix"
 								class="hover:bg-muted dark:hover:border-t-border bg-muted dark:bg-muted/60 group mx-auto flex w-fit max-w-[min(100%,30rem)] items-center gap-2 rounded-full border p-1 pl-3 shadow-md shadow-zinc-950/5 backdrop-blur-xs transition-colors duration-300 sm:pl-4 dark:border-t-white/5 dark:shadow-zinc-950"
 							>
 								<span
@@ -119,7 +119,7 @@
 										></path>
 									</svg>
 									<span class="font-mono leading-snug text-balance">
-										New Fancy Components
+										New Glyph Matrix Component!
 									</span>
 								</span>
 								<div

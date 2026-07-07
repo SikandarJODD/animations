@@ -10,4 +10,5 @@ export type Example = {
 	preview: Component;
 	code: CodeBlock | CodeBlock[];
 	previewClass?: string;
+	showRetry?: boolean;
 };

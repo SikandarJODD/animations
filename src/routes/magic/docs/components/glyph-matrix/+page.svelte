@@ -11,6 +11,8 @@
 	installPathPrefix="r"
 	preview={data.preview}
 	previewCode={data.previewCode}
+	previewClass={data.previewClass}
+	showRetry={false}
 	installCodeBlocks={data.installBlock?.installCode}
 	installPackages={data.installBlock?.packages}
 	installFolderStructure={data.installBlock?.folderStructure}
