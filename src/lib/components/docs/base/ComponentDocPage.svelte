@@ -2,7 +2,7 @@
 	import type { Component } from "svelte";
 	import type { SEO } from "$lib/types/seo";
 	import type { Example } from "$lib/types/examples";
-	import type { PropsTable } from "$lib/types/structure";
+	import type { PropsTable, UsageCode } from "$lib/types/structure";
 	import type { CodeBlock } from "$lib/components/ui/code";
 
 	export type ComponentDocPageProps = {
@@ -18,6 +18,7 @@
 		installPackages?: string[];
 		installFolderStructure?: string;
 		installTailwindCode?: CodeBlock;
+		usage?: UsageCode;
 		examples?: Example[];
 		propsTables?: PropsTable[];
 		descriptionClass?: string;
@@ -32,6 +33,7 @@
 	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
 	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
 	import APITable from "$lib/components/docs/base/APITable.svelte";
+	import UsageCode from "$lib/components/ui/code/usage-code.svelte";
 	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
 	import { MetaTags } from "svelte-meta-tags";
 	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
@@ -49,6 +51,7 @@
 		installPackages = [],
 		installFolderStructure,
 		installTailwindCode,
+		usage,
 		examples = [],
 		propsTables = [],
 		descriptionClass = "",
@@ -149,6 +152,21 @@
 			class="mt-4"
 		/>
 	</section>
+
+	{#if usage?.code}
+		<section>
+			<H2 id="usage">Usage</H2>
+			<div class="mt-4 space-y-4">
+				{#if Array.isArray(usage.code)}
+					{#each usage.code as codeBlock}
+						<UsageCode code={codeBlock} />
+					{/each}
+				{:else}
+					<UsageCode code={usage.code} />
+				{/if}
+			</div>
+		</section>
+	{/if}
 
 	{#if examples.length > 0}
 		<section>

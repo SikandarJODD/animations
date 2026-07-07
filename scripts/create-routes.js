@@ -440,6 +440,7 @@ function renderPageSvelte(installPathPrefix) {
 \tinstallPackages={data.installBlock?.packages}
 \tinstallFolderStructure={data.installBlock?.folderStructure}
 \tinstallTailwindCode={data.installBlock?.tailwind}
+\tusage={data.usage}
 \texamples={data.examples}
 \tpropsTables={data.props}
 />

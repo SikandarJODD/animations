@@ -62,6 +62,22 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples,
 	seo,
+	usage: {
+		code: [
+			{
+				filename: "glyph-matrix-import.svelte",
+				filecode: `import GlyphMatrix from "$lib/components/magic/glyph-matrix";`,
+				lang: "typescript",
+			},
+			{
+				filename: "glyph-matrix-usage.svelte",
+				filecode: `<div class="border-border bg-background h-100 w-full overflow-hidden rounded-lg border">
+	<GlyphMatrix />
+</div>`,
+				lang: "svelte",
+			},
+		],
+	},
 	props: [
 		{
 			name: "GlyphMatrix",

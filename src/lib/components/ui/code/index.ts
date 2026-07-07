@@ -3,6 +3,8 @@ import Root from "./code.svelte";
 import Overflow from "./code-overflow.svelte";
 import CopyButton from "./code-copy-button.svelte";
 import MultipleCode from "./multiple-code.svelte";
+import UsageCode from "./usage-code.svelte";
+import SingleCodeFilename from "./single-code-filename.svelte";
 
 import type { CodeCopyButtonProps, CodeRootProps } from "./types";
 import type { SupportedLanguage } from "./shiki";
@@ -34,6 +36,8 @@ export {
 	CopyButton,
 	Overflow,
 	MultipleCode,
+	UsageCode,
+	SingleCodeFilename,
 	type CodeRootProps as RootProps,
 	type CodeCopyButtonProps as CopyButtonProps,
 };
