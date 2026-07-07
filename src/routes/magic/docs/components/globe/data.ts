@@ -26,7 +26,13 @@ const installBlock: InstallComponentDocs = {
 		{ filename: "globe.svelte", filecode: GlobeSvelteRaw, lang: "svelte", isExpand: true },
 		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
 	],
-	folderStructure: "",
+	folderStructure: `src/
+└── lib/
+    └── components/
+        └── magic/
+            └── globe/
+                ├── globe.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

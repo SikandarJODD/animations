@@ -29,7 +29,13 @@ const installBlock: InstallComponentDocs = {
 		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true },
 		{ filename: "noise-texture.svelte", filecode: NoiseTextureSvelteRaw, lang: "svelte" },
 	],
-	folderStructure: "",
+	folderStructure: `src/
+└── lib/
+    └── components/
+        └── magic/
+            └── noise-texture/
+                ├── noise-texture.svelte
+                └── index.ts`,
 };
 
 const examples: Example[] = [

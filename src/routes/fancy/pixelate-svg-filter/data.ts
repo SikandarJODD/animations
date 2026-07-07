@@ -29,7 +29,13 @@ const installBlock: InstallComponentDocs = {
 		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true, },
 		{ filename: "pixelate-svg-filter.svelte", filecode: PixelateSvgFilterSvelteRaw, lang: "svelte", }
 	],
-	folderStructure: ""
+	folderStructure: `src/
+└── lib/
+    └── components/
+        └── fancy/
+            └── pixelate-svg-filter/
+                ├── pixelate-svg-filter.svelte
+                └── index.ts`
 };
 
 const examples: Example[] = [

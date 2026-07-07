@@ -11,7 +11,7 @@
 			"target": "magic/hexagon-pattern/hexagon-pattern.svelte"
 		},
 		{
-			"content": "import HexagonPattern from \"./hexagon-pattern.svelte\";\r\nexport { HexagonPattern };",
+			"content": "import HexagonPattern from \"./hexagon-pattern.svelte\";\nexport { HexagonPattern };\n",
 			"type": "registry:file",
 			"target": "magic/hexagon-pattern/index.ts"
 		}
