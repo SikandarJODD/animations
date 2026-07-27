@@ -33,7 +33,7 @@
 	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
 	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
 	import APITable from "$lib/components/docs/base/APITable.svelte";
-	import UsageCode from "$lib/components/ui/code/usage-code.svelte";
+	import UsageCodeComponent from "$lib/components/ui/code/usage-code.svelte";
 	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
 	import { MetaTags } from "svelte-meta-tags";
 	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
@@ -159,10 +159,10 @@
 			<div class="mt-4 space-y-4">
 				{#if Array.isArray(usage.code)}
 					{#each usage.code as codeBlock}
-						<UsageCode code={codeBlock} />
+						<UsageCodeComponent code={codeBlock} />
 					{/each}
 				{:else}
-					<UsageCode code={usage.code} />
+					<UsageCodeComponent code={usage.code} />
 				{/if}
 			</div>
 		</section>

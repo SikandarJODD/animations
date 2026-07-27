@@ -171,6 +171,14 @@ export const magicUIComponents: MagicComponent[] = [
 		desc: "A component for creating dotted map with custom dots and lines.",
 	},
 	{
+		id: "flow",
+		name: "Flow",
+		href: "/magic/docs/components/flow",
+		category: "Components",
+		badge: "New",
+		desc: "A group of components for building directed flow diagrams with nodes and connectors.",
+	},
+	{
 		id: "file-tree",
 		name: "File Tree",
 		href: "/magic/docs/components/file-tree",
@@ -495,7 +503,7 @@ export const magicUIComponents: MagicComponent[] = [
 		category: "Components",
 		badge: "New",
 		desc: "An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
-	}
+	},
 ];
 
 export const magicUICategoryOrder: MagicCategory[] = [
