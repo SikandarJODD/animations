@@ -1,0 +1,92 @@
+@import "./kumo-binding.css";
+
+/* 
+ * Kumo Component Library Styles - Tailwind Version
+ * 
+ * Note: This file does NOT import Tailwind CSS.
+ * Consumer applications must import Tailwind separately in their own CSS:
+ * 
+ * @import "tailwindcss";
+ * @import "@cloudflare/kumo/styles/tailwind";
+ */
+
+/* Skeleton loading animation */
+@keyframes skeleton {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/*
+ * Base clickable affordances.
+ *
+ * Scoped to Kumo-rendered elements via the [data-kumo-component] and
+ * [data-kumo-part] data attributes. Components opt in by setting these
+ * attributes on their interactive roots/parts, which gives us a stable,
+ * library-owned scoping primitive that doesn't couple to class names.
+ */
+:where(
+    a[href],
+    button,
+    input[type="button"],
+    input[type="checkbox"],
+    input[type="radio"],
+    input[type="submit"],
+    input[type="reset"],
+    label[for],
+    select,
+    summary,
+    [role="button"],
+    [role="link"],
+    [role="menuitem"],
+    [role="menuitemcheckbox"],
+    [role="menuitemradio"],
+    [role="option"],
+    [role="tab"],
+    [role="checkbox"],
+    [role="radio"],
+    [role="switch"]
+  ):where([data-kumo-component], [data-kumo-part]):where(
+    :not(:disabled)
+  ):where(:not([disabled])):where(:not([aria-disabled="true"])):where(
+    :not([data-disabled])
+  ) {
+  cursor: pointer;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton 1.5s ease-in-out infinite;
+}
+
+[data-mode="dark"] .skeleton {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+}
+
+/* Refresh animation for RefreshButton */
+@keyframes refresh {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-refresh {
+  animation: refresh 1s linear infinite;
+}

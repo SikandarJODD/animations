@@ -1,0 +1,294 @@
+@import "./theme-kumo.css";
+/* @import "./theme-fedramp.css"; */
+
+@theme {
+  /* Primitive color definitions for Kumo theme */
+  --color-red-650: oklch(55% 0.238 27.4);
+  --color-red-750: oklch(46% 0.195 27.2);
+
+  --color-blue-400: oklch(70.7% 0.165 254.624);
+  --color-blue-800: oklch(42.4% 0.199 265.638);
+
+  --color-orange-650: oklch(81.5% 0.197 76);
+  --color-teal-650: oklch(54.9% 0.096 184.565);
+
+  --color-kumo-neutral-50: oklch(98.75% 0 0);
+  --color-kumo-neutral-75: oklch(98% 0 0);
+  --color-kumo-neutral-125: oklch(96.5% 0 0);
+  --color-kumo-neutral-450: oklch(89% 0 0);
+  --color-kumo-neutral-750: oklch(32% 0 0);
+  --color-kumo-neutral-850: oklch(24% 0 0);
+  --color-kumo-neutral-925: oklch(17% 0 0);
+  --color-kumo-neutral-950: oklch(15% 0 0);
+  --color-kumo-neutral-975: oklch(12% 0 0);
+  --color-kumo-neutral-1000: oklch(10% 0 0);
+}
+
+/* Typography is now generated in theme-kumo.css via codegen:themes */
+
+@theme {
+  /* Easings & transitions */
+  --ease-bounce: cubic-bezier(0.2, 0, 0, 1.5);
+  --default-transition-duration: 100ms;
+
+  /* Animation */
+  --animate-refresh: refresh 0.5s ease-in-out infinite;
+  --animate-right: right 15s linear infinite;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  [data-mode="dark"] {
+    color-scheme: dark;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* "spinner" = up and down arrows on number inputs */
+  .no-input-spinner {
+    appearance: textfield;
+
+    ::-webkit-outer-spin-button,
+    ::-webkit-inner-spin-button {
+      appearance: none;
+    }
+  }
+
+  /* Link current variant decoration - different opacities for light/dark */
+  .link-current {
+    text-decoration-color: color-mix(in oklch, currentColor 35%, transparent);
+  }
+
+  [data-mode="dark"] .link-current {
+    text-decoration-color: color-mix(in oklch, currentColor 65%, transparent);
+  }
+
+  .link-current:hover {
+    text-decoration-color: currentColor;
+  }
+
+  /* External link icon stroke width - thicker in dark mode for visibility */
+  .link-external-icon {
+    stroke-width: 1.75;
+  }
+
+  [data-mode="dark"] .link-external-icon {
+    stroke-width: 2;
+  }
+}
+
+@keyframes right {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.float {
+  animation: float 5s linear infinite alternate;
+}
+
+@keyframes float {
+  to {
+    transform: translate(5px, 15px);
+  }
+}
+
+@keyframes refresh {
+  to {
+    transform: rotate(360deg) scale(0.9);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.4s ease-out;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Chart wave-loader animation: slides the SVG path left by one full period,
+   creating a seamless looping sine wave. Used by TimeseriesChart loading state. */
+@keyframes kumo-chart-wave {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-400px);
+  }
+}
+
+@keyframes toast-bump {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-toast-bump {
+  animation: toast-bump 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center;
+}
+
+@layer base {
+  .skeleton-line {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    height: 0.5rem;
+    width: var(--skeleton-width);
+    background-color: #f3f4f6;
+    /* neutral-100 for light mode */
+  }
+
+  .skeleton-line::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: shimmer var(--shimmer-duration, 1.5s) var(--shimmer-delay, 0s)
+      infinite ease-in-out;
+    content: "";
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.08) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  [data-mode="dark"] .skeleton-line {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  [data-mode="dark"] .skeleton-line::after {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+}
+
+/* Scroll-fade: gradient masks that appear on the edges of a horizontally
+   scrollable container based on scroll position. Uses scroll-driven
+   animations (Chrome 115+, Edge 115+). Degrades gracefully to no fade.
+   Activated by the `data-overflowing` attribute (set via JS ResizeObserver). */
+@keyframes scroll-fade-x-left {
+  to {
+    mask-size:
+      var(--scroll-fade-width, 3rem) 100%,
+      100% 100%,
+      var(--scroll-fade-width, 3rem) 100%;
+  }
+}
+
+@keyframes scroll-fade-x-right {
+  to {
+    mask-size:
+      var(--scroll-fade-width, 3rem) 100%,
+      100% 100%,
+      0 100%;
+  }
+}
+
+[data-overflowing] {
+  @supports (animation-timeline: scroll()) {
+    mask-image:
+      linear-gradient(to right, white, transparent),
+      linear-gradient(white, white),
+      linear-gradient(to right, transparent, white);
+    mask-size:
+      0 100%,
+      100% 100%,
+      var(--scroll-fade-width, 3rem) 100%;
+    mask-repeat: no-repeat;
+    mask-composite: exclude;
+    mask-position: left, center, right;
+
+    animation-name: scroll-fade-x-left, scroll-fade-x-right;
+    animation-timing-function: linear, linear;
+    animation-timeline: scroll(self x);
+    animation-range:
+      0 var(--scroll-fade-range, 3rem),
+      calc(100% - var(--scroll-fade-range, 3rem)) 100%;
+    animation-fill-mode: both;
+    animation-composition: replace;
+  }
+}
+
+/* Tab list scroll behavior. Scrollbar is only hidden when scroll-driven
+   animations are supported (the fade replaces it as the affordance).
+   Unsupported browsers keep the native scrollbar. */
+.kumo-tabs-list {
+  overscroll-behavior-x: contain;
+}
+
+@supports (animation-timeline: scroll()) {
+  .kumo-tabs-list {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .kumo-tabs-list::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Popup outline offset - in dark mode, offset inward to align with inner stroke.
+   This compensates for the different geometry of inner vs outer stroke paths.
+   Used by: Tooltip, Popover
+   See: https://base-ui.com/react/components/tooltip */
+[data-mode="dark"] .kumo-tooltip-popup,
+[data-mode="dark"] .kumo-popover-popup {
+  outline-offset: -1px;
+}
+
+/* Input placeholder color - vanilla CSS to avoid Tailwind parsing issues */
+.kumo-input-placeholder::placeholder {
+  color: var(--text-color-kumo-placeholder);
+}
