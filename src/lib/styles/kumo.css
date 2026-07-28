@@ -1,91 +1,33 @@
-/* 
- * Kumo Component Library Styles - Tailwind Version
- * 
- * Note: Theme tokens are provided separately by kumo-binding.css.
- * Consumer applications must import Tailwind and the Kumo theme tokens
- * in their main CSS entry, then load this stylesheet for extra global rules:
- * 
- * @import "tailwindcss";
- * @import "./kumo-binding.css";
- */
-
-/* Skeleton loading animation */
-@keyframes skeleton {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
+:root {
+  --kumo-base: #fff;
+  --kumo-fill: oklch(92.2% 0 0);
+  --kumo-hairline: oklch(93.5% 0 0);
+  --kumo-overlay: oklch(97.5% 0 0);
+  --kumo-line: oklch(14.5% 0 0 / 0.1);
+  --kumo-inactive: oklch(87% 0 0);
+  --kumo-subtle: oklch(55.6% 0 0);
 }
 
-/*
- * Base clickable affordances.
- *
- * Scoped to Kumo-rendered elements via the [data-kumo-component] and
- * [data-kumo-part] data attributes. Components opt in by setting these
- * attributes on their interactive roots/parts, which gives us a stable,
- * library-owned scoping primitive that doesn't couple to class names.
- */
-:where(
-    a[href],
-    button,
-    input[type="button"],
-    input[type="checkbox"],
-    input[type="radio"],
-    input[type="submit"],
-    input[type="reset"],
-    label[for],
-    select,
-    summary,
-    [role="button"],
-    [role="link"],
-    [role="menuitem"],
-    [role="menuitemcheckbox"],
-    [role="menuitemradio"],
-    [role="option"],
-    [role="tab"],
-    [role="checkbox"],
-    [role="radio"],
-    [role="switch"]
-  ):where([data-kumo-component], [data-kumo-part]):where(
-    :not(:disabled)
-  ):where(:not([disabled])):where(:not([aria-disabled="true"])):where(
-    :not([data-disabled])
-  ) {
-  cursor: pointer;
+.dark {
+  --kumo-base: oklch(17% 0 0);
+  --kumo-fill: oklch(26.9% 0 0);
+  --kumo-hairline: oklch(26.9% 0 0);
+  --kumo-overlay: oklch(26.9% 0 0);
+  --kumo-line: oklch(32% 0 0);
+  --kumo-inactive: oklch(43.9% 0 0);
+  --kumo-subtle: oklch(70.8% 0 0);
 }
 
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.05) 50%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  animation: skeleton 1.5s ease-in-out infinite;
+@theme inline {
+  --color-kumo-base: var(--kumo-base);
+  --color-kumo-fill: var(--kumo-fill);
+  --color-kumo-hairline: var(--kumo-hairline);
+  --color-kumo-overlay: var(--kumo-overlay);
+  --color-kumo-line: var(--kumo-line);
+  --color-kumo-inactive: var(--kumo-inactive);
+  --color-kumo-subtle: var(--kumo-subtle);
+  --text-color-kumo-inactive: var(--kumo-inactive);
+  --text-color-kumo-subtle: var(--kumo-subtle);
 }
 
-[data-mode="dark"] .skeleton {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.05) 50%,
-    transparent 100%
-  );
-}
-
-/* Refresh animation for RefreshButton */
-@keyframes refresh {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-refresh {
-  animation: refresh 1s linear infinite;
-}
+/* Extra Kumo classes for future use. Keep helpers here only when tokens are not enough. */

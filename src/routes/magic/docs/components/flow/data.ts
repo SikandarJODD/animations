@@ -101,16 +101,6 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Basic",
-			preview: Basic,
-			code: {
-				filename: "basic.svelte",
-				filecode: BasicRaw,
-				lang: "svelte",
-				hideLines: true,
-			},
-		},
-		{
 			name: "Simple",
 			preview: Simple,
 			code: {

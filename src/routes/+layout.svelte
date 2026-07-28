@@ -1,6 +1,5 @@
 <script lang="ts">
 	import "./layout.css";
-	import "$lib/styles/kumo.css";
 	import favicon from "$lib/assets/favicon.svg";
 	import Navbar from "$lib/components/layout/Navbar.svelte";
 	import { ModeWatcher, toggleMode } from "mode-watcher";

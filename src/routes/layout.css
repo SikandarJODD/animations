@@ -3,7 +3,7 @@
 @import "@fontsource-variable/figtree";
 @import "@fontsource-variable/geist";
 @import "@fontsource-variable/geist-mono";
-@import "../lib/styles/kumo-binding.css";
+@import "../lib/styles/kumo.css";
 
 @custom-variant dark (&:is(.dark *));
 
