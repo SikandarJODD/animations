@@ -11,6 +11,7 @@ import IndexTsRaw from "$lib/components/magic/flow/index.ts?raw";
 import NodeContextSvelteTsRaw from "$lib/components/magic/flow/node-context.svelte.ts?raw";
 import RenderPropsTsRaw from "$lib/components/magic/flow/render-props.ts?raw";
 import TypesTsRaw from "$lib/components/magic/flow/types.ts?raw";
+import KumoCssRaw from "$lib/styles/kumo.css?raw";
 
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import type { SEO } from "$lib/types/seo";
@@ -42,33 +43,53 @@ import {
 export const meta: ComponentMeta = {
 	id: "flow",
 	title: "Flow",
-	description: "A group of components for building directed flow diagrams with nodes and connectors.",
+	description:
+		"A group of components for building directed flow diagrams with nodes and connectors.",
 	category: "magic",
 };
 
 const seo: SEO = {
 	title: "Flow",
-	description: "A group of components for building directed flow diagrams with nodes and connectors.",
+	description:
+		"A group of components for building directed flow diagrams with nodes and connectors.",
 	keywords: ["Svelte", "Flow", "Flow Diagram", "Svelte Kumo UI", "Diagram"],
 };
 
 const installBlock: InstallComponentDocs = {
 	packages: [],
 	installCode: [
-		{ filename: "connectors.svelte", filecode: ConnectorsSvelteRaw, lang: "svelte", isExpand: true, },
-		{ filename: "connectors.ts", filecode: ConnectorsTsRaw, lang: "typescript", },
-		{ filename: "descendants.svelte.ts", filecode: DescendantsSvelteTsRaw, lang: "typescript", },
-		{ filename: "diagram-context.svelte.ts", filecode: DiagramContextSvelteTsRaw, lang: "typescript", },
-		{ filename: "flow-anchor.svelte", filecode: FlowAnchorSvelteRaw, lang: "svelte", },
-		{ filename: "flow-node-list.svelte", filecode: FlowNodeListSvelteRaw, lang: "svelte", },
-		{ filename: "flow-node.svelte", filecode: FlowNodeSvelteRaw, lang: "svelte", },
-		{ filename: "flow-parallel.svelte", filecode: FlowParallelSvelteRaw, lang: "svelte", },
-		{ filename: "flow-root.svelte", filecode: FlowRootSvelteRaw, lang: "svelte", },
-		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", },
-		{ filename: "node-context.svelte.ts", filecode: NodeContextSvelteTsRaw, lang: "typescript", },
-		{ filename: "render-props.ts", filecode: RenderPropsTsRaw, lang: "typescript", },
-		{ filename: "types.ts", filecode: TypesTsRaw, lang: "typescript", }
+		{
+			filename: "connectors.svelte",
+			filecode: ConnectorsSvelteRaw,
+			lang: "svelte",
+			isExpand: true,
+		},
+		{ filename: "connectors.ts", filecode: ConnectorsTsRaw, lang: "typescript" },
+		{ filename: "descendants.svelte.ts", filecode: DescendantsSvelteTsRaw, lang: "typescript" },
+		{
+			filename: "diagram-context.svelte.ts",
+			filecode: DiagramContextSvelteTsRaw,
+			lang: "typescript",
+		},
+		{ filename: "flow-anchor.svelte", filecode: FlowAnchorSvelteRaw, lang: "svelte" },
+		{ filename: "flow-node-list.svelte", filecode: FlowNodeListSvelteRaw, lang: "svelte" },
+		{ filename: "flow-node.svelte", filecode: FlowNodeSvelteRaw, lang: "svelte" },
+		{ filename: "flow-parallel.svelte", filecode: FlowParallelSvelteRaw, lang: "svelte" },
+		{ filename: "flow-root.svelte", filecode: FlowRootSvelteRaw, lang: "svelte" },
+		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
+		{
+			filename: "node-context.svelte.ts",
+			filecode: NodeContextSvelteTsRaw,
+			lang: "typescript",
+		},
+		{ filename: "render-props.ts", filecode: RenderPropsTsRaw, lang: "typescript" },
+		{ filename: "types.ts", filecode: TypesTsRaw, lang: "typescript" },
 	],
+	tailwind: {
+		filename: "src/lib/styles/kumo.css",
+		filecode: KumoCssRaw,
+		lang: "css",
+	},
 	folderStructure: `src/
 └── lib/
     └── components/
