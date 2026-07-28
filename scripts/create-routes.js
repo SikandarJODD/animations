@@ -447,6 +447,11 @@ function renderPageSvelte(installPathPrefix) {
 `;
 }
 
+function renderPageTs() {
+	return `export let prerender = true;
+`;
+}
+
 function renderLlmsServerTs() {
 	return `import type { RequestHandler } from "./$types";
 import docs from "../docs.md?raw";
@@ -591,6 +596,10 @@ function buildGeneratedFiles(routePlan) {
 		{
 			contents: renderPageSvelte(routePlan.installPathPrefix),
 			filePath: path.join(routePlan.routeDirectory, "+page.svelte"),
+		},
+		{
+			contents: renderPageTs(),
+			filePath: path.join(routePlan.routeDirectory, "+page.ts"),
 		},
 		{
 			contents: renderDataTs({

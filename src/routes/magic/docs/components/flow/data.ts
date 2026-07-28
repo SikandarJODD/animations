@@ -42,7 +42,7 @@ import {
 export const meta: ComponentMeta = {
 	id: "flow",
 	title: "Flow",
-	description: "TODO: document Flow.",
+	description: "A group of components for building directed flow diagrams with nodes and connectors.",
 	category: "magic",
 };
 

@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "@fontsource-variable/figtree";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+@import "../lib/styles/kumo-binding.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -138,8 +141,8 @@
 	--color-highlight-bg: var(--code-highlight-bg);
 
 	/* Font */
-	--font-sans: "Geist", sans-serif;
-	--font-mono: "Geist Mono", monospace;
+	--font-sans: "Geist Variable", sans-serif;
+	--font-mono: "Geist Mono Variable", monospace;
 	--font-figtree: "Figtree Variable", sans-serif;
 
 	/* Svelte Magic UI */

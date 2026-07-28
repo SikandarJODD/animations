@@ -5,8 +5,6 @@
 	import FlowNodeList from "./flow-node-list.svelte";
 	import { setDiagramContext } from "./diagram-context.svelte";
 	import type { Align, JunctionMarker, Orientation } from "./types";
-	import "$lib/styles/kumo.css";
-	import "$lib/styles/kumo-standalone.css";
 
 	const DEFAULT_PADDING = {
 		x: 16,

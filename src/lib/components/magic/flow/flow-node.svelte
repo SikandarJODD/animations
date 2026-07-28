@@ -149,7 +149,7 @@
 {:else}
 	<li
 		bind:this={nodeRef}
-		class={cn('bg-kumo-base ring-kumo-line rounded-md px-3 py-2 shadow ring', className)}
+		class={cn('bg-kumo-base text-sm ring-kumo-line rounded-md px-3 py-2 shadow ring', className)}
 		style="cursor: default;"
 		data-node-index={index}
 		data-node-id={nodeId}

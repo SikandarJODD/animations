@@ -6,7 +6,7 @@
 	const githubBase = "https://github.com/SikandarJODD/animations";
 </script>
 
-<div class={`border-border/60 mt-6 border-t pt-6 ${className}`}>
+<div class={`border-border/60 border-t pt-2.5 ${className}`}>
 	<h2 class="text-xs font-medium">Contribute</h2>
 
 	<nav class="mt-3">

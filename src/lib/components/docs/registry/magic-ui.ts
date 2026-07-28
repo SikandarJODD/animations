@@ -137,7 +137,6 @@ export const magicUIComponents: MagicComponent[] = [
 		name: "Dia Text Reveal",
 		href: "/magic/docs/components/dia-text-reveal",
 		category: "Text Animations",
-		badge: "New",
 		desc: "A sweeping gradient text reveal with viewport triggering and rotating text support.",
 	},
 	{
@@ -145,7 +144,6 @@ export const magicUIComponents: MagicComponent[] = [
 		name: "Dither Shader",
 		href: "/magic/docs/components/dither-shader",
 		category: "Other",
-		badge: "New",
 		desc: "A real-time ordered dithering effect for images, perfect for pixel art and retro aesthetics.",
 	},
 	{
@@ -167,7 +165,6 @@ export const magicUIComponents: MagicComponent[] = [
 		name: "Dotted Map",
 		href: "/magic/docs/components/dotted-map",
 		category: "Components",
-		badge: "New",
 		desc: "A component for creating dotted map with custom dots and lines.",
 	},
 	{
@@ -213,7 +210,6 @@ export const magicUIComponents: MagicComponent[] = [
 		href: "/magic/docs/components/globe",
 		category: "Components",
 		desc: "An autorotating, interactive, and highly performant globe made using WebGL.",
-		badge: "New",
 	},
 	{
 		id: "hero-video-dialog",
@@ -228,7 +224,6 @@ export const magicUIComponents: MagicComponent[] = [
 		href: "/magic/docs/components/hexagon-pattern",
 		category: "Backgrounds",
 		desc: "A background hexagon pattern made with SVGs, fully customizable using Tailwind CSS.",
-		badge: "New"
 	},
 	{
 		id: "hyper-text",
@@ -436,7 +431,6 @@ export const magicUIComponents: MagicComponent[] = [
 		href: "/magic/docs/components/sparkles-text",
 		category: "Text Animations",
 		desc: "A text component with animated sparkles that appear and disappear randomly.",
-		badge: "New",
 	},
 	// {
 	// 	id: "stagger-text",
@@ -450,7 +444,6 @@ export const magicUIComponents: MagicComponent[] = [
 		name: "Striped Pattern",
 		href: "/magic/docs/components/striped-pattern",
 		category: "Backgrounds",
-		badge: "New",
 		desc: "A background striped pattern made with SVGs, fully customizable using Tailwind CSS.",
 	},
 	// {
@@ -501,7 +494,6 @@ export const magicUIComponents: MagicComponent[] = [
 		name: "Glyph Matrix",
 		href: "/magic/docs/components/glyph-matrix",
 		category: "Components",
-		badge: "New",
 		desc: "An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
 	},
 ];
