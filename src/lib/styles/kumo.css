@@ -1,0 +1,33 @@
+:root {
+  --kumo-base: #fff;
+  --kumo-fill: oklch(92.2% 0 0);
+  --kumo-hairline: oklch(93.5% 0 0);
+  --kumo-overlay: oklch(97.5% 0 0);
+  --kumo-line: oklch(14.5% 0 0 / 0.1);
+  --kumo-inactive: oklch(87% 0 0);
+  --kumo-subtle: oklch(55.6% 0 0);
+}
+
+.dark {
+  --kumo-base: oklch(17% 0 0);
+  --kumo-fill: oklch(26.9% 0 0);
+  --kumo-hairline: oklch(26.9% 0 0);
+  --kumo-overlay: oklch(26.9% 0 0);
+  --kumo-line: oklch(32% 0 0);
+  --kumo-inactive: oklch(43.9% 0 0);
+  --kumo-subtle: oklch(70.8% 0 0);
+}
+
+@theme inline {
+  --color-kumo-base: var(--kumo-base);
+  --color-kumo-fill: var(--kumo-fill);
+  --color-kumo-hairline: var(--kumo-hairline);
+  --color-kumo-overlay: var(--kumo-overlay);
+  --color-kumo-line: var(--kumo-line);
+  --color-kumo-inactive: var(--kumo-inactive);
+  --color-kumo-subtle: var(--kumo-subtle);
+  --text-color-kumo-inactive: var(--kumo-inactive);
+  --text-color-kumo-subtle: var(--kumo-subtle);
+}
+
+/* Extra Kumo classes for future use. Keep helpers here only when tokens are not enough. */

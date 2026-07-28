@@ -13,11 +13,11 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter(),
 		alias: {
-			"magic/*": "./src/lib/components/magic/*",
-			"spell/*": "./src/lib/components/spell/*",
-			"fancy/*": "./src/lib/components/fancy/*",
-			"luxe/*": "./src/lib/components/luxe/*",
-			"aceternity/*": "./src/lib/components/aceternity/*"
+			"$magic/*": "./src/lib/components/magic/*",
+			"$spell/*": "./src/lib/components/spell/*",
+			"$fancy/*": "./src/lib/components/fancy/*",
+			"$luxe/*": "./src/lib/components/luxe/*",
+			"$aceternity/*": "./src/lib/components/aceternity/*"
 		},
 	},
 	vitePlugin: {

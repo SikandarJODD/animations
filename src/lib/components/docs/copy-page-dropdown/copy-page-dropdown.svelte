@@ -166,74 +166,76 @@
 	</ButtonGroup.Root>
 
 	{#if nav.isSupported}
-		<Tooltip.Provider delayDuration={0}>
-			{#if nav.prev}
-				<Tooltip.Root>
-					<Tooltip.Trigger>
-						{#snippet child({ props })}
-							<Button
-								{...props}
-								href={nav.prev?.href}
-								variant="secondary"
-								size="icon-sm"
-								aria-label={`Previous item: ${nav.prev?.name}`}
-							>
-								<ChevronLeft class="size-4" />
-							</Button>
-						{/snippet}
-					</Tooltip.Trigger>
-					<Tooltip.Content side="bottom" class="space-y-1 px-2! pt-1.5!">
-						<div class="text-sm font-medium">{nav.prev?.name}</div>
-						<div class="text-background/80 flex items-center gap-2 text-xs">
-							<span>Press</span>
-							<Kbd.Root>&larr;</Kbd.Root>
-						</div>
-					</Tooltip.Content>
-				</Tooltip.Root>
-			{:else}
-				<Button
-					variant="secondary"
-					size="icon-sm"
-					disabled
-					aria-label="Previous item unavailable"
-				>
-					<ChevronLeft class="size-4" />
-				</Button>
-			{/if}
+		<div class="flex items-center gap-1">
+			<Tooltip.Provider delayDuration={0}>
+				{#if nav.prev}
+					<Tooltip.Root>
+						<Tooltip.Trigger>
+							{#snippet child({ props })}
+								<Button
+									{...props}
+									href={nav.prev?.href}
+									variant="secondary"
+									size="icon-sm"
+									aria-label={`Previous item: ${nav.prev?.name}`}
+								>
+									<ChevronLeft class="size-4" />
+								</Button>
+							{/snippet}
+						</Tooltip.Trigger>
+						<Tooltip.Content side="bottom" class="space-y-1 px-2! pt-1.5!">
+							<div class="text-sm font-medium">{nav.prev?.name}</div>
+							<div class="text-background/80 flex items-center gap-2 text-xs">
+								<span>Press</span>
+								<Kbd.Root>&larr;</Kbd.Root>
+							</div>
+						</Tooltip.Content>
+					</Tooltip.Root>
+				{:else}
+					<Button
+						variant="secondary"
+						size="icon-sm"
+						disabled
+						aria-label="Previous item unavailable"
+					>
+						<ChevronLeft class="size-4" />
+					</Button>
+				{/if}
 
-			{#if nav.next}
-				<Tooltip.Root>
-					<Tooltip.Trigger>
-						{#snippet child({ props })}
-							<Button
-								{...props}
-								href={nav.next?.href}
-								variant="secondary"
-								size="icon-sm"
-								aria-label={`Next item: ${nav.next?.name}`}
-							>
-								<ChevronRight class="size-4" />
-							</Button>
-						{/snippet}
-					</Tooltip.Trigger>
-					<Tooltip.Content side="bottom" class="space-y-1 px-2! pt-1.5!">
-						<div class="text-sm font-medium">{nav.next?.name}</div>
-						<div class="text-background/80 flex items-center gap-2 text-xs">
-							<span>Press</span>
-							<Kbd.Root>&rarr;</Kbd.Root>
-						</div>
-					</Tooltip.Content>
-				</Tooltip.Root>
-			{:else}
-				<Button
-					variant="secondary"
-					size="icon-sm"
-					disabled
-					aria-label="Next item unavailable"
-				>
-					<ChevronRight class="size-4" />
-				</Button>
-			{/if}
-		</Tooltip.Provider>
+				{#if nav.next}
+					<Tooltip.Root>
+						<Tooltip.Trigger>
+							{#snippet child({ props })}
+								<Button
+									{...props}
+									href={nav.next?.href}
+									variant="secondary"
+									size="icon-sm"
+									aria-label={`Next item: ${nav.next?.name}`}
+								>
+									<ChevronRight class="size-4" />
+								</Button>
+							{/snippet}
+						</Tooltip.Trigger>
+						<Tooltip.Content side="bottom" class="space-y-1 px-2! pt-1.5!">
+							<div class="text-sm font-medium">{nav.next?.name}</div>
+							<div class="text-background/80 flex items-center gap-2 text-xs">
+								<span>Press</span>
+								<Kbd.Root>&rarr;</Kbd.Root>
+							</div>
+						</Tooltip.Content>
+					</Tooltip.Root>
+				{:else}
+					<Button
+						variant="secondary"
+						size="icon-sm"
+						disabled
+						aria-label="Next item unavailable"
+					>
+						<ChevronRight class="size-4" />
+					</Button>
+				{/if}
+			</Tooltip.Provider>
+		</div>
 	{/if}
 </div>

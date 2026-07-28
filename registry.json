@@ -52,10 +52,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"runed",
-				"motion-sv"
-			]
+			"dependencies": ["runed", "motion-sv"]
 		},
 		{
 			"name": "animated-beam",
@@ -95,9 +92,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "animated-theme-toggler",
@@ -186,9 +181,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "blur-fade",
@@ -208,10 +201,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"runed",
-				"motion-sv"
-			]
+			"dependencies": ["runed", "motion-sv"]
 		},
 		{
 			"name": "border-beam",
@@ -231,9 +221,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "file-tree",
@@ -268,10 +256,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"@lucide/svelte",
-				"motion-sv"
-			]
+			"dependencies": ["@lucide/svelte", "motion-sv"]
 		},
 		{
 			"name": "dot-pattern",
@@ -291,9 +276,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "dia-text-reveal",
@@ -313,9 +296,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "cool-mode",
@@ -391,9 +372,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "animated-shiny-text",
@@ -528,9 +507,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"piri"
-			]
+			"dependencies": ["piri"]
 		},
 		{
 			"name": "marquee",
@@ -632,10 +609,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv",
-				"runed"
-			]
+			"dependencies": ["motion-sv", "runed"]
 		},
 		{
 			"name": "striped-pattern",
@@ -674,10 +648,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"runed",
-				"motion-sv"
-			]
+			"dependencies": ["runed", "motion-sv"]
 		},
 		{
 			"name": "flickering-grid",
@@ -754,9 +725,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"cobe"
-			]
+			"dependencies": ["cobe"]
 		},
 		{
 			"name": "hero-video-dialog",
@@ -776,10 +745,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"@lucide/svelte",
-				"motion-sv"
-			]
+			"dependencies": ["@lucide/svelte", "motion-sv"]
 		},
 		{
 			"name": "hexagon-pattern",
@@ -818,9 +784,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "icon-cloud",
@@ -860,9 +824,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"@lucide/svelte"
-			]
+			"dependencies": ["@lucide/svelte"]
 		},
 		{
 			"name": "light-rays",
@@ -882,9 +844,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "line-shadow-text",
@@ -904,9 +864,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			],
+			"dependencies": ["motion-sv"],
 			"cssVars": {
 				"theme": {
 					"animate-line-shadow": "line-shadow 15s linear infinite"
@@ -956,9 +914,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "morphing-text",
@@ -1035,9 +991,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "pulsating-button",
@@ -1109,10 +1063,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"bits-ui",
-				"tailwind-variants"
-			],
+			"dependencies": ["bits-ui", "tailwind-variants"],
 			"cssVars": {
 				"theme": {
 					"animate-rainbow": "rainbow var(--speed, 2s) infinite linear"
@@ -1181,9 +1132,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"runed"
-			],
+			"dependencies": ["runed"],
 			"cssVars": {
 				"theme": {
 					"animate-rippling": "rippling var(--duration) ease-out"
@@ -1220,9 +1169,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "shimmer-button",
@@ -1288,9 +1235,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "terminal",
@@ -1320,9 +1265,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"runed"
-			],
+			"dependencies": ["runed"],
 			"cssVars": {
 				"theme": {
 					"animate-blink-cursor": "blink-cursor 1.2s step-end infinite"
@@ -1357,9 +1300,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"runed"
-			]
+			"dependencies": ["runed"]
 		},
 		{
 			"name": "warp-background",
@@ -1379,9 +1320,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "word-rotate",
@@ -1401,9 +1340,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "bento-grid",
@@ -1428,9 +1365,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"@lucide/svelte"
-			]
+			"dependencies": ["@lucide/svelte"]
 		},
 		{
 			"name": "dither-shader",
@@ -1475,9 +1410,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "lens",
@@ -1497,9 +1430,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "magic-card",
@@ -1519,9 +1450,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "orbiting-circles",
@@ -1575,10 +1504,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv",
-				"runed"
-			]
+			"dependencies": ["motion-sv", "runed"]
 		},
 		{
 			"name": "progressive-blur",
@@ -1651,9 +1577,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "sparkles-text",
@@ -1673,9 +1597,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "stagger-text",
@@ -1695,9 +1617,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"motion-sv"
-			]
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "glyph-matrix",
@@ -1717,9 +1637,113 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": [
-				"runed"
-			]
+			"dependencies": ["runed"]
+		},
+		{
+			"name": "flow",
+			"type": "registry:block",
+			"title": "Flow",
+			"description": "A group of components for building directed flow diagrams with nodes and connectors.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/flow/connectors.svelte",
+					"type": "registry:component",
+					"target": "magic/flow/connectors.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/flow-anchor.svelte",
+					"type": "registry:component",
+					"target": "magic/flow/flow-anchor.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/flow-node-list.svelte",
+					"type": "registry:component",
+					"target": "magic/flow/flow-node-list.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/flow-node.svelte",
+					"type": "registry:component",
+					"target": "magic/flow/flow-node.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/flow-parallel.svelte",
+					"type": "registry:component",
+					"target": "magic/flow/flow-parallel.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/flow-root.svelte",
+					"type": "registry:component",
+					"target": "magic/flow/flow-root.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/connectors.ts",
+					"type": "registry:file",
+					"target": "magic/flow/connectors.ts"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/descendants.svelte.ts",
+					"type": "registry:file",
+					"target": "magic/flow/descendants.svelte.ts"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/diagram-context.svelte.ts",
+					"type": "registry:file",
+					"target": "magic/flow/diagram-context.svelte.ts"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/index.ts",
+					"type": "registry:file",
+					"target": "magic/flow/index.ts"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/node-context.svelte.ts",
+					"type": "registry:file",
+					"target": "magic/flow/node-context.svelte.ts"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/render-props.ts",
+					"type": "registry:file",
+					"target": "magic/flow/render-props.ts"
+				},
+				{
+					"path": "./src/lib/components/magic/flow/types.ts",
+					"type": "registry:file",
+					"target": "magic/flow/types.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv", "runed"],
+			"cssVars": {
+				"theme": {
+					"color-kumo-base": "var(--kumo-base)",
+					"color-kumo-fill": "var(--kumo-fill)",
+					"color-kumo-hairline": "var(--kumo-hairline)",
+					"color-kumo-overlay": "var(--kumo-overlay)",
+					"color-kumo-line": "var(--kumo-line)",
+					"color-kumo-inactive": "var(--kumo-inactive)",
+					"color-kumo-subtle": "var(--kumo-subtle)",
+					"text-color-kumo-inactive": "var(--kumo-inactive)",
+					"text-color-kumo-subtle": "var(--kumo-subtle)"
+				},
+				"light": {
+					"kumo-base": "#fff",
+					"kumo-fill": "oklch(92.2% 0 0)",
+					"kumo-hairline": "oklch(93.5% 0 0)",
+					"kumo-overlay": "oklch(97.5% 0 0)",
+					"kumo-line": "oklch(14.5% 0 0 / 0.1)",
+					"kumo-inactive": "oklch(87% 0 0)",
+					"kumo-subtle": "oklch(55.6% 0 0)"
+				},
+				"dark": {
+					"kumo-base": "oklch(17% 0 0)",
+					"kumo-fill": "oklch(26.9% 0 0)",
+					"kumo-hairline": "oklch(26.9% 0 0)",
+					"kumo-overlay": "oklch(26.9% 0 0)",
+					"kumo-line": "oklch(32% 0 0)",
+					"kumo-inactive": "oklch(43.9% 0 0)",
+					"kumo-subtle": "oklch(70.8% 0 0)"
+				}
+			}
 		}
 	]
 }

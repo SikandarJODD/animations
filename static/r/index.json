@@ -639,5 +639,17 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "glyph-matrix.json"
+	},
+	{
+		"name": "flow",
+		"title": "Flow",
+		"type": "registry:block",
+		"description": "A group of components for building directed flow diagrams with nodes and connectors.",
+		"dependencies": [
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "flow.json"
 	}
 ]

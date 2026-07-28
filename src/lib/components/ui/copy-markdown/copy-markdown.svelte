@@ -36,7 +36,7 @@
 <Button
 	variant="secondary"
 	onclick={copyMarkdown}
-	class="gap-2"
+	class="gap-2 font-normal"
 	aria-label="Copy as Markdown"
 	{size}
 >

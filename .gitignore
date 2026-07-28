@@ -25,7 +25,5 @@ vite.config.ts.timestamp-*
 ./scripts
 
 /src/lib/components/motion-sv-examples
-/src/lib/components/magic/flow
-/src/lib/styles
 commands.md
 docs-guide.md
