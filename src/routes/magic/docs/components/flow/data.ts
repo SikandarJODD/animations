@@ -18,6 +18,8 @@ import type { SEO } from "$lib/types/seo";
 import {
 	Basic,
 	BasicRaw,
+	CenteredAlignment,
+	CenteredAlignmentRaw,
 	ComplexFlow,
 	ComplexFlowRaw,
 	CustomAnchorPoints,
@@ -30,8 +32,10 @@ import {
 	NestedNodeListRaw,
 	ParallelNodeAdjustment,
 	ParallelNodeAdjustmentRaw,
-	PlanningLargeDiagrams,
-	PlanningLargeDiagramsRaw,
+	PanningLargeDiagrams,
+	PanningLargeDiagramsRaw,
+	ParallelBranches,
+	ParallelBranchesRaw,
 	Simple,
 	SimpleRaw,
 	Vertical,
@@ -44,14 +48,14 @@ export const meta: ComponentMeta = {
 	id: "flow",
 	title: "Flow",
 	description:
-		"A group of components for building directed flow diagrams with nodes and connectors.",
+		"A group of components for building directed flow diagrams with nodes and connectors. Inspired by Kumo UI.",
 	category: "magic",
 };
 
 const seo: SEO = {
 	title: "Flow",
 	description:
-		"A group of components for building directed flow diagrams with nodes and connectors.",
+		"A group of components for building directed flow diagrams with nodes and connectors. Inspired by Kumo UI.",
 	keywords: ["Svelte", "Flow", "Flow Diagram", "Svelte Kumo UI", "Diagram"],
 };
 
@@ -122,11 +126,51 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Simple",
+			name: "Sequential Flow",
 			preview: Simple,
 			code: {
 				filename: "simple.svelte",
 				filecode: SimpleRaw,
+				lang: "svelte",
+				hideLines: true,
+			},
+		},
+		{
+			name: "Parallel Branches",
+			preview: ParallelBranches,
+			code: {
+				filename: "parallel-branches.svelte",
+				filecode: ParallelBranchesRaw,
+				lang: "svelte",
+				hideLines: true,
+			},
+		},
+		{
+			name: "Vertical Orientation",
+			preview: Vertical,
+			code: {
+				filename: "vertical.svelte",
+				filecode: VerticalRaw,
+				lang: "svelte",
+				hideLines: true,
+			},
+		},
+		{
+			name: "Custom Node Styling",
+			preview: CustomNodeStyling,
+			code: {
+				filename: "custom-node-styling.svelte",
+				filecode: CustomNodeStylingRaw,
+				lang: "svelte",
+				hideLines: true,
+			},
+		},
+		{
+			name: "Centered Alignment",
+			preview: CenteredAlignment,
+			code: {
+				filename: "centered-alignment.svelte",
+				filecode: CenteredAlignmentRaw,
 				lang: "svelte",
 				hideLines: true,
 			},
@@ -152,11 +196,11 @@ export const data: ComponentDoc = {
 			},
 		},
 		{
-			name: "Custom Node Styling",
-			preview: CustomNodeStyling,
+			name: "Panning Large Diagrams",
+			preview: PanningLargeDiagrams,
 			code: {
-				filename: "custom-node-styling.svelte",
-				filecode: CustomNodeStylingRaw,
+				filename: "panning-large-diagrams.svelte",
+				filecode: PanningLargeDiagramsRaw,
 				lang: "svelte",
 				hideLines: true,
 			},
@@ -172,17 +216,7 @@ export const data: ComponentDoc = {
 			},
 		},
 		{
-			name: "Nested Node List",
-			preview: NestedNodeList,
-			code: {
-				filename: "nested-node-list.svelte",
-				filecode: NestedNodeListRaw,
-				lang: "svelte",
-				hideLines: true,
-			},
-		},
-		{
-			name: "Parallel Node Adjustment",
+			name: "Parallel Node Alignment",
 			preview: ParallelNodeAdjustment,
 			code: {
 				filename: "parallel-node-adjustment.svelte",
@@ -192,11 +226,11 @@ export const data: ComponentDoc = {
 			},
 		},
 		{
-			name: "Planning Large Diagrams",
-			preview: PlanningLargeDiagrams,
+			name: "Nested Node Lists in Parallel",
+			preview: NestedNodeList,
 			code: {
-				filename: "planning-large-diagrams.svelte",
-				filecode: PlanningLargeDiagramsRaw,
+				filename: "nested-node-list.svelte",
+				filecode: NestedNodeListRaw,
 				lang: "svelte",
 				hideLines: true,
 			},
@@ -207,16 +241,6 @@ export const data: ComponentDoc = {
 			code: {
 				filename: "vertical-parallel.svelte",
 				filecode: VerticalParallelRaw,
-				lang: "svelte",
-				hideLines: true,
-			},
-		},
-		{
-			name: "Vertical",
-			preview: Vertical,
-			code: {
-				filename: "vertical.svelte",
-				filecode: VerticalRaw,
 				lang: "svelte",
 				hideLines: true,
 			},
