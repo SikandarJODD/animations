@@ -20,6 +20,8 @@
 	import { PersistedState } from "runed";
 	import { scale } from "svelte/transition";
 	import { BlocksIcon } from "@lucide/svelte";
+	import ArrowUpRightIcon from "@lucide/svelte/icons/arrow-up-right";
+	import PackageIcon from "@lucide/svelte/icons/package";
 
 	type NavigationItem = {
 		href: string;
@@ -36,6 +38,7 @@
 		url: string;
 		github: string;
 		slug: string;
+		accent?: "amber";
 	};
 
 	const navigationItems: NavigationItem[] = [
@@ -62,13 +65,6 @@
 	];
 
 	const projectItems: ProjectItem[] = [
-		{
-			title: "Svelte Animation",
-			description: "A curated collection of animations and effects for Svelte.",
-			url: "https://sv-animations.vercel.app/",
-			github: "https://github.com/SikandarJODD/animations",
-			slug: "svelte-animation",
-		},
 		{
 			title: "Svelte Marketing Blocks",
 			description: "Reusable marketing sections and landing-page blocks.",
@@ -117,6 +113,14 @@
 			url: "https://sv-matrix.vercel.app/",
 			github: "https://github.com/SikandarJODD/sv-matrix",
 			slug: "svelte-dot-matrix-loaders",
+		},
+		{
+			title: "Svelte Agentation",
+			description: "Visual feedback and annotation tools for AI coding agents.",
+			url: "https://sv-agentation.com/",
+			github: "https://github.com/SikandarJODD/sv-agentation",
+			slug: "svelte-agentation",
+			accent: "amber",
 		},
 	];
 
@@ -282,14 +286,14 @@
 							<NavigationMenuTrigger
 								class="text-muted-foreground hover:text-primary focus:text-primary data-[state=open]:text-primary bg-transparent px-4 py-2 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent"
 							>
-								Other Project
+								Other Projects
 							</NavigationMenuTrigger>
 							<NavigationMenuContent class="p-0">
 								<div class="w-[42rem]">
 									<ul class="grid grid-cols-2 gap-1 p-2">
 										{#each projectItems as project (project.url)}
 											<li
-												class="hover:bg-accent focus-within:bg-accent group flex min-w-0 items-start gap-2 rounded-md p-2.5 transition-colors"
+												class="hover:bg-accent focus-within:bg-accent group/project-card relative flex min-w-0 items-start gap-2 rounded-md p-2.5 transition-colors"
 											>
 												<a
 													href={withUtm(project.url, `navbar-${project.slug}`)}
@@ -297,8 +301,16 @@
 													rel="noopener noreferrer"
 													class="min-w-0 flex-1 rounded-sm outline-none"
 												>
-													<div class="truncate text-sm leading-none font-medium">
-														{project.title}
+													<div
+														class="flex items-center gap-1.5 text-sm leading-none font-medium"
+													>
+														<span class="truncate">{project.title}</span>
+														{#if project.accent === "amber"}
+															<PackageIcon
+																aria-label="Library"
+																class="size-3 shrink-0 text-amber-500"
+															/>
+														{/if}
 													</div>
 													<p
 														class="text-muted-foreground mt-1 line-clamp-2 text-xs leading-snug"
@@ -315,6 +327,12 @@
 												>
 													<Icons.GitHub class="size-3" />
 												</a>
+												<span
+													aria-hidden="true"
+													class="bg-muted text-muted-foreground pointer-events-none absolute right-2 bottom-2 translate-y-1 rounded-md p-1 opacity-0 shadow-xs transition-all duration-200 group-hover/project-card:translate-y-0 group-hover/project-card:opacity-100"
+												>
+													<ArrowUpRightIcon class="size-3" />
+												</span>
 											</li>
 										{/each}
 									</ul>

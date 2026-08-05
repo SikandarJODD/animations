@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as Sheet from "$lib/components/ui/sheet";
 	import { Badge } from "$lib/components/ui/badge";
-	import { PanelLeftIcon } from "@lucide/svelte";
+	import { ArrowUpRightIcon, PackageIcon, PanelLeftIcon } from "@lucide/svelte";
 	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
 	import HistoryIcon from "@lucide/svelte/icons/history";
 	import HomeIcon from "@lucide/svelte/icons/home";
@@ -27,6 +27,7 @@
 		url: string;
 		github: string;
 		slug: string;
+		accent?: "amber";
 	};
 
 	const getStartedItems: MobileNavItem[] = [
@@ -72,13 +73,6 @@
 	}));
 
 	const projectItems: ProjectItem[] = [
-		{
-			title: "Svelte Animation",
-			description: "Animations and effects for Svelte.",
-			url: "https://sv-animations.vercel.app/",
-			github: "https://github.com/SikandarJODD/animations",
-			slug: "svelte-animation",
-		},
 		{
 			title: "Svelte Marketing Blocks",
 			description: "Reusable marketing and landing-page blocks.",
@@ -127,6 +121,14 @@
 			url: "https://sv-matrix.vercel.app/",
 			github: "https://github.com/SikandarJODD/sv-matrix",
 			slug: "svelte-dot-matrix-loaders",
+		},
+		{
+			title: "Svelte Agentation",
+			description: "Visual feedback and annotation tools for AI coding agents.",
+			url: "https://sv-agentation.com/",
+			github: "https://github.com/SikandarJODD/sv-agentation",
+			slug: "svelte-agentation",
+			accent: "amber",
 		},
 	];
 
@@ -189,7 +191,7 @@
 	<Sheet.Content side="left" class="flex w-75 flex-col p-0 sm:w-100">
 		<!-- Fixed Header -->
 		<Sheet.Header class="border-b px-6 py-4">
-			<Sheet.Title class="text-lg font-medium">Svelte Animation</Sheet.Title>
+			<Sheet.Title class="text-lg font-medium">Svelte Animations</Sheet.Title>
 		</Sheet.Header>
 
 		<div class="flex-1 overflow-y-auto px-2 pb-4">
@@ -297,7 +299,7 @@
 					<div class="space-y-0.5 px-2 pb-2">
 						{#each projectItems as project (project.url)}
 							<div
-								class="hover:bg-accent/50 focus-within:bg-accent/50 flex items-start gap-1 rounded-md px-2 py-2 transition-colors"
+								class="hover:bg-accent/50 focus-within:bg-accent/50 group/project-card relative flex items-start gap-1 rounded-md px-2 py-2 transition-colors"
 							>
 								<a
 									href={withUtm(project.url, `mobile-navbar-${project.slug}`)}
@@ -306,8 +308,16 @@
 									onclick={handleLinkClick}
 									class="min-w-0 flex-1 rounded-sm outline-none"
 								>
-									<div class="text-foreground text-xs font-medium leading-snug">
-										{project.title}
+									<div
+										class="text-foreground flex items-center gap-1.5 text-xs font-medium leading-snug"
+									>
+										<span>{project.title}</span>
+										{#if project.accent === "amber"}
+											<PackageIcon
+												aria-label="Library"
+												class="size-3 shrink-0 text-amber-500"
+											/>
+										{/if}
 									</div>
 									<div
 										class="text-muted-foreground/70 mt-0.5 line-clamp-2 text-[11px] leading-snug"
@@ -328,6 +338,12 @@
 								>
 									<GitHubIcon class="size-3" />
 								</a>
+								<span
+									aria-hidden="true"
+									class="bg-muted text-muted-foreground pointer-events-none absolute right-1.5 bottom-1.5 rounded-md p-1 opacity-0 shadow-xs transition-opacity duration-200 group-hover/project-card:opacity-100"
+								>
+									<ArrowUpRightIcon class="size-3" />
+								</span>
 							</div>
 						{/each}
 					</div>
