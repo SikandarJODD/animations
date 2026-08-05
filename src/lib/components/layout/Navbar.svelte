@@ -30,6 +30,14 @@
 		badgeVariant?: BadgeVariant;
 	};
 
+	type ProjectItem = {
+		title: string;
+		description: string;
+		url: string;
+		github: string;
+		slug: string;
+	};
+
 	const navigationItems: NavigationItem[] = [
 		{
 			href: "/magic",
@@ -52,6 +60,76 @@
 			badgeVariant: "lime",
 		},
 	];
+
+	const projectItems: ProjectItem[] = [
+		{
+			title: "Svelte Animation",
+			description: "A curated collection of animations and effects for Svelte.",
+			url: "https://sv-animations.vercel.app/",
+			github: "https://github.com/SikandarJODD/animations",
+			slug: "svelte-animation",
+		},
+		{
+			title: "Svelte Marketing Blocks",
+			description: "Reusable marketing sections and landing-page blocks.",
+			url: "https://sv-blocks.vercel.app/",
+			github: "https://github.com/SikandarJODD/cnblocks",
+			slug: "svelte-marketing-blocks",
+		},
+		{
+			title: "Svelte Quality Marketing Blocks",
+			description: "Polished marketing blocks for high-quality Svelte sites.",
+			url: "https://sv-efferd.pages.dev/",
+			github: "https://github.com/SikandarJODD/sv-efferd",
+			slug: "svelte-quality-marketing-blocks",
+		},
+		{
+			title: "Svelte AI Elements",
+			description: "Composable Svelte elements for AI product interfaces.",
+			url: "https://svelte-ai-elements.vercel.app/",
+			github: "https://github.com/SikandarJODD/ai-elements",
+			slug: "svelte-ai-elements",
+		},
+		{
+			title: "Svelte Particles",
+			description: "Interactive particle effects and examples for Svelte.",
+			url: "https://sv-particles.vercel.app/",
+			github: "https://github.com/SikandarJODD/sv-particles",
+			slug: "svelte-particles",
+		},
+		{
+			title: "Svelte Data Table Components & Examples",
+			description: "Data table components, patterns, and practical examples.",
+			url: "https://sv-table.vercel.app/",
+			github: "https://github.com/SikandarJODD/sv-table",
+			slug: "svelte-data-table",
+		},
+		{
+			title: "Svelte Globe Examples",
+			description: "Interactive globe examples and visual experiments.",
+			url: "https://sv-globe.vercel.app/",
+			github: "https://github.com/SikandarJODD/sv-globe",
+			slug: "svelte-globe",
+		},
+		{
+			title: "Svelte Dot Matrix Loaders",
+			description: "Customizable dot-matrix loading animations for Svelte.",
+			url: "https://sv-matrix.vercel.app/",
+			github: "https://github.com/SikandarJODD/sv-matrix",
+			slug: "svelte-dot-matrix-loaders",
+		},
+	];
+
+	function withUtm(url: string, content: string) {
+		const params = new URLSearchParams({
+			utm_source: "sv-animations",
+			utm_medium: "referral",
+			utm_campaign: "other-projects",
+			utm_content: content,
+		});
+
+		return `${url}?${params.toString()}`;
+	}
 
 	const componentsHasUpdates = navigationItems.some((item) => item.badge === "new");
 
@@ -109,7 +187,7 @@
 			<div class="flex items-center gap-6">
 				<a href="/" class="text-primary hover:text-primary/90"> Svelte Animations </a>
 				<NavigationMenuRoot
-					class="max-md:hidden"
+					class="max-lg:hidden"
 					delayDuration={0}
 					viewport={false}
 					onValueChange={(v) => updateIsNew()}
@@ -200,6 +278,69 @@
 								</ul>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
+						<NavigationMenuItem id="other-projects">
+							<NavigationMenuTrigger
+								class="text-muted-foreground hover:text-primary focus:text-primary data-[state=open]:text-primary bg-transparent px-4 py-2 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent"
+							>
+								Other Project
+							</NavigationMenuTrigger>
+							<NavigationMenuContent class="p-0">
+								<div class="w-[42rem]">
+									<ul class="grid grid-cols-2 gap-1 p-2">
+										{#each projectItems as project (project.url)}
+											<li
+												class="hover:bg-accent focus-within:bg-accent group flex min-w-0 items-start gap-2 rounded-md p-2.5 transition-colors"
+											>
+												<a
+													href={withUtm(project.url, `navbar-${project.slug}`)}
+													target="_blank"
+													rel="noopener noreferrer"
+													class="min-w-0 flex-1 rounded-sm outline-none"
+												>
+													<div class="truncate text-sm leading-none font-medium">
+														{project.title}
+													</div>
+													<p
+														class="text-muted-foreground mt-1 line-clamp-2 text-xs leading-snug"
+													>
+														{project.description}
+													</p>
+												</a>
+												<a
+													href={withUtm(project.github, `navbar-${project.slug}-github`)}
+													target="_blank"
+													rel="noopener noreferrer"
+													aria-label={`View ${project.title} on GitHub`}
+													class="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 -mt-0.5 shrink-0 rounded-sm p-1 outline-none transition-colors focus-visible:ring-[3px]"
+												>
+													<Icons.GitHub class="size-3" />
+												</a>
+											</li>
+										{/each}
+									</ul>
+									<div
+										class="text-muted-foreground flex items-center justify-center gap-1.5 border-t px-3 py-2.5 text-xs"
+									>
+										<span>Built by</span>
+										<a
+											href={withUtm("https://bhide.dev", "navbar-owner")}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="text-foreground hover:text-primary focus-visible:ring-ring/50 inline-flex items-center gap-1.5 rounded-sm font-medium outline-none transition-colors focus-visible:ring-[3px]"
+										>
+											<img
+												src="https://github.com/SikandarJODD.png"
+												alt=""
+												width="16"
+												height="16"
+												class="size-4 rounded-full"
+											/>
+											Bhide Svelte
+										</a>
+									</div>
+								</div>
+							</NavigationMenuContent>
+						</NavigationMenuItem>
 						<NavigationMenuItem id="changelog">
 							<NavigationMenuLink
 								href="/changelog"
@@ -229,7 +370,7 @@
 				size="icon"
 				href="https://x.com/Sikandar_Bhide"
 				target="_blank"
-				class="hidden md:inline-flex"
+				class="hidden lg:inline-flex"
 			>
 				<Icons.Twitter class="size-4" />
 			</Button>
