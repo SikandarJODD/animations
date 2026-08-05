@@ -18,5 +18,6 @@
 	installTailwindCode={data.installBlock?.tailwind}
 	usage={data.usage}
 	examples={data.examples}
+	additionalExamples={data.additionalExamples}
 	propsTables={data.props}
 />

@@ -39,11 +39,11 @@ export type View = {
 	code: CodeBlock | CodeBlock[];
 	class: string;
 	showRetry: boolean;
-}
+};
 
 export type UsageCode = {
 	code: CodeBlock | CodeBlock[];
-}
+};
 
 export type ComponentDoc = ComponentMeta & {
 	preview?: Component;
@@ -53,6 +53,7 @@ export type ComponentDoc = ComponentMeta & {
 	usage?: UsageCode;
 	installBlock?: InstallComponentDocs;
 	examples?: Example[];
+	additionalExamples?: Example[];
 	seo: SEO;
 	props?: PropsTable[];
 	folderStructure?: string;

@@ -28,14 +28,27 @@ import {
 	CustomNodeStylingRaw,
 	DisabledNodes,
 	DisabledNodesRaw,
+	DynamicNodes,
+	DynamicNodesRaw,
+	InteractiveCustomNodes,
+	InteractiveCustomNodesRaw,
+	InteractiveFlowNodeRaw,
+	JunctionMarkers,
+	JunctionMarkersRaw,
 	NestedNodeList,
 	NestedNodeListRaw,
+	OverflowDetection,
+	OverflowDetectionRaw,
 	ParallelNodeAdjustment,
 	ParallelNodeAdjustmentRaw,
+	ParallelAlignmentComparison,
+	ParallelAlignmentComparisonRaw,
 	PanningLargeDiagrams,
 	PanningLargeDiagramsRaw,
 	ParallelBranches,
 	ParallelBranchesRaw,
+	ResponsiveOrientationToggle,
+	ResponsiveOrientationToggleRaw,
 	Simple,
 	SimpleRaw,
 	Vertical,
@@ -124,6 +137,24 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import * as Flow from "$lib/components/magic/flow";
+</script>
+
+<Flow.Root>
+	<Flow.Node>Start</Flow.Node>
+	<Flow.Parallel>
+		<Flow.Node>Branch A</Flow.Node>
+		<Flow.Node>Branch B</Flow.Node>
+	</Flow.Parallel>
+	<Flow.Node>End</Flow.Node>
+</Flow.Root>`,
+			lang: "svelte",
+		},
+	},
 	examples: [
 		{
 			name: "Sequential Flow",
@@ -244,6 +275,83 @@ export const data: ComponentDoc = {
 				lang: "svelte",
 				hideLines: true,
 			},
+		},
+	],
+	additionalExamples: [
+		{
+			name: "Junction Markers",
+			description: "Compare square junction markers with connectors that have no markers.",
+			preview: JunctionMarkers,
+			code: {
+				filename: "junction-markers.svelte",
+				filecode: JunctionMarkersRaw,
+				lang: "svelte",
+				hideLines: true,
+			},
+		},
+		{
+			name: "Overflow Detection",
+			description:
+				"Detect horizontal and vertical canvas overflow as the diagram changes size.",
+			preview: OverflowDetection,
+			code: {
+				filename: "overflow-detection.svelte",
+				filecode: OverflowDetectionRaw,
+				lang: "svelte",
+				hideLines: true,
+			},
+		},
+		{
+			name: "Parallel Start vs End Alignment",
+			description: "Compare start-aligned and end-aligned nodes inside parallel branches.",
+			preview: ParallelAlignmentComparison,
+			code: {
+				filename: "parallel-alignment-comparison.svelte",
+				filecode: ParallelAlignmentComparisonRaw,
+				lang: "svelte",
+				hideLines: true,
+			},
+		},
+		{
+			name: "Responsive Orientation Toggle",
+			description: "Switch a flow between horizontal and vertical orientations at runtime.",
+			preview: ResponsiveOrientationToggle,
+			code: {
+				filename: "responsive-orientation-toggle.svelte",
+				filecode: ResponsiveOrientationToggleRaw,
+				lang: "svelte",
+				hideLines: true,
+			},
+		},
+		{
+			name: "Dynamically Adding and Removing Nodes",
+			description: "Add and remove keyed flow nodes while keeping their connectors in sync.",
+			preview: DynamicNodes,
+			code: {
+				filename: "dynamic-nodes.svelte",
+				filecode: DynamicNodesRaw,
+				lang: "svelte",
+				hideLines: true,
+			},
+		},
+		{
+			name: "Interactive Custom Nodes",
+			description: "Build selectable workflow nodes as a reusable component.",
+			preview: InteractiveCustomNodes,
+			code: [
+				{
+					filename: "interactive-custom-nodes.svelte",
+					filecode: InteractiveCustomNodesRaw,
+					lang: "svelte",
+					hideLines: true,
+				},
+				{
+					filename: "interactive-flow-node.svelte",
+					filecode: InteractiveFlowNodeRaw,
+					lang: "svelte",
+					hideLines: true,
+				},
+			],
 		},
 	],
 	seo,
