@@ -36,7 +36,7 @@
 	<Frame.Root class="w-full">
 		<Frame.Header class="flex flex-row items-center justify-between px-2 py-1.5">
 			<Frame.Title class="font-figtree font-medium">{title}</Frame.Title>
-			<div class="hidden items-center gap-1 md:flex">
+			<div class="flex items-center gap-1">
 				<Button
 					{href}
 					class="font-figtree rounded-full"
