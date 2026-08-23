@@ -25,5 +25,4 @@ vite.config.ts.timestamp-*
 ./scripts
 
 /src/lib/components/motion-sv-examples
-commands.md
 docs-guide.md

@@ -14,7 +14,7 @@
 			"target": "magic/glyph-matrix/glyph-matrix.svelte"
 		},
 		{
-			"content": "import GlyphMatrix from './glyph-matrix.svelte';\r\n\r\nexport { GlyphMatrix }",
+			"content": "import GlyphMatrix from './glyph-matrix.svelte';\n\nexport { GlyphMatrix }",
 			"type": "registry:file",
 			"target": "magic/glyph-matrix/index.ts"
 		}

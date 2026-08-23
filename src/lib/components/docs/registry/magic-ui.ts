@@ -398,6 +398,14 @@ export const magicUIComponents: MagicComponent[] = [
 		desc: "Animated Scroll Progress for your pages",
 	},
 	{
+		id: "separator",
+		name: "Separator",
+		href: "/magic/docs/components/separator",
+		category: "Components",
+		badge: "New",
+		desc: "A flexible horizontal separator with solid or gradient lines and optional centered labels.",
+	},
+	{
 		id: "shimmer-button",
 		name: "Shimmer Button",
 		href: "/magic/docs/components/shimmer-button",

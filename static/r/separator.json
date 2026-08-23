@@ -1,0 +1,19 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "separator",
+	"title": "Separator",
+	"type": "registry:block",
+	"description": "A flexible horizontal separator for dividing content with solid or gradient lines and optional centered labels.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\ttype Props = {\n\t\tclass?: string;\n\t\tgradient?: boolean;\n\t\tchildren?: Snippet;\n\t\ttextClass?: string;\n\t};\n\tlet { class: className, gradient = false, children, textClass = \"\" }: Props = $props();\n</script>\n\n{#if children}\n\t<div class=\"flex w-full items-center\">\n\t\t<div\n\t\t\tclass={cn(\n\t\t\t\t\"h-px w-full rounded-full\",\n\t\t\t\tgradient\n\t\t\t\t\t? \"bg-linear-to-r from-transparent to-zinc-500 dark:from-zinc-800 dark:to-zinc-400\"\n\t\t\t\t\t: \"bg-zinc-300 dark:bg-zinc-800\",\n\t\t\t\tclassName\n\t\t\t)}\n\t\t></div>\n\t\t<div class={cn(\"w-fit px-2 text-nowrap\", textClass)}>\n\t\t\t{@render children?.()}\n\t\t</div>\n\t\t<div\n\t\t\tclass={cn(\n\t\t\t\t\"h-px w-full rounded-full\",\n\t\t\t\tgradient\n\t\t\t\t\t? \"bg-linear-to-r from-zinc-500 to-transparent dark:from-zinc-200 dark:to-zinc-700\"\n\t\t\t\t\t: \"bg-zinc-300 dark:bg-zinc-800\",\n\t\t\t\tclassName\n\t\t\t)}\n\t\t></div>\n\t</div>\n{:else}\n\t<div\n\t\tclass={cn(\n\t\t\t\"h-px w-full rounded-full\",\n\t\t\tgradient\n\t\t\t\t? \"bg-linear-to-r from-transparent via-zinc-500 to-transparent dark:from-zinc-800 dark:via-zinc-200 dark:to-zinc-700\"\n\t\t\t\t: \"bg-zinc-300 dark:bg-zinc-800\",\n\t\t\tclassName\n\t\t)}\n\t></div>\n{/if}\n",
+			"type": "registry:component",
+			"target": "magic/separator/separator.svelte"
+		},
+		{
+			"content": "import Separator from \"./separator.svelte\";\nexport { Separator };\n",
+			"type": "registry:file",
+			"target": "magic/separator/index.ts"
+		}
+	]
+}

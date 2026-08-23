@@ -1172,6 +1172,25 @@
 			"dependencies": ["motion-sv"]
 		},
 		{
+			"name": "separator",
+			"type": "registry:block",
+			"title": "Separator",
+			"description": "A flexible horizontal separator for dividing content with solid or gradient lines and optional centered labels.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/separator/separator.svelte",
+					"type": "registry:component",
+					"target": "magic/separator/separator.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/separator/index.ts",
+					"type": "registry:file",
+					"target": "magic/separator/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
 			"name": "shimmer-button",
 			"type": "registry:block",
 			"title": "Shimmer Button",

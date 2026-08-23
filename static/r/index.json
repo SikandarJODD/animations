@@ -445,6 +445,14 @@
 		"relativeUrl": "scroll-progress.json"
 	},
 	{
+		"name": "separator",
+		"title": "Separator",
+		"type": "registry:block",
+		"description": "A flexible horizontal separator for dividing content with solid or gradient lines and optional centered labels.",
+		"registryDependencies": [],
+		"relativeUrl": "separator.json"
+	},
+	{
 		"name": "shimmer-button",
 		"title": "Shimmer Button",
 		"type": "registry:block",
