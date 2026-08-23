@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as Flow from "$lib/components/magic/flow";
+	import { cn } from "$lib/utils";
 
 	type NodeState = "complete" | "current" | "pending";
 
@@ -24,18 +25,17 @@
 	<li {...props} class="list-none">
 		<button
 			type="button"
-			class="bg-kumo-base ring-kumo-hairline flex min-w-44 items-start gap-3 rounded-lg p-3 text-left shadow-sm ring transition"
+			class={cn(
+				"bg-kumo-base ring-kumo-hairline flex min-w-44 items-start gap-3 rounded-lg p-3 text-left shadow-sm ring transition",
+				state === "complete" && "text-kumo-subtle bg-orange-100",
+				state === "current" && "bg-kumo-base text-kumo-foreground",
+				state === "pending" && "bg-kumo-base text-kumo-subtle"
+			)}
 			class:ring-2={active}
 			class:ring-primary={active}
 			aria-pressed={active}
 			onclick={onSelect}
 		>
-			<span
-				class="mt-1 size-2.5 shrink-0 rounded-full"
-				class:bg-emerald-500={state === "complete"}
-				class:bg-primary={state === "current"}
-				class:bg-kumo-inactive={state === "pending"}
-			></span>
 			<span>
 				<span class="block text-sm font-medium">{title}</span>
 				<span class="text-kumo-subtle mt-0.5 block text-xs">{description}</span>

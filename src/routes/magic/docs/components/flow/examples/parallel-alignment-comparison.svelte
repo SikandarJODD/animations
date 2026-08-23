@@ -3,7 +3,7 @@
 </script>
 
 <div class="grid w-full gap-8 md:grid-cols-2">
-	<div class="space-y-3">
+	<div class="flex flex-col items-center justify-center gap-5">
 		<p class="text-kumo-subtle text-center text-sm">Start aligned</p>
 		<Flow.Root canvas={false}>
 			<Flow.Node>Start</Flow.Node>
@@ -16,7 +16,7 @@
 		</Flow.Root>
 	</div>
 
-	<div class="space-y-3">
+	<div class="flex flex-col items-center justify-center gap-5">
 		<p class="text-kumo-subtle text-center text-sm">End aligned</p>
 		<Flow.Root canvas={false}>
 			<Flow.Node>Start</Flow.Node>

@@ -523,14 +523,19 @@ export const magicUISidebarGroups = magicUICategoryOrder
 	}))
 	.filter((group) => group.items.length > 0);
 
+const magicUISidebarComponents = magicUISidebarGroups.flatMap((group) => group.items);
+
 /**
  * Get prev/next components for navigation
  */
 export function getPrevNext(currentId: string) {
-	const index = magicUIComponents.findIndex((c) => c.id === currentId);
+	const index = magicUISidebarComponents.findIndex((c) => c.id === currentId);
 	return {
-		prev: index > 0 ? magicUIComponents[index - 1] : null,
-		next: index < magicUIComponents.length - 1 ? magicUIComponents[index + 1] : null,
+		prev: index > 0 ? magicUISidebarComponents[index - 1] : null,
+		next:
+			index >= 0 && index < magicUISidebarComponents.length - 1
+				? magicUISidebarComponents[index + 1]
+				: null,
 	};
 }
 

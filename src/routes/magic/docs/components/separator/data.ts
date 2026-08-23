@@ -146,6 +146,23 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Separator } from "$lib/components/magic/separator";
+</script>
+
+<div class="flex w-full flex-col gap-8">
+	<Separator />
+	<Separator gradient />
+	<Separator gradient>
+		<span>Section</span>
+	</Separator>
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
