@@ -138,7 +138,7 @@
 		<OpenIn {query}>
 			<DropdownMenu.Trigger>
 				{#snippet child({ props })}
-					<Button {...props} variant="secondary" size="sm" class="px-2">
+					<Button {...props} variant="secondary" size="sm">
 						<ChevronDown class="size-4" />
 					</Button>
 				{/snippet}

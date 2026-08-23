@@ -21,8 +21,7 @@ pnpm create:routes spell/badge magic/backlight
 
 ```bash
 # Specific components
-pnpm docs:magic -- animated-list badge
-pnpm docs:spell -- animated-checkbox badge
+pn docs:magic component-name
 
 # All components in a group
 pnpm docs:fancy -- --all

@@ -18,6 +18,8 @@ import PillLabel from "./examples/pill-label.svelte";
 import PillLabelRaw from "./examples/pill-label.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
+import SignupForm from "./examples/signup-form.svelte";
+import SignupFormRaw from "./examples/signup-form.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "separator",
@@ -104,6 +106,16 @@ const examples: Example[] = [
 		code: {
 			filename: "icon-label.svelte",
 			filecode: IconLabelRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Sign-up Form",
+		description: "Use a labeled separator to distinguish email registration from social sign-up options.",
+		preview: SignupForm,
+		code: {
+			filename: "signup-form.svelte",
+			filecode: SignupFormRaw,
 			lang: "svelte",
 		},
 	},
