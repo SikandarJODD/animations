@@ -1,4 +1,5 @@
 import type { Component } from "svelte";
+import August23_26 from "./content/August23-26.svelte";
 import June15_26 from "./content/June15-26.svelte";
 import May12_26 from "./content/May12-26.svelte";
 import May11_26 from "./content/May11-26.svelte";
@@ -12,6 +13,10 @@ export type ChangelogEntry = {
 };
 
 export const changelogEntries: ChangelogEntry[] = [
+	{
+		id: "2026-08-23",
+		component: August23_26,
+	},
 	{
 		id: "2026-06-15",
 		component: June15_26,

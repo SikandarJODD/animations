@@ -22,6 +22,8 @@
 	import { BlocksIcon } from "@lucide/svelte";
 	import ArrowUpRightIcon from "@lucide/svelte/icons/arrow-up-right";
 	import PackageIcon from "@lucide/svelte/icons/package";
+	import { GitHubButton, getStars } from "$lib/components/ui/github-button";
+	import { onMount } from "svelte";
 
 	type NavigationItem = {
 		href: string;
@@ -94,7 +96,7 @@
 			slug: "svelte-particles",
 		},
 		{
-			title: "Svelte Data Table Components & Examples",
+			title: "Svelte DataTables Components",
 			description: "Data table components, patterns, and practical examples.",
 			url: "https://sv-table.vercel.app/",
 			github: "https://github.com/SikandarJODD/sv-table",
@@ -136,6 +138,12 @@
 	}
 
 	const componentsHasUpdates = navigationItems.some((item) => item.badge === "new");
+	let stars = $state(300);
+	const repo = { owner: "SikandarJODD", repo: "animations" };
+
+	onMount(async () => {
+		stars = await getStars({ ...repo, fallback: 300 });
+	});
 
 	function formatBadgeLabel(badge?: NavigationItem["badge"]) {
 		return badge === "new"
@@ -296,7 +304,10 @@
 												class="hover:bg-accent focus-within:bg-accent group/project-card relative flex min-w-0 items-start gap-2 rounded-md p-2.5 transition-colors"
 											>
 												<a
-													href={withUtm(project.url, `navbar-${project.slug}`)}
+													href={withUtm(
+														project.url,
+														`navbar-${project.slug}`
+													)}
 													target="_blank"
 													rel="noopener noreferrer"
 													class="min-w-0 flex-1 rounded-sm outline-none"
@@ -304,7 +315,8 @@
 													<div
 														class="flex items-center gap-1.5 text-sm leading-none font-medium"
 													>
-														<span class="truncate">{project.title}</span>
+														<span class="truncate">{project.title}</span
+														>
 														{#if project.accent === "amber"}
 															<PackageIcon
 																aria-label="Library"
@@ -319,11 +331,14 @@
 													</p>
 												</a>
 												<a
-													href={withUtm(project.github, `navbar-${project.slug}-github`)}
+													href={withUtm(
+														project.github,
+														`navbar-${project.slug}-github`
+													)}
 													target="_blank"
 													rel="noopener noreferrer"
 													aria-label={`View ${project.title} on GitHub`}
-													class="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 -mt-0.5 shrink-0 rounded-sm p-1 outline-none transition-colors focus-visible:ring-[3px]"
+													class="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 -mt-0.5 shrink-0 rounded-sm p-1 transition-colors outline-none focus-visible:ring-[3px]"
 												>
 													<Icons.GitHub class="size-3" />
 												</a>
@@ -344,7 +359,7 @@
 											href={withUtm("https://bhide.dev", "navbar-owner")}
 											target="_blank"
 											rel="noopener noreferrer"
-											class="text-foreground hover:text-primary focus-visible:ring-ring/50 inline-flex items-center gap-1.5 rounded-sm font-medium outline-none transition-colors focus-visible:ring-[3px]"
+											class="text-foreground hover:text-primary focus-visible:ring-ring/50 inline-flex items-center gap-1.5 rounded-sm font-medium transition-colors outline-none focus-visible:ring-[3px]"
 										>
 											<img
 												src="https://github.com/SikandarJODD.png"
@@ -375,14 +390,7 @@
 		<div class="flex items-center gap-2 md:gap-2">
 			<!-- Search Bar -->
 			<DocsSearchNavigation />
-			<Button
-				variant="ghost"
-				size="icon"
-				href="https://github.com/SikandarJODD/animations"
-				target="_blank"
-			>
-				<Icons.GitHub class="size-4" />
-			</Button>
+			<GitHubButton {repo} {stars} target="_blank" />
 			<Button
 				variant="ghost"
 				size="icon"

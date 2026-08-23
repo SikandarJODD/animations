@@ -3,6 +3,7 @@
 	import Button from "$lib/components/ui/button/button.svelte";
 	import * as Command from "$lib/components/ui/command/index.js";
 	import * as Kbd from "$lib/components/ui/kbd/index.js";
+	import { cn } from "$lib/utils";
 	import {
 		fancyUIComponents,
 		magicUISidebarGroups,
@@ -66,51 +67,62 @@
 	const fancyComponents: FancyComponent[] = fancyUIComponents.filter(
 		(component) => component.category !== "Overview" && component.id !== "introduction"
 	);
+
+	import { MediaQuery } from "svelte/reactivity";
+
+	const large = new MediaQuery("min-width: 800px");
 </script>
 
 <svelte:document onkeydown={handleKeydown} />
 
 <div class="text-muted-foreground text-sm">
 	<Button
-		variant="ghost"
-		size="sm"
-		class="bg-secondary dark:bg-muted/60 flex justify-between px-1.5 md:min-w-46  md:pr-1"
+		variant="secondary"
+		size={large.current ? "default" : "icon-sm"}
+		class={cn(
+			large.current
+				? "bg-muted/80 dark:bg-muted/60 flex justify-between px-1.5 md:min-w-56"
+				: "rounded-full"
+		)}
 		onclick={() => (open = true)}
 	>
-		<span class="hidden pl-1 md:block"> Search... </span>
+		{#if large.current}
+			<span class="pl-1 text-xs md:block"> Search Components </span>
 
-		<Kbd.Group class="hidden gap-1 md:flex">
-			<!-- <Kbd.Root>⌘</Kbd.Root> -->
-			<Kbd.Root>Ctrl</Kbd.Root>
-			<Kbd.Root>K</Kbd.Root>
-		</Kbd.Group>
-		<span class="lg:hidden">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="128"
-				height="128"
-				viewBox="0 0 24 24"
-				fill="none"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				role="img"
-				color="currentColor"
-			>
-				<path
-					d="M18.5016 18.5L21 21M20 14.5C20 11.4624 17.5376 9 14.5 9C11.4624 9 9 11.4624 9 14.5C9 17.5376 11.4624 20 14.5 20C17.5376 20 20 17.5376 20 14.5Z"
-					stroke="currentColor"
-					stroke-width="1.5"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				></path>
-				<path
-					d="M10 3H14M3 10V14M6.5 21C4.567 21 3 19.433 3 17.5M17.5 3C19.433 3 21 4.567 21 6.5M3 6.5C3 4.567 4.567 3 6.5 3"
-					stroke="currentColor"
-					stroke-width="1.5"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				></path>
-			</svg>
-		</span>
+			<Kbd.Group class="gap-1 md:flex">
+				<!-- <Kbd.Root>⌘</Kbd.Root> -->
+				<Kbd.Root>Ctrl</Kbd.Root>
+				<Kbd.Root>K</Kbd.Root>
+			</Kbd.Group>
+		{:else}
+			<span>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="128"
+					height="128"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					role="img"
+					color="currentColor"
+				>
+					<path
+						d="M18.5016 18.5L21 21M20 14.5C20 11.4624 17.5376 9 14.5 9C11.4624 9 9 11.4624 9 14.5C9 17.5376 11.4624 20 14.5 20C17.5376 20 20 17.5376 20 14.5Z"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					></path>
+					<path
+						d="M10 3H14M3 10V14M6.5 21C4.567 21 3 19.433 3 17.5M17.5 3C19.433 3 21 4.567 21 6.5M3 6.5C3 4.567 4.567 3 6.5 3"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					></path>
+				</svg>
+			</span>
+		{/if}
 	</Button>
 </div>
 
