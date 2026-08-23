@@ -111,7 +111,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Sign-up Form",
-		description: "Use a labeled separator to distinguish email registration from social sign-up options.",
+		description:
+			"Use a labeled separator to distinguish email registration from social sign-up options.",
 		preview: SignupForm,
 		code: {
 			filename: "signup-form.svelte",
@@ -124,7 +125,7 @@ const examples: Example[] = [
 const installBlock: InstallComponentDocs = {
 	packages: [],
 	installCode: [
-		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true },
+		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
 		{ filename: "separator.svelte", filecode: SeparatorSvelteRaw, lang: "svelte" },
 	],
 	folderStructure: `src/
@@ -184,7 +185,8 @@ export const data: ComponentDoc = {
 				{
 					name: "children",
 					type: "Snippet",
-					description: "Optional content rendered as a centered label between the separator lines",
+					description:
+						"Optional content rendered as a centered label between the separator lines",
 				},
 				{
 					name: "textClass",

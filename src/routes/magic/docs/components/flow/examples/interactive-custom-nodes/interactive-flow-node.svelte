@@ -2,7 +2,7 @@
 	import * as Flow from "$lib/components/magic/flow";
 	import { cn } from "$lib/utils";
 
-	type NodeState = "complete" | "current" | "pending";
+	type NodeState = "pending" | "success";
 
 	type RenderArgs = {
 		props: Record<string, unknown>;
@@ -26,19 +26,25 @@
 		<button
 			type="button"
 			class={cn(
-				"bg-kumo-base ring-kumo-hairline flex min-w-44 items-start gap-3 rounded-lg p-3 text-left shadow-sm ring transition",
-				state === "complete" && "text-kumo-subtle bg-orange-100",
-				state === "current" && "bg-kumo-base text-kumo-foreground",
-				state === "pending" && "bg-kumo-base text-kumo-subtle"
+				"flex min-w-44 cursor-pointer items-start rounded-lg border p-3 text-left transition-colors",
+				state === "pending" &&
+					"border-amber-200 bg-amber-50 text-amber-950 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100",
+				state === "success" &&
+					"border-emerald-200 bg-emerald-50 text-emerald-950 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-100",
+				active && "border-black dark:border-white"
 			)}
-			class:ring-2={active}
-			class:ring-primary={active}
 			aria-pressed={active}
 			onclick={onSelect}
 		>
 			<span>
 				<span class="block text-sm font-medium">{title}</span>
-				<span class="text-kumo-subtle mt-0.5 block text-xs">{description}</span>
+				<span
+					class={cn(
+						"mt-0.5 block text-xs",
+						state === "pending" && "text-amber-700 dark:text-amber-300",
+						state === "success" && "text-emerald-700 dark:text-emerald-300"
+					)}>{description}</span
+				>
 			</span>
 		</button>
 	</li>

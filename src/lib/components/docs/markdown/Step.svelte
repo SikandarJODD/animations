@@ -17,7 +17,7 @@
 	{#if title}
 		<div class={cn("mb-2 flex h-8 items-center", titleBaseClass)}>
 			<span
-				class="border-border bg-card text-foreground absolute -left-4 flex size-8 items-center justify-center rounded-full border text-xs font-medium shadow-sm [counter-increment:step] before:content-[counter(step)]"
+				class="border-border bg-card text-foreground absolute -left-4 flex size-8 items-center justify-center rounded-full border text-xs font-medium [counter-increment:step] before:content-[counter(step)]"
 			></span>
 			<h3 class="text-base leading-none font-medium">
 				{title}

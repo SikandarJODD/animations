@@ -24,7 +24,7 @@
 	{href}
 	{...rest}
 	class={cn(
-		"group border-border bg-background hover:bg-muted/50 relative flex flex-col rounded-lg border px-4 py-3 shadow-sm transition-[background-color] duration-150 ease-out",
+		"group border-border bg-background hover:bg-muted/50 relative flex flex-col rounded-lg border px-4 py-3 transition-[background-color] duration-150 ease-out",
 		forceSecondColumn && "col-start-2"
 	)}
 >

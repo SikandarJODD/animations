@@ -2,31 +2,31 @@
 	import * as Flow from "$lib/components/magic/flow";
 	import InteractiveFlowNode from "./interactive-flow-node.svelte";
 
-	let selected = $state("Review");
+	let selected = $state("Upload files");
 </script>
 
 <div class="w-full space-y-5">
 	<div class="overflow-auto px-2 py-2">
 		<Flow.Root canvas={false} align="center">
 			<InteractiveFlowNode
-				title="Draft"
-				description="Content prepared"
-				state="complete"
-				active={selected === "Draft"}
-				onSelect={() => (selected = "Draft")}
+				title="Upload files"
+				description="Completed"
+				state="success"
+				active={selected === "Upload files"}
+				onSelect={() => (selected = "Upload files")}
 			/>
 			<InteractiveFlowNode
-				title="Review"
-				description="Waiting for approval"
-				state="current"
-				active={selected === "Review"}
-				onSelect={() => (selected = "Review")}
+				title="Process files"
+				description="Completed"
+				state="success"
+				active={selected === "Process files"}
+				onSelect={() => (selected = "Process files")}
 			/>
 			<InteractiveFlowNode
-				title="Publish"
-				description="Ready for release"
-				active={selected === "Publish"}
-				onSelect={() => (selected = "Publish")}
+				title="Generate report"
+				description="Pending"
+				active={selected === "Generate report"}
+				onSelect={() => (selected = "Generate report")}
 			/>
 		</Flow.Root>
 	</div>
