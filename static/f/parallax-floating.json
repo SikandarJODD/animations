@@ -1,0 +1,39 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "parallax-floating",
+	"title": "Parallax Floating",
+	"type": "registry:block",
+	"author": "SikandarJODD",
+	"description": "Create layered parallax movement that responds smoothly to pointer and touch input.",
+	"dependencies": [
+		"motion-sv",
+		"runed"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { Snippet } from \"svelte\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\n\texport interface FloatingProps extends HTMLAttributes<HTMLDivElement> {\n\t\tchildren?: Snippet;\n\t\tsensitivity?: number;\n\t\teasingFactor?: number;\n\t\tclass?: string;\n\t}\n</script>\n\n<script lang=\"ts\">\n\timport { useAnimationFrame, useReducedMotion } from \"motion-sv\";\n\timport { useMousePosition } from \"$lib/hooks/use-mouse-position.svelte\";\n\timport { cn } from \"$UTILS$\";\n\n\timport { setFloatingContext } from \"./floating-context.svelte\";\n\n\ttype FloatingElementState = {\n\t\telement: HTMLDivElement;\n\t\tdepth: number;\n\t\tcurrentPosition: { x: number; y: number };\n\t};\n\n\tlet {\n\t\tchildren,\n\t\tsensitivity = 1,\n\t\teasingFactor = 0.05,\n\t\tclass: className,\n\t\t...props\n\t}: FloatingProps = $props();\n\n\tlet container = $state<HTMLDivElement | null>(null);\n\tconst elements = new Map<string, FloatingElementState>();\n\tconst mousePosition = useMousePosition(() => container);\n\tconst reducedMotion = useReducedMotion();\n\n\tsetFloatingContext({\n\t\tregisterElement(id, element, depth) {\n\t\t\telements.set(id, {\n\t\t\t\telement,\n\t\t\t\tdepth,\n\t\t\t\tcurrentPosition: { x: 0, y: 0 },\n\t\t\t});\n\t\t},\n\t\tunregisterElement(id) {\n\t\t\telements.delete(id);\n\t\t},\n\t});\n\n\tuseAnimationFrame(() => {\n\t\tif (!container) {\n\t\t\treturn;\n\t\t}\n\n\t\telements.forEach((state) => {\n\t\t\tif (reducedMotion.current) {\n\t\t\t\tstate.currentPosition.x = 0;\n\t\t\t\tstate.currentPosition.y = 0;\n\t\t\t\tstate.element.style.transform = \"translate3d(0, 0, 0)\";\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tconst strength = (state.depth * sensitivity) / 20;\n\t\t\tconst targetX = mousePosition.x * strength;\n\t\t\tconst targetY = mousePosition.y * strength;\n\t\t\tconst deltaX = targetX - state.currentPosition.x;\n\t\t\tconst deltaY = targetY - state.currentPosition.y;\n\n\t\t\tstate.currentPosition.x += deltaX * easingFactor;\n\t\t\tstate.currentPosition.y += deltaY * easingFactor;\n\t\t\tstate.element.style.transform = `translate3d(${state.currentPosition.x}px, ${state.currentPosition.y}px, 0)`;\n\t\t});\n\t});\n</script>\n\n<div\n\tbind:this={container}\n\tclass={cn(\"absolute top-0 left-0 h-full w-full\", className)}\n\t{...props}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "fancy/parallax-floating/floating.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { Snippet } from \"svelte\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\n\texport interface FloatingElementProps extends HTMLAttributes<HTMLDivElement> {\n\t\tchildren?: Snippet;\n\t\tdepth?: number;\n\t\tclass?: string;\n\t}\n</script>\n\n<script lang=\"ts\">\n\timport { watch } from \"runed\";\n\timport { cn } from \"$UTILS$\";\n\n\timport { useFloatingContext } from \"./floating-context.svelte\";\n\n\tlet { children, depth = 1, class: className, ...props }: FloatingElementProps = $props();\n\n\tlet element = $state<HTMLDivElement | null>(null);\n\tconst id = Math.random().toString(36).substring(2);\n\tconst floatingContext = useFloatingContext();\n\n\twatch([() => element, () => depth], ([currentElement, currentDepth]) => {\n\t\tif (!currentElement || !floatingContext) {\n\t\t\treturn;\n\t\t}\n\n\t\tfloatingContext.registerElement(id, currentElement, currentDepth);\n\n\t\treturn () => floatingContext.unregisterElement(id);\n\t});\n</script>\n\n<div bind:this={element} class={cn(\"absolute will-change-transform\", className)} {...props}>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:file",
+			"target": "fancy/parallax-floating/floating-element.svelte"
+		},
+		{
+			"content": "import { getContext, setContext } from \"svelte\";\n\nexport interface FloatingContextValue {\n\tregisterElement: (id: string, element: HTMLDivElement, depth: number) => void;\n\tunregisterElement: (id: string) => void;\n}\n\nconst FLOATING_CONTEXT_KEY = Symbol(\"floating-context\");\n\nexport function setFloatingContext(value: FloatingContextValue): FloatingContextValue {\n\tsetContext(FLOATING_CONTEXT_KEY, value);\n\treturn value;\n}\n\nexport function useFloatingContext(): FloatingContextValue | undefined {\n\treturn getContext<FloatingContextValue | undefined>(FLOATING_CONTEXT_KEY);\n}\n",
+			"type": "registry:file",
+			"target": "fancy/parallax-floating/floating-context.svelte.ts"
+		},
+		{
+			"content": "import Floating from \"./floating.svelte\";\nimport FloatingElement from \"./floating-element.svelte\";\n\nexport { Floating as ParallaxFloating, Floating, FloatingElement };\nexport type { FloatingProps } from \"./floating.svelte\";\nexport type { FloatingElementProps } from \"./floating-element.svelte\";\n",
+			"type": "registry:file",
+			"target": "fancy/parallax-floating/index.ts"
+		},
+		{
+			"content": "import { onMount } from \"svelte\";\n\nexport interface MousePosition {\n\tx: number;\n\ty: number;\n}\n\nexport function useMousePosition(\n\tgetContainer?: () => HTMLElement | SVGElement | null\n): MousePosition {\n\tlet position = $state<MousePosition>({ x: 0, y: 0 });\n\n\tonMount(() => {\n\t\tfunction updatePosition(x: number, y: number) {\n\t\t\tconst container = getContainer?.();\n\n\t\t\tif (container) {\n\t\t\t\tconst rect = container.getBoundingClientRect();\n\t\t\t\tposition.x = x - rect.left;\n\t\t\t\tposition.y = y - rect.top;\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tposition.x = x;\n\t\t\tposition.y = y;\n\t\t}\n\n\t\tfunction handleMouseMove(event: MouseEvent) {\n\t\t\tupdatePosition(event.clientX, event.clientY);\n\t\t}\n\n\t\tfunction handleTouchMove(event: TouchEvent) {\n\t\t\tconst touch = event.touches[0];\n\n\t\t\tif (touch) {\n\t\t\t\tupdatePosition(touch.clientX, touch.clientY);\n\t\t\t}\n\t\t}\n\n\t\twindow.addEventListener(\"mousemove\", handleMouseMove);\n\t\twindow.addEventListener(\"touchmove\", handleTouchMove);\n\n\t\treturn () => {\n\t\t\twindow.removeEventListener(\"mousemove\", handleMouseMove);\n\t\t\twindow.removeEventListener(\"touchmove\", handleTouchMove);\n\t\t};\n\t});\n\n\treturn position;\n}\n",
+			"type": "registry:hook",
+			"target": "use-mouse-position.svelte.ts"
+		}
+	]
+}

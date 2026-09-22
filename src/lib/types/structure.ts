@@ -49,6 +49,7 @@ export type ComponentDoc = ComponentMeta & {
 	preview?: Component;
 	previewCode?: CodeBlock | CodeBlock[];
 	previewClass?: string;
+	originalDocsUrl?: string;
 	view?: View;
 	usage?: UsageCode;
 	installBlock?: InstallComponentDocs;

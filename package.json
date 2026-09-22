@@ -21,7 +21,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"magic:blocks": "pnpm shadcn-svelte registry build",
 		"spell:blocks": "pnpm shadcn-svelte registry build ./spell-registry.json -o ./static/s",
-		"fancy:blocks": "pnpm shadcn-svelte registry build ./fancy-components.json -o ./static/f",
+		"build:fancy": "pnpm shadcn-svelte registry build ./fancy-components.json -o ./static/f",
 		"lint": "prettier --check .",
 		"format": "prettier --write ."
 	},
@@ -51,6 +51,7 @@
 		"@fontsource-variable/figtree": "^5.2.10",
 		"@fontsource-variable/geist": "^5.3.0",
 		"@fontsource-variable/geist-mono": "^5.3.0",
+		"@fontsource-variable/shantell-sans": "^5.3.0",
 		"@neoconfetti/svelte": "^2.2.2",
 		"@shikijs/langs": "^3.21.0",
 		"@shikijs/themes": "^3.21.0",

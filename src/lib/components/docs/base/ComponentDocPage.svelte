@@ -22,6 +22,7 @@
 		examples?: Example[];
 		additionalExamples?: Example[];
 		propsTables?: PropsTable[];
+		originalDocsUrl?: string;
 		descriptionClass?: string;
 		showRetry?: boolean;
 	};
@@ -37,7 +38,10 @@
 	import UsageCodeComponent from "$lib/components/ui/code/usage-code.svelte";
 	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
 	import { MetaTags } from "svelte-meta-tags";
+	import ExternalLink from "@lucide/svelte/icons/external-link";
 	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
+	import * as Item from "$lib/components/ui/item/index.js";
+	import { Button } from "$lib/components/ui/button";
 
 	let {
 		id,
@@ -56,6 +60,7 @@
 		examples = [],
 		additionalExamples = [],
 		propsTables = [],
+		originalDocsUrl,
 		descriptionClass = "",
 		showRetry = true,
 	}: ComponentDocPageProps = $props();
@@ -153,6 +158,22 @@
 			folderStructure={installFolderStructure}
 			class="mt-4"
 		/>
+		{#if originalDocsUrl}
+			<Item.Root variant="muted" class="mt-4">
+				<Item.Content>
+					<Item.Title id="visit-original-docs">Visit Original Docs</Item.Title>
+					<Item.Description>
+						For deeper guidance, visit the Fancy Components documentation.
+					</Item.Description>
+				</Item.Content>
+				<Item.Actions>
+					<Button variant="outline" size="sm" target="_blank" rel="noreferrer" href={originalDocsUrl}>
+						Docs
+						<ExternalLink class="size-4" />
+					</Button>
+				</Item.Actions>
+			</Item.Root>
+		{/if}
 	</section>
 
 	{#if usage?.code}

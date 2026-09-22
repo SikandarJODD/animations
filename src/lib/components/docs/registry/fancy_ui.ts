@@ -119,6 +119,14 @@ export const fancyUIComponents: FancyComponent[] = [
 		badge: "New",
 	},
 	{
+		id: "parallax-floating",
+		name: "Parallax Floating",
+		href: "/fancy/parallax-floating",
+		category: "Components",
+		desc: "Create layered parallax movement that responds smoothly to pointer and touch input.",
+		badge: "New",
+	},
+	{
 		id: "pixelate-svg-filter",
 		name: "Pixelate SVG Filter",
 		href: "/fancy/pixelate-svg-filter",

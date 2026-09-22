@@ -3,6 +3,7 @@
 @import "@fontsource-variable/figtree";
 @import "@fontsource-variable/geist";
 @import "@fontsource-variable/geist-mono";
+@import "@fontsource-variable/shantell-sans";
 @import "../lib/styles/kumo.css";
 
 @custom-variant dark (&:is(.dark *));
@@ -144,6 +145,7 @@
 	--font-sans: "Geist Variable", sans-serif;
 	--font-mono: "Geist Mono Variable", monospace;
 	--font-figtree: "Figtree Variable", sans-serif;
+	--font-cursive: "Shantell Sans Variable", cursive;
 
 	/* Svelte Magic UI */
 	--animate-gradient: gradient 8s linear infinite;

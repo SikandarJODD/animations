@@ -105,6 +105,42 @@
 			"dependencies": ["motion-sv"]
 		},
 		{
+			"name": "parallax-floating",
+			"type": "registry:block",
+			"title": "Parallax Floating",
+			"author": "SikandarJODD",
+			"description": "Create layered parallax movement that responds smoothly to pointer and touch input.",
+			"files": [
+				{
+					"path": "./src/lib/components/fancy/parallax-floating/floating.svelte",
+					"type": "registry:component",
+					"target": "fancy/parallax-floating/floating.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/parallax-floating/floating-element.svelte",
+					"type": "registry:file",
+					"target": "fancy/parallax-floating/floating-element.svelte"
+				},
+				{
+					"path": "./src/lib/components/fancy/parallax-floating/floating-context.svelte.ts",
+					"type": "registry:file",
+					"target": "fancy/parallax-floating/floating-context.svelte.ts"
+				},
+				{
+					"path": "./src/lib/components/fancy/parallax-floating/index.ts",
+					"type": "registry:file",
+					"target": "fancy/parallax-floating/index.ts"
+				},
+				{
+					"path": "./src/lib/hooks/use-mouse-position.svelte.ts",
+					"type": "registry:hook",
+					"target": "use-mouse-position.svelte.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv", "runed"]
+		},
+		{
 			"name": "pixelate-svg-filter",
 			"type": "registry:block",
 			"title": "Pixelate Svg Filter",

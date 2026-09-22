@@ -33,6 +33,19 @@
 		"relativeUrl": "pixel-trail.json"
 	},
 	{
+		"name": "parallax-floating",
+		"title": "Parallax Floating",
+		"type": "registry:block",
+		"author": "SikandarJODD",
+		"description": "Create layered parallax movement that responds smoothly to pointer and touch input.",
+		"dependencies": [
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "parallax-floating.json"
+	},
+	{
 		"name": "pixelate-svg-filter",
 		"title": "Pixelate Svg Filter",
 		"type": "registry:block",
