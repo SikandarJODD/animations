@@ -93,19 +93,19 @@
 					<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 						<div class="mt-0">
 							<a
-								href="/magic/docs/components/flow"
+								href="/fancy/parallax-floating"
 								class="hover:bg-muted dark:hover:border-t-border bg-muted dark:bg-muted/60 group mx-auto flex w-fit max-w-[min(100%,30rem)] items-center gap-2 rounded-full border p-1 pl-3 shadow-md shadow-zinc-950/5 backdrop-blur-xs transition-colors duration-300 sm:pl-4 dark:border-t-white/5 dark:shadow-zinc-950"
 							>
 								<span
-									class="text-foreground flex min-w-0 items-center gap-2 text-left text-xs sm:text-sm"
+									class="text-foreground flex min-w-0 items-center gap-1.5 text-xs sm:text-sm"
 								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										width="18"
-										height="18"
+										width="14"
+										height="14"
 										viewBox="0 0 24 24"
-										class="mb-0.5 shrink-0 fill-sky-500 text-sky-500"
-										fill-opacity="0.1"
+										class="fill-amber-400 text-amber-500 dark:fill-amber-700"
+										fill-opacity="0.3"
 										xmlns:xlink="http://www.w3.org/1999/xlink"
 										role="img"
 										stroke-opacity="0.7"
@@ -118,12 +118,12 @@
 											stroke-linejoin="round"
 										></path>
 									</svg>
-									<span class="font-mono leading-snug text-balance">
-										New Flow Component!
+									<span class="font-mono text-xs leading-snug text-balance">
+										New Parallax Floating Component!
 									</span>
 								</span>
 								<div
-									class="bg-muted group-hover:bg-muted size-6 shrink-0 overflow-hidden rounded-full duration-500"
+									class="bg-muted-foreground/10! dark:bg-muted group-hover:bg-muted size-6 shrink-0 overflow-hidden rounded-full duration-500"
 								>
 									<div class="flex size-6">
 										<ArrowRight class="m-auto size-3" />

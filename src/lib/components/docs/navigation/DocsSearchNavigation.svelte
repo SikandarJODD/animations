@@ -3,6 +3,7 @@
 	import Button from "$lib/components/ui/button/button.svelte";
 	import * as Command from "$lib/components/ui/command/index.js";
 	import * as Kbd from "$lib/components/ui/kbd/index.js";
+	import { cmdOrCtrl } from "$lib/hooks/is-mac";
 	import { cn } from "$lib/utils";
 	import {
 		fancyUIComponents,
@@ -81,17 +82,20 @@
 		size={large.current ? "default" : "icon-sm"}
 		class={cn(
 			large.current
-				? "bg-muted/80 dark:bg-muted/60 flex justify-between px-1.5 md:min-w-56"
+				? "bg-muted/80 dark:bg-muted/60 flex justify-between rounded-full px-2 md:min-w-50"
 				: "rounded-full"
 		)}
 		onclick={() => (open = true)}
 	>
 		{#if large.current}
-			<span class="pl-1 text-xs md:block"> Search Components </span>
+			<span class="text-muted-foreground pl-1 text-xs md:block"> Search Components </span>
 
 			<Kbd.Group class="gap-1 md:flex">
-				<!-- <Kbd.Root>⌘</Kbd.Root> -->
-				<Kbd.Root>Ctrl</Kbd.Root>
+				{#if cmdOrCtrl}
+					<Kbd.Root>⌘</Kbd.Root>
+				{:else}
+					<Kbd.Root>Ctrl</Kbd.Root>
+				{/if}
 				<Kbd.Root>K</Kbd.Root>
 			</Kbd.Group>
 		{:else}

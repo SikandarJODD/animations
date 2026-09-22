@@ -116,7 +116,6 @@ export const fancyUIComponents: FancyComponent[] = [
 		href: "/fancy/pixel-trail",
 		category: "Components",
 		desc: "A pixelated trail effect that recolors grid pixels as you move your cursor.",
-		badge: "New",
 	},
 	{
 		id: "parallax-floating",
@@ -132,8 +131,7 @@ export const fancyUIComponents: FancyComponent[] = [
 		href: "/fancy/pixelate-svg-filter",
 		category: "Components",
 		desc: "A pixelated effect that can be applied to any element using an SVG filter.",
-		badge: "New",
-	}
+	},
 ];
 
 const fancyUICategoryOrder: FancyCategory[] = ["Overview", "Components"];

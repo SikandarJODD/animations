@@ -88,11 +88,7 @@
 				{#each tableKeys as key, index (key)}
 					<Td>
 						<span class="inline-flex items-center gap-1">
-							<code
-								class={cn(
-									"dark:bg-muted/50 bg-muted/75 rounded-md px-2 py-0.5 font-mono text-sm text-neutral-600 dark:text-neutral-300"
-								)}
-							>
+							<code class={cn("text-muted-foreground px-1 font-mono text-sm ")}>
 								{key === "default" && row.required
 									? "required"
 									: (row as any)[key] || ""}

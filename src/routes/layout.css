@@ -185,7 +185,7 @@
 		@apply scroll-smooth;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background text-foreground antialiased;
 	}
 
 	/* Custom scrollbar styling. Thanks @pranathiperii. */

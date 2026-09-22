@@ -5,9 +5,20 @@ import IndexTsRaw from "$lib/components/fancy/parallax-floating/index.ts?raw";
 import UseMousePositionSvelteTsRaw from "$lib/hooks/use-mouse-position.svelte.ts?raw";
 
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
+import BasicThreeLayer from "./examples/basic-three-layer.svelte";
+import BasicThreeLayerRaw from "./examples/basic-three-layer.svelte?raw";
+import DirectionComparison from "./examples/direction-comparison.svelte";
+import DirectionComparisonRaw from "./examples/direction-comparison.svelte?raw";
+import GroupedElements from "./examples/grouped-elements.svelte";
+import GroupedElementsRaw from "./examples/grouped-elements.svelte?raw";
+import MixedContent from "./examples/mixed-content.svelte";
+import MixedContentRaw from "./examples/mixed-content.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
+import SensitivityComparison from "./examples/sensitivity-comparison.svelte";
+import SensitivityComparisonRaw from "./examples/sensitivity-comparison.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "parallax-floating",
@@ -22,6 +33,69 @@ const seo: SEO = {
 		"A Svelte 5 parallax component for building layered, pointer-responsive floating elements with configurable depth and motion.",
 	keywords: ["Svelte", "Svelte 5", "Parallax Floating", "Motion SV", "Fancy Components"],
 };
+
+const examples: Example[] = [
+	{
+		name: "Basic Three-Layer Parallax",
+		description: "Compare three labeled layers to see how depth changes travel distance.",
+		preview: BasicThreeLayer,
+		code: {
+			filename: "basic-three-layer.svelte",
+			filecode: BasicThreeLayerRaw,
+			lang: "svelte",
+			highlight: [[1, 3]],
+		},
+		previewClass: "p-0",
+	},
+	{
+		name: "Sensitivity Comparison",
+		description: "The same element and depth respond differently as the root sensitivity changes.",
+		preview: SensitivityComparison,
+		code: {
+			filename: "sensitivity-comparison.svelte",
+			filecode: SensitivityComparisonRaw,
+			lang: "svelte",
+			highlight: [[1, 3]],
+		},
+		previewClass: "p-0",
+	},
+	{
+		name: "Positive and Negative Direction",
+		description: "Positive depth follows pointer movement while negative depth reverses it.",
+		preview: DirectionComparison,
+		code: {
+			filename: "direction-comparison.svelte",
+			filecode: DirectionComparisonRaw,
+			lang: "svelte",
+			highlight: [[1, 3]],
+		},
+		previewClass: "p-0",
+	},
+	{
+		name: "Mixed Content",
+		description: "Place images, inline SVGs, and styled text at independent depths in one scene.",
+		preview: MixedContent,
+		code: {
+			filename: "mixed-content.svelte",
+			filecode: MixedContentRaw,
+			lang: "svelte",
+			highlight: [[1, 4]],
+		},
+		previewClass: "p-0",
+	},
+	{
+		name: "Grouped Elements",
+		description: "Group related children under one FloatingElement so they share a transform and depth.",
+		preview: GroupedElements,
+		code: {
+			filename: "grouped-elements.svelte",
+			filecode: GroupedElementsRaw,
+			lang: "svelte",
+			highlight: [[1, 3]],
+		},
+		previewClass: "p-0",
+	},
+];
 
 const installBlock: InstallComponentDocs = {
 	packages: ["motion-sv", "runed"],
@@ -95,7 +169,7 @@ export const data: ComponentDoc = {
 			lang: "svelte",
 		},
 	},
-	examples: [],
+	examples,
 	seo,
 	props: [
 		{
