@@ -16,8 +16,8 @@
 		</p>
 
 		<div class="mt-8 flex justify-center">
-			<Button href="/spell/perspective-book" size="lg" class="rounded-full">
-				Explore
+			<Button href="/spell/perspective-book" size="lg" class="rounded-full px-6">
+				Explore Components
 				<ArrowRightIcon class="size-4" />
 			</Button>
 		</div>

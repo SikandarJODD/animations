@@ -1,7 +1,7 @@
 <script lang="ts">
 	import "./layout.css";
 	import favicon from "$lib/assets/favicon.svg";
-	import Navbar from "$lib/components/layout/Navbar.svelte";
+	import { Header } from "$lib/components/main/header";
 	import { ModeWatcher, toggleMode } from "mode-watcher";
 	import { activeElement, PressedKeys } from "runed";
 
@@ -22,6 +22,6 @@
 <ModeWatcher defaultMode="system" />
 
 <main class="w-full">
-	<Navbar />
+	<Header />
 	{@render children()}
 </main>

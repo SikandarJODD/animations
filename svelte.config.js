@@ -17,7 +17,9 @@ const config = {
 			"$spell/*": "./src/lib/components/spell/*",
 			"$fancy/*": "./src/lib/components/fancy/*",
 			"$luxe/*": "./src/lib/components/luxe/*",
-			"$aceternity/*": "./src/lib/components/aceternity/*"
+			"$aceternity/*": "./src/lib/components/aceternity/*",
+			"$ui": "./src/lib/components/ui",
+			"$icons": "./src/lib/components/icons",
 		},
 	},
 	vitePlugin: {

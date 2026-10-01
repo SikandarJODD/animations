@@ -5,6 +5,9 @@
 @import "@fontsource-variable/geist-mono";
 @import "@fontsource-variable/shantell-sans";
 @import "../lib/styles/kumo.css";
+@import "../lib/styles/neat-annotations.css";
+@import "shadcn-svelte/tailwind.css";
+@import "@fontsource-variable/inter";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -28,11 +31,11 @@
 	--border: oklch(0.922 0 0);
 	--input: oklch(0.922 0 0);
 	--ring: oklch(0.708 0 0);
-	--chart-1: oklch(0.646 0.222 41.116);
-	--chart-2: oklch(0.6 0.118 184.704);
-	--chart-3: oklch(0.398 0.07 227.392);
-	--chart-4: oklch(0.828 0.189 84.429);
-	--chart-5: oklch(0.769 0.188 70.08);
+	--chart-1: oklch(0.87 0 0);
+	--chart-2: oklch(0.556 0 0);
+	--chart-3: oklch(0.439 0 0);
+	--chart-4: oklch(0.371 0 0);
+	--chart-5: oklch(0.269 0 0);
 	--sidebar: oklch(0.985 0 0);
 	--sidebar-foreground: oklch(0.145 0 0);
 	--sidebar-primary: oklch(0.205 0 0);
@@ -51,6 +54,9 @@
 
 	/* Code highlight */
 	--code-highlight-bg: oklch(24.03% 0.02991 177.063 / 0.844);
+	--ink: lab(36 55.64 -107.68);
+	--ink-dim: lab(93 0 -8);
+	--info: oklch(0.67 0.17 244.98);
 }
 
 .dark {
@@ -72,12 +78,13 @@
 	--border: oklch(1 0 0 / 10%);
 	--input: oklch(1 0 0 / 15%);
 	--ring: oklch(0.556 0 0);
-	--chart-1: oklch(0.488 0.243 264.376);
-	--chart-2: oklch(0.696 0.17 162.48);
-	--chart-3: oklch(0.769 0.188 70.08);
-	--chart-4: oklch(0.627 0.265 303.9);
-	--chart-5: oklch(0.645 0.246 16.439);
-	--sidebar: oklch(0.205 0 0);
+	--chart-1: oklch(0.87 0 0);
+	--chart-2: oklch(0.556 0 0);
+	--chart-3: oklch(0.439 0 0);
+	--chart-4: oklch(0.371 0 0);
+	--chart-5: oklch(0.269 0 0);
+
+	--sidebar: oklch(0.145 0 0);
 	--sidebar-foreground: oklch(0.985 0 0);
 	--sidebar-primary: oklch(0.488 0.243 264.376);
 	--sidebar-primary-foreground: oklch(0.985 0 0);
@@ -92,6 +99,10 @@
 	--color-3: hsl(210 100% 63%);
 	--color-4: hsl(195 100% 63%);
 	--color-5: hsl(90 100% 63%);
+
+	--ink: lab(36 55.64 -107.68);
+	--ink-dim: lab(93 0 -8);
+	--info: oklch(0.67 0.17 244.98);
 }
 
 @theme inline {
@@ -140,9 +151,12 @@
 
 	/* Code highlight */
 	--color-highlight-bg: var(--code-highlight-bg);
+	--color-ink: var(--ink);
+	--color-ink-dim: var(--ink-dim);
+	--color-info: var(--info);
 
 	/* Font */
-	--font-sans: "Geist Variable", sans-serif;
+	--font-sans: "Inter Variable", sans-serif;
 	--font-mono: "Geist Mono Variable", monospace;
 	--font-figtree: "Figtree Variable", sans-serif;
 	--font-cursive: "Shantell Sans Variable", cursive;
@@ -168,6 +182,9 @@
 	--animate-grid: grid 15s linear infinite;
 	--animate-shiny-text: shiny-text var(--duration) infinite;
 	--animate-background-gradient: background-gradient;
+	--radius-2xl: calc(var(--radius) * 1.8);
+	--radius-3xl: calc(var(--radius) * 2.2);
+	--radius-4xl: calc(var(--radius) * 2.6);
 }
 
 ::view-transition-old(root),
@@ -182,7 +199,12 @@
 	}
 	html {
 		scroll-behavior: smooth;
-		@apply scroll-smooth;
+		@apply scroll-smooth font-sans;
+	}
+	@media (pointer: fine) {
+		html {
+			overscroll-behavior-y: none;
+		}
 	}
 	body {
 		@apply bg-background text-foreground antialiased;

@@ -25,7 +25,6 @@
 	{...restProps}
 >
 	{@render children?.()}
-
 	{#if viewport}
 		<NavigationMenuViewport />
 	{/if}

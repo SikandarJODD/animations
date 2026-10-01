@@ -6,8 +6,6 @@
 	import gsap from "gsap";
 	import { SplitText } from "gsap/SplitText";
 	import { Button } from "$lib/components/ui/button";
-	import { LineShadowText } from "$lib/components/magic/line-shadow-text";
-	import { mode } from "mode-watcher";
 
 	const title = "Svelte Fancy Components";
 	const description =
@@ -46,44 +44,6 @@
 			name: "Svelte Fancy Components",
 		},
 	});
-
-	let animate = (node: HTMLElement) => {
-		gsap.registerPlugin(SplitText);
-		let heading = node.querySelector("h1");
-		let paragraph = node.querySelector("p");
-		let buttons = node.querySelectorAll("a");
-		let splitTextHeading = new SplitText(heading, { type: "words", mask: "words" });
-		let splitTextParagraph = new SplitText(paragraph, { type: "words", mask: "words" });
-		let tl = gsap
-			.timeline()
-			.from(splitTextHeading.words, {
-				opacity: 0,
-				y: 50,
-				stagger: 0.2,
-				ease: "power4.out",
-			})
-			.from(
-				splitTextParagraph.words,
-				{
-					opacity: 0,
-					stagger: 0.05,
-					y: 20,
-					ease: "power4.out",
-				},
-				"-=0.5"
-			)
-			.fromTo(
-				buttons,
-				{ opacity: 0, y: 20 },
-				{
-					opacity: 1,
-					y: 0,
-					stagger: 0.2,
-					ease: "power4.out",
-				},
-				"-=0.5"
-			);
-	};
 </script>
 
 <MetaTags
@@ -130,7 +90,6 @@
 
 <div class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
 	<section
-		{@attach animate}
 		class="relative flex min-h-90 flex-col items-center justify-center rounded-2xl bg-linear-20 dark:from-emerald-900/50 dark:via-emerald-900/10 dark:via-40% dark:to-transparent"
 	>
 		<H1 id="overview" class="text-2xl font-semibold md:text-4xl">Svelte Fancy Components</H1>

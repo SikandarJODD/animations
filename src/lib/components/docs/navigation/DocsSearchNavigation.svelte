@@ -130,7 +130,7 @@
 	</Button>
 </div>
 
-<Command.Dialog bind:open>
+<Command.Dialog bind:open class="-translate-y-30">
 	<Command.Input placeholder="Search components, documentation..." />
 	<Command.List>
 		<Command.Empty>No results found.</Command.Empty>
@@ -260,13 +260,13 @@
 						>
 							<circle opacity="0.2" cx="12" cy="12" r="10" fill="currentColor"
 							></circle>
-							<path
+							<!-- <path
 								d="M8.5 12.5L11 15L16 9"
 								stroke="currentColor"
 								stroke-width="1.5"
 								stroke-linecap="round"
 								stroke-linejoin="round"
-							></path>
+							></path> -->
 							<circle
 								cx="12"
 								cy="12"
@@ -278,7 +278,7 @@
 						</svg>
 						<span>{component.name}</span>
 					</span>
-					<Badge variant="orange" class="rounded-full">Fancy</Badge>
+					<!-- <Badge variant="orange" class="rounded-full">Fancy</Badge> -->
 				</Command.LinkItem>
 			{/each}
 		</Command.Group>

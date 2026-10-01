@@ -1,9 +1,8 @@
 <script lang="ts" module>
-	import type { ButtonProps, Size } from "$lib/components/ui/extra/button.svelte";
+	import type { AnchorElementProps } from "$lib/components/ui/button";
+	import type { Size } from "$lib/components/ui/extra/button.svelte";
 
-	type AnchorButtonProps = Extract<ButtonProps, { href: unknown }>;
-
-	export type GithubButtonProps = Omit<AnchorButtonProps, "href" | "children" | "size"> & {
+	export type GithubButtonProps = Omit<AnchorElementProps, "href" | "children" | "size"> & {
 		repo: {
 			owner: string;
 			repo: string;

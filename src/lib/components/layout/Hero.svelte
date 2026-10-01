@@ -79,8 +79,8 @@
 	};
 </script>
 
-<div {@attach animateEffect}>
-	<main class="min-h-[calc(100dvh-4.1rem)] overflow-hidden">
+<div>
+	<main class="min-h-[calc(100dvh-20rem)] overflow-hidden">
 		<GridPattern
 			width={45}
 			height={45}
@@ -238,21 +238,21 @@
 							<Button
 								href="/magic"
 								size="lg"
-								class="rounded-full bg-fuchsia-500 px-5 text-base text-fuchsia-50 opacity-0 transition-none duration-0 hover:bg-fuchsia-600 dark:bg-fuchsia-400 dark:text-fuchsia-950 dark:hover:bg-fuchsia-500"
+								class="rounded-full bg-fuchsia-500 px-5 text-base text-fuchsia-50 transition-none duration-0 hover:bg-fuchsia-600 dark:bg-fuchsia-400 dark:text-fuchsia-950 dark:hover:bg-fuchsia-500"
 							>
 								<span class="text-nowrap">Magic UI</span>
 							</Button>
 							<Button
 								href="/spell"
 								size="lg"
-								class="rounded-full bg-yellow-500 px-5 text-base text-yellow-50 opacity-0 transition-none duration-0 hover:bg-yellow-600 dark:bg-yellow-400 dark:text-yellow-950 dark:hover:bg-yellow-500"
+								class="rounded-full bg-amber-500 px-5 text-base text-amber-100  transition-all transition-none duration-300 hover:bg-amber-500/90 dark:bg-amber-500 dark:text-amber-800 dark:hover:bg-amber-500/90"
 							>
 								<span class="text-nowrap">Spell UI</span>
 							</Button>
 							<Button
 								href="/fancy"
 								size="lg"
-								class="relative rounded-full bg-emerald-400 px-5 text-base text-emerald-50 opacity-0 transition-none duration-0 hover:bg-emerald-500 dark:bg-emerald-500 dark:text-emerald-950 dark:hover:bg-emerald-600"
+								class="relative rounded-full bg-emerald-400 px-5 text-base text-emerald-50 transition-none duration-0 hover:bg-emerald-500 dark:bg-emerald-500 dark:text-emerald-900 dark:hover:bg-emerald-600"
 							>
 								<Badge
 									id="fancy-badge"
@@ -307,7 +307,7 @@
 			<div class="relative m-auto max-w-5xl px-6">
 				<div class="mx-auto mt-4 flex max-w-2xl justify-center gap-4 lg:mt-16">
 					<div
-						class="card hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 opacity-0 backdrop-blur-sm"
+						class="card hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 backdrop-blur-sm"
 					>
 						<svg
 							viewBox="0 0 256 308"
@@ -324,7 +324,7 @@
 						>
 					</div>
 					<div
-						class="card hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 opacity-0 backdrop-blur-sm"
+						class="card hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 backdrop-blur-sm"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -345,7 +345,7 @@
 						>
 					</div>
 					<div
-						class="card hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 opacity-0 backdrop-blur-sm"
+						class="card hover:bg-secondary bg-secondary/50 flex rounded-lg border p-2 backdrop-blur-sm"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"

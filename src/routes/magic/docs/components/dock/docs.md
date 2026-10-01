@@ -246,19 +246,19 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dock.json
 
 ```svelte
 <script lang="ts">
-	import Github from "@lucide/svelte/icons/github";
 	import Cloud from "@lucide/svelte/icons/cloud";
 	import FileText from "@lucide/svelte/icons/file-text";
 	import MessageCircle from "@lucide/svelte/icons/message-circle";
 	import Music from "@lucide/svelte/icons/music";
 
+	import { GitHub } from "$lib/components/icons";
 	import { Dock, DockIcon } from "$lib/components/magic/dock";
 </script>
 
 <div class="relative flex w-full items-center justify-center">
 	<Dock iconMagnification={60} iconDistance={100}>
 		<DockIcon class="bg-black/10 dark:bg-white/10">
-			<Github class="size-full" />
+			<GitHub class="size-full" />
 		</DockIcon>
 		<DockIcon class="bg-black/10 dark:bg-white/10">
 			<Cloud class="size-full" />
@@ -280,13 +280,14 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dock.json
 
 ```svelte
 <script lang="ts">
-	import Twitter from "@lucide/svelte/icons/twitter";
-	import Instagram from "@lucide/svelte/icons/instagram";
-	import Youtube from "@lucide/svelte/icons/youtube";
-	import Twitch from "@lucide/svelte/icons/twitch";
-	import Linkedin from "@lucide/svelte/icons/linkedin";
-	import Facebook from "@lucide/svelte/icons/facebook";
-
+	import {
+		Facebook,
+		Instagram,
+		LinkedIn,
+		Twitch,
+		Twitter,
+		YouTube,
+	} from "$lib/components/icons";
 	import { Dock, DockIcon } from "$lib/components/magic/dock";
 </script>
 
@@ -301,13 +302,13 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dock.json
 			<Instagram class="size-full" />
 		</DockIcon>
 		<DockIcon class="bg-[#FF0000]/20 text-[#FF0000]">
-			<Youtube class="size-full" />
+			<YouTube class="size-full" />
 		</DockIcon>
 		<DockIcon class="bg-[#9146FF]/20 text-[#9146FF]">
 			<Twitch class="size-full" />
 		</DockIcon>
 		<DockIcon class="bg-[#0077B5]/20 text-[#0077B5]">
-			<Linkedin class="size-full" />
+			<LinkedIn class="size-full" />
 		</DockIcon>
 		<DockIcon class="bg-[#1877F2]/20 text-[#1877F2]">
 			<Facebook class="size-full" />

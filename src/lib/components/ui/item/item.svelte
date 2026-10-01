@@ -2,16 +2,17 @@
 	import { tv, type VariantProps } from "tailwind-variants";
 
 	export const itemVariants = tv({
-		base: "group/item [a]:hover:bg-accent/50 focus-visible:border-ring focus-visible:ring-ring/50 flex flex-wrap items-center rounded-md border border-transparent text-sm transition-colors duration-100 outline-none focus-visible:ring-[3px] [a]:transition-colors",
+		base: "[a]:hover:bg-muted rounded-md border text-sm group/item flex w-full flex-wrap items-center transition-colors duration-100 outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 [a]:transition-colors",
 		variants: {
 			variant: {
-				default: "bg-transparent",
+				default: "border-transparent",
 				outline: "border-border",
-				muted: "bg-muted/50",
+				muted: "bg-muted/50 border-transparent",
 			},
 			size: {
-				default: "gap-4 p-4",
-				sm: "gap-2.5 px-4 py-3",
+				default: "gap-3.5 px-4 py-3.5",
+				sm: "gap-2.5 px-3 py-2.5",
+				xs: "gap-2 px-2.5 py-2 in-data-[slot=dropdown-menu-content]:p-0",
 			},
 		},
 		defaultVariants: {
@@ -26,8 +27,8 @@
 
 <script lang="ts">
 	import { cn, type WithElementRef } from "$lib/utils.js";
-	import type { HTMLAttributes } from "svelte/elements";
 	import type { Snippet } from "svelte";
+	import type { HTMLAttributes } from "svelte/elements";
 
 	let {
 		ref = $bindable(null),
