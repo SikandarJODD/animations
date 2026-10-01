@@ -18,13 +18,14 @@ import type { Example } from "$lib/types/examples";
 export const meta: ComponentMeta = {
 	id: "animated-background",
 	title: "Animated Background",
-	description: "TODO: document Animated Background.",
+	description: "A shared animated background that smoothly moves between selected or hovered items.",
 	category: "magic",
 };
 
 const seo: SEO = {
 	title: "Animated Background",
-	description: "TODO: add an SEO description for Animated Background.",
+	description:
+		"Create smooth shared-layout background animations for tabs, cards, and segmented controls in Svelte.",
 	keywords: ["Svelte", "Animated Background", "Magic"],
 };
 
@@ -102,5 +103,72 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples,
 	seo,
-	props: [],
+	props: [
+		{
+			name: "AnimatedBackground",
+			desc: "The root component that manages the active item and shared background animation.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					default: "-",
+					description: "The animated background items to render.",
+				},
+				{
+					name: "defaultValue",
+					type: "string",
+					default: "undefined",
+					description: "The ID of the initially active item.",
+				},
+				{
+					name: "onValueChange",
+					type: "(newActiveId: string | null) => void",
+					default: "undefined",
+					description: "Called when the active item changes.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: '""',
+					description: "CSS classes applied to the animated background element.",
+				},
+				{
+					name: "transition",
+					type: 'Options["transition"]',
+					default: "undefined",
+					description: "Motion transition options for the shared background.",
+				},
+				{
+					name: "enableHover",
+					type: "boolean",
+					default: "false",
+					description: "Activates items on hover instead of click.",
+				},
+			],
+		},
+		{
+			name: "AnimatedBackgroundItem",
+			desc: "An individual selectable item that participates in the shared background animation.",
+			props: [
+				{
+					name: "data-id",
+					type: "string",
+					required: true,
+					description: "A unique ID used to track the active item.",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: '""',
+					description: "Additional CSS classes applied to the item wrapper.",
+				},
+				{
+					name: "children",
+					type: "Snippet",
+					default: "-",
+					description: "The item content to render.",
+				},
+			],
+		},
+	],
 };

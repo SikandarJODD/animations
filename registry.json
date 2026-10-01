@@ -4,6 +4,36 @@
 	"homepage": "https://sv-animations.vercel.app",
 	"items": [
 		{
+			"name": "animated-background",
+			"type": "registry:block",
+			"title": "Animated Background",
+			"description": "A shared animated background that smoothly moves between selected or hovered items.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/animated-background/animated-background.svelte",
+					"type": "registry:component",
+					"target": "magic/animated-background/animated-background.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/animated-background/animated-background-item.svelte",
+					"type": "registry:component",
+					"target": "magic/animated-background/animated-background-item.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/animated-background/animated-background-context.svelte.ts",
+					"type": "registry:file",
+					"target": "magic/animated-background/animated-background-context.svelte.ts"
+				},
+				{
+					"path": "./src/lib/components/magic/animated-background/index.ts",
+					"type": "registry:file",
+					"target": "magic/animated-background/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv", "runed"]
+		},
+		{
 			"name": "animated-gradient-text",
 			"type": "registry:block",
 			"title": "Animated Gradient Text",

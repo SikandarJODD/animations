@@ -20,6 +20,14 @@ export interface MagicComponent {
 
 export const magicUIComponents: MagicComponent[] = [
 	{
+		id: "animated-background",
+		name: "Animated Background",
+		href: "/magic/docs/components/animated-background",
+		category: "Components",
+		badge: "New",
+		desc: "A shared animated background that smoothly moves between selected or hovered items.",
+	},
+	{
 		id: "animated-beam",
 		name: "Animated Beam",
 		href: "/magic/docs/components/animated-beam",

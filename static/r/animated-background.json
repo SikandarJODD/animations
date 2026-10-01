@@ -1,0 +1,33 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "animated-background",
+	"title": "Animated Background",
+	"type": "registry:block",
+	"description": "A shared animated background that smoothly moves between selected or hovered items.",
+	"dependencies": [
+		"motion-sv",
+		"runed"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { Options } from \"motion-sv\";\n\timport type { Snippet } from \"svelte\";\n\n\texport type AnimatedBackgroundProps = {\n\t\tchildren?: Snippet;\n\t\tdefaultValue?: string;\n\t\tonValueChange?: (newActiveId: string | null) => void;\n\t\tclass?: string;\n\t\ttransition?: Options[\"transition\"];\n\t\tenableHover?: boolean;\n\t};\n</script>\n\n<script lang=\"ts\">\n\timport { createLayoutMotion } from \"motion-sv\";\n\timport { watch } from \"runed\";\n\timport { setAnimatedBackgroundContext } from \"./animated-background-context.svelte.js\";\n\n\tlet {\n\t\tchildren,\n\t\tdefaultValue,\n\t\tonValueChange,\n\t\tclass: backgroundClass,\n\t\ttransition,\n\t\tenableHover = false\n\t}: AnimatedBackgroundProps = $props();\n\n\tlet activeId = $state<string | null>(null);\n\tconst uniqueId = $props.id();\n\tconst layout = createLayoutMotion();\n\tconst updateActiveId = layout.update.with((id: string | null) => {\n\t\tactiveId = id;\n\t});\n\n\tfunction setActiveId(id: string | null) {\n\t\tupdateActiveId(id);\n\t\tonValueChange?.(id);\n\t}\n\n\twatch(\n\t\t() => defaultValue,\n\t\t(value) => {\n\t\t\tif (value !== undefined) {\n\t\t\t\tupdateActiveId(value);\n\t\t\t}\n\t\t}\n\t);\n\n\tsetAnimatedBackgroundContext({\n\t\tget activeId() {\n\t\t\treturn activeId;\n\t\t},\n\t\tget backgroundClass() {\n\t\t\treturn backgroundClass;\n\t\t},\n\t\tget transition() {\n\t\t\treturn transition;\n\t\t},\n\t\tget enableHover() {\n\t\t\treturn enableHover;\n\t\t},\n\t\tlayoutId: `background-${uniqueId}`,\n\t\tlayout,\n\t\tsetActiveId\n\t});\n</script>\n\n{@render children?.()}\n",
+			"type": "registry:component",
+			"target": "magic/animated-background/animated-background.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { WithElementRef } from \"$UTILS$.js\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\n\texport type AnimatedBackgroundItemProps = WithElementRef<\n\t\tOmit<HTMLAttributes<HTMLDivElement>, \"data-id\"> & {\n\t\t\t\"data-id\": string;\n\t\t},\n\t\tHTMLDivElement\n\t>;\n</script>\n\n<script lang=\"ts\">\n\timport { cn } from \"$UTILS$.js\";\n\timport { getAnimatedBackgroundContext } from \"./animated-background-context.svelte.js\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\t\"data-id\": dataId,\n\t\tclass: className,\n\t\tonclick,\n\t\tonmouseenter,\n\t\tonmouseleave,\n\t\tchildren,\n\t\t...restProps\n\t}: AnimatedBackgroundItemProps = $props();\n\n\tconst background = getAnimatedBackgroundContext();\n\tconst layout = background.layout;\n\tconst active = $derived(background.activeId === dataId);\n</script>\n\n<div\n\tbind:this={ref}\n\t{...restProps}\n\tdata-id={dataId}\n\tdata-checked={active ? \"true\" : \"false\"}\n\tdata-animated-background-id={background.layoutId}\n\tclass={cn(\"relative inline-flex\", className)}\n\tonclick={(event) => {\n\t\tif (!background.enableHover) {\n\t\t\tbackground.setActiveId(dataId);\n\t\t}\n\t\tonclick?.(event);\n\t}}\n\tonmouseenter={(event) => {\n\t\tif (background.enableHover) {\n\t\t\tbackground.setActiveId(dataId);\n\t\t}\n\t\tonmouseenter?.(event);\n\t}}\n\tonmouseleave={(event) => {\n\t\tconst relatedItem =\n\t\t\tevent.relatedTarget instanceof Element\n\t\t\t\t? event.relatedTarget.closest(\"[data-animated-background-id]\")\n\t\t\t\t: null;\n\t\tconst isMovingWithinBackground =\n\t\t\trelatedItem?.getAttribute(\"data-animated-background-id\") ===\n\t\t\tbackground.layoutId;\n\n\t\tif (background.enableHover && !isMovingWithinBackground) {\n\t\t\tbackground.setActiveId(null);\n\t\t}\n\t\tonmouseleave?.(event);\n\t}}\n>\n\t{#if active}\n\t\t<layout.div\n\t\t\tlayoutId={background.layoutId}\n\t\t\tclass={cn(\"absolute inset-0\", background.backgroundClass)}\n\t\t\ttransition={background.transition}\n\t\t></layout.div>\n\t{/if}\n\t<div class=\"z-10\">\n\t\t{@render children?.()}\n\t</div>\n</div>\n",
+			"type": "registry:component",
+			"target": "magic/animated-background/animated-background-item.svelte"
+		},
+		{
+			"content": "import { createContext } from \"svelte\";\nimport type { LayoutMotionNamespace, Options } from \"motion-sv\";\n\nexport type AnimatedBackgroundContext = {\n\treadonly activeId: string | null;\n\treadonly backgroundClass: string | undefined;\n\treadonly transition: Options[\"transition\"];\n\treadonly enableHover: boolean;\n\treadonly layoutId: string;\n\treadonly layout: LayoutMotionNamespace;\n\tsetActiveId: (id: string | null) => void;\n};\n\nexport const [getAnimatedBackgroundContext, setAnimatedBackgroundContext] =\n\tcreateContext<AnimatedBackgroundContext>();\n",
+			"type": "registry:file",
+			"target": "magic/animated-background/animated-background-context.svelte.ts"
+		},
+		{
+			"content": "import Root, {\n\ttype AnimatedBackgroundProps\n} from \"./animated-background.svelte\";\nimport Item, {\n\ttype AnimatedBackgroundItemProps\n} from \"./animated-background-item.svelte\";\n\nexport {\n\tRoot,\n\tItem,\n\ttype AnimatedBackgroundProps as Props,\n\ttype AnimatedBackgroundProps,\n\ttype AnimatedBackgroundItemProps,\n\t//\n\tRoot as AnimatedBackground,\n\tItem as AnimatedBackgroundItem\n};\n",
+			"type": "registry:file",
+			"target": "magic/animated-background/index.ts"
+		}
+	]
+}

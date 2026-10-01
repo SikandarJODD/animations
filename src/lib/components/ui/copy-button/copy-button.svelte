@@ -29,7 +29,7 @@
 		size = "default";
 	}
 
-	const clipboard = new UseClipboard();
+	const clipboard = new UseClipboard({ delay: 1000 });
 </script>
 
 <Button

@@ -21,6 +21,6 @@
 			<ClaudeIcon size="1em" />
 		</span>
 		<span class="flex-1">{providers.claude.title}</span>
-		<ExternalLink class="size-4 shrink-0" />
+		<!-- <ExternalLink class="size-4 shrink-0" /> -->
 	</a>
 </DropdownMenu.Item>

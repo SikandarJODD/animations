@@ -1,8 +1,8 @@
 <script lang="ts">
 	import {
 		AnimatedBackground,
-		AnimatedBackgroundItem
-	} from "$lib/components/core/animated-background";
+		AnimatedBackgroundItem,
+	} from "$lib/components/magic/animated-background";
 
 	const tabs = ["Home", "About", "Services", "Contact"];
 </script>

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import {
 		AnimatedBackground,
-		AnimatedBackgroundItem
-	} from "$lib/components/core/animated-background";
+		AnimatedBackgroundItem,
+	} from "$lib/components/magic/animated-background";
 
 	const labels = ["Day", "Week", "Month", "Year"];
 </script>
 
-<div class="rounded-[8px] bg-gray-100 p-[2px] dark:bg-zinc-800">
+<div class="rounded-xl bg-gray-100 p-1 dark:bg-zinc-800">
 	<AnimatedBackground
 		defaultValue="Day"
 		class="rounded-lg bg-white dark:bg-zinc-700"

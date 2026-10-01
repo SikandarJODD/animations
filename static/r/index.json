@@ -1,5 +1,17 @@
 [
 	{
+		"name": "animated-background",
+		"title": "Animated Background",
+		"type": "registry:block",
+		"description": "A shared animated background that smoothly moves between selected or hovered items.",
+		"dependencies": [
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "animated-background.json"
+	},
+	{
 		"name": "animated-gradient-text",
 		"title": "Animated Gradient Text",
 		"type": "registry:block",

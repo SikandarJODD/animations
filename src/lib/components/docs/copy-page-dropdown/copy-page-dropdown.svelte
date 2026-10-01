@@ -158,7 +158,7 @@
 					>
 						<MarkdownIcon class="size-4" />
 						<span class="flex-1">Open as Markdown</span>
-						<ExternalLink class="size-4" />
+						<!-- <ExternalLink class="size-4" /> -->
 					</a>
 				</DropdownMenu.Item>
 			</OpenInContent>
