@@ -26,13 +26,6 @@
 			{#each tabs as tab (tab.label)}
 				{@const Icon = tab.icon}
 				<AnimatedBackgroundItem data-id={tab.label} class="group h-9 w-9">
-					<!-- <button
-						type="button"
-						aria-label={tab.label}
-						class="inline-flex h-9 w-9 cursor-pointer items-center justify-center text-zinc-500 transition-colors duration-100 group-data-[checked=true]:text-zinc-950 focus-visible:outline-2 dark:text-zinc-400 dark:group-data-[checked=true]:text-zinc-50"
-					>
-						<Icon class="h-5 w-5" />
-					</button> -->
 					<Button
 						aria-label={tab.label}
 						variant="ghost"

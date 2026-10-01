@@ -30,7 +30,7 @@ const seo: SEO = {
 };
 
 const installBlock: InstallComponentDocs = {
-	packages: [],
+	packages: ["motion-sv", "runed"],
 	installCode: [
 		{
 			filename: "animated-background-context.svelte.ts",
@@ -101,6 +101,33 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import {
+		AnimatedBackground,
+		AnimatedBackgroundItem
+	} from "$lib/components/magic/animated-background";
+
+	const tabs = ["Home", "About", "Contact"];
+</script>
+
+<AnimatedBackground
+	defaultValue="Home"
+	class="rounded-md bg-muted"
+>
+	{#each tabs as tab}
+		<AnimatedBackgroundItem data-id={tab}>
+			<button type="button" class="px-3 py-2">
+				{tab}
+			</button>
+		</AnimatedBackgroundItem>
+	{/each}
+</AnimatedBackground>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
