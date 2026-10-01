@@ -22,6 +22,7 @@
 		Vertical,
 		VerticalParallel,
 	} from "../magic/docs/components/flow/examples";
+	import Preview from "../fancy/parallax-floating/examples/preview.svelte";
 
 	type FlowExample = {
 		name: string;
@@ -74,19 +75,7 @@
 <section
 	class="relative flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden px-4 pt-10 pb-24 sm:px-8"
 >
-	<div class="flex w-full max-w-6xl flex-col items-center gap-6">
-		<div
-			class="flex min-h-72 w-full items-center justify-center overflow-auto px-2 py-4 sm:min-h-80 sm:px-10"
-		>
-			{#key currentIndex}
-				<CurrentExample />
-			{/key}
-		</div>
+	<div class="flex w-full max-w-6xl items-center justify-center overflow-auto">
+		<Preview />
 	</div>
-
-	<p
-		class="text-muted-foreground absolute bottom-40 left-1/2 -translate-x-1/2 text-xs whitespace-nowrap"
-	>
-		Built by Bhide Svelte
-	</p>
 </section>

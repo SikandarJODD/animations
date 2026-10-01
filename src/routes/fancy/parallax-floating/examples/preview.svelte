@@ -48,7 +48,7 @@
 			size: "h-28 w-28 md:h-48 md:w-36",
 		},
 		{
-			src: "https://images.unsplash.com/photo-1689553079282-45df1b35741b?auto=format&fit=crop&q=80&w=640",
+			src: "https://images.unsplash.com/photo-1789159787893-c65644ad24c4?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			alt: "A vivid design scene",
 			depth: 4,
 			position: "top-[73%] left-[15%]",
@@ -64,7 +64,9 @@
 	] as const;
 </script>
 
-<div class="relative flex h-150 w-full items-center justify-center overflow-hidden bg-black">
+<div
+	class="relative flex h-180 w-full items-center justify-center overflow-hidden rounded-2xl bg-black"
+>
 	<motion.div
 		class="z-50 flex flex-col items-center space-y-4 text-center"
 		initial={reducedMotion.current ? false : { opacity: 0, y: 10 }}
@@ -75,13 +77,13 @@
 		}}
 	>
 		<p class="font-calendas font-cursive z-50 text-5xl text-white italic md:text-7xl">
-			Svelte Fancy.
+			Parallax Floating
 		</p>
 		<button
 			type="button"
-			class="z-50 w-20 cursor-pointer rounded-full bg-white py-2 text-xs text-black motion-safe:transition-transform motion-safe:hover:scale-110"
+			class="font-figtree z-50 w-44 cursor-pointer rounded-full bg-white py-2 text-xs text-black motion-safe:transition-transform motion-safe:hover:scale-110"
 		>
-			Download
+			Svelte Fancy Components
 		</button>
 	</motion.div>
 
