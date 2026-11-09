@@ -2,9 +2,8 @@
 	import { page } from "$app/state";
 	import { H1, Paragraph } from "#lib/components/docs/markdown/index.js";
 	import FancyShowcase from "#lib/components/layout/fancy/fancy-showcase.svelte";
+	import FaviconLink from "#lib/components/ui/favicon-link/favicon-link.svelte";
 	import { MetaTags } from "svelte-meta-tags";
-	import gsap from "gsap";
-	import { SplitText } from "gsap/SplitText";
 	import { Button } from "#lib/components/ui/button/index.js";
 
 	const title = "Svelte Fancy Components";
@@ -90,35 +89,41 @@
 
 <div class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
 	<section
-		class="relative flex min-h-90 flex-col items-center justify-center rounded-2xl bg-linear-20 dark:from-emerald-900/50 dark:via-emerald-900/10 dark:via-40% dark:to-transparent"
+		class="flex min-h-96 flex-col items-center justify-center px-6 py-14 text-center sm:px-10"
 	>
-		<H1 id="overview" class="text-2xl font-semibold md:text-4xl">Svelte Fancy Components</H1>
-		<Paragraph id="description" class="mt-4">
-			Unoffical port of the original <a
-				href="https://fancycomponents.dev"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="text-primary">Fancy Components</a
-			>
+		<H1 id="overview" class="text-3xl leading-16 font-semibold sm:text-5xl md:text-6xl">
+			Svelte Fancy Components
+		</H1>
+		<Paragraph id="description" class="text-muted-foreground mx-auto mt-5 max-w-2xl text-base text-balance">
+			Unofficial Svelte port of
+			<FaviconLink href="https://www.fancycomponents.dev/" class="my-0">
+				Fancy Components
+			</FaviconLink>
+			by
+			<FaviconLink href="https://www.danielpetho.com/" class="my-0">
+				Daniel Petho
+			</FaviconLink>.
 		</Paragraph>
-		<div class="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+		<div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
 			<Button
 				size="lg"
-				class="relative cursor-pointer rounded-full bg-emerald-400 text-emerald-900 transition-none hover:bg-emerald-400/80 dark:bg-emerald-500 dark:text-emerald-950 dark:hover:bg-emerald-500/90"
+				class="rounded-full px-4"
 				href="/fancy/letter-3d-swap"
 			>
 				View Components</Button
 			>
 			<Button
 				size="lg"
-				class="cursor-pointer rounded-full pl-2 transition-none"
+				class="rounded-full pr-4 pl-3 shadow-none transition-none"
 				variant="outline"
 				href="https://github.com/sponsors/SikandarJODD"
+				target="_blank"
+				rel="noopener noreferrer"
 			>
-				<span class="rounded-full border">
+				<span class="rounded-full">
 					<img
 						src="https://github.com/SikandarJODD.png"
-						alt="Bhide Svelte"
+						alt="Sikandar JODD"
 						class="font-figtree size-5 rounded-full"
 					/>
 				</span>
