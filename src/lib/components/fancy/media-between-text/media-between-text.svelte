@@ -5,12 +5,7 @@
 
 	type ElementType = keyof SvelteHTMLElements;
 	type TriggerType = "hover" | "ref" | "inView";
-	type UseInViewOptions = {
-		once?: boolean;
-		amount?: "some" | "all" | number;
-		margin?: string;
-		root?: HTMLElement | Document;
-	};
+	type UseInViewOptions = ReturnType<NonNullable<Parameters<typeof useInView>[1]>>;
 
 	interface MediaBetweenTextProps extends HTMLAttributes<HTMLDivElement> {
 		firstText: string;

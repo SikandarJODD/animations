@@ -7,16 +7,9 @@
 	type ElementType = keyof SvelteHTMLElements;
 	type HighlightDirection = "ltr" | "rtl" | "ttb" | "btt";
 	type TriggerType = "hover" | "ref" | "inView" | "auto";
-	type ViewAmount = "some" | "all" | number;
 	type MouseEnterEvent = Parameters<NonNullable<HTMLAttributes<HTMLElement>["onmouseenter"]>>[0];
 	type MouseLeaveEvent = Parameters<NonNullable<HTMLAttributes<HTMLElement>["onmouseleave"]>>[0];
-
-	type ViewOptions = {
-		once?: boolean;
-		amount?: ViewAmount;
-		margin?: string;
-		root?: HTMLElement | Document;
-	};
+	type ViewOptions = ReturnType<NonNullable<Parameters<typeof useInView>[1]>>;
 
 	interface TextHighlighterProps extends HTMLAttributes<HTMLElement> {
 		children?: Snippet;
