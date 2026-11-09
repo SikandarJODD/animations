@@ -3,7 +3,7 @@
 	import Toc from "#lib/components/docs/base/toc/toc.svelte";
 	import DocsNavigation from "#lib/components/docs/navigation/DocsNavigation.svelte";
 	import ContributeCard from "#lib/components/layout/contribute-card.svelte";
-	import { getPrevNext } from "#lib/components/docs/registry/spell_ui.ts";
+	import { getPrevNext } from "#lib/components/docs/registry/spell_ui.js";
 	import SpellSidebar from "#lib/components/spell-sidebar.svelte";
 	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
 	import { UseToc } from "#lib/hooks/use-toc.svelte.ts";

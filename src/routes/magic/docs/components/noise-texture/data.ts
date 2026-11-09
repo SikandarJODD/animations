@@ -5,7 +5,7 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/typ
 import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import NewsletterExample from "./examples/newsletter-example.svelte";
 import NewsletterExampleRaw from "./examples/newsletter-example.svelte?raw";
 

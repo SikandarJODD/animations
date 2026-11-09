@@ -6,7 +6,7 @@
 	import HistoryIcon from "@lucide/svelte/icons/history";
 	import HomeIcon from "@lucide/svelte/icons/home";
 	import { magicUISidebarGroups } from "#lib/components/docs/registry/magic-ui.ts";
-	import { spellUIComponents } from "#lib/components/docs/registry/spell_ui.ts";
+	import { spellUIComponents } from "#lib/components/docs/registry/spell_ui.js";
 	import { fancyUIComponents } from "#lib/components/docs/registry/fancy_ui.ts";
 	import { Separator } from "#lib/components/ui/separator/index.js";
 	import { page } from "$app/state";

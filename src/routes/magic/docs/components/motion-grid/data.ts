@@ -4,7 +4,7 @@ import UseMotionGridContextRaw from "#lib/components/magic/motion-grid/use-motio
 import TypesRaw from "#lib/components/magic/motion-grid/types.ts?raw";
 import IndexTs from "#lib/components/magic/motion-grid/index.ts?raw";
 
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 

@@ -1,7 +1,7 @@
 import CharBoxRaw from "#lib/components/fancy/letter-3d-swap/charbox.svelte?raw";
 import IndexTsRaw from "#lib/components/fancy/letter-3d-swap/index.ts?raw";
 import Letter3dSwapRaw from "#lib/components/fancy/letter-3d-swap/letter-3d-swap.svelte?raw";
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import PositionExample from "./examples/position-example.svelte";

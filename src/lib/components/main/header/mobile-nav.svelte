@@ -4,13 +4,13 @@
 	import { LightSwitch } from "#lib/components/ui/light-switch/index.js";
 	import { Portal, PortalBackdrop } from "#lib/components/ui/portal/index.js";
 	import { ScrollFadeEffect } from "#lib/components/ui/scroll-area/index.js";
-	import { github_repo } from "#lib/config/repo.ts";
+	import { github_repo } from "#lib/config/repo.js";
 	import { GitHub, Twitter } from "#lib/components/icons/index.js";
 	import { cn } from "#lib/utils.js";
 	import MenuIcon from "@lucide/svelte/icons/menu";
 	import XIcon from "@lucide/svelte/icons/x";
 	import { magicUIComponents } from "#lib/components/docs/registry/magic-ui.ts";
-	import { spellUIComponents } from "#lib/components/docs/registry/spell_ui.ts";
+	import { spellUIComponents } from "#lib/components/docs/registry/spell_ui.js";
 	import { fancyUIComponents } from "#lib/components/docs/registry/fancy_ui.ts";
 	import { projectItems, withUtm } from "./nav-links";
 

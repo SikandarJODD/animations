@@ -4,7 +4,7 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/typ
 import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import ScrollDemo from "./examples/scroll-demo.svelte";
 import ScrollDemoRaw from "./examples/scroll-demo.svelte?raw";
 import OpenCloseTrigger from "./examples/open-close-trigger.svelte";

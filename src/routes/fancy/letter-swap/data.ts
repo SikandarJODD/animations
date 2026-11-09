@@ -6,7 +6,7 @@ import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import StaggerFromExample from "./examples/stagger-from-example.svelte";
 import StaggerFromExampleRaw from "./examples/stagger-from-example.svelte?raw";
 import LineSwapExample from "./examples/line-swap-example.svelte";

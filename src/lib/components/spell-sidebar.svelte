@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { spellUISidebarGroups } from "#lib/components/docs/registry/spell_ui.ts";
+	import { spellUISidebarGroups } from "#lib/components/docs/registry/spell_ui.js";
 	import Badge from "#lib/components/ui/badge/badge.svelte";
 	import { ScrollArea } from "#lib/components/ui/scroll-area/index.js";
 	import * as Sidebar from "#lib/components/ui/sidebar/index.js";

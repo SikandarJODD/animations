@@ -6,7 +6,7 @@
 	import { onMount } from "svelte";
 	import { Twitter } from "#lib/components/icons/index.js";
 	import { LightSwitch } from "#lib/components/ui/light-switch/index.js";
-	import { github_repo } from "#lib/config/repo.ts";
+	import { github_repo } from "#lib/config/repo.js";
 	import SearchNavigation from "#lib/components/docs/navigation/DocsSearchNavigation.svelte";
 
 	let stars = $state(github_repo.fallback_stars);

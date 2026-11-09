@@ -1,6 +1,6 @@
 import IndexTsRaw from "#lib/components/fancy/scramble-hover/index.ts?raw";
 import ScrambleHoverRaw from "#lib/components/fancy/scramble-hover/scramble-hover.svelte?raw";
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import NewCharsExample from "./examples/new-chars-example.svelte";

@@ -5,7 +5,7 @@ import IndexTsRaw from "#lib/components/fancy/parallax-floating/index.ts?raw";
 import UseMousePositionSvelteTsRaw from "#lib/hooks/use-mouse-position.svelte.ts?raw";
 
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import BasicThreeLayer from "./examples/basic-three-layer.svelte";
 import BasicThreeLayerRaw from "./examples/basic-three-layer.svelte?raw";

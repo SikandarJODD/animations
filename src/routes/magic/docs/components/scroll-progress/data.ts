@@ -1,7 +1,7 @@
 ﻿import ScrollProgressRaw from "#lib/components/magic/scroll-progress/scroll-progress.svelte?raw";
 import IndexTs from "#lib/components/magic/scroll-progress/index.ts?raw";
 
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";

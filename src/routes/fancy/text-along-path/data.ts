@@ -1,6 +1,6 @@
 import IndexTsRaw from "#lib/components/fancy/text-along-path/index.ts?raw";
 import TextAlongPathRaw from "#lib/components/fancy/text-along-path/text-along-path.svelte?raw";
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import AutoExample from "./examples/auto-example.svelte";

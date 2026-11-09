@@ -2,7 +2,7 @@ import ArcTimelineRaw from "#lib/components/magic/arc-timeline/arc-timeline.svel
 import IndexTs from "#lib/components/magic/arc-timeline/index.ts?raw";
 import TypesTs from "#lib/components/magic/arc-timeline/types.ts?raw";
 
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 

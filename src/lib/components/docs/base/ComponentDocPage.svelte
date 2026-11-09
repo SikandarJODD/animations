@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import type { Component } from "svelte";
 	import type { SEO } from "#lib/types/seo.js";
-	import type { Example } from "#lib/types/examples.ts";
+	import type { Example } from "#lib/types/examples.js";
 	import type { PropsTable, UsageCode } from "#lib/types/structure.js";
 	import type { CodeBlock } from "#lib/components/ui/code/index.js";
 

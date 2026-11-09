@@ -13,7 +13,7 @@ import AnimatedCardBackgroundHoverExample from "./examples/animated-card-backgro
 import AnimatedCardBackgroundHoverExampleRaw from "./examples/animated-card-background-hover-example.svelte?raw";
 import SegmentedControlExample from "./examples/segmented-control-example.svelte";
 import SegmentedControlExampleRaw from "./examples/segmented-control-example.svelte?raw";
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 
 export const meta: ComponentMeta = {
 	id: "animated-background",

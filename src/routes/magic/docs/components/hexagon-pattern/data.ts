@@ -5,7 +5,7 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/typ
 import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import DashedStrokeExample from "./examples/dashed-stroke-example.svelte";
 import DashedStrokeExampleRaw from "./examples/dashed-stroke-example.svelte?raw";
 import LinearGradientExample from "./examples/linear-gradient-example.svelte";

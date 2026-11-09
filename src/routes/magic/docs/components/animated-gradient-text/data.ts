@@ -1,5 +1,5 @@
 import type { CodeBlock } from "#lib/components/ui/code/index.js";
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta } from "#lib/types/structure.js";
 import CustomSpeed from "./examples/custom-speed.svelte";

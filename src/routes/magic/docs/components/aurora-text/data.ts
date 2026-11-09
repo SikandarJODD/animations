@@ -1,7 +1,7 @@
 ﻿import Raw from "#lib/components/magic/aurora-text/aurora-text.svelte?raw";
 import IndexTs from "#lib/components/magic/aurora-text/index.ts?raw";
 
-import type { Example } from "#lib/types/examples.ts";
+import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import DemoExample from "./examples/demo-example.svelte";
