@@ -2,7 +2,7 @@
 	import {
 		magicUISidebarGroups,
 		type BadgeType,
-	} from "#lib/components/docs/registry/magic-ui.ts";
+	} from "#lib/components/docs/registry/magic-ui.js";
 
 	type NavItem = {
 		title: string;

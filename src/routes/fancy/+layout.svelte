@@ -3,10 +3,10 @@
 	import Toc from "#lib/components/docs/base/toc/toc.svelte";
 	import DocsNavigation from "#lib/components/docs/navigation/DocsNavigation.svelte";
 	import ContributeCard from "#lib/components/layout/contribute-card.svelte";
-	import { getPrevNext } from "#lib/components/docs/registry/fancy_ui.ts";
+	import { getPrevNext } from "#lib/components/docs/registry/fancy_ui.js";
 	import FancySidebar from "#lib/components/fancy-sidebar.svelte";
 	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
-	import { UseToc } from "#lib/hooks/use-toc.svelte.ts";
+	import { UseToc } from "#lib/hooks/use-toc.svelte.js";
 	import SupportWork from "#lib/components/docs/base/support-work.svelte";
 
 	let { children } = $props();

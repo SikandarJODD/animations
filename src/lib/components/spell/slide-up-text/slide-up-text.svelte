@@ -4,7 +4,7 @@
 		readNormalizedTextContent,
 		segmentText,
 		splitGraphemes,
-	} from "#lib/utils/text-utils.ts";
+	} from "#lib/utils/text-utils.js";
 	import { motion, useInView, type AnimationOptions, type Variants } from "motion-sv";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";

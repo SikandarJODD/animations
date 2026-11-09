@@ -44,7 +44,7 @@ const installBlock: InstallComponentDocs = {
 			lang: "typescript",
 		},
 		{
-			filename: "src/lib/utils/text-utils.ts",
+			filename: "src/lib/utils/text-utils.js",
 			filecode: SharedTextUtilsRaw,
 			lang: "typescript",
 		},

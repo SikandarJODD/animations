@@ -3,7 +3,7 @@
 	import Button from "#lib/components/ui/button/button.svelte";
 	import * as Command from "#lib/components/ui/command/index.js";
 	import * as Kbd from "#lib/components/ui/kbd/index.js";
-	import { cmdOrCtrl } from "#lib/hooks/is-mac.ts";
+	import { cmdOrCtrl } from "#lib/hooks/is-mac.js";
 	import { cn } from "#lib/utils.js";
 	import {
 		fancyUIComponents,

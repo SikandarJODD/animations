@@ -9,9 +9,9 @@
 	import { cn } from "#lib/utils.js";
 	import MenuIcon from "@lucide/svelte/icons/menu";
 	import XIcon from "@lucide/svelte/icons/x";
-	import { magicUIComponents } from "#lib/components/docs/registry/magic-ui.ts";
+	import { magicUIComponents } from "#lib/components/docs/registry/magic-ui.js";
 	import { spellUIComponents } from "#lib/components/docs/registry/spell_ui.js";
-	import { fancyUIComponents } from "#lib/components/docs/registry/fancy_ui.ts";
+	import { fancyUIComponents } from "#lib/components/docs/registry/fancy_ui.js";
 	import { projectItems, withUtm } from "./nav-links";
 
 	let open = $state(false);

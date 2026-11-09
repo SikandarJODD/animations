@@ -3,7 +3,7 @@
 	import Toc from "#lib/components/docs/base/toc/toc.svelte";
 	import SupportWork from "#lib/components/docs/base/support-work.svelte";
 	import ContributeCard from "#lib/components/layout/contribute-card.svelte";
-	import { UseToc } from "#lib/hooks/use-toc.svelte.ts";
+	import { UseToc } from "#lib/hooks/use-toc.svelte.js";
 
 	let { children } = $props();
 

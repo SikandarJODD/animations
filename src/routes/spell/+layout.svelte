@@ -6,7 +6,7 @@
 	import { getPrevNext } from "#lib/components/docs/registry/spell_ui.js";
 	import SpellSidebar from "#lib/components/spell-sidebar.svelte";
 	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
-	import { UseToc } from "#lib/hooks/use-toc.svelte.ts";
+	import { UseToc } from "#lib/hooks/use-toc.svelte.js";
 	import SupportWork from "#lib/components/docs/base/support-work.svelte";
 
 	let { children } = $props();

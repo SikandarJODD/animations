@@ -1,6 +1,6 @@
 import type { Snippet } from "svelte";
 import type { ButtonPropsWithoutHTML } from "#lib/components/ui/button/index.js";
-import type { UseClipboard } from "#lib/hooks/use-clipboard.svelte.ts";
+import type { UseClipboard } from "#lib/hooks/use-clipboard.svelte.js";
 import type { HTMLButtonAttributes } from "svelte/elements";
 
 export type CopyButtonPropsWithoutHTML = Pick<ButtonPropsWithoutHTML, "size" | "variant"> & {

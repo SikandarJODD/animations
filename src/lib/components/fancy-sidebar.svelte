@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { fancyUISidebarGroups } from "#lib/components/docs/registry/fancy_ui.ts";
+	import { fancyUISidebarGroups } from "#lib/components/docs/registry/fancy_ui.js";
 	import Badge from "#lib/components/ui/badge/badge.svelte";
 	import { ScrollArea, ScrollFadeEffect } from "#lib/components/ui/scroll-area/index.js";
 	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
