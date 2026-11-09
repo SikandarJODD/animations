@@ -12,7 +12,7 @@
 <div
 	data-slot="frame"
 	class={cn(
-		"bg-muted/72 relative flex flex-col rounded-2xl p-1",
+		"bg-muted relative flex flex-col rounded-2xl p-1",
 		"*:[[data-slot=frame-panel]+[data-slot=frame-panel]]:mt-1",
 		className
 	)}

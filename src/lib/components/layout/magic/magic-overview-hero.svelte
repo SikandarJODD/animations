@@ -6,15 +6,8 @@
 </script>
 
 <section
-	class="relative isolate flex min-h-96 flex-col items-center justify-center overflow-hidden rounded-[28px] border px-6 py-14 text-center sm:px-10"
+	class="relative isolate flex min-h-96 flex-col items-center justify-center overflow-hidden px-6 py-14 text-center sm:px-10"
 >
-	<div
-		class="absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-white/60 to-transparent"
-	></div>
-	<div class="bg-primary/12 absolute top-10 left-8 size-28 rounded-full blur-3xl"></div>
-	<div class="absolute right-0 bottom-0 size-44 rounded-full bg-cyan-500/16 blur-3xl"></div>
-	<div class="border-border absolute inset-3 rounded-3xl border border-dashed opacity-70"></div>
-
 	<div class="relative mx-auto max-w-3xl">
 		<H1 id="overview" class="text-3xl leading-16 font-semibold sm:text-5xl md:text-6xl ">
 			Svelte Magic UI
@@ -53,7 +46,7 @@
 			<FaviconLink
 				href="https://motion.hyprsonic.dev/"
 				faviconSrc="https://motion.hyprsonic.dev/favicon.ico"
-				class="my-0 ml-0 border border-dashed border-[#F43F5E] bg-[#F43F5E]/4 px-1.5 text-[15px] font-medium text-[#F43F5E] hover:text-[#F43F5E] dark:border-pink-500/50 dark:bg-pink-800/20"
+				class="my-0 ml-0 border border-dashed border-[#F43F5E]/60 bg-[#F43F5E]/4 px-1.5 text-[15px] text-[#F43F5E]/90 hover:text-[#F43F5E] dark:border-pink-500/50 dark:bg-pink-800/20 dark:text-[#F43F5E]/80"
 				>Motion Svelte</FaviconLink
 			>
 		</p>
