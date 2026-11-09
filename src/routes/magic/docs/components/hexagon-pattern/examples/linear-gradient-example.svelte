@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { HexagonPattern } from "#lib/components/magic/hexagon-pattern/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 </script>
 
 <div

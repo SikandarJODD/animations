@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { AnimatedPathText } from "#lib/components/fancy/text-along-path/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	const circlePath = "M 100 100 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0";
 </script>

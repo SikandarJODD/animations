@@ -1,4 +1,4 @@
-import type { Frames } from "#lib/components/magic/motion-grid/index.ts";
+import type { Frames } from "#lib/components/magic/motion-grid/index.js";
 
 const importingFrames = [
 	[[2, 2]],

@@ -2,7 +2,7 @@
 	import { motion, type MotionHTMLAttributes, type MotionProps } from "motion-sv";
 	import { SvelteSet } from "svelte/reactivity";
 
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	type RevealDirection = "start" | "end" | "center";
 	type MotionSpanProps = Omit<MotionProps<"span">, "as" | "asChild"> &

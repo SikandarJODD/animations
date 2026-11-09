@@ -1,6 +1,6 @@
 ﻿<script lang="ts">
 	import { DotPattern } from "#lib/components/magic/dot-pattern/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 </script>
 
 <div

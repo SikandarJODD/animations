@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import { inView as observeInView } from "motion-sv";
 	import { untrack } from "svelte";
 	import type { Snippet } from "svelte";

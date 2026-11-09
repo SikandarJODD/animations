@@ -1,7 +1,7 @@
 import IndexTsRaw from "#lib/components/fancy/underline-to-background/index.ts?raw";
 import UnderlineToBackgroundRaw from "#lib/components/fancy/underline-to-background/underline-to-background.svelte?raw";
-import type { SEO } from "#lib/types/seo.ts";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";

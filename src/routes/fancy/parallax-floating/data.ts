@@ -4,9 +4,9 @@ import FloatingSvelteRaw from "#lib/components/fancy/parallax-floating/floating.
 import IndexTsRaw from "#lib/components/fancy/parallax-floating/index.ts?raw";
 import UseMousePositionSvelteTsRaw from "#lib/hooks/use-mouse-position.svelte.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import type { Example } from "#lib/types/examples.ts";
-import type { SEO } from "#lib/types/seo.ts";
+import type { SEO } from "#lib/types/seo.js";
 import BasicThreeLayer from "./examples/basic-three-layer.svelte";
 import BasicThreeLayerRaw from "./examples/basic-three-layer.svelte?raw";
 import DirectionComparison from "./examples/direction-comparison.svelte";
@@ -156,7 +156,7 @@ export const data: ComponentDoc = {
 		code: {
 			filename: "usage.svelte",
 			filecode: `<script lang="ts">
-	import { Floating, FloatingElement } from "#lib/components/fancy/parallax-floating/index.ts";
+	import { Floating, FloatingElement } from "#lib/components/fancy/parallax-floating/index.js";
 </script>
 
 <Floating>

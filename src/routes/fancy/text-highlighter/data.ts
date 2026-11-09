@@ -1,8 +1,8 @@
 import IndexTsRaw from "#lib/components/fancy/text-highlighter/index.ts?raw";
 import TextHighlighterRaw from "#lib/components/fancy/text-highlighter/text-highlighter.svelte?raw";
 import type { Example } from "#lib/types/examples.ts";
-import type { SEO } from "#lib/types/seo.ts";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import DirectionBasedHighlightExample from "./examples/direction-based-highlight-example.svelte";
 import DirectionBasedHighlightExampleRaw from "./examples/direction-based-highlight-example.svelte?raw";
 import HoverExample from "./examples/hover.svelte";

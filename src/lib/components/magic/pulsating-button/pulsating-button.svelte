@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 
 	interface PulsatingButtonProps {

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from "$app/env";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import { motion, type AnimationOptions, type Transition } from "motion-sv";
 	import opentype from "opentype.js";
 	import type { SVGAttributes } from "svelte/elements";

@@ -15,7 +15,7 @@
 	import LightSwitch from "../ui/light-switch/light-switch.svelte";
 	import DocsSearchNavigation from "../docs/navigation/DocsSearchNavigation.svelte";
 	import MobileNavbarSheet from "./MobileNavbarSheet.svelte";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import Badge, { type BadgeVariant } from "../spell/badge/badge.svelte";
 	import { PersistedState } from "runed";
 	import { scale } from "svelte/transition";

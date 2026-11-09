@@ -2,7 +2,7 @@
 	import type { Snippet } from "svelte";
 	import * as Frame from "#lib/components/ui/frame/index.js";
 	import { Button } from "#lib/components/ui/button/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import { mode } from "mode-watcher";
 
 	interface FancyShowcaseCardProps {

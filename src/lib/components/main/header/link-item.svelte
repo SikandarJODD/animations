@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
 	import type { LinkItemType } from "./types";
 	import type { Component } from "svelte";

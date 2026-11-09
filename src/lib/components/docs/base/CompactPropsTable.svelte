@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { PropDef, PropsTable } from "#lib/types/structure.ts";
+	import type { PropDef, PropsTable } from "#lib/types/structure.js";
 
 	export type CompactPropsTableProps = {
 		data: PropsTable | PropDef[];
@@ -9,7 +9,7 @@
 
 <script lang="ts">
 	import { H3 } from "#lib/components/docs/markdown/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	let { data, class: className }: CompactPropsTableProps = $props();
 

@@ -6,7 +6,7 @@
 	import { ScrollFadeEffect } from "#lib/components/ui/scroll-area/index.js";
 	import { github_repo } from "#lib/config/repo.ts";
 	import { GitHub, Twitter } from "#lib/components/icons/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import MenuIcon from "@lucide/svelte/icons/menu";
 	import XIcon from "@lucide/svelte/icons/x";
 	import { magicUIComponents } from "#lib/components/docs/registry/magic-ui.ts";

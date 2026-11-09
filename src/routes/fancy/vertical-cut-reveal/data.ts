@@ -1,8 +1,8 @@
 import IndexTsRaw from "#lib/components/fancy/vertical-cut-reveal/index.ts?raw";
 import VerticalCutRevealRaw from "#lib/components/fancy/vertical-cut-reveal/vertical-cut-reveal.svelte?raw";
 import type { Example } from "#lib/types/examples.ts";
-import type { SEO } from "#lib/types/seo.ts";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import RandomLetterExample from "./examples/random-letter-example.svelte";

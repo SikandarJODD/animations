@@ -2,8 +2,8 @@
 import IndexTs from "#lib/components/magic/dither-shader/index.ts?raw";
 
 import type { Example } from "#lib/types/examples.ts";
-import type { SEO } from "#lib/types/seo.ts";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import DitherShaderExample from "./examples/dither-shader-example.svelte";
 import DitherShaderExampleRaw from "./examples/dither-shader-example.svelte?raw";
 import DitherSharerDemoDuotone from "./examples/dither-sharer-demo-duotone.svelte";

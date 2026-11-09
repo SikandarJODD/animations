@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { Moon, Sun } from "@lucide/svelte";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	interface AnimatedThemeTogglerProps {
 		class?: string;

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Flow from "#lib/components/magic/flow/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	type NodeState = "pending" | "success";
 

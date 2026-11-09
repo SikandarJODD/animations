@@ -1,6 +1,6 @@
 ﻿<script lang="ts">
 	import AnimatedShinyText from "#lib/components/magic/animated-shiny-text/animated-shiny-text.svelte";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import { ArrowRightIcon } from "@lucide/svelte";
 </script>
 

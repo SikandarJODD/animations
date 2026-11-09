@@ -7,7 +7,7 @@
 
 <script lang="ts">
 	import { motion, useMotionValue, useTransform, useSpring } from "motion-sv";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 	import { getContext } from "svelte";
 	import type { DockContext } from "./dock.svelte";

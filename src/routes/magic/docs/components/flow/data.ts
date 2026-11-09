@@ -13,8 +13,8 @@ import RenderPropsTsRaw from "#lib/components/magic/flow/render-props.ts?raw";
 import TypesTsRaw from "#lib/components/magic/flow/types.ts?raw";
 import KumoCssRaw from "#lib/styles/kumo.css?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
-import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import {
 	Basic,
 	BasicRaw,
@@ -141,7 +141,7 @@ export const data: ComponentDoc = {
 		code: {
 			filename: "usage.svelte",
 			filecode: `<script lang="ts">
-	import * as Flow from "#lib/components/magic/flow/index.ts";
+	import * as Flow from "#lib/components/magic/flow/index.js";
 </script>
 
 <Flow.Root>

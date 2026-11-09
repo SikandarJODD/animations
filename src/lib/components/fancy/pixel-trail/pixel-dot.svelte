@@ -2,7 +2,7 @@
 	import { motion, useAnimationControls } from "motion-sv";
 	import type { ClassValue } from "clsx";
 
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	interface PixelDotProps {
 		size: number;

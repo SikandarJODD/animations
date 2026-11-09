@@ -1,6 +1,6 @@
 <script lang="ts" generics="T">
 	import { browser } from "$app/env";
-	import { cn, type WithElementRef, type WithoutChildren } from "#lib/utils.ts";
+	import { cn, type WithElementRef, type WithoutChildren } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
 

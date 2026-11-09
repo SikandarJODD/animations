@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion, AnimatePresence, useMotionValue } from "motion-sv";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import { type Snippet } from "svelte";
 	import { watch } from "runed";
 	// import type { HTMLMotionProps } from "motion-sv";

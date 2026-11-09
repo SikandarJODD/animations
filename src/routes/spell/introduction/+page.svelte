@@ -18,7 +18,7 @@
 		buildSpellKeywords,
 		SPELL_SOCIAL_IMAGE,
 		SPELL_TITLE_TEMPLATE,
-	} from "#lib/seo/spell.ts";
+	} from "#lib/seo/spell.js";
 
 	const creator = {
 		name: "tom",

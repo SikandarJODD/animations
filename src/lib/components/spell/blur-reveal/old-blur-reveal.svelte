@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import { motion, type Variants } from "motion-sv";
 
 	type BlurRevealElement = "span" | "div" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";

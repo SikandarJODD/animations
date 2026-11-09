@@ -2,8 +2,8 @@ import FallbackAvatarRaw from "#lib/components/spell/fallback-avatar/fallback-av
 import IndexTsRaw from "#lib/components/spell/fallback-avatar/index.ts?raw";
 import UtilsRaw from "#lib/components/spell/fallback-avatar/utils.ts?raw";
 import WebGLRaw from "#lib/components/spell/fallback-avatar/webgl.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
-import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import SizeExample from "./examples/size-example.svelte";

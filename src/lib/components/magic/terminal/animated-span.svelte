@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount, getContext } from "svelte";
 	import { motion } from "motion-sv";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	interface AnimatedSpanProps {
 		children: Snippet;

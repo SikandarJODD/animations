@@ -2,8 +2,8 @@ import LetterSwapRaw from "#lib/components/fancy/letter-swap/letter-swap.svelte?
 import LetterSwapPingPongRaw from "#lib/components/fancy/letter-swap-ping-pong/letter-swap-ping-pong.svelte?raw";
 import IndexTsPingPongRaw from "#lib/components/fancy/letter-swap-ping-pong/index.ts?raw";
 import IndexTsRaw from "#lib/components/fancy/letter-swap/index.ts?raw";
-import type { SEO } from "#lib/types/seo.ts";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import type { Example } from "#lib/types/examples.ts";

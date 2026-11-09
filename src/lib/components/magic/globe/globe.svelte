@@ -2,7 +2,7 @@
 	import type { COBEOptions, Globe } from "cobe";
 	import { Spring } from "svelte/motion";
 	import { onDestroy, onMount } from "svelte";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	interface Props {
 		class?: string;

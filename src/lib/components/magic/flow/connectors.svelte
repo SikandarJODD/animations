@@ -2,7 +2,7 @@
 	import type { Snippet } from "svelte";
 	import { createRoundedPath } from "./connectors";
 	import type { Connector, Orientation } from "./types";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	interface Props {
 		connectors: Connector[];

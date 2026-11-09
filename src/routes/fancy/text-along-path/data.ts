@@ -1,8 +1,8 @@
 import IndexTsRaw from "#lib/components/fancy/text-along-path/index.ts?raw";
 import TextAlongPathRaw from "#lib/components/fancy/text-along-path/text-along-path.svelte?raw";
 import type { Example } from "#lib/types/examples.ts";
-import type { SEO } from "#lib/types/seo.ts";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import AutoExample from "./examples/auto-example.svelte";
 import AutoExampleRaw from "./examples/auto-example.svelte?raw";
 import ClosedPathExample from "./examples/closed-path-example.svelte";

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { GridPattern } from "#lib/components/magic/grid-pattern/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 </script>
 
 <div

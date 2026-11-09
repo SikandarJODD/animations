@@ -3,8 +3,8 @@ import AnimatedBackgroundItemSvelteRaw from "#lib/components/magic/animated-back
 import AnimatedBackgroundSvelteRaw from "#lib/components/magic/animated-background/animated-background.svelte?raw";
 import IndexTsRaw from "#lib/components/magic/animated-background/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
-import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import AnimatedTabsHoverExample from "./examples/animated-tabs-hover-example.svelte";
@@ -109,7 +109,7 @@ export const data: ComponentDoc = {
 	import {
 		AnimatedBackground,
 		AnimatedBackgroundItem
-	} from "#lib/components/magic/animated-background/index.ts";
+	} from "#lib/components/magic/animated-background/index.js";
 
 	const tabs = ["Home", "About", "Contact"];
 </script>

@@ -19,7 +19,7 @@
 
 <script lang="ts">
 	import { motion, type Variants } from "motion-sv";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	type StaggerTextElement = "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 

@@ -1,8 +1,8 @@
 <script lang="ts" module>
 	import type { Component } from "svelte";
-	import type { SEO } from "#lib/types/seo.ts";
+	import type { SEO } from "#lib/types/seo.js";
 	import type { Example } from "#lib/types/examples.ts";
-	import type { PropsTable, UsageCode } from "#lib/types/structure.ts";
+	import type { PropsTable, UsageCode } from "#lib/types/structure.js";
 	import type { CodeBlock } from "#lib/components/ui/code/index.js";
 
 	export type ComponentDocPageProps = {
@@ -43,7 +43,7 @@
 		buildSpellKeywords,
 		SPELL_SOCIAL_IMAGE,
 		SPELL_TITLE_TEMPLATE,
-	} from "#lib/seo/spell.ts";
+	} from "#lib/seo/spell.js";
 	import * as Item from "#lib/components/ui/item/index.js";
 	import { Button } from "#lib/components/ui/button/index.js";
 

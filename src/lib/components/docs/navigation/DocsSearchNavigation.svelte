@@ -4,7 +4,7 @@
 	import * as Command from "#lib/components/ui/command/index.js";
 	import * as Kbd from "#lib/components/ui/kbd/index.js";
 	import { cmdOrCtrl } from "#lib/hooks/is-mac.ts";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import {
 		fancyUIComponents,
 		magicUISidebarGroups,

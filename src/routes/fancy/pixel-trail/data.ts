@@ -2,8 +2,8 @@ import IndexTsRaw from "#lib/components/fancy/pixel-trail/index.ts?raw";
 import PixelDotSvelteRaw from "#lib/components/fancy/pixel-trail/pixel-dot.svelte?raw";
 import PixelTrailSvelteRaw from "#lib/components/fancy/pixel-trail/pixel-trail.svelte?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
-import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import type { Example } from "#lib/types/examples.ts";

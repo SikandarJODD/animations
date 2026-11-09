@@ -1,7 +1,7 @@
 import IndexTs from "#lib/components/magic/meteors/index.ts?raw";
 import MeteorsRaw from "#lib/components/magic/meteors/meteors.svelte?raw";
-import type { SEO } from "#lib/types/seo.ts";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 
 // Preview
 import Preview from "./examples/preview.svelte";

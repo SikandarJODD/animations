@@ -1,6 +1,6 @@
 <script>
 	import { NoiseTexture } from "#lib/components/magic/noise-texture/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 </script>
 
 <div

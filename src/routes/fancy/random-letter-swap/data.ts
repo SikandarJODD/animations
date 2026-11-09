@@ -2,8 +2,8 @@ import RandomLetterSwapPingPongRaw from "#lib/components/fancy/random-letter-swa
 import IndexPingPongRaw from "#lib/components/fancy/random-letter-swap-ping-pong/index.ts?raw";
 import IndexTsRaw from "#lib/components/fancy/random-letter-swap/index.ts?raw";
 import RandomLetterSwapRaw from "#lib/components/fancy/random-letter-swap/random-letter-swap.svelte?raw";
-import type { SEO } from "#lib/types/seo.ts";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";

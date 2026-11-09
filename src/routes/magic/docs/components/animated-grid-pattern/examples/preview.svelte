@@ -1,6 +1,6 @@
 ﻿<script lang="ts">
 	import { AnimatedGridPattern } from "#lib/components/magic/animated-grid-pattern/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 </script>
 
 <div

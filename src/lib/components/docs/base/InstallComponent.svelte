@@ -22,7 +22,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import * as Tabs from "#lib/components/ui/tabs/index.js";
 	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
 	import Steps from "#lib/components/docs/markdown/Steps.svelte";

@@ -1,8 +1,8 @@
 import GlobeSvelteRaw from "#lib/components/magic/globe/globe.svelte?raw";
 import IndexTsRaw from "#lib/components/magic/globe/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
-import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 

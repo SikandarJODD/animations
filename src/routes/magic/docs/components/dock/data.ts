@@ -3,8 +3,8 @@ import DockIconRaw from "#lib/components/magic/dock/dock-icon.svelte?raw";
 import IndexTs from "#lib/components/magic/dock/index.ts?raw";
 
 import type { Example } from "#lib/types/examples.ts";
-import type { SEO } from "#lib/types/seo.ts";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import DirectionExample from "./examples/direction.svelte";

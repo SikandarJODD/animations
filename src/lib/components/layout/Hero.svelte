@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from "#lib/components/ui/button/button.svelte";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import GridPattern from "../magic/grid-pattern/grid-pattern.svelte";
 	import Badge from "../spell/badge/badge.svelte";

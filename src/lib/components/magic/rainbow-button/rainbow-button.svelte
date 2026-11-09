@@ -38,7 +38,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import type { WithElementRef } from "bits-ui";
 	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
 	import { tv, type VariantProps } from "tailwind-variants";

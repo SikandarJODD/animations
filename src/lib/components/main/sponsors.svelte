@@ -2,7 +2,7 @@
 	import { Button } from "#lib/components/ui/button/index.js";
 	import Github from "#lib/components/icons/github.svelte";
 	import X from "#lib/components/icons/twitter.svelte";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import { Annotation } from "#lib/components/ui/annotation/index.js";
 
 	type Sponsor = {

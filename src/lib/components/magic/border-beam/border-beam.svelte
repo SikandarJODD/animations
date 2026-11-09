@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion, type Transition } from "motion-sv";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	interface BorderBeamProps {
 		size?: number;

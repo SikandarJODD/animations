@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 	import { confetti as neoconfetti } from "@neoconfetti/svelte";
 	import type { ConfettiOptions } from "@neoconfetti/svelte";
 	import type { Snippet } from "svelte";

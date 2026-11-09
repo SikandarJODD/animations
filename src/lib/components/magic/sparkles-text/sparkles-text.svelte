@@ -3,7 +3,7 @@
 	import { untrack } from "svelte";
 	import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
 	import { motion } from "motion-sv";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	interface Sparkle {
 		id: string;

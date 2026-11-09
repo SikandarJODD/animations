@@ -6,7 +6,7 @@
 	import MultipleCode from "#lib/components/ui/code/multiple-code.svelte";
 	import SingleCodeFilename from "../code/single-code-filename.svelte";
 	import { Button } from "#lib/components/ui/button/index.js";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	interface PreviewComponentProps {
 		children: Snippet;

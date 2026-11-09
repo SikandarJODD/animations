@@ -1,8 +1,8 @@
 ﻿import InteractiveHoverButtonRaw from "#lib/components/magic/interactive-hover-button/interactive-hover-button.svelte?raw";
 import IndexTs from "#lib/components/magic/interactive-hover-button/index.ts?raw";
 
-import type { SEO } from "#lib/types/seo.ts";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 

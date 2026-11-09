@@ -13,7 +13,7 @@
 <script lang="ts">
 	import { useAnimationFrame, useReducedMotion } from "motion-sv";
 	import { useMousePosition } from "#lib/hooks/use-mouse-position.svelte.ts";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	import { setFloatingContext } from "./floating-context.svelte";
 

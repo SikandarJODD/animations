@@ -13,7 +13,7 @@
 <script lang="ts">
 	import { motion, useScroll, useTransform } from "motion-sv";
 	import { getContext } from "svelte";
-	import { cn } from "#lib/utils.ts";
+	import { cn } from "#lib/utils.js";
 
 	type StackingCardsContext = {
 		progress: ReturnType<typeof useScroll>["scrollYProgress"];

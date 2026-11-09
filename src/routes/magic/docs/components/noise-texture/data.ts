@@ -1,8 +1,8 @@
 import IndexTsRaw from "#lib/components/magic/noise-texture/index.ts?raw";
 import NoiseTextureSvelteRaw from "#lib/components/magic/noise-texture/noise-texture.svelte?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
-import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import type { Example } from "#lib/types/examples.ts";
