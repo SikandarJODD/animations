@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { AnimatedBeamProps } from "./types";
 	import { usePathCalculator } from "./use-path-calculator.svelte";
 	import { useGradientCoordinates } from "./use-gradient-coordinates.svelte";

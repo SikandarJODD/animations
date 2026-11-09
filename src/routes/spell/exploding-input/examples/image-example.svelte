@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ExplodingInput } from "$lib/components/spell/exploding-input";
+	import { ExplodingInput } from "#lib/components/spell/exploding-input/index.js";
 
 	function makeBadgeDataUrl(fill: string, accent: string) {
 		const svg = `

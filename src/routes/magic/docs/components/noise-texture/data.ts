@@ -1,11 +1,11 @@
-import IndexTsRaw from "$lib/components/magic/noise-texture/index.ts?raw";
-import NoiseTextureSvelteRaw from "$lib/components/magic/noise-texture/noise-texture.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/noise-texture/index.ts?raw";
+import NoiseTextureSvelteRaw from "#lib/components/magic/noise-texture/noise-texture.svelte?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.ts";
 import NewsletterExample from "./examples/newsletter-example.svelte";
 import NewsletterExampleRaw from "./examples/newsletter-example.svelte?raw";
 

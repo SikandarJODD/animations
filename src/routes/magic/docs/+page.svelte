@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import {
 		Divider,
 		H1,
@@ -10,7 +10,7 @@
 		Paragraph,
 		Strong,
 		UnorderedList,
-	} from "$lib/components/docs/markdown";
+	} from "#lib/components/docs/markdown/index.js";
 	import { MetaTags } from "svelte-meta-tags";
 
 	const title = "Introduction";

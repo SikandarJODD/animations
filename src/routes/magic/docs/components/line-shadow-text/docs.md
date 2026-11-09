@@ -22,19 +22,19 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-te
 
 ```svelte
 <script lang="ts">
-	import { LineShadowText } from "$lib/components/magic/line-shadow-text";
-	import { mode } from "mode-watcher";
+  import { LineShadowText } from "#lib/components/magic/line-shadow-text/index.ts";
+  import { mode } from "mode-watcher";
 </script>
 
 <h1
-	class="text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl"
+  class="text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl"
 >
-	Ship
-	<LineShadowText
-		content="Fast"
-		class="italic"
-		shadowColor={mode.current === "dark" ? "white" : "black"}
-	></LineShadowText>
+  Ship
+  <LineShadowText
+    content="Fast"
+    class="italic"
+    shadowColor={mode.current === "dark" ? "white" : "black"}
+  ></LineShadowText>
 </h1>
 ```
 
@@ -44,25 +44,25 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-te
 
 ```svelte
 <script lang="ts">
-	import { LineShadowText } from "$lib/components/magic/line-shadow-text";
-	import { mode } from "mode-watcher";
+  import { LineShadowText } from "#lib/components/magic/line-shadow-text/index.ts";
+  import { mode } from "mode-watcher";
 </script>
 
 <h1
-	class="text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl"
+  class="text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl"
 >
-	Ship
-	<LineShadowText
-		content="Fast"
-		class="italic"
-		shadowColor={mode.current === "dark" ? "white" : "black"}
-	></LineShadowText>
+  Ship
+  <LineShadowText
+    content="Fast"
+    class="italic"
+    shadowColor={mode.current === "dark" ? "white" : "black"}
+  ></LineShadowText>
 </h1>
 ```
 
 ## Usage
 
-Import `LineShadowText` from `$lib/components/magic/line-shadow-text` and pass the props you need for your use case.
+Import `LineShadowText` from `#lib/components/magic/line-shadow-text/index.ts` and pass the props you need for your use case.
 
 If the component depends on global CSS, add the following styles:
 
@@ -85,9 +85,9 @@ If the component depends on global CSS, add the following styles:
 
 A component for Line Shadow Text.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `shadowColor` | `string` | `"black"` | Color of the shadow |
-| `as` | `ElementType` | `"span"` | HTML element to render as |
-| `content` | `string` | `""` | Content of the text |
+| Prop          | Type          | Default   | Description                     |
+| ------------- | ------------- | --------- | ------------------------------- |
+| `class`       | `string`      | `""`      | Additional CSS classes to apply |
+| `shadowColor` | `string`      | `"black"` | Color of the shadow             |
+| `as`          | `ElementType` | `"span"`  | HTML element to render as       |
+| `content`     | `string`      | `""`      | Content of the text             |

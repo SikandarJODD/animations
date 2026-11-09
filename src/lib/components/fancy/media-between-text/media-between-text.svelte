@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { motion, useInView, type AnimationOptions, type Variants } from "motion-sv";
 	import type { ClassValue, HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 
 	type ElementType = keyof SvelteHTMLElements;
 	type TriggerType = "hover" | "ref" | "inView";

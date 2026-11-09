@@ -22,7 +22,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-theme
 
 ```svelte
 <script lang="ts">
-	import { AnimatedThemeToggler } from "$lib/components/magic/animated-theme-toggler";
+  import { AnimatedThemeToggler } from "#lib/components/magic/animated-theme-toggler/index.ts";
 </script>
 
 <AnimatedThemeToggler />
@@ -34,7 +34,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-theme
 
 ```svelte
 <script lang="ts">
-	import { AnimatedThemeToggler } from "$lib/components/magic/animated-theme-toggler";
+  import { AnimatedThemeToggler } from "#lib/components/magic/animated-theme-toggler/index.ts";
 </script>
 
 <AnimatedThemeToggler />
@@ -42,7 +42,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-theme
 
 ## Usage
 
-Import `AnimatedThemeToggler` from `$lib/components/magic/animated-theme-toggler` and pass the props you need for your use case.
+Import `AnimatedThemeToggler` from `#lib/components/magic/animated-theme-toggler/index.ts` and pass the props you need for your use case.
 
 If the component depends on global CSS, add the following styles:
 
@@ -58,7 +58,7 @@ If the component depends on global CSS, add the following styles:
 
 A component for smooth theme switching with circular reveal animation.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `duration` | `number` | `400` | Duration of the animation in milliseconds |
+| Prop       | Type     | Default | Description                               |
+| ---------- | -------- | ------- | ----------------------------------------- |
+| `class`    | `string` | `""`    | Additional CSS classes to apply           |
+| `duration` | `number` | `400`   | Duration of the animation in milliseconds |

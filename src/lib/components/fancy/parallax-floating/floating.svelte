@@ -12,8 +12,8 @@
 
 <script lang="ts">
 	import { useAnimationFrame, useReducedMotion } from "motion-sv";
-	import { useMousePosition } from "$lib/hooks/use-mouse-position.svelte";
-	import { cn } from "$lib/utils";
+	import { useMousePosition } from "#lib/hooks/use-mouse-position.svelte.ts";
+	import { cn } from "#lib/utils.ts";
 
 	import { setFloatingContext } from "./floating-context.svelte";
 
@@ -75,10 +75,6 @@
 	});
 </script>
 
-<div
-	bind:this={container}
-	class={cn("absolute top-0 left-0 h-full w-full", className)}
-	{...props}
->
+<div bind:this={container} class={cn("absolute top-0 left-0 h-full w-full", className)} {...props}>
 	{@render children?.()}
 </div>

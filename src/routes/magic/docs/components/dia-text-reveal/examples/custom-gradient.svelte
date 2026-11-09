@@ -1,5 +1,5 @@
 <script>
-	import { DiaTextReveal } from "$lib/components/magic/dia-text-reveal";
+	import { DiaTextReveal } from "#lib/components/magic/dia-text-reveal/index.js";
 </script>
 
 <div class="flex min-h-56 items-center justify-center p-8">

@@ -1,7 +1,7 @@
-﻿import AnimatedGridPattern from "$lib/components/magic/animated-grid-pattern/animated-grid-pattern.svelte?raw";
-import IndexTs from "$lib/components/magic/animated-grid-pattern/index.ts?raw";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+﻿import AnimatedGridPattern from "#lib/components/magic/animated-grid-pattern/animated-grid-pattern.svelte?raw";
+import IndexTs from "#lib/components/magic/animated-grid-pattern/index.ts?raw";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 

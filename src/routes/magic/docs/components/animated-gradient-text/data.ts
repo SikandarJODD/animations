@@ -1,7 +1,7 @@
-import type { CodeBlock } from "$lib/components/ui/code";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
+import type { CodeBlock } from "#lib/components/ui/code/index.ts";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta } from "#lib/types/structure.ts";
 import CustomSpeed from "./examples/custom-speed.svelte";
 import CustomSpeedRaw from "./examples/custom-speed.svelte?raw";
 import Preview from "./examples/preview.svelte";

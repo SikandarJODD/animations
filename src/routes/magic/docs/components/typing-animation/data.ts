@@ -1,9 +1,9 @@
-﻿import Raw from "$lib/components/magic/typing-animation/typing-animation.svelte?raw";
-import IndexTs from "$lib/components/magic/typing-animation/index.ts?raw";
+﻿import Raw from "#lib/components/magic/typing-animation/typing-animation.svelte?raw";
+import IndexTs from "#lib/components/magic/typing-animation/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import Example1 from "./examples/cursor-blinking.svelte";

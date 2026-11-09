@@ -1,16 +1,16 @@
 <script lang="ts">
-	import * as Sheet from "$lib/components/ui/sheet";
-	import { Badge } from "$lib/components/ui/badge";
+	import * as Sheet from "#lib/components/ui/sheet/index.js";
+	import { Badge } from "#lib/components/ui/badge/index.js";
 	import { ArrowUpRightIcon, PackageIcon, PanelLeftIcon } from "@lucide/svelte";
 	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
 	import HistoryIcon from "@lucide/svelte/icons/history";
 	import HomeIcon from "@lucide/svelte/icons/home";
-	import { magicUISidebarGroups } from "$lib/components/docs/registry/magic-ui";
-	import { spellUIComponents } from "$lib/components/docs/registry/spell_ui";
-	import { fancyUIComponents } from "$lib/components/docs/registry/fancy_ui";
-	import { Separator } from "$lib/components/ui/separator";
+	import { magicUISidebarGroups } from "#lib/components/docs/registry/magic-ui.ts";
+	import { spellUIComponents } from "#lib/components/docs/registry/spell_ui.ts";
+	import { fancyUIComponents } from "#lib/components/docs/registry/fancy_ui.ts";
+	import { Separator } from "#lib/components/ui/separator/index.js";
 	import { page } from "$app/state";
-	import GitHubIcon from "$lib/components/icons/github.svelte";
+	import GitHubIcon from "#lib/components/icons/github.svelte";
 
 	let { open = $bindable(false) } = $props();
 
@@ -309,7 +309,7 @@
 									class="min-w-0 flex-1 rounded-sm outline-none"
 								>
 									<div
-										class="text-foreground flex items-center gap-1.5 text-xs font-medium leading-snug"
+										class="text-foreground flex items-center gap-1.5 text-xs leading-snug font-medium"
 									>
 										<span>{project.title}</span>
 										{#if project.accent === "amber"}
@@ -334,7 +334,7 @@
 									rel="noopener noreferrer"
 									onclick={handleLinkClick}
 									aria-label={`View ${project.title} on GitHub`}
-									class="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 shrink-0 rounded-sm p-1.5 outline-none transition-colors focus-visible:ring-[3px]"
+									class="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 shrink-0 rounded-sm p-1.5 transition-colors outline-none focus-visible:ring-[3px]"
 								>
 									<GitHubIcon class="size-3" />
 								</a>
@@ -356,7 +356,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 							onclick={handleLinkClick}
-							class="text-foreground hover:text-primary focus-visible:ring-ring/50 inline-flex items-center gap-1.5 rounded-sm font-medium outline-none transition-colors focus-visible:ring-[3px]"
+							class="text-foreground hover:text-primary focus-visible:ring-ring/50 inline-flex items-center gap-1.5 rounded-sm font-medium transition-colors outline-none focus-visible:ring-[3px]"
 						>
 							<img
 								src="https://github.com/SikandarJODD.png"

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Marquee } from "$lib/components/spell/marquee";
+	import { Marquee } from "#lib/components/spell/marquee/index.js";
 	const logos = [
 		{ src: "/logos/vercel.svg", alt: "Vercel logo" },
 		{ src: "/logos/google.svg", alt: "Google logo" },

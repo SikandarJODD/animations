@@ -1,6 +1,6 @@
 <script lang="ts" module>
-	import type { AnchorElementProps } from "$lib/components/ui/button";
-	import type { Size } from "$lib/components/ui/extra/button.svelte";
+	import type { AnchorElementProps } from "#lib/components/ui/button/index.js";
+	import type { Size } from "#lib/components/ui/extra/button.svelte";
 
 	export type GithubButtonProps = Omit<AnchorElementProps, "href" | "children" | "size"> & {
 		repo: {
@@ -14,8 +14,8 @@
 </script>
 
 <script lang="ts">
-	import Button, { sizeMap } from "$lib/components/ui/extra/button.svelte";
-	import { cn } from "$lib/utils";
+	import Button, { sizeMap } from "#lib/components/ui/extra/button.svelte";
+	import { cn } from "#lib/utils.ts";
 	import { cubicInOut } from "svelte/easing";
 	import { Tween } from "svelte/motion";
 

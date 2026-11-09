@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TextHighlighter } from "$lib/components/fancy/text-highlighter";
+	import { TextHighlighter } from "#lib/components/fancy/text-highlighter/index.js";
 	import { type Transition } from "motion-sv";
 	const transition = { type: "spring", duration: 0.6, delay: 0.4, bounce: 0 };
 	const highlightClass = "rounded-[0.3em]! px-px";

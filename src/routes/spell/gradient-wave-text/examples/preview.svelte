@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GradientWaveText } from "$lib/components/spell/gradient-wave-text";
+	import { GradientWaveText } from "#lib/components/spell/gradient-wave-text/index.js";
 </script>
 
 <GradientWaveText

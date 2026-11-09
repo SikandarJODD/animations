@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
+	import { Button } from "#lib/components/ui/button/index.js";
 	import DesktopNav from "./desktop-nav.svelte";
 	import MobileNav from "./mobile-nav.svelte";
-	import { GitHubButton, getStars } from "$lib/components/ui/github-button";
+	import { GitHubButton, getStars } from "#lib/components/ui/github-button/index.js";
 	import { onMount } from "svelte";
-	import { Twitter } from "$lib/components/icons";
-	import { LightSwitch } from "$lib/components/ui/light-switch";
-	import { github_repo } from "$lib/config/repo";
-	import SearchNavigation from "$lib/components/docs/navigation/DocsSearchNavigation.svelte";
+	import { Twitter } from "#lib/components/icons/index.js";
+	import { LightSwitch } from "#lib/components/ui/light-switch/index.js";
+	import { github_repo } from "#lib/config/repo.ts";
+	import SearchNavigation from "#lib/components/docs/navigation/DocsSearchNavigation.svelte";
 
 	let stars = $state(github_repo.fallback_stars);
 	const repo = { owner: github_repo.owner, repo: "animations" };

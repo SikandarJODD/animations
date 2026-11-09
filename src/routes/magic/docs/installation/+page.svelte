@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import {
 		Blockquote,
 		H1,
@@ -9,15 +9,15 @@
 		Paragraph,
 		Step,
 		Steps,
-	} from "$lib/components/docs/markdown";
-	import { PMCommand } from "$lib/components/ui/pm-command";
-	import * as Code from "$lib/components/ui/code";
+	} from "#lib/components/docs/markdown/index.js";
+	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
+	import * as Code from "#lib/components/ui/code/index.js";
 	import { MetaTags } from "svelte-meta-tags";
 	import Preview from "../components/morphing-text/examples/preview.svelte";
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
+	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
 
 	const exampleCode = `<script lang="ts">
-	import { MorphingText } from "$lib/components/magic/morphing-text";
+	import { MorphingText } from "#lib/components/magic/morphing-text/index.js";
 	const texts = [
 		"Hello",
 		"Morphing",

@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { IconCloud } from "$lib/components/magic/icon-cloud";
+	import { IconCloud } from "#lib/components/magic/icon-cloud/index.js";
 
 	const slugs = [
 		"typescript",

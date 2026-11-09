@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { UnderlineToBackground } from "$lib/components/fancy/underline-to-background";
+	import { UnderlineToBackground } from "#lib/components/fancy/underline-to-background/index.js";
 </script>
 
 <div class="flex min-h-80 items-center rounded-xl bg-[#f4f1ea] px-6 py-8 sm:px-8">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import { watch } from "runed";
 	import type { HTMLAttributes } from "svelte/elements";
 
@@ -95,13 +95,10 @@
 		};
 	}
 
-	watch(
-		[() => color, () => boost],
-		([nextColor, nextBoost]) => {
-			alphaBoost = getAlphaBoost(nextBoost);
-			rgba = resolveColor(nextColor, nextBoost);
-		}
-	);
+	watch([() => color, () => boost], ([nextColor, nextBoost]) => {
+		alphaBoost = getAlphaBoost(nextBoost);
+		rgba = resolveColor(nextColor, nextBoost);
+	});
 
 	watch(
 		[
@@ -167,7 +164,11 @@
 						const alpha = Math.min(1, alphas[index] * fade * colorAlpha * alphaBoost);
 
 						context.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
-						context.fillText(cells[index] ?? " ", x * currentCellSize, y * currentCellSize);
+						context.fillText(
+							cells[index] ?? " ",
+							x * currentCellSize,
+							y * currentCellSize
+						);
 					}
 				}
 			};

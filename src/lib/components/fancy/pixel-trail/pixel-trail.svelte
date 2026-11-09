@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { ClassValue } from "clsx";
-	import { useDimensions } from "$lib/hooks/use-dimension.svelte";
-	import { cn } from "$lib/utils";
+	import { useDimensions } from "#lib/hooks/use-dimension.svelte.ts";
+	import { cn } from "#lib/utils.ts";
 
 	import PixelDot from "./pixel-dot.svelte";
 

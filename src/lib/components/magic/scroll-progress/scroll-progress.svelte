@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion, useScroll } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 
 	interface ScrollProgressProps {
 		class?: string;

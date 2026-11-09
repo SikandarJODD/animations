@@ -1,8 +1,8 @@
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import IndexTsRaw from "$lib/components/fancy/text-rotate/index.ts?raw";
-import TextRotateRaw from "$lib/components/fancy/text-rotate/text-rotate.svelte?raw";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import IndexTsRaw from "#lib/components/fancy/text-rotate/index.ts?raw";
+import TextRotateRaw from "#lib/components/fancy/text-rotate/text-rotate.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";

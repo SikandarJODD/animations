@@ -22,24 +22,24 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/confetti.json
 
 ```svelte
 <script lang="ts">
-	import { Confetti } from "$lib/components/magic/confetti";
-	import { Button } from "$lib/components/ui/button";
-	let active = $state(true);
+  import { Confetti } from "#lib/components/magic/confetti/index.ts";
+  import { Button } from "#lib/components/ui/button/index.ts";
+  let active = $state(true);
 
-	let fire = () => {
-		active = false;
-		setTimeout(() => {
-			active = true;
-		}, 10);
-	};
+  let fire = () => {
+    active = false;
+    setTimeout(() => {
+      active = true;
+    }, 10);
+  };
 </script>
 
 <div
-	class="bg-background relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
+  class="bg-background relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
 >
-	<Confetti {active}>
-		<Button onclick={fire}>Fire Confetti</Button>
-	</Confetti>
+  <Confetti {active}>
+    <Button onclick={fire}>Fire Confetti</Button>
+  </Confetti>
 </div>
 ```
 
@@ -49,35 +49,35 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/confetti.json
 
 ```svelte
 <script lang="ts">
-	import { Confetti } from "$lib/components/magic/confetti";
-	import { Button } from "$lib/components/ui/button";
-	let active = $state(true);
+  import { Confetti } from "#lib/components/magic/confetti/index.ts";
+  import { Button } from "#lib/components/ui/button/index.ts";
+  let active = $state(true);
 
-	let fire = () => {
-		active = false;
-		setTimeout(() => {
-			active = true;
-		}, 10);
-	};
+  let fire = () => {
+    active = false;
+    setTimeout(() => {
+      active = true;
+    }, 10);
+  };
 </script>
 
 <div
-	class="bg-background relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
+  class="bg-background relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
 >
-	<Confetti {active}>
-		<Button onclick={fire}>Fire Confetti</Button>
-	</Confetti>
+  <Confetti {active}>
+    <Button onclick={fire}>Fire Confetti</Button>
+  </Confetti>
 </div>
 ```
 
 ## Usage
 
-Import `Confetti` from `$lib/components/magic/confetti` and pass the props you need for your use case.
+Import `Confetti` from `#lib/components/magic/confetti/index.ts` and pass the props you need for your use case.
 
 ## Props
 
 A component for Confetti.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
+| Prop    | Type     | Default | Description                     |
+| ------- | -------- | ------- | ------------------------------- |
+| `class` | `string` | `""`    | Additional CSS classes to apply |

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TextMarquee } from "$lib/components/spell/text-marquee";
+	import { TextMarquee } from "#lib/components/spell/text-marquee/index.js";
 
 	const updates = ["Shipped", "Reviewed", "Published", "Synced", "Archived"];
 </script>

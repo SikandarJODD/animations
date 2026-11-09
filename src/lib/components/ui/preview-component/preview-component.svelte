@@ -1,12 +1,12 @@
 <script lang="ts">
-	import * as Tabs from "$lib/components/ui/tabs/index.js";
+	import * as Tabs from "#lib/components/ui/tabs/index.js";
 	import type { Snippet } from "svelte";
-	import type { SupportedLanguage } from "$lib/components/ui/code/shiki";
-	import type { CodeBlock as MagicCode } from "$lib/components/ui/code/index";
-	import MultipleCode from "$lib/components/ui/code/multiple-code.svelte";
+	import type { SupportedLanguage } from "#lib/components/ui/code/shiki.ts";
+	import type { CodeBlock as MagicCode } from "#lib/components/ui/code/index.js";
+	import MultipleCode from "#lib/components/ui/code/multiple-code.svelte";
 	import SingleCodeFilename from "../code/single-code-filename.svelte";
-	import { Button } from "$lib/components/ui/button";
-	import { cn } from "$lib/utils";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import { cn } from "#lib/utils.ts";
 
 	interface PreviewComponentProps {
 		children: Snippet;

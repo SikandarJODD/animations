@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { motion, AnimatePresence, createLayoutMotion } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { Snippet } from "svelte";
 
 	interface AnimatedListProps<T> {

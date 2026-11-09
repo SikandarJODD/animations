@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Backlight } from "$lib/components/magic/backlight";
+	import { Backlight } from "#lib/components/magic/backlight/index.js";
 </script>
 
 <Backlight blur={5}>

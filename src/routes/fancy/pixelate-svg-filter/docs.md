@@ -6,7 +6,7 @@ Starter docs for Pixelate Svg Filter.
 
 ```svelte
 <script lang="ts">
-  import { PixelateSvgFilter } from "$lib/components/fancy/pixelate-svg-filter";
+  import { PixelateSvgFilter } from "#lib/components/fancy/pixelate-svg-filter/index.ts";
 </script>
 
 <PixelateSvgFilter />

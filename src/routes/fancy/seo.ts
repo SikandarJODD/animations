@@ -1,4 +1,4 @@
-import type { SEO } from "$lib/types/seo";
+import type { SEO } from "#lib/types/seo.ts";
 
 export const FANCY_TITLE_TEMPLATE = "%s | Svelte Fancy Components";
 

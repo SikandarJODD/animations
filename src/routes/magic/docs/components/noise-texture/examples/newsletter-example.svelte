@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { NoiseTexture } from "$lib/components/magic/noise-texture";
-	import { Button } from "$lib/components/ui/button";
-	import * as Card from "$lib/components/ui/card";
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
+	import { NoiseTexture } from "#lib/components/magic/noise-texture/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Card from "#lib/components/ui/card/index.js";
+	import { Input } from "#lib/components/ui/input/index.js";
+	import { Label } from "#lib/components/ui/label/index.js";
 </script>
 
 <div class="flex justify-center p-4">

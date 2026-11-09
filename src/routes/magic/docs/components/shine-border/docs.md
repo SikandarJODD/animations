@@ -22,36 +22,38 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shine-border.j
 
 ```svelte
 <script lang="ts">
-	import ShineBorder from "$lib/components/magic/shine-border/shine-border.svelte";
-	import { Button } from "$lib/components/ui/button";
-	import * as Card from "$lib/components/ui/card/index.js";
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
+  import ShineBorder from "#lib/components/magic/shine-border/shine-border.svelte";
+  import { Button } from "#lib/components/ui/button/index.ts";
+  import * as Card from "#lib/components/ui/card/index.js";
+  import { Input } from "#lib/components/ui/input/index.ts";
+  import { Label } from "#lib/components/ui/label/index.ts";
 </script>
 
 <Card.Root class="relative mx-auto max-w-87 overflow-hidden">
-	<ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
-	<Card.Header>
-		<Card.Title>Login</Card.Title>
-		<Card.Description>Enter your credentials to access your account</Card.Description>
-	</Card.Header>
-	<Card.Content>
-		<form>
-			<div class="grid gap-4">
-				<div class="grid gap-2">
-					<Label for="email">Email</Label>
-					<Input id="email" type="email" placeholder="name@example.com" />
-				</div>
-				<div class="grid gap-2">
-					<Label for="password">Password</Label>
-					<Input id="password" type="password" />
-				</div>
-			</div>
-		</form>
-	</Card.Content>
-	<Card.Footer>
-		<Button class="w-full">Sign In</Button>
-	</Card.Footer>
+  <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
+  <Card.Header>
+    <Card.Title>Login</Card.Title>
+    <Card.Description
+      >Enter your credentials to access your account</Card.Description
+    >
+  </Card.Header>
+  <Card.Content>
+    <form>
+      <div class="grid gap-4">
+        <div class="grid gap-2">
+          <Label for="email">Email</Label>
+          <Input id="email" type="email" placeholder="name@example.com" />
+        </div>
+        <div class="grid gap-2">
+          <Label for="password">Password</Label>
+          <Input id="password" type="password" />
+        </div>
+      </div>
+    </form>
+  </Card.Content>
+  <Card.Footer>
+    <Button class="w-full">Sign In</Button>
+  </Card.Footer>
 </Card.Root>
 ```
 
@@ -61,44 +63,46 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shine-border.j
 
 ```svelte
 <script lang="ts">
-	import ShineBorder from "$lib/components/magic/shine-border/shine-border.svelte";
-	import { Button } from "$lib/components/ui/button";
-	import * as Card from "$lib/components/ui/card/index.js";
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
-	// For Light and Dark Mode
-	import { mode } from "mode-watcher";
+  import ShineBorder from "#lib/components/magic/shine-border/shine-border.svelte";
+  import { Button } from "#lib/components/ui/button/index.ts";
+  import * as Card from "#lib/components/ui/card/index.js";
+  import { Input } from "#lib/components/ui/input/index.ts";
+  import { Label } from "#lib/components/ui/label/index.ts";
+  // For Light and Dark Mode
+  import { mode } from "mode-watcher";
 </script>
 
 <Card.Root class="relative mx-auto max-w-87 overflow-hidden">
-	<ShineBorder shineColor={mode.current === "dark" ? "white" : "black"} />
-	<Card.Header>
-		<Card.Title>Login</Card.Title>
-		<Card.Description>Enter your credentials to access your account</Card.Description>
-	</Card.Header>
-	<Card.Content>
-		<form>
-			<div class="grid gap-4">
-				<div class="grid gap-2">
-					<Label for="email">Email</Label>
-					<Input id="email" type="email" placeholder="name@example.com" />
-				</div>
-				<div class="grid gap-2">
-					<Label for="password">Password</Label>
-					<Input id="password" type="password" />
-				</div>
-			</div>
-		</form>
-	</Card.Content>
-	<Card.Footer>
-		<Button class="w-full">Sign In</Button>
-	</Card.Footer>
+  <ShineBorder shineColor={mode.current === "dark" ? "white" : "black"} />
+  <Card.Header>
+    <Card.Title>Login</Card.Title>
+    <Card.Description
+      >Enter your credentials to access your account</Card.Description
+    >
+  </Card.Header>
+  <Card.Content>
+    <form>
+      <div class="grid gap-4">
+        <div class="grid gap-2">
+          <Label for="email">Email</Label>
+          <Input id="email" type="email" placeholder="name@example.com" />
+        </div>
+        <div class="grid gap-2">
+          <Label for="password">Password</Label>
+          <Input id="password" type="password" />
+        </div>
+      </div>
+    </form>
+  </Card.Content>
+  <Card.Footer>
+    <Button class="w-full">Sign In</Button>
+  </Card.Footer>
 </Card.Root>
 ```
 
 ## Usage
 
-Import `ShineBorder` from `$lib/components/magic/shine-border` and pass the props you need for your use case.
+Import `ShineBorder` from `#lib/components/magic/shine-border/index.ts` and pass the props you need for your use case.
 
 If the component depends on global CSS, add the following styles:
 
@@ -124,9 +128,9 @@ If the component depends on global CSS, add the following styles:
 
 A component for ShineBorder.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `borderWidth` | `number` | `2` | Width of the border |
-| `duration` | `number` | `300` | Duration of the shine animation in milliseconds |
-| `shineColor` | `string \| string[]` | `""` | Color(s) of the shine effect |
+| Prop          | Type                 | Default | Description                                     |
+| ------------- | -------------------- | ------- | ----------------------------------------------- |
+| `class`       | `string`             | `""`    | Additional CSS classes to apply                 |
+| `borderWidth` | `number`             | `2`     | Width of the border                             |
+| `duration`    | `number`             | `300`   | Duration of the shine animation in milliseconds |
+| `shineColor`  | `string \| string[]` | `""`    | Color(s) of the shine effect                    |

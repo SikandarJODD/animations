@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { tick } from "svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import {
 		AnimatePresence,
 		createLayoutMotion,

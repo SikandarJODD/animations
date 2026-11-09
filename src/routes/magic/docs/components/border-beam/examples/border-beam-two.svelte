@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { BorderBeam } from "$lib/components/magic/border-beam";
-	import Button from "$lib/components/ui/button/button.svelte";
-	import * as Card from "$lib/components/ui/card/index.js";
+	import { BorderBeam } from "#lib/components/magic/border-beam/index.js";
+	import Button from "#lib/components/ui/button/button.svelte";
+	import * as Card from "#lib/components/ui/card/index.js";
 
 	import Play from "@lucide/svelte/icons/play";
 	import SkipBack from "@lucide/svelte/icons/skip-back";

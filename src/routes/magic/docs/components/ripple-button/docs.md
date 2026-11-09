@@ -22,7 +22,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple-button.
 
 ```svelte
 <script lang="ts">
-	import { RippleButton } from "$lib/components/magic/ripple-button";
+  import { RippleButton } from "#lib/components/magic/ripple-button/index.ts";
 </script>
 
 <RippleButton rippleColor="#ADD8E6">Click me</RippleButton>
@@ -34,7 +34,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple-button.
 
 ```svelte
 <script lang="ts">
-	import { RippleButton } from "$lib/components/magic/ripple-button";
+  import { RippleButton } from "#lib/components/magic/ripple-button/index.ts";
 </script>
 
 <RippleButton rippleColor="#ADD8E6">Click me</RippleButton>
@@ -66,9 +66,9 @@ If the component depends on global CSS, add the following styles:
 
 A component for Ripple Button.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `rippleColor` | `string` | `"#ffffff"` | Color of the ripple effect |
-| `duration` | `string` | `"600ms"` | Duration of the ripple effect |
-| `children` | `Snippet` | `required` | The content of the button |
+| Prop          | Type      | Default     | Description                     |
+| ------------- | --------- | ----------- | ------------------------------- |
+| `class`       | `string`  | `""`        | Additional CSS classes to apply |
+| `rippleColor` | `string`  | `"#ffffff"` | Color of the ripple effect      |
+| `duration`    | `string`  | `"600ms"`   | Duration of the ripple effect   |
+| `children`    | `Snippet` | `required`  | The content of the button       |

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Portal } from "bits-ui";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import { onMount } from "svelte";
 	import type { Snippet } from "svelte";
 
@@ -16,11 +16,8 @@
 	onMount(() => {
 		mounted = true;
 
-		const originalOverflow = window.getComputedStyle(
-			document.body
-		).overflow;
-		const scrollbarWidth =
-			window.innerWidth - document.documentElement.clientWidth;
+		const originalOverflow = window.getComputedStyle(document.body).overflow;
+		const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 		const originalPaddingRight = document.body.style.paddingRight;
 
 		document.body.style.overflow = "hidden";

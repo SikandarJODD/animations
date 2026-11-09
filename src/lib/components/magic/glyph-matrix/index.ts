@@ -1,3 +1,3 @@
-import GlyphMatrix from './glyph-matrix.svelte';
+import GlyphMatrix from "./glyph-matrix.svelte";
 
-export { GlyphMatrix }
+export { GlyphMatrix };

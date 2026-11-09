@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion, AnimatePresence } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 
 	type AnimationStyle =
 		| "from-bottom"

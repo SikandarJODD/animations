@@ -22,21 +22,23 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/progressive-bl
 
 ```svelte
 <script>
-	import { ProgressiveBlur } from "$lib/components/magic/progressive-blur";
-	import { ScrollArea } from "$lib/components/ui/scroll-area";
+  import { ProgressiveBlur } from "#lib/components/magic/progressive-blur/index.ts";
+  import { ScrollArea } from "#lib/components/ui/scroll-area/index.ts";
 </script>
 
 <div class="relative w-full rounded-xl border">
-	<ScrollArea fadeEffect={false} class="relative h-100 overflow-hidden">
-		<div class="flex flex-col gap-2 p-4">
-			{#each { length: 20 } as _, index}
-				<div class="bg-card flex h-20 w-full items-center justify-center rounded-xl border">
-					{index}
-				</div>
-			{/each}
-		</div>
-		<ProgressiveBlur position="bottom" height="40%" />
-	</ScrollArea>
+  <ScrollArea fadeEffect={false} class="relative h-100 overflow-hidden">
+    <div class="flex flex-col gap-2 p-4">
+      {#each { length: 20 } as _, index}
+        <div
+          class="bg-card flex h-20 w-full items-center justify-center rounded-xl border"
+        >
+          {index}
+        </div>
+      {/each}
+    </div>
+    <ProgressiveBlur position="bottom" height="40%" />
+  </ScrollArea>
 </div>
 ```
 
@@ -46,35 +48,37 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/progressive-bl
 
 ```svelte
 <script>
-	import { ProgressiveBlur } from "$lib/components/magic/progressive-blur";
-	import { ScrollArea } from "$lib/components/ui/scroll-area";
+  import { ProgressiveBlur } from "#lib/components/magic/progressive-blur/index.ts";
+  import { ScrollArea } from "#lib/components/ui/scroll-area/index.ts";
 </script>
 
 <div class="relative w-full rounded-xl border">
-	<ScrollArea fadeEffect={false} class="relative h-100 overflow-hidden">
-		<div class="flex flex-col gap-2 p-4">
-			{#each { length: 20 } as _, index}
-				<div class="bg-card flex h-20 w-full items-center justify-center rounded-xl border">
-					{index}
-				</div>
-			{/each}
-		</div>
-		<ProgressiveBlur position="bottom" height="40%" />
-	</ScrollArea>
+  <ScrollArea fadeEffect={false} class="relative h-100 overflow-hidden">
+    <div class="flex flex-col gap-2 p-4">
+      {#each { length: 20 } as _, index}
+        <div
+          class="bg-card flex h-20 w-full items-center justify-center rounded-xl border"
+        >
+          {index}
+        </div>
+      {/each}
+    </div>
+    <ProgressiveBlur position="bottom" height="40%" />
+  </ScrollArea>
 </div>
 ```
 
 ## Usage
 
-Import `ProgressiveBlur` from `$lib/components/magic/progressive-blur` and pass the props you need for your use case.
+Import `ProgressiveBlur` from `#lib/components/magic/progressive-blur/index.ts` and pass the props you need for your use case.
 
 ## Props
 
 A component that creates a progressive blur effect with customizable positioning and blur levels.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `height` | `string` | `"30%"` | Height of the blur area |
-| `position` | `"top" \| "bottom" \| "both"` | `"bottom"` | Position of the blur effect |
-| `blurLevels` | `number[]` | `[0.5, 1, 2, 4, 8, 16, 32, 64]` | Array of blur levels in pixels for progressive blur layers |
+| Prop         | Type                          | Default                         | Description                                                |
+| ------------ | ----------------------------- | ------------------------------- | ---------------------------------------------------------- |
+| `class`      | `string`                      | `""`                            | Additional CSS classes to apply                            |
+| `height`     | `string`                      | `"30%"`                         | Height of the blur area                                    |
+| `position`   | `"top" \| "bottom" \| "both"` | `"bottom"`                      | Position of the blur effect                                |
+| `blurLevels` | `number[]`                    | `[0.5, 1, 2, 4, 8, 16, 32, 64]` | Array of blur levels in pixels for progressive blur layers |

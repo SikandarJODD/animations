@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import AuroraText from "$lib/components/magic/aurora-text/aurora-text.svelte";
+	import AuroraText from "#lib/components/magic/aurora-text/aurora-text.svelte";
 </script>
 
 <h1 class="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">

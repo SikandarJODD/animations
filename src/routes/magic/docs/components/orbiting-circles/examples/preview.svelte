@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { OrbitingCircles } from "$lib/components/magic/orbiting-circles";
+	import { OrbitingCircles } from "#lib/components/magic/orbiting-circles/index.js";
 </script>
 
 <div class="relative flex h-125 w-full flex-col items-center justify-center overflow-hidden">

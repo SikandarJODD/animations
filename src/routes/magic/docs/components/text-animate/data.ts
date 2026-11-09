@@ -1,6 +1,6 @@
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta } from "#lib/types/structure.ts";
 
 // Import examples
 import Preview from "./examples/preview.svelte";

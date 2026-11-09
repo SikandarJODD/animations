@@ -22,7 +22,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive-ho
 
 ```svelte
 <script lang="ts">
-	import { InteractiveHoverButton } from "$lib/components/magic/interactive-hover-button";
+  import { InteractiveHoverButton } from "#lib/components/magic/interactive-hover-button/index.ts";
 </script>
 
 <InteractiveHoverButton>Hover Me</InteractiveHoverButton>
@@ -34,7 +34,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive-ho
 
 ```svelte
 <script lang="ts">
-	import { InteractiveHoverButton } from "$lib/components/magic/interactive-hover-button";
+  import { InteractiveHoverButton } from "#lib/components/magic/interactive-hover-button/index.ts";
 </script>
 
 <InteractiveHoverButton>Hover Me</InteractiveHoverButton>
@@ -48,7 +48,7 @@ Import the component and wrap the content you want it to affect. Adjust the opti
 
 A component for Interactive Hover Button.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
+| Prop       | Type      | Default    | Description                              |
+| ---------- | --------- | ---------- | ---------------------------------------- |
+| `class`    | `string`  | `""`       | Additional CSS classes to apply          |
 | `children` | `Snippet` | `required` | The content to display inside the button |

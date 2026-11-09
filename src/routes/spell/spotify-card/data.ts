@@ -1,13 +1,13 @@
-import SpotifyCardRaw from "$lib/components/spell/spotify-card/spotify-card.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/spotify-card/index.ts?raw";
+import SpotifyCardRaw from "#lib/components/spell/spotify-card/spotify-card.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/spotify-card/index.ts?raw";
 import SpotifyServerRaw from "../../api/spotify/+server.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import WidthExample from "./examples/width-example.svelte";
 import WidthExampleRaw from "./examples/width-example.svelte?raw";
-import type { CodeBlock } from "$lib/components/ui/code";
+import type { CodeBlock } from "#lib/components/ui/code/index.ts";
 
 export const meta: ComponentMeta = {
 	id: "spotify-card",

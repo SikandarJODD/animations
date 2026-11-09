@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import Toc from "$lib/components/docs/base/toc/toc.svelte";
-	import DocsNavigation from "$lib/components/docs/navigation/DocsNavigation.svelte";
-	import ContributeCard from "$lib/components/layout/contribute-card.svelte";
-	import { UseToc } from "$lib/hooks/use-toc.svelte";
-	import { getPrevNext } from "$lib/components/docs/registry/magic-ui";
-	import SupportWork from "$lib/components/docs/base/support-work.svelte";
+	import Toc from "#lib/components/docs/base/toc/toc.svelte";
+	import DocsNavigation from "#lib/components/docs/navigation/DocsNavigation.svelte";
+	import ContributeCard from "#lib/components/layout/contribute-card.svelte";
+	import { UseToc } from "#lib/hooks/use-toc.svelte.ts";
+	import { getPrevNext } from "#lib/components/docs/registry/magic-ui.ts";
+	import SupportWork from "#lib/components/docs/base/support-work.svelte";
 
 	let { children } = $props();
 

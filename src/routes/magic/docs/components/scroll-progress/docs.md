@@ -22,12 +22,14 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/scroll-progres
 
 ```svelte
 <script lang="ts">
-	import { ScrollProgress } from "$lib/components/magic/scroll-progress";
+  import { ScrollProgress } from "#lib/components/magic/scroll-progress/index.ts";
 </script>
 
 <div class="z-10 rounded-lg p-4">
-	<ScrollProgress class="top-15.5" />
-	<h2 class="pb-4 font-bold">Note: The scroll progress is shown below the navbar of the page.</h2>
+  <ScrollProgress class="top-15.5" />
+  <h2 class="pb-4 font-bold">
+    Note: The scroll progress is shown below the navbar of the page.
+  </h2>
 </div>
 ```
 
@@ -37,23 +39,25 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/scroll-progres
 
 ```svelte
 <script lang="ts">
-	import { ScrollProgress } from "$lib/components/magic/scroll-progress";
+  import { ScrollProgress } from "#lib/components/magic/scroll-progress/index.ts";
 </script>
 
 <div class="z-10 rounded-lg p-4">
-	<ScrollProgress class="top-15.5" />
-	<h2 class="pb-4 font-bold">Note: The scroll progress is shown below the navbar of the page.</h2>
+  <ScrollProgress class="top-15.5" />
+  <h2 class="pb-4 font-bold">
+    Note: The scroll progress is shown below the navbar of the page.
+  </h2>
 </div>
 ```
 
 ## Usage
 
-Import `ScrollProgress` from `$lib/components/magic/scroll-progress` and pass the props you need for your use case.
+Import `ScrollProgress` from `#lib/components/magic/scroll-progress/index.ts` and pass the props you need for your use case.
 
 ## Props
 
 A component for Scroll Progress.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
+| Prop    | Type     | Default | Description                     |
+| ------- | -------- | ------- | ------------------------------- |
+| `class` | `string` | `""`    | Additional CSS classes to apply |

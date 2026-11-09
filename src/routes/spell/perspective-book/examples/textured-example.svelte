@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { PerspectiveBook } from "$lib/components/spell/perspective-book";
+	import { PerspectiveBook } from "#lib/components/spell/perspective-book/index.js";
 	import Code2Icon from "@lucide/svelte/icons/code-2";
-	import { Label } from "$lib/components/ui/label/index.js";
-	import { Switch } from "$lib/components/ui/switch/index.js";
+	import { Label } from "#lib/components/ui/label/index.js";
+	import { Switch } from "#lib/components/ui/switch/index.js";
 	import { Code2 } from "@lucide/svelte";
-	import Svelte from "$lib/components/icons/svelte.svelte";
+	import Svelte from "#lib/components/icons/svelte.svelte";
 
 	let textured = $state(true);
 </script>

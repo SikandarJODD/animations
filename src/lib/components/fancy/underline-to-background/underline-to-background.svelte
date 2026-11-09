@@ -4,7 +4,7 @@
 	import type { SvelteHTMLElements } from "svelte/elements";
 	import { motion, type Transition, type Variants } from "motion-sv";
 
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 
 	type ElementType = keyof SvelteHTMLElements;
 

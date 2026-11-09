@@ -22,18 +22,18 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/retro-grid.jso
 
 ```svelte
 <script>
-	import { RetroGrid } from "$lib/components/magic/retro-grid";
+  import { RetroGrid } from "#lib/components/magic/retro-grid/index.ts";
 </script>
 
 <div
-	class="bg-background relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
+  class="bg-background relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
 >
-	<span
-		class="pointer-events-none z-10 bg-linear-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-7xl leading-none font-bold tracking-tighter whitespace-pre-wrap text-transparent"
-	>
-		Retro Grid
-	</span>
-	<RetroGrid />
+  <span
+    class="pointer-events-none z-10 bg-linear-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-7xl leading-none font-bold tracking-tighter whitespace-pre-wrap text-transparent"
+  >
+    Retro Grid
+  </span>
+  <RetroGrid />
 </div>
 ```
 
@@ -43,24 +43,24 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/retro-grid.jso
 
 ```svelte
 <script>
-	import { RetroGrid } from "$lib/components/magic/retro-grid";
+  import { RetroGrid } from "#lib/components/magic/retro-grid/index.ts";
 </script>
 
 <div
-	class="bg-background relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
+  class="bg-background relative flex h-125 w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
 >
-	<span
-		class="pointer-events-none z-10 bg-linear-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-7xl leading-none font-bold tracking-tighter whitespace-pre-wrap text-transparent"
-	>
-		Retro Grid
-	</span>
-	<RetroGrid />
+  <span
+    class="pointer-events-none z-10 bg-linear-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-7xl leading-none font-bold tracking-tighter whitespace-pre-wrap text-transparent"
+  >
+    Retro Grid
+  </span>
+  <RetroGrid />
 </div>
 ```
 
 ## Usage
 
-Import `RetroGrid` from `$lib/components/magic/retro-grid` and pass the props you need for your use case.
+Import `RetroGrid` from `#lib/components/magic/retro-grid/index.ts` and pass the props you need for your use case.
 
 If the component depends on global CSS, add the following styles:
 
@@ -83,11 +83,11 @@ If the component depends on global CSS, add the following styles:
 
 A component for Retro Grid.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `angle` | `number` | `65` | Rotation angle of the grid in degrees |
-| `cellSize` | `number` | `60` | Size of each grid cell in pixels |
-| `opacity` | `number` | `0.5` | Opacity of the grid lines (0 to 1) |
-| `lightLineColor` | `string` | `"gray"` | Color of the light grid lines |
-| `darkLineColor` | `string` | `"gray"` | Color of the dark grid lines |
+| Prop             | Type     | Default  | Description                           |
+| ---------------- | -------- | -------- | ------------------------------------- |
+| `class`          | `string` | `""`     | Additional CSS classes to apply       |
+| `angle`          | `number` | `65`     | Rotation angle of the grid in degrees |
+| `cellSize`       | `number` | `60`     | Size of each grid cell in pixels      |
+| `opacity`        | `number` | `0.5`    | Opacity of the grid lines (0 to 1)    |
+| `lightLineColor` | `string` | `"gray"` | Color of the light grid lines         |
+| `darkLineColor`  | `string` | `"gray"` | Color of the dark grid lines          |

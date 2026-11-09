@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { data } from "./data";
-	import * as Item from "$lib/components/ui/item/index.js";
+	import * as Item from "#lib/components/ui/item/index.js";
 	import { page } from "$app/state";
-	import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
-	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
-	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
-	import APITable from "$lib/components/docs/base/APITable.svelte";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
-	import SEOComponent from "$lib/seo/SEO.svelte";
-	import { Button } from "$lib/components/ui/button";
+	import { H1, H2, Paragraph, H3 } from "#lib/components/docs/markdown/index.js";
+	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
+	import InstallComponent from "#lib/components/docs/base/InstallComponent.svelte";
+	import PackageBadges from "#lib/components/docs/base/PackageBadges.svelte";
+	import APITable from "#lib/components/docs/base/APITable.svelte";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
+	import SEOComponent from "#lib/seo/SEO.svelte";
+	import { Button } from "#lib/components/ui/button/index.js";
 
 	let PreviewComp = $derived(data.preview);
 	let installUrl = $derived(`${page.url.origin}/f/letter-3d-swap.json`);

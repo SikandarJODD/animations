@@ -1,7 +1,7 @@
-import AnimatedCheckboxRaw from "$lib/components/spell/animated-checkbox/animated-checkbox.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/animated-checkbox/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import AnimatedCheckboxRaw from "#lib/components/spell/animated-checkbox/animated-checkbox.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/animated-checkbox/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import ControlledStateExample from "./examples/controlled-state-example.svelte";

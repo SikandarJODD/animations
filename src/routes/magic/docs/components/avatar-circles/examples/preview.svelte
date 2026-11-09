@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { AvatarCircles } from "$lib/components/magic/avatar-circles";
+	import { AvatarCircles } from "#lib/components/magic/avatar-circles/index.js";
 
 	const avatars = [
 		{

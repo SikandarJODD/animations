@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { ElementType, MotionProps, Variants } from "motion-sv";
 	import { motion, AnimatePresence } from "motion-sv";
 

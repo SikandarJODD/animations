@@ -1,7 +1,7 @@
 ﻿<script lang="ts">
-	import { Lens } from "$lib/components/magic/lens";
-	import { Button } from "$lib/components/ui/button";
-	import * as Card from "$lib/components/ui/card/index.js";
+	import { Lens } from "#lib/components/magic/lens/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Card from "#lib/components/ui/card/index.js";
 </script>
 
 <Card.Root class="relative max-w-md shadow-none">

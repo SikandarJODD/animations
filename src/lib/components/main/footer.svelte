@@ -1,26 +1,26 @@
 <script lang="ts">
-	import { github_repo } from "$lib/config/repo";
-	import { seo_config } from "$lib/config/seo";
+	import { github_repo } from "#lib/config/repo.ts";
+	import { seo_config } from "#lib/config/seo.ts";
 
 	const currentYear = new Date().getFullYear();
 </script>
 
 <footer class="relative">
 	<div
-		class="flex flex-col items-center justify-center gap-1 px-4 py-3 text-center text-xs text-muted-foreground sm:flex-row sm:gap-2"
+		class="text-muted-foreground flex flex-col items-center justify-center gap-1 px-4 py-3 text-center text-xs sm:flex-row sm:gap-2"
 	>
 		<p>&copy; {currentYear} {seo_config.title}.</p>
 		<p class="flex items-center justify-center gap-1">
 			<span>Built by</span>
 			<a
-				class="inline-flex items-center gap-1.5 font-medium text-foreground transition-colors hover:text-muted-foreground"
+				class="text-foreground hover:text-muted-foreground inline-flex items-center gap-1.5 font-medium transition-colors"
 				href={github_repo.url}
 				rel="noreferrer"
 				target="_blank"
 			>
 				<img
 					alt="Bhide Svelte avatar"
-					class="size-5 rounded-full border border-border/80 object-cover"
+					class="border-border/80 size-5 rounded-full border object-cover"
 					height="20"
 					src="https://avatars.githubusercontent.com/u/93428946?v=4"
 					width="20"

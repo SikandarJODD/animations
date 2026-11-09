@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DiaTextReveal } from "$lib/components/magic/dia-text-reveal";
+	import { DiaTextReveal } from "#lib/components/magic/dia-text-reveal/index.js";
 </script>
 
 <div class="text-foreground flex min-h-80 items-center justify-center">

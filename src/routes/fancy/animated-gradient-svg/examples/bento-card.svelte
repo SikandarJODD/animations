@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AnimatedGradientSvg } from "$lib/components/fancy/animated-gradient-svg";
+	import { AnimatedGradientSvg } from "#lib/components/fancy/animated-gradient-svg/index.js";
 
 	type Props = {
 		title: string;

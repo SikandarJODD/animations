@@ -1,9 +1,9 @@
 <script lang="ts" module>
 	import type { Component } from "svelte";
-	import type { SEO } from "$lib/types/seo";
-	import type { Example } from "$lib/types/examples";
-	import type { PropsTable, UsageCode } from "$lib/types/structure";
-	import type { CodeBlock } from "$lib/components/ui/code";
+	import type { SEO } from "#lib/types/seo.ts";
+	import type { Example } from "#lib/types/examples.ts";
+	import type { PropsTable, UsageCode } from "#lib/types/structure.ts";
+	import type { CodeBlock } from "#lib/components/ui/code/index.js";
 
 	export type ComponentDocPageProps = {
 		id: string;
@@ -30,18 +30,22 @@
 
 <script lang="ts">
 	import { page } from "$app/state";
-	import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
-	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
-	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
-	import APITable from "$lib/components/docs/base/APITable.svelte";
-	import UsageCodeComponent from "$lib/components/ui/code/usage-code.svelte";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import { H1, H2, Paragraph, H3 } from "#lib/components/docs/markdown/index.js";
+	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
+	import InstallComponent from "#lib/components/docs/base/InstallComponent.svelte";
+	import PackageBadges from "#lib/components/docs/base/PackageBadges.svelte";
+	import APITable from "#lib/components/docs/base/APITable.svelte";
+	import UsageCodeComponent from "#lib/components/ui/code/usage-code.svelte";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import { MetaTags } from "svelte-meta-tags";
 	import ExternalLink from "@lucide/svelte/icons/external-link";
-	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
-	import * as Item from "$lib/components/ui/item/index.js";
-	import { Button } from "$lib/components/ui/button";
+	import {
+		buildSpellKeywords,
+		SPELL_SOCIAL_IMAGE,
+		SPELL_TITLE_TEMPLATE,
+	} from "#lib/seo/spell.ts";
+	import * as Item from "#lib/components/ui/item/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 
 	let {
 		id,
@@ -167,7 +171,13 @@
 					</Item.Description>
 				</Item.Content>
 				<Item.Actions>
-					<Button variant="outline" size="sm" target="_blank" rel="noreferrer" href={originalDocsUrl}>
+					<Button
+						variant="outline"
+						size="sm"
+						target="_blank"
+						rel="noreferrer"
+						href={originalDocsUrl}
+					>
 						Docs
 						<ExternalLink class="size-4" />
 					</Button>

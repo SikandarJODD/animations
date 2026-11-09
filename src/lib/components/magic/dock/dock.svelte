@@ -22,7 +22,7 @@
 
 <script lang="ts">
 	import { motion, useMotionValue } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { Snippet } from "svelte";
 	import { setContext } from "svelte";
 

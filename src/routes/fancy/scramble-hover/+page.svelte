@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import * as Item from "$lib/components/ui/item/index.js";
-	import CompactPropsTable from "$lib/components/docs/base/CompactPropsTable.svelte";
-	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
-	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
-	import { H1, H2, H3, Paragraph } from "$lib/components/docs/markdown/index";
-	import { Button } from "$lib/components/ui/button";
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
-	import SEOComponent from "$lib/seo/SEO.svelte";
+	import * as Item from "#lib/components/ui/item/index.js";
+	import CompactPropsTable from "#lib/components/docs/base/CompactPropsTable.svelte";
+	import InstallComponent from "#lib/components/docs/base/InstallComponent.svelte";
+	import PackageBadges from "#lib/components/docs/base/PackageBadges.svelte";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
+	import { H1, H2, H3, Paragraph } from "#lib/components/docs/markdown/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
+	import SEOComponent from "#lib/seo/SEO.svelte";
 	import { data } from "./data";
 
 	let PreviewComp = $derived(data.preview);

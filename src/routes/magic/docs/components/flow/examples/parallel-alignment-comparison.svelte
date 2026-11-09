@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Flow from "$lib/components/magic/flow";
+	import * as Flow from "#lib/components/magic/flow/index.js";
 </script>
 
 <div class="grid w-full gap-8 md:grid-cols-2">

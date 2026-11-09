@@ -1,8 +1,8 @@
-import IndexTsRaw from "$lib/components/fancy/text-along-path/index.ts?raw";
-import TextAlongPathRaw from "$lib/components/fancy/text-along-path/text-along-path.svelte?raw";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import IndexTsRaw from "#lib/components/fancy/text-along-path/index.ts?raw";
+import TextAlongPathRaw from "#lib/components/fancy/text-along-path/text-along-path.svelte?raw";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import AutoExample from "./examples/auto-example.svelte";
 import AutoExampleRaw from "./examples/auto-example.svelte?raw";
 import ClosedPathExample from "./examples/closed-path-example.svelte";
@@ -204,7 +204,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "easingFunction",
-					type: '{ calcMode?: string; keyTimes?: string; keySplines?: string }',
+					type: "{ calcMode?: string; keyTimes?: string; keySplines?: string }",
 					default: "{}",
 					description:
 						"Optional SVG animation timing settings forwarded to both auto animation tracks.",
@@ -213,7 +213,8 @@ export const data: ComponentDoc = {
 					name: "scrollContainer",
 					type: "HTMLElement | null",
 					default: "undefined",
-					description: "Optional scroll container observed when `animationType` is `scroll`.",
+					description:
+						"Optional scroll container observed when `animationType` is `scroll`.",
 				},
 				{
 					name: "scrollOffset",
@@ -225,7 +226,8 @@ export const data: ComponentDoc = {
 					name: "scrollTransformValues",
 					type: "[number, number]",
 					default: "[0, 100]",
-					description: "Maps scroll progress to the text path start offset percentage range.",
+					description:
+						"Maps scroll progress to the text path start offset percentage range.",
 				},
 			],
 		},

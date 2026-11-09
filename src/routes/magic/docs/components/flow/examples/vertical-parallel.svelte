@@ -1,8 +1,8 @@
 <script lang="ts">
-	import * as Flow from '$lib/components/magic/flow';
+	import * as Flow from "#lib/components/magic/flow/index.js";
 </script>
 
-<Flow.Root orientation="vertical" align='center'>
+<Flow.Root orientation="vertical" align="center">
 	<Flow.Node>Start</Flow.Node>
 	<Flow.Parallel>
 		<Flow.Node>Branch A</Flow.Node>

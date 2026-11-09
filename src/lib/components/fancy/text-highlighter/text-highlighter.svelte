@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import { motion, useInView, type Transition } from "motion-sv";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";

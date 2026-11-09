@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { UnderlineToBackground } from "$lib/components/fancy/underline-to-background";
+	import { UnderlineToBackground } from "#lib/components/fancy/underline-to-background/index.js";
 	import { motion } from "motion-sv";
 	const fadeInVariants = {
 		hidden: { opacity: 0 },

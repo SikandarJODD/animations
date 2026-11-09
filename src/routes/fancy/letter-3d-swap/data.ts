@@ -1,9 +1,9 @@
-import CharBoxRaw from "$lib/components/fancy/letter-3d-swap/charbox.svelte?raw";
-import IndexTsRaw from "$lib/components/fancy/letter-3d-swap/index.ts?raw";
-import Letter3dSwapRaw from "$lib/components/fancy/letter-3d-swap/letter-3d-swap.svelte?raw";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import CharBoxRaw from "#lib/components/fancy/letter-3d-swap/charbox.svelte?raw";
+import IndexTsRaw from "#lib/components/fancy/letter-3d-swap/index.ts?raw";
+import Letter3dSwapRaw from "#lib/components/fancy/letter-3d-swap/letter-3d-swap.svelte?raw";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import PositionExample from "./examples/position-example.svelte";
 import PositionExampleRaw from "./examples/position-example.svelte?raw";
 import Preview from "./examples/preview.svelte";
@@ -112,7 +112,8 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					default: "undefined",
-					description: "Snippet content flattened into grapheme-safe characters for the 3D flip.",
+					description:
+						"Snippet content flattened into grapheme-safe characters for the 3D flip.",
 				},
 				{
 					name: "as",
@@ -124,7 +125,8 @@ export const data: ComponentDoc = {
 					name: "mainClass",
 					type: "string",
 					default: "undefined",
-					description: "Classes applied to the root flex wrapper before `class` is merged in.",
+					description:
+						"Classes applied to the root flex wrapper before `class` is merged in.",
 				},
 				{
 					name: "frontFaceClass",
@@ -136,7 +138,8 @@ export const data: ComponentDoc = {
 					name: "secondFaceClass",
 					type: "string",
 					default: "undefined",
-					description: "Classes applied to the rotating second face of each character box.",
+					description:
+						"Classes applied to the rotating second face of each character box.",
 				},
 				{
 					name: "staggerDuration",

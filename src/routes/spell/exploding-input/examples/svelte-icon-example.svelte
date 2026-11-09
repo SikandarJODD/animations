@@ -1,6 +1,6 @@
 <script lang="ts">
-	import SvelteIcon from "$lib/components/icons/svelte.svelte";
-	import { ExplodingInput } from "$lib/components/spell/exploding-input";
+	import SvelteIcon from "#lib/components/icons/svelte.svelte";
+	import { ExplodingInput } from "#lib/components/spell/exploding-input/index.js";
 
 	const iconBursts = [
 		"h-7 w-7 opacity-100",

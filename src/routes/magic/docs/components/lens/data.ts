@@ -1,9 +1,9 @@
-﻿import LensRaw from "$lib/components/magic/lens/lens.svelte?raw";
-import IndexTs from "$lib/components/magic/lens/index.ts?raw";
+﻿import LensRaw from "#lib/components/magic/lens/lens.svelte?raw";
+import IndexTs from "#lib/components/magic/lens/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 

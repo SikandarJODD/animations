@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { SVGAttributes } from "svelte/elements";
 
 	type Direction = "horizontal" | "vertical";

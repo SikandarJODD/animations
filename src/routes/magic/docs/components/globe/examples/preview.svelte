@@ -1,5 +1,5 @@
 <script>
-	import { Globe } from "$lib/components/magic/globe";
+	import { Globe } from "#lib/components/magic/globe/index.js";
 </script>
 
 <div

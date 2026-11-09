@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ShimmerButton } from "$lib/components/magic/shimmer-button";
+	import { ShimmerButton } from "#lib/components/magic/shimmer-button/index.js";
 </script>
 
 <div class="flex min-h-80 items-center justify-center">

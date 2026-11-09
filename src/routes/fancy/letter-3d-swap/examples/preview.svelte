@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Letter3DSwap } from "$lib/components/fancy/letter-3d-swap";
+	import { Letter3DSwap } from "#lib/components/fancy/letter-3d-swap/index.js";
 	let debug = $state(false);
 </script>
 

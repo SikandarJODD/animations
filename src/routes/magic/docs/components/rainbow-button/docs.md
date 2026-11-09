@@ -22,7 +22,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/rainbow-button
 
 ```svelte
 <script lang="ts">
-	import { RainbowButton } from "$lib/components/magic/rainbow-button";
+  import { RainbowButton } from "#lib/components/magic/rainbow-button/index.ts";
 </script>
 
 <RainbowButton>Join Affiliate Program</RainbowButton>
@@ -34,7 +34,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/rainbow-button
 
 ```svelte
 <script>
-	import { RainbowButton } from "$lib/components/magic/rainbow-button";
+  import { RainbowButton } from "#lib/components/magic/rainbow-button/index.ts";
 </script>
 
 <RainbowButton variant="outline">Get Unlimited Access</RainbowButton>
@@ -42,7 +42,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/rainbow-button
 
 ## Usage
 
-Import `RainbowButton` from `$lib/components/magic/rainbow-button` and pass the props you need for your use case.
+Import `RainbowButton` from `#lib/components/magic/rainbow-button/index.ts` and pass the props you need for your use case.
 
 If the component depends on global CSS, add the following styles:
 

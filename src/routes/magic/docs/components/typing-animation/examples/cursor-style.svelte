@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TypingAnimation } from "$lib/components/magic/typing-animation";
+	import { TypingAnimation } from "#lib/components/magic/typing-animation/index.js";
 </script>
 
 <div class="flex-1 space-y-8">

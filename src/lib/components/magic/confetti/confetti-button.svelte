@@ -3,7 +3,7 @@
 	import type { ConfettiOptions } from "@neoconfetti/svelte";
 	import type { Snippet } from "svelte";
 	import type { HTMLButtonAttributes } from "svelte/elements";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 
 	interface ConfettiButtonProps extends HTMLButtonAttributes {
 		/** Confetti configuration options */

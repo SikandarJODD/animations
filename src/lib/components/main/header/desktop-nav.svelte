@@ -1,9 +1,9 @@
 <script lang="ts">
-	import * as NavigationMenu from "$lib/components/ui/navigation-menu/index";
+	import * as NavigationMenu from "#lib/components/ui/navigation-menu/index.js";
 	import { ArrowUpRightIcon, PackageIcon } from "@lucide/svelte";
 	import LinkItem from "./link-item.svelte";
 	import { navs, projectItems, withUtm } from "./nav-links";
-	import Github from "$icons/github.svelte";
+	import Github from "#lib/components/icons/github.svelte";
 </script>
 
 <NavigationMenu.Root class="hidden md:flex">

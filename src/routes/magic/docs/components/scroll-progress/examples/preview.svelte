@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { ScrollProgress } from "$lib/components/magic/scroll-progress";
+	import { ScrollProgress } from "#lib/components/magic/scroll-progress/index.js";
 </script>
 
 <div class="z-10 rounded-lg p-4">

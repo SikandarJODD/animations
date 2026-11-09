@@ -5,12 +5,12 @@
 		getFancyPrevNext,
 		getPrevNext as getMagicPrevNext,
 		getSpellPrevNext,
-	} from "$lib/components/docs/registry";
-	import { Button } from "$lib/components/ui/button";
-	import * as ButtonGroup from "$lib/components/ui/button-group";
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
-	import * as Kbd from "$lib/components/ui/kbd";
-	import * as Tooltip from "$lib/components/ui/tooltip";
+	} from "#lib/components/docs/registry/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as ButtonGroup from "#lib/components/ui/button-group/index.js";
+	import * as DropdownMenu from "#lib/components/ui/dropdown-menu/index.js";
+	import * as Kbd from "#lib/components/ui/kbd/index.js";
+	import * as Tooltip from "#lib/components/ui/tooltip/index.js";
 	import {
 		OpenIn,
 		OpenInContent,
@@ -19,9 +19,9 @@
 		OpenInClaude,
 		OpenInScira,
 		OpenInT3,
-	} from "$lib/components/ui/open-in-chat";
-	import { CopyMarkdown } from "$lib/components/ui/copy-markdown";
-	import MarkdownIcon from "$lib/components/icons/markdown.svelte";
+	} from "#lib/components/ui/open-in-chat/index.js";
+	import { CopyMarkdown } from "#lib/components/ui/copy-markdown/index.js";
+	import MarkdownIcon from "#lib/components/icons/markdown.svelte";
 	import { ChevronDown, ChevronLeft, ChevronRight, ExternalLink } from "@lucide/svelte";
 
 	type NavLink = {

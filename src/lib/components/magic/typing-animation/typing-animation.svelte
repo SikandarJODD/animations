@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion, type MotionProps, inView } from "motion-sv";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 	import { watch } from "runed";
 
 	interface TypingAnimationProps extends MotionProps {

@@ -1,14 +1,18 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { H1, H2, Paragraph, H3, CodeSpan } from "$lib/components/docs/markdown/index";
-	import SingleCodeFilename from "$lib/components/ui/code/single-code-filename.svelte";
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
-	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
-	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
-	import APITable from "$lib/components/docs/base/APITable.svelte";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import { H1, H2, Paragraph, H3, CodeSpan } from "#lib/components/docs/markdown/index.js";
+	import SingleCodeFilename from "#lib/components/ui/code/single-code-filename.svelte";
+	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
+	import InstallComponent from "#lib/components/docs/base/InstallComponent.svelte";
+	import PackageBadges from "#lib/components/docs/base/PackageBadges.svelte";
+	import APITable from "#lib/components/docs/base/APITable.svelte";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import { MetaTags } from "svelte-meta-tags";
-	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
+	import {
+		buildSpellKeywords,
+		SPELL_SOCIAL_IMAGE,
+		SPELL_TITLE_TEMPLATE,
+	} from "#lib/seo/spell.ts";
 
 	import { apiRouteCode, data } from "./data";
 	let PreviewComp = $derived(data.preview);

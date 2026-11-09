@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { WordsStagger } from "$lib/components/spell/words-stagger";
+	import { WordsStagger } from "#lib/components/spell/words-stagger/index.js";
 </script>
 
 <WordsStagger class="text-2xl tracking-tight md:text-3xl ">

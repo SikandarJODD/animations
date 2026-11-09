@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BlurReveal } from "$lib/components/spell/blur-reveal";
+	import { BlurReveal } from "#lib/components/spell/blur-reveal/index.js";
 </script>
 
 <div class="flex flex-col gap-8 *:flex-col">

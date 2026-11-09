@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AuroraText } from "$lib/components/magic/aurora-text";
+	import { AuroraText } from "#lib/components/magic/aurora-text/index.js";
 </script>
 
 <h1 class="font-figtree text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">

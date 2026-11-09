@@ -6,7 +6,7 @@ Starter docs for Pixel Trail.
 
 ```svelte
 <script lang="ts">
-  import { PixelTrail } from "$lib/components/fancy/pixel-trail";
+  import { PixelTrail } from "#lib/components/fancy/pixel-trail/index.ts";
 </script>
 
 <PixelTrail />

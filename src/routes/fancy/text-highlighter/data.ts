@@ -1,8 +1,8 @@
-import IndexTsRaw from "$lib/components/fancy/text-highlighter/index.ts?raw";
-import TextHighlighterRaw from "$lib/components/fancy/text-highlighter/text-highlighter.svelte?raw";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import IndexTsRaw from "#lib/components/fancy/text-highlighter/index.ts?raw";
+import TextHighlighterRaw from "#lib/components/fancy/text-highlighter/text-highlighter.svelte?raw";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import DirectionBasedHighlightExample from "./examples/direction-based-highlight-example.svelte";
 import DirectionBasedHighlightExampleRaw from "./examples/direction-based-highlight-example.svelte?raw";
 import HoverExample from "./examples/hover.svelte";
@@ -130,7 +130,8 @@ export const data: ComponentDoc = {
 					name: "triggerType",
 					type: '"hover" | "ref" | "inView" | "auto"',
 					default: '"inView"',
-					description: "Controls whether the highlight responds to hover, viewport, binding, or immediately.",
+					description:
+						"Controls whether the highlight responds to hover, viewport, binding, or immediately.",
 				},
 				{
 					name: "transition",
@@ -140,7 +141,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "useInViewOptions",
-					type: "{ once?: boolean; amount?: \"some\" | \"all\" | number; margin?: string; root?: HTMLElement | Document }",
+					type: '{ once?: boolean; amount?: "some" | "all" | number; margin?: string; root?: HTMLElement | Document }',
 					default: "{ once: true, amount: 0.1 }",
 					description: "Observer options used when `triggerType` is `inView`.",
 				},
@@ -160,7 +161,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Classes applied to both the wrapper element and animated inline span.",
+					description:
+						"Classes applied to both the wrapper element and animated inline span.",
 				},
 			],
 		},

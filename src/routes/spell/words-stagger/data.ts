@@ -1,8 +1,8 @@
-import WordsStaggerRaw from "$lib/components/spell/words-stagger/words-stagger.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/words-stagger/index.ts?raw";
-import SharedTextUtilsRaw from "$lib/utils/text-utils.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import WordsStaggerRaw from "#lib/components/spell/words-stagger/words-stagger.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/words-stagger/index.ts?raw";
+import SharedTextUtilsRaw from "#lib/utils/text-utils.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import WordsStaggerSpeedExample from "./examples/words-stagger-speed-example.svelte";

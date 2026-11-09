@@ -6,15 +6,19 @@
 		Paragraph,
 		Strong,
 		UnorderedList,
-	} from "$lib/components/docs/markdown";
-	import * as Icons from "$lib/components/icons";
-	import { StripedPattern } from "$lib/components/magic/striped-pattern";
-	import { Avatar, AvatarFallback, AvatarImage } from "$lib/components/ui/avatar";
-	import { Button } from "$lib/components/ui/button";
-	import * as Breadcrumb from "$lib/components/ui/breadcrumb";
+	} from "#lib/components/docs/markdown/index.js";
+	import * as Icons from "#lib/components/icons/index.js";
+	import { StripedPattern } from "#lib/components/magic/striped-pattern/index.js";
+	import { Avatar, AvatarFallback, AvatarImage } from "#lib/components/ui/avatar/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Breadcrumb from "#lib/components/ui/breadcrumb/index.js";
 	import { page } from "$app/state";
 	import { MetaTags } from "svelte-meta-tags";
-	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
+	import {
+		buildSpellKeywords,
+		SPELL_SOCIAL_IMAGE,
+		SPELL_TITLE_TEMPLATE,
+	} from "#lib/seo/spell.ts";
 
 	const creator = {
 		name: "tom",

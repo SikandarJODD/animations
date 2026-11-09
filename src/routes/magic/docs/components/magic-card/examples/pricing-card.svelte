@@ -1,6 +1,6 @@
 <script>
-	import { MagicCard } from "$lib/components/magic/magic-card";
-	import { Button } from "$lib/components/ui/button";
+	import { MagicCard } from "#lib/components/magic/magic-card/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 	import { mode } from "mode-watcher";
 </script>
 

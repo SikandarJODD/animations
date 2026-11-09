@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 
 	interface NoiseTextureProps extends SVGAttributes<SVGSVGElement> {
 		class?: string;

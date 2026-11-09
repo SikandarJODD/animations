@@ -1,7 +1,7 @@
-import BarSpinnerRaw from "$lib/components/spell/bar-spinner/bar-spinner.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/bar-spinner/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import BarSpinnerRaw from "#lib/components/spell/bar-spinner/bar-spinner.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/bar-spinner/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import SizeAndColorExample from "./examples/size-and-color-example.svelte";

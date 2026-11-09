@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { Ripple } from "$lib/components/magic/ripple";
+	import { Ripple } from "#lib/components/magic/ripple/index.js";
 </script>
 
 <div

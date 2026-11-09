@@ -1,8 +1,8 @@
-import IndexTsRaw from "$lib/components/magic/sparkles-text/index.ts?raw";
-import SparklesTextSvelteRaw from "$lib/components/magic/sparkles-text/sparkles-text.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/sparkles-text/index.ts?raw";
+import SparklesTextSvelteRaw from "#lib/components/magic/sparkles-text/sparkles-text.svelte?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 

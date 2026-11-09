@@ -1,8 +1,8 @@
-import IndexTsRaw from "$lib/components/fancy/vertical-cut-reveal/index.ts?raw";
-import VerticalCutRevealRaw from "$lib/components/fancy/vertical-cut-reveal/vertical-cut-reveal.svelte?raw";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import IndexTsRaw from "#lib/components/fancy/vertical-cut-reveal/index.ts?raw";
+import VerticalCutRevealRaw from "#lib/components/fancy/vertical-cut-reveal/vertical-cut-reveal.svelte?raw";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import RandomLetterExample from "./examples/random-letter-example.svelte";
@@ -152,7 +152,8 @@ export const data: ComponentDoc = {
 					name: "reverse",
 					type: "boolean",
 					default: "false",
-					description: "Reverses the reveal direction so units enter from above instead of below.",
+					description:
+						"Reverses the reveal direction so units enter from above instead of below.",
 				},
 				{
 					name: "transition",
@@ -164,7 +165,8 @@ export const data: ComponentDoc = {
 					name: "splitBy",
 					type: '"words" | "characters" | "lines" | string',
 					default: '"words"',
-					description: "Controls whether the text is split by words, characters, lines, or a custom delimiter.",
+					description:
+						"Controls whether the text is split by words, characters, lines, or a custom delimiter.",
 				},
 				{
 					name: "staggerDuration",
@@ -212,7 +214,8 @@ export const data: ComponentDoc = {
 					name: "autoStart",
 					type: "boolean",
 					default: "true",
-					description: "Starts the reveal automatically instead of waiting for `startAnimation()`.",
+					description:
+						"Starts the reveal automatically instead of waiting for `startAnimation()`.",
 				},
 				{
 					name: "class",

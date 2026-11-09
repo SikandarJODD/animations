@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { VideoText } from "$lib/components/magic/video-text";
+	import { VideoText } from "#lib/components/magic/video-text/index.js";
 </script>
 
 <div class="relative h-50 w-full overflow-hidden">

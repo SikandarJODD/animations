@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements";
 
-	import { useDimensions } from "$lib/hooks/use-dimension.svelte";
-	import { cn } from "$lib/utils";
+	import { useDimensions } from "#lib/hooks/use-dimension.svelte.ts";
+	import { cn } from "#lib/utils.ts";
 
 	type BlurStrength = "light" | "medium" | "heavy";
 

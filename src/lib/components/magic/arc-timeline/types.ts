@@ -1,6 +1,6 @@
 import type { Snippet } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
-import type { WithElementRef, WithoutChildren } from "$lib/utils";
+import type { WithElementRef, WithoutChildren } from "#lib/utils.ts";
 
 export type ArcTimelineRenderable = Snippet | string | number | boolean | null | undefined;
 

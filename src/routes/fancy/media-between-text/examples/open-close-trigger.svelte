@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { MediaBetweenText } from "$lib/components/fancy/media-between-text";
-	import { Button } from "$lib/components/ui/button";
+	import { MediaBetweenText } from "#lib/components/fancy/media-between-text/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 
 	let isAnimating = $state(false);
 	let toggleAnimation = () => {

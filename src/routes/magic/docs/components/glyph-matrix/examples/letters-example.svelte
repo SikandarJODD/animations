@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { GlyphMatrix } from "$lib/components/magic/glyph-matrix";
+	import { GlyphMatrix } from "#lib/components/magic/glyph-matrix/index.js";
 	import { mode } from "mode-watcher";
-    // Visit https://www.fffuel.co/cccolor/ for colors
+	// Visit https://www.fffuel.co/cccolor/ for colors
 </script>
 
 <div class="bg-background relative h-100 w-full overflow-hidden rounded-lg">

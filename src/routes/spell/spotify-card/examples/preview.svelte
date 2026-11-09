@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SpotifyCard } from "$lib/components/spell/spotify-card";
+	import { SpotifyCard } from "#lib/components/spell/spotify-card/index.js";
 </script>
 
 <SpotifyCard

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge } from "$lib/components/spell/badge";
+	import { Badge } from "#lib/components/spell/badge/index.js";
 </script>
 
 <div class="flex flex-wrap gap-2">

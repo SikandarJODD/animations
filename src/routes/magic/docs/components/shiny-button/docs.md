@@ -22,7 +22,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shiny-button.j
 
 ```svelte
 <script lang="ts">
-	import { ShinyButton } from "$lib/components/magic/shiny-button";
+  import { ShinyButton } from "#lib/components/magic/shiny-button/index.ts";
 </script>
 
 <ShinyButton>Shiny Button</ShinyButton>
@@ -34,7 +34,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shiny-button.j
 
 ```svelte
 <script lang="ts">
-	import { ShinyButton } from "$lib/components/magic/shiny-button";
+  import { ShinyButton } from "#lib/components/magic/shiny-button/index.ts";
 </script>
 
 <ShinyButton>Shiny Button</ShinyButton>
@@ -42,12 +42,12 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shiny-button.j
 
 ## Usage
 
-Import `ShinyButton` from `$lib/components/magic/shiny-button` and pass the props you need for your use case.
+Import `ShinyButton` from `#lib/components/magic/shiny-button/index.ts` and pass the props you need for your use case.
 
 ## Props
 
 A component for Shiny Button.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
+| Prop    | Type     | Default | Description                     |
+| ------- | -------- | ------- | ------------------------------- |
+| `class` | `string` | `""`    | Additional CSS classes to apply |

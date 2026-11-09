@@ -23,7 +23,7 @@
 		onValueChange,
 		class: backgroundClass,
 		transition,
-		enableHover = false
+		enableHover = false,
 	}: AnimatedBackgroundProps = $props();
 
 	let activeId = $state<string | null>(null);
@@ -62,7 +62,7 @@
 		},
 		layoutId: `background-${uniqueId}`,
 		layout,
-		setActiveId
+		setActiveId,
 	});
 </script>
 

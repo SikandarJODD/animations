@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AnimatedPathText } from "$lib/components/fancy/text-along-path";
+	import { AnimatedPathText } from "#lib/components/fancy/text-along-path/index.js";
 
 	const paths = [
 		"M1 248C214 -47 582 158 679 -39",

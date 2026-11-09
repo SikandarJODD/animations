@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ScrambleHover } from "$lib/components/fancy/scramble-hover";
+	import { ScrambleHover } from "#lib/components/fancy/scramble-hover/index.js";
 	import { motion } from "motion-sv";
 	const models = [
 		"Llama 3.1 405B Instruct Turbo",

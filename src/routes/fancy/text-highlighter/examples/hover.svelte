@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TextHighlighter } from "$lib/components/fancy/text-highlighter";
+	import { TextHighlighter } from "#lib/components/fancy/text-highlighter/index.js";
 	import type { Transition } from "motion-sv";
 
 	const highlightColor = "#BBC2E2";

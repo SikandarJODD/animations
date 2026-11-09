@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements";
-	import { cn, type WithElementRef } from "$lib/utils";
+	import { cn, type WithElementRef } from "#lib/utils.ts";
 
 	let {
 		class: className,

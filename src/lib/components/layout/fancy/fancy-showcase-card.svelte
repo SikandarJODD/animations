@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-	import * as Frame from "$lib/components/ui/frame";
-	import { Button } from "$lib/components/ui/button";
-	import { cn } from "$lib/utils";
+	import * as Frame from "#lib/components/ui/frame/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import { cn } from "#lib/utils.ts";
 	import { mode } from "mode-watcher";
 
 	interface FancyShowcaseCardProps {

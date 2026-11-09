@@ -1,6 +1,6 @@
 ﻿<script lang="ts">
-	import { Confetti } from "$lib/components/magic/confetti";
-	import { Button } from "$lib/components/ui/button";
+	import { Confetti } from "#lib/components/magic/confetti/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 	let active = $state(true);
 
 	let fire = () => {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PerspectiveBook } from "$lib/components/spell/perspective-book";
+	import { PerspectiveBook } from "#lib/components/spell/perspective-book/index.js";
 	import Code2Icon from "@lucide/svelte/icons/code-2";
 </script>
 

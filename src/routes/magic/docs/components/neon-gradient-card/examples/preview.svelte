@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { NeonGradientCard } from "$lib/components/magic/neon-gradient-card";
+	import { NeonGradientCard } from "#lib/components/magic/neon-gradient-card/index.js";
 </script>
 
 <NeonGradientCard class="my-32 max-w-sm items-center justify-center text-center">

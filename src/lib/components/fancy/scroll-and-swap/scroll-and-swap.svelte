@@ -3,7 +3,7 @@
 	import type { MotionValue, SpringOptions } from "motion-sv";
 	import { untrack, type Snippet } from "svelte";
 	import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 
 	type ElementType = keyof SvelteHTMLElements;
 

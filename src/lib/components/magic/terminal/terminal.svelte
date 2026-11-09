@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, setContext } from "svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { Snippet } from "svelte";
 	import { watch } from "runed";
 

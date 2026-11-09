@@ -1,9 +1,9 @@
-import RandomLetterSwapPingPongRaw from "$lib/components/fancy/random-letter-swap-ping-pong/random-letter-swap-ping-pong.svelte?raw";
-import IndexPingPongRaw from "$lib/components/fancy/random-letter-swap-ping-pong/index.ts?raw";
-import IndexTsRaw from "$lib/components/fancy/random-letter-swap/index.ts?raw";
-import RandomLetterSwapRaw from "$lib/components/fancy/random-letter-swap/random-letter-swap.svelte?raw";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import RandomLetterSwapPingPongRaw from "#lib/components/fancy/random-letter-swap-ping-pong/random-letter-swap-ping-pong.svelte?raw";
+import IndexPingPongRaw from "#lib/components/fancy/random-letter-swap-ping-pong/index.ts?raw";
+import IndexTsRaw from "#lib/components/fancy/random-letter-swap/index.ts?raw";
+import RandomLetterSwapRaw from "#lib/components/fancy/random-letter-swap/random-letter-swap.svelte?raw";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
@@ -78,13 +78,15 @@ export const data: ComponentDoc = {
 					name: "label",
 					type: "string",
 					required: true,
-					description: "Text string split into characters and shuffled into a random reveal order.",
+					description:
+						"Text string split into characters and shuffled into a random reveal order.",
 				},
 				{
 					name: "reverse",
 					type: "boolean",
 					default: "true",
-					description: "Reverses the vertical swap direction for the entering characters.",
+					description:
+						"Reverses the vertical swap direction for the entering characters.",
 				},
 				{
 					name: "transition",
@@ -96,7 +98,8 @@ export const data: ComponentDoc = {
 					name: "staggerDuration",
 					type: "number",
 					default: "0.02",
-					description: "Delay in seconds between characters in the shuffled animation order.",
+					description:
+						"Delay in seconds between characters in the shuffled animation order.",
 				},
 				{
 					name: "class",

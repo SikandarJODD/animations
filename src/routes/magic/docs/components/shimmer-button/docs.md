@@ -22,15 +22,15 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shimmer-button
 
 ```svelte
 <script lang="ts">
-	import { ShimmerButton } from "$lib/components/magic/shimmer-button";
+  import { ShimmerButton } from "#lib/components/magic/shimmer-button/index.ts";
 </script>
 
 <ShimmerButton class="shadow-2xl">
-	<span
-		class="text-center text-sm leading-none font-medium tracking-tight whitespace-pre-wrap text-white lg:text-lg dark:from-white dark:to-slate-900/10"
-	>
-		Shimmer Button
-	</span>
+  <span
+    class="text-center text-sm leading-none font-medium tracking-tight whitespace-pre-wrap text-white lg:text-lg dark:from-white dark:to-slate-900/10"
+  >
+    Shimmer Button
+  </span>
 </ShimmerButton>
 ```
 
@@ -40,21 +40,21 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shimmer-button
 
 ```svelte
 <script lang="ts">
-	import { ShimmerButton } from "$lib/components/magic/shimmer-button";
+  import { ShimmerButton } from "#lib/components/magic/shimmer-button/index.ts";
 </script>
 
 <ShimmerButton class="shadow-2xl">
-	<span
-		class="text-center text-sm leading-none font-medium tracking-tight whitespace-pre-wrap text-white lg:text-lg dark:from-white dark:to-slate-900/10"
-	>
-		Shimmer Button
-	</span>
+  <span
+    class="text-center text-sm leading-none font-medium tracking-tight whitespace-pre-wrap text-white lg:text-lg dark:from-white dark:to-slate-900/10"
+  >
+    Shimmer Button
+  </span>
 </ShimmerButton>
 ```
 
 ## Usage
 
-Import `ShimmerButton` from `$lib/components/magic/shimmer-button` and pass the props you need for your use case.
+Import `ShimmerButton` from `#lib/components/magic/shimmer-button/index.ts` and pass the props you need for your use case.
 
 If the component depends on global CSS, add the following styles:
 
@@ -92,11 +92,11 @@ If the component depends on global CSS, add the following styles:
 
 A component for Shimmer Button.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `shimmerColor` | `string` | `"#ffffff"` | Color of the shimmer effect |
-| `shimmerSize` | `string` | `"0.05em"` | Size of the shimmer effect |
-| `shimmerDuration` | `string` | `"3s"` | Duration of the shimmer animation |
-| `borderRadius` | `string` | `"100px"` | Border radius of the button |
-| `background` | `string` | `"rgba(0, 0, 0, 1)"` | Background color of the button |
+| Prop              | Type     | Default              | Description                       |
+| ----------------- | -------- | -------------------- | --------------------------------- |
+| `class`           | `string` | `""`                 | Additional CSS classes to apply   |
+| `shimmerColor`    | `string` | `"#ffffff"`          | Color of the shimmer effect       |
+| `shimmerSize`     | `string` | `"0.05em"`           | Size of the shimmer effect        |
+| `shimmerDuration` | `string` | `"3s"`               | Duration of the shimmer animation |
+| `borderRadius`    | `string` | `"100px"`            | Border radius of the button       |
+| `background`      | `string` | `"rgba(0, 0, 0, 1)"` | Background color of the button    |

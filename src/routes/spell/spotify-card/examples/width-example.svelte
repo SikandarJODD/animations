@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SpotifyCard } from "$lib/components/spell/spotify-card";
+	import { SpotifyCard } from "#lib/components/spell/spotify-card/index.js";
 </script>
 
 <div class="bg-card mx-auto flex w-full max-w-2xl flex-col gap-4 rounded-3xl border p-6 shadow-sm">

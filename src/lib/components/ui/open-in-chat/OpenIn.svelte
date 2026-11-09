@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+	import * as DropdownMenu from "#lib/components/ui/dropdown-menu/index.js";
 	import { untrack } from "svelte";
 	import { createOpenInContext } from "./open-in-context.svelte.js";
 	import { watch } from "runed";

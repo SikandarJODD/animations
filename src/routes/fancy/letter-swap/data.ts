@@ -1,12 +1,12 @@
-import LetterSwapRaw from "$lib/components/fancy/letter-swap/letter-swap.svelte?raw";
-import LetterSwapPingPongRaw from "$lib/components/fancy/letter-swap-ping-pong/letter-swap-ping-pong.svelte?raw";
-import IndexTsPingPongRaw from "$lib/components/fancy/letter-swap-ping-pong/index.ts?raw";
-import IndexTsRaw from "$lib/components/fancy/letter-swap/index.ts?raw";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import LetterSwapRaw from "#lib/components/fancy/letter-swap/letter-swap.svelte?raw";
+import LetterSwapPingPongRaw from "#lib/components/fancy/letter-swap-ping-pong/letter-swap-ping-pong.svelte?raw";
+import IndexTsPingPongRaw from "#lib/components/fancy/letter-swap-ping-pong/index.ts?raw";
+import IndexTsRaw from "#lib/components/fancy/letter-swap/index.ts?raw";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.ts";
 import StaggerFromExample from "./examples/stagger-from-example.svelte";
 import StaggerFromExampleRaw from "./examples/stagger-from-example.svelte?raw";
 import LineSwapExample from "./examples/line-swap-example.svelte";
@@ -102,7 +102,8 @@ export const data: ComponentDoc = {
 					name: "reverse",
 					type: "boolean",
 					default: "true",
-					description: "Reverses the vertical swap direction for the entering characters.",
+					description:
+						"Reverses the vertical swap direction for the entering characters.",
 				},
 				{
 					name: "transition",

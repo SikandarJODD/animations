@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import FlickeringGrid from "$lib/components/magic/flickering-grid/flickering-grid.svelte";
+	import FlickeringGrid from "#lib/components/magic/flickering-grid/flickering-grid.svelte";
 </script>
 
 <div class="bg-background relative h-125 w-full overflow-hidden rounded-lg border md:max-w-xl">

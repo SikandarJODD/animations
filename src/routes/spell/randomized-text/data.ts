@@ -1,8 +1,8 @@
-import RandomizedTextRaw from "$lib/components/spell/randomized-text/randomized-text.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/randomized-text/index.ts?raw";
-import SharedTextUtilsRaw from "$lib/utils/text-utils.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import RandomizedTextRaw from "#lib/components/spell/randomized-text/randomized-text.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/randomized-text/index.ts?raw";
+import SharedTextUtilsRaw from "#lib/utils/text-utils.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import CharacterSplitExample from "./examples/character-split-example.svelte";

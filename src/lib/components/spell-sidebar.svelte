@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { spellUISidebarGroups } from "$lib/components/docs/registry/spell_ui";
-	import Badge from "$lib/components/ui/badge/badge.svelte";
-	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import { spellUISidebarGroups } from "#lib/components/docs/registry/spell_ui.ts";
+	import Badge from "#lib/components/ui/badge/badge.svelte";
+	import { ScrollArea } from "#lib/components/ui/scroll-area/index.js";
+	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
 	import { watch } from "runed";
 	import type { ComponentProps } from "svelte";
 	import BhideSvelteCard from "./main/bhide-svelte-card.svelte";

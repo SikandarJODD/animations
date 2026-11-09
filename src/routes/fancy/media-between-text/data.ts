@@ -1,10 +1,10 @@
-import MediaBetweenTextRaw from "$lib/components/fancy/media-between-text/media-between-text.svelte?raw";
-import IndexTsRaw from "$lib/components/fancy/media-between-text/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import MediaBetweenTextRaw from "#lib/components/fancy/media-between-text/media-between-text.svelte?raw";
+import IndexTsRaw from "#lib/components/fancy/media-between-text/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.ts";
 import ScrollDemo from "./examples/scroll-demo.svelte";
 import ScrollDemoRaw from "./examples/scroll-demo.svelte?raw";
 import OpenCloseTrigger from "./examples/open-close-trigger.svelte";
@@ -230,7 +230,7 @@ export const data: ComponentDoc = {
 					type: "boolean",
 					default: "false",
 					description:
-						"Bindable flag used with `triggerType=\"ref\"` to programmatically open or close the media reveal.",
+						'Bindable flag used with `triggerType="ref"` to programmatically open or close the media reveal.',
 				},
 			],
 		},

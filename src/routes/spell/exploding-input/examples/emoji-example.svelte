@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ExplodingInput } from "$lib/components/spell/exploding-input";
+	import { ExplodingInput } from "#lib/components/spell/exploding-input/index.js";
 
 	const emojis = [
 		"\u{1F929}",

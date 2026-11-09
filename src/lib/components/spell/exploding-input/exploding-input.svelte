@@ -1,6 +1,6 @@
 <script lang="ts" generics="T">
-	import { browser } from "$app/environment";
-	import { cn, type WithElementRef, type WithoutChildren } from "$lib/utils";
+	import { browser } from "$app/env";
+	import { cn, type WithElementRef, type WithoutChildren } from "#lib/utils.ts";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
 
@@ -57,21 +57,9 @@
 		HTMLDivElement
 	>;
 
-	const DEFAULT_DIRECTION: Required<DirectionConfig> = {
-		horizontal: "center",
-		vertical: "top",
-	};
-
-	const DEFAULT_SCALE: Required<ScaleConfig> = {
-		value: 1,
-		randomize: false,
-		randomVariation: 0,
-	};
-
-	const DEFAULT_ROTATION: Required<RotationConfig> = {
-		value: 0,
-		animate: false,
-	};
+	const DEFAULT_DIRECTION: Required<DirectionConfig> = { horizontal: "center", vertical: "top" };
+	const DEFAULT_SCALE: Required<ScaleConfig> = { value: 1, randomize: false, randomVariation: 0 };
+	const DEFAULT_ROTATION: Required<RotationConfig> = { value: 0, animate: false };
 
 	let {
 		ref = $bindable(null),
@@ -233,6 +221,7 @@
 
 		const baseScale = normalizedScale.value;
 		const variation = (normalizedScale.randomVariation / 100) * baseScale;
+
 		const particleScale =
 			normalizedScale.randomize && normalizedScale.randomVariation > 0
 				? randBetween(baseScale - variation, baseScale + variation)

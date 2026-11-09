@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MediaBetweenText } from "$lib/components/fancy/media-between-text";
+	import { MediaBetweenText } from "#lib/components/fancy/media-between-text/index.js";
 </script>
 
 <MediaBetweenText

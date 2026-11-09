@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BorderBeam } from "$lib/components/magic/border-beam";
+	import { BorderBeam } from "#lib/components/magic/border-beam/index.js";
 </script>
 
 <div class="flex min-h-80 items-center justify-center px-6">

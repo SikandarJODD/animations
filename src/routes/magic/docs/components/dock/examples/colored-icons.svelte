@@ -1,6 +1,13 @@
 <script lang="ts">
-	import { Facebook, Instagram, LinkedIn, Twitch, Twitter, YouTube } from "$lib/components/icons";
-	import { Dock, DockIcon } from "$lib/components/magic/dock";
+	import {
+		Facebook,
+		Instagram,
+		LinkedIn,
+		Twitch,
+		Twitter,
+		YouTube,
+	} from "#lib/components/icons/index.js";
+	import { Dock, DockIcon } from "#lib/components/magic/dock/index.js";
 </script>
 
 <div class="relative flex w-full items-center justify-center">

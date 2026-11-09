@@ -1,9 +1,9 @@
-import AnimatedGradientSvgSvelteRaw from "$lib/components/fancy/animated-gradient-svg/animated-gradient-svg.svelte?raw";
-import IndexTsRaw from "$lib/components/fancy/animated-gradient-svg/index.ts?raw";
+import AnimatedGradientSvgSvelteRaw from "#lib/components/fancy/animated-gradient-svg/animated-gradient-svg.svelte?raw";
+import IndexTsRaw from "#lib/components/fancy/animated-gradient-svg/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 
@@ -78,7 +78,8 @@ export const data: ComponentDoc = {
 					name: "colors",
 					type: "string[]",
 					required: true,
-					description: "List of blob colors used to generate the animated gradient field.",
+					description:
+						"List of blob colors used to generate the animated gradient field.",
 				},
 				{
 					name: "speed",

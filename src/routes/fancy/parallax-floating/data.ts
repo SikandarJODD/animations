@@ -1,12 +1,12 @@
-import FloatingContextSvelteTsRaw from "$lib/components/fancy/parallax-floating/floating-context.svelte.ts?raw";
-import FloatingElementSvelteRaw from "$lib/components/fancy/parallax-floating/floating-element.svelte?raw";
-import FloatingSvelteRaw from "$lib/components/fancy/parallax-floating/floating.svelte?raw";
-import IndexTsRaw from "$lib/components/fancy/parallax-floating/index.ts?raw";
-import UseMousePositionSvelteTsRaw from "$lib/hooks/use-mouse-position.svelte.ts?raw";
+import FloatingContextSvelteTsRaw from "#lib/components/fancy/parallax-floating/floating-context.svelte.ts?raw";
+import FloatingElementSvelteRaw from "#lib/components/fancy/parallax-floating/floating-element.svelte?raw";
+import FloatingSvelteRaw from "#lib/components/fancy/parallax-floating/floating.svelte?raw";
+import IndexTsRaw from "#lib/components/fancy/parallax-floating/index.ts?raw";
+import UseMousePositionSvelteTsRaw from "#lib/hooks/use-mouse-position.svelte.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import BasicThreeLayer from "./examples/basic-three-layer.svelte";
 import BasicThreeLayerRaw from "./examples/basic-three-layer.svelte?raw";
 import DirectionComparison from "./examples/direction-comparison.svelte";
@@ -23,7 +23,8 @@ import SensitivityComparisonRaw from "./examples/sensitivity-comparison.svelte?r
 export const meta: ComponentMeta = {
 	id: "parallax-floating",
 	title: "Parallax Floating",
-	description: "Create layered parallax movement that responds smoothly to pointer and touch input.",
+	description:
+		"Create layered parallax movement that responds smoothly to pointer and touch input.",
 	category: "fancy",
 };
 
@@ -49,7 +50,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Sensitivity Comparison",
-		description: "The same element and depth respond differently as the root sensitivity changes.",
+		description:
+			"The same element and depth respond differently as the root sensitivity changes.",
 		preview: SensitivityComparison,
 		code: {
 			filename: "sensitivity-comparison.svelte",
@@ -73,7 +75,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Mixed Content",
-		description: "Place images, inline SVGs, and styled text at independent depths in one scene.",
+		description:
+			"Place images, inline SVGs, and styled text at independent depths in one scene.",
 		preview: MixedContent,
 		code: {
 			filename: "mixed-content.svelte",
@@ -85,7 +88,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Grouped Elements",
-		description: "Group related children under one FloatingElement so they share a transform and depth.",
+		description:
+			"Group related children under one FloatingElement so they share a transform and depth.",
 		preview: GroupedElements,
 		code: {
 			filename: "grouped-elements.svelte",
@@ -152,7 +156,7 @@ export const data: ComponentDoc = {
 		code: {
 			filename: "usage.svelte",
 			filecode: `<script lang="ts">
-	import { Floating, FloatingElement } from "$lib/components/fancy/parallax-floating";
+	import { Floating, FloatingElement } from "#lib/components/fancy/parallax-floating/index.ts";
 </script>
 
 <Floating>
@@ -186,13 +190,15 @@ export const data: ComponentDoc = {
 					name: "sensitivity",
 					type: "number",
 					default: "1",
-					description: "Scales the distance each element moves in response to pointer input.",
+					description:
+						"Scales the distance each element moves in response to pointer input.",
 				},
 				{
 					name: "easingFactor",
 					type: "number",
 					default: "0.05",
-					description: "Controls how quickly elements interpolate toward their target position.",
+					description:
+						"Controls how quickly elements interpolate toward their target position.",
 				},
 				{
 					name: "class",
@@ -216,7 +222,8 @@ export const data: ComponentDoc = {
 					name: "depth",
 					type: "number",
 					default: "1",
-					description: "Multiplies the layer's movement to create near and far parallax depth.",
+					description:
+						"Multiplies the layer's movement to create near and far parallax depth.",
 				},
 				{
 					name: "class",

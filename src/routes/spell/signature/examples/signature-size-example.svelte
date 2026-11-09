@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Signature } from "$lib/components/spell/signature";
+	import { Signature } from "#lib/components/spell/signature/index.js";
 </script>
 
 <div class="flex flex-col items-center justify-center gap-4">

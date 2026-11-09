@@ -1,8 +1,8 @@
-import IndexTsRaw from "$lib/components/fancy/scramble-in/index.ts?raw";
-import ScrambleInRaw from "$lib/components/fancy/scramble-in/scramble-in.svelte?raw";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import IndexTsRaw from "#lib/components/fancy/scramble-in/index.ts?raw";
+import ScrambleInRaw from "#lib/components/fancy/scramble-in/scramble-in.svelte?raw";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import BindThisControlsExample from "./examples/bind-this-controls-example.svelte";
 import BindThisControlsExampleRaw from "./examples/bind-this-controls-example.svelte?raw";
 import DelayAndSpeedExample from "./examples/delay-and-speed-example.svelte";
@@ -136,7 +136,8 @@ export const data: ComponentDoc = {
 					name: "scrambledLetterCount",
 					type: "number",
 					default: "2",
-					description: "Maximum number of trailing scrambled characters shown during the reveal.",
+					description:
+						"Maximum number of trailing scrambled characters shown during the reveal.",
 				},
 				{
 					name: "characters",
@@ -148,7 +149,8 @@ export const data: ComponentDoc = {
 					name: "scrambledClass",
 					type: "string",
 					default: "undefined",
-					description: "Classes applied to the still-scrambled trailing portion of the text.",
+					description:
+						"Classes applied to the still-scrambled trailing portion of the text.",
 				},
 				{
 					name: "class",

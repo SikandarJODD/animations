@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { BlurFade } from "$lib/components/magic/blur-fade";
+	import { BlurFade } from "#lib/components/magic/blur-fade/index.js";
 
 	const images = Array.from({ length: 9 }, (_, i) => {
 		const isLandscape = i % 2 === 0;

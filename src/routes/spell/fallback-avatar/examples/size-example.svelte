@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FallbackAvatar } from "$lib/components/spell/fallback-avatar";
+	import { FallbackAvatar } from "#lib/components/spell/fallback-avatar/index.js";
 
 	const sizes = [20, 28, 36, 44] as const;
 </script>

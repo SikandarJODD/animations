@@ -1,5 +1,5 @@
 <script lang="ts" generics="T">
-	import { cn, type WithoutChildren } from "$lib/utils";
+	import { cn, type WithoutChildren } from "#lib/utils.ts";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
 

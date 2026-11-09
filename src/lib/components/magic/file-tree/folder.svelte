@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext } from "svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import { motion, AnimatePresence } from "motion-sv";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";

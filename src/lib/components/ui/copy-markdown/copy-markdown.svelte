@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, type ButtonSize } from "$lib/components/ui/button";
+	import { Button, type ButtonSize } from "#lib/components/ui/button/index.js";
 	import { Check, Copy } from "@lucide/svelte";
 	import { toast } from "svelte-sonner";
 

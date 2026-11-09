@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SlideUpText } from "$lib/components/spell/slide-up-text";
+	import { SlideUpText } from "#lib/components/spell/slide-up-text/index.js";
 </script>
 
 <div class="flex flex-col gap-8">

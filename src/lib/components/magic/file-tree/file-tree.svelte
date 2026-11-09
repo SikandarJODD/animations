@@ -9,7 +9,7 @@
 
 <script lang="ts">
 	import { setContext, getContext } from "svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
 

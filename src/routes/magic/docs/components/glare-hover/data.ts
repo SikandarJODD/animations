@@ -1,11 +1,11 @@
-import GlareHoverSvelteRaw from "$lib/components/magic/glare-hover/glare-hover.svelte?raw";
-import IndexTsRaw from "$lib/components/magic/glare-hover/index.ts?raw";
+import GlareHoverSvelteRaw from "#lib/components/magic/glare-hover/glare-hover.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/glare-hover/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.ts";
 import CtaExample from "./examples/cta-example.svelte";
 import CtaExampleRaw from "./examples/cta-example.svelte?raw";
 

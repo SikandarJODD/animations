@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import { useMotionGridContext } from "./use-motion-grid-context.svelte";
 	import type { MotionGridCellMotionProps, MotionGridCellsProps } from "./types";
 

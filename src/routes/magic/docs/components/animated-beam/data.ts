@@ -1,6 +1,6 @@
-﻿import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+﻿import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 
 // Preview
 import Preview from "./examples/preview.svelte";
@@ -10,12 +10,12 @@ import OpenaiIcon from "./examples/openai-icon.svelte?raw";
 import UserIcon from "./examples/user-icon.svelte?raw";
 
 // Main Component
-import AnimatedBeamRaw from "$lib/components/magic/animated-beam/animated-beam.svelte?raw";
-import Index from "$lib/components/magic/animated-beam/index.ts?raw";
-import Types from "$lib/components/magic/animated-beam/types.ts?raw";
-import UseGradientCoordinates from "$lib/components/magic/animated-beam/use-gradient-coordinates.svelte.ts?raw";
-import UsePathCalculator from "$lib/components/magic/animated-beam/use-path-calculator.svelte.ts?raw";
-import UseResizeObserver from "$lib/components/magic/animated-beam/use-resize-observer.svelte.ts?raw";
+import AnimatedBeamRaw from "#lib/components/magic/animated-beam/animated-beam.svelte?raw";
+import Index from "#lib/components/magic/animated-beam/index.ts?raw";
+import Types from "#lib/components/magic/animated-beam/types.ts?raw";
+import UseGradientCoordinates from "#lib/components/magic/animated-beam/use-gradient-coordinates.svelte.ts?raw";
+import UsePathCalculator from "#lib/components/magic/animated-beam/use-path-calculator.svelte.ts?raw";
+import UseResizeObserver from "#lib/components/magic/animated-beam/use-resize-observer.svelte.ts?raw";
 
 // Examples
 import AnimatedBeamWithCurvature from "./examples/animated-beam-with-curvature.svelte";

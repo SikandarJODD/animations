@@ -1,8 +1,8 @@
-import IndexTsRaw from "$lib/components/fancy/scramble-hover/index.ts?raw";
-import ScrambleHoverRaw from "$lib/components/fancy/scramble-hover/scramble-hover.svelte?raw";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import IndexTsRaw from "#lib/components/fancy/scramble-hover/index.ts?raw";
+import ScrambleHoverRaw from "#lib/components/fancy/scramble-hover/scramble-hover.svelte?raw";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import NewCharsExample from "./examples/new-chars-example.svelte";
 import PositionExample from "./examples/position-example.svelte";
 import Preview from "./examples/preview.svelte";
@@ -122,7 +122,8 @@ export const data: ComponentDoc = {
 					name: "scrambleSpeed",
 					type: "number",
 					default: "50",
-					description: "Interval in milliseconds between scramble updates while hovering.",
+					description:
+						"Interval in milliseconds between scramble updates while hovering.",
 				},
 				{
 					name: "maxIterations",
@@ -161,7 +162,8 @@ export const data: ComponentDoc = {
 					name: "scrambledClass",
 					type: "string",
 					default: "undefined",
-					description: "Classes applied only to character positions that are currently scrambled.",
+					description:
+						"Classes applied only to character positions that are currently scrambled.",
 				},
 				{
 					name: "class",

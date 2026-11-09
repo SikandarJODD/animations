@@ -2,8 +2,8 @@
 	import {
 		AnimatedBackground,
 		AnimatedBackgroundItem,
-	} from "$lib/components/magic/animated-background";
-	import { Button } from "$lib/components/ui/button";
+	} from "#lib/components/magic/animated-background/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 	import { Home, PhoneCall, Settings, User } from "@lucide/svelte";
 
 	const tabs = [

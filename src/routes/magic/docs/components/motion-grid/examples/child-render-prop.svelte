@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { motion } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import {
 		MotionGrid,
 		MotionGridCells,
 		type MotionGridCellMotionProps,
-	} from "$lib/components/magic/motion-grid";
+	} from "#lib/components/magic/motion-grid/index.js";
 	import { motionGridStates } from "./state-frames";
 </script>
 

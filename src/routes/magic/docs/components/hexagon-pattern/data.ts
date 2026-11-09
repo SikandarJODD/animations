@@ -1,11 +1,11 @@
-import HexagonPatternSvelteRaw from "$lib/components/magic/hexagon-pattern/hexagon-pattern.svelte?raw";
-import IndexTsRaw from "$lib/components/magic/hexagon-pattern/index.ts?raw";
+import HexagonPatternSvelteRaw from "#lib/components/magic/hexagon-pattern/hexagon-pattern.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/hexagon-pattern/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.ts";
 import DashedStrokeExample from "./examples/dashed-stroke-example.svelte";
 import DashedStrokeExampleRaw from "./examples/dashed-stroke-example.svelte?raw";
 import LinearGradientExample from "./examples/linear-gradient-example.svelte";

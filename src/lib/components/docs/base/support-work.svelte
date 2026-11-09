@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { DollarIcon } from "$icons";
-	import { Button } from "$lib/components/ui/button/index.js";
-	import * as Card from "$lib/components/ui/card/index.js";
-	import { github_repo } from "$lib/config/repo";
+	import { DollarIcon } from "#lib/components/icons/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Card from "#lib/components/ui/card/index.js";
+	import { github_repo } from "#lib/config/repo.ts";
 </script>
 
 <Card.Root

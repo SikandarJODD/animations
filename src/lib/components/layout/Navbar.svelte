@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import * as Icons from "$lib/components/icons";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Icons from "#lib/components/icons/index.js";
 	import BookOpenIcon from "@lucide/svelte/icons/book-open";
 	import SparklesIcon from "@lucide/svelte/icons/sparkles";
 	import { type Component } from "svelte";
@@ -11,18 +11,18 @@
 		NavigationMenuList,
 		NavigationMenuRoot,
 		NavigationMenuTrigger,
-	} from "$lib/components/ui/navigation-menu";
+	} from "#lib/components/ui/navigation-menu/index.js";
 	import LightSwitch from "../ui/light-switch/light-switch.svelte";
 	import DocsSearchNavigation from "../docs/navigation/DocsSearchNavigation.svelte";
 	import MobileNavbarSheet from "./MobileNavbarSheet.svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import Badge, { type BadgeVariant } from "../spell/badge/badge.svelte";
 	import { PersistedState } from "runed";
 	import { scale } from "svelte/transition";
 	import { BlocksIcon } from "@lucide/svelte";
 	import ArrowUpRightIcon from "@lucide/svelte/icons/arrow-up-right";
 	import PackageIcon from "@lucide/svelte/icons/package";
-	import { GitHubButton, getStars } from "$lib/components/ui/github-button";
+	import { GitHubButton, getStars } from "#lib/components/ui/github-button/index.js";
 	import { onMount } from "svelte";
 
 	type NavigationItem = {

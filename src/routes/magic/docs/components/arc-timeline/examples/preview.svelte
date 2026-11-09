@@ -7,7 +7,7 @@
 	import SparklesIcon from "@lucide/svelte/icons/sparkles";
 	import StarIcon from "@lucide/svelte/icons/star";
 	import ZapIcon from "@lucide/svelte/icons/zap";
-	import { ArcTimeline, type ArcTimelineItem } from "$lib/components/magic/arc-timeline";
+	import { ArcTimeline, type ArcTimelineItem } from "#lib/components/magic/arc-timeline/index.js";
 
 	const TIMELINE: ArcTimelineItem[] = [
 		{

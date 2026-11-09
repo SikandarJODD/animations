@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { H1, Paragraph } from "$lib/components/docs/markdown";
-	import FancyShowcase from "$lib/components/layout/fancy/fancy-showcase.svelte";
+	import { H1, Paragraph } from "#lib/components/docs/markdown/index.js";
+	import FancyShowcase from "#lib/components/layout/fancy/fancy-showcase.svelte";
 	import { MetaTags } from "svelte-meta-tags";
 	import gsap from "gsap";
 	import { SplitText } from "gsap/SplitText";
-	import { Button } from "$lib/components/ui/button";
+	import { Button } from "#lib/components/ui/button/index.js";
 
 	const title = "Svelte Fancy Components";
 	const description =

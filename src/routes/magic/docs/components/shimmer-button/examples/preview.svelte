@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { ShimmerButton } from "$lib/components/magic/shimmer-button";
+	import { ShimmerButton } from "#lib/components/magic/shimmer-button/index.js";
 </script>
 
 <ShimmerButton class="shadow-2xl">

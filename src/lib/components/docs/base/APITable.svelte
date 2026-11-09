@@ -6,7 +6,7 @@
 	import Th from "../markdown/Th.svelte";
 	import Td from "../markdown/Td.svelte";
 	import InfoPopover from "./InfoPopover.svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import { H3 } from "../markdown";
 	import { page } from "$app/state";
 	import { watch } from "runed";

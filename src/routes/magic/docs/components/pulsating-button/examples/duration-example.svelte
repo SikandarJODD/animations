@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PulsatingButton } from "$lib/components/magic/pulsating-button";
+	import { PulsatingButton } from "#lib/components/magic/pulsating-button/index.js";
 </script>
 
 <div class="flex flex-wrap items-start justify-center gap-12">

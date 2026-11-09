@@ -1,5 +1,5 @@
 <script>
-	import Meteors from "$lib/components/magic/meteors/meteors.svelte";
+	import Meteors from "#lib/components/magic/meteors/meteors.svelte";
 </script>
 
 <div

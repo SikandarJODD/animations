@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Backlight } from "$lib/components/magic/backlight";
+	import { Backlight } from "#lib/components/magic/backlight/index.js";
 </script>
 
 <div class="flex min-h-100 w-full items-center justify-center">

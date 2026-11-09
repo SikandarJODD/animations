@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { BorderBeam } from "$lib/components/magic/border-beam";
-	import { Button } from "$lib/components/ui/button";
+	import { BorderBeam } from "#lib/components/magic/border-beam/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 </script>
 
 <Button class="relative overflow-hidden" size="lg" variant="outline">

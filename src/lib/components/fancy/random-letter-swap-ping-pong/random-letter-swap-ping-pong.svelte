@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { motion, useAnimate, type AnimationOptions } from "motion-sv";
 	import { Debounced } from "runed";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { HTMLAttributes } from "svelte/elements";
 
 	interface RandomLetterSwapPingPongProps extends HTMLAttributes<HTMLSpanElement> {

@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { LightRays } from "$lib/components/magic/light-rays";
+	import { LightRays } from "#lib/components/magic/light-rays/index.js";
 </script>
 
 <div class="relative h-125 w-full overflow-hidden rounded-lg border">

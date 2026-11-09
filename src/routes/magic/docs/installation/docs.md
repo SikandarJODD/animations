@@ -13,7 +13,7 @@ How to install dependencies and structure your app.
 
 ```svelte
 <script lang="ts">
-  import { MorphingText } from "$lib/components/magic/morphing-text";
+  import { MorphingText } from "#lib/components/magic/morphing-text/index.ts";
 
   const texts = ["Hello", "World", "Morphing", "Text"];
 </script>

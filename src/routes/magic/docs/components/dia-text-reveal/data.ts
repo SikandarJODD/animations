@@ -1,9 +1,9 @@
-import DiaTextRevealRaw from "$lib/components/magic/dia-text-reveal/dia-text-reveal.svelte?raw";
-import IndexTs from "$lib/components/magic/dia-text-reveal/index.ts?raw";
+import DiaTextRevealRaw from "#lib/components/magic/dia-text-reveal/dia-text-reveal.svelte?raw";
+import IndexTs from "#lib/components/magic/dia-text-reveal/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.ts";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import CustomGradient from "./examples/custom-gradient.svelte";
 import CustomGradientRaw from "./examples/custom-gradient.svelte?raw";
 import DurationAndDelay from "./examples/duration-and-delay.svelte";

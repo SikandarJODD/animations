@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import * as Frame from "$lib/components/ui/frame";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Frame from "#lib/components/ui/frame/index.js";
 	import { mode } from "mode-watcher";
 	import type { MagicOverviewShowcaseItem } from "./showcase-data";
 

@@ -26,20 +26,20 @@ bun add runed
 
 ```svelte
 <script lang="ts">
-	import { GlyphMatrix } from "$lib/components/magic/glyph-matrix";
-	import { mode } from "mode-watcher";
+  import { GlyphMatrix } from "#lib/components/magic/glyph-matrix/index.ts";
+  import { mode } from "mode-watcher";
 </script>
 
 <div class="bg-background relative h-100 w-full overflow-hidden rounded-lg">
-	<GlyphMatrix
-		glyphs="01·•+*/\<>="
-		cellSize={14}
-		mutationRate={0.04}
-		interval={90}
-		fadeBottom={0.6}
-		color={mode.current === "dark" ? "#4FFF92" : "#000000"}
-		boost={1}
-	/>
+  <GlyphMatrix
+    glyphs="01·•+*/\<>="
+    cellSize={14}
+    mutationRate={0.04}
+    interval={90}
+    fadeBottom={0.6}
+    color={mode.current === "dark" ? "#4FFF92" : "#000000"}
+    boost={1}
+  />
 </div>
 ```
 
@@ -49,7 +49,7 @@ bun add runed
 
 ```
 <script lang="ts">
-	import { GlyphMatrix } from "$lib/components/magic/glyph-matrix";
+	import { GlyphMatrix } from "#lib/components/magic/glyph-matrix/index.ts";
 	import { mode } from "mode-watcher";
     // Visit https://www.fffuel.co/cccolor/ for colors
 </script>
@@ -69,20 +69,20 @@ bun add runed
 
 ## Usage
 
-Import `GlyphMatrix` from `$lib/components/magic/glyph-matrix` and pass the props you need for your use case.
+Import `GlyphMatrix` from `#lib/components/magic/glyph-matrix/index.ts` and pass the props you need for your use case.
 
 ## Props
 
 A canvas-based glyph animation that renders a shifting matrix of characters.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `glyphs` | `string` | `"01·•+*/\<>="` | Characters to randomly pick from. |
-| `cellSize` | `number` | `14` | Cell size in pixels, which also controls the font size. |
-| `mutationRate` | `number` | `0.04` | Probability from 0 to 1 that a cell mutates on each tick. |
-| `interval` | `number` | `90` | Tick interval in milliseconds. |
-| `fadeBottom` | `number` | `0.6` | Fade amount toward the bottom of the canvas. |
-| `color` | `string` | `"#6B7280"` | Glyph color. Pass a theme-aware CSS color value from the consumer. |
-| `boost` | `number` | `1.2` | Brightness multiplier for the glyph color. Values above 1 make the matrix brighter. |
-| `class` | `string` | `""` | Additional CSS classes applied to the canvas. |
-| `style` | `string` | `undefined` | Inline styles forwarded to the canvas element. |
+| Prop           | Type     | Default         | Description                                                                         |
+| -------------- | -------- | --------------- | ----------------------------------------------------------------------------------- |
+| `glyphs`       | `string` | `"01·•+*/\<>="` | Characters to randomly pick from.                                                   |
+| `cellSize`     | `number` | `14`            | Cell size in pixels, which also controls the font size.                             |
+| `mutationRate` | `number` | `0.04`          | Probability from 0 to 1 that a cell mutates on each tick.                           |
+| `interval`     | `number` | `90`            | Tick interval in milliseconds.                                                      |
+| `fadeBottom`   | `number` | `0.6`           | Fade amount toward the bottom of the canvas.                                        |
+| `color`        | `string` | `"#6B7280"`     | Glyph color. Pass a theme-aware CSS color value from the consumer.                  |
+| `boost`        | `number` | `1.2`           | Brightness multiplier for the glyph color. Values above 1 make the matrix brighter. |
+| `class`        | `string` | `""`            | Additional CSS classes applied to the canvas.                                       |
+| `style`        | `string` | `undefined`     | Inline styles forwarded to the canvas element.                                      |

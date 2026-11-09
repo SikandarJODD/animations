@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion, type MotionProps, type Transition } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { Snippet } from "svelte";
 	import type { HTMLButtonAttributes } from "svelte/elements";
 

@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import SpellOverviewHero from "$lib/components/layout/spell/spell-overview-hero.svelte";
-	import SpellOverviewShowcase from "$lib/components/layout/spell/spell-overview-showcase.svelte";
-	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
+	import SpellOverviewHero from "#lib/components/layout/spell/spell-overview-hero.svelte";
+	import SpellOverviewShowcase from "#lib/components/layout/spell/spell-overview-showcase.svelte";
+	import {
+		buildSpellKeywords,
+		SPELL_SOCIAL_IMAGE,
+		SPELL_TITLE_TEMPLATE,
+	} from "#lib/seo/spell.ts";
 	import { MetaTags } from "svelte-meta-tags";
 
 	const title = "Refined Svelte 5 Components for Design Engineers";

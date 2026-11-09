@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { WordsStagger } from "$lib/components/spell/words-stagger";
+	import { WordsStagger } from "#lib/components/spell/words-stagger/index.js";
 
 	let starts = $state(0);
 	let completes = $state(0);

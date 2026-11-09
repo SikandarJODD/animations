@@ -1,9 +1,9 @@
-import IndexTsRaw from "$lib/components/magic/separator/index.ts?raw";
-import SeparatorSvelteRaw from "$lib/components/magic/separator/separator.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/separator/index.ts?raw";
+import SeparatorSvelteRaw from "#lib/components/magic/separator/separator.svelte?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { Example } from "#lib/types/examples.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import DashedPillLabel from "./examples/dashed-pill-label.svelte";
 import DashedPillLabelRaw from "./examples/dashed-pill-label.svelte?raw";
 import Gradient from "./examples/gradient.svelte";
@@ -151,7 +151,7 @@ export const data: ComponentDoc = {
 		code: {
 			filename: "usage.svelte",
 			filecode: `<script lang="ts">
-	import { Separator } from "$lib/components/magic/separator";
+	import { Separator } from "#lib/components/magic/separator/index.ts";
 </script>
 
 <div class="flex w-full flex-col gap-8">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AnimatedPathText } from "$lib/components/fancy/text-along-path";
+	import { AnimatedPathText } from "#lib/components/fancy/text-along-path/index.js";
 
 	const paths = [
 		"M1 254C177 219 61 -64 269 15C477 94 332 285 214 348C96 411 155 546 331 486C507 426 410 267 667 215C872.6 173.4 951.333 264.333 965 315",
@@ -26,7 +26,7 @@
 </script>
 
 <div
-	class="font-figtree scrollbar-thin relative h-80 w-full overflow-auto md:h-130"
+	class="font-figtree relative h-80 w-full scrollbar-thin overflow-auto md:h-130"
 	bind:this={containerRef}
 >
 	<div class="absolute top-0 left-0 mt-40 flex h-[200%] w-full flex-col items-center text-4xl">

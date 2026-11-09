@@ -1,7 +1,7 @@
-import SpecialTextRaw from "$lib/components/spell/special-text/special-text.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/special-text/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import SpecialTextRaw from "#lib/components/spell/special-text/special-text.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/special-text/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import ViewportReplayExample from "./examples/viewport-replay-example.svelte";

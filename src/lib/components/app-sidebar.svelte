@@ -1,5 +1,8 @@
 <script lang="ts" module>
-	import { magicUISidebarGroups, type BadgeType } from "$lib/components/docs/registry/magic-ui";
+	import {
+		magicUISidebarGroups,
+		type BadgeType,
+	} from "#lib/components/docs/registry/magic-ui.ts";
 
 	type NavItem = {
 		title: string;
@@ -42,9 +45,9 @@
 </script>
 
 <script lang="ts">
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
-	import Badge from "$lib/components/ui/badge/badge.svelte";
+	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
+	import { ScrollArea } from "#lib/components/ui/scroll-area/index.js";
+	import Badge from "#lib/components/ui/badge/badge.svelte";
 	import { page } from "$app/state";
 	import type { ComponentProps } from "svelte";
 	import { watch } from "runed";

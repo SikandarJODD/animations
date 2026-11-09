@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import { type VariantProps, tv } from "tailwind-variants";
 	import type { HTMLAttributes } from "svelte/elements";
-	import type { WithElementRef } from "$lib/utils.js";
+	import type { WithElementRef } from "#lib/utils.js";
 
 	export const colorMap = {
 		default: "var(--foreground)",
@@ -76,7 +76,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 
 	let {
 		ref = $bindable(null),

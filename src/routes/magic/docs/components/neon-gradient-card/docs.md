@@ -22,15 +22,17 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/neon-gradient-
 
 ```svelte
 <script lang="ts">
-	import { NeonGradientCard } from "$lib/components/magic/neon-gradient-card";
+  import { NeonGradientCard } from "#lib/components/magic/neon-gradient-card/index.ts";
 </script>
 
-<NeonGradientCard class="my-32 max-w-sm items-center justify-center text-center">
-	<span
-		class="pointer-events-none z-10 h-full bg-linear-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-3xl leading-none font-bold tracking-tight text-balance whitespace-pre-wrap text-transparent md:text-5xl xl:text-6xl dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]"
-	>
-		Svelte Is Amazing
-	</span>
+<NeonGradientCard
+  class="my-32 max-w-sm items-center justify-center text-center"
+>
+  <span
+    class="pointer-events-none z-10 h-full bg-linear-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-3xl leading-none font-bold tracking-tight text-balance whitespace-pre-wrap text-transparent md:text-5xl xl:text-6xl dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]"
+  >
+    Svelte Is Amazing
+  </span>
 </NeonGradientCard>
 ```
 
@@ -40,15 +42,17 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/neon-gradient-
 
 ```svelte
 <script lang="ts">
-	import { NeonGradientCard } from "$lib/components/magic/neon-gradient-card";
+  import { NeonGradientCard } from "#lib/components/magic/neon-gradient-card/index.ts";
 </script>
 
-<NeonGradientCard class="my-32 max-w-sm items-center justify-center text-center">
-	<span
-		class="pointer-events-none z-10 h-full bg-linear-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-3xl leading-none font-bold tracking-tight text-balance whitespace-pre-wrap text-transparent md:text-5xl xl:text-6xl dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]"
-	>
-		Svelte Is Amazing
-	</span>
+<NeonGradientCard
+  class="my-32 max-w-sm items-center justify-center text-center"
+>
+  <span
+    class="pointer-events-none z-10 h-full bg-linear-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-3xl leading-none font-bold tracking-tight text-balance whitespace-pre-wrap text-transparent md:text-5xl xl:text-6xl dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]"
+  >
+    Svelte Is Amazing
+  </span>
 </NeonGradientCard>
 ```
 
@@ -78,10 +82,10 @@ If the component depends on global CSS, add the following styles:
 
 A component for Neon Gradient Card.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `borderSize` | `number` | `2` | Size of the border |
-| `borderRadius` | `number` | `20` | Radius of the border |
-| `neonColors` | `NeonColorsProps` | `{ firstColor: "#ff00aa", secondColor: "#00FFF1" }` | Colors of the neon effect |
-| `children` | `Snippet` | `required` | The content to display inside the card |
+| Prop           | Type              | Default                                             | Description                            |
+| -------------- | ----------------- | --------------------------------------------------- | -------------------------------------- |
+| `class`        | `string`          | `""`                                                | Additional CSS classes to apply        |
+| `borderSize`   | `number`          | `2`                                                 | Size of the border                     |
+| `borderRadius` | `number`          | `20`                                                | Radius of the border                   |
+| `neonColors`   | `NeonColorsProps` | `{ firstColor: "#ff00aa", secondColor: "#00FFF1" }` | Colors of the neon effect              |
+| `children`     | `Snippet`         | `required`                                          | The content to display inside the card |

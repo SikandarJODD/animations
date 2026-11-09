@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PulsatingButton } from "$lib/components/magic/pulsating-button";
+	import { PulsatingButton } from "#lib/components/magic/pulsating-button/index.js";
 	// add any colors: https://oklch.com
 	// customize as you like
 </script>

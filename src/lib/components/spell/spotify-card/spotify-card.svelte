@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { browser } from "$app/environment";
-	import { cn, type WithElementRef } from "$lib/utils.js";
+	import { browser } from "$app/env";
+	import { cn, type WithElementRef } from "#lib/utils.js";
 	import { onDestroy, untrack } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
 
@@ -240,7 +240,7 @@
 						style={`animation-duration: 3s; animation-play-state: ${isPlaying ? "running" : "paused"};`}
 						aria-hidden="true"
 					>
-						<circle cx="55" cy="55" r="55" fill="#000" />
+						<circle cx="55" cy="55" r="55" fill="#000"></circle>
 						<mask
 							id={maskId}
 							width="110"
@@ -249,75 +249,47 @@
 							y="0"
 							maskUnits="userSpaceOnUse"
 							style="mask-type: alpha;"
+							><circle cx="55" cy="55" r="55" fill="#000"></circle></mask
 						>
-							<circle cx="55" cy="55" r="55" fill="#000" />
-						</mask>
+
 						<g mask={`url(#${maskId})`}>
 							<g filter={`url(#${filterId0})`}>
-								<circle
-									cx="55"
-									cy="55"
-									r="51.5"
-									stroke="#fff"
-									stroke-opacity="0.21"
-								/>
+								<circle cx="55" cy="55" r="51.5" stroke="#fff" stroke-opacity="0.21"
+								></circle>
 							</g>
 							<g filter={`url(#${filterId1})`}>
-								<circle
-									cx="55"
-									cy="55"
-									r="47.5"
-									stroke="#fff"
-									stroke-opacity="0.21"
-								/>
+								<circle cx="55" cy="55" r="47.5" stroke="#fff" stroke-opacity="0.21"
+								></circle>
 							</g>
 							<g filter={`url(#${filterId2})`}>
-								<circle
-									cx="55"
-									cy="55"
-									r="45.5"
-									stroke="#fff"
-									stroke-opacity="0.21"
-								/>
+								<circle cx="55" cy="55" r="45.5" stroke="#fff" stroke-opacity="0.21"
+								></circle>
 							</g>
 							<g filter={`url(#${filterId3})`}>
-								<circle
-									cx="55"
-									cy="55"
-									r="43.5"
-									stroke="#fff"
-									stroke-opacity="0.21"
-								/>
+								<circle cx="55" cy="55" r="43.5" stroke="#fff" stroke-opacity="0.21"
+								></circle>
 							</g>
 							<g filter={`url(#${filterId4})`}>
-								<circle
-									cx="55"
-									cy="55"
-									r="37.5"
-									stroke="#fff"
-									stroke-opacity="0.21"
-								/>
+								<circle cx="55" cy="55" r="37.5" stroke="#fff" stroke-opacity="0.21"
+								></circle>
 							</g>
 							<g filter={`url(#${filterId5})`}>
-								<circle
-									cx="55"
-									cy="55"
-									r="34.5"
-									stroke="#fff"
-									stroke-opacity="0.21"
-								/>
+								<circle cx="55" cy="55" r="34.5" stroke="#fff" stroke-opacity="0.21"
+								></circle>
 							</g>
-							<g filter={`url(#${filterId6})`} opacity="0.4">
-								<path fill="#fff" d="M-14 38l68 19.579L-14 74V38z" />
-							</g>
-							<g filter={`url(#${filterId7})`} opacity="0.4">
-								<path fill="#fff" d="M123 38L55 57.579 123 74V38z" />
-							</g>
+
+							<g filter={`url(#${filterId6})`} opacity="0.4"
+								><path fill="#fff" d="M-14 38l68 19.579L-14 74V38z"></path></g
+							>
+							<g filter={`url(#${filterId7})`} opacity="0.4"
+								><path fill="#fff" d="M123 38L55 57.579 123 74V38z"></path></g
+							>
+
 							<g filter={`url(#${filterId8})`} opacity="0.4">
-								<path fill="#fff" d="M36.5 124.5l19.579-68 16.421 68h-36z" />
+								<path fill="#fff" d="M36.5 124.5l19.579-68 16.421 68h-36z"></path>
 							</g>
 							<g filter={`url(#${filterId9})`} opacity="0.4">
-								<path fill="#fff" d="M36.5-12.5l19.579 68 16.421-68h-36z" />
+								<path fill="#fff" d="M36.5-12.5l19.579 68 16.421-68h-36z"></path>
 							</g>
 						</g>
 						<defs>
@@ -330,16 +302,13 @@
 								color-interpolation-filters="sRGB"
 								filterUnits="userSpaceOnUse"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend
-									in="SourceGraphic"
-									in2="BackgroundImageFix"
-									result="shape"
-								/>
+								<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+								<feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+								></feBlend>
 								<feGaussianBlur
 									result="effect1_foregroundBlur_6138_16576"
 									stdDeviation="1"
-								/>
+								></feGaussianBlur>
 							</filter>
 							<filter
 								id={filterId1}
@@ -350,16 +319,13 @@
 								color-interpolation-filters="sRGB"
 								filterUnits="userSpaceOnUse"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend
-									in="SourceGraphic"
-									in2="BackgroundImageFix"
-									result="shape"
-								/>
+								<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+								<feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+								></feBlend>
 								<feGaussianBlur
 									result="effect1_foregroundBlur_6138_16576"
 									stdDeviation="1"
-								/>
+								></feGaussianBlur>
 							</filter>
 							<filter
 								id={filterId2}
@@ -370,16 +336,13 @@
 								color-interpolation-filters="sRGB"
 								filterUnits="userSpaceOnUse"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend
-									in="SourceGraphic"
-									in2="BackgroundImageFix"
-									result="shape"
-								/>
+								<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+								<feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+								></feBlend>
 								<feGaussianBlur
 									result="effect1_foregroundBlur_6138_16576"
 									stdDeviation="1"
-								/>
+								></feGaussianBlur>
 							</filter>
 							<filter
 								id={filterId3}
@@ -390,16 +353,13 @@
 								color-interpolation-filters="sRGB"
 								filterUnits="userSpaceOnUse"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend
-									in="SourceGraphic"
-									in2="BackgroundImageFix"
-									result="shape"
-								/>
+								<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+								<feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+								></feBlend>
 								<feGaussianBlur
 									result="effect1_foregroundBlur_6138_16576"
 									stdDeviation="1"
-								/>
+								></feGaussianBlur>
 							</filter>
 							<filter
 								id={filterId4}
@@ -410,16 +370,13 @@
 								color-interpolation-filters="sRGB"
 								filterUnits="userSpaceOnUse"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend
-									in="SourceGraphic"
-									in2="BackgroundImageFix"
-									result="shape"
-								/>
+								<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+								<feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+								></feBlend>
 								<feGaussianBlur
 									result="effect1_foregroundBlur_6138_16576"
 									stdDeviation="1"
-								/>
+								></feGaussianBlur>
 							</filter>
 							<filter
 								id={filterId5}
@@ -430,16 +387,13 @@
 								color-interpolation-filters="sRGB"
 								filterUnits="userSpaceOnUse"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend
-									in="SourceGraphic"
-									in2="BackgroundImageFix"
-									result="shape"
-								/>
+								<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+								<feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+								></feBlend>
 								<feGaussianBlur
 									result="effect1_foregroundBlur_6138_16576"
 									stdDeviation="1"
-								/>
+								></feGaussianBlur>
 							</filter>
 							<filter
 								id={filterId6}
@@ -450,16 +404,13 @@
 								color-interpolation-filters="sRGB"
 								filterUnits="userSpaceOnUse"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend
-									in="SourceGraphic"
-									in2="BackgroundImageFix"
-									result="shape"
-								/>
+								<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+								<feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+								></feBlend>
 								<feGaussianBlur
 									result="effect1_foregroundBlur_6138_16576"
 									stdDeviation="8"
-								/>
+								></feGaussianBlur>
 							</filter>
 							<filter
 								id={filterId7}
@@ -470,16 +421,13 @@
 								color-interpolation-filters="sRGB"
 								filterUnits="userSpaceOnUse"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend
-									in="SourceGraphic"
-									in2="BackgroundImageFix"
-									result="shape"
-								/>
+								<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+								<feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+								></feBlend>
 								<feGaussianBlur
 									result="effect1_foregroundBlur_6138_16576"
 									stdDeviation="8"
-								/>
+								></feGaussianBlur>
 							</filter>
 							<filter
 								id={filterId8}
@@ -490,16 +438,13 @@
 								color-interpolation-filters="sRGB"
 								filterUnits="userSpaceOnUse"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend
-									in="SourceGraphic"
-									in2="BackgroundImageFix"
-									result="shape"
-								/>
+								<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+								<feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+								></feBlend>
 								<feGaussianBlur
 									result="effect1_foregroundBlur_6138_16576"
 									stdDeviation="8"
-								/>
+								></feGaussianBlur>
 							</filter>
 							<filter
 								id={filterId9}
@@ -510,16 +455,13 @@
 								color-interpolation-filters="sRGB"
 								filterUnits="userSpaceOnUse"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend
-									in="SourceGraphic"
-									in2="BackgroundImageFix"
-									result="shape"
-								/>
+								<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+								<feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+								></feBlend>
 								<feGaussianBlur
 									result="effect1_foregroundBlur_6138_16576"
 									stdDeviation="8"
-								/>
+								></feGaussianBlur>
 							</filter>
 						</defs>
 					</svg>
@@ -542,28 +484,28 @@
 						fill="currentColor"
 						aria-hidden="true"
 					>
-						<circle cx="12" cy="12" r="10" />
+						<circle cx="12" cy="12" r="10"></circle>
 						<path
 							d="M7.6 9.4c3.3-1 6.8-.6 9.3.8"
 							stroke="#111"
 							stroke-width="1.5"
 							stroke-linecap="round"
 							fill="none"
-						/>
+						></path>
 						<path
 							d="M8.4 12.2c2.6-.7 5.4-.4 7.4.7"
 							stroke="#111"
 							stroke-width="1.4"
 							stroke-linecap="round"
 							fill="none"
-						/>
+						></path>
 						<path
 							d="M9.2 14.8c1.9-.4 3.8-.2 5.3.5"
 							stroke="#111"
 							stroke-width="1.3"
 							stroke-linecap="round"
 							fill="none"
-						/>
+						></path>
 					</svg>
 				</a>
 			</div>

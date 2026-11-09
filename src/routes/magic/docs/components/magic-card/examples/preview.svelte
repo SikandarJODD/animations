@@ -1,9 +1,9 @@
 ﻿<script>
-	import { MagicCard } from "$lib/components/magic/magic-card";
-	import { Button } from "$lib/components/ui/button";
-	import * as Card from "$lib/components/ui/card/index.js";
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
+	import { MagicCard } from "#lib/components/magic/magic-card/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Card from "#lib/components/ui/card/index.js";
+	import { Input } from "#lib/components/ui/input/index.js";
+	import { Label } from "#lib/components/ui/label/index.js";
 	import { mode } from "mode-watcher";
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 	import type { SVGAttributes } from "svelte/elements";
 	// @ts-expect-error The qrcode package used here does not ship bundled TypeScript declarations.
 	import QRCodePackage from "qrcode";

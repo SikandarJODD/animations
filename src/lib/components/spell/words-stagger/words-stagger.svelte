@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
-	import { readNormalizedTextContent, segmentText } from "$lib/utils/text-utils";
+	import { cn } from "#lib/utils.ts";
+	import { readNormalizedTextContent, segmentText } from "#lib/utils/text-utils.ts";
 	import { motion, useInView, type Variants } from "motion-sv";
 	import type { Snippet } from "svelte";
 

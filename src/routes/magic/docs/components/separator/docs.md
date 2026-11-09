@@ -22,11 +22,11 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/separator.json
 
 ```svelte
 <script lang="ts">
-	import { Separator } from "$lib/components/magic/separator";
+  import { Separator } from "#lib/components/magic/separator/index.ts";
 </script>
 
 <div class="flex min-h-64 w-full items-center px-6 md:px-20">
-	<Separator />
+  <Separator />
 </div>
 ```
 
@@ -38,11 +38,11 @@ A softly fading gradient separator.
 
 ```svelte
 <script lang="ts">
-	import { Separator } from "$lib/components/magic/separator";
+  import { Separator } from "#lib/components/magic/separator/index.ts";
 </script>
 
 <div class="flex min-h-64 w-full items-center px-6 md:px-20">
-	<Separator gradient />
+  <Separator gradient />
 </div>
 ```
 
@@ -52,13 +52,13 @@ A separator with a centered text label.
 
 ```svelte
 <script lang="ts">
-	import { Separator } from "$lib/components/magic/separator";
+  import { Separator } from "#lib/components/magic/separator/index.ts";
 </script>
 
 <div class="flex min-h-64 w-full items-center px-6 md:px-20">
-	<Separator>
-		<div class="px-2">Section</div>
-	</Separator>
+  <Separator>
+    <div class="px-2">Section</div>
+  </Separator>
 </div>
 ```
 
@@ -68,13 +68,13 @@ A gradient separator framing a centered text label.
 
 ```svelte
 <script lang="ts">
-	import { Separator } from "$lib/components/magic/separator";
+  import { Separator } from "#lib/components/magic/separator/index.ts";
 </script>
 
 <div class="flex min-h-64 w-full items-center px-6 md:px-20">
-	<Separator gradient>
-		<div class="px-2">Section</div>
-	</Separator>
+  <Separator gradient>
+    <div class="px-2">Section</div>
+  </Separator>
 </div>
 ```
 
@@ -84,13 +84,13 @@ A separator with a bordered pill-shaped label.
 
 ```svelte
 <script lang="ts">
-	import { Separator } from "$lib/components/magic/separator";
+  import { Separator } from "#lib/components/magic/separator/index.ts";
 </script>
 
 <div class="flex min-h-64 w-full items-center px-6 md:px-20">
-	<Separator>
-		<div class="rounded-full border px-4 py-1">Section</div>
-	</Separator>
+  <Separator>
+    <div class="rounded-full border px-4 py-1">Section</div>
+  </Separator>
 </div>
 ```
 
@@ -100,13 +100,13 @@ A separator with a dashed pill-shaped label.
 
 ```svelte
 <script lang="ts">
-	import { Separator } from "$lib/components/magic/separator";
+  import { Separator } from "#lib/components/magic/separator/index.ts";
 </script>
 
 <div class="flex min-h-64 w-full items-center px-6 md:px-20">
-	<Separator>
-		<div class="rounded-full border border-dashed px-4 py-1">Section</div>
-	</Separator>
+  <Separator>
+    <div class="rounded-full border border-dashed px-4 py-1">Section</div>
+  </Separator>
 </div>
 ```
 
@@ -116,29 +116,29 @@ A gradient separator with a centered icon treatment.
 
 ```svelte
 <script lang="ts">
-	import { Separator } from "$lib/components/magic/separator";
+  import { Separator } from "#lib/components/magic/separator/index.ts";
 </script>
 
 <div class="flex min-h-64 w-full items-center px-6 md:px-20">
-	<Separator gradient>
-		<div class="rounded-full border p-2">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				aria-label="Add section"
-			>
-				<path d="M5 12h14" />
-				<path d="M12 5v14" />
-			</svg>
-		</div>
-	</Separator>
+  <Separator gradient>
+    <div class="rounded-full border p-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-label="Add section"
+      >
+        <path d="M5 12h14" />
+        <path d="M12 5v14" />
+      </svg>
+    </div>
+  </Separator>
 </div>
 ```
 
@@ -150,9 +150,9 @@ Import the component and wrap the content you want it to affect. Adjust the opti
 
 A horizontal divider with optional gradient styling and centered snippet content.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `-` | Additional CSS classes applied to the separator line |
-| `gradient` | `boolean` | `false` | Whether to render the separator line with a fading gradient |
-| `children` | `Snippet` | `-` | Optional content rendered as a centered label between the separator lines |
-| `textClass` | `string` | `""` | Additional CSS classes applied to the centered label wrapper |
+| Prop        | Type      | Default | Description                                                               |
+| ----------- | --------- | ------- | ------------------------------------------------------------------------- |
+| `class`     | `string`  | `-`     | Additional CSS classes applied to the separator line                      |
+| `gradient`  | `boolean` | `false` | Whether to render the separator line with a fading gradient               |
+| `children`  | `Snippet` | `-`     | Optional content rendered as a centered label between the separator lines |
+| `textClass` | `string`  | `""`    | Additional CSS classes applied to the centered label wrapper              |

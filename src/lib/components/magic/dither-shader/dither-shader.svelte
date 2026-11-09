@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 
 	type DitheringMode = "bayer" | "halftone" | "noise" | "crosshatch";
 	type ColorMode = "original" | "grayscale" | "duotone" | "custom";

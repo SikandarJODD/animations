@@ -1,32 +1,49 @@
-import GlyphMatrixSvelteRaw from "$lib/components/magic/glyph-matrix/glyph-matrix.svelte?raw";
-import IndexTsRaw from "$lib/components/magic/glyph-matrix/index.ts?raw";
+import GlyphMatrixSvelteRaw from "#lib/components/magic/glyph-matrix/glyph-matrix.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/glyph-matrix/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.ts";
 import LettersExample from "./examples/letters-example.svelte";
 import LettersExampleRaw from "./examples/letters-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "glyph-matrix",
 	title: "Glyph Matrix",
-	description: "An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
+	description:
+		"An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
 	category: "magic",
 };
 
 const seo: SEO = {
 	title: "Glyph Matrix",
-	description: "An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
-	keywords: ["Svelte", "Glyph Matrix", "Magic", "Canvas", "Animation", "Theme-aware", "Color", "Grid", "Subtle Shifts"],
+	description:
+		"An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
+	keywords: [
+		"Svelte",
+		"Glyph Matrix",
+		"Magic",
+		"Canvas",
+		"Animation",
+		"Theme-aware",
+		"Color",
+		"Grid",
+		"Subtle Shifts",
+	],
 };
 
 const installBlock: InstallComponentDocs = {
-	packages: ['runed'],
+	packages: ["runed"],
 	installCode: [
-		{ filename: "glyph-matrix.svelte", filecode: GlyphMatrixSvelteRaw, lang: "svelte", isExpand: true, },
-		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", }
+		{
+			filename: "glyph-matrix.svelte",
+			filecode: GlyphMatrixSvelteRaw,
+			lang: "svelte",
+			isExpand: true,
+		},
+		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
 	],
 	folderStructure: `src/
 └── lib/
@@ -40,15 +57,15 @@ let examples: Example[] = [
 	{
 		name: "Letters Example",
 		preview: LettersExample,
-		previewClass: 'p-0',
+		previewClass: "p-0",
 		showRetry: false,
 		code: {
 			filename: "letters-example.svelte",
 			filecode: LettersExampleRaw,
 			highlight: [8],
-		}
-	}
-]
+		},
+	},
+];
 export const data: ComponentDoc = {
 	...meta,
 	preview: Preview,
@@ -58,7 +75,7 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
-	previewClass: 'p-0',
+	previewClass: "p-0",
 	installBlock,
 	examples,
 	seo,
@@ -66,7 +83,7 @@ export const data: ComponentDoc = {
 		code: [
 			{
 				filename: "glyph-matrix-import.svelte",
-				filecode: `import GlyphMatrix from "$lib/components/magic/glyph-matrix";`,
+				filecode: `import GlyphMatrix from "#lib/components/magic/glyph-matrix";`,
 				lang: "typescript",
 			},
 			{
@@ -117,13 +134,15 @@ export const data: ComponentDoc = {
 					name: "color",
 					type: "string",
 					default: '"#6B7280"',
-					description: "Glyph color. Pass a theme-aware CSS color value from the consumer.",
+					description:
+						"Glyph color. Pass a theme-aware CSS color value from the consumer.",
 				},
 				{
 					name: "boost",
 					type: "number",
 					default: "1.2",
-					description: "Brightness multiplier for the glyph color. Values above 1 make the matrix brighter.",
+					description:
+						"Brightness multiplier for the glyph color. Values above 1 make the matrix brighter.",
 				},
 				{
 					name: "class",

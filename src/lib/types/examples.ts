@@ -1,4 +1,4 @@
-import type { CodeBlock } from "$lib/components/ui/code";
+import type { CodeBlock } from "#lib/components/ui/code/index.ts";
 import type { Component } from "svelte";
 
 /**

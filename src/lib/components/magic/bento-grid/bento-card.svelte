@@ -3,8 +3,8 @@
 	import type { HTMLAttributes } from "svelte/elements";
 	import type { Component } from "svelte";
 
-	import { cn } from "$lib/utils";
-	import Button from "$lib/components/ui/button/button.svelte";
+	import { cn } from "#lib/utils.ts";
+	import Button from "#lib/components/ui/button/button.svelte";
 	import { ArrowRightIcon } from "@lucide/svelte";
 
 	interface BentoCardProps extends HTMLAttributes<HTMLDivElement> {

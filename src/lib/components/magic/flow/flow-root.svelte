@@ -1,7 +1,13 @@
 <script lang="ts">
-	import { motion, useMotionTemplate, useMotionValue, useTransform, type PanInfo } from "motion-sv";
+	import {
+		motion,
+		useMotionTemplate,
+		useMotionValue,
+		useTransform,
+		type PanInfo,
+	} from "motion-sv";
 	import type { Snippet } from "svelte";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 	import FlowNodeList from "./flow-node-list.svelte";
 	import { setDiagramContext } from "./diagram-context.svelte";
 	import type { Align, JunctionMarker, Orientation } from "./types";
@@ -218,7 +224,7 @@
 {#if canvas}
 	<motion.div
 		bind:ref={wrapperRef}
-		class={cn("relative isolate grow overflow-hidden group", className)}
+		class={cn("group relative isolate grow overflow-hidden", className)}
 		style={{
 			paddingTop: `${paddingY}px`,
 			paddingBottom: `${paddingY}px`,
@@ -242,9 +248,11 @@
 		</motion.div>
 
 		{#if canScrollY}
-			<div class="absolute top-1 right-1 bottom-1 w-1.5 rounded-full bg-kumo-hairline/50 opacity-0 group-hover:opacity-100">
+			<div
+				class="bg-kumo-hairline/50 absolute top-1 right-1 bottom-1 w-1.5 rounded-full opacity-0 group-hover:opacity-100"
+			>
 				<motion.div
-					class="absolute w-full rounded-full bg-kumo-fill"
+					class="bg-kumo-fill absolute w-full rounded-full"
 					style={{
 						height: `${scrollThumbHeight}%`,
 						top: scrollTop,
@@ -254,9 +262,11 @@
 		{/if}
 
 		{#if canScrollX}
-			<div class="absolute right-1 bottom-1 left-1 h-1.5 rounded-full bg-kumo-hairline/50 opacity-0 group-hover:opacity-100">
+			<div
+				class="bg-kumo-hairline/50 absolute right-1 bottom-1 left-1 h-1.5 rounded-full opacity-0 group-hover:opacity-100"
+			>
 				<motion.div
-					class="absolute h-full rounded-full bg-kumo-fill"
+					class="bg-kumo-fill absolute h-full rounded-full"
 					style={{
 						width: `${scrollThumbWidth}%`,
 						left: scrollLeft,

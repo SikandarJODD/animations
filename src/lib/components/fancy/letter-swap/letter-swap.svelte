@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion, useAnimate, stagger, type AnimationOptions } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { HTMLAttributes } from "svelte/elements";
 
 	interface LetterSwapProps extends HTMLAttributes<HTMLSpanElement> {

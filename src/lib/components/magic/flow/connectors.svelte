@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-	import { createRoundedPath } from './connectors';
-	import type { Connector, Orientation } from './types';
-	import { cn } from '$lib/utils';
+	import type { Snippet } from "svelte";
+	import { createRoundedPath } from "./connectors";
+	import type { Connector, Orientation } from "./types";
+	import { cn } from "#lib/utils.ts";
 
 	interface Props {
 		connectors: Connector[];
@@ -19,7 +19,7 @@
 		cornerRadius,
 		midOffset,
 		arrowheadOffset,
-		orientation = 'vertical'
+		orientation = "vertical",
 	}: Props = $props();
 
 	const markerId = $props.id();
@@ -52,21 +52,24 @@
 		</marker>
 	</defs>
 
-	{#each orderedConnectors as connector, index (`${connector.fromId ?? 'from'}-${connector.toId ?? 'to'}-${index}`)}
-		{let path = $state(createRoundedPath(connector, {
-			cornerRadius,
-			midOffset,
-			arrowheadOffset,
-			isBottom: connector.isBottom,
-			single: connector.single,
-			orientation
-		}))}
-		{let pathId =
-			$state(connector.fromId && connector.toId
+	{#each orderedConnectors as connector, index (`${connector.fromId ?? "from"}-${connector.toId ?? "to"}-${index}`)}
+		{let path = $state(
+			createRoundedPath(connector, {
+				cornerRadius,
+				midOffset,
+				arrowheadOffset,
+				isBottom: connector.isBottom,
+				single: connector.single,
+				orientation,
+			})
+		)}
+		{let pathId = $state(
+			connector.fromId && connector.toId
 				? `${connector.fromId}-${connector.toId}`
-				: `path-${index}`)}
+				: `path-${index}`
+		)}
 
-		<g class={cn(connector.disabled && 'opacity-40')}>
+		<g class={cn(connector.disabled && "opacity-40")}>
 			<path
 				d={path}
 				fill="none"

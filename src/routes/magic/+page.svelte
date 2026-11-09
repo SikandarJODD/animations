@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import MagicOverviewHero from "$lib/components/layout/magic/magic-overview-hero.svelte";
-	import MagicOverviewShowcase from "$lib/components/layout/magic/magic-overview-showcase.svelte";
+	import MagicOverviewHero from "#lib/components/layout/magic/magic-overview-hero.svelte";
+	import MagicOverviewShowcase from "#lib/components/layout/magic/magic-overview-showcase.svelte";
 	import { MetaTags } from "svelte-meta-tags";
 
 	const title = "Svelte Magic UI";

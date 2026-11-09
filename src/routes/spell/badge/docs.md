@@ -26,14 +26,14 @@ bun add tailwind-variants
 
 ```svelte
 <script lang="ts">
-	import { Badge } from "$lib/components/spell/badge";
+  import { Badge } from "#lib/components/spell/badge/index.ts";
 </script>
 
 <div class="flex gap-2">
-	<Badge>Default</Badge>
-	<Badge variant="secondary">Secondary</Badge>
-	<Badge variant="outline">Outline</Badge>
-	<Badge variant="destructive">Destructive</Badge>
+  <Badge>Default</Badge>
+  <Badge variant="secondary">Secondary</Badge>
+  <Badge variant="outline">Outline</Badge>
+  <Badge variant="destructive">Destructive</Badge>
 </div>
 ```
 
@@ -43,26 +43,26 @@ bun add tailwind-variants
 
 ```svelte
 <script lang="ts">
-	import { Badge } from "$lib/components/spell/badge";
+  import { Badge } from "#lib/components/spell/badge/index.ts";
 </script>
 
 <div class="flex flex-wrap gap-2">
-	<Badge variant="red">Red</Badge>
-	<Badge variant="blue">Blue</Badge>
-	<Badge variant="green">Green</Badge>
-	<Badge variant="yellow">Yellow</Badge>
-	<Badge variant="purple">Purple</Badge>
-	<Badge variant="pink">Pink</Badge>
-	<Badge variant="orange">Orange</Badge>
-	<Badge variant="cyan">Cyan</Badge>
-	<Badge variant="indigo">Indigo</Badge>
-	<Badge variant="violet">Violet</Badge>
-	<Badge variant="rose">Rose</Badge>
-	<Badge variant="amber">Amber</Badge>
-	<Badge variant="lime">Lime</Badge>
-	<Badge variant="emerald">Emerald</Badge>
-	<Badge variant="sky">Sky</Badge>
-	<Badge variant="fuchsia">Fuchsia</Badge>
+  <Badge variant="red">Red</Badge>
+  <Badge variant="blue">Blue</Badge>
+  <Badge variant="green">Green</Badge>
+  <Badge variant="yellow">Yellow</Badge>
+  <Badge variant="purple">Purple</Badge>
+  <Badge variant="pink">Pink</Badge>
+  <Badge variant="orange">Orange</Badge>
+  <Badge variant="cyan">Cyan</Badge>
+  <Badge variant="indigo">Indigo</Badge>
+  <Badge variant="violet">Violet</Badge>
+  <Badge variant="rose">Rose</Badge>
+  <Badge variant="amber">Amber</Badge>
+  <Badge variant="lime">Lime</Badge>
+  <Badge variant="emerald">Emerald</Badge>
+  <Badge variant="sky">Sky</Badge>
+  <Badge variant="fuchsia">Fuchsia</Badge>
 </div>
 ```
 
@@ -70,12 +70,12 @@ bun add tailwind-variants
 
 ```svelte
 <script>
-	import Badge from "$lib/components/spell/badge/badge.svelte";
+  import Badge from "#lib/components/spell/badge/badge.svelte";
 </script>
 
 <div class="flex items-center gap-4">
-	<Badge size="sm">Small</Badge>
-	<Badge size="default">Default</Badge>
+  <Badge size="sm">Small</Badge>
+  <Badge size="default">Default</Badge>
 </div>
 ```
 
@@ -85,10 +85,10 @@ Import the component and wrap the content you want it to affect. Adjust the opti
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `children` | `Snippet` | `required` | - |
-| `href` | `string \| undefined` | `undefined` | - |
-| `variant` | `"default" \| "secondary" \| "outline" \| "destructive" \| "red" \| "blue" \| "green" \| "yellow" \| "purple" \| "pink" \| "orange" \| "cyan" \| "indigo" \| "violet" \| "rose" \| "amber" \| "lime" \| "emerald" \| "sky" \| "slate" \| "fuchsia"` | `"default"` | - |
-| `size` | `"default" \| "sm"` | `"default"` | - |
-| `class` | `string \| undefined` | `undefined` | - |
+| Prop       | Type                                                                                                                                                                                                                                                | Default     | Description |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ----------- |
+| `children` | `Snippet`                                                                                                                                                                                                                                           | `required`  | -           |
+| `href`     | `string \| undefined`                                                                                                                                                                                                                               | `undefined` | -           |
+| `variant`  | `"default" \| "secondary" \| "outline" \| "destructive" \| "red" \| "blue" \| "green" \| "yellow" \| "purple" \| "pink" \| "orange" \| "cyan" \| "indigo" \| "violet" \| "rose" \| "amber" \| "lime" \| "emerald" \| "sky" \| "slate" \| "fuchsia"` | `"default"` | -           |
+| `size`     | `"default" \| "sm"`                                                                                                                                                                                                                                 | `"default"` | -           |
+| `class`    | `string \| undefined`                                                                                                                                                                                                                               | `undefined` | -           |

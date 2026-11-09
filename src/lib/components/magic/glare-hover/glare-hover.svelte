@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 
 	type Color = `#${string}`;
 	type RGBA = `rgba(${number},${number},${number},${number})`;

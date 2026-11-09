@@ -1,7 +1,7 @@
-import IndexTsRaw from "$lib/components/fancy/underline-to-background/index.ts?raw";
-import UnderlineToBackgroundRaw from "$lib/components/fancy/underline-to-background/underline-to-background.svelte?raw";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import IndexTsRaw from "#lib/components/fancy/underline-to-background/index.ts?raw";
+import UnderlineToBackgroundRaw from "#lib/components/fancy/underline-to-background/underline-to-background.svelte?raw";
+import type { SEO } from "#lib/types/seo.ts";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
@@ -75,7 +75,8 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					default: "undefined",
-					description: "Snippet content displayed inside the animated underline/fill treatment.",
+					description:
+						"Snippet content displayed inside the animated underline/fill treatment.",
 				},
 				{
 					name: "as",
@@ -87,25 +88,29 @@ export const data: ComponentDoc = {
 					name: "transition",
 					type: "Transition",
 					default: '{ type: "spring", damping: 30, stiffness: 300 }',
-					description: "Motion transition used for both the underline growth and text-color change.",
+					description:
+						"Motion transition used for both the underline growth and text-color change.",
 				},
 				{
 					name: "targetTextColor",
 					type: "string",
 					default: '"#fef"',
-					description: "Text color applied while the underline has expanded into the background.",
+					description:
+						"Text color applied while the underline has expanded into the background.",
 				},
 				{
 					name: "underlineHeightRatio",
 					type: "number",
 					default: "0.1",
-					description: "Ratio of the current font size used as the resting underline thickness.",
+					description:
+						"Ratio of the current font size used as the resting underline thickness.",
 				},
 				{
 					name: "underlinePaddingRatio",
 					type: "number",
 					default: "0.01",
-					description: "Ratio of the current font size used to offset the underline below the text baseline.",
+					description:
+						"Ratio of the current font size used to offset the underline below the text baseline.",
 				},
 				{
 					name: "class",

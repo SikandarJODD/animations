@@ -11,7 +11,7 @@
 
 <script lang="ts">
 	import { watch } from "runed";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 
 	import { useFloatingContext } from "./floating-context.svelte";
 

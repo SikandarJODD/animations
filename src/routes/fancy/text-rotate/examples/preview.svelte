@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { LayoutGroup, motion } from "motion-sv";
-	import { TextRotate } from "$lib/components/fancy/text-rotate";
+	import { TextRotate } from "#lib/components/fancy/text-rotate/index.js";
 
 	const texts = ["work!", "fancy ✽", "right", "fast", "fun", "rock", "🕶️🕶️🕶️"];
 </script>

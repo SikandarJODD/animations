@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { fancyUISidebarGroups } from "$lib/components/docs/registry/fancy_ui";
-	import Badge from "$lib/components/ui/badge/badge.svelte";
-	import { ScrollArea, ScrollFadeEffect } from "$lib/components/ui/scroll-area/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import { fancyUISidebarGroups } from "#lib/components/docs/registry/fancy_ui.ts";
+	import Badge from "#lib/components/ui/badge/badge.svelte";
+	import { ScrollArea, ScrollFadeEffect } from "#lib/components/ui/scroll-area/index.js";
+	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
 	import type { ComponentProps } from "svelte";
 	import BhideSvelteCard from "./main/bhide-svelte-card.svelte";
 

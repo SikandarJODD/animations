@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { QRCode } from "$lib/components/spell/qrcode";
+	import { QRCode } from "#lib/components/spell/qrcode/index.js";
 </script>
 
 <div class="flex flex-wrap items-center justify-center gap-6">

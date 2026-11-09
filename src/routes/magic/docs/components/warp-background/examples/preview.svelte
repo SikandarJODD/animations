@@ -1,6 +1,6 @@
 ﻿<script lang="ts">
-	import { WarpBackground } from "$lib/components/magic/warp-background";
-	import * as Card from "$lib/components/ui/card/index.js";
+	import { WarpBackground } from "#lib/components/magic/warp-background/index.js";
+	import * as Card from "#lib/components/ui/card/index.js";
 </script>
 
 <WarpBackground>

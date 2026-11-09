@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion, AnimatePresence, useInView, type Variants } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.ts";
 	import type { Snippet } from "svelte";
 
 	type MarginType = string;

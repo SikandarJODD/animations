@@ -6,7 +6,7 @@ Starter docs for Flow.
 
 ```svelte
 <script lang="ts">
-  import { Flow } from "$lib/components/magic/flow";
+  import { Flow } from "#lib/components/magic/flow/index.ts";
 </script>
 
 <Flow />

@@ -1,5 +1,5 @@
 <script>
-	import { MagicCard } from "$lib/components/magic/magic-card";
+	import { MagicCard } from "#lib/components/magic/magic-card/index.js";
 	import { mode } from "mode-watcher";
 
 	const features = [

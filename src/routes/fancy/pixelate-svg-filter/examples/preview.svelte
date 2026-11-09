@@ -1,6 +1,6 @@
 <script>
-	import { PixelateSvgFilter } from "$lib/components/fancy/pixelate-svg-filter";
-	import { Button } from "$lib/components/ui/button";
+	import { PixelateSvgFilter } from "#lib/components/fancy/pixelate-svg-filter/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 	import { fade } from "svelte/transition";
 	let isBlur = $state(false);
 	let updateBlur = () => {

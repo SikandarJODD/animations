@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
-	import { H1, Paragraph } from "$lib/components/docs/markdown";
-	import { Button } from "$lib/components/ui/button";
+	import { H1, Paragraph } from "#lib/components/docs/markdown/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 </script>
 
 <section
@@ -34,7 +34,7 @@
 			<Button
 				size="lg"
 				class="font-figtree rounded-full bg-teal-400 px-6 font-medium text-teal-950 subpixel-antialiased transition-none hover:bg-teal-400/85 dark:bg-teal-500 dark:text-teal-950 dark:hover:bg-teal-300/90"
-				href={resolve("/magic/docs/components/animated-background")}
+				href={resolve("magic/docs/components/animated-background")}
 			>
 				View Components
 			</Button>

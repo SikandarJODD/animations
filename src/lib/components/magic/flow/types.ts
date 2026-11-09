@@ -37,7 +37,10 @@ export type Connector = {
 	toId?: string;
 };
 
-export function rectEquals(a: RectLike | null | undefined, b: RectLike | null | undefined): boolean {
+export function rectEquals(
+	a: RectLike | null | undefined,
+	b: RectLike | null | undefined
+): boolean {
 	if (a === b) return true;
 	if (!a || !b) return false;
 

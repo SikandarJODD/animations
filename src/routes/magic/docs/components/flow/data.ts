@@ -1,20 +1,20 @@
-import ConnectorsSvelteRaw from "$lib/components/magic/flow/connectors.svelte?raw";
-import ConnectorsTsRaw from "$lib/components/magic/flow/connectors.ts?raw";
-import DescendantsSvelteTsRaw from "$lib/components/magic/flow/descendants.svelte.ts?raw";
-import DiagramContextSvelteTsRaw from "$lib/components/magic/flow/diagram-context.svelte.ts?raw";
-import FlowAnchorSvelteRaw from "$lib/components/magic/flow/flow-anchor.svelte?raw";
-import FlowNodeListSvelteRaw from "$lib/components/magic/flow/flow-node-list.svelte?raw";
-import FlowNodeSvelteRaw from "$lib/components/magic/flow/flow-node.svelte?raw";
-import FlowParallelSvelteRaw from "$lib/components/magic/flow/flow-parallel.svelte?raw";
-import FlowRootSvelteRaw from "$lib/components/magic/flow/flow-root.svelte?raw";
-import IndexTsRaw from "$lib/components/magic/flow/index.ts?raw";
-import NodeContextSvelteTsRaw from "$lib/components/magic/flow/node-context.svelte.ts?raw";
-import RenderPropsTsRaw from "$lib/components/magic/flow/render-props.ts?raw";
-import TypesTsRaw from "$lib/components/magic/flow/types.ts?raw";
-import KumoCssRaw from "$lib/styles/kumo.css?raw";
+import ConnectorsSvelteRaw from "#lib/components/magic/flow/connectors.svelte?raw";
+import ConnectorsTsRaw from "#lib/components/magic/flow/connectors.ts?raw";
+import DescendantsSvelteTsRaw from "#lib/components/magic/flow/descendants.svelte.ts?raw";
+import DiagramContextSvelteTsRaw from "#lib/components/magic/flow/diagram-context.svelte.ts?raw";
+import FlowAnchorSvelteRaw from "#lib/components/magic/flow/flow-anchor.svelte?raw";
+import FlowNodeListSvelteRaw from "#lib/components/magic/flow/flow-node-list.svelte?raw";
+import FlowNodeSvelteRaw from "#lib/components/magic/flow/flow-node.svelte?raw";
+import FlowParallelSvelteRaw from "#lib/components/magic/flow/flow-parallel.svelte?raw";
+import FlowRootSvelteRaw from "#lib/components/magic/flow/flow-root.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/flow/index.ts?raw";
+import NodeContextSvelteTsRaw from "#lib/components/magic/flow/node-context.svelte.ts?raw";
+import RenderPropsTsRaw from "#lib/components/magic/flow/render-props.ts?raw";
+import TypesTsRaw from "#lib/components/magic/flow/types.ts?raw";
+import KumoCssRaw from "#lib/styles/kumo.css?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import {
 	Basic,
 	BasicRaw,
@@ -141,7 +141,7 @@ export const data: ComponentDoc = {
 		code: {
 			filename: "usage.svelte",
 			filecode: `<script lang="ts">
-	import * as Flow from "$lib/components/magic/flow";
+	import * as Flow from "#lib/components/magic/flow/index.ts";
 </script>
 
 <Flow.Root>
