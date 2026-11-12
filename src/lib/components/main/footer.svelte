@@ -14,7 +14,7 @@
 			<span>Built by</span>
 			<a
 				class="text-foreground hover:text-muted-foreground inline-flex items-center gap-1.5 font-medium transition-colors"
-				href={github_repo.url}
+				href="https://bhide.dev?utm_source=animations&utm_medium=footer"
 				rel="noreferrer"
 				target="_blank"
 			>

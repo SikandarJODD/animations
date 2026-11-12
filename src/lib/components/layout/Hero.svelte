@@ -4,79 +4,6 @@
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import GridPattern from "../magic/grid-pattern/grid-pattern.svelte";
 	import Badge from "../spell/badge/badge.svelte";
-	import gsap from "gsap";
-	import { SplitText } from "gsap/SplitText";
-
-	let animateEffect = (node: HTMLElement) => {
-		let h1tag = node.getElementsByTagName("h1")[0];
-		let ctas = node.querySelectorAll("#svelte-animations-cta > a");
-		let tools = node.querySelectorAll("#tools .card");
-		let ptag = node.getElementsByTagName("p")[0];
-		let fancy_badge = node.querySelector("#fancy-badge");
-
-		gsap.registerPlugin(SplitText);
-		let chars = new SplitText(h1tag, { type: "chars", mask: "chars" }).chars;
-
-		let tl = gsap
-			.timeline({})
-			.from(chars, {
-				y: 60,
-				opacity: 0,
-				stagger: 0.03,
-				duration: 0.6,
-				ease: "power4.out",
-			})
-			.from(
-				ptag,
-				{
-					y: 20,
-					opacity: 0,
-				},
-				"-=0.5"
-			)
-			.fromTo(
-				ctas,
-				{
-					y: 20,
-					opacity: 0,
-				},
-				{
-					y: 0,
-					opacity: 1,
-					stagger: 0.1,
-					duration: 0.6,
-					ease: "elastic.out(1, 0.5)",
-				},
-				"-=0.1"
-			)
-			.fromTo(
-				tools,
-				{
-					y: 20,
-					opacity: 0,
-				},
-				{
-					y: 0,
-					opacity: 1,
-					stagger: 0.1,
-					duration: 0.6,
-					ease: "elastic.out(1, 0.5)",
-				},
-				"-=0.5"
-			)
-			.to(
-				fancy_badge,
-				{
-					keyframes: [
-						{ scale: 1.4, duration: 0.15 },
-						{ scale: 0.9, duration: 0.15 },
-						{ scale: 1, duration: 0.2 },
-					],
-				},
-				"+=0.2"
-			);
-		// i want after small delay new badge scale a bit then come to original scale to draw attention
-	};
 </script>
 
 <div>
@@ -217,11 +144,6 @@
 							>
 								Svelte Animations
 							</h1>
-							<!-- <h2
-								class="text-muted-foreground mt-2 text-lg font-normal md:text-xl lg:text-3xl"
-							>
-								<span class="font-mono!">40+</span> Copy-Paste Components
-							</h2> -->
 						</div>
 						<p
 							id="svelte-animations-desc"
