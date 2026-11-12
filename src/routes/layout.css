@@ -208,6 +208,8 @@
 	}
 	body {
 		@apply bg-background text-foreground antialiased;
+		font-synthesis-weight: none;
+		text-rendering: optimizeLegibility;
 	}
 
 	/* Custom scrollbar styling. Thanks @pranathiperii. */

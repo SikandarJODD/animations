@@ -44,19 +44,19 @@
 		codeBlocks={data.installBlock?.installCode}
 		folderStructure={data.installBlock?.folderStructure}
 		packages={data.installBlock?.packages}
-		class="my-4"
+		class="mt-4 md:mb-10"
 	/>
 
 	{#if data.examples && data.examples.length > 0}
 		<H2 id="examples">Examples</H2>
 		{#each data.examples as example}
 			{@const ExampleComp = example.preview}
-			<div class="my-8">
+			<div class="my-4">
 				<H3 id={example.name.toLowerCase().replace(/\s+/g, "-")}>
 					{example.name}
 				</H3>
 				{#if example.description}
-					<Paragraph>{example.description}</Paragraph>
+					<Paragraph class="mt-1">{example.description}</Paragraph>
 				{/if}
 				<div class="my-4">
 					<PreviewComponent code={example.code} isCentered={true}>

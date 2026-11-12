@@ -44,7 +44,7 @@
 
 <div class={cn("w-full", className)}>
 	<Tabs.Root bind:value={activeTab}>
-		<Tabs.List class="text-foreground h-auto gap-2 rounded-none bg-transparent px-0 py-1">
+		<Tabs.List class="text-foreground h-auto gap-2 rounded-none bg-transparent py-1 pl-1">
 			<Tabs.Trigger
 				value="cli"
 				class="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative cursor-pointer border-none bg-transparent! pr-2 pl-0 text-base after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
@@ -59,11 +59,11 @@
 			</Tabs.Trigger>
 		</Tabs.List>
 
-		<Tabs.Content value="cli" class="mt-4">
+		<Tabs.Content value="cli" class="mt-0">
 			<PMCommand command="execute" args={["shadcn-svelte@latest", "add", installUrl]} />
 		</Tabs.Content>
 
-		<Tabs.Content value="manual" class="mt-4" data-toc-ignore="true">
+		<Tabs.Content value="manual" class="mt-2" data-toc-ignore="true">
 			<Steps class="mb-2">
 				{#if packages.length > 0}
 					<Step title="Install dependencies">

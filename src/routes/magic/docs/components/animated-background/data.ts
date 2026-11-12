@@ -43,11 +43,13 @@ const installBlock: InstallComponentDocs = {
 			filename: "animated-background-item.svelte",
 			filecode: AnimatedBackgroundItemSvelteRaw,
 			lang: "svelte",
+			isExpand: true,
 		},
 		{
 			filename: "animated-background.svelte",
 			filecode: AnimatedBackgroundSvelteRaw,
 			lang: "svelte",
+			isExpand: true,
 		},
 		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
 	],
@@ -133,7 +135,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "AnimatedBackground",
+			name: "Animated Background",
 			desc: "The root component that manages the active item and shared background animation.",
 			props: [
 				{
@@ -175,7 +177,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "AnimatedBackgroundItem",
+			name: "Animated Background Item",
 			desc: "An individual selectable item that participates in the shared background animation.",
 			props: [
 				{
