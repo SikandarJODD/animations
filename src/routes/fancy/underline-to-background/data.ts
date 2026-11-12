@@ -68,6 +68,30 @@ export const data: ComponentDoc = {
 		filecode: PreviewRaw,
 		lang: "svelte",
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { UnderlineToBackground } from "#lib/components/fancy/underline-to-background/index.js";
+</script>
+
+<p class="max-w-xl text-3xl leading-snug font-medium tracking-tight sm:text-5xl">
+	See how we turn complex ideas into
+	<a href="/work" class="inline-block text-violet-600">
+		<UnderlineToBackground
+			as="span"
+			targetTextColor="#ffffff"
+			underlineHeightRatio={0.08}
+			transition={{ type: "spring", damping: 26, stiffness: 240 }}
+			class="px-1"
+		>
+			clear experiences ↗
+		</UnderlineToBackground>
+	</a>
+</p>`,
+			lang: "svelte",
+		},
+	},
 	props: [
 		{
 			props: [

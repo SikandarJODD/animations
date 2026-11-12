@@ -22,6 +22,32 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/scramble-hover
 bun add motion-sv
 ```
 
+## Usage
+
+Use a sequential center reveal and a constrained character set for a terminal-inspired action label. `scrambledClass` can distinguish only the characters currently changing.
+
+```svelte
+<script lang="ts">
+  import { ScrambleHover } from "#lib/components/fancy/scramble-hover/index.js";
+</script>
+
+<button
+  type="button"
+  class="group flex items-center gap-3 rounded-xl border bg-neutral-950 px-5 py-4 font-mono text-sm text-white"
+>
+  <span class="size-2 rounded-full bg-emerald-400 transition-shadow group-hover:shadow-[0_0_12px_#34d399]"></span>
+  <ScrambleHover
+    text="OPEN TRANSMISSION"
+    sequential
+    revealDirection="center"
+    scrambleSpeed={35}
+    characters={"01<>/{}[]"}
+    scrambledClass="text-emerald-400"
+    class="tracking-[0.16em]"
+  />
+</button>
+```
+
 ## Preview
 
 ```svelte
@@ -168,10 +194,6 @@ bun add motion-sv
   </div>
 </div>
 ```
-
-## Usage
-
-Import `ScrambleHover` from `#lib/components/fancy/scramble-hover/index.ts` and pass the props you need for your use case.
 
 ## Props
 

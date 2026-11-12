@@ -159,17 +159,26 @@ export const data: ComponentDoc = {
 	import { Floating, FloatingElement } from "#lib/components/fancy/parallax-floating/index.js";
 </script>
 
-<Floating>
-	<FloatingElement depth={0.5}>
-		<div class="absolute top-1/2 left-1/4 bg-red-500"></div>
-	</FloatingElement>
-	<FloatingElement depth={1}>
-		<div class="absolute top-1/2 left-2/4 bg-green-500"></div>
-	</FloatingElement>
-	<FloatingElement depth={2}>
-		<div class="absolute top-1/2 left-3/4 bg-blue-500"></div>
-	</FloatingElement>
-</Floating>`,
+<section class="relative h-96 overflow-hidden rounded-3xl bg-neutral-950 text-white">
+	<div class="relative z-10 mx-auto flex h-full max-w-lg flex-col items-center justify-center px-6 text-center">
+		<p class="text-xs tracking-[0.25em] text-white/50 uppercase">Creative studio</p>
+		<h2 class="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Ideas with depth.</h2>
+	</div>
+
+	<Floating sensitivity={0.7} easingFactor={0.06}>
+		<FloatingElement depth={0.5} class="top-12 left-[8%]">
+			<div class="h-28 w-20 -rotate-6 rounded-xl bg-violet-400/80"></div>
+		</FloatingElement>
+		<FloatingElement depth={1.25} class="right-[10%] bottom-10">
+			<div class="size-32 rotate-12 rounded-full border border-cyan-300/60"></div>
+		</FloatingElement>
+		<FloatingElement depth={2} class="top-16 right-[22%]">
+			<div class="rounded-full bg-white px-4 py-2 text-xs font-medium text-black">
+				Available for work
+			</div>
+		</FloatingElement>
+	</Floating>
+</section>`,
 			lang: "svelte",
 		},
 	},

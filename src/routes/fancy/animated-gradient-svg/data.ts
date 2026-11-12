@@ -72,6 +72,34 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedGradientSvg } from "#lib/components/fancy/animated-gradient-svg/index.js";
+</script>
+
+<section class="relative min-h-96 overflow-hidden rounded-3xl bg-slate-950 text-white">
+	<AnimatedGradientSvg
+		colors={["#7c3aed", "#2563eb", "#06b6d4", "#f43f5e"]}
+		speed={8}
+		blur="medium"
+		class="opacity-80"
+	/>
+
+	<div class="relative z-10 flex min-h-96 max-w-2xl flex-col justify-end p-8 sm:p-12">
+		<p class="text-sm font-medium tracking-[0.2em] text-white/70 uppercase">New collection</p>
+		<h2 class="mt-3 text-4xl font-semibold tracking-tight sm:text-6xl">
+			Color in motion.
+		</h2>
+		<p class="mt-4 max-w-lg text-white/75">
+			Build an atmospheric hero while keeping your content readable above the animated layer.
+		</p>
+	</div>
+</section>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

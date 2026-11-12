@@ -69,6 +69,42 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 	},
 	previewClass: "p-0",
+	usage: {
+		code: [
+			{
+				filename: "forward-usage.svelte",
+				filecode: `<script lang="ts">
+	import { RandomLetterSwap } from "#lib/components/fancy/random-letter-swap/index.js";
+</script>
+
+<a href="/archive" class="inline-flex text-3xl font-semibold tracking-tight">
+	<RandomLetterSwap
+		label="Explore the archive"
+		staggerDuration={0.025}
+		transition={{ type: "spring", duration: 0.65, bounce: 0 }}
+		class="text-foreground"
+	/>
+</a>`,
+				lang: "svelte",
+			},
+			{
+				filename: "ping-pong-usage.svelte",
+				filecode: `<script lang="ts">
+	import { RandomLetterSwapPingPong } from "#lib/components/fancy/random-letter-swap-ping-pong/index.js";
+</script>
+
+<button type="button" class="rounded-full bg-black px-5 py-3 text-sm font-medium text-white">
+	<RandomLetterSwapPingPong
+		label="Shuffle selection"
+		reverse={false}
+		staggerDuration={0.018}
+		transition={{ type: "spring", duration: 0.6, bounce: 0 }}
+	/>
+</button>`,
+				lang: "svelte",
+			},
+		],
+	},
 	props: [
 		{
 			name: "Shared Props",

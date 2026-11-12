@@ -22,6 +22,31 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/underline-to-b
 bun add motion-sv
 ```
 
+## Usage
+
+Wrap the effect in a link when it acts as navigation. The component uses the current text color for the expanding background, while `targetTextColor` keeps the label readable on hover.
+
+```svelte
+<script lang="ts">
+  import { UnderlineToBackground } from "#lib/components/fancy/underline-to-background/index.js";
+</script>
+
+<p class="max-w-xl text-3xl leading-snug font-medium tracking-tight sm:text-5xl">
+  See how we turn complex ideas into
+  <a href="/work" class="inline-block text-violet-600">
+    <UnderlineToBackground
+      as="span"
+      targetTextColor="#ffffff"
+      underlineHeightRatio={0.08}
+      transition={{ type: "spring", damping: 26, stiffness: 240 }}
+      class="px-1"
+    >
+      clear experiences ↗
+    </UnderlineToBackground>
+  </a>
+</p>
+```
+
 ## Preview
 
 ```svelte
@@ -113,10 +138,6 @@ bun add motion-sv
   </motion.h2>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

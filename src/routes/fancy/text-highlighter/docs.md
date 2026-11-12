@@ -22,6 +22,30 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/text-highlight
 bun add motion-sv
 ```
 
+## Usage
+
+Place `TextHighlighter` directly around the words you want to emphasize. The in-view trigger works well for editorial headings because the sweep runs when the copy enters the viewport.
+
+```svelte
+<script lang="ts">
+  import { TextHighlighter } from "#lib/components/fancy/text-highlighter/index.js";
+</script>
+
+<h2 class="max-w-3xl text-4xl leading-tight font-semibold tracking-tight sm:text-6xl">
+  We design digital products with
+  <TextHighlighter
+    triggerType="inView"
+    highlightColor="#fde047"
+    direction="ltr"
+    transition={{ type: "spring", duration: 0.9, bounce: 0, delay: 0.2 }}
+    class="text-neutral-950"
+  >
+    thoughtful details
+  </TextHighlighter>
+  that people remember.
+</h2>
+```
+
 ## Preview
 
 ```svelte
@@ -828,10 +852,6 @@ bun add motion-sv
   </div>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

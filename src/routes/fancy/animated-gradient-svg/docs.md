@@ -18,6 +18,35 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/f/animated-gr
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/animated-gradient-svg.json
 ```
 
+## Usage
+
+Use the gradient as an absolutely positioned visual layer inside a relatively positioned container. Keep the content in a higher stacking layer so it remains interactive and readable.
+
+```svelte
+<script lang="ts">
+  import { AnimatedGradientSvg } from "#lib/components/fancy/animated-gradient-svg/index.js";
+</script>
+
+<section class="relative min-h-96 overflow-hidden rounded-3xl bg-slate-950 text-white">
+  <AnimatedGradientSvg
+    colors={["#7c3aed", "#2563eb", "#06b6d4", "#f43f5e"]}
+    speed={8}
+    blur="medium"
+    class="opacity-80"
+  />
+
+  <div class="relative z-10 flex min-h-96 max-w-2xl flex-col justify-end p-8 sm:p-12">
+    <p class="text-sm font-medium tracking-[0.2em] text-white/70 uppercase">New collection</p>
+    <h2 class="mt-3 text-4xl font-semibold tracking-tight sm:text-6xl">
+      Color in motion.
+    </h2>
+    <p class="mt-4 max-w-lg text-white/75">
+      Build an atmospheric hero while keeping your content readable above the animated layer.
+    </p>
+  </div>
+</section>
+```
+
 ## Preview
 
 ```svelte
@@ -68,37 +97,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/animated-gradi
     </div>
   </div>
 </div>
-```
-
-## Usage
-
-Import `AnimatedGradientSvg` from `#lib/components/fancy/animated-gradient-svg/index.ts` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
-
-```
-@theme inline {
-  --animate-background-gradient: background-gradient;
-
-  @keyframes background-gradient {
-      0%, 100% {
-        transform: translate(0, 0);
-        animationDelay: var(--background-gradient-delay, 0s);
-      }
-      20% {
-        transform: translate(calc(100% * var(--tx-1, 1)), calc(100% * var(--ty-1, 1)));
-      }
-      40% {
-        transform: translate(calc(100% * var(--tx-2, -1)), calc(100% * var(--ty-2, 1)));
-      }
-      60% {
-        transform: translate(calc(100% * var(--tx-3, 1)), calc(100% * var(--ty-3, -1)));
-      }
-      80% {
-        transform: translate(calc(100% * var(--tx-4, -1)), calc(100% * var(--ty-4, -1)));
-      }
-    }
-}
 ```
 
 ## Props

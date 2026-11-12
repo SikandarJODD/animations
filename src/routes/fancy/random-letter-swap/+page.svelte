@@ -11,6 +11,7 @@
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import SEOComponent from "#lib/seo/seo.svelte";
 	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Code from "#lib/components/ui/code/index.js";
 
 	let PreviewComp = $derived(data.preview);
 	let installRandomLetterSwap = $derived("/f/random-letter-swap.json");
@@ -128,6 +129,21 @@
 			</Item.Actions>
 		</Item.Root>
 	</section>
+
+	{#if data.usage?.code}
+		<section>
+			<H2 id="usage">Usage</H2>
+			<div class="mt-4 space-y-4">
+				{#if Array.isArray(data.usage.code)}
+					{#each data.usage.code as codeBlock}
+						<Code.Snippet code={codeBlock} />
+					{/each}
+				{:else}
+					<Code.Snippet code={data.usage.code} />
+				{/if}
+			</div>
+		</section>
+	{/if}
 
 	{#if data?.examples && data.examples.length > 0}
 		<section>

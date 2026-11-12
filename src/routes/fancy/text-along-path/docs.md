@@ -22,6 +22,35 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/text-along-pat
 bun add motion-sv
 ```
 
+## Usage
+
+Define an SVG path in the same coordinate system as the component's `viewBox`, then repeat enough text to make the loop feel continuous. Use a unique `pathId` when rendering multiple instances.
+
+```svelte
+<script lang="ts">
+  import { AnimatedPathText } from "#lib/components/fancy/text-along-path/index.js";
+
+  const circlePath = "M 100 100 m -72 0 a 72 72 0 1 1 144 0 a 72 72 0 1 1 -144 0";
+</script>
+
+<div class="relative grid size-72 place-items-center rounded-full bg-neutral-950 text-white">
+  <AnimatedPathText
+    path={circlePath}
+    pathId="studio-badge-path"
+    viewBox="0 0 200 200"
+    text="INDEPENDENT STUDIO • DESIGN & DEVELOPMENT • INDEPENDENT STUDIO • DESIGN & DEVELOPMENT • "
+    textClass="fill-white text-[10px] tracking-[0.16em]"
+    svgClass="absolute inset-0 size-full"
+    duration={14}
+    textAnchor="start"
+  />
+
+  <div class="grid size-28 place-items-center rounded-full border border-white/20 text-center">
+    <span class="text-sm font-medium tracking-[0.2em]">EST.<br />2026</span>
+  </div>
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -268,10 +297,6 @@ bun add motion-sv
   </div>
 </div>
 ```
-
-## Usage
-
-Import `TextAlongPath` from `#lib/components/fancy/text-along-path/index.ts` and pass the props you need for your use case.
 
 ## Props
 

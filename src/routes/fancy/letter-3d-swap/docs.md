@@ -22,6 +22,31 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/letter-3d-swap
 bun add motion-sv
 ```
 
+## Usage
+
+Place the component inside a link and style both faces independently. This example starts the stagger from the center and uses a spring for a compact portfolio call to action.
+
+```svelte
+<script lang="ts">
+  import { Letter3DSwap } from "#lib/components/fancy/letter-3d-swap/index.js";
+</script>
+
+<a href="/work" class="inline-flex" aria-label="Explore selected work">
+  <Letter3DSwap
+    as="span"
+    mainClass="w-fit text-3xl font-semibold tracking-tight sm:text-5xl"
+    frontFaceClass="text-foreground"
+    secondFaceClass="text-violet-500"
+    rotateDirection="top"
+    staggerFrom="center"
+    staggerDuration={0.025}
+    transition={{ type: "spring", damping: 24, stiffness: 180 }}
+  >
+    Explore selected work
+  </Letter3DSwap>
+</a>
+```
+
 ## Preview
 
 ```svelte
@@ -167,10 +192,6 @@ bun add motion-sv
   </Letter3DSwap>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

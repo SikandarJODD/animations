@@ -110,6 +110,29 @@ export const data: ComponentDoc = {
 		filecode: PreviewRaw,
 		lang: "svelte",
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { TextHighlighter } from "#lib/components/fancy/text-highlighter/index.js";
+</script>
+
+<h2 class="max-w-3xl text-4xl leading-tight font-semibold tracking-tight sm:text-6xl">
+	We design digital products with
+	<TextHighlighter
+		triggerType="inView"
+		highlightColor="#fde047"
+		direction="ltr"
+		transition={{ type: "spring", duration: 0.9, bounce: 0, delay: 0.2 }}
+		class="text-neutral-950"
+	>
+		thoughtful details
+	</TextHighlighter>
+	that people remember.
+</h2>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	props: [
 		{

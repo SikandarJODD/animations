@@ -22,6 +22,46 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/random-letter-
 bun add motion-sv runed
 ```
 
+## Usage
+
+### Forward animation
+
+Use `RandomLetterSwap` for an animation that completes once per hover, with a freshly shuffled character order each time.
+
+```svelte
+<script lang="ts">
+  import { RandomLetterSwap } from "#lib/components/fancy/random-letter-swap/index.js";
+</script>
+
+<a href="/archive" class="inline-flex text-3xl font-semibold tracking-tight">
+  <RandomLetterSwap
+    label="Explore the archive"
+    staggerDuration={0.025}
+    transition={{ type: "spring", duration: 0.65, bounce: 0 }}
+    class="text-foreground"
+  />
+</a>
+```
+
+### Ping-pong animation
+
+Use `RandomLetterSwapPingPong` when the randomly ordered letters should return as the pointer leaves.
+
+```svelte
+<script lang="ts">
+  import { RandomLetterSwapPingPong } from "#lib/components/fancy/random-letter-swap-ping-pong/index.js";
+</script>
+
+<button type="button" class="rounded-full bg-black px-5 py-3 text-sm font-medium text-white">
+  <RandomLetterSwapPingPong
+    label="Shuffle selection"
+    reverse={false}
+    staggerDuration={0.018}
+    transition={{ type: "spring", duration: 0.6, bounce: 0 }}
+  />
+</button>
+```
+
 ## Preview
 
 ```svelte
@@ -97,10 +137,6 @@ bun add motion-sv runed
   </div>
 </div>
 ```
-
-## Usage
-
-Import `RandomLetterSwap` from `#lib/components/fancy/random-letter-swap/index.ts` and pass the props you need for your use case.
 
 ## Props
 

@@ -108,6 +108,31 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 	},
 	previewClass: "p-0",
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ScrambleHover } from "#lib/components/fancy/scramble-hover/index.js";
+</script>
+
+<button
+	type="button"
+	class="group flex items-center gap-3 rounded-xl border bg-neutral-950 px-5 py-4 font-mono text-sm text-white"
+>
+	<span class="size-2 rounded-full bg-emerald-400 transition-shadow group-hover:shadow-[0_0_12px_#34d399]"></span>
+	<ScrambleHover
+		text="OPEN TRANSMISSION"
+		sequential
+		revealDirection="center"
+		scrambleSpeed={35}
+		characters={"01<>/{}[]"}
+		scrambledClass="text-emerald-400"
+		class="tracking-[0.16em]"
+	/>
+</button>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	props: [
 		{

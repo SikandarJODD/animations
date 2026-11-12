@@ -107,6 +107,38 @@ export const data: ComponentDoc = {
 	},
 	examples,
 	installBlock,
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { MediaBetweenText } from "#lib/components/fancy/media-between-text/index.js";
+</script>
+
+<a href="/journal" class="inline-flex" aria-label="Read the design journal">
+	<MediaBetweenText
+		firstText="Read the"
+		secondText="journal"
+		mediaUrl="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=640&q=80"
+		mediaType="image"
+		alt="Notebook and laptop on a desk"
+		triggerType="hover"
+		class="cursor-pointer items-center text-3xl font-semibold tracking-tight sm:text-5xl"
+		leftTextClass="whitespace-nowrap"
+		rightTextClass="whitespace-nowrap"
+		mediaContainerClass="mx-2 h-12 overflow-hidden rounded-lg sm:h-16"
+		animationVariants={{
+			initial: { width: 0, opacity: 0 },
+			animate: {
+				width: "7rem",
+				opacity: 1,
+				transition: { type: "spring", stiffness: 180, damping: 22 },
+			},
+		}}
+	/>
+</a>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

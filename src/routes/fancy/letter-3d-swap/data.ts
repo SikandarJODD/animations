@@ -104,6 +104,30 @@ export const data: ComponentDoc = {
 		highlight: [[14, 24]],
 	},
 	previewClass: "p-0",
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Letter3DSwap } from "#lib/components/fancy/letter-3d-swap/index.js";
+</script>
+
+<a href="/work" class="inline-flex" aria-label="Explore selected work">
+	<Letter3DSwap
+		as="span"
+		mainClass="w-fit text-3xl font-semibold tracking-tight sm:text-5xl"
+		frontFaceClass="text-foreground"
+		secondFaceClass="text-violet-500"
+		rotateDirection="top"
+		staggerFrom="center"
+		staggerDuration={0.025}
+		transition={{ type: "spring", damping: 24, stiffness: 180 }}
+	>
+		Explore selected work
+	</Letter3DSwap>
+</a>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	props: [
 		{

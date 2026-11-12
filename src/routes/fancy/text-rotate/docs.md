@@ -22,6 +22,36 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/text-rotate.js
 bun add motion-sv
 ```
 
+## Usage
+
+Pair a stable phrase with a rotating set of qualities. The overflow classes clip each character while the spring transition moves it into and out of the label.
+
+```svelte
+<script lang="ts">
+  import { TextRotate } from "#lib/components/fancy/text-rotate/index.js";
+
+  const qualities = ["clear.", "useful.", "memorable."];
+</script>
+
+<h1 class="flex flex-wrap items-center gap-x-3 text-4xl font-semibold tracking-tight sm:text-6xl">
+  <span>Make every interaction</span>
+  <TextRotate
+    as="span"
+    texts={qualities}
+    rotationInterval={2400}
+    splitBy="characters"
+    staggerFrom="last"
+    staggerDuration={0.025}
+    initial={{ y: "100%", opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    exit={{ y: "-100%", opacity: 0 }}
+    mainClassName="overflow-hidden rounded-xl bg-violet-600 px-3 py-1 text-white"
+    splitLevelClassName="overflow-hidden"
+    transition={{ type: "spring", damping: 28, stiffness: 260 }}
+  />
+</h1>
+```
+
 ## Preview
 
 ```svelte
@@ -105,10 +135,6 @@ bun add motion-sv
   </LayoutGroup>
 </div>
 ```
-
-## Usage
-
-Import `TextRotate` from `#lib/components/fancy/text-rotate/index.ts` and pass the props you need for your use case.
 
 ## Props
 

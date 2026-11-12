@@ -110,6 +110,38 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 	},
 	previewClass: "p-0",
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ScrambleIn } from "#lib/components/fancy/scramble-in/index.js";
+</script>
+
+<div class="rounded-2xl bg-neutral-950 p-6 font-mono text-white" aria-live="polite">
+	<p class="text-xs tracking-[0.2em] text-emerald-400 uppercase">Deployment status</p>
+
+	<div class="mt-5 flex flex-col gap-2">
+		<ScrambleIn
+			text="SYSTEM ONLINE"
+			scrambleSpeed={35}
+			scrambledLetterCount={4}
+			characters="01#/@"
+			class="text-2xl font-semibold"
+			scrambledClass="text-emerald-400"
+		/>
+		<ScrambleIn
+			text="All services operational"
+			scrambleDelay={450}
+			scrambleSpeed={25}
+			scrambledLetterCount={3}
+			class="text-sm text-white/65"
+			scrambledClass="text-emerald-300"
+		/>
+	</div>
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	props: [
 		{

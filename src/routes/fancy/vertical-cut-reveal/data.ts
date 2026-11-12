@@ -138,6 +138,30 @@ export const data: ComponentDoc = {
 		filecode: PreviewRaw,
 		lang: "svelte",
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { VerticalCutReveal } from "#lib/components/fancy/vertical-cut-reveal/index.js";
+</script>
+
+<section class="rounded-3xl bg-neutral-950 px-6 py-20 text-white sm:px-12">
+	<p class="mb-5 text-sm tracking-[0.2em] text-white/50 uppercase">Independent creative studio</p>
+
+	<VerticalCutReveal
+		splitBy="words"
+		staggerFrom="first"
+		staggerDuration={0.08}
+		transition={{ type: "spring", stiffness: 210, damping: 24, delay: 0.15 }}
+		containerClass="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl"
+		wordLevelClass="mr-[0.22em]"
+	>
+		We build digital experiences with clarity and character.
+	</VerticalCutReveal>
+</section>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	props: [
 		{

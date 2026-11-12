@@ -86,6 +86,42 @@ export const data: ComponentDoc = {
 		filecode: PreviewRaw,
 		lang: "svelte",
 	},
+	usage: {
+		code: [
+			{
+				filename: "forward-usage.svelte",
+				filecode: `<script lang="ts">
+	import { LetterSwap } from "#lib/components/fancy/letter-swap/index.js";
+</script>
+
+<a href="/about" class="inline-flex text-3xl font-semibold tracking-tight">
+	<LetterSwap
+		label="Meet the studio"
+		staggerFrom="center"
+		staggerDuration={0.025}
+		class="text-foreground"
+	/>
+</a>`,
+				lang: "svelte",
+			},
+			{
+				filename: "ping-pong-usage.svelte",
+				filecode: `<script lang="ts">
+	import { LetterSwapPingPong } from "#lib/components/fancy/letter-swap-ping-pong/index.js";
+</script>
+
+<button class="rounded-full border px-5 py-3 text-sm font-medium" type="button">
+	<LetterSwapPingPong
+		label="Add to collection"
+		reverse={false}
+		staggerFrom="first"
+		staggerDuration={0.02}
+	/>
+</button>`,
+				lang: "svelte",
+			},
+		],
+	},
 	examples,
 	props: [
 		{

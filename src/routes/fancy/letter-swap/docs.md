@@ -18,6 +18,46 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/f/letter-swap
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/letter-swap.json
 ```
 
+## Usage
+
+### Forward animation
+
+Use `LetterSwap` when the replacement letters should move through once on hover.
+
+```svelte
+<script lang="ts">
+  import { LetterSwap } from "#lib/components/fancy/letter-swap/index.js";
+</script>
+
+<a href="/about" class="inline-flex text-3xl font-semibold tracking-tight">
+  <LetterSwap
+    label="Meet the studio"
+    staggerFrom="center"
+    staggerDuration={0.025}
+    class="text-foreground"
+  />
+</a>
+```
+
+### Ping-pong animation
+
+Use `LetterSwapPingPong` when the letters should reverse to their starting position as the pointer leaves.
+
+```svelte
+<script lang="ts">
+  import { LetterSwapPingPong } from "#lib/components/fancy/letter-swap-ping-pong/index.js";
+</script>
+
+<button class="rounded-full border px-5 py-3 text-sm font-medium" type="button">
+  <LetterSwapPingPong
+    label="Add to collection"
+    reverse={false}
+    staggerFrom="first"
+    staggerDuration={0.02}
+  />
+</button>
+```
+
 ## Preview
 
 ```svelte
@@ -100,10 +140,6 @@ By setting the staggerDelay prop to zero, you can create a line swap effect.
   <LetterSwapPingPong label="Last" staggerFrom="last" />
 </div>
 ```
-
-## Usage
-
-Import `LetterSwap` from `#lib/components/fancy/letter-swap/index.ts` and pass the props you need for your use case.
 
 ## Props
 

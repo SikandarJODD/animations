@@ -22,6 +22,31 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/vertical-cut-r
 bun add motion-sv
 ```
 
+## Usage
+
+Split a hero statement by words for a quick, readable entrance. `wordLevelClass` controls spacing around each clipped group, while `containerClass` styles the complete line.
+
+```svelte
+<script lang="ts">
+  import { VerticalCutReveal } from "#lib/components/fancy/vertical-cut-reveal/index.js";
+</script>
+
+<section class="rounded-3xl bg-neutral-950 px-6 py-20 text-white sm:px-12">
+  <p class="mb-5 text-sm tracking-[0.2em] text-white/50 uppercase">Independent creative studio</p>
+
+  <VerticalCutReveal
+    splitBy="words"
+    staggerFrom="first"
+    staggerDuration={0.08}
+    transition={{ type: "spring", stiffness: 210, damping: 24, delay: 0.15 }}
+    containerClass="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl"
+    wordLevelClass="mr-[0.22em]"
+  >
+    We build digital experiences with clarity and character.
+  </VerticalCutReveal>
+</section>
+```
+
 ## Preview
 
 ```svelte
@@ -303,10 +328,6 @@ Animate the Vertical Cut Reveal when the text enters the viewport using the useI
   </div>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

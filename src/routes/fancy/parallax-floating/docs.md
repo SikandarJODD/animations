@@ -22,6 +22,40 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/f/parallax-float
 bun add motion-sv runed
 ```
 
+## Usage
+
+Create a bounded scene, then position each `FloatingElement` independently. Lower depth values move subtly while higher values appear closer to the viewer.
+
+```svelte
+<script lang="ts">
+  import {
+    Floating,
+    FloatingElement,
+  } from "#lib/components/fancy/parallax-floating/index.js";
+</script>
+
+<section class="relative h-96 overflow-hidden rounded-3xl bg-neutral-950 text-white">
+  <div class="relative z-10 mx-auto flex h-full max-w-lg flex-col items-center justify-center px-6 text-center">
+    <p class="text-xs tracking-[0.25em] text-white/50 uppercase">Creative studio</p>
+    <h2 class="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Ideas with depth.</h2>
+  </div>
+
+  <Floating sensitivity={0.7} easingFactor={0.06}>
+    <FloatingElement depth={0.5} class="top-12 left-[8%]">
+      <div class="h-28 w-20 -rotate-6 rounded-xl bg-violet-400/80"></div>
+    </FloatingElement>
+    <FloatingElement depth={1.25} class="right-[10%] bottom-10">
+      <div class="size-32 rotate-12 rounded-full border border-cyan-300/60"></div>
+    </FloatingElement>
+    <FloatingElement depth={2} class="top-16 right-[22%]">
+      <div class="rounded-full bg-white px-4 py-2 text-xs font-medium text-black">
+        Available for work
+      </div>
+    </FloatingElement>
+  </Floating>
+</section>
+```
+
 ## Preview
 
 ```svelte
@@ -428,10 +462,6 @@ Group related children under one FloatingElement so they share a transform and d
   </Floating>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

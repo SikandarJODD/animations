@@ -109,6 +109,32 @@ export const data: ComponentDoc = {
 	},
 	previewClass: "!p-0",
 	installBlock,
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { PixelTrail } from "#lib/components/fancy/pixel-trail/index.js";
+</script>
+
+<section class="relative h-80 overflow-hidden rounded-3xl bg-neutral-950 text-white">
+	<PixelTrail
+		pixelSize={24}
+		fadeDuration={650}
+		delay={80}
+		class="z-10"
+		pixelClass="bg-cyan-400"
+	/>
+
+	<div class="pointer-events-none relative z-20 flex h-full flex-col justify-end p-8">
+		<p class="font-mono text-xs tracking-[0.2em] text-cyan-300 uppercase">Interactive field</p>
+		<h2 class="mt-3 max-w-md text-4xl font-semibold tracking-tight">
+			Move your pointer across the canvas.
+		</h2>
+	</div>
+</section>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [],
