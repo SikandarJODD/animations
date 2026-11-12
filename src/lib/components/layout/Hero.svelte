@@ -8,7 +8,7 @@
 </script>
 
 <div>
-	<main class="min-h-[calc(100dvh-20rem)] overflow-hidden">
+	<main class="min-h-[calc(100dvh-9rem)] overflow-hidden">
 		<GridPattern
 			width={45}
 			height={45}
@@ -16,13 +16,13 @@
 			class={cn("mask-[radial-gradient(800px_circle_at_top_center,white,transparent)]")}
 		/>
 		<section>
-			<div class="pt-14 md:pt-15">
+			<div class="pt-14 md:pt-32">
 				<div class="mx-auto max-w-7xl px-2 md:px-6">
 					<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 						<div class="mt-0">
 							<a
 								href="/magic/docs/components/animated-background"
-								class="hover:bg-muted dark:hover:border-t-border bg-muted dark:bg-muted/60 group mx-auto flex w-fit max-w-[min(100%,30rem)] items-center gap-2 rounded-full border p-1 pl-3 shadow-md shadow-zinc-950/5 backdrop-blur-xs transition-colors duration-300 sm:pl-4 dark:border-t-white/5 dark:shadow-zinc-950"
+								class="hover:bg-muted dark:hover:border-t-border bg-muted dark:bg-muted/60 group mx-auto flex w-fit max-w-[min(100%,30rem)] items-center gap-2 rounded-full border p-1 pl-3 backdrop-blur-xs transition-colors duration-300 sm:pl-3 dark:border-t-white/5 dark:shadow-zinc-950"
 							>
 								<span
 									class="text-foreground flex min-w-0 items-center gap-1.5 text-xs sm:text-sm"
@@ -54,7 +54,7 @@
 									class="bg-muted-foreground/10! dark:bg-muted group-hover:bg-muted size-6 shrink-0 overflow-hidden rounded-full duration-500"
 								>
 									<div class="flex size-6">
-										<ArrowRight class="m-auto size-3" />
+										<ArrowRight class="m-auto size-3 -rotate-45" />
 									</div>
 								</div>
 							</a>
@@ -150,8 +150,8 @@
 							id="svelte-animations-desc"
 							class="text-muted-foreground mx-auto mt-6 max-w-3xl px-1 text-base text-balance md:mt-10 md:px-0 md:text-lg"
 						>
-							<span class="font-mono">50+</span> free and open-source animated components and
-							effects.
+							<span class="text-primary/80 font-mono">50+</span> free and open-source animated
+							components and effects.
 						</p>
 						<p
 							class="text-muted-foreground mx-auto mt-2.5 max-w-3xl px-1 text-base text-balance md:px-0 md:text-lg"
@@ -180,7 +180,7 @@
 
 						<div
 							id="svelte-animations-cta"
-							class="mt-18 flex flex-col items-center justify-center gap-4 md:mt-14 md:flex-row"
+							class="mt-18 flex flex-col items-center justify-center gap-3 md:mt-14 md:flex-row"
 						>
 							<Button
 								href="/magic"
@@ -199,13 +199,8 @@
 							<Button
 								href="/fancy"
 								size="lg"
-								class="relative rounded-full bg-emerald-400 px-5 text-base text-emerald-50 transition-none duration-0 hover:bg-emerald-500 dark:bg-emerald-500 dark:text-emerald-900 dark:hover:bg-emerald-600"
+								class="relative rounded-full bg-emerald-400 pr-5 pl-4 text-base text-emerald-50 transition-none duration-0 hover:bg-emerald-500 dark:bg-emerald-500 dark:text-emerald-900 dark:hover:bg-emerald-600"
 							>
-								<Badge
-									id="fancy-badge"
-									class="absolute -top-4 right-2.5 rotate-6 rounded-full dark:bg-orange-600 dark:text-orange-50"
-									variant="orange">New</Badge
-								>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="20"

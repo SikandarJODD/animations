@@ -32,10 +32,10 @@ const navs: NavType[] = [
 			},
 		],
 	},
-	{
-		name: "Changelog",
-		href: "/changelog",
-	},
+	// {
+	// 	name: "Changelog",
+	// 	href: "/changelog",
+	// },
 ];
 
 const projectItems: ProjectItemType[] = [
