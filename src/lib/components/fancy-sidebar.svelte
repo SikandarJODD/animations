@@ -10,7 +10,7 @@
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 
-<Sidebar.Root {...restProps} bind:ref class="bg-background! pt-14">
+<Sidebar.Root {...restProps} bind:ref class="pt-14">
 	<Sidebar.Content>
 		{#each fancyUISidebarGroups as group (group.title)}
 			{#if group.items.length}

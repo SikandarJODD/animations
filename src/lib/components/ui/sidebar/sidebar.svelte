@@ -97,7 +97,7 @@
 			<div
 				data-sidebar="sidebar"
 				data-slot="sidebar-inner"
-				class="bg-sidebar group-data-[variant=floating]:ring-sidebar-border flex size-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:ring-1"
+				class="dark:bg-sidebar group-data-[variant=floating]:ring-sidebar-border flex size-full flex-col bg-white group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow-sm"
 			>
 				{@render children?.()}
 			</div>

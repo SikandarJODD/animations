@@ -214,7 +214,7 @@
 
 	/* Custom scrollbar styling. Thanks @pranathiperii. */
 	::-webkit-scrollbar {
-		width: 5px;
+		width: 6px;
 		height: 5px;
 	}
 
@@ -227,7 +227,7 @@
 	}
 
 	::-webkit-scrollbar-thumb {
-		@apply bg-muted-foreground/40 rounded-md;
+		@apply bg-muted-foreground/30 rounded-md;
 	}
 	::-webkit-scrollbar-thumb:hover {
 		@apply bg-muted-foreground/60;

@@ -40,7 +40,7 @@
 		{@render children()}
 	{:else}
 		<div
-			class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 px-4 py-6 sm:px-6 lg:pr-2 lg:pl-12 xl:grid-cols-[minmax(0,1fr)_16rem] xl:items-start xl:gap-x-14 xl:gap-y-0"
+			class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 px-4 py-8 sm:px-6 lg:px-8 xl:py-10 2xl:grid-cols-[minmax(0,1fr)_16rem] 2xl:items-start 2xl:gap-x-12 2xl:gap-y-0 2xl:pr-2"
 		>
 			<main
 				class="w-full max-w-5xl min-w-0 xl:justify-self-center 2xl:max-w-6xl"
@@ -50,7 +50,7 @@
 				<DocsNavigation previous={navigation.previous} next={navigation.next} />
 			</main>
 
-			<aside class="hidden h-full w-full xl:block">
+			<aside class="hidden h-full w-full 2xl:block">
 				<div class="sticky top-24">
 					<div class="flex h-[calc(100vh-8rem)] min-h-0 flex-col">
 						<div>
