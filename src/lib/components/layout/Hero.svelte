@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from "#lib/components/ui/button/button.svelte";
+	import FaviconLink from "#lib/components/ui/favicon-link/favicon-link.svelte";
 	import { cn } from "#lib/utils.js";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import GridPattern from "../magic/grid-pattern/grid-pattern.svelte";
@@ -149,8 +150,27 @@
 							id="svelte-animations-desc"
 							class="text-muted-foreground mx-auto mt-6 max-w-3xl px-1 text-base text-balance md:mt-10 md:px-0 md:text-lg"
 						>
-							50+ free and open-source animated components and effects. Built with
-							Svelte, Typescript, Tailwind CSS, and Motion SV.
+							<span class="font-mono">50+</span> free and open-source animated components and
+							effects. Built with <FaviconLink
+								href="https://svelte.dev"
+								faviconSrc="https://svelte.dev/favicon.png"
+								class="my-0 mr-1 ml-0 border border-dashed border-[#FF3E00] bg-[#FF3E00]/4 pr-2 pl-1.5 text-[15px] font-medium text-[#FF3E00] hover:text-[#FF3E00] dark:border-orange-500/50 dark:bg-orange-800/20"
+							>
+								Svelte
+							</FaviconLink><FaviconLink
+								href="https://tailwindcss.com/"
+								faviconSrc="https://tailwindcss.com/favicon.ico"
+								imageClass="rounded-xs"
+								class="my-0 mr-1.5 ml-0 border border-dashed border-[#06B6D4] bg-[#06B6D4]/4 pr-2 pl-1.5 text-[15px] font-medium text-[#06B6D4] hover:text-[#06B6D4] dark:border-cyan-500/50 dark:bg-cyan-800/20"
+							>
+								Tailwind CSS
+							</FaviconLink>and
+							<FaviconLink
+								href="https://motion.hyprsonic.dev/"
+								faviconSrc="https://motion.hyprsonic.dev/favicon.ico"
+								class="my-0 ml-0 border border-dashed border-[#F43F5E]/60 bg-[#F43F5E]/4 px-1.5 text-[15px] text-[#F43F5E]/90 hover:text-[#F43F5E] dark:border-pink-500/50 dark:bg-pink-800/20 dark:text-[#F43F5E]/80"
+								>Motion Svelte</FaviconLink
+							>.
 						</p>
 
 						<div
