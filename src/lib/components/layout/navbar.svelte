@@ -47,7 +47,7 @@
 		{
 			href: "/magic",
 			title: "Svelte Magic UI",
-			description: "50+ Animations & Effects for Svelte",
+			description: "60+ Animations & Effects for Svelte",
 			icon: SparklesIcon,
 		},
 		{

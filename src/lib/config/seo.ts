@@ -8,7 +8,7 @@ type SeoConfig = {
 export let seo_config: SeoConfig = {
 	title: "Svelte Animations",
 	description:
-		"50+ free and open-source animated components and effects. Built with Svelte 5, Typescript, Tailwind CSS, and Motion SV.",
+		"100+ free and open-source animated components and effects. Built with Svelte 5, Tailwind CSS, and Motion Svelte.",
 	title_template: "%s | Svelte Animations",
 	site_name: "Svelte Animations",
 	url: "https://sv-animations.vercel.app",

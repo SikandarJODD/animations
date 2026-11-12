@@ -150,7 +150,7 @@
 							id="svelte-animations-desc"
 							class="text-muted-foreground mx-auto mt-6 max-w-3xl px-1 text-base text-balance md:mt-10 md:px-0 md:text-lg"
 						>
-							<span class="text-primary/80 font-mono">50+</span> free and open-source animated
+							<span class="text-primary/80 font-mono">100+</span> free and open-source animated
 							components and effects.
 						</p>
 						<p

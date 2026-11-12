@@ -60,7 +60,7 @@
 		<H2 id="features">Features</H2>
 
 		<UnorderedList class="mt-0">
-			<ListItem><Strong>50+ components</Strong> ready to use in your projects</ListItem>
+			<ListItem><Strong>60+ components</Strong> ready to use in your projects</ListItem>
 			<ListItem><Strong>Open source</Strong> and free forever</ListItem>
 			<ListItem><Strong>Easily customizable</Strong> to match your design system</ListItem>
 			<ListItem

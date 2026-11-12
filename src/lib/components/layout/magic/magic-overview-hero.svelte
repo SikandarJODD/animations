@@ -17,7 +17,7 @@
 			id="description"
 			class="text-muted-foreground mx-auto mt-5 max-w-2xl text-base text-balance"
 		>
-			<span class="font-mono">50+</span> Free and open-source animated components and effects
+			<span class="font-mono">60+</span> Free and open-source animated components and effects
 			<br />
 		</p>
 		<p class="text-muted-foreground mx-auto mt-2.5 max-w-2xl text-base text-balance">
