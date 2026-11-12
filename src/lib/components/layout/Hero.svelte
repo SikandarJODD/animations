@@ -151,7 +151,12 @@
 							class="text-muted-foreground mx-auto mt-6 max-w-3xl px-1 text-base text-balance md:mt-10 md:px-0 md:text-lg"
 						>
 							<span class="font-mono">50+</span> free and open-source animated components and
-							effects. Built with <FaviconLink
+							effects.
+						</p>
+						<p
+							class="text-muted-foreground mx-auto mt-2.5 max-w-3xl px-1 text-base text-balance md:px-0 md:text-lg"
+						>
+							Built with <FaviconLink
 								href="https://svelte.dev"
 								faviconSrc="https://svelte.dev/favicon.png"
 								class="my-0 mr-1 ml-0 border border-dashed border-[#FF3E00] bg-[#FF3E00]/4 pr-2 pl-1.5 text-[15px] font-medium text-[#FF3E00] hover:text-[#FF3E00] dark:border-orange-500/50 dark:bg-orange-800/20"
@@ -170,7 +175,7 @@
 								faviconSrc="https://motion.hyprsonic.dev/favicon.ico"
 								class="my-0 ml-0 border border-dashed border-[#F43F5E]/60 bg-[#F43F5E]/4 px-1.5 text-[15px] text-[#F43F5E]/90 hover:text-[#F43F5E] dark:border-pink-500/50 dark:bg-pink-800/20 dark:text-[#F43F5E]/80"
 								>Motion Svelte</FaviconLink
-							>.
+							>
 						</p>
 
 						<div
