@@ -13,7 +13,7 @@
 		NavigationMenuTrigger,
 	} from "#lib/components/ui/navigation-menu/index.js";
 	import LightSwitch from "../ui/light-switch/light-switch.svelte";
-	import DocsSearchNavigation from "../docs/navigation/DocsSearchNavigation.svelte";
+	import DocsSearchNavigation from "../docs/navigation/docs-search-navigation.svelte";
 	import MobileNavbarSheet from "./MobileNavbarSheet.svelte";
 	import { cn } from "#lib/utils.js";
 	import Badge, { type BadgeVariant } from "../spell/badge/badge.svelte";

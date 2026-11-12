@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/state";
 	import Toc from "#lib/components/docs/base/toc/toc.svelte";
-	import DocsNavigation from "#lib/components/docs/navigation/DocsNavigation.svelte";
+	import DocsNavigation from "#lib/components/docs/navigation/docs-navigation.svelte";
 	import ContributeCard from "#lib/components/layout/contribute-card.svelte";
 	import { getPrevNext } from "#lib/components/docs/registry/fancy_ui.js";
 	import FancySidebar from "#lib/components/fancy-sidebar.svelte";

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import DocNavButton from "./DocsNavButton.svelte";
+	import DocNavButton from "./docs-nav-button.svelte";
 
 	export type DocNavLink = {
 		title: string;

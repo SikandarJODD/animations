@@ -7,7 +7,7 @@
 	import { Twitter } from "#lib/components/icons/index.js";
 	import { LightSwitch } from "#lib/components/ui/light-switch/index.js";
 	import { github_repo } from "#lib/config/repo.js";
-	import SearchNavigation from "#lib/components/docs/navigation/DocsSearchNavigation.svelte";
+	import SearchNavigation from "#lib/components/docs/navigation/docs-search-navigation.svelte";
 
 	let stars = $state(github_repo.fallback_stars);
 	const repo = { owner: github_repo.owner, repo: "animations" };
