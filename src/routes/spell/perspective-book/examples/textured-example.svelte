@@ -11,13 +11,9 @@
 
 <div class="py-10">
 	<div
-		class="border-input has-data-[state=checked]:border-ring relative mb-10 flex w-full items-start gap-2 rounded-lg border p-4 shadow-xs shadow-black/[.04]"
+		class="border-input relative mb-10 flex w-full items-start gap-2 rounded-lg border p-4 shadow-xs"
 	>
-		<Switch
-			bind:checked={textured}
-			class="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 data-[state=checked]:[&_span]:translate-x-2 data-[state=checked]:[&_span]:rtl:-translate-x-2"
-			id="show-textured"
-		/>
+		<Switch bind:checked={textured} class="order-1 h-4 w-6" id="show-textured" />
 		<div class="grid grow gap-2">
 			<Label for="show-textured">Toggle Textured</Label>
 			<p id="description" class="text-muted-foreground text-xs">
