@@ -71,6 +71,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedThemeToggler } from "#lib/components/magic/animated-theme-toggler/index.js";
+</script>
+
+<AnimatedThemeToggler />`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

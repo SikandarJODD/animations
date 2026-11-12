@@ -181,6 +181,25 @@ export const data: ComponentDoc = {
 			hideLines: true,
 		},
 	],
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedBeam } from "#lib/components/magic/animated-beam/index.js";
+
+	let containerRef: HTMLDivElement | null = $state(null);
+	let fromRef: HTMLDivElement | null = $state(null);
+	let toRef: HTMLDivElement | null = $state(null);
+</script>
+
+<div class="relative flex h-24 w-64 items-center justify-between" bind:this={containerRef}>
+	<div class="size-3 rounded-full bg-current" bind:this={fromRef}></div>
+	<div class="size-3 rounded-full bg-current" bind:this={toRef}></div>
+	<AnimatedBeam {containerRef} {fromRef} {toRef} />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

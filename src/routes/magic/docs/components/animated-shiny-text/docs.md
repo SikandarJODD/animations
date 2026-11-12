@@ -18,6 +18,36 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-sh
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-shiny-text.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-shiny-text: shiny-text 8s infinite;
+
+  @keyframes shiny-text {
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+    30%,
+    60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AnimatedShinyText } from "#lib/components/magic/animated-shiny-text/index.js";
+</script>
+
+<AnimatedShinyText>Shiny text</AnimatedShinyText>
+```
+
 ## Preview
 
 ```svelte
@@ -72,30 +102,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-shiny
     </AnimatedShinyText>
   </div>
 </div>
-```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-shiny-text: shiny-text 8s infinite;
-
-  @keyframes shiny-text {
-    0%,
-    90%,
-    100% {
-      background-position: calc(-100% - var(--shiny-width)) 0;
-    }
-    30%,
-    60% {
-      background-position: calc(100% + var(--shiny-width)) 0;
-    }
-  }
-}
 ```
 
 ## Props

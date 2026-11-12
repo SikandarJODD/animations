@@ -18,6 +18,23 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/avatar-circ
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/avatar-circles.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AvatarCircles } from "#lib/components/magic/avatar-circles/index.js";
+
+  const avatars = [
+    {
+      imageUrl: "https://github.com/shadcn.png",
+      profileUrl: "https://github.com/shadcn",
+    },
+  ];
+</script>
+
+<AvatarCircles avatarUrls={avatars} numPeople={12} />
+```
+
 ## Preview
 
 ```svelte
@@ -93,10 +110,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/avatar-circles
 
 <AvatarCircles numPeople={99} avatarUrls={avatars} />
 ```
-
-## Usage
-
-Import `AvatarCircles` from `#lib/components/magic/avatar-circles/index.ts` and pass the props you need for your use case.
 
 ## Props
 

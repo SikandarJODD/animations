@@ -109,6 +109,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AuroraText } from "#lib/components/magic/aurora-text/index.js";
+</script>
+
+<h2 class="text-4xl font-bold">
+	Build <AuroraText>beautiful</AuroraText> interfaces
+</h2>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

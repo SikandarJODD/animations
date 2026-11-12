@@ -67,6 +67,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedGradientText } from "#lib/components/magic/animated-gradient-text/index.js";
+</script>
+
+<AnimatedGradientText>Animated gradient text</AnimatedGradientText>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	installBlock: {

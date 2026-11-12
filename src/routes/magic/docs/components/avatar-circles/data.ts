@@ -65,6 +65,24 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AvatarCircles } from "#lib/components/magic/avatar-circles/index.js";
+
+	const avatars = [
+		{
+			imageUrl: "https://github.com/shadcn.png",
+			profileUrl: "https://github.com/shadcn",
+		},
+	];
+</script>
+
+<AvatarCircles avatarUrls={avatars} numPeople={12} />`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

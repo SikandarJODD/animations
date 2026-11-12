@@ -82,6 +82,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedShinyText } from "#lib/components/magic/animated-shiny-text/index.js";
+</script>
+
+<AnimatedShinyText>Shiny text</AnimatedShinyText>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

@@ -73,6 +73,27 @@ export const data: ComponentDoc = {
 			hideLines: true,
 		},
 	],
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedList } from "#lib/components/magic/animated-list/index.js";
+
+	const items = [
+		{ id: 1, label: "First item" },
+		{ id: 2, label: "Second item" },
+		{ id: 3, label: "Third item" },
+	];
+</script>
+
+<AnimatedList {items}>
+	{#snippet children(item)}
+		<div class="rounded-md border p-3">{item.label}</div>
+	{/snippet}
+</AnimatedList>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

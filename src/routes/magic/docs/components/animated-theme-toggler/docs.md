@@ -18,6 +18,26 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-th
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-theme-toggler.json
 ```
 
+Add the view transition styles to your global CSS:
+
+```css
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AnimatedThemeToggler } from "#lib/components/magic/animated-theme-toggler/index.js";
+</script>
+
+<AnimatedThemeToggler />
+```
+
 ## Preview
 
 ```svelte
@@ -38,20 +58,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-theme
 </script>
 
 <AnimatedThemeToggler />
-```
-
-## Usage
-
-Import `AnimatedThemeToggler` from `#lib/components/magic/animated-theme-toggler/index.ts` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
 ```
 
 ## Props

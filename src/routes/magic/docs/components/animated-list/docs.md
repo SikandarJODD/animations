@@ -18,6 +18,26 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-li
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-list.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AnimatedList } from "#lib/components/magic/animated-list/index.js";
+
+  const items = [
+    { id: 1, label: "First item" },
+    { id: 2, label: "Second item" },
+    { id: 3, label: "Third item" },
+  ];
+</script>
+
+<AnimatedList {items}>
+  {#snippet children(item)}
+    <div class="rounded-md border p-3">{item.label}</div>
+  {/snippet}
+</AnimatedList>
+```
+
 ## Preview
 
 ```svelte
@@ -224,28 +244,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-list.
     </div>
   </div>
 </div>
-```
-
-## Usage
-
-Pass an `items` array and render each item through the `children` snippet. The component progressively reveals list entries using the configured `delay`.
-
-```svelte
-<script lang="ts">
-  import { AnimatedList } from "#lib/components/magic/animated-list/index.ts";
-
-  const items = [
-    { id: 1, label: "First item" },
-    { id: 2, label: "Second item" },
-    { id: 3, label: "Third item" },
-  ];
-</script>
-
-<AnimatedList {items} delay={1000}>
-  {#snippet children(item)}
-    <div class="rounded-md border p-3">{item.label}</div>
-  {/snippet}
-</AnimatedList>
 ```
 
 ## Props

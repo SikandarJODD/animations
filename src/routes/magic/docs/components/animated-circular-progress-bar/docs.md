@@ -18,6 +18,20 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-ci
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-circular-progress-bar.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AnimatedCircularProgressBar } from "#lib/components/magic/animated-circular-progress-bar/index.js";
+</script>
+
+<AnimatedCircularProgressBar
+  value={75}
+  gaugePrimaryColor="#4f46e5"
+  gaugeSecondaryColor="#e5e7eb"
+/>
+```
+
 ## Preview
 
 ```svelte
@@ -81,22 +95,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-circu
 
 <AnimatedCircularProgressBar
   {value}
-  gaugePrimaryColor="rgb(79 70 229)"
-  gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
-/>
-```
-
-## Usage
-
-Pass the current `value` along with `gaugePrimaryColor` and `gaugeSecondaryColor`. The component calculates the percentage from `min`, `max`, and `value`.
-
-```svelte
-<script lang="ts">
-  import { AnimatedCircularProgressBar } from "#lib/components/magic/animated-circular-progress-bar/index.ts";
-</script>
-
-<AnimatedCircularProgressBar
-  value={75}
   gaugePrimaryColor="rgb(79 70 229)"
   gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
 />

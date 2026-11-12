@@ -13,7 +13,7 @@
 	let selectedCode = $derived(code[selectedIndex]);
 </script>
 
-<div class="flex overflow-auto rounded-md border">
+<div class="flex overflow-auto rounded-xl border">
 	<div
 		class="hidden min-w-66 overflow-auto rounded-tl-md border-r bg-neutral-50 font-mono text-black [--color-background:var(--color-zinc-900)] [--color-foreground:white] [--color-muted:var(--color-zinc-800)] sm:block dark:bg-zinc-900/25 dark:text-white"
 	>
@@ -42,46 +42,53 @@
 				<span>components</span>
 			</div>
 
-			{#each code as item, index}
-				<Button
-					class={cn(
-						"flex w-full items-center justify-start gap-1.5 rounded-none border-l-2 border-transparent pl-6! text-xs hover:bg-neutral-200/70 hover:dark:bg-zinc-900 [&_svg:not([class*='size-'])]:size-3",
-						selectedIndex === index &&
-							"border-muted-foreground border-l-2 bg-neutral-200/40 dark:bg-zinc-800/50"
-					)}
-					variant="ghost"
-					onclick={() => (selectedIndex = index)}
-				>
-					{#if item.lang === "svelte"}
-						<Svelte class="size-3" />
-					{:else if item.lang === "typescript"}
-						<TypeScript class="size-3" />
-					{:else}
-						<Terminal class="size-3" />
-					{/if}
-					<span
-						class={[
-							"transition-all duration-200",
-							selectedIndex === index
-								? "!text-black dark:!text-white"
-								: "text-muted-foreground",
-						]}>{item.filename || "Svelte"}</span
+			<div class="flex flex-col gap-0">
+				{#each code as item, index}
+					<Button
+						class={cn(
+							"flex w-full items-center justify-start gap-1.5 rounded-none border-none pl-6! text-xs hover:bg-neutral-200/70  [&_svg:not([class*='size-'])]:size-3",
+							selectedIndex === index && " bg-neutral-200/40 dark:bg-zinc-800/50"
+						)}
+						variant="ghost"
+						onclick={() => (selectedIndex = index)}
 					>
-				</Button>
-			{/each}
+						{#if item.lang === "svelte"}
+							<Svelte class="size-3" />
+						{:else if item.lang === "typescript"}
+							<TypeScript class="size-3" />
+						{:else}
+							<Terminal class="size-3" />
+						{/if}
+						<span
+							class={[
+								"transition-all duration-200",
+								selectedIndex === index
+									? "text-black! dark:text-white!"
+									: "text-muted-foreground",
+							]}>{item.filename || "Svelte"}</span
+						>
+					</Button>
+				{/each}
+			</div>
 		</div>
 	</div>
 
 	<div class="relative max-h-[550px] min-h-[32rem] w-full overflow-auto border-none sm:w-full">
 		<Root class="h-full rounded-none border-0 dark:bg-transparent">
-			<Actions>
-				<CopyButton value={selectedCode.filecode} />
+			<Actions class="[[data-slot=code-block]>&]:opacity-100">
+				<CopyButton
+					size="icon-md"
+					variant="secondary"
+					class="text-muted-foreground"
+					value={selectedCode.filecode}
+				/>
 			</Actions>
 			<HighlightedCode
 				code={selectedCode.filecode}
 				lang={selectedCode.lang}
 				highlight={selectedCode.highlight}
 				hideLines={false}
+				class="no-scrollbar scroll-fade"
 			/>
 		</Root>
 	</div>

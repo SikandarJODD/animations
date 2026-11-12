@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-gr
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-grid-pattern.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AnimatedGridPattern } from "#lib/components/magic/animated-grid-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <AnimatedGridPattern class="absolute inset-0" />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -65,20 +77,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-grid-
       "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
     )}
   />
-</div>
-```
-
-## Usage
-
-Place `AnimatedGridPattern` inside a relatively positioned container and use standard CSS classes to size, mask, and position it. The animation behavior is controlled by `numSquares`, `maxOpacity`, `duration`, and `repeatDelay`.
-
-```svelte
-<script lang="ts">
-  import { AnimatedGridPattern } from "#lib/components/magic/animated-grid-pattern/index.ts";
-</script>
-
-<div class="relative h-64 overflow-hidden rounded-lg border">
-  <AnimatedGridPattern class="absolute inset-0" />
 </div>
 ```
 

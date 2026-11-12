@@ -65,6 +65,21 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedCircularProgressBar } from "#lib/components/magic/animated-circular-progress-bar/index.js";
+</script>
+
+<AnimatedCircularProgressBar
+	value={75}
+	gaugePrimaryColor="#4f46e5"
+	gaugeSecondaryColor="#e5e7eb"
+/>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

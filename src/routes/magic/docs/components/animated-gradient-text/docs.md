@@ -18,6 +18,30 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-gr
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-gradient-text.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-gradient: gradient 8s linear infinite;
+
+  @keyframes gradient {
+    to {
+      background-position: var(--bg-size, 300%) 0;
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AnimatedGradientText } from "#lib/components/magic/animated-gradient-text/index.js";
+</script>
+
+<AnimatedGradientText>Animated gradient text</AnimatedGradientText>
+```
+
 ## Preview
 
 ```svelte
@@ -71,30 +95,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-gradi
 >
   Fast Gradient
 </AnimatedGradientText>
-```
-
-## Usage
-
-Render the text you want to animate as the component's children. If you want the gradient animation to work, define the `animate-gradient` keyframes in your global CSS.
-
-```svelte
-<script lang="ts">
-  import { AnimatedGradientText } from "#lib/components/magic/animated-gradient-text/index.ts";
-</script>
-
-<AnimatedGradientText>Introducing Magic UI</AnimatedGradientText>
-```
-
-```css
-@theme inline {
-  --animate-gradient: gradient 8s linear infinite;
-
-  @keyframes gradient {
-    to {
-      background-position: var(--bg-size, 300%) 0;
-    }
-  }
-}
 ```
 
 ## Props

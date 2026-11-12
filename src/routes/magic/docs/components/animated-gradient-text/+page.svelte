@@ -2,16 +2,15 @@
 	import { page } from "$app/state";
 	import { H1, H2, Paragraph, H3 } from "#lib/components/docs/markdown/index.js";
 	import AnimatedGradientTextRaw from "#lib/components/magic/animated-gradient-text/animated-gradient-text.svelte?raw";
-	import type { CodeBlock } from "#lib/components/ui/code/index.js";
-
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
+	import * as Code from "#lib/components/ui/code/index.js";
 	import InstallComponent from "#lib/components/docs/base/install-component.svelte";
 	import APITable from "#lib/components/docs/base/api-table.svelte";
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import { data } from "./data";
 	import SEO from "#lib/seo/seo.svelte";
 
-	const code: CodeBlock = {
+	const code: Code.CodeBlock = {
 		filename: "AnimatedGradientText.svelte",
 		filecode: AnimatedGradientTextRaw,
 		lang: "svelte",
@@ -58,6 +57,19 @@
 		folderStructure={data.folderStructure}
 		class="my-4"
 	/>
+
+	{#if data.usage?.code}
+		<H2 id="usage">Usage</H2>
+		<div class="mt-4 space-y-4">
+			{#if Array.isArray(data.usage.code)}
+				{#each data.usage.code as codeBlock}
+					<Code.Snippet code={codeBlock} />
+				{/each}
+			{:else}
+				<Code.Snippet code={data.usage.code} />
+			{/if}
+		</div>
+	{/if}
 
 	<H2 id="examples" class="mt-10">Examples</H2>
 	{#each data.examples as example}

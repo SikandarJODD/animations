@@ -18,6 +18,23 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/arc-timelin
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/arc-timeline.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { ArcTimeline } from "#lib/components/magic/arc-timeline/index.js";
+
+  const timeline = [
+    {
+      time: "2026",
+      steps: [{ icon: "1", content: "Project launched" }],
+    },
+  ];
+</script>
+
+<ArcTimeline data={timeline} />
+```
+
 ## Preview
 
 ```svelte
@@ -416,10 +433,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/arc-timeline.j
   <CalendarIcon class="size-5" />
 {/snippet}
 ```
-
-## Usage
-
-Import `ArcTimeline` from `#lib/components/magic/arc-timeline/index.ts` and pass the props you need for your use case.
 
 ## Props
 

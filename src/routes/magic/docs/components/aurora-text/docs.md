@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/aurora-text
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/aurora-text.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AuroraText } from "#lib/components/magic/aurora-text/index.js";
+</script>
+
+<h2 class="text-4xl font-bold">
+  Build <AuroraText>beautiful</AuroraText> interfaces
+</h2>
+```
+
 ## Preview
 
 ```svelte
@@ -48,10 +60,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/aurora-text.js
   >
 </h2>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

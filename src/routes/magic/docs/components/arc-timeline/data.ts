@@ -86,6 +86,24 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ArcTimeline } from "#lib/components/magic/arc-timeline/index.js";
+
+	const timeline = [
+		{
+			time: "2026",
+			steps: [{ icon: "1", content: "Project launched" }],
+		},
+	];
+</script>
+
+<ArcTimeline data={timeline} />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

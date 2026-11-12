@@ -18,6 +18,24 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-be
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-beam.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AnimatedBeam } from "#lib/components/magic/animated-beam/index.js";
+
+  let containerRef: HTMLDivElement | null = $state(null);
+  let fromRef: HTMLDivElement | null = $state(null);
+  let toRef: HTMLDivElement | null = $state(null);
+</script>
+
+<div class="relative flex h-24 w-64 items-center justify-between" bind:this={containerRef}>
+  <div class="size-3 rounded-full bg-current" bind:this={fromRef}></div>
+  <div class="size-3 rounded-full bg-current" bind:this={toRef}></div>
+  <AnimatedBeam {containerRef} {fromRef} {toRef} />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -351,10 +369,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-beam.
   />
 </div>
 ```
-
-## Usage
-
-Bind a shared container and the two endpoint elements, then pass those refs into `AnimatedBeam`. You can shape the path with `curvature`, reverse its direction with `reverse`, and fine-tune the start and end positions with the offset props.
 
 ## Props
 
