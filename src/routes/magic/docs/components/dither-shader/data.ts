@@ -91,7 +91,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "DitherShader",
+			name: "Dither Shader",
 			desc: "A component for Dither Shader.",
 			props: [
 				{
@@ -193,7 +193,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description:
 						"Additional CSS classes for the container (use this to set size via Tailwind).",

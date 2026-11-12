@@ -75,7 +75,7 @@ export const data: ComponentDoc = {
 	},
 	props: [
 		{
-			name: "AnimatedGradientText",
+			name: "Animated Gradient Text",
 			desc: "A text component with animated gradient background effect.",
 			props: [
 				{
@@ -98,7 +98,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

@@ -95,12 +95,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "ShimmerButton",
+			name: "Shimmer Button",
 			desc: "A component for Shimmer Button.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

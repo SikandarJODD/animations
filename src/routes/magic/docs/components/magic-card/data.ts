@@ -111,7 +111,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "MagicCard",
+			name: "Magic Card",
 			desc: "A component for Magic Card.",
 			props: [
 				{
@@ -122,7 +122,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes.",
 				},

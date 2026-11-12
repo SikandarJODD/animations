@@ -93,12 +93,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "VideoText",
+			name: "Video Text",
 			desc: "A component for Video Text.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

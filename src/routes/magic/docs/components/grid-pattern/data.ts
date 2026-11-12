@@ -64,7 +64,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "GridPatternProps",
+			name: "Grid Pattern Props",
 			desc: "Props for the GridPattern component",
 			props: [
 				{
@@ -105,7 +105,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Additional CSS classes",
 				},

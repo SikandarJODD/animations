@@ -50,7 +50,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "SparklesText",
+			name: "Sparkles Text",
 			desc: "A text wrapper that renders animated sparkle stars around its children.",
 			props: [
 				{
@@ -79,7 +79,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional classes merged onto the root element.",
 				},

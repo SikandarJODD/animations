@@ -64,12 +64,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "ShinyButton",
+			name: "Shiny Button",
 			desc: "A component for Shiny Button.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

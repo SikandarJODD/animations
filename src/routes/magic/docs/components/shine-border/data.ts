@@ -100,12 +100,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "ShineBorder",
+			name: "Shine Border",
 			desc: "A component for ShineBorder.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

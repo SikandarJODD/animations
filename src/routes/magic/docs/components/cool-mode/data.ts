@@ -85,7 +85,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "CoolMode",
+			name: "Cool Mode",
 			desc: "A wrapper component that adds particle effects on interaction.",
 			props: [
 				{
@@ -103,7 +103,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "CoolParticleOptions",
+			name: "Cool Particle Options",
 			desc: "Configuration options for the particle effect.",
 			props: [
 				{

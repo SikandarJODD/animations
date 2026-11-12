@@ -18,6 +18,7 @@
 		"docs:magic": "node scripts/generate-magic-docs.js",
 		"docs:spell": "node scripts/generate-magic-docs.js --group spell",
 		"docs:fancy": "node scripts/generate-magic-docs.js --group fancy",
+		"data:normalize": "node scripts/normalize-component-data.js",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"build:magic": "pnpm shadcn-svelte registry build",

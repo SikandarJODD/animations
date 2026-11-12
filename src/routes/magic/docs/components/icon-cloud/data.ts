@@ -74,7 +74,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "IconCloud",
+			name: "Icon Cloud",
 			desc: "A component for Icon Cloud.",
 			props: [
 				{

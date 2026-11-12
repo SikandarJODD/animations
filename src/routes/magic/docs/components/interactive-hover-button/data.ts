@@ -74,12 +74,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "InteractiveHoverButton",
+			name: "Interactive Hover Button",
 			desc: "A component for Interactive Hover Button.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

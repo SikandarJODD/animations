@@ -72,12 +72,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "ProgressiveBlur",
+			name: "Progressive Blur",
 			desc: "A component that creates a progressive blur effect with customizable positioning and blur levels.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

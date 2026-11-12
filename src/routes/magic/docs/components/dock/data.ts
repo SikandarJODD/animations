@@ -130,7 +130,7 @@ export const data: ComponentDoc = {
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply.",
 				},
@@ -174,12 +174,12 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "DockIcon",
+			name: "Dock Icon",
 			desc: "Individual icon wrapper that responds to the dock's magnification context.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply.",
 				},

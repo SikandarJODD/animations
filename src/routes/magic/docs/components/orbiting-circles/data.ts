@@ -92,12 +92,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "OrbitingCircles",
+			name: "Orbiting Circles",
 			desc: "A component that creates orbiting animations with customizable paths and behaviors.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply to the orbiting element",
 				},

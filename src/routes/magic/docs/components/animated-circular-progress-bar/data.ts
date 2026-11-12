@@ -68,7 +68,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "AnimatedCircularProgressBar",
+			name: "Animated Circular Progress Bar",
 			desc: "A component for displaying animated circular progress.",
 			props: [
 				{
@@ -103,7 +103,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

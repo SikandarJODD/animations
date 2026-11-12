@@ -68,7 +68,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "AvatarCircles",
+			name: "Avatar Circles",
 			desc: "A component that displays user avatars in a stacked, overlapping circle layout.",
 			props: [
 				{
@@ -85,7 +85,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

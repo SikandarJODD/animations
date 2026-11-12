@@ -61,12 +61,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "LightRays",
+			name: "Light Rays",
 			desc: "A component for Light Rays.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

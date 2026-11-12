@@ -95,7 +95,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "DotPattern",
+			name: "Dot Pattern",
 			desc: "A customizable dot pattern background with optional animations.",
 			props: [
 				{
@@ -143,7 +143,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes",
 				},

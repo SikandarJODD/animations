@@ -99,7 +99,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "BorderBeam",
+			name: "Border Beam",
 			desc: "A component for creating animated border beam effects.",
 			props: [
 				{
@@ -140,7 +140,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Additional CSS classes to apply",
 				},

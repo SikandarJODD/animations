@@ -109,7 +109,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "NumberTicker",
+			name: "Number Ticker",
 			desc: "A component for animating numbers to count up or down to a target value.",
 			props: [
 				{
@@ -144,7 +144,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply.",
 				},

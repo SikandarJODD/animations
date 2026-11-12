@@ -84,12 +84,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "FlickeringGrid",
+			name: "Flickering Grid",
 			desc: "A component for creating a flickering grid background.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

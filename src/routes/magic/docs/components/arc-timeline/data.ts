@@ -90,12 +90,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "ArcTimeline",
+			name: "Arc Timeline",
 			desc: "The root timeline container that renders grouped milestone steps around a rotating arc.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes applied to the root container.",
 				},
@@ -126,7 +126,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "ArcTimelineItem",
+			name: "Arc Timeline Item",
 			desc: "A timeline group with a shared time label and one or more steps.",
 			props: [
 				{
@@ -145,7 +145,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "ArcTimelineStep",
+			name: "Arc Timeline Step",
 			desc: "A single milestone marker rendered on the arc.",
 			props: [
 				{
@@ -164,7 +164,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "ArcTimelineArcConfig",
+			name: "Arc Timeline Arc Config",
 			desc: "Controls the geometry and spacing of the arc.",
 			props: [
 				{
@@ -195,7 +195,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "ArcTimelineDefaultActiveStep",
+			name: "Arc Timeline Default Active Step",
 			desc: "Selects the milestone that should be active on first render.",
 			props: [
 				{

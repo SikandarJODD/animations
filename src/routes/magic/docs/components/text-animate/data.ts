@@ -147,7 +147,7 @@ export const data: ComponentDoc = {
 	},
 	props: [
 		{
-			name: "TextAnimate",
+			name: "Text Animate",
 			desc: "A component for animating text with various effects and granular control.",
 			props: [
 				{
@@ -206,7 +206,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply to the container",
 				},

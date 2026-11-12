@@ -64,12 +64,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "StaggerText",
+			name: "Stagger Text",
 			desc: "A component for Stagger Text.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

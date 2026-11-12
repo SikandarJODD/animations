@@ -173,12 +173,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "PulsatingButton",
+			name: "Pulsating Button",
 			desc: "A component for Pulsating Button.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

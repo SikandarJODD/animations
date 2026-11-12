@@ -97,7 +97,7 @@ export const data: ComponentDoc = {
 	},
 	props: [
 		{
-			name: "GlyphMatrix",
+			name: "Glyph Matrix",
 			desc: "A canvas-based glyph animation that renders a shifting matrix of characters.",
 			props: [
 				{
@@ -146,7 +146,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes applied to the canvas.",
 				},

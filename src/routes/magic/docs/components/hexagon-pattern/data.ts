@@ -88,7 +88,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "HexagonPattern",
+			name: "Hexagon Pattern",
 			desc: "An SVG pattern component that renders repeating hexagons with configurable spacing, orientation, stroke style, and highlighted cells.",
 			props: [
 				{
@@ -137,7 +137,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional classes merged onto the root SVG element.",
 				},

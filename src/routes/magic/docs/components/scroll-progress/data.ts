@@ -64,12 +64,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "ScrollProgress",
+			name: "Scroll Progress",
 			desc: "A component for Scroll Progress.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

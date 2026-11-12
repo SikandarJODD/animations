@@ -79,12 +79,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "NeonGradientCard",
+			name: "Neon Gradient Card",
 			desc: "A component for Neon Gradient Card.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

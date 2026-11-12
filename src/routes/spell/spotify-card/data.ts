@@ -90,7 +90,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "''",
 					description: "Custom classes merged onto the root card wrapper.",
 				},

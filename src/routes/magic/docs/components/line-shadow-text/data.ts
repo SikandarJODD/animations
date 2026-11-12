@@ -78,12 +78,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "LineShadowText",
+			name: "Line Shadow Text",
 			desc: "A component for Line Shadow Text.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

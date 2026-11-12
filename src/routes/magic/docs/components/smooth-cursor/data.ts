@@ -64,12 +64,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "SmoothCursor",
+			name: "Smooth Cursor",
 			desc: "A component for Smooth Cursor.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

@@ -141,7 +141,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string | undefined",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Custom classes merged onto the wrapper root.",
 				},

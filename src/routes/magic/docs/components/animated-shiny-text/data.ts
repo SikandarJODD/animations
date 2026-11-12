@@ -85,7 +85,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "AnimatedShinyText",
+			name: "Animated Shiny Text",
 			desc: "A text component with a light glare shimmer effect.",
 			props: [
 				{
@@ -96,7 +96,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

@@ -192,7 +192,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Additional classes merged onto the root layout wrapper.",
 				},

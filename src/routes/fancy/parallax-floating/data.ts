@@ -202,14 +202,14 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Classes merged onto the root parallax container.",
 				},
 			],
 		},
 		{
-			name: "FloatingElement",
+			name: "Floating Element",
 			desc: "A positioned layer registered with the nearest Floating root.",
 			props: [
 				{
@@ -227,7 +227,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Classes merged onto the positioned floating element wrapper.",
 				},

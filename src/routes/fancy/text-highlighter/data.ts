@@ -159,7 +159,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description:
 						"Classes applied to both the wrapper element and animated inline span.",

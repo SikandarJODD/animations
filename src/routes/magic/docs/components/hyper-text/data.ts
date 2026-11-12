@@ -60,7 +60,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "HyperText",
+			name: "Hyper Text",
 			desc: "A component for Hyper Text.",
 			props: [
 				{
@@ -71,7 +71,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

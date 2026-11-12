@@ -109,7 +109,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "PixelImage",
+			name: "Pixel Image",
 			desc: "A component that creates stunning image reveal animations by splitting images into a grid of pieces with staggered fade-in effects.",
 			props: [
 				{

@@ -173,7 +173,7 @@ export const data: ComponentDoc = {
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					description: "Additional CSS classes applied to the separator line",
 				},
 				{

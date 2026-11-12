@@ -113,7 +113,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "AuroraText",
+			name: "Aurora Text",
 			desc: "An animated gradient text component with flowing aurora colors.",
 			props: [
 				{
@@ -124,7 +124,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

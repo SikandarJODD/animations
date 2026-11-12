@@ -140,7 +140,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "TypingAnimation",
+			name: "Typing Animation",
 			desc: "A versatile typing animation component with support for single text, multiple words, cursor customization, and animation controls.",
 			props: [
 				{
@@ -157,7 +157,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

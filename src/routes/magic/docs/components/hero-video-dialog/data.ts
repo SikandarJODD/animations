@@ -79,7 +79,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "HeroVideoDialogProps",
+			name: "Hero Video Dialog Props",
 			desc: "Props for the HeroVideoDialog component",
 			props: [
 				{
@@ -108,7 +108,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Additional CSS classes",
 				},

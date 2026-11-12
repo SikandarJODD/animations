@@ -99,7 +99,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "BlurFade",
+			name: "Blur Fade",
 			desc: "A component for creating blur and fade animations.",
 			props: [
 				{
@@ -110,7 +110,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

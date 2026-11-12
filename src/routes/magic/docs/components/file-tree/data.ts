@@ -128,7 +128,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes",
 				},
@@ -158,7 +158,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes",
 				},
@@ -182,14 +182,14 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes",
 				},
 			],
 		},
 		{
-			name: "CollapseButton",
+			name: "Collapse Button",
 			desc: "A button to expand or collapse all folders.",
 			props: [
 				{
@@ -206,7 +206,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes",
 				},

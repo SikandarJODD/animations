@@ -96,12 +96,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "RippleButton",
+			name: "Ripple Button",
 			desc: "A component for Ripple Button.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

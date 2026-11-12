@@ -130,7 +130,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "MotionGrid",
+			name: "Motion Grid",
 			desc: "Grid container that provides frame state and layout context.",
 			props: [
 				{
@@ -165,14 +165,14 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional classes for the grid root.",
 				},
 			],
 		},
 		{
-			name: "MotionGridCells",
+			name: "Motion Grid Cells",
 			desc: "Renders all cells and applies active/inactive presentation.",
 			props: [
 				{
@@ -189,7 +189,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Base class applied to all cells.",
 				},

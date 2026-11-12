@@ -65,7 +65,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "NoiseTexture",
+			name: "Noise Texture",
 			desc: "An SVG overlay that renders grayscale fractal noise using an internal filter.",
 			props: [
 				{
@@ -95,7 +95,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional classes applied to the root SVG element.",
 				},

@@ -70,7 +70,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "GlareHover",
+			name: "Glare Hover",
 			desc: "A wrapper component that sweeps a configurable glare across its content on hover.",
 			props: [
 				{
@@ -136,7 +136,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional classes merged onto the root div.",
 				},

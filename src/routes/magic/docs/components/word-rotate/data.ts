@@ -60,12 +60,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "WordRotate",
+			name: "Word Rotate",
 			desc: "A component for Word Rotate.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

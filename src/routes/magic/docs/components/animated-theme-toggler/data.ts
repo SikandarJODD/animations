@@ -74,12 +74,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "AnimatedThemeToggler",
+			name: "Animated Theme Toggler",
 			desc: "A component for smooth theme switching with circular reveal animation.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

@@ -81,12 +81,12 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "RetroGrid",
+			name: "Retro Grid",
 			desc: "A component for Retro Grid.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},
