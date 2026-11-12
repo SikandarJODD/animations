@@ -63,6 +63,19 @@ export const data: ComponentDoc = {
 			highlight: [2],
 		},
 	],
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Lens } from "#lib/components/magic/lens/index.js";
+</script>
+
+<Lens>
+	<img src="https://images.unsplash.com/photo-1736606355698-5efdb410fe93" alt="Mountain lake" />
+</Lens>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	installBlock,

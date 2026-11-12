@@ -17,72 +17,72 @@ Add a minimal usage example to `data.ts` and `docs.md` for each component.
 
 ## Phase 2
 
-- [ ] Backlight
-- [ ] Bento Grid
-- [ ] Blur Fade
-- [ ] Border Beam
-- [ ] Confetti
-- [ ] Cool Mode
-- [ ] Dither Shader
-- [ ] Dock
-- [ ] Dot Pattern
-- [ ] Dotted Map
+- [x] Backlight
+- [x] Bento Grid
+- [x] Blur Fade
+- [x] Border Beam
+- [x] Confetti
+- [x] Cool Mode
+- [x] Dither Shader
+- [x] Dock
+- [x] Dot Pattern
+- [x] Dotted Map
 
 ## Phase 3
 
-- [ ] File Tree
-- [ ] Flickering Grid
-- [ ] Glare Hover
-- [ ] Globe
-- [ ] Grid Pattern
-- [ ] Hero Video Dialog
-- [ ] Hexagon Pattern
-- [ ] Hyper Text
-- [ ] Icon Cloud
-- [ ] Interactive Hover Button
+- [x] File Tree
+- [x] Flickering Grid
+- [x] Glare Hover
+- [x] Globe
+- [x] Grid Pattern
+- [x] Hero Video Dialog
+- [x] Hexagon Pattern
+- [x] Hyper Text
+- [x] Icon Cloud
+- [x] Interactive Hover Button
 
 ## Phase 4
 
-- [ ] Lens
-- [ ] Light Rays
-- [ ] Line Shadow Text
-- [ ] Magic Card
-- [ ] Marquee
-- [ ] Meteors
-- [ ] Morphing Text
-- [ ] Motion Grid
-- [ ] Neon Gradient Card
-- [ ] Noise Texture
+- [x] Lens
+- [x] Light Rays
+- [x] Line Shadow Text
+- [x] Magic Card
+- [x] Marquee
+- [x] Meteors
+- [x] Morphing Text
+- [x] Motion Grid
+- [x] Neon Gradient Card
+- [x] Noise Texture
 
 ## Phase 5
 
-- [ ] Number Ticker
-- [ ] Orbiting Circles
-- [ ] Pixel Image
-- [ ] Pointer
-- [ ] Progressive Blur
-- [ ] Pulsating Button
-- [ ] Rainbow Button
-- [ ] Retro Grid
-- [ ] Ripple
-- [ ] Ripple Button
+- [x] Number Ticker
+- [x] Orbiting Circles
+- [x] Pixel Image
+- [x] Pointer
+- [x] Progressive Blur
+- [x] Pulsating Button
+- [x] Rainbow Button
+- [x] Retro Grid
+- [x] Ripple
+- [x] Ripple Button
 
 ## Phase 6
 
-- [ ] Scroll Progress
-- [ ] Shimmer Button
-- [ ] Shine Border
-- [ ] Shiny Button
-- [ ] Smooth Cursor
-- [ ] Sparkles Text
-- [ ] Stagger Text
-- [ ] Striped Pattern
-- [ ] Terminal
-- [ ] Text Animate
+- [x] Scroll Progress
+- [x] Shimmer Button
+- [x] Shine Border
+- [x] Shiny Button
+- [x] Smooth Cursor
+- [x] Sparkles Text
+- [x] Stagger Text
+- [x] Striped Pattern
+- [x] Terminal
+- [x] Text Animate
 
 ## Phase 7
 
-- [ ] Typing Animation
-- [ ] Video Text
-- [ ] Warp Background
-- [ ] Word Rotate
+- [x] Typing Animation
+- [x] Video Text
+- [x] Warp Background
+- [x] Word Rotate

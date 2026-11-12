@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/glare-hover
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/glare-hover.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { GlareHover } from "#lib/components/magic/glare-hover/index.js";
+</script>
+
+<GlareHover class="rounded-xl">
+  <div class="rounded-xl border p-8">Hover me</div>
+</GlareHover>
+```
+
 ## Preview
 
 ```svelte
@@ -115,10 +127,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/glare-hover.js
   </Card.Root>
 </GlareHover>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

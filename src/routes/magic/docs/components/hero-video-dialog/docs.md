@@ -18,6 +18,20 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/hero-video-
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/hero-video-dialog.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { HeroVideoDialog } from "#lib/components/magic/hero-video-dialog/index.js";
+</script>
+
+<HeroVideoDialog
+  videoSrc="https://www.youtube.com/embed/rv3Yq-B8qp4"
+  thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+  thumbnailAlt="Video preview"
+/>
+```
+
 ## Preview
 
 ```svelte
@@ -76,10 +90,6 @@ Hero video dialog with top-in-bottom-out animation
 <style>
 </style>
 ```
-
-## Usage
-
-Import `HeroVideoDialog` from `#lib/components/magic/hero-video-dialog/index.ts` and pass the props you need for your use case.
 
 ## Props
 

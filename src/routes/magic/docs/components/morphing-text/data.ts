@@ -58,6 +58,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { MorphingText } from "#lib/components/magic/morphing-text/index.js";
+
+	const texts = ["Design", "Develop", "Ship"];
+</script>
+
+<MorphingText {texts} />`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

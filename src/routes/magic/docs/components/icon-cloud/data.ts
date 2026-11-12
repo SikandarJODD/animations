@@ -70,6 +70,21 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { IconCloud } from "#lib/components/magic/icon-cloud/index.js";
+
+	const images = ["svelte", "typescript", "vite"].map(
+		(slug) => \`https://cdn.simpleicons.org/\${slug}/\${slug}\`
+	);
+</script>
+
+<IconCloud {images} />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

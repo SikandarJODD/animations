@@ -81,6 +81,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { CoolMode } from "#lib/components/magic/cool-mode/index.js";
+</script>
+
+<CoolMode>
+	<button type="button">Click me</button>
+</CoolMode>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

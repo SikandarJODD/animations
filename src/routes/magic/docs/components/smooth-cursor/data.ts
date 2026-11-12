@@ -60,6 +60,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { SmoothCursor } from "#lib/components/magic/smooth-cursor/index.js";
+</script>
+
+<SmoothCursor />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

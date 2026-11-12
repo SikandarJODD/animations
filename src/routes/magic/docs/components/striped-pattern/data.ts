@@ -55,6 +55,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { StripedPattern } from "#lib/components/magic/striped-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<StripedPattern />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

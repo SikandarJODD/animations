@@ -18,6 +18,23 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dock.json
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dock.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import HomeIcon from "@lucide/svelte/icons/house";
+  import { Dock, DockIcon } from "#lib/components/magic/dock/index.js";
+</script>
+
+<Dock>
+  <DockIcon>
+    <button type="button" aria-label="Home">
+      <HomeIcon class="size-5" />
+    </button>
+  </DockIcon>
+</Dock>
+```
+
 ## Preview
 
 ```svelte
@@ -357,10 +374,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dock.json
   </Dock>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

@@ -92,6 +92,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ShimmerButton } from "#lib/components/magic/shimmer-button/index.js";
+</script>
+
+<ShimmerButton>Get started</ShimmerButton>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

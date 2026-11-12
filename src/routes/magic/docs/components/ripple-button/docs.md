@@ -18,6 +18,34 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple-butt
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple-button.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-rippling: rippling var(--duration) ease-out;
+
+  @keyframes rippling {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { RippleButton } from "#lib/components/magic/ripple-button/index.js";
+</script>
+
+<RippleButton>Click me</RippleButton>
+```
+
 ## Preview
 
 ```svelte
@@ -38,28 +66,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple-button.
 </script>
 
 <RippleButton rippleColor="#ADD8E6">Click me</RippleButton>
-```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-rippling: rippling var(--duration) ease-out;
-
-  @keyframes rippling {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      transform: scale(2);
-      opacity: 0;
-    }
-  }
-}
 ```
 
 ## Props

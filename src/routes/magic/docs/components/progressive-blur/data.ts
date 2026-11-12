@@ -68,6 +68,20 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ProgressiveBlur } from "#lib/components/magic/progressive-blur/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<div class="h-full overflow-auto">Scrollable content</div>
+	<ProgressiveBlur position="bottom" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

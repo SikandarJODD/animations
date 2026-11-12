@@ -60,6 +60,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ScrollProgress } from "#lib/components/magic/scroll-progress/index.js";
+</script>
+
+<ScrollProgress />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

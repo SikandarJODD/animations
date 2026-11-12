@@ -75,6 +75,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { LineShadowText } from "#lib/components/magic/line-shadow-text/index.js";
+</script>
+
+<LineShadowText content="Shadow" />`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

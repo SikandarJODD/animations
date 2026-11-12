@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/magic-card.
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/magic-card.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { MagicCard } from "#lib/components/magic/magic-card/index.js";
+</script>
+
+<MagicCard class="rounded-xl p-8">
+  Hover over this card
+</MagicCard>
+```
+
 ## Preview
 
 #### magic-card.svelte
@@ -125,10 +137,6 @@ export { default as MagicCard } from "./magic-card.svelte";
 ```typescript
 export { default as MagicCard } from "./magic-card.svelte";
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

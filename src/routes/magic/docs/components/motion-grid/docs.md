@@ -18,6 +18,23 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/motion-grid
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/motion-grid.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { MotionGrid, MotionGridCells, type Frames } from "#lib/components/magic/motion-grid/index.js";
+
+  const frames: Frames = [
+    [[0, 0], [1, 1]],
+    [[1, 0], [0, 1]],
+  ];
+</script>
+
+<MotionGrid gridSize={[2, 2]} {frames} class="w-12 gap-1">
+  <MotionGridCells class="aspect-square rounded-full bg-muted data-[active=true]:bg-primary" />
+</MotionGrid>
+```
+
 ## Preview
 
 #### preview.svelte
@@ -856,10 +873,6 @@ export const motionGridStateOrder: MotionGridStateKey[] = [
   </p>
 </div>
 ```
-
-## Usage
-
-Import `MotionGrid` from `#lib/components/magic/motion-grid/index.ts` and pass the props you need for your use case.
 
 ## Props
 

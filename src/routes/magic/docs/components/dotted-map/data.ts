@@ -72,6 +72,21 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { DottedMap } from "#lib/components/magic/dotted-map/index.js";
+
+	const markers = [{ lat: 40.7128, lng: -74.006, size: 0.4 }];
+</script>
+
+<div class="h-80 w-full">
+	<DottedMap {markers} />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

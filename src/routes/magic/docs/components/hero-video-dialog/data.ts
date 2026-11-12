@@ -75,6 +75,21 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { HeroVideoDialog } from "#lib/components/magic/hero-video-dialog/index.js";
+</script>
+
+<HeroVideoDialog
+	videoSrc="https://www.youtube.com/embed/rv3Yq-B8qp4"
+	thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+	thumbnailAlt="Video preview"
+/>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

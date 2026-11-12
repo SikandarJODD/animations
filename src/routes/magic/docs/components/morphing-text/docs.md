@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-te
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-text.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { MorphingText } from "#lib/components/magic/morphing-text/index.js";
+
+  const texts = ["Design", "Develop", "Ship"];
+</script>
+
+<MorphingText {texts} />
+```
+
 ## Preview
 
 ```svelte
@@ -61,10 +73,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-text.
 
 <MorphingText {texts} />
 ```
-
-## Usage
-
-Import `MorphingText` from `#lib/components/magic/morphing-text/index.ts` and pass the props you need for your use case.
 
 ## Props
 

@@ -95,6 +95,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { BlurFade } from "#lib/components/magic/blur-fade/index.js";
+</script>
+
+<BlurFade>
+	<h2 class="text-3xl font-bold">Fade into view</h2>
+</BlurFade>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

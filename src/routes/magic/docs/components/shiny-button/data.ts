@@ -60,6 +60,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ShinyButton } from "#lib/components/magic/shiny-button/index.js";
+</script>
+
+<ShinyButton>Get started</ShinyButton>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

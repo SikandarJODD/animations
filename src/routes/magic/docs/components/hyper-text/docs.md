@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/hyper-text.
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/hyper-text.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { HyperText } from "#lib/components/magic/hyper-text/index.js";
+</script>
+
+<HyperText text="Hover me" />
+```
+
 ## Preview
 
 ```svelte
@@ -39,10 +49,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/hyper-text.jso
 
 <HyperText text="Hover Me!"></HyperText>
 ```
-
-## Usage
-
-Import `HyperText` from `#lib/components/magic/hyper-text/index.ts` and pass the props you need for your use case.
 
 ## Props
 

@@ -105,6 +105,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { NumberTicker } from "#lib/components/magic/number-ticker/index.js";
+</script>
+
+<NumberTicker value={100} />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

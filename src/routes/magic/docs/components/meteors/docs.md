@@ -18,6 +18,40 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/meteors.jso
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/meteors.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-meteor: meteor 5s linear infinite;
+
+  @keyframes meteor {
+    0% {
+      transform: rotate(var(--angle)) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(var(--angle)) translateX(-500px);
+      opacity: 0;
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Meteors } from "#lib/components/magic/meteors/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <Meteors />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -56,32 +90,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/meteors.json
     Meteors
   </p>
 </div>
-```
-
-## Usage
-
-Import `Meteors` from `#lib/components/magic/meteors/index.ts` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-meteor: meteor 5s linear infinite;
-
-  @keyframes meteor {
-    0% {
-      transform: rotate(var(--angle)) translateX(0);
-      opacity: 1;
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(var(--angle)) translateX(-500px);
-      opacity: 0;
-    }
-  }
-}
 ```
 
 ## Props

@@ -18,6 +18,35 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/neon-gradie
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/neon-gradient-card.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-background-position-spin: background-position-spin 3000ms infinite alternate;
+
+  @keyframes background-position-spin {
+    0% {
+      background-position: top center;
+    }
+    100% {
+      background-position: bottom center;
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { NeonGradientCard } from "#lib/components/magic/neon-gradient-card/index.js";
+</script>
+
+<NeonGradientCard>
+  Neon card
+</NeonGradientCard>
+```
+
 ## Preview
 
 ```svelte
@@ -54,28 +83,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/neon-gradient-
     Svelte Is Amazing
   </span>
 </NeonGradientCard>
-```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-background-position-spin: background-position-spin 3000ms infinite
-    alternate;
-
-  @keyframes background-position-spin {
-    0% {
-      background-position: top center;
-    }
-    100% {
-      background-position: bottom center;
-    }
-  }
-}
 ```
 
 ## Props

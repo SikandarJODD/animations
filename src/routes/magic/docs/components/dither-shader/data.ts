@@ -87,6 +87,20 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { DitherShader } from "#lib/components/magic/dither-shader/index.js";
+</script>
+
+<DitherShader
+	src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
+	class="h-80 w-full"
+/>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

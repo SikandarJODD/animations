@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/video-text.
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/video-text.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { VideoText } from "#lib/components/magic/video-text/index.js";
+</script>
+
+<div class="h-48 overflow-hidden">
+  <VideoText src="https://cdn.magicui.design/ocean-small.webm" content="OCEAN" />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -45,10 +57,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/video-text.jso
   ></VideoText>
 </div>
 ```
-
-## Usage
-
-Import `VideoText` from `#lib/components/magic/video-text/index.ts` and pass the props you need for your use case.
 
 ## Props
 

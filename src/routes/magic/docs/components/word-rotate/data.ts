@@ -57,6 +57,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { WordRotate } from "#lib/components/magic/word-rotate/index.js";
+</script>
+
+<WordRotate words={["Design", "Develop", "Ship"]} />`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

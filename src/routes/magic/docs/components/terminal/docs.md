@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/terminal.js
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/terminal.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Terminal, TypingAnimation } from "#lib/components/magic/terminal/index.js";
+</script>
+
+<Terminal>
+  <TypingAnimation text="> pnpm install" />
+</Terminal>
+```
+
 ## Preview
 
 ```svelte
@@ -111,10 +123,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/terminal.json
   ></TypingAnimation>
 </Terminal>
 ```
-
-## Usage
-
-Import `Terminal` from `#lib/components/magic/terminal/index.ts` and pass the props you need for your use case.
 
 ## Props
 

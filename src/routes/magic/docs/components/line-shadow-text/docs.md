@@ -18,6 +18,33 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-text.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-line-shadow: line-shadow 15s linear infinite;
+
+  @keyframes line-shadow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% -100%;
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { LineShadowText } from "#lib/components/magic/line-shadow-text/index.js";
+</script>
+
+<LineShadowText content="Shadow" />
+```
+
 ## Preview
 
 ```svelte
@@ -58,27 +85,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-te
     shadowColor={mode.current === "dark" ? "white" : "black"}
   ></LineShadowText>
 </h2>
-```
-
-## Usage
-
-Import `LineShadowText` from `#lib/components/magic/line-shadow-text/index.ts` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-line-shadow: line-shadow 15s linear infinite;
-
-  @keyframes line-shadow {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 100% -100%;
-    }
-  }
-}
 ```
 
 ## Props

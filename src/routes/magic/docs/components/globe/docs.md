@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/globe.json
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/globe.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Globe } from "#lib/components/magic/globe/index.js";
+</script>
+
+<div class="h-80 w-80">
+  <Globe />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -57,10 +69,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/globe.json
   <Globe class="top-28 " config={{ width: 400, height: 400 }} />
 </div>
 ```
-
-## Usage
-
-Import `Globe` from `#lib/components/magic/globe/index.ts` and pass the props you need for your use case.
 
 ## Props
 

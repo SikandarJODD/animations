@@ -80,6 +80,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { FlickeringGrid } from "#lib/components/magic/flickering-grid/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<FlickeringGrid class="absolute inset-0 size-full" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

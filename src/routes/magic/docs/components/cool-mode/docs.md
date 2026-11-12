@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/cool-mode.j
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/cool-mode.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { CoolMode } from "#lib/components/magic/cool-mode/index.js";
+</script>
+
+<CoolMode>
+  <button type="button">Click me</button>
+</CoolMode>
+```
+
 ## Preview
 
 ```svelte
@@ -54,10 +66,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/cool-mode.json
   </CoolMode>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/stagger-tex
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/stagger-text.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { StaggerText } from "#lib/components/magic/stagger-text/index.js";
+</script>
+
+<StaggerText text="Staggered text" />
+```
+
 ## Preview
 
 ```svelte
@@ -49,10 +59,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/stagger-text.j
 <style>
 </style>
 ```
-
-## Usage
-
-Import `StaggerText` from `#lib/components/magic/stagger-text/index.ts` and pass the props you need for your use case.
 
 ## Props
 

@@ -57,6 +57,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { HyperText } from "#lib/components/magic/hyper-text/index.js";
+</script>
+
+<HyperText text="Hover me" />`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

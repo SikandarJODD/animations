@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/grid-patter
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/grid-pattern.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { GridPattern } from "#lib/components/magic/grid-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <GridPattern class="absolute inset-0" />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -87,10 +99,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/grid-pattern.j
   />
 </div>
 ```
-
-## Usage
-
-Import `GridPattern` from `#lib/components/magic/grid-pattern/index.ts` and pass the props you need for your use case.
 
 ## Props
 

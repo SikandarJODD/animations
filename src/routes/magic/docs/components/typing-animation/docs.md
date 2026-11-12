@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/typing-anim
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/typing-animation.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { TypingAnimation } from "#lib/components/magic/typing-animation/index.js";
+</script>
+
+<TypingAnimation content="Hello world" />
+```
+
 ## Preview
 
 ```svelte
@@ -154,10 +164,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/typing-animati
 
 <TypingAnimation startOnView>Starts typing when in view</TypingAnimation>
 ```
-
-## Usage
-
-Import `TypingAnimation` from `#lib/components/magic/typing-animation/index.ts` and pass the props you need for your use case.
 
 ## Props
 

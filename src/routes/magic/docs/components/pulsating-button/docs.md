@@ -18,6 +18,57 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pulsating-b
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/pulsating-button.json
 ```
 
+Add the animations to your global CSS:
+
+```css
+@theme inline {
+  --animate-pulse-slow: pulse-slow var(--duration) ease-out infinite;
+  --animate-pulse-ring: pulse-ring var(--duration) ease-out infinite;
+  --animate-pulse-ripple: pulse-ripple var(--duration)
+    cubic-bezier(0.16, 1, 0.3, 1) infinite;
+
+  @keyframes pulse-slow {
+    0% {
+      box-shadow: 0 0 0 0 var(--pulse-color);
+    }
+    100% {
+      box-shadow: 0 0 0 var(--distance) transparent;
+    }
+  }
+
+  @keyframes pulse-ring {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5));
+    }
+    50% {
+      box-shadow: 0 0 0 var(--distance)
+        var(--pulse-color, oklch(from var(--bg) l c h / 0.5));
+    }
+  }
+
+  @keyframes pulse-ripple {
+    0% {
+      box-shadow: 0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1);
+    }
+    100% {
+      box-shadow: 0 0 0 var(--distance)
+        oklch(from var(--pulse-color, var(--bg)) l c h / 0);
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { PulsatingButton } from "#lib/components/magic/pulsating-button/index.js";
+</script>
+
+<PulsatingButton>Get started</PulsatingButton>
+```
+
 ## Preview
 
 ```svelte
@@ -181,54 +232,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/pulsating-butt
     </PulsatingButton>
   </div>
 </div>
-```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-pulse-slow: pulse-slow var(--duration) ease-out infinite;
-  --animate-pulse-ring: pulse-ring var(--duration) ease-out infinite;
-  --animate-pulse-ripple: pulse-ripple var(--duration)
-    cubic-bezier(0.16, 1, 0.3, 1) infinite;
-
-  /* Pulsating Button Animations - Original */
-  @keyframes pulse-slow {
-    0% {
-      box-shadow: 0 0 0 0 var(--pulse-color);
-    }
-    100% {
-      box-shadow: 0 0 0 var(--distance) transparent;
-    }
-  }
-
-  /* New Variant */
-  @keyframes pulse-ring {
-    0%,
-    100% {
-      box-shadow: 0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5));
-    }
-    50% {
-      box-shadow: 0 0 0 var(--distance)
-        var(--pulse-color, oklch(from var(--bg) l c h / 0.5));
-    }
-  }
-
-  /* Ripple Variant */
-  @keyframes pulse-ripple {
-    0% {
-      box-shadow: 0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1);
-    }
-    100% {
-      box-shadow: 0 0 0 var(--distance)
-        oklch(from var(--pulse-color, var(--bg)) l c h / 0);
-    }
-  }
-}
 ```
 
 ## Props

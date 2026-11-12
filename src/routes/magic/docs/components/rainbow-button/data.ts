@@ -102,6 +102,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { RainbowButton } from "#lib/components/magic/rainbow-button/index.js";
+</script>
+
+<RainbowButton>Get started</RainbowButton>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	installBlock,

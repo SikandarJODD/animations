@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/text-animat
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/text-animate.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { TextAnimate } from "#lib/components/magic/text-animate/index.js";
+</script>
+
+<TextAnimate content="Animated text" animation="blurInUp" />
+```
+
 ## Preview
 
 ```svelte
@@ -216,10 +226,6 @@ Use custom motion variants for complete control over the animation.
   />
 </div>
 ```
-
-## Usage
-
-Import `TextAnimate` from `#lib/components/magic/text-animate/index.ts` and pass the props you need for your use case.
 
 ## Props
 

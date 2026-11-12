@@ -18,6 +18,30 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/bento-grid.
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/bento-grid.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import BoxIcon from "@lucide/svelte/icons/box";
+  import { BentoCard, BentoGrid } from "#lib/components/magic/bento-grid/index.js";
+</script>
+
+{#snippet background()}
+  <div class="absolute inset-0 bg-muted"></div>
+{/snippet}
+
+<BentoGrid>
+  <BentoCard
+    name="Analytics"
+    description="Track your most important metrics."
+    href="/analytics"
+    cta="View analytics"
+    Icon={BoxIcon}
+    {background}
+  />
+</BentoGrid>
+```
+
 ## Preview
 
 ```svelte
@@ -211,10 +235,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/bento-grid.jso
   {/each}
 </BentoGrid>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

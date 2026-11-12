@@ -44,6 +44,19 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Globe } from "#lib/components/magic/globe/index.js";
+</script>
+
+<div class="h-80 w-80">
+	<Globe />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [],
 	seo,

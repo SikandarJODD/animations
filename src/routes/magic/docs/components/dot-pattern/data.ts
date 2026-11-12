@@ -91,6 +91,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { DotPattern } from "#lib/components/magic/dot-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<DotPattern class="absolute inset-0" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

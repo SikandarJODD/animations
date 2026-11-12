@@ -18,6 +18,35 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/retro-grid.
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/retro-grid.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-grid: grid 15s linear infinite;
+
+  @keyframes grid {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { RetroGrid } from "#lib/components/magic/retro-grid/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <RetroGrid />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -56,27 +85,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/retro-grid.jso
   </span>
   <RetroGrid />
 </div>
-```
-
-## Usage
-
-Import `RetroGrid` from `#lib/components/magic/retro-grid/index.ts` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-grid: grid 15s linear infinite;
-
-  @keyframes grid {
-    0% {
-      transform: translateY(-50%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-}
 ```
 
 ## Props

@@ -83,6 +83,19 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { HexagonPattern } from "#lib/components/magic/hexagon-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<HexagonPattern class="absolute inset-0" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples,
 	seo,

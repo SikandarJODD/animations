@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/number-tick
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/number-ticker.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { NumberTicker } from "#lib/components/magic/number-ticker/index.js";
+</script>
+
+<NumberTicker value={100} />
+```
+
 ## Preview
 
 ```svelte
@@ -92,10 +102,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/number-ticker.
   class="text-4xl font-medium tracking-tighter whitespace-pre-wrap text-black md:text-6xl dark:text-white"
 />
 ```
-
-## Usage
-
-Import `NumberTicker` from `#lib/components/magic/number-ticker/index.ts` and pass the props you need for your use case.
 
 ## Props
 

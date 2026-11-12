@@ -84,6 +84,31 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import BoxIcon from "@lucide/svelte/icons/box";
+	import { BentoCard, BentoGrid } from "#lib/components/magic/bento-grid/index.js";
+</script>
+
+{#snippet background()}
+	<div class="absolute inset-0 bg-muted"></div>
+{/snippet}
+
+<BentoGrid>
+	<BentoCard
+		name="Analytics"
+		description="Track your most important metrics."
+		href="/analytics"
+		cta="View analytics"
+		Icon={BoxIcon}
+		{background}
+	/>
+</BentoGrid>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

@@ -18,6 +18,19 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/border-beam
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/border-beam.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { BorderBeam } from "#lib/components/magic/border-beam/index.js";
+</script>
+
+<div class="relative overflow-hidden rounded-xl border p-8">
+  Border beam
+  <BorderBeam />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -194,10 +207,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/border-beam.js
   />
 </Button>
 ```
-
-## Usage
-
-Import `BorderBeam` from `#lib/components/magic/border-beam/index.ts` and pass the props you need for your use case.
 
 ## Props
 

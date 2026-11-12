@@ -93,6 +93,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { RippleButton } from "#lib/components/magic/ripple-button/index.js";
+</script>
+
+<RippleButton>Click me</RippleButton>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

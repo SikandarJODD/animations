@@ -18,6 +18,19 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pointer.jso
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/pointer.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Pointer } from "#lib/components/magic/pointer/index.js";
+</script>
+
+<div class="relative h-48 rounded-xl border p-8">
+  Move your pointer here
+  <Pointer />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -201,10 +214,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/pointer.json
   </div>
 </div>
 ```
-
-## Usage
-
-Import `Pointer` from `#lib/components/magic/pointer/index.ts` and pass the props you need for your use case.
 
 ## Props
 

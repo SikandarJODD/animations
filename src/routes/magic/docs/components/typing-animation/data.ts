@@ -136,6 +136,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { TypingAnimation } from "#lib/components/magic/typing-animation/index.js";
+</script>
+
+<TypingAnimation content="Hello world" />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive-hover-button.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { InteractiveHoverButton } from "#lib/components/magic/interactive-hover-button/index.js";
+</script>
+
+<InteractiveHoverButton>Hover me</InteractiveHoverButton>
+```
+
 ## Preview
 
 ```svelte
@@ -39,10 +49,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive-ho
 
 <InteractiveHoverButton>Hover Me</InteractiveHoverButton>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

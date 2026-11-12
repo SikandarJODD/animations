@@ -96,6 +96,20 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ShineBorder } from "#lib/components/magic/shine-border/index.js";
+</script>
+
+<div class="relative overflow-hidden rounded-xl border p-8">
+	Shine border
+	<ShineBorder />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

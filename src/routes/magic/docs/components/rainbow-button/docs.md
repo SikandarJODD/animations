@@ -18,6 +18,33 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/rainbow-but
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/rainbow-button.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { RainbowButton } from "#lib/components/magic/rainbow-button/index.js";
+</script>
+
+<RainbowButton>Get started</RainbowButton>
+```
+
 ## Preview
 
 ```svelte
@@ -38,27 +65,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/rainbow-button
 </script>
 
 <RainbowButton variant="outline">Get Unlimited Access</RainbowButton>
-```
-
-## Usage
-
-Import `RainbowButton` from `#lib/components/magic/rainbow-button/index.ts` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
-
-  @keyframes rainbow {
-    0% {
-      background-position: 0%;
-    }
-    100% {
-      background-position: 200%;
-    }
-  }
-}
 ```
 
 ## Props

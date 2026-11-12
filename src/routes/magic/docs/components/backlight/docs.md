@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/backlight.j
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/backlight.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Backlight } from "#lib/components/magic/backlight/index.js";
+</script>
+
+<Backlight blur={20}>
+  <div class="rounded-xl bg-background p-8">Backlit content</div>
+</Backlight>
+```
+
 ## Preview
 
 ```svelte
@@ -78,10 +90,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/backlight.json
   </svg>
 </Backlight>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

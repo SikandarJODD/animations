@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/lens.json
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/lens.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Lens } from "#lib/components/magic/lens/index.js";
+</script>
+
+<Lens>
+  <img src="https://images.unsplash.com/photo-1736606355698-5efdb410fe93" alt="Mountain lake" />
+</Lens>
+```
+
 ## Preview
 
 ```svelte
@@ -87,10 +99,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/lens.json
   </Card.Footer>
 </Card.Root>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

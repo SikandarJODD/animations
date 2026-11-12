@@ -121,6 +121,24 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import HomeIcon from "@lucide/svelte/icons/house";
+	import { Dock, DockIcon } from "#lib/components/magic/dock/index.js";
+</script>
+
+<Dock>
+	<DockIcon>
+		<button type="button" aria-label="Home">
+			<HomeIcon class="size-5" />
+		</button>
+	</DockIcon>
+</Dock>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

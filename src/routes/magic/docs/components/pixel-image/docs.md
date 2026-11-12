@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pixel-image
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/pixel-image.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { PixelImage } from "#lib/components/magic/pixel-image/index.js";
+</script>
+
+<PixelImage src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" />
+```
+
 ## Preview
 
 ```svelte
@@ -93,10 +103,6 @@ Compare different grid sizes - see how 8x8 vs 8x3 grids affect the animation.
   </div>
 </div>
 ```
-
-## Usage
-
-Import `PixelImage` from `#lib/components/magic/pixel-image/index.ts` and pass the props you need for your use case.
 
 ## Props
 

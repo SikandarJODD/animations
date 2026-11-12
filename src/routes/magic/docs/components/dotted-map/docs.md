@@ -18,6 +18,20 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dotted-map.
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dotted-map.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { DottedMap } from "#lib/components/magic/dotted-map/index.js";
+
+  const markers = [{ lat: 40.7128, lng: -74.006, size: 0.4 }];
+</script>
+
+<div class="h-80 w-full">
+  <DottedMap {markers} />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -126,10 +140,6 @@ Customize the size of the dots on the map for a finer or coarser appearance.
   <DottedMap dotRadius={0.2} dotColor="#3DECFF" />
 </div>
 ```
-
-## Usage
-
-Import `DottedMap` from `#lib/components/magic/dotted-map/index.ts` and pass the props you need for your use case.
 
 ## Props
 

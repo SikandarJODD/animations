@@ -18,6 +18,37 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple.json
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)
+    infinite;
+
+  @keyframes ripple {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Ripple } from "#lib/components/magic/ripple/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <Ripple />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -56,29 +87,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple.json
   </p>
   <Ripple />
 </div>
-```
-
-## Usage
-
-Import `Ripple` from `#lib/components/magic/ripple/index.ts` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)
-    infinite;
-
-  @keyframes ripple {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(0.9);
-    }
-  }
-}
 ```
 
 ## Props

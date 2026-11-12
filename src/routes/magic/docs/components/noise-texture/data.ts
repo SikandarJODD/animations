@@ -60,6 +60,19 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { NoiseTexture } from "#lib/components/magic/noise-texture/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<NoiseTexture className="absolute inset-0" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples,
 	seo,

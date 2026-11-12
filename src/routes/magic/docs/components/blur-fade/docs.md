@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/blur-fade.j
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/blur-fade.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { BlurFade } from "#lib/components/magic/blur-fade/index.js";
+</script>
+
+<BlurFade>
+  <h2 class="text-3xl font-bold">Fade into view</h2>
+</BlurFade>
+```
+
 ## Preview
 
 ```svelte
@@ -123,10 +135,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/blur-fade.json
   {/each}
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

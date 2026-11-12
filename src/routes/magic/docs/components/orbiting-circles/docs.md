@@ -18,6 +18,41 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/orbiting-ci
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/orbiting-circles.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
+
+  @keyframes orbit {
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc(var(--angle) * -1deg));
+    }
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { OrbitingCircles } from "#lib/components/magic/orbiting-circles/index.js";
+</script>
+
+<div class="relative h-64">
+  <OrbitingCircles>
+    <span class="rounded-full border p-2">A</span>
+  </OrbitingCircles>
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -366,31 +401,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/orbiting-circl
     />
   </svg>
 {/snippet}
-```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
-
-  @keyframes orbit {
-    0% {
-      transform: rotate(calc(var(--angle) * 1deg))
-        translateY(calc(var(--radius) * 1px))
-        rotate(calc(var(--angle) * -1deg));
-    }
-    100% {
-      transform: rotate(calc(var(--angle) * 1deg + 360deg))
-        translateY(calc(var(--radius) * 1px))
-        rotate(calc((var(--angle) * -1deg) - 360deg));
-    }
-  }
-}
 ```
 
 ## Props

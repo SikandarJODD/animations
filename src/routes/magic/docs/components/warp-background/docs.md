@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/warp-backgr
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/warp-background.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { WarpBackground } from "#lib/components/magic/warp-background/index.js";
+</script>
+
+<WarpBackground>
+  <div class="rounded-xl bg-background p-8">Warped background</div>
+</WarpBackground>
+```
+
 ## Preview
 
 ```svelte
@@ -61,10 +73,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/warp-backgroun
   </Card.Root>
 </WarpBackground>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

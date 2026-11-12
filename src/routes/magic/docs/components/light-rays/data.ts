@@ -58,6 +58,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { LightRays } from "#lib/components/magic/light-rays/index.js";
+</script>
+
+<div class="relative h-80 overflow-hidden">
+	<LightRays />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

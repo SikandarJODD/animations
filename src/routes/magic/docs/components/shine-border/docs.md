@@ -18,6 +18,39 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/shine-borde
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shine-border.json
 ```
 
+Add the animation to your global CSS:
+
+```css
+@theme inline {
+  --animate-shine: shine var(--duration) infinite linear;
+
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { ShineBorder } from "#lib/components/magic/shine-border/index.js";
+</script>
+
+<div class="relative overflow-hidden rounded-xl border p-8">
+  Shine border
+  <ShineBorder />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -98,30 +131,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shine-border.j
     <Button class="w-full">Sign In</Button>
   </Card.Footer>
 </Card.Root>
-```
-
-## Usage
-
-Import `ShineBorder` from `#lib/components/magic/shine-border/index.ts` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-shine: shine var(--duration) infinite linear;
-
-  @keyframes shine {
-    0% {
-      background-position: 0% 0%;
-    }
-    50% {
-      background-position: 100% 100%;
-    }
-    to {
-      background-position: 0% 0%;
-    }
-  }
-}
 ```
 
 ## Props

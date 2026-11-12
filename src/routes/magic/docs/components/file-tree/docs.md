@@ -18,6 +18,28 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/file-tree.j
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/file-tree.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { File, Folder, Tree, type TreeViewElement } from "#lib/components/magic/file-tree/index.js";
+
+  const elements: TreeViewElement[] = [
+    {
+      id: "src",
+      name: "src",
+      children: [{ id: "page", name: "+page.svelte" }],
+    },
+  ];
+</script>
+
+<Tree {elements} initialExpandedItems={["src"]}>
+  <Folder value="src" element="src">
+    <File value="page">+page.svelte</File>
+  </Folder>
+</Tree>
+```
+
 ## Preview
 
 ```svelte
@@ -217,10 +239,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/file-tree.json
   </Tree>
 </div>
 ```
-
-## Usage
-
-Import `FileTree` from `#lib/components/magic/file-tree/index.ts` and pass the props you need for your use case.
 
 ## Props
 

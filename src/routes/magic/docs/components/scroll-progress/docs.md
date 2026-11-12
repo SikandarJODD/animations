@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/scroll-prog
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/scroll-progress.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { ScrollProgress } from "#lib/components/magic/scroll-progress/index.js";
+</script>
+
+<ScrollProgress />
+```
+
 ## Preview
 
 ```svelte
@@ -49,10 +59,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/scroll-progres
   </h2>
 </div>
 ```
-
-## Usage
-
-Import `ScrollProgress` from `#lib/components/magic/scroll-progress/index.ts` and pass the props you need for your use case.
 
 ## Props
 

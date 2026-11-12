@@ -60,6 +60,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ConfettiButton } from "#lib/components/magic/confetti/index.js";
+</script>
+
+<ConfettiButton>Celebrate</ConfettiButton>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

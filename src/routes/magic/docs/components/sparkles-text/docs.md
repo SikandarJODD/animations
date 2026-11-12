@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/sparkles-te
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/sparkles-text.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { SparklesText } from "#lib/components/magic/sparkles-text/index.js";
+</script>
+
+<SparklesText>Sparkles</SparklesText>
+```
+
 ## Preview
 
 ```svelte
@@ -39,10 +49,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/sparkles-text.
 
 <SparklesText>Svelte Magic UI</SparklesText>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

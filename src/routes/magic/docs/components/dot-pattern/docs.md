@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dot-pattern
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dot-pattern.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { DotPattern } from "#lib/components/magic/dot-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <DotPattern class="absolute inset-0" />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -82,10 +94,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dot-pattern.js
   />
 </div>
 ```
-
-## Usage
-
-Import `DotPattern` from `#lib/components/magic/dot-pattern/index.ts` and pass the props you need for your use case.
 
 ## Props
 

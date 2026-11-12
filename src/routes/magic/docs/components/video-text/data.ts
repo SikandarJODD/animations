@@ -90,6 +90,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { VideoText } from "#lib/components/magic/video-text/index.js";
+</script>
+
+<div class="h-48 overflow-hidden">
+	<VideoText src="https://cdn.magicui.design/ocean-small.webm" content="OCEAN" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

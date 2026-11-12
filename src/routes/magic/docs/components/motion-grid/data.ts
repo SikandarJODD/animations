@@ -126,6 +126,24 @@ export const data: ComponentDoc = {
 			hideLines: true,
 		},
 	],
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { MotionGrid, MotionGridCells, type Frames } from "#lib/components/magic/motion-grid/index.js";
+
+	const frames: Frames = [
+		[[0, 0], [1, 1]],
+		[[1, 0], [0, 1]],
+	];
+</script>
+
+<MotionGrid gridSize={[2, 2]} {frames} class="w-12 gap-1">
+	<MotionGridCells class="aspect-square rounded-full bg-muted data-[active=true]:bg-primary" />
+</MotionGrid>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

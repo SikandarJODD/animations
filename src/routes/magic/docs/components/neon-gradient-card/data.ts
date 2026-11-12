@@ -76,6 +76,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { NeonGradientCard } from "#lib/components/magic/neon-gradient-card/index.js";
+</script>
+
+<NeonGradientCard>
+	Neon card
+</NeonGradientCard>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

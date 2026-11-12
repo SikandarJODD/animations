@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/striped-pat
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/striped-pattern.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { StripedPattern } from "#lib/components/magic/striped-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <StripedPattern />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -51,10 +63,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/striped-patter
   />
 </div>
 ```
-
-## Usage
-
-Import `StripedPattern` from `#lib/components/magic/striped-pattern/index.ts` and pass the props you need for your use case.
 
 ## Props
 

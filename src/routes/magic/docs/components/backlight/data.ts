@@ -87,6 +87,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Backlight } from "#lib/components/magic/backlight/index.js";
+</script>
+
+<Backlight blur={20}>
+	<div class="rounded-xl bg-background p-8">Backlit content</div>
+</Backlight>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

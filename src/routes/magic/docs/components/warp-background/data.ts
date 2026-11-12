@@ -60,6 +60,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { WarpBackground } from "#lib/components/magic/warp-background/index.js";
+</script>
+
+<WarpBackground>
+	<div class="rounded-xl bg-background p-8">Warped background</div>
+</WarpBackground>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

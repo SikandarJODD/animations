@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/confetti.js
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/confetti.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { ConfettiButton } from "#lib/components/magic/confetti/index.js";
+</script>
+
+<ConfettiButton>Celebrate</ConfettiButton>
+```
+
 ## Preview
 
 ```svelte
@@ -69,10 +79,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/confetti.json
   </Confetti>
 </div>
 ```
-
-## Usage
-
-Import `Confetti` from `#lib/components/magic/confetti/index.ts` and pass the props you need for your use case.
 
 ## Props
 

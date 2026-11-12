@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/hexagon-pat
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/hexagon-pattern.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { HexagonPattern } from "#lib/components/magic/hexagon-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <HexagonPattern class="absolute inset-0" />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -100,10 +112,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/hexagon-patter
   <HexagonPattern radius={40} x={-1} y={-1} strokeDasharray="4 2" />
 </div>
 ```
-
-## Usage
-
-Import `HexagonPattern` from `#lib/components/magic/hexagon-pattern/index.ts` and pass the props you need for your use case.
 
 ## Props
 

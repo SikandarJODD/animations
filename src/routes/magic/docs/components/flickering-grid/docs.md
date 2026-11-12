@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/flickering-
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/flickering-grid.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { FlickeringGrid } from "#lib/components/magic/flickering-grid/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <FlickeringGrid class="absolute inset-0 size-full" />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -67,10 +79,6 @@ A simple flickering grid background.
   />
 </div>
 ```
-
-## Usage
-
-Import `FlickeringGrid` from `#lib/components/magic/flickering-grid/index.ts` and pass the props you need for your use case.
 
 ## Props
 

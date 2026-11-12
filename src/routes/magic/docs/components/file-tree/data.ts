@@ -89,6 +89,29 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { File, Folder, Tree, type TreeViewElement } from "#lib/components/magic/file-tree/index.js";
+
+	const elements: TreeViewElement[] = [
+		{
+			id: "src",
+			name: "src",
+			children: [{ id: "page", name: "+page.svelte" }],
+		},
+	];
+</script>
+
+<Tree {elements} initialExpandedItems={["src"]}>
+	<Folder value="src" element="src">
+		<File value="page">+page.svelte</File>
+	</Folder>
+</Tree>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

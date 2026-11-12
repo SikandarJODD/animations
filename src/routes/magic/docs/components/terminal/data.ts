@@ -60,6 +60,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Terminal, TypingAnimation } from "#lib/components/magic/terminal/index.js";
+</script>
+
+<Terminal>
+	<TypingAnimation text="> pnpm install" />
+</Terminal>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

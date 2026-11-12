@@ -60,6 +60,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { StaggerText } from "#lib/components/magic/stagger-text/index.js";
+</script>
+
+<StaggerText text="Staggered text" />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

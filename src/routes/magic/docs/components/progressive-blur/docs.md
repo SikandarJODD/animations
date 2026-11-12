@@ -18,6 +18,19 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/progressive
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/progressive-blur.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { ProgressiveBlur } from "#lib/components/magic/progressive-blur/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <div class="h-full overflow-auto">Scrollable content</div>
+  <ProgressiveBlur position="bottom" />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -67,10 +80,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/progressive-bl
   </ScrollArea>
 </div>
 ```
-
-## Usage
-
-Import `ProgressiveBlur` from `#lib/components/magic/progressive-blur/index.ts` and pass the props you need for your use case.
 
 ## Props
 

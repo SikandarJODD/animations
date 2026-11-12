@@ -45,6 +45,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { SparklesText } from "#lib/components/magic/sparkles-text/index.js";
+</script>
+
+<SparklesText>Sparkles</SparklesText>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [],
 	seo,

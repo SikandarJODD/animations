@@ -140,6 +140,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2, 6],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { TextAnimate } from "#lib/components/magic/text-animate/index.js";
+</script>
+
+<TextAnimate content="Animated text" animation="blurInUp" />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	installBlock: {

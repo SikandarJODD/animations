@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/word-rotate
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/word-rotate.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { WordRotate } from "#lib/components/magic/word-rotate/index.js";
+</script>
+
+<WordRotate words={["Design", "Develop", "Ship"]} />
+```
+
 ## Preview
 
 ```svelte
@@ -45,10 +55,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/word-rotate.js
   words={["Word", "Rotate"]}
 />
 ```
-
-## Usage
-
-Import `WordRotate` from `#lib/components/magic/word-rotate/index.ts` and pass the props you need for your use case.
 
 ## Props
 

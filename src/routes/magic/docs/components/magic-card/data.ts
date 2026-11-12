@@ -107,7 +107,19 @@ export const data: ComponentDoc = {
 			highlight: [2],
 		},
 	],
-	// examples,
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { MagicCard } from "#lib/components/magic/magic-card/index.js";
+</script>
+
+<MagicCard class="rounded-xl p-8">
+	Hover over this card
+</MagicCard>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

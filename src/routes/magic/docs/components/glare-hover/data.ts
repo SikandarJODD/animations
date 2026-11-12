@@ -65,6 +65,19 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { GlareHover } from "#lib/components/magic/glare-hover/index.js";
+</script>
+
+<GlareHover class="rounded-xl">
+	<div class="rounded-xl border p-8">Hover me</div>
+</GlareHover>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples,
 	seo,

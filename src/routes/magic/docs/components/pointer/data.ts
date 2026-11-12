@@ -60,6 +60,20 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Pointer } from "#lib/components/magic/pointer/index.js";
+</script>
+
+<div class="relative h-48 rounded-xl border p-8">
+	Move your pointer here
+	<Pointer />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

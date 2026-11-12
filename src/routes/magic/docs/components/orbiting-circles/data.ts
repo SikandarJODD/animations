@@ -88,6 +88,21 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { OrbitingCircles } from "#lib/components/magic/orbiting-circles/index.js";
+</script>
+
+<div class="relative h-64">
+	<OrbitingCircles>
+		<span class="rounded-full border p-2">A</span>
+	</OrbitingCircles>
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

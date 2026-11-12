@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/noise-textu
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/noise-texture.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { NoiseTexture } from "#lib/components/magic/noise-texture/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <NoiseTexture className="absolute inset-0" />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -78,10 +90,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/noise-texture.
   </Card.Root>
 </div>
 ```
-
-## Usage
-
-Import `NoiseTexture` from `#lib/components/magic/noise-texture/index.ts` and pass the props you need for your use case.
 
 ## Props
 

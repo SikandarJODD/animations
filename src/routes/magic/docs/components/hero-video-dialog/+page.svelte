@@ -3,6 +3,7 @@
 	import { H1, H2, Paragraph, H3 } from "#lib/components/docs/markdown/index.js";
 
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
+	import * as Code from "#lib/components/ui/code/index.js";
 	import InstallComponent from "#lib/components/docs/base/install-component.svelte";
 	import APITable from "#lib/components/docs/base/api-table.svelte";
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
@@ -49,6 +50,19 @@
 		folderStructure={data.installBlock?.folderStructure}
 		class="my-4"
 	/>
+
+	{#if data.usage?.code}
+		<H2 id="usage">Usage</H2>
+		<div class="mt-4 space-y-4">
+			{#if Array.isArray(data.usage.code)}
+				{#each data.usage.code as codeBlock}
+					<Code.Snippet code={codeBlock} />
+				{/each}
+			{:else}
+				<Code.Snippet code={data.usage.code} />
+			{/if}
+		</div>
+	{/if}
 
 	<!-- Examples Section -->
 	{#if data.examples && data.examples.length > 0}

@@ -18,6 +18,19 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dither-shad
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dither-shader.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { DitherShader } from "#lib/components/magic/dither-shader/index.js";
+</script>
+
+<DitherShader
+  src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
+  class="h-80 w-full"
+/>
+```
+
 ## Preview
 
 ```svelte
@@ -94,10 +107,6 @@ An example showcasing the Dither Shader component in action.
   </div>
 </div>
 ```
-
-## Usage
-
-Import `DitherShader` from `#lib/components/magic/dither-shader/index.ts` and pass the props you need for your use case.
 
 ## Props
 

@@ -18,6 +18,47 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/shimmer-but
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shimmer-button.json
 ```
 
+Add the animations to your global CSS:
+
+```css
+@theme inline {
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+
+  @keyframes shimmer-slide {
+    to {
+      transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes spin-around {
+    0% {
+      transform: translateZ(0) rotate(0);
+    }
+    15%,
+    35% {
+      transform: translateZ(0) rotate(90deg);
+    }
+    65%,
+    85% {
+      transform: translateZ(0) rotate(270deg);
+    }
+    100% {
+      transform: translateZ(0) rotate(360deg);
+    }
+  }
+}
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { ShimmerButton } from "#lib/components/magic/shimmer-button/index.js";
+</script>
+
+<ShimmerButton>Get started</ShimmerButton>
+```
+
 ## Preview
 
 ```svelte
@@ -50,42 +91,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shimmer-button
     Shimmer Button
   </span>
 </ShimmerButton>
-```
-
-## Usage
-
-Import `ShimmerButton` from `#lib/components/magic/shimmer-button/index.ts` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
-
-```css
-@theme inline {
-  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite
-    alternate;
-  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
-
-  @keyframes shimmer-slide {
-    to {
-      transform: translate(calc(100cqw - 100%), 0);
-    }
-  }
-  @keyframes spin-around {
-    0% {
-      transform: translateZ(0) rotate(0);
-    }
-    15%,
-    35% {
-      transform: translateZ(0) rotate(90deg);
-    }
-    65%,
-    85% {
-      transform: translateZ(0) rotate(270deg);
-    }
-    100% {
-      transform: translateZ(0) rotate(360deg);
-    }
-  }
-}
 ```
 
 ## Props

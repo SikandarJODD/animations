@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/light-rays.
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/light-rays.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { LightRays } from "#lib/components/magic/light-rays/index.js";
+</script>
+
+<div class="relative h-80 overflow-hidden">
+  <LightRays />
+</div>
+```
+
 ## Preview
 
 ```svelte
@@ -75,10 +87,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/light-rays.jso
   <LightRays />
 </div>
 ```
-
-## Usage
-
-Import `LightRays` from `#lib/components/magic/light-rays/index.ts` and pass the props you need for your use case.
 
 ## Props
 

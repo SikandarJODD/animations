@@ -18,6 +18,20 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/icon-cloud.
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/icon-cloud.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { IconCloud } from "#lib/components/magic/icon-cloud/index.js";
+
+  const images = ["svelte", "typescript", "vite"].map(
+    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
+  );
+</script>
+
+<IconCloud {images} />
+```
+
 ## Preview
 
 ```svelte
@@ -104,10 +118,6 @@ Icon cloud using images from Simple Icons CDN.
   <IconCloud {images} />
 </div>
 ```
-
-## Usage
-
-Import `IconCloud` from `#lib/components/magic/icon-cloud/index.ts` and pass the props you need for your use case.
 
 ## Props
 

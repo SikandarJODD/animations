@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/smooth-curs
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/smooth-cursor.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { SmoothCursor } from "#lib/components/magic/smooth-cursor/index.js";
+</script>
+
+<SmoothCursor />
+```
+
 ## Preview
 
 ```svelte
@@ -47,10 +57,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/smooth-cursor.
   <SmoothCursor />
 </div>
 ```
-
-## Usage
-
-Import `SmoothCursor` from `#lib/components/magic/smooth-cursor/index.ts` and pass the props you need for your use case.
 
 ## Props
 

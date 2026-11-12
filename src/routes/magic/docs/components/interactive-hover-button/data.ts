@@ -71,6 +71,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { InteractiveHoverButton } from "#lib/components/magic/interactive-hover-button/index.js";
+</script>
+
+<InteractiveHoverButton>Hover me</InteractiveHoverButton>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{

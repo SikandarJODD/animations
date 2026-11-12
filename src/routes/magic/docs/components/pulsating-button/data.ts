@@ -169,6 +169,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { PulsatingButton } from "#lib/components/magic/pulsating-button/index.js";
+</script>
+
+<PulsatingButton>Get started</PulsatingButton>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

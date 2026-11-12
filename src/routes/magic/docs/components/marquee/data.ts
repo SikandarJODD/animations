@@ -138,6 +138,21 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Marquee } from "#lib/components/magic/marquee/index.js";
+</script>
+
+<Marquee>
+	<span>Design</span>
+	<span>Develop</span>
+	<span>Ship</span>
+</Marquee>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [

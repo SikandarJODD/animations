@@ -79,6 +79,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Meteors } from "#lib/components/magic/meteors/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<Meteors />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	installBlock,
 	props: [

@@ -105,6 +105,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { PixelImage } from "#lib/components/magic/pixel-image/index.js";
+</script>
+
+<PixelImage src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
