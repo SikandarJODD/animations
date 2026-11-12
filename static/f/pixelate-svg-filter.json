@@ -12,7 +12,7 @@
 			"target": "fancy/pixelate-svg-filter/pixelate-svg-filter.svelte"
 		},
 		{
-			"content": "import PixelateSvgFilter from \"./pixelate-svg-filter.svelte\";\nexport { PixelateSvgFilter };",
+			"content": "import PixelateSvgFilter from \"./pixelate-svg-filter.svelte\";\nexport { PixelateSvgFilter };\n",
 			"type": "registry:file",
 			"target": "fancy/pixelate-svg-filter/index.ts"
 		}
