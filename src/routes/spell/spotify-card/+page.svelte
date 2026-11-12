@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/state";
 	import { H1, H2, Paragraph, H3, CodeSpan } from "#lib/components/docs/markdown/index.js";
-	import SingleCodeFilename from "#lib/components/ui/code/single-code-filename.svelte";
+	import SingleCodeFilename from "#lib/components/ui/code-block/single-code-filename.svelte";
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
 	import InstallComponent from "#lib/components/docs/base/InstallComponent.svelte";
 	import PackageBadges from "#lib/components/docs/base/PackageBadges.svelte";

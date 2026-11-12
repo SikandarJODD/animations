@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onDestroy } from "svelte";
-	import CheckIcon from '@lucide/svelte/icons/check';
-	import CopyIcon from '@lucide/svelte/icons/copy';
-	import { Button, type ButtonProps } from "#lib/components/ui/button/index.js";
+	import CheckIcon from "@lucide/svelte/icons/check";
+	import CopyIcon from "@lucide/svelte/icons/copy";
+	import { Button, type ButtonElementProps } from "#lib/components/ui/button/index.js";
 	import { cn } from "#lib/utils.js";
 
 	let {
@@ -13,7 +13,7 @@
 		size = "icon-xs",
 		onclick,
 		...restProps
-	}: Omit<ButtonProps, "onclick"> & {
+	}: Omit<ButtonElementProps, "onclick" | "children"> & {
 		value: string;
 		onclick?: (e: MouseEvent) => void;
 	} = $props();
@@ -43,16 +43,16 @@
 	{size}
 	aria-label={copied ? "Copied" : "Copy"}
 	class={cn(className)}
-	onclick={(e) => {
+	onclick={(e: MouseEvent) => {
 		onclick?.(e);
 		copy();
 	}}
 	{...restProps}
 >
 	{#if copied}
-		<CheckIcon  />
+		<CheckIcon />
 	{:else}
-		<CopyIcon  />
+		<CopyIcon />
 	{/if}
 </Button>
 <span aria-live="polite" class="sr-only">{copied ? "Copied" : ""}</span>

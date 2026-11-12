@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { CodeBlock } from "#lib/components/ui/code/index.js";
+	import type { CodeBlock } from "#lib/components/ui/code-block/types.js";
 
 	export type DependencyItem = {
 		label: string;
@@ -27,7 +27,7 @@
 	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
 	import Steps from "#lib/components/docs/markdown/Steps.svelte";
 	import Step from "#lib/components/docs/markdown/Step.svelte";
-	import SingleCodeFilename from "#lib/components/ui/code/single-code-filename.svelte";
+	import SingleCodeFilename from "#lib/components/ui/code-block/single-code-filename.svelte";
 
 	let {
 		installUrl,

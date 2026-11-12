@@ -14,6 +14,11 @@ import Root, {
 	type CodeBlockSize,
 	type CodeBlockVariant,
 } from "./code-block.svelte";
+import MultipleCode from "./multiple-code.svelte";
+import UsageCode from "./usage-code.svelte";
+import SingleCodeFilename from "./single-code-filename.svelte";
+import CodeFrame from "./code-frame.svelte";
+import type { CodeBlock as CodeBlockData } from "./types.js";
 
 export {
 	Root,
@@ -24,12 +29,17 @@ export {
 	Content,
 	Line,
 	Footer,
+	MultipleCode,
+	UsageCode,
+	SingleCodeFilename,
+	CodeFrame,
 	codeBlockVariants,
 	codeBlockLineVariants,
 	type CodeBlockVariant,
 	type CodeBlockSize,
 	type CodeBlockLineVariant,
 	type CodeBlockLineToken,
+	type CodeBlockData,
 	//
 	Root as CodeBlock,
 	Header as CodeBlockHeader,

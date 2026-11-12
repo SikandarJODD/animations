@@ -11,12 +11,12 @@ const languages = {
 	bash: () => import("shiki/langs/shellscript.mjs"),
 	css: () => import("shiki/langs/css.mjs"),
 	diff: () => import("shiki/langs/diff.mjs"),
+	javascript: () => import("shiki/langs/javascript.mjs"),
+	json: () => import("shiki/langs/json.mjs"),
 	markdown: () => import("shiki/langs/markdown.mjs"),
 	svelte: () => import("shiki/langs/svelte.mjs"),
 	typescript: () => import("shiki/langs/typescript.mjs"),
 	// html: () => import("shiki/langs/html.mjs"),
-	// javascript: () => import("shiki/langs/javascript.mjs"),
-	// json: () => import("shiki/langs/json.mjs"),
 	// jsx: () => import("shiki/langs/jsx.mjs"),
 	// python: () => import("shiki/langs/python.mjs"),
 	// sql: () => import("shiki/langs/sql.mjs"),
@@ -25,7 +25,7 @@ const languages = {
 };
 
 const aliases: Record<string, keyof typeof languages> = {
-	// js: "javascript",
+	js: "javascript",
 	md: "markdown",
 	// py: "python",
 	sh: "bash",
@@ -35,6 +35,8 @@ const aliases: Record<string, keyof typeof languages> = {
 	// yml: "yaml",
 	zsh: "bash",
 };
+
+export type SupportedLanguage = keyof typeof languages;
 
 let highlighter: Promise<HighlighterCore> | undefined;
 

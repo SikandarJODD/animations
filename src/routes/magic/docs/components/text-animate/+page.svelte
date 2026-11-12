@@ -2,7 +2,7 @@
 	import { page } from "$app/state";
 	import { H1, H2, Paragraph, H3 } from "#lib/components/docs/markdown/index.js";
 	import TextAnimateRaw from "#lib/components/magic/text-animate/text-animate.svelte?raw";
-	import type { CodeBlock } from "#lib/components/ui/code/index.js";
+	import type { CodeBlock } from "#lib/components/ui/code-block/types.js";
 
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
 	import InstallComponent from "#lib/components/docs/base/InstallComponent.svelte";

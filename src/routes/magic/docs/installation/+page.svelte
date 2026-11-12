@@ -11,7 +11,8 @@
 		Steps,
 	} from "#lib/components/docs/markdown/index.js";
 	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
-	import * as Code from "#lib/components/ui/code/index.js";
+	import CodeBlockRoot from "#lib/components/ui/code-block/code-block.svelte";
+	import HighlightedCode from "#lib/components/ui/code-block/highlighted-code.svelte";
 	import { MetaTags } from "svelte-meta-tags";
 	import Preview from "../components/morphing-text/examples/preview.svelte";
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
@@ -130,7 +131,9 @@
 	<section class="space-y-4">
 		<H2 id="usage-example">Usage Example</H2>
 		<Paragraph>Here's how to use the Morphing Text component:</Paragraph>
-		<Code.Root code={exampleCode} lang="svelte" class="my-2" />
+		<CodeBlockRoot class="my-2">
+			<HighlightedCode code={exampleCode} lang="svelte" hideLines />
+		</CodeBlockRoot>
 
 		<div class="pt-2">
 			<PreviewComponent

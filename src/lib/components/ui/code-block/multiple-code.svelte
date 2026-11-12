@@ -1,15 +1,14 @@
 <script lang="ts">
-	import type { Snippet } from "svelte";
-	import * as Code from "./index";
-	import type { CodeBlock as MagicCode } from "./index";
-	import { ChevronDown } from "@lucide/svelte";
+	import Root from "./code-block.svelte";
+	import Actions from "./code-block-actions.svelte";
+	import CopyButton from "./code-block-copy-button.svelte";
+	import HighlightedCode from "./highlighted-code.svelte";
+	import type { CodeBlock as CodeBlockData } from "./types.js";
 	import Button from "#lib/components/ui/button/button.svelte";
 	import { cn } from "#lib/utils.js";
 	import { Svelte, TypeScript, Terminal } from "#lib/components/icons/index.js";
-	type Props = {
-		code: MagicCode[];
-	};
-	let { code }: Props = $props();
+
+	let { code }: { code: CodeBlockData[] } = $props();
 	let selectedIndex = $state(0);
 	let selectedCode = $derived(code[selectedIndex]);
 </script>
@@ -22,7 +21,6 @@
 			<div
 				class="dark:hover:bg-muted/50 flex items-center gap-1.5 py-2 pr-5.5 pl-4 font-mono text-xs hover:bg-white/5"
 			>
-				<!-- <ChevronDown class="size-4 opacity-50" /> -->
 				<svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 16 16">
 					<path
 						fill="none"
@@ -47,7 +45,7 @@
 			{#each code as item, index}
 				<Button
 					class={cn(
-						`flex w-full items-center justify-start gap-1.5 rounded-none border-l-2 border-transparent pl-6! text-xs hover:bg-neutral-200/70 hover:dark:bg-zinc-900 [&_svg:not([class*='size-'])]:size-3`,
+						"flex w-full items-center justify-start gap-1.5 rounded-none border-l-2 border-transparent pl-6! text-xs hover:bg-neutral-200/70 hover:dark:bg-zinc-900 [&_svg:not([class*='size-'])]:size-3",
 						selectedIndex === index &&
 							"border-muted-foreground border-l-2 bg-neutral-200/40 dark:bg-zinc-800/50"
 					)}
@@ -67,23 +65,24 @@
 							selectedIndex === index
 								? "!text-black dark:!text-white"
 								: "text-muted-foreground",
-						]}>{item?.filename || "Svelte"}</span
+						]}>{item.filename || "Svelte"}</span
 					>
 				</Button>
 			{/each}
 		</div>
 	</div>
+
 	<div class="relative max-h-[550px] min-h-[32rem] w-full overflow-auto border-none sm:w-full">
-		<!-- <Code.Overflow> -->
-		<Code.Root
-			lang={selectedCode.lang}
-			class="w-full rounded-none border-none "
-			code={selectedCode.filecode}
-			highlight={selectedCode.highlight}
-			hideLines={false}
-		>
-			<Code.CopyButton />
-		</Code.Root>
-		<!-- </Code.Overflow> -->
+		<Root class="h-full rounded-none border-0 dark:bg-transparent">
+			<Actions>
+				<CopyButton value={selectedCode.filecode} />
+			</Actions>
+			<HighlightedCode
+				code={selectedCode.filecode}
+				lang={selectedCode.lang}
+				highlight={selectedCode.highlight}
+				hideLines={false}
+			/>
+		</Root>
 	</div>
 </div>

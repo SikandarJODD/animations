@@ -3,7 +3,7 @@
 	import type { SEO } from "#lib/types/seo.js";
 	import type { Example } from "#lib/types/examples.js";
 	import type { PropsTable, UsageCode } from "#lib/types/structure.js";
-	import type { CodeBlock } from "#lib/components/ui/code/index.js";
+	import type { CodeBlock } from "#lib/components/ui/code-block/types.js";
 
 	export type ComponentDocPageProps = {
 		id: string;
@@ -35,7 +35,7 @@
 	import InstallComponent from "#lib/components/docs/base/InstallComponent.svelte";
 	import PackageBadges from "#lib/components/docs/base/PackageBadges.svelte";
 	import APITable from "#lib/components/docs/base/APITable.svelte";
-	import UsageCodeComponent from "#lib/components/ui/code/usage-code.svelte";
+	import UsageCodeComponent from "#lib/components/ui/code-block/usage-code.svelte";
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import { MetaTags } from "svelte-meta-tags";
 	import ExternalLink from "@lucide/svelte/icons/external-link";
