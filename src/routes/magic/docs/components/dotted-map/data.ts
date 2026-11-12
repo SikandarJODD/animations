@@ -76,7 +76,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "DottedMap",
+			name: "Dotted Map",
 			desc: "An SVG-based world map with dots and customizable markers.",
 			props: [
 				{ name: "width", type: "number", default: "150", description: "Width of the map" },

@@ -60,9 +60,9 @@
 </script>
 
 {#if isPropsTable(data)}
-	<div class="space-y-2">
+	<div class="mt-4 space-y-2">
 		{#if data.name}
-			<H3 id={data.name} class="mt-0 text-xl font-semibold">
+			<H3 id={data.name} class="mt-0 text-xl font-medium">
 				{data.name}
 			</H3>
 		{/if}
@@ -88,14 +88,14 @@
 				{#each tableKeys as key, index (key)}
 					<Td>
 						<span class="inline-flex items-center gap-1">
-							<code class={cn("text-muted-foreground px-1 font-mono text-sm ")}>
+							<code class={cn("text-muted-foreground px-1 font-mono text-sm")}>
 								{key === "default" && row.required
 									? "required"
 									: (row as any)[key] || ""}
 							</code>
-							{#if index === 0 && row.description}
+							<!-- {#if index === 0 && row.description}
 								<InfoPopover description={row.description} />
-							{/if}
+							{/if} -->
 						</span>
 					</Td>
 				{/each}
