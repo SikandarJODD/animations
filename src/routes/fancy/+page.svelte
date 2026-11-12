@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { page } from "$app/state";
 	import { H1, Paragraph } from "#lib/components/docs/markdown/index.js";
+	import { seo_config } from "#lib/config/seo.js";
 	import FancyShowcase from "#lib/components/layout/fancy/fancy-showcase.svelte";
 	import FaviconLink from "#lib/components/ui/favicon-link/favicon-link.svelte";
-	import { MetaTags } from "svelte-meta-tags";
+	import SEOComponent from "#lib/seo/seo.svelte";
 	import { Button } from "#lib/components/ui/button/index.js";
 
 	const title = "Svelte Fancy Components";
@@ -26,7 +26,7 @@
 		alt: "Svelte Fancy Components",
 	};
 
-	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
+	const canonical = `${seo_config.url}/fancy`;
 	let jsonLd = $derived({
 		"@context": "https://schema.org",
 		"@type": "CollectionPage",
@@ -36,7 +36,7 @@
 		isPartOf: {
 			"@type": "WebSite",
 			name: "Svelte Animations",
-			url: page.url.origin,
+			url: seo_config.url,
 		},
 		about: {
 			"@type": "Thing",
@@ -45,41 +45,13 @@
 	});
 </script>
 
-<MetaTags
+<SEOComponent
 	{title}
 	titleTemplate="%s | Svelte Animations"
 	{description}
 	{keywords}
-	{canonical}
-	robots="index,follow"
-	additionalRobotsProps={{
-		maxSnippet: -1,
-		maxImagePreview: "large",
-		maxVideoPreview: -1,
-	}}
-	openGraph={{
-		url: canonical,
-		title,
-		description,
-		type: "website",
-		siteName: "Svelte Fancy Components",
-		images: [socialImage],
-	}}
-	twitter={{
-		cardType: "summary_large_image",
-		title,
-		description,
-		image: socialImage.url,
-		imageAlt: socialImage.alt,
-		site: "@Sikandar_Bhide",
-		creator: "@Sikandar_Bhide",
-	}}
-	additionalMetaTags={[
-		{
-			name: "author",
-			content: "Sikandar Bhide",
-		},
-	]}
+	siteName="Svelte Fancy Components"
+	images={[socialImage]}
 />
 <svelte:head>
 	<script type="application/ld+json">
@@ -94,7 +66,10 @@
 		<H1 id="overview" class="text-3xl leading-16 font-semibold sm:text-5xl md:text-6xl">
 			Svelte Fancy Components
 		</H1>
-		<Paragraph id="description" class="text-muted-foreground mx-auto mt-5 max-w-2xl text-base text-balance">
+		<Paragraph
+			id="description"
+			class="text-muted-foreground mx-auto mt-5 max-w-2xl text-base text-balance"
+		>
 			Unofficial Svelte port of
 			<FaviconLink href="https://www.fancycomponents.dev/" class="my-0">
 				Fancy Components
@@ -105,11 +80,7 @@
 			</FaviconLink>.
 		</Paragraph>
 		<div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-			<Button
-				size="lg"
-				class="rounded-full px-4"
-				href="/fancy/letter-3d-swap"
-			>
+			<Button size="lg" class="rounded-full px-4" href="/fancy/letter-3d-swap">
 				View Components</Button
 			>
 			<Button

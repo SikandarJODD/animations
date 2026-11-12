@@ -1,3 +1,6 @@
-# allow crawling everything by default
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /api/
+Disallow: /demo
+
+Sitemap: https://sv-animations.vercel.app/sitemap.xml

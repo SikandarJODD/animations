@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { page } from "$app/state";
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
+	import { seo_config } from "#lib/config/seo.js";
 	import {
 		H1,
 		H2,
@@ -10,7 +10,7 @@
 		Strong,
 		UnorderedList,
 	} from "#lib/components/docs/markdown/index.js";
-	import { MetaTags } from "svelte-meta-tags";
+	import SEOComponent from "#lib/seo/seo.svelte";
 
 	const title = "Introduction";
 	const description =
@@ -31,39 +31,18 @@
 	};
 	const socialTitle = `${title} | Svelte Fancy Components`;
 
-	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
-	let llmsTxtUrl = $derived(`${canonical}/llms.txt`);
+	const llmsTxtUrl = `${seo_config.url}/fancy/introduction/llms.txt`;
 </script>
 
-<MetaTags
+<SEOComponent
 	{title}
 	titleTemplate="%s | Svelte Fancy Components"
 	{description}
 	{keywords}
-	{canonical}
-	robots="index,follow"
-	additionalRobotsProps={{
-		maxSnippet: -1,
-		maxImagePreview: "large",
-		maxVideoPreview: -1,
-	}}
-	openGraph={{
-		url: canonical,
-		title: socialTitle,
-		description,
-		type: "article",
-		siteName: "Svelte Fancy Components",
-		images: [socialImage],
-	}}
-	twitter={{
-		cardType: "summary_large_image",
-		title: socialTitle,
-		description,
-		image: socialImage.url,
-		imageAlt: socialImage.alt,
-		site: "@Sikandar_Bhide",
-		creator: "@Sikandar_Bhide",
-	}}
+	{socialTitle}
+	openGraphType="article"
+	siteName="Svelte Fancy Components"
+	images={[socialImage]}
 />
 
 <div class="space-y-8 md:space-y-6">

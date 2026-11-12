@@ -30,6 +30,7 @@
 
 <script lang="ts">
 	import { page } from "$app/state";
+	import { seo_config } from "#lib/config/seo.js";
 	import { H1, H2, Paragraph, H3 } from "#lib/components/docs/markdown/index.js";
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
 	import InstallComponent from "#lib/components/docs/base/install-component.svelte";
@@ -37,7 +38,7 @@
 	import APITable from "#lib/components/docs/base/api-table.svelte";
 	import * as Code from "#lib/components/ui/code/index.js";
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
-	import { MetaTags } from "svelte-meta-tags";
+	import SEOComponent from "#lib/seo/seo.svelte";
 	import ExternalLink from "@lucide/svelte/icons/external-link";
 	import {
 		buildSpellKeywords,
@@ -72,9 +73,8 @@
 	let PreviewComp = $derived(preview);
 	let isSpellRoute = $derived(page.url.pathname.split("/").includes("spell"));
 	let installUrl = $derived(
-		`${page.url.origin}/${installPathPrefix ?? (isSpellRoute ? "s" : "r")}/${id}.json`
+		`${seo_config.url}/${installPathPrefix ?? (isSpellRoute ? "s" : "r")}/${id}.json`
 	);
-	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
 	let resolvedTitleTemplate = $derived(
 		seo.titleTemplate ?? (isSpellRoute ? SPELL_TITLE_TEMPLATE : "%s | Svelte Animations")
 	);
@@ -96,38 +96,23 @@
 		return cleanUrl;
 	};
 
-	let llmsTxtUrl = $derived(`${getURLPath(page.url.href)}/llms.txt`);
+	let llmsTxtUrl = $derived(
+		new URL(`${getURLPath(page.url.pathname)}/llms.txt`, seo_config.url).href
+	);
 </script>
 
-<MetaTags
+<SEOComponent
 	title={seo.title}
 	titleTemplate={resolvedTitleTemplate}
 	description={seo.description}
 	keywords={resolvedKeywords}
-	{canonical}
-	robots="index,follow"
-	additionalRobotsProps={{
-		maxSnippet: -1,
-		maxImagePreview: "large",
-		maxVideoPreview: -1,
-	}}
-	openGraph={{
-		url: canonical,
-		title: resolvedSocialTitle,
-		description: seo.description,
-		type: "article",
-		siteName: isSpellRoute ? "Svelte Spell UI" : "Svelte Animations",
-		images: resolvedImages,
-	}}
-	twitter={{
-		creator: "@Sikandar_Bhide",
-		site: "@Sikandar_Bhide",
-		cardType: "summary_large_image",
-		title: resolvedSocialTitle,
-		description: seo.description,
-		image: resolvedImages?.[0]?.url,
-		imageAlt: resolvedImages?.[0]?.alt,
-	}}
+	canonicalPath={seo.canonicalPath}
+	robots={seo.robots}
+	socialTitle={seo.socialTitle ?? resolvedSocialTitle}
+	openGraphType={seo.openGraphType ?? "article"}
+	siteName={seo.siteName ?? (isSpellRoute ? "Svelte Spell UI" : "Svelte Animations")}
+	images={resolvedImages}
+	author={seo.author}
 />
 <div class="space-y-6 md:space-y-8">
 	<section>

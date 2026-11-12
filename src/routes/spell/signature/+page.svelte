@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/state";
+	import { seo_config } from "#lib/config/seo.js";
 	import { H1, H2, Paragraph, H3 } from "#lib/components/docs/markdown/index.js";
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
 	import { Button } from "#lib/components/ui/button/index.js";
@@ -8,7 +9,7 @@
 	import PackageBadges from "#lib/components/docs/base/package-badges.svelte";
 	import APITable from "#lib/components/docs/base/api-table.svelte";
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
-	import { MetaTags } from "svelte-meta-tags";
+	import SEOComponent from "#lib/seo/seo.svelte";
 	import {
 		buildSpellKeywords,
 		SPELL_SOCIAL_IMAGE,
@@ -18,7 +19,7 @@
 	import { Download } from "@lucide/svelte";
 
 	let PreviewComp = $derived(data.preview);
-	let installUrl = $derived(`${page.url.origin}/s/${data.id}.json`);
+	let installUrl = $derived(`${seo_config.url}/s/${data.id}.json`);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -26,8 +27,9 @@
 		return cleanUrl;
 	};
 
-	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
-	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
+	let llmsTxtUrl = $derived(
+		new URL(`${getURLPath(page.url.pathname)}/llms.txt`, seo_config.url).href
+	);
 	const keywords = buildSpellKeywords(data.seo.keywords, [
 		data.title,
 		"animated signature component",
@@ -37,35 +39,15 @@
 	const socialTitle = `${data.seo.title} | Svelte Spell UI`;
 </script>
 
-<MetaTags
+<SEOComponent
 	title={data.seo.title}
 	titleTemplate={SPELL_TITLE_TEMPLATE}
 	description={data.seo.description}
 	{keywords}
-	{canonical}
-	robots="index,follow"
-	additionalRobotsProps={{
-		maxSnippet: -1,
-		maxImagePreview: "large",
-		maxVideoPreview: -1,
-	}}
-	openGraph={{
-		url: canonical,
-		title: socialTitle,
-		description: data.seo.description,
-		type: "article",
-		siteName: "Svelte Spell UI",
-		images: [SPELL_SOCIAL_IMAGE],
-	}}
-	twitter={{
-		cardType: "summary_large_image",
-		title: socialTitle,
-		description: data.seo.description,
-		image: SPELL_SOCIAL_IMAGE.url,
-		imageAlt: SPELL_SOCIAL_IMAGE.alt,
-		site: "@Sikandar_Bhide",
-		creator: "@Sikandar_Bhide",
-	}}
+	{socialTitle}
+	openGraphType="article"
+	siteName="Svelte Spell UI"
+	images={[SPELL_SOCIAL_IMAGE]}
 />
 
 <div class="space-y-8 md:space-y-8">

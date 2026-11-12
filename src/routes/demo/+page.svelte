@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Component } from "svelte";
+	import SEOComponent from "#lib/seo/seo.svelte";
 	import { PressedKeys } from "runed";
 	import {
 		Basic,
@@ -68,9 +69,11 @@
 	pressedKeys.onKeys("arrowleft", showPrevious);
 </script>
 
-<svelte:head>
-	<title>Flow Examples | Svelte Animations</title>
-</svelte:head>
+<SEOComponent
+	title="Flow Examples"
+	description="Internal component demonstration page for Svelte Animations."
+	robots="noindex,nofollow"
+/>
 
 <section
 	class="relative flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden px-4 pt-10 pb-24 sm:px-8"
