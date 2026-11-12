@@ -1,40 +1,21 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Tell us about something that isn't working
 title: ""
 labels: ""
 assignees: ""
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+Thanks for reporting this. A few details will help us look into it.
 
-**To Reproduce**
-Steps to reproduce the behavior:
+## What happened?
 
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+Tell us what went wrong and what you expected instead.
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+## How can we reproduce it?
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+Share the steps, if you know them.
 
-**Desktop (please complete the following information):**
+## Anything else?
 
-- OS: [e.g. iOS]
-- Browser [e.g. chrome, safari]
-- Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
-
-- Device: [e.g. iPhone6]
-- OS: [e.g. iOS8.1]
-- Browser [e.g. stock browser, safari]
-- Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+Add a screenshot, error message, or device and browser details if they might help.
