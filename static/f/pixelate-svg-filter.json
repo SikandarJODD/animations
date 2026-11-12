@@ -5,6 +5,16 @@
 	"type": "registry:block",
 	"author": "SikandarJODD",
 	"description": "An SVG filter definition component for applying configurable pixelation effects.",
+	"meta": {
+		"categories": [
+			"media",
+			"svg",
+			"pixel",
+			"filter",
+			"decoration",
+			"subtle"
+		]
+	},
 	"files": [
 		{
 			"content": "<script lang=\"ts\">\n\ttype PixelateSvgFilterProps = {\n\t\tid: string;\n\t\tsize?: number;\n\t\tcrossLayers?: boolean;\n\t};\n\tlet {\n\t\tid = \"pixelate-filter\",\n\t\tsize = 16,\n\t\tcrossLayers = false,\n\t}: PixelateSvgFilterProps = $props();\n</script>\n\n<svg class=\"absolute inset-0\">\n\t<defs>\n\t\t<filter {id} x=\"0\" y=\"0\" width=\"1\" height=\"1\">\n\t\t\t{\"First layer: Normal pixelation effect\"}\n\t\t\t<feConvolveMatrix\n\t\t\t\tkernelMatrix=\"1 1 1\n                          1 1 1\n                          1 1 1\"\n\t\t\t\tresult=\"AVG\"\n\t\t\t/>\n\t\t\t<feFlood x=\"1\" y=\"1\" width=\"1\" height=\"1\" />\n\t\t\t<feComposite\n\t\t\t\toperator=\"arithmetic\"\n\t\t\t\tk1=\"0\"\n\t\t\t\tk2=\"1\"\n\t\t\t\tk3=\"0\"\n\t\t\t\tk4=\"0\"\n\t\t\t\twidth={size}\n\t\t\t\theight={size}\n\t\t\t/>\n\t\t\t<feTile result=\"TILE\" />\n\t\t\t<feComposite in=\"AVG\" in2=\"TILE\" operator=\"in\" k1=\"0\" k2=\"1\" k3=\"0\" k4=\"0\" />\n\t\t\t<feMorphology operator=\"dilate\" radius={size / 2} result={\"NORMAL\"} />\n\t\t\t{#if crossLayers}\n\t\t\t\t{\"Second layer: Fallback with full-width tiling\"}\n\t\t\t\t<feConvolveMatrix\n\t\t\t\t\tkernelMatrix=\"1 1 1\n                              1 1 1\n                              1 1 1\"\n\t\t\t\t\tresult=\"AVG\"\n\t\t\t\t/>\n\t\t\t\t<feFlood x=\"1\" y=\"1\" width=\"1\" height=\"1\" />\n\t\t\t\t<feComposite\n\t\t\t\t\tin2=\"SourceGraphic\"\n\t\t\t\t\toperator=\"arithmetic\"\n\t\t\t\t\tk1=\"0\"\n\t\t\t\t\tk2=\"1\"\n\t\t\t\t\tk3=\"0\"\n\t\t\t\t\tk4=\"0\"\n\t\t\t\t\twidth={size / 2}\n\t\t\t\t\theight={size}\n\t\t\t\t/>\n\t\t\t\t<feTile result=\"TILE\" />\n\t\t\t\t<feComposite in=\"AVG\" in2=\"TILE\" operator=\"in\" k1=\"0\" k2=\"1\" k3=\"0\" k4=\"0\" />\n\t\t\t\t<feMorphology operator=\"dilate\" radius={size / 2} result={\"FALLBACKX\"} />\n\t\t\t\t{\"Third layer: Fallback with full-height tiling\"}\n\t\t\t\t<feConvolveMatrix\n\t\t\t\t\tkernelMatrix=\"1 1 1\n                              1 1 1\n                              1 1 1\"\n\t\t\t\t\tresult=\"AVG\"\n\t\t\t\t/>\n\t\t\t\t<feFlood x=\"1\" y=\"1\" width=\"1\" height=\"1\" />\n\t\t\t\t<feComposite\n\t\t\t\t\tin2=\"SourceGraphic\"\n\t\t\t\t\toperator=\"arithmetic\"\n\t\t\t\t\tk1=\"0\"\n\t\t\t\t\tk2=\"1\"\n\t\t\t\t\tk3=\"0\"\n\t\t\t\t\tk4=\"0\"\n\t\t\t\t\twidth={size}\n\t\t\t\t\theight={size / 2}\n\t\t\t\t/>\n\t\t\t\t<feTile result=\"TILE\" />\n\t\t\t\t<feComposite in=\"AVG\" in2=\"TILE\" operator=\"in\" k1=\"0\" k2=\"1\" k3=\"0\" k4=\"0\" />\n\t\t\t\t<feMorphology operator=\"dilate\" radius={size / 2} result={\"FALLBACKY\"} />\n\t\t\t\t<feMerge>\n\t\t\t\t\t<feMergeNode in=\"FALLBACKX\" />\n\t\t\t\t\t<feMergeNode in=\"FALLBACKY\" />\n\t\t\t\t\t<feMergeNode in=\"NORMAL\" />\n\t\t\t\t</feMerge>\n\t\t\t{/if}\n\t\t\t{#if !crossLayers}\n\t\t\t\t<feMergeNode in=\"NORMAL\" />\n\t\t\t{/if}\n\t\t</filter>\n\t</defs>\n</svg>\n",

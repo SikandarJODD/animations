@@ -4,6 +4,15 @@
 	"title": "Shine Border",
 	"type": "registry:block",
 	"description": "A component that adds a shining animated border effect with customizable colors, duration, and border width.",
+	"meta": {
+		"categories": [
+			"border",
+			"shine",
+			"decoration",
+			"automatic",
+			"medium-motion"
+		]
+	},
 	"css": {
 		"@keyframes shine": {
 			"0%": {

@@ -4,6 +4,15 @@
 	"title": "Orbiting Circles",
 	"type": "registry:block",
 	"description": "A component that displays icons or elements orbiting in a circular path with customizable radius, duration, and direction.",
+	"meta": {
+		"categories": [
+			"icon",
+			"orbit",
+			"decoration",
+			"automatic",
+			"high-motion"
+		]
+	},
 	"css": {
 		"@keyframes orbit": {
 			"0%": {
@@ -21,7 +30,7 @@
 	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\n\timport { cn } from \"#lib/utils.js\";\n\timport type { Snippet } from \"svelte\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\n\tinterface OrbitingCirclesProps extends HTMLAttributes<HTMLDivElement> {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t\treverse?: boolean;\n\t\tduration?: number;\n\t\tradius?: number;\n\t\tpath?: boolean;\n\t\ticonSize?: number;\n\t\tspeed?: number;\n\t\tangle?: number;\n\t\tdelay?: number;\n\t}\n\n\tlet {\n\t\tchildren,\n\t\tclass: className,\n\t\treverse = false,\n\t\tduration = 20,\n\t\tradius = 160,\n\t\tpath = false,\n\t\ticonSize = 30,\n\t\tspeed = 1,\n\t\tangle = 0,\n\t\tdelay = 0,\n\t\t...props\n\t}: OrbitingCirclesProps = $props();\n\n\tlet calculatedDuration = $derived(duration / speed);\n</script>\n\n{#if path}\n\t<svg\n\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\tversion=\"1.1\"\n\t\tclass=\"pointer-events-none absolute inset-0 size-full\"\n\t>\n\t\t<circle\n\t\t\tclass=\"stroke-1 dark:stroke-white/20\"\n\t\t\tcx=\"50%\"\n\t\t\tcy=\"50%\"\n\t\t\tr={radius}\n\t\t\tfill=\"none\"\n\t\t\tstroke-dasharray=\"4 4\"\n\t\t/>\n\t</svg>\n{/if}\n\n<div\n\tstyle:--duration={calculatedDuration}\n\tstyle:--radius={radius}\n\tstyle:--angle={angle}\n\tstyle:--delay={delay}\n\tstyle:--icon-size=\"{iconSize}px\"\n\tclass={cn(\n\t\t\"animate-orbit absolute flex size-(--icon-size) transform-gpu items-center justify-center rounded-full [animation-delay:calc(var(--delay)*1000ms)]\",\n\t\t{ \"direction-[reverse]\": reverse },\n\t\tclassName\n\t)}\n\t{...props}\n>\n\t{@render children()}\n</div>\n",
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"#lib/utils.js\";\n\timport type { Snippet } from \"svelte\";\n\timport type { ClassValue, HTMLAttributes } from \"svelte/elements\";\n\n\tinterface OrbitingCirclesProps extends HTMLAttributes<HTMLDivElement> {\n\t\tchildren: Snippet;\n\t\tclass?: ClassValue;\n\t\treverse?: boolean;\n\t\tduration?: number;\n\t\tradius?: number;\n\t\tpath?: boolean;\n\t\ticonSize?: number;\n\t\tspeed?: number;\n\t\tangle?: number;\n\t\tdelay?: number;\n\t}\n\n\tlet {\n\t\tchildren,\n\t\tclass: className,\n\t\treverse = false,\n\t\tduration = 20,\n\t\tradius = 160,\n\t\tpath = false,\n\t\ticonSize = 30,\n\t\tspeed = 1,\n\t\tangle = 0,\n\t\tdelay = 0,\n\t\t...props\n\t}: OrbitingCirclesProps = $props();\n\n\tlet calculatedDuration = $derived(duration / speed);\n</script>\n\n{#if path}\n\t<svg\n\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\tversion=\"1.1\"\n\t\tclass=\"pointer-events-none absolute inset-0 size-full\"\n\t>\n\t\t<circle\n\t\t\tclass=\"stroke-1 dark:stroke-white/20\"\n\t\t\tcx=\"50%\"\n\t\t\tcy=\"50%\"\n\t\t\tr={radius}\n\t\t\tfill=\"none\"\n\t\t\tstroke-dasharray=\"4 4\"\n\t\t/>\n\t</svg>\n{/if}\n\n<div\n\tstyle:--duration={calculatedDuration}\n\tstyle:--radius={radius}\n\tstyle:--angle={angle}\n\tstyle:--delay={delay}\n\tstyle:--icon-size=\"{iconSize}px\"\n\tclass={cn(\n\t\t\"animate-orbit absolute flex size-(--icon-size) transform-gpu items-center justify-center rounded-full [animation-delay:calc(var(--delay)*1000ms)]\",\n\t\t{ \"direction-[reverse]\": reverse },\n\t\tclassName\n\t)}\n\t{...props}\n>\n\t{@render children()}\n</div>\n",
 			"type": "registry:component",
 			"target": "magic/orbiting-circles/orbiting-circles.svelte"
 		},

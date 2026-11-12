@@ -13,6 +13,15 @@
 		"@internationalized/date@^3.12.0",
 		"tailwind-variants@^3.3.1"
 	],
+	"meta": {
+		"categories": [
+			"button",
+			"gradient",
+			"rainbow",
+			"call-to-action",
+			"high-motion"
+		]
+	},
 	"css": {
 		"@keyframes rainbow": {
 			"0%": {

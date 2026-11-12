@@ -4,9 +4,18 @@
 	"title": "Backlight",
 	"type": "registry:block",
 	"description": "An SVG filter wrapper that adds a soft, saturated backlight glow around the content it wraps.",
+	"meta": {
+		"categories": [
+			"glow",
+			"filter",
+			"decoration",
+			"content",
+			"subtle"
+		]
+	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\n\timport type { Snippet } from \"svelte\";\n\n\ttype Props = {\n\t\tchildren?: Snippet;\n\t\tclass?: string;\n\t\tblur?: number;\n\t};\n\tlet { children, class: className, blur = 10 }: Props = $props();\n\tlet id = $props.id();\n</script>\n\n<div class={className}>\n\t<svg width=\"0\" height=\"0\" aria-hidden=\"true\">\n\t\t<filter {id} y=\"-50%\" x=\"-50%\" width=\"200%\" height=\"200%\">\n\t\t\t<feGaussianBlur in=\"SourceGraphic\" stdDeviation={blur} result=\"blurred\"\n\t\t\t></feGaussianBlur>\n\t\t\t<feColorMatrix type=\"saturate\" in=\"blurred\" values=\"4\"></feColorMatrix>\n\t\t\t<feComposite in=\"SourceGraphic\" operator=\"over\"></feComposite>\n\t\t</filter>\n\t</svg>\n\t<div style=\"filter: url(#{id})\">\n\t\t{@render children?.()}\n\t</div>\n</div>\n",
+			"content": "<script lang=\"ts\">\n\timport type { ClassValue } from \"svelte/elements\";\n\timport type { Snippet } from \"svelte\";\n\n\ttype Props = {\n\t\tchildren?: Snippet;\n\t\tclass?: ClassValue;\n\t\tblur?: number;\n\t};\n\tlet { children, class: className, blur = 10 }: Props = $props();\n\tlet id = $props.id();\n</script>\n\n<div class={className}>\n\t<svg width=\"0\" height=\"0\" aria-hidden=\"true\">\n\t\t<filter {id} y=\"-50%\" x=\"-50%\" width=\"200%\" height=\"200%\">\n\t\t\t<feGaussianBlur in=\"SourceGraphic\" stdDeviation={blur} result=\"blurred\"\n\t\t\t></feGaussianBlur>\n\t\t\t<feColorMatrix type=\"saturate\" in=\"blurred\" values=\"4\"></feColorMatrix>\n\t\t\t<feComposite in=\"SourceGraphic\" operator=\"over\"></feComposite>\n\t\t</filter>\n\t</svg>\n\t<div style=\"filter: url(#{id})\">\n\t\t{@render children?.()}\n\t</div>\n</div>\n",
 			"type": "registry:component",
 			"target": "magic/backlight/backlight.svelte"
 		},

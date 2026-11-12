@@ -7,6 +7,15 @@
 	"dependencies": [
 		"motion-sv"
 	],
+	"meta": {
+		"categories": [
+			"grid",
+			"animation-primitive",
+			"canvas",
+			"automatic",
+			"high-motion"
+		]
+	},
 	"files": [
 		{
 			"content": "<script lang=\"ts\">\n\timport { motion } from \"motion-sv\";\n\timport { setMotionGridContext } from \"./use-motion-grid-context.svelte\";\n\timport type { MotionGridCellMotionProps, MotionGridProps } from \"./types\";\n\n\ttype StyleValue = MotionGridCellMotionProps[\"style\"];\n\n\tfunction mergeStyles(baseStyle: StyleValue, userStyle: StyleValue): StyleValue {\n\t\treturn {\n\t\t\t...(baseStyle ?? {}),\n\t\t\t...(userStyle ?? {}),\n\t\t};\n\t}\n\n\tfunction withRefProp<T extends Record<string, unknown>>(props: T) {\n\t\treturn Object.defineProperty(props, \"ref\", {\n\t\t\tenumerable: true,\n\t\t\tconfigurable: true,\n\t\t\tget: () => ref,\n\t\t\tset: (value) => {\n\t\t\t\tref = value as HTMLDivElement | null;\n\t\t\t},\n\t\t}) as T & { ref: HTMLDivElement | null };\n\t}\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tgridSize,\n\t\tframes,\n\t\tduration = 200,\n\t\tanimate = true,\n\t\tchild,\n\t\tchildren,\n\t\t...restProps\n\t}: MotionGridProps = $props();\n\n\tlet index = $state(0);\n\n\tlet cols = $derived(gridSize[0]);\n\tlet rows = $derived(gridSize[1]);\n\n\tsetMotionGridContext({\n\t\tanimate: () => {\n\t\t\treturn animate;\n\t\t},\n\t\tindex: () => {\n\t\t\treturn index;\n\t\t},\n\t\tcols: () => {\n\t\t\treturn cols;\n\t\t},\n\t\trows: () => {\n\t\t\treturn rows;\n\t\t},\n\t\tframes: () => {\n\t\t\treturn frames;\n\t\t},\n\t\tduration: () => {\n\t\t\treturn duration;\n\t\t},\n\t});\n\n\t$effect(() => {\n\t\tframes;\n\t\tindex = 0;\n\t});\n\n\t$effect(() => {\n\t\tif (frames.length === 0) {\n\t\t\tindex = 0;\n\t\t\treturn;\n\t\t}\n\n\t\tif (index >= frames.length) {\n\t\t\tindex = 0;\n\t\t}\n\t});\n\n\t$effect(() => {\n\t\tif (!animate || frames.length === 0) return;\n\n\t\tlet interval = setInterval(() => {\n\t\t\tindex = (index + 1) % frames.length;\n\t\t}, duration);\n\n\t\treturn () => clearInterval(interval);\n\t});\n\n\tlet baseStyle = $derived({\n\t\tdisplay: \"grid\",\n\t\tgridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,\n\t\tgridAutoRows: \"1fr\",\n\t});\n\n\tlet mergedProps = $derived.by(() => {\n\t\tlet style = mergeStyles(baseStyle, restProps.style as StyleValue);\n\t\treturn withRefProp({\n\t\t\t...restProps,\n\t\t\t\"data-animate\": animate,\n\t\t\tstyle,\n\t\t}) as MotionGridCellMotionProps;\n\t});\n</script>\n\n{#if child}\n\t{@render child({ props: mergedProps })}\n{:else}\n\t<motion.div bind:ref {...mergedProps}>\n\t\t{@render children?.()}\n\t</motion.div>\n{/if}\n",

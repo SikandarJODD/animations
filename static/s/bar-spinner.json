@@ -4,6 +4,15 @@
 	"title": "Bar Spinner",
 	"type": "registry:block",
 	"description": "A compact loading spinner made from twelve fading bars, ideal for inline waits, cards, dialogs, and button-adjacent status indicators.",
+	"meta": {
+		"categories": [
+			"loading",
+			"feedback",
+			"spinner",
+			"automatic",
+			"medium-motion"
+		]
+	},
 	"files": [
 		{
 			"content": "<script lang=\"ts\">\n\timport { cn } from \"#lib/utils.js\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\n\ttype Props = HTMLAttributes<HTMLDivElement> & {\n\t\tsize?: number;\n\t\tcolor?: string;\n\t};\n\n\tlet bars = Array.from({ length: 12 }, (_, index) => index);\n\n\tlet {\n\t\tsize = 20,\n\t\tcolor = \"currentColor\",\n\t\tclass: className,\n\t\tstyle: styleAttribute,\n\t\t...restProps\n\t}: Props = $props();\n</script>\n\n<div\n\tdata-slot=\"bar-spinner\"\n\tclass={cn(\"bars-spinner-wrapper\", className)}\n\tstyle=\"--spinner-size: {size}px; --spinner-color: {color}; {styleAttribute}\"\n\t{...restProps}\n>\n\t<div class=\"bars-spinner\">\n\t\t{#each bars as bar (`spinner-bar-${bar}`)}\n\t\t\t<div class=\"bar\"></div>\n\t\t{/each}\n\t</div>\n</div>\n\n<style>\n\t.bars-spinner-wrapper {\n\t\theight: var(--spinner-size, 20px);\n\t\twidth: var(--spinner-size, 20px);\n\t}\n\n\t.bars-spinner {\n\t\tposition: relative;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\theight: var(--spinner-size, 20px);\n\t\twidth: var(--spinner-size, 20px);\n\t}\n\n\t.bar {\n\t\tposition: absolute;\n\t\ttop: -3.9%;\n\t\tleft: -10%;\n\t\twidth: 24%;\n\t\theight: 8%;\n\t\tborder-radius: 6px;\n\t\tbackground: var(--spinner-color);\n\t\tanimation: bar-spinner-fade 1.2s linear infinite;\n\t}\n\n\t.bar:nth-child(1) {\n\t\tanimation-delay: -1.2s;\n\t\ttransform: rotate(0.0001deg) translate(146%);\n\t}\n\n\t.bar:nth-child(2) {\n\t\tanimation-delay: -1.1s;\n\t\ttransform: rotate(30deg) translate(146%);\n\t}\n\n\t.bar:nth-child(3) {\n\t\tanimation-delay: -1s;\n\t\ttransform: rotate(60deg) translate(146%);\n\t}\n\n\t.bar:nth-child(4) {\n\t\tanimation-delay: -0.9s;\n\t\ttransform: rotate(90deg) translate(146%);\n\t}\n\n\t.bar:nth-child(5) {\n\t\tanimation-delay: -0.8s;\n\t\ttransform: rotate(120deg) translate(146%);\n\t}\n\n\t.bar:nth-child(6) {\n\t\tanimation-delay: -0.7s;\n\t\ttransform: rotate(150deg) translate(146%);\n\t}\n\n\t.bar:nth-child(7) {\n\t\tanimation-delay: -0.6s;\n\t\ttransform: rotate(180deg) translate(146%);\n\t}\n\n\t.bar:nth-child(8) {\n\t\tanimation-delay: -0.5s;\n\t\ttransform: rotate(210deg) translate(146%);\n\t}\n\n\t.bar:nth-child(9) {\n\t\tanimation-delay: -0.4s;\n\t\ttransform: rotate(240deg) translate(146%);\n\t}\n\n\t.bar:nth-child(10) {\n\t\tanimation-delay: -0.3s;\n\t\ttransform: rotate(270deg) translate(146%);\n\t}\n\n\t.bar:nth-child(11) {\n\t\tanimation-delay: -0.2s;\n\t\ttransform: rotate(300deg) translate(146%);\n\t}\n\n\t.bar:nth-child(12) {\n\t\tanimation-delay: -0.1s;\n\t\ttransform: rotate(330deg) translate(146%);\n\t}\n\n\t@keyframes bar-spinner-fade {\n\t\t0% {\n\t\t\topacity: 1;\n\t\t}\n\n\t\t100% {\n\t\t\topacity: 0.15;\n\t\t}\n\t}\n</style>\n",

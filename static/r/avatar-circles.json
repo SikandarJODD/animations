@@ -4,9 +4,18 @@
 	"title": "Avatar Circles",
 	"type": "registry:block",
 	"description": "A component that displays overlapping avatar circles with optional count indicator for showing team members or contributors.",
+	"meta": {
+		"categories": [
+			"avatar",
+			"social-proof",
+			"team",
+			"content",
+			"static"
+		]
+	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\n\timport { cn } from \"#lib/utils.js\";\n\n\tinterface Avatar {\n\t\timageUrl: string;\n\t\tprofileUrl: string;\n\t}\n\n\tinterface Props {\n\t\tclass?: string;\n\t\tnumPeople?: number;\n\t\tavatarUrls: Avatar[];\n\t}\n\n\tlet { class: className, numPeople, avatarUrls }: Props = $props();\n</script>\n\n<div class={cn(\"z-10 flex -space-x-4 rtl:space-x-reverse\", className)}>\n\t{#each avatarUrls as url, index}\n\t\t<a href={url.profileUrl} target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t<img\n\t\t\t\tclass=\"h-10 w-10 rounded-full border-2 dark:border-gray-800\"\n\t\t\t\tsrc={url.imageUrl}\n\t\t\t\twidth=\"40\"\n\t\t\t\theight=\"40\"\n\t\t\t\talt=\"Avatar {index + 1}\"\n\t\t\t/>\n\t\t</a>\n\t{/each}\n\t{#if (numPeople ?? 0) > 0}\n\t\t<a\n\t\t\tclass=\"flex h-10 w-10 items-center justify-center rounded-full border-2 bg-black text-center text-xs font-medium text-white hover:bg-gray-600 dark:border-gray-800 dark:bg-white dark:text-black\"\n\t\t\thref=\"/\"\n\t\t>\n\t\t\t+{numPeople}\n\t\t</a>\n\t{/if}\n</div>\n",
+			"content": "<script lang=\"ts\">\n\timport type { ClassValue } from \"svelte/elements\";\n\timport { cn } from \"#lib/utils.js\";\n\n\tinterface Avatar {\n\t\timageUrl: string;\n\t\tprofileUrl: string;\n\t}\n\n\tinterface Props {\n\t\tclass?: ClassValue;\n\t\tnumPeople?: number;\n\t\tavatarUrls: Avatar[];\n\t}\n\n\tlet { class: className, numPeople, avatarUrls }: Props = $props();\n</script>\n\n<div class={cn(\"z-10 flex -space-x-4 rtl:space-x-reverse\", className)}>\n\t{#each avatarUrls as url, index}\n\t\t<a href={url.profileUrl} target=\"_blank\" rel=\"noopener noreferrer\">\n\t\t\t<img\n\t\t\t\tclass=\"h-10 w-10 rounded-full border-2 dark:border-gray-800\"\n\t\t\t\tsrc={url.imageUrl}\n\t\t\t\twidth=\"40\"\n\t\t\t\theight=\"40\"\n\t\t\t\talt=\"Avatar {index + 1}\"\n\t\t\t/>\n\t\t</a>\n\t{/each}\n\t{#if (numPeople ?? 0) > 0}\n\t\t<a\n\t\t\tclass=\"flex h-10 w-10 items-center justify-center rounded-full border-2 bg-black text-center text-xs font-medium text-white hover:bg-gray-600 dark:border-gray-800 dark:bg-white dark:text-black\"\n\t\t\thref=\"/\"\n\t\t>\n\t\t\t+{numPeople}\n\t\t</a>\n\t{/if}\n</div>\n",
 			"type": "registry:component",
 			"target": "magic/avatar-circles/avatar-circles.svelte"
 		},
