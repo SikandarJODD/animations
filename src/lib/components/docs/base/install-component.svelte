@@ -22,12 +22,16 @@
 </script>
 
 <script lang="ts">
+	import { page } from "$app/state";
 	import { cn } from "#lib/utils.js";
+	import { seo_config } from "#lib/config/seo.js";
 	import * as Tabs from "#lib/components/ui/tabs/index.js";
 	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
 	import Steps from "#lib/components/docs/markdown/steps.svelte";
 	import Step from "#lib/components/docs/markdown/step.svelte";
 	import * as Code from "#lib/components/ui/code/index.js";
+	import Sparkles from "@lucide/svelte/icons/sparkles";
+	import AIInstallPanel from "./ai-install-panel.svelte";
 
 	let {
 		installUrl,
@@ -39,23 +43,43 @@
 		packages = [],
 	}: InstallComponentProps = $props();
 
+	const tabTriggerClass =
+		"hover:bg-muted dark:data-active:bg-muted h-8 flex-none cursor-pointer rounded-full border-none bg-transparent px-3 text-sm shadow-none! transition-none data-active:bg-neutral-200/60";
+
 	let activeTab = $state("cli");
+	let docsUrl = $derived(
+		new URL(`${page.url.pathname.replace(/\/$/, "")}/llms.txt`, seo_config.url).href
+	);
+	let componentUrl = $derived(new URL(page.url.pathname, seo_config.url).href);
+	let aiPrompt = $derived(`Install and integrate the Svelte component documented below.
+${docsUrl}
+
+Follow the guide's installation and usage instructions.
+Match the project's existing structure, imports, and styles.
+Keep changes scoped to the component and verify it works.
+Reply with a short bullet list of completed changes.`);
+	let aiOpenPrompt = $derived(`Review this Svelte component:
+${componentUrl}
+
+Read its documentation:
+${docsUrl}
+
+Summarize its features, installation, and basic usage.`);
 </script>
 
 <div class={cn("w-full", className)}>
 	<Tabs.Root bind:value={activeTab}>
-		<Tabs.List class="text-foreground h-auto gap-2 rounded-none bg-transparent py-1 pl-1">
-			<Tabs.Trigger
-				value="cli"
-				class="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative cursor-pointer border-none bg-transparent! pr-2 pl-0 text-base after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-			>
-				CLI
-			</Tabs.Trigger>
-			<Tabs.Trigger
-				value="manual"
-				class="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative cursor-pointer border-none bg-transparent! px-0 text-base after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-			>
-				Manual
+		<Tabs.List class="h-auto gap-1 bg-transparent p-0">
+			<Tabs.Trigger value="cli" class={cn(tabTriggerClass, "px-4")}>CLI</Tabs.Trigger>
+			<Tabs.Trigger value="manual" class={cn(tabTriggerClass, "px-4")}>Manual</Tabs.Trigger>
+			<Tabs.Trigger value="ai" class={cn(tabTriggerClass, "group px-3.5")}>
+				<Sparkles class={cn("size-3.5")} />
+				<span
+					class={cn(
+						activeTab !== "ai" &&
+							"shimmer dark:shimmer-color-sky-400 shimmer-color-orange-400 group-hover:shimmer-none"
+					)}>AI Prompt</span
+				>
 			</Tabs.Trigger>
 		</Tabs.List>
 
@@ -138,6 +162,10 @@
 					</Step>
 				{/if}
 			</Steps>
+		</Tabs.Content>
+
+		<Tabs.Content value="ai" class="mt-4" data-toc-ignore="true">
+			<AIInstallPanel prompt={aiPrompt} openPrompt={aiOpenPrompt} />
 		</Tabs.Content>
 	</Tabs.Root>
 </div>

@@ -26,3 +26,4 @@ vite.config.ts.timestamp-*
 
 /src/lib/components/motion-sv-examples
 docs-guide.md
+AI_INTEGRATION_PLAN.md
