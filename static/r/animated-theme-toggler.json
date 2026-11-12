@@ -5,7 +5,7 @@
 	"type": "registry:block",
 	"description": "A smooth animated theme toggler that uses the View Transition API to create a circular reveal effect when switching between light and dark themes.",
 	"devDependencies": [
-		"@lucide/svelte@^1.70.0"
+		"@lucide/svelte@^1.71.0"
 	],
 	"css": {
 		"::view-transition-old(root), ::view-transition-new(root)": {
