@@ -14,8 +14,12 @@
 		{#if code.isExpand}
 			<CodeBlockOverflow collapsed={true}>
 				<Root class="bg-background rounded-none border-0">
-					<Actions>
-						<CopyButton value={code.filecode} variant="secondary" />
+					<Actions class="[[data-slot=code-block]>&]:opacity-100">
+						<CopyButton
+							value={code.filecode}
+							variant="secondary"
+							class="text-muted-foreground"
+						/>
 					</Actions>
 					<HighlightedCode
 						code={code.filecode}
@@ -27,14 +31,22 @@
 			</CodeBlockOverflow>
 		{:else}
 			<Root class="bg-background rounded-none border-0">
-				<Actions>
-					<CopyButton value={code.filecode} size="icon-sm" variant="secondary" />
+				<Actions
+					class="[[data-slot=code-block]>&]:end-2 [[data-slot=code-block]>&]:top-2 [[data-slot=code-block]>&]:opacity-100"
+				>
+					<CopyButton
+						value={code.filecode}
+						size="icon-md"
+						variant="secondary"
+						class="text-muted-foreground"
+					/>
 				</Actions>
 				<HighlightedCode
 					code={code.filecode}
 					lang={code.lang}
 					highlight={code.highlight}
 					hideLines
+					class="bg-background"
 				/>
 			</Root>
 		{/if}

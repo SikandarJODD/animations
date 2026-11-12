@@ -123,7 +123,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "DiaTextReveal",
+			name: "Dia Text Reveal",
 			desc: "A component for revealing text with a moving gradient sweep.",
 			props: [
 				{

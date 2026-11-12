@@ -41,9 +41,9 @@
 	{size}
 >
 	{#if copied}
-		<Check class="size-4" />
+		<Check class="size-3.5" />
 	{:else}
-		<Copy class="size-4" />
+		<Copy class="size-3.5" />
 	{/if}
 	<span>Copy Page</span>
 </Button>
