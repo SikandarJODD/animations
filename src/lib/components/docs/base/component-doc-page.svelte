@@ -87,7 +87,6 @@
 				])
 			: seo.keywords
 	);
-	let resolvedSocialTitle = $derived(isSpellRoute ? `${seo.title} | Svelte Spell UI` : seo.title);
 	let resolvedImages = $derived(seo.images ?? (isSpellRoute ? [SPELL_SOCIAL_IMAGE] : undefined));
 
 	let getURLPath = (url: string) => {
@@ -108,11 +107,14 @@
 	keywords={resolvedKeywords}
 	canonicalPath={seo.canonicalPath}
 	robots={seo.robots}
-	socialTitle={seo.socialTitle ?? resolvedSocialTitle}
+	socialTitle={seo.socialTitle}
 	openGraphType={seo.openGraphType ?? "article"}
 	siteName={seo.siteName ?? (isSpellRoute ? "Svelte Spell UI" : "Svelte Animations")}
 	images={resolvedImages}
 	author={seo.author}
+	pageType={seo.pageType ?? "component"}
+	breadcrumbs={seo.breadcrumbs}
+	structuredData={seo.structuredData}
 />
 <div class="space-y-6 md:space-y-8">
 	<section>

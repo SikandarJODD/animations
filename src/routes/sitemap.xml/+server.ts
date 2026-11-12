@@ -4,7 +4,13 @@ import type { RequestHandler } from "./$types";
 export const prerender = true;
 
 const pageModules = import.meta.glob("/src/routes/**/+page.svelte");
-const excludedRoutes = new Set(["/demo"]);
+const excludedRoutes = new Set([
+	"/demo",
+	"/magic/docs/components/confetti",
+	"/magic/docs/components/shiny-button",
+	"/magic/docs/components/stagger-text",
+	"/magic/docs/components/terminal",
+]);
 
 function routeFromFile(file: string): string | null {
 	const routeFile = file.slice("/src/routes".length, -"/+page.svelte".length);

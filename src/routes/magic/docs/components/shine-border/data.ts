@@ -14,7 +14,8 @@ import ShineBorderMonotoneRaw from "./examples/shine-border-monotone.svelte?raw"
 export const meta: ComponentMeta = {
 	id: "shine-border",
 	title: "ShineBorder",
-	description: "A description for ShineBorder component.",
+	description:
+		"Add an animated gradient shine to cards, buttons, and panels with the customizable Shine Border component for Svelte 5.",
 	category: "animation",
 	badge: "new",
 };
@@ -35,7 +36,8 @@ const examples: Example[] = [
 
 const seo: SEO = {
 	title: "ShineBorder",
-	description: "Shine border is an animated background border effect.",
+	description:
+		"Create an animated Shine Border effect in Svelte 5 with customizable colors, duration, width, and rounded corners for cards and interactive surfaces.",
 	keywords: ["Svelte", "ShineBorder", "Svelte 5 Animations", "Animation", "Web Design"],
 	titleTemplate: "%s | Svelte Magic UI",
 };

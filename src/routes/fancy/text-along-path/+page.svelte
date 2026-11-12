@@ -13,8 +13,8 @@
 	import { data } from "./data";
 
 	let PreviewComp = $derived(data.preview);
-	let installUrl = $derived(`${page.url.origin}/f/${data.id}.json`);
-	let llmsTxtUrl = $derived(`${page.url.href.split("?")[0].split("#")[0]}/llms.txt`);
+	let installUrl = $derived(`/f/${data.id}.json`);
+	let llmsTxtUrl = $derived(`${page.url.pathname}/llms.txt`);
 </script>
 
 <SEOComponent

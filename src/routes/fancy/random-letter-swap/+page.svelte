@@ -13,10 +13,8 @@
 	import { Button } from "#lib/components/ui/button/index.js";
 
 	let PreviewComp = $derived(data.preview);
-	let installRandomLetterSwap = $derived(`${page.url.origin}/f/random-letter-swap.json`);
-	let installRandomLetterSwapPingPong = $derived(
-		`${page.url.origin}/f/random-letter-swap-ping-pong.json`
-	);
+	let installRandomLetterSwap = $derived("/f/random-letter-swap.json");
+	let installRandomLetterSwapPingPong = $derived("/f/random-letter-swap-ping-pong.json");
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -24,7 +22,7 @@
 		return cleanUrl;
 	};
 
-	let llmsTxtUrl = $derived(`${getURLPath(page.url.href)}/llms.txt`);
+	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
 </script>
 
 <SEOComponent

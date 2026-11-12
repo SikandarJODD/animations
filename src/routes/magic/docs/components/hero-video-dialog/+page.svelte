@@ -10,7 +10,7 @@
 	import SEO from "#lib/seo/seo.svelte";
 
 	let PreviewComp = $derived(data.preview);
-	let installUrl = $derived(`${page.url.origin}/r/${data.id}.json`);
+	let installUrl = $derived(`/r/${data.id}.json`);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash

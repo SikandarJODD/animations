@@ -26,7 +26,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-te
   import { mode } from "mode-watcher";
 </script>
 
-<h1
+<h2
   class="text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl"
 >
   Ship
@@ -35,7 +35,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-te
     class="italic"
     shadowColor={mode.current === "dark" ? "white" : "black"}
   ></LineShadowText>
-</h1>
+</h2>
 ```
 
 ## Examples
@@ -48,7 +48,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-te
   import { mode } from "mode-watcher";
 </script>
 
-<h1
+<h2
   class="text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl"
 >
   Ship
@@ -57,7 +57,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/line-shadow-te
     class="italic"
     shadowColor={mode.current === "dark" ? "white" : "black"}
   ></LineShadowText>
-</h1>
+</h2>
 ```
 
 ## Usage

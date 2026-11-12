@@ -2,10 +2,10 @@
 
 ## Phase 0 — Audit snapshot
 
-- [x] Audited all 117 page routes; every route now renders through the central SEO component, including `/demo` as `noindex`.
+- [x] Audited all 117 page routes; top-level collection pages use `svelte-meta-tags` directly and remaining pages use the central SEO component.
 - [x] Production build passes; the app is hosted on Vercel at `https://sv-animations.vercel.app`.
-- [x] `robots.txt` controls non-page paths and advertises the generated 116-page sitemap.
-- [x] Structured data exists only on `/`, `/magic`, and `/fancy`; component/docs pages have none.
+- [x] `robots.txt` controls non-page paths and advertises the generated 112-page sitemap.
+- [x] Every indexable page has server-rendered metadata and valid JSON-LD; `/demo` and four unfinished component docs are `noindex`.
 
 ## Phase 1 — Central SEO foundation
 
@@ -20,20 +20,22 @@
 - [x] Generate and prerender `/sitemap.xml` locally from every indexable page route; no paid third-party API is required.
 - [x] Use canonical absolute URLs; omit unreliable `lastmod`, `priority`, and `changefreq` values.
 - [x] Add `Sitemap: https://sv-animations.vercel.app/sitemap.xml` to `robots.txt`.
-- [x] Exclude `/demo`, API, registry JSON, and `llms.txt` from the sitemap; mark `/demo` `noindex,nofollow`, block `/api/`, and keep registry JSON crawlable for agents.
-- [x] Verify all 116 sitemap pages are internally linked and return `200` HTML.
+- [x] Exclude `/demo`, unfinished docs, API, registry JSON, and `llms.txt` from the sitemap; mark unfinished pages `noindex,nofollow`, block `/api/`, and keep registry JSON crawlable for agents.
+- [x] Verify all 112 sitemap pages are internally linked and return `200` HTML.
 
 ## Phase 3 — Metadata and content
 
 - [x] Consolidate the three SEO implementations into one component/config with title, description, canonical, robots, OG, and Twitter defaults.
-- [ ] Give every component a unique, intent-led title/description and social image; do not rely on `meta keywords` for ranking.
-- [ ] For Flickering Grid, target the phrase in visible copy and metadata, e.g. `Flickering Grid for Svelte 5 | Svelte Magic UI`, with original usage/API content.
-- [ ] Keep one descriptive H1 per page; strengthen internal links from collection pages using descriptive anchor text.
+- [x] Give every component a unique, intent-led title/description with collection-specific social images and optional page overrides; do not rely on `meta keywords` for ranking.
+- [x] Target Flickering Grid search intent in visible copy and metadata; correct its implementation description from SVG to Canvas.
+- [x] Keep one descriptive H1 per indexable page and use crawlable, descriptive internal component links.
+- [x] Use `MetaTags` and `JsonLd` directly on `/`, `/magic`, `/fancy`, and `/spell` with complete canonical, robots, OG, and Twitter metadata.
+- [x] Keep four unfinished, navigation-hidden component drafts out of search until their placeholder copy is publication-ready.
 
 ## Phase 4 — Structured data
 
-- [ ] Add shared `WebSite`/`Organization`, plus `BreadcrumbList` and `TechArticle` (or `SoftwareSourceCode`) on component docs; avoid unsupported rich-result claims.
-- [ ] Generate schemas by page type in the central SEO layer, with typed per-page overrides rather than duplicated JSON-LD.
+- [x] Add shared `WebSite`/`Organization`, plus `BreadcrumbList`, `TechArticle`, and `SoftwareSourceCode` graphs on component docs without fabricated dates or ratings.
+- [x] Generate schemas by page type in the central SEO layer, with typed per-page additions instead of duplicated JSON-LD.
 
 ## Phase 5 — Validation and monitoring
 

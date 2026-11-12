@@ -10,13 +10,15 @@ import PreviewCodeRaw from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "animated-gradient-svg",
 	title: "Animated Gradient Svg",
-	description: "An animated multi-color gradient background effect with SVG elements.",
+	description:
+		"Create a fluid multi-color SVG gradient background for Svelte 5 with customizable colors, movement, blur, and blend effects.",
 	category: "fancy",
 };
 
 const seo: SEO = {
 	title: "Animated Gradient Svg",
-	description: "An animated multi-color gradient background effect with SVG elements.",
+	description:
+		"Build an animated SVG gradient background in Svelte 5 with configurable colors, movement, blur, and blend effects for expressive interfaces.",
 	keywords: ["Svelte", "Animated Gradient Svg", "Svelte Fancy Components"],
 };
 

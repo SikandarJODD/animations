@@ -25,9 +25,9 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/aurora-text.js
   import AuroraText from "#lib/components/magic/aurora-text/aurora-text.svelte";
 </script>
 
-<h1 class="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
+<h2 class="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
   Ship <AuroraText>beautiful</AuroraText>
-</h1>
+</h2>
 ```
 
 ## Examples
@@ -39,14 +39,14 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/aurora-text.js
   import { AuroraText } from "#lib/components/magic/aurora-text/index.ts";
 </script>
 
-<h1
+<h2
   class="font-figtree text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl"
 >
   Follow
   <AuroraText colors={["#FF3D3D", "#843DFF", "#3D84FF", "#3DD2FF", "#84FF3D"]}
     >Rabbit</AuroraText
   >
-</h1>
+</h2>
 ```
 
 ## Usage

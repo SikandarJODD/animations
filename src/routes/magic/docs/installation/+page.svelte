@@ -35,7 +35,8 @@
 `;
 
 	const title = "Installation";
-	const description = "How to install dependencies and structure your app.";
+	const description =
+		"Install Svelte Magic UI components with the Shadcn Svelte CLI and configure Svelte 5, Tailwind CSS, and Motion SV dependencies.";
 	const socialTitle = "Installation - Svelte Magic UI";
 
 	const llmsTxtUrl = `${seo_config.url}/magic/docs/installation/llms.txt`;

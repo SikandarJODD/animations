@@ -44,9 +44,9 @@
 	};
 </script>
 
-<h1 class="sr-only">
+<span class="sr-only">
 	{text}
-</h1>
+</span>
 <MotionComponent
 	class={cn("overflow-clip tracking-wide select-text", className)}
 	aria-label={text}

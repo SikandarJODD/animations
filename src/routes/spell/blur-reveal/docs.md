@@ -26,7 +26,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/blur-reveal.js
 </script>
 
 <div class="flex justify-center py-12">
-  <BlurReveal as="h1" class="text-2xl font-medium md:text-4xl"
+  <BlurReveal as="h2" class="text-2xl font-medium md:text-4xl"
     >You can just ship things.</BlurReveal
   >
 </div>

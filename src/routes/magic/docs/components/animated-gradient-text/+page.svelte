@@ -19,7 +19,7 @@
 	};
 
 	const PreviewComp = $derived(data.preview);
-	const installUrl = $derived(`${page.url.origin}/r/${data.id}.json`);
+	const installUrl = $derived(`/r/${data.id}.json`);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash

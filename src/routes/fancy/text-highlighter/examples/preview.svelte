@@ -34,9 +34,9 @@
 
 	<div class="z-10 h-full w-full overflow-scroll bg-[#fefefe]" bind:this={containerRef}>
 		<div class="mx-auto mt-40 max-w-md p-0 px-4 pb-64 text-black">
-			<h1 class="font-calendas mb-20 text-4xl font-medium tracking-tight">
+			<h2 class="font-calendas mb-20 text-4xl font-medium tracking-tight">
 				Typeface alphabets
-			</h1>
+			</h2>
 
 			<div class="text font-overusedGrotesk space-y-4 leading-normal">
 				<p class="whitespace-break-spaces">

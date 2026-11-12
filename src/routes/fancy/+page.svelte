@@ -3,7 +3,7 @@
 	import { seo_config } from "#lib/config/seo.js";
 	import FancyShowcase from "#lib/components/layout/fancy/fancy-showcase.svelte";
 	import FaviconLink from "#lib/components/ui/favicon-link/favicon-link.svelte";
-	import SEOComponent from "#lib/seo/seo.svelte";
+	import { JsonLd, MetaTags } from "svelte-meta-tags";
 	import { Button } from "#lib/components/ui/button/index.js";
 
 	const title = "Svelte Fancy Components";
@@ -20,44 +20,74 @@
 		"Svelte 5 animation library",
 	];
 	const socialImage = {
-		url: "https://sv-animations.vercel.app/fancy-og.png",
+		url: `${seo_config.url}/fancy-og.png`,
+		secureUrl: `${seo_config.url}/fancy-og.png`,
+		type: "image/png",
 		width: 1200,
 		height: 630,
 		alt: "Svelte Fancy Components",
 	};
 
 	const canonical = `${seo_config.url}/fancy`;
-	let jsonLd = $derived({
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: title,
-		description,
-		url: canonical,
-		isPartOf: {
-			"@type": "WebSite",
-			name: "Svelte Animations",
-			url: seo_config.url,
-		},
-		about: {
-			"@type": "Thing",
-			name: "Svelte Fancy Components",
-		},
-	});
+	const jsonLd = {
+		"@graph": [
+			{
+				"@type": "CollectionPage",
+				"@id": `${canonical}#webpage`,
+				name: title,
+				description,
+				url: canonical,
+				isPartOf: { "@id": `${seo_config.url}/#website` },
+				breadcrumb: { "@id": `${canonical}#breadcrumb` },
+				about: { "@type": "Thing", name: "Creative Svelte 5 components" },
+				inLanguage: "en",
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": `${canonical}#breadcrumb`,
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "Svelte Animations",
+						item: `${seo_config.url}/`,
+					},
+					{ "@type": "ListItem", position: 2, name: title, item: canonical },
+				],
+			},
+		],
+	};
 </script>
 
-<SEOComponent
+<MetaTags
 	{title}
 	titleTemplate="%s | Svelte Animations"
 	{description}
 	{keywords}
-	siteName="Svelte Fancy Components"
-	images={[socialImage]}
+	{canonical}
+	robots="index,follow"
+	additionalRobotsProps={{ maxSnippet: -1, maxImagePreview: "large", maxVideoPreview: -1 }}
+	openGraph={{
+		type: "website",
+		url: canonical,
+		title: `${title} | Svelte Animations`,
+		description,
+		locale: "en_US",
+		siteName: "Svelte Animations",
+		images: [socialImage],
+	}}
+	twitter={{
+		cardType: "summary_large_image",
+		site: "@Sikandar_Bhide",
+		creator: "@Sikandar_Bhide",
+		title: `${title} | Svelte Animations`,
+		description,
+		image: socialImage.url,
+		imageAlt: socialImage.alt,
+	}}
+	additionalMetaTags={[{ name: "author", content: "Sikandar Bhide" }]}
 />
-<svelte:head>
-	<script type="application/ld+json">
-		{@html JSON.stringify(jsonLd)}
-	</script>
-</svelte:head>
+<JsonLd schema={jsonLd} />
 
 <div class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
 	<section

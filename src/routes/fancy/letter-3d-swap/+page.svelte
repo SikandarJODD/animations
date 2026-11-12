@@ -12,7 +12,7 @@
 	import { Button } from "#lib/components/ui/button/index.js";
 
 	let PreviewComp = $derived(data.preview);
-	let installUrl = $derived(`${page.url.origin}/f/letter-3d-swap.json`);
+	let installUrl = $derived("/f/letter-3d-swap.json");
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -20,7 +20,7 @@
 		return cleanUrl;
 	};
 
-	let llmsTxtUrl = $derived(`${getURLPath(page.url.href)}/llms.txt`);
+	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
 </script>
 
 <SEOComponent

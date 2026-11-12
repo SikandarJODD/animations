@@ -11,7 +11,7 @@
 		>
 			Ambient glow
 		</span>
-		<h1 class="text-foreground text-4xl font-bold md:text-5xl">Light Rays</h1>
+		<h2 class="text-foreground text-4xl font-bold md:text-5xl">Light Rays</h2>
 		<p class="max-w-md text-sm text-slate-800/80 md:text-base dark:text-slate-200/80">
 			Drop this component into any container and it will fill the space with softly animated
 			light rays shining from above.

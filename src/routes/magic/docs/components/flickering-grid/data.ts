@@ -14,7 +14,7 @@ export const meta: ComponentMeta = {
 	id: "flickering-grid",
 	title: "Flickering Grid",
 	description:
-		"A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
+		"A customizable Flickering Grid background component for Svelte 5, rendered efficiently with Canvas and styled using Tailwind CSS.",
 	category: "animation",
 	badge: "new",
 };
@@ -33,10 +33,16 @@ const examples: Example[] = [
 ];
 
 const seo: SEO = {
-	title: "Flickering Grid",
+	title: "Flickering Grid for Svelte 5",
 	description:
-		"A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
-	keywords: ["Svelte", "Flickering Grid", "Svelte 5 Animations", "Animation", "Web Design"],
+		"Build a customizable Flickering Grid animation in Svelte 5 with Canvas rendering, responsive sizing, color controls, and adjustable flicker opacity.",
+	keywords: [
+		"Flickering Grid Svelte",
+		"Svelte Flickering Grid",
+		"Svelte 5 Canvas animation",
+		"Svelte animated background",
+		"Tailwind CSS animation",
+	],
 	titleTemplate: "%s | Svelte Magic UI",
 };
 
