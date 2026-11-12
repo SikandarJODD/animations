@@ -5,7 +5,7 @@
 	import Tr from "../markdown/Tr.svelte";
 	import Th from "../markdown/Th.svelte";
 	import Td from "../markdown/Td.svelte";
-	import InfoPopover from "./InfoPopover.svelte";
+	import InfoPopover from "./info-popover.svelte";
 	import { cn } from "#lib/utils.js";
 	import { H3 } from "../markdown";
 	import { page } from "$app/state";

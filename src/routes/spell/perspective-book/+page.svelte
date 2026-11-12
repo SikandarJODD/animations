@@ -4,9 +4,9 @@
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
 	import { Button } from "#lib/components/ui/button/index.js";
 	import * as Item from "#lib/components/ui/item/index.js";
-	import InstallComponent from "#lib/components/docs/base/InstallComponent.svelte";
-	import PackageBadges from "#lib/components/docs/base/PackageBadges.svelte";
-	import APITable from "#lib/components/docs/base/APITable.svelte";
+	import InstallComponent from "#lib/components/docs/base/install-component.svelte";
+	import PackageBadges from "#lib/components/docs/base/package-badges.svelte";
+	import APITable from "#lib/components/docs/base/api-table.svelte";
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import { MetaTags } from "svelte-meta-tags";
 	import {

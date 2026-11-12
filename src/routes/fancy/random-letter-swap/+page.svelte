@@ -5,9 +5,9 @@
 	import { page } from "$app/state";
 	import { H1, H2, Paragraph, H3 } from "#lib/components/docs/markdown/index.js";
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
-	import InstallComponent from "#lib/components/docs/base/InstallComponent.svelte";
-	import PackageBadges from "#lib/components/docs/base/PackageBadges.svelte";
-	import APITable from "#lib/components/docs/base/APITable.svelte";
+	import InstallComponent from "#lib/components/docs/base/install-component.svelte";
+	import PackageBadges from "#lib/components/docs/base/package-badges.svelte";
+	import APITable from "#lib/components/docs/base/api-table.svelte";
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import SEOComponent from "#lib/seo/SEO.svelte";
 	import { Button } from "#lib/components/ui/button/index.js";

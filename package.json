@@ -13,6 +13,7 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"create:route": "node scripts/create-route.js",
 		"create:routes": "node scripts/create-routes.js",
+		"files:kebab": "node scripts/rename-files-kebab.js",
 		"docs:components": "node scripts/generate-magic-docs.js",
 		"docs:magic": "node scripts/generate-magic-docs.js",
 		"docs:spell": "node scripts/generate-magic-docs.js --group spell",
