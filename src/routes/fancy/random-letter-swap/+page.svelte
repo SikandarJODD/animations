@@ -9,7 +9,7 @@
 	import PackageBadges from "#lib/components/docs/base/package-badges.svelte";
 	import APITable from "#lib/components/docs/base/api-table.svelte";
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
-	import SEOComponent from "#lib/seo/SEO.svelte";
+	import SEOComponent from "#lib/seo/seo.svelte";
 	import { Button } from "#lib/components/ui/button/index.js";
 
 	let PreviewComp = $derived(data.preview);

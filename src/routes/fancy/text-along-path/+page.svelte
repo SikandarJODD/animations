@@ -9,7 +9,7 @@
 	import { Button } from "#lib/components/ui/button/index.js";
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
 	import { Separator } from "#lib/components/ui/separator/index.js";
-	import SEOComponent from "#lib/seo/SEO.svelte";
+	import SEOComponent from "#lib/seo/seo.svelte";
 	import { data } from "./data";
 
 	let PreviewComp = $derived(data.preview);

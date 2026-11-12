@@ -8,7 +8,7 @@
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import { H1, H2, H3, Paragraph } from "#lib/components/docs/markdown/index.js";
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
-	import SEOComponent from "#lib/seo/SEO.svelte";
+	import SEOComponent from "#lib/seo/seo.svelte";
 	import { data } from "./data";
 
 	let PreviewComp = $derived(data.preview);

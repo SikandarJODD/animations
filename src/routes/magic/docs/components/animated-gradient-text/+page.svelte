@@ -9,7 +9,7 @@
 	import APITable from "#lib/components/docs/base/api-table.svelte";
 	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import { data } from "./data";
-	import SEO from "#lib/seo/SEO.svelte";
+	import SEO from "#lib/seo/seo.svelte";
 
 	const code: CodeBlock = {
 		filename: "AnimatedGradientText.svelte",
