@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/perspective
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/perspective-book.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { PerspectiveBook } from "#lib/components/spell/perspective-book/index.js";
+</script>
+
+<PerspectiveBook>
+  <h2>Perspective Interfaces</h2>
+</PerspectiveBook>
+```
+
 ## Preview
 
 ```svelte
@@ -125,10 +137,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/perspective-bo
   </PerspectiveBook>
 </div>
 ```
-
-## Usage
-
-Import `PerspectiveBook` from `#lib/components/spell/perspective-book/index.ts` and pass the props you need for your use case.
 
 ## Props
 

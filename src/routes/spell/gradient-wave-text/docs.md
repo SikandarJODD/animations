@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/gradient-wave-
 bun add motion-sv
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { GradientWaveText } from "#lib/components/spell/gradient-wave-text/index.js";
+</script>
+
+<GradientWaveText>Just ship things.</GradientWaveText>
+```
+
 ## Preview
 
 ```svelte
@@ -58,10 +68,6 @@ bun add motion-sv
   Signals move in deliberate lines
 </GradientWaveText>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

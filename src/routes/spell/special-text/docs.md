@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/special-text.j
 bun add motion-sv
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { SpecialText } from "#lib/components/spell/special-text/index.js";
+</script>
+
+<SpecialText>SVELTE SPELL UI</SpecialText>
+```
+
 ## Preview
 
 ```svelte
@@ -56,10 +66,6 @@ bun add motion-sv
   </div>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

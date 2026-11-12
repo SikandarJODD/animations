@@ -61,6 +61,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { HighlightedText } from "#lib/components/spell/highlighted-text/index.js";
+</script>
+
+<HighlightedText>Important</HighlightedText>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

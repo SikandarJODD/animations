@@ -18,6 +18,20 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/marquee.jso
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/marquee.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Marquee } from "#lib/components/spell/marquee/index.js";
+</script>
+
+<Marquee>
+  <span>Design</span>
+  <span>Build</span>
+  <span>Ship</span>
+</Marquee>
+```
+
 ## Preview
 
 ```svelte
@@ -143,10 +157,6 @@ Switch the direction to vertical and tune the fade amount to create a stacked an
   </Marquee>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

@@ -76,6 +76,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { SpotifyCard } from "#lib/components/spell/spotify-card/index.js";
+</script>
+
+<SpotifyCard url="https://open.spotify.com/track/4n7jnSxVLd8QioibtTDBDq" />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	seo,
 	props: [

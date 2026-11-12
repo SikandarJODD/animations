@@ -55,6 +55,21 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Marquee } from "#lib/components/spell/marquee/index.js";
+</script>
+
+<Marquee>
+	<span>Design</span>
+	<span>Build</span>
+	<span>Ship</span>
+</Marquee>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

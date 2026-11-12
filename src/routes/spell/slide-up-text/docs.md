@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/slide-up-text.
 bun add motion-sv
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { SlideUpText } from "#lib/components/spell/slide-up-text/index.js";
+</script>
+
+<SlideUpText>You can just ship things.</SlideUpText>
+```
+
 ## Preview
 
 ```svelte
@@ -128,10 +138,6 @@ bun add motion-sv
   </div>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

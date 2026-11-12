@@ -61,6 +61,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedCheckbox } from "#lib/components/spell/animated-checkbox/index.js";
+</script>
+
+<AnimatedCheckbox title="Ship the feature" />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

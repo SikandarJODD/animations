@@ -61,6 +61,19 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { PerspectiveBook } from "#lib/components/spell/perspective-book/index.js";
+</script>
+
+<PerspectiveBook>
+	<h2>Perspective Interfaces</h2>
+</PerspectiveBook>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

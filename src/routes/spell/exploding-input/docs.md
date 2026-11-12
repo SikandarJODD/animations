@@ -18,6 +18,19 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/exploding-i
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/exploding-input.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { ExplodingInput } from "#lib/components/spell/exploding-input/index.js";
+</script>
+
+<label>
+  <input type="text" placeholder="Start typing" />
+  <ExplodingInput />
+</label>
+```
+
 ## Preview
 
 ```svelte
@@ -221,10 +234,6 @@ Reuse the Svelte logo component from the shared icons folder and burst branded p
   </label>
 </div>
 ```
-
-## Usage
-
-Pass an `items` array and render each item through the `children` snippet. Use `delay` to control how quickly new entries appear.
 
 ## Props
 

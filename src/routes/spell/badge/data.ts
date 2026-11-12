@@ -56,6 +56,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Badge } from "#lib/components/spell/badge/index.js";
+</script>
+
+<Badge variant="secondary">New</Badge>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

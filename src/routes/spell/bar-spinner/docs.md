@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/bar-spinner
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/bar-spinner.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { BarSpinner } from "#lib/components/spell/bar-spinner/index.js";
+</script>
+
+<BarSpinner size={24} />
+```
+
 ## Preview
 
 ```svelte
@@ -44,10 +54,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/bar-spinner.js
   <BarSpinner size={32} />
 </div>
 ```
-
-## Usage
-
-Import `BarSpinner` from `#lib/components/spell/bar-spinner/index.ts` and pass the props you need for your use case.
 
 ## Props
 

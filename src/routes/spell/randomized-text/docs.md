@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/randomized-tex
 bun add motion-sv
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { RandomizedText } from "#lib/components/spell/randomized-text/index.js";
+</script>
+
+<RandomizedText>Introducing Spell UI</RandomizedText>
+```
+
 ## Preview
 
 ```svelte
@@ -95,10 +105,6 @@ Switch to grapheme-safe character splitting and trigger the reveal when the copy
   </div>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

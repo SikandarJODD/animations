@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/animated-check
 bun add motion-sv
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AnimatedCheckbox } from "#lib/components/spell/animated-checkbox/index.js";
+</script>
+
+<AnimatedCheckbox title="Ship the feature" />
+```
+
 ## Preview
 
 ```svelte
@@ -61,10 +71,6 @@ Drive the checkbox from external state so you can sync task completion with form
   </p>
 </div>
 ```
-
-## Usage
-
-Import `AnimatedCheckbox` from `#lib/components/spell/animated-checkbox/index.ts` and pass the props you need for your use case.
 
 ## Props
 

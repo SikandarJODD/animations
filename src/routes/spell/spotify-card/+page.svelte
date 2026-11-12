@@ -86,6 +86,20 @@
 			class="mt-4"
 		/>
 	</section>
+	{#if data.usage?.code}
+		<section>
+			<H2 id="usage">Usage</H2>
+			<div class="mt-4 space-y-4">
+				{#if Array.isArray(data.usage.code)}
+					{#each data.usage.code as codeBlock}
+						<Code.Snippet code={codeBlock} />
+					{/each}
+				{:else}
+					<Code.Snippet code={data.usage.code} />
+				{/if}
+			</div>
+		</section>
+	{/if}
 	<section>
 		<H2 id="api-route">API Route</H2>
 		<div class="mt-4 space-y-4">

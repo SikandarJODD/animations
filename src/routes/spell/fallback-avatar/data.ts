@@ -76,6 +76,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { FallbackAvatar } from "#lib/components/spell/fallback-avatar/index.js";
+</script>
+
+<FallbackAvatar name="Svelte" />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

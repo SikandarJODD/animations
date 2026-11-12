@@ -63,6 +63,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { LabelInput } from "#lib/components/spell/label-input/index.js";
+</script>
+
+<LabelInput label="Email" type="email" placeholder="you@example.com" />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

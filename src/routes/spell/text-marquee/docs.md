@@ -18,6 +18,20 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/text-marque
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/text-marquee.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { TextMarquee } from "#lib/components/spell/text-marquee/index.js";
+</script>
+
+<TextMarquee items={["Magic", "Spell", "Motion"]}>
+  {#snippet children(item)}
+    <span>{item}</span>
+  {/snippet}
+</TextMarquee>
+```
+
 ## Preview
 
 ```svelte
@@ -81,10 +95,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/text-marquee.j
   </div>
 </div>
 ```
-
-## Usage
-
-Pass an `items` array and render each item through the `children` snippet. Use `delay` to control how quickly new entries appear.
 
 ## Props
 

@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/badge.json
 bun add tailwind-variants
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Badge } from "#lib/components/spell/badge/index.js";
+</script>
+
+<Badge variant="secondary">New</Badge>
+```
+
 ## Preview
 
 ```svelte
@@ -78,10 +88,6 @@ bun add tailwind-variants
   <Badge size="default">Default</Badge>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

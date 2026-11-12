@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/kbd.json
 bun add runed
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Kbd } from "#lib/components/spell/keyboard-shortcut/index.js";
+</script>
+
+<Kbd keys={["command", "k"]} />
+```
+
 ## Preview
 
 ```svelte
@@ -73,10 +83,6 @@ Enable keyboard listening to highlight the keycap automatically when the matchin
   <Kbd keys={[{ display: "HOLD", key: "M" }]} listenToKeyboard />
 </div>
 ```
-
-## Usage
-
-Import `Kbd` from `#lib/components/spell/kbd` and pass the props you need for your use case.
 
 ## Props
 

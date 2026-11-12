@@ -67,6 +67,20 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ExplodingInput } from "#lib/components/spell/exploding-input/index.js";
+</script>
+
+<label>
+	<input type="text" placeholder="Start typing" />
+	<ExplodingInput />
+</label>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

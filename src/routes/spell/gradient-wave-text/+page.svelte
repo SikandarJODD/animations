@@ -14,6 +14,7 @@
 	installPackages={data.installBlock?.packages}
 	installFolderStructure={data.installBlock?.folderStructure}
 	installTailwindCode={data.installBlock?.tailwind}
+	usage={data.usage}
 	examples={data.examples}
 	propsTables={data.props}
 	descriptionClass="max-w-xl"

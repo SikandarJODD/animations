@@ -61,6 +61,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { GradientWaveText } from "#lib/components/spell/gradient-wave-text/index.js";
+</script>
+
+<GradientWaveText>Just ship things.</GradientWaveText>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

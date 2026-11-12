@@ -18,6 +18,20 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/logo-carous
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/logo-carousel.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { LogoCarousel } from "#lib/components/spell/logo-carousel/index.js";
+</script>
+
+<LogoCarousel items={["Svelte", "Vite", "SvelteKit"]}>
+  {#snippet children(name)}
+    <span>{name}</span>
+  {/snippet}
+</LogoCarousel>
+```
+
 ## Preview
 
 ```svelte
@@ -97,10 +111,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/logo-carousel.
   {/snippet}
 </LogoCarousel>
 ```
-
-## Usage
-
-Pass an `items` array and render each item through the `children` snippet. Use `delay` to control how quickly new entries appear.
 
 ## Props
 

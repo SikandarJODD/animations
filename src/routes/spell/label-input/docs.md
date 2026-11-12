@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/label-input.js
 bun add tailwind-variants @lucide/svelte
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { LabelInput } from "#lib/components/spell/label-input/index.js";
+</script>
+
+<LabelInput label="Email" type="email" placeholder="you@example.com" />
+```
+
 ## Preview
 
 ```svelte
@@ -86,10 +96,6 @@ bun add tailwind-variants @lucide/svelte
   <LabelInput label="Blue" ringColor="blue" class="max-w-40" />
 </div>
 ```
-
-## Usage
-
-Import `LabelInput` from `#lib/components/spell/label-input/index.ts` and pass the props you need for your use case.
 
 ## Props
 

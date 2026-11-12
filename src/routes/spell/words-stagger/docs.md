@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/words-stagger.
 bun add motion-sv
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { WordsStagger } from "#lib/components/spell/words-stagger/index.js";
+</script>
+
+<WordsStagger>Build delightful interfaces with Svelte.</WordsStagger>
+```
+
 ## Preview
 
 ```svelte
@@ -132,10 +142,6 @@ bun add motion-sv
   </div>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

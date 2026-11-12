@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/color-selector
 bun add tailwind-variants
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { ColorSelector } from "#lib/components/spell/color-selector/index.js";
+</script>
+
+<ColorSelector colors={["orange", "teal", "purple"]} />
+```
+
 ## Preview
 
 ```svelte
@@ -82,10 +92,6 @@ Mix compact preset swatches with larger custom CSS colors to build palettes that
   </div>
 </div>
 ```
-
-## Usage
-
-Import `ColorSelector` from `#lib/components/spell/color-selector/index.ts` and pass the props you need for your use case.
 
 ## Props
 

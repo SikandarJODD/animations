@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/blur-reveal
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/blur-reveal.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { BlurReveal } from "#lib/components/spell/blur-reveal/index.js";
+</script>
+
+<BlurReveal>Ship with confidence.</BlurReveal>
+```
+
 ## Preview
 
 ```svelte
@@ -74,10 +84,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/blur-reveal.js
   </div>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

@@ -54,6 +54,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { QRCode } from "#lib/components/spell/qrcode/index.js";
+</script>
+
+<QRCode value="https://sv-animations.vercel.app" />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

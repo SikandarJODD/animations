@@ -54,6 +54,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { SpecialText } from "#lib/components/spell/special-text/index.js";
+</script>
+
+<SpecialText>SVELTE SPELL UI</SpecialText>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

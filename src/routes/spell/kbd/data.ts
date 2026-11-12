@@ -57,6 +57,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Kbd } from "#lib/components/spell/keyboard-shortcut/index.js";
+</script>
+
+<Kbd keys={["command", "k"]} />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

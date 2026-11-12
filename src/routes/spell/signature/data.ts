@@ -65,6 +65,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Signature } from "#lib/components/spell/signature/index.js";
+</script>
+
+<Signature text="Rich Harris" />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

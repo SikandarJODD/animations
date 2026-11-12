@@ -54,6 +54,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { BarSpinner } from "#lib/components/spell/bar-spinner/index.js";
+</script>
+
+<BarSpinner size={24} />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

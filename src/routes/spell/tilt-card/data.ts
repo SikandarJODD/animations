@@ -64,6 +64,19 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { TiltCard } from "#lib/components/spell/tilt-card/index.js";
+</script>
+
+<TiltCard>
+	<div class="rounded-xl border p-8">Hover me</div>
+</TiltCard>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	seo,
 	props: [

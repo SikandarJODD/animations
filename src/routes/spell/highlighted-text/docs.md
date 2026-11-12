@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/highlighted-te
 bun add motion-sv
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { HighlightedText } from "#lib/components/spell/highlighted-text/index.js";
+</script>
+
+<HighlightedText>Important</HighlightedText>
+```
+
 ## Preview
 
 ```svelte
@@ -71,10 +81,6 @@ Change the sweep origin and wait for viewport entry when you want the emphasis t
   </div>
 </div>
 ```
-
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
 
 ## Props
 

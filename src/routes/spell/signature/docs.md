@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/signature.json
 bun add opentype.js
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Signature } from "#lib/components/spell/signature/index.js";
+</script>
+
+<Signature text="Rich Harris" />
+```
+
 ## Preview
 
 ```svelte
@@ -86,10 +96,6 @@ bun add opentype.js
   />
 </div>
 ```
-
-## Usage
-
-Import `Signature` from `#lib/components/spell/signature/index.ts` and pass the props you need for your use case.
 
 ## Props
 

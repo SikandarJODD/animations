@@ -58,6 +58,21 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { TextMarquee } from "#lib/components/spell/text-marquee/index.js";
+</script>
+
+<TextMarquee items={["Magic", "Spell", "Motion"]}>
+	{#snippet children(item)}
+		<span>{item}</span>
+	{/snippet}
+</TextMarquee>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	seo,
 	props: [

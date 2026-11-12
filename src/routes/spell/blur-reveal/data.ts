@@ -60,6 +60,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { BlurReveal } from "#lib/components/spell/blur-reveal/index.js";
+</script>
+
+<BlurReveal>Ship with confidence.</BlurReveal>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

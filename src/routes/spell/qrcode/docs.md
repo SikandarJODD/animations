@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/qrcode.json
 bun add qrcode
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { QRCode } from "#lib/components/spell/qrcode/index.js";
+</script>
+
+<QRCode value="https://sv-animations.vercel.app" />
+```
+
 ## Preview
 
 ```svelte
@@ -80,10 +90,6 @@ Override the foreground, background, size, and error-correction level to fit bra
   </div>
 </div>
 ```
-
-## Usage
-
-Import `Qrcode` from `#lib/components/spell/qrcode/index.ts` and pass the props you need for your use case.
 
 ## Props
 

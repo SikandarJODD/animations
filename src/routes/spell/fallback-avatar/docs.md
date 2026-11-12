@@ -18,6 +18,16 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/fallback-av
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/fallback-avatar.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { FallbackAvatar } from "#lib/components/spell/fallback-avatar/index.js";
+</script>
+
+<FallbackAvatar name="Svelte" />
+```
+
 ## Preview
 
 ```svelte
@@ -94,10 +104,6 @@ Compare hover-enabled rendering with a static variant when you want motion only 
   </div>
 </div>
 ```
-
-## Usage
-
-Import `FallbackAvatar` from `#lib/components/spell/fallback-avatar/index.ts` and pass the props you need for your use case.
 
 ## Props
 

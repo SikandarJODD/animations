@@ -61,6 +61,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ColorSelector } from "#lib/components/spell/color-selector/index.js";
+</script>
+
+<ColorSelector colors={["orange", "teal", "purple"]} />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

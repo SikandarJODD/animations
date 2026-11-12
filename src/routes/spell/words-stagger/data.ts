@@ -71,6 +71,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { WordsStagger } from "#lib/components/spell/words-stagger/index.js";
+</script>
+
+<WordsStagger>Build delightful interfaces with Svelte.</WordsStagger>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

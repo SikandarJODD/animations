@@ -59,6 +59,21 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { LogoCarousel } from "#lib/components/spell/logo-carousel/index.js";
+</script>
+
+<LogoCarousel items={["Svelte", "Vite", "SvelteKit"]}>
+	{#snippet children(name)}
+		<span>{name}</span>
+	{/snippet}
+</LogoCarousel>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	seo,
 	props: [

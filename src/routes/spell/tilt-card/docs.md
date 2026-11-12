@@ -18,6 +18,18 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/tilt-card.j
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/tilt-card.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { TiltCard } from "#lib/components/spell/tilt-card/index.js";
+</script>
+
+<TiltCard>
+  <div class="rounded-xl border p-8">Hover me</div>
+</TiltCard>
+```
+
 ## Preview
 
 ```svelte
@@ -313,10 +325,6 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/tilt-card.json
   {/each}
 </div>
 ```
-
-## Usage
-
-Import `TiltCard` from `#lib/components/spell/tilt-card/index.ts` and pass the props you need for your use case.
 
 ## Props
 

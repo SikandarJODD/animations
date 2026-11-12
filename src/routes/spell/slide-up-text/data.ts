@@ -68,6 +68,17 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { SlideUpText } from "#lib/components/spell/slide-up-text/index.js";
+</script>
+
+<SlideUpText>You can just ship things.</SlideUpText>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{

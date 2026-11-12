@@ -22,6 +22,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/spotify-card.j
 bun add spotify-url-info
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { SpotifyCard } from "#lib/components/spell/spotify-card/index.js";
+</script>
+
+<SpotifyCard url="https://open.spotify.com/track/4n7jnSxVLd8QioibtTDBDq" />
+```
+
 ## Preview
 
 ```svelte
@@ -63,10 +73,6 @@ bun add spotify-url-info
   </div>
 </div>
 ```
-
-## Usage
-
-Import `SpotifyCard` from `#lib/components/spell/spotify-card/index.ts` and pass the props you need for your use case.
 
 ## Props
 

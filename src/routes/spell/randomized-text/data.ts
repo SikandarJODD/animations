@@ -70,6 +70,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { RandomizedText } from "#lib/components/spell/randomized-text/index.js";
+</script>
+
+<RandomizedText>Introducing Spell UI</RandomizedText>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{
