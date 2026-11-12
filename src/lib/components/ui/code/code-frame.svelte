@@ -43,7 +43,7 @@
 					{isCollapsed ? "Expand" : "Collapse"}
 				</Button>
 			{/if}
-			<CopyButton value={displayedCode} size="icon-sm" />
+			<CopyButton value={displayedCode} size="icon-sm" class="text-muted-foreground" />
 		</div>
 	</Frame.Header>
 
@@ -82,7 +82,7 @@
 						lang={code.lang}
 						highlight={code.highlight}
 						hideLines={code.hideLines}
-						class="no-scrollbar overflow-visible"
+						class="no-scrollbar bg-background overflow-visible"
 					/>
 				</Root>
 			</div>
