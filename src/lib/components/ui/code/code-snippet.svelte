@@ -15,7 +15,7 @@
 			<CodeBlockOverflow collapsed={true}>
 				<Root class="bg-background rounded-none border-0">
 					<Actions>
-						<CopyButton value={code.filecode} />
+						<CopyButton value={code.filecode} variant="secondary" />
 					</Actions>
 					<HighlightedCode
 						code={code.filecode}
@@ -28,7 +28,7 @@
 		{:else}
 			<Root class="bg-background rounded-none border-0">
 				<Actions>
-					<CopyButton value={code.filecode} size="icon-sm" />
+					<CopyButton value={code.filecode} size="icon-sm" variant="secondary" />
 				</Actions>
 				<HighlightedCode
 					code={code.filecode}

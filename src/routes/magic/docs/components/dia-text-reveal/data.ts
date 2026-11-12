@@ -103,6 +103,22 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2, 6],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { DiaTextReveal } from "#lib/components/magic/dia-text-reveal/index.js";
+</script>
+
+<div class="flex min-h-40 items-center justify-center">
+	<DiaTextReveal
+		text="Joy of Code"
+		class="pb-1 text-4xl font-semibold sm:text-6xl"
+	/>
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
