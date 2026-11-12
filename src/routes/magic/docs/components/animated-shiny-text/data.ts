@@ -1,7 +1,7 @@
 ﻿import Raw from "#lib/components/magic/animated-shiny-text/animated-shiny-text.svelte?raw";
 import IndexTs from "#lib/components/magic/animated-shiny-text/index.ts?raw";
 
-import type { CodeBlock } from "#lib/components/ui/code-block/types.js";
+import type { CodeBlock } from "#lib/components/ui/code/index.js";
 import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";

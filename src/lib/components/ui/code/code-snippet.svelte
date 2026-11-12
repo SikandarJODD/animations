@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Root from "./code-block.svelte";
-	import Actions from "./code-block-actions.svelte";
-	import CopyButton from "./code-block-copy-button.svelte";
+	import Root from "../code-block/code-block.svelte";
+	import Actions from "../code-block/code-block-actions.svelte";
+	import CopyButton from "../code-block/code-block-copy-button.svelte";
 	import HighlightedCode from "./highlighted-code.svelte";
 	import CodeBlockOverflow from "./code-block-overflow.svelte";
 	import type { CodeBlock as CodeBlockData } from "./types.js";

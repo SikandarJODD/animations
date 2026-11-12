@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/state";
 	import { H1, H2, Paragraph, H3, CodeSpan } from "#lib/components/docs/markdown/index.js";
-	import SingleCodeFilename from "#lib/components/ui/code-block/single-code-filename.svelte";
+	import * as Code from "#lib/components/ui/code/index.js";
 	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
 	import InstallComponent from "#lib/components/docs/base/InstallComponent.svelte";
 	import PackageBadges from "#lib/components/docs/base/PackageBadges.svelte";
@@ -111,7 +111,7 @@
 				Create <CodeSpan>src/routes/api/spotify/+server.ts</CodeSpan> so the card can fetch Spotify
 				metadata from <CodeSpan>/api/spotify</CodeSpan>.
 			</Paragraph>
-			<SingleCodeFilename code={apiRouteCode} />
+			<Code.File code={apiRouteCode} />
 		</div>
 	</section>
 

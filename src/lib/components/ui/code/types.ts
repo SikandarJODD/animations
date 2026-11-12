@@ -1,7 +1,7 @@
 import type { SupportedLanguage } from "#lib/highlighter.js";
 
 /**
- * The stable data shape consumed by the documentation code-block wrappers.
+ * The stable data shape consumed by the documentation code composites.
  * Keep this separate from the primitive component props.
  */
 export type CodeBlock = {

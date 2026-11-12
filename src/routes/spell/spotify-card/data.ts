@@ -7,7 +7,7 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import WidthExample from "./examples/width-example.svelte";
 import WidthExampleRaw from "./examples/width-example.svelte?raw";
-import type { CodeBlock } from "#lib/components/ui/code-block/types.js";
+import type { CodeBlock } from "#lib/components/ui/code/index.js";
 
 export const meta: ComponentMeta = {
 	id: "spotify-card",

@@ -2,9 +2,8 @@
 	import * as Tabs from "#lib/components/ui/tabs/index.js";
 	import type { Snippet } from "svelte";
 	import type { SupportedLanguage } from "#lib/highlighter.js";
-	import type { CodeBlock as MagicCode } from "#lib/components/ui/code-block/types.js";
-	import MultipleCode from "#lib/components/ui/code-block/multiple-code.svelte";
-	import SingleCodeFilename from "../code-block/single-code-filename.svelte";
+	import type { CodeBlock as MagicCode } from "#lib/components/ui/code/index.js";
+	import * as Code from "#lib/components/ui/code/index.js";
 	import { Button } from "#lib/components/ui/button/index.js";
 	import { cn } from "#lib/utils.js";
 
@@ -98,9 +97,9 @@
 		{:else if value === "code"}
 			<div>
 				{#if Array.isArray(code)}
-					<MultipleCode {code} />
+					<Code.FileBrowser {code} />
 				{:else if code}
-					<SingleCodeFilename {code} />
+					<Code.File {code} />
 				{/if}
 			</div>
 		{/if}

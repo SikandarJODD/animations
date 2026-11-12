@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { CodeBlock } from "#lib/components/ui/code-block/types.js";
+	import type { CodeBlock } from "#lib/components/ui/code/index.js";
 
 	export type DependencyItem = {
 		label: string;
@@ -27,7 +27,7 @@
 	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
 	import Steps from "#lib/components/docs/markdown/Steps.svelte";
 	import Step from "#lib/components/docs/markdown/Step.svelte";
-	import SingleCodeFilename from "#lib/components/ui/code-block/single-code-filename.svelte";
+	import * as Code from "#lib/components/ui/code/index.js";
 
 	let {
 		installUrl,
@@ -100,10 +100,10 @@
 						<div class="space-y-4">
 							{#if Array.isArray(codeBlocks)}
 								{#each codeBlocks as codeBlock}
-									<SingleCodeFilename code={codeBlock} />
+									<Code.File code={codeBlock} />
 								{/each}
 							{:else}
-								<SingleCodeFilename code={codeBlocks} />
+								<Code.File code={codeBlocks} />
 							{/if}
 						</div>
 					</Step>
@@ -118,7 +118,7 @@
 								>routes/layout.css</code
 							> file:
 						</p>
-						<SingleCodeFilename code={tailwindConfig.code} />
+						<Code.File code={tailwindConfig.code} />
 					</Step>
 				{/if}
 
@@ -127,7 +127,7 @@
 				{#if folderStructure}
 					<!-- <H3 id="folder-structure">Folder Structure</H3> -->
 					<Step title="Folder Structure">
-						<SingleCodeFilename
+						<Code.File
 							code={{
 								filename: "Folder Structure",
 								filecode: folderStructure,

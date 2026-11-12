@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { useHighlightedCode } from "#lib/hooks/use-highlighted-code.svelte.js";
-	import Content from "./code-block-content.svelte";
-	import Line from "./code-block-line.svelte";
+	import Content from "../code-block/code-block-content.svelte";
+	import Line from "../code-block/code-block-line.svelte";
 	import type { SupportedLanguage } from "#lib/highlighter.js";
 
 	type HighlightRange = number | [number, number];
