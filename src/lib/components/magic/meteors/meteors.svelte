@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 	import { onMount } from "svelte";
 
@@ -9,7 +10,7 @@
 		minDuration?: number;
 		maxDuration?: number;
 		angle?: number;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

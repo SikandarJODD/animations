@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount } from "svelte";
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
@@ -10,7 +11,7 @@
 
 	interface NeonGradientCardProps {
 		children?: Snippet;
-		class?: string;
+		class?: ClassValue;
 		borderSize?: number;
 		borderRadius?: number;
 		neonColors?: NeonColorsProps;

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
-	import type { SVGAttributes } from "svelte/elements";
+	import type { ClassValue, SVGAttributes } from "svelte/elements";
 
 	interface Props extends SVGAttributes<SVGSVGElement> {
 		direction?: "left" | "right";
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
 	import { watch } from "runed";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface GlyphMatrixProps extends HTMLAttributes<HTMLCanvasElement> {
 		/** Characters to randomly pick from */
@@ -18,7 +18,7 @@
 		color?: string;
 		/** Brightness multiplier. 1 = original, 1.15-1.25 = subtle, 1.4-1.6 = strong, 1.8+ = very bright. */
 		boost?: number;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	type RGBA = {

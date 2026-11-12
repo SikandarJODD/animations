@@ -2,14 +2,14 @@
 	import { motion, useAnimate, type AnimationOptions } from "motion-sv";
 	import { Debounced } from "runed";
 	import { cn } from "#lib/utils.js";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface RandomLetterSwapPingPongProps extends HTMLAttributes<HTMLSpanElement> {
 		label: string;
 		reverse?: boolean;
 		transition?: AnimationOptions;
 		staggerDuration?: number;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

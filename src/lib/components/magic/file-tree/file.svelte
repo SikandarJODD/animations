@@ -2,7 +2,7 @@
 	import { getContext } from "svelte";
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLButtonAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLButtonAttributes } from "svelte/elements";
 
 	interface FileProps extends HTMLButtonAttributes {
 		value: string;
@@ -10,7 +10,7 @@
 		isSelect?: boolean;
 		fileIcon?: Snippet;
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

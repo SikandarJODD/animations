@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion, AnimatePresence } from "motion-sv";
 	import { cn } from "#lib/utils.js";
 
@@ -17,7 +18,7 @@
 		videoSrc: string;
 		thumbnailSrc: string;
 		thumbnailAlt?: string;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

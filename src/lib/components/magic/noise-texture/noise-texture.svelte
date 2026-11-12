@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { SVGAttributes } from "svelte/elements";
+	import type { ClassValue, SVGAttributes } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 
 	interface NoiseTextureProps extends SVGAttributes<SVGSVGElement> {
-		class?: string;
+		class?: ClassValue;
 		/**
 		 * `baseFrequency` for `feTurbulence`; higher values yield finer-grained noise.
 		 * @default 0.4

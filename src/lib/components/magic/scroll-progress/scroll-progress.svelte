@@ -1,9 +1,10 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion, useScroll } from "motion-sv";
 	import { cn } from "#lib/utils.js";
 
 	interface ScrollProgressProps {
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let { class: className }: ScrollProgressProps = $props();

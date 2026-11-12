@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	type TiltEffect = "gravitate" | "evade";
 
@@ -12,7 +12,7 @@
 		effect?: TiltEffect;
 		spotlight?: boolean;
 		children?: Snippet;
-		class?: string;
+		class?: ClassValue;
 		style?: string;
 	}
 

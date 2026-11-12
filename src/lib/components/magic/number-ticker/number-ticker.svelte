@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount } from "svelte";
 	import { useInView } from "motion-sv";
 	import { cn } from "#lib/utils.js";
@@ -9,7 +10,7 @@
 		direction?: "up" | "down";
 		delay?: number;
 		decimalPlaces?: number;
-		class?: string;
+		class?: ClassValue;
 		prefix?: string;
 		suffix?: string;
 		once?: boolean;

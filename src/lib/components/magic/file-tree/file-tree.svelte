@@ -11,7 +11,7 @@
 	import { setContext, untrack } from "svelte";
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface TreeProps extends HTMLAttributes<HTMLDivElement> {
 		/**
@@ -49,7 +49,7 @@
 		/**
 		 * Additional CSS classes
 		 */
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

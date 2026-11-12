@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion, type MotionProps, inView } from "motion-sv";
 	import { cn } from "#lib/utils.js";
 	import { watch } from "runed";
@@ -6,7 +7,7 @@
 	interface TypingAnimationProps extends MotionProps {
 		content?: string; // Single text string to type
 		words?: string[]; // Array of words to cycle through
-		class?: string;
+		class?: ClassValue;
 		duration?: number;
 		typeSpeed?: number;
 		deleteSpeed?: number;

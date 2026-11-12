@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface BentoGridProps extends HTMLAttributes<HTMLDivElement> {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let { children, class: className, ...props }: BentoGridProps = $props();

@@ -1,10 +1,11 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 
 	interface PulsatingButtonProps {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		pulseColor?: string;
 		duration?: string;
 		distance?: string;

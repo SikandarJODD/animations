@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 	import { onMount, untrack, type Snippet } from "svelte";
 	import { watch } from "runed";
@@ -10,7 +11,7 @@
 	interface FlowNodeProps {
 		id?: string;
 		disabled?: boolean;
-		class?: string;
+		class?: ClassValue;
 		children?: Snippet;
 		render?: Snippet<[{ props: Record<string, unknown> }]>;
 	}

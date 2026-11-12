@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion, AnimatePresence, useMotionValue } from "motion-sv";
 	import { cn } from "#lib/utils.js";
 	import { type Snippet } from "svelte";
@@ -7,7 +8,7 @@
 
 	interface PointerProps {
 		children?: Snippet;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let { children, class: className }: PointerProps = $props();

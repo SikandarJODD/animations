@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 
@@ -7,7 +8,7 @@
 		colorFrom?: string;
 		colorTo?: string;
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		rest?: Record<string, any>;
 	};
 

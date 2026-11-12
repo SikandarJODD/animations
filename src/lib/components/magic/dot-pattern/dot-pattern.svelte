@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import { motion } from "motion-sv";
 	import { cn } from "#lib/utils.js";
-	import type { SVGAttributes } from "svelte/elements";
+	import type { ClassValue, SVGAttributes } from "svelte/elements";
 
 	interface DotPatternProps extends SVGAttributes<SVGSVGElement> {
 		width?: number;
@@ -24,7 +24,7 @@
 		 * The radius of each dot
 		 */
 		cr?: number;
-		class?: string;
+		class?: ClassValue;
 		/**
 		 * Whether dots should have a glowing animation effect
 		 */

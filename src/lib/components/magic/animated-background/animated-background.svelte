@@ -1,12 +1,13 @@
 <script lang="ts" module>
 	import type { Options } from "motion-sv";
 	import type { Snippet } from "svelte";
+	import type { ClassValue } from "svelte/elements";
 
 	export type AnimatedBackgroundProps = {
 		children?: Snippet;
 		defaultValue?: string;
 		onValueChange?: (newActiveId: string | null) => void;
-		class?: string;
+		class?: ClassValue;
 		transition?: Options["transition"];
 		enableHover?: boolean;
 	};

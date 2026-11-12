@@ -1,6 +1,6 @@
 <script lang="ts" module>
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 	import type { UseScrollOptions } from "motion-sv";
 
 	export interface StackingCardsProps extends HTMLAttributes<HTMLDivElement> {
@@ -8,7 +8,7 @@
 		scrollOptions?: Omit<UseScrollOptions, "target">;
 		scaleMultiplier?: number;
 		totalCards: number;
-		class?: string;
+		class?: ClassValue;
 	}
 </script>
 

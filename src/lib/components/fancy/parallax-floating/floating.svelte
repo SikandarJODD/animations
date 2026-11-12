@@ -1,12 +1,12 @@
 <script lang="ts" module>
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	export interface FloatingProps extends HTMLAttributes<HTMLDivElement> {
 		children?: Snippet;
 		sensitivity?: number;
 		easingFactor?: number;
-		class?: string;
+		class?: ClassValue;
 	}
 </script>
 

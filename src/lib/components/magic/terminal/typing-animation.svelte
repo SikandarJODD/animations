@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount, getContext } from "svelte";
 	import { motion } from "motion-sv";
 	import { cn } from "#lib/utils.js";
@@ -7,7 +8,7 @@
 
 	interface TypingAnimationProps {
 		text: string;
-		class?: string;
+		class?: ClassValue;
 		duration?: number;
 		delay?: number;
 		as?: ElementType;

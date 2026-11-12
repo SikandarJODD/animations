@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount } from "svelte";
 	import { motion, AnimatePresence, type MotionProps } from "motion-sv";
 	import { cn } from "#lib/utils.js";
@@ -9,7 +10,7 @@
 		words: string[];
 		duration?: number;
 		motionProps?: MotionProps;
-		class?: string;
+		class?: ClassValue;
 		as?: ElementType;
 	}
 

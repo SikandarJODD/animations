@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount } from "svelte";
 	import { cn } from "#lib/utils.js";
 	import { watch } from "runed";
@@ -6,7 +7,7 @@
 	interface VideoTextProps {
 		src: string;
 		content: string;
-		class?: string;
+		class?: ClassValue;
 		autoPlay?: boolean;
 		muted?: boolean;
 		loop?: boolean;

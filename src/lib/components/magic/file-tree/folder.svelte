@@ -3,7 +3,7 @@
 	import { cn } from "#lib/utils.js";
 	import { motion, AnimatePresence } from "motion-sv";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface FolderProps extends HTMLAttributes<HTMLDivElement> {
 		/**
@@ -29,7 +29,7 @@
 		/**
 		 * Additional CSS classes
 		 */
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

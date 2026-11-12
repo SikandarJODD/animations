@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface RetroGridProps extends HTMLAttributes<HTMLDivElement> {
-		class?: string;
+		class?: ClassValue;
 		angle?: number;
 		cellSize?: number;
 		opacity?: number;

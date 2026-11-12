@@ -3,7 +3,7 @@
 	import { cn } from "#lib/utils.js";
 	import { motion, type AnimationOptions, type Transition } from "motion-sv";
 	import opentype from "opentype.js";
-	import type { SVGAttributes } from "svelte/elements";
+	import type { ClassValue, SVGAttributes } from "svelte/elements";
 
 	type GlyphLike = {
 		advanceWidth?: number;
@@ -62,7 +62,7 @@
 		fontSize?: number;
 		duration?: number;
 		delay?: number;
-		class?: string;
+		class?: ClassValue;
 		inView?: boolean;
 		once?: boolean;
 	}

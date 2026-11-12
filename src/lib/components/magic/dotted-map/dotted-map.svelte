@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { createMap } from "piri";
 	import { cn } from "#lib/utils.js";
 
@@ -17,7 +18,7 @@
 		markerColor?: string;
 		dotRadius?: number;
 		stagger?: boolean;
-		class?: string;
+		class?: ClassValue;
 		style?: string;
 	}
 

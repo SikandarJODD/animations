@@ -26,7 +26,7 @@
 		animationVariants?: Variants;
 		leftTextClass?: ClassValue;
 		rightTextClass?: string;
-		class?: string;
+		class?: ClassValue;
 		isAnimating?: boolean;
 	}
 

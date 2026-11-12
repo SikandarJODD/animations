@@ -1,9 +1,10 @@
 import { createContext } from "svelte";
 import type { LayoutMotionNamespace, Options } from "motion-sv";
+import type { ClassValue } from "svelte/elements";
 
 export type AnimatedBackgroundContext = {
 	readonly activeId: string | null;
-	readonly backgroundClass: string | undefined;
+	readonly backgroundClass: ClassValue | undefined;
 	readonly transition: Options["transition"];
 	readonly enableHover: boolean;
 	readonly layoutId: string;

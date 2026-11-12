@@ -1,6 +1,8 @@
 <script lang="ts" module>
+	import type { ClassValue } from "svelte/elements";
+
 	export interface DockIconProps {
-		class?: string;
+		class?: ClassValue;
 		children: Snippet;
 	}
 </script>

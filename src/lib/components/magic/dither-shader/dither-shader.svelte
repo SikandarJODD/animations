@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount } from "svelte";
 	import { cn } from "#lib/utils.js";
 
@@ -39,7 +40,7 @@
 		/** Animation speed (lower = slower) */
 		animationSpeed?: number;
 		/** Additional CSS classes for the container (use this to set size via Tailwind) */
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

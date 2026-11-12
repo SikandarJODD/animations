@@ -1,10 +1,11 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount, onDestroy } from "svelte";
 	import { cn } from "#lib/utils.js";
 
 	interface MorphingTextProps {
 		texts: string[];
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let { texts, class: className }: MorphingTextProps = $props();

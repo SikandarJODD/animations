@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 	import {
 		readNormalizedTextContent,
@@ -27,7 +28,7 @@
 
 	type RandomizedTextProps = {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		style?: string;
 		as?: RandomizedTextElement;
 		split?: SplitType;

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount, setContext } from "svelte";
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
@@ -6,7 +7,7 @@
 
 	interface TerminalProps {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		sequence?: boolean;
 		startOnView?: boolean;
 	}

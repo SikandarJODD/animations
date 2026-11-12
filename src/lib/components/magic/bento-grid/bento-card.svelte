@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 	import type { Component } from "svelte";
 
 	import { cn } from "#lib/utils.js";
@@ -9,7 +9,7 @@
 
 	interface BentoCardProps extends HTMLAttributes<HTMLDivElement> {
 		name: string;
-		class?: string;
+		class?: ClassValue;
 		background: Snippet;
 		Icon: Component<any>;
 		iconClass?: string;

@@ -2,7 +2,7 @@
 	import { asset } from "$app/paths";
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	type BookSize = "sm" | "default" | "lg";
 
@@ -24,7 +24,7 @@
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		children?: Snippet;
 		size?: BookSize;
-		class?: string;
+		class?: ClassValue;
 		textured?: boolean;
 		style?: string;
 	}

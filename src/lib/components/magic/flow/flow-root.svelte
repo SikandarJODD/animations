@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import {
 		motion,
 		useMotionTemplate,
@@ -24,7 +25,7 @@
 		canvas?: boolean;
 		padding?: { x?: number; y?: number };
 		onOverflowChange?: (overflow: { x: boolean; y: boolean }) => void;
-		class?: string;
+		class?: ClassValue;
 		children?: Snippet;
 	}
 

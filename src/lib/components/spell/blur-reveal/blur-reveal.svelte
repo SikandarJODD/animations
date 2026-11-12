@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 	import { motion, useInView, type Variants } from "motion-sv";
 	import type { Snippet } from "svelte";
@@ -25,7 +26,7 @@
 
 	type BlurRevealProps = {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		style?: string;
 		as?: BlurRevealElement;
 		delay?: number;

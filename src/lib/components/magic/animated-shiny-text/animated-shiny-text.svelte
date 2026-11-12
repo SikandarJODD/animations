@@ -1,8 +1,9 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 	interface Props {
 		children?: import("svelte").Snippet;
-		class?: string;
+		class?: ClassValue;
 		shimmerWidth?: number;
 		duration?: number;
 		[key: string]: any;

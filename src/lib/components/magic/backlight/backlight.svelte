@@ -1,9 +1,10 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import type { Snippet } from "svelte";
 
 	type Props = {
 		children?: Snippet;
-		class?: string;
+		class?: ClassValue;
 		blur?: number;
 	};
 	let { children, class: className, blur = 10 }: Props = $props();

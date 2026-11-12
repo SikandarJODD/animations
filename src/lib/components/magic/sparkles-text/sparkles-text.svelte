@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
 	import { untrack } from "svelte";
-	import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
 	import { motion } from "motion-sv";
 	import { cn } from "#lib/utils.js";
 
@@ -17,7 +17,7 @@
 
 	interface SparklesTextProps extends HTMLAttributes<HTMLElement> {
 		as?: keyof SvelteHTMLElements;
-		class?: string;
+		class?: ClassValue;
 		children: Snippet;
 		sparklesCount?: number;
 		colors?: {

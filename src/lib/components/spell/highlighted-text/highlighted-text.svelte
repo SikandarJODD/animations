@@ -2,13 +2,13 @@
 	import { cn } from "#lib/utils.js";
 	import { motion, useInView, type AnimationOptions, type Variants } from "motion-sv";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	type From = "left" | "right" | "top" | "bottom";
 
 	interface HighlightedTextProps extends HTMLAttributes<HTMLSpanElement> {
 		children?: Snippet;
-		class?: string;
+		class?: ClassValue;
 		from?: From;
 		delay?: number;
 		triggerOnView?: boolean;

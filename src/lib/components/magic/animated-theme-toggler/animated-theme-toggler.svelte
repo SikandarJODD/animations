@@ -1,10 +1,11 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount } from "svelte";
 	import { Moon, Sun } from "@lucide/svelte";
 	import { cn } from "#lib/utils.js";
 
 	interface AnimatedThemeTogglerProps {
-		class?: string;
+		class?: ClassValue;
 		duration?: number;
 	}
 

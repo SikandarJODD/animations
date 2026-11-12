@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount, untrack } from "svelte";
 	import type { Snippet } from "svelte";
-	import type { SvelteHTMLElements } from "svelte/elements";
+	import type { ClassValue, SvelteHTMLElements } from "svelte/elements";
 	import { motion, type Transition, type Variants } from "motion-sv";
 
 	import { cn } from "#lib/utils.js";
@@ -14,7 +14,7 @@
 		 */
 		children?: Snippet;
 		as?: ElementType;
-		class?: string;
+		class?: ClassValue;
 		transition?: Transition;
 		targetTextColor?: string;
 		underlineHeightRatio?: number;

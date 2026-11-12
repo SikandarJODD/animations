@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion, useMotionTemplate, useMotionValue } from "motion-sv";
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
@@ -7,7 +8,7 @@
 		/** Card content */
 		children?: Snippet;
 		/** Additional CSS classes */
-		class?: string;
+		class?: ClassValue;
 		/** Size of the gradient circle */
 		gradientSize?: number;
 		/** Color of the gradient overlay */

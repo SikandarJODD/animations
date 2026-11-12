@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion, AnimatePresence, useInView, type Variants } from "motion-sv";
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
@@ -7,7 +8,7 @@
 
 	interface BlurFadeProps {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		variant?: Variants;
 		exit?: boolean;
 		duration?: number;

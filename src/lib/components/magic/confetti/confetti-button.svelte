@@ -2,7 +2,7 @@
 	import { confetti } from "@neoconfetti/svelte";
 	import type { ConfettiOptions } from "@neoconfetti/svelte";
 	import type { Snippet } from "svelte";
-	import type { HTMLButtonAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLButtonAttributes } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 
 	interface ConfettiButtonProps extends HTMLButtonAttributes {
@@ -11,7 +11,7 @@
 		/** Children content */
 		children?: Snippet;
 		/** Additional CSS classes */
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

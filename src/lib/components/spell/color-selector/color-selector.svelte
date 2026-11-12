@@ -1,6 +1,6 @@
 <script lang="ts" module>
 	import { type VariantProps, tv } from "tailwind-variants";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 	import type { WithElementRef } from "#lib/utils.js";
 
 	export const colorMap = {
@@ -69,7 +69,7 @@
 			value?: ColorSelectorColor;
 			name?: string;
 			onColorSelect?: (color: ColorSelectorColor) => void;
-			class?: string;
+			class?: ClassValue;
 		},
 		HTMLDivElement
 	>;

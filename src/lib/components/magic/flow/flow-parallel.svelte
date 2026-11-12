@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 	import { onMount, untrack, type Snippet } from "svelte";
 	import { watch } from "runed";
@@ -22,7 +23,7 @@
 
 	interface FlowParallelProps {
 		align?: ParallelAlign;
-		class?: string;
+		class?: ClassValue;
 		children?: Snippet;
 	}
 

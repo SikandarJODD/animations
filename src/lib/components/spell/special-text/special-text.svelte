@@ -3,14 +3,14 @@
 	import { inView as observeInView } from "motion-sv";
 	import { untrack } from "svelte";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface SpecialTextProps extends HTMLAttributes<HTMLSpanElement> {
 		children?: Snippet;
 		text?: string;
 		speed?: number;
 		delay?: number;
-		class?: string;
+		class?: ClassValue;
 		inView?: boolean;
 		once?: boolean;
 	}

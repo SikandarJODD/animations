@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion } from "motion-sv";
 	import { cn } from "#lib/utils.js";
 
@@ -6,7 +7,7 @@
 
 	interface LineShadowTextProps {
 		content: string;
-		class?: string;
+		class?: ClassValue;
 		shadowColor?: string;
 		as?: ElementType;
 	}

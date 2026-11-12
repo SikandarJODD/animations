@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface ProgressiveBlurProps extends HTMLAttributes<HTMLDivElement> {
 		/**
 		 * Additional CSS classes
 		 */
-		class?: string;
+		class?: ClassValue;
 		/**
 		 * Height of the blur area
 		 */

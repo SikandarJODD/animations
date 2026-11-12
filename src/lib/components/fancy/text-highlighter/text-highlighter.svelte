@@ -2,7 +2,7 @@
 	import { cn } from "#lib/utils.js";
 	import { motion, useInView, type Transition } from "motion-sv";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
 
 	type ElementType = keyof SvelteHTMLElements;
 	type HighlightDirection = "ltr" | "rtl" | "ttb" | "btt";
@@ -19,7 +19,7 @@
 		useInViewOptions?: ViewOptions;
 		highlightColor?: string;
 		direction?: HighlightDirection;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	const defaultTransition: Transition = {

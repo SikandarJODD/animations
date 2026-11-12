@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount } from "svelte";
 	import { cn } from "#lib/utils.js";
 
@@ -9,7 +10,7 @@
 		color?: string;
 		width?: number;
 		height?: number;
-		class?: string;
+		class?: ClassValue;
 		maxOpacity?: number;
 	}
 

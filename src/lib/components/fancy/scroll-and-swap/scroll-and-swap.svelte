@@ -2,7 +2,7 @@
 	import { motion, useScroll, useSpring, useTransform, type UseScrollOptions } from "motion-sv";
 	import type { MotionValue, SpringOptions } from "motion-sv";
 	import { untrack, type Snippet } from "svelte";
-	import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 
 	type ElementType = keyof SvelteHTMLElements;
@@ -14,7 +14,7 @@
 		scrollContainer?: HTMLElement | null;
 		offset?: UseScrollOptions["offset"];
 		springConfig?: SpringOptions;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	const defaultOffset: UseScrollOptions["offset"] = ["0 0", "0 1"];

@@ -2,11 +2,11 @@
 	import { motion, type MotionProps, type Transition } from "motion-sv";
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLButtonAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLButtonAttributes } from "svelte/elements";
 
 	interface ShinyButtonProps extends HTMLButtonAttributes {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let { children, class: className, ...props }: ShinyButtonProps = $props();

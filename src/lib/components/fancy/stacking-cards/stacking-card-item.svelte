@@ -1,12 +1,12 @@
 <script lang="ts" module>
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	export interface StackingCardItemProps extends HTMLAttributes<HTMLDivElement> {
 		children?: Snippet;
 		index: number;
 		topPosition?: string;
-		class?: string;
+		class?: ClassValue;
 	}
 </script>
 

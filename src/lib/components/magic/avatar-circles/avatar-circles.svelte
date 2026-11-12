@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { cn } from "#lib/utils.js";
 
 	interface Avatar {
@@ -7,7 +8,7 @@
 	}
 
 	interface Props {
-		class?: string;
+		class?: ClassValue;
 		numPeople?: number;
 		avatarUrls: Avatar[];
 	}
