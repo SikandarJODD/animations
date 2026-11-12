@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Table from "../markdown/Table.svelte";
-	import Thead from "../markdown/Thead.svelte";
-	import Tbody from "../markdown/Tbody.svelte";
-	import Tr from "../markdown/Tr.svelte";
-	import Th from "../markdown/Th.svelte";
-	import Td from "../markdown/Td.svelte";
+	import Table from "../markdown/table.svelte";
+	import Thead from "../markdown/thead.svelte";
+	import Tbody from "../markdown/tbody.svelte";
+	import Tr from "../markdown/tr.svelte";
+	import Th from "../markdown/th.svelte";
+	import Td from "../markdown/td.svelte";
 	import InfoPopover from "./info-popover.svelte";
 	import { cn } from "#lib/utils.js";
 	import { H3 } from "../markdown";

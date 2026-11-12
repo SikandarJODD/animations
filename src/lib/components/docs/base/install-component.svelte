@@ -25,8 +25,8 @@
 	import { cn } from "#lib/utils.js";
 	import * as Tabs from "#lib/components/ui/tabs/index.js";
 	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
-	import Steps from "#lib/components/docs/markdown/Steps.svelte";
-	import Step from "#lib/components/docs/markdown/Step.svelte";
+	import Steps from "#lib/components/docs/markdown/steps.svelte";
+	import Step from "#lib/components/docs/markdown/step.svelte";
 	import * as Code from "#lib/components/ui/code/index.js";
 
 	let {
