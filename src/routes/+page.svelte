@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import Hero from "#lib/components/layout/Hero.svelte";
+	import Hero from "#lib/components/layout/hero.svelte";
 	import Footer from "#lib/components/main/footer.svelte";
 	import Sponsors from "#lib/components/main/sponsors.svelte";
 	import { MetaTags } from "svelte-meta-tags";
