@@ -1,4 +1,8 @@
-﻿import type { Example } from "#lib/types/examples.js";
+import AnimatedBeamFileMerge from "./examples/animated-beam-file-merge.svelte";
+import AnimatedBeamFileMergeRaw from "./examples/animated-beam-file-merge.svelte?raw";
+import AnimatedBeamPublish from "./examples/animated-beam-publish.svelte";
+import AnimatedBeamPublishRaw from "./examples/animated-beam-publish.svelte?raw";
+import type { Example } from "#lib/types/examples.js";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 
@@ -139,6 +143,28 @@ const examples: Example[] = [
 			filecode: AnimatedBeamMultipleOutputsRaw,
 			lang: "svelte",
 			isExpand: true,
+		},
+	},
+	{
+		name: "merge four files",
+		description:
+			"Four file nodes merge into a bundle through curved, staggered monochrome beams.",
+		preview: AnimatedBeamFileMerge,
+		code: {
+			filename: "animated-beam-file-merge.svelte",
+			filecode: AnimatedBeamFileMergeRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "publish workflow",
+		description:
+			"A push flows through a build to preview and checks with a single status accent.",
+		preview: AnimatedBeamPublish,
+		code: {
+			filename: "animated-beam-publish.svelte",
+			filecode: AnimatedBeamPublishRaw,
+			lang: "svelte",
 		},
 	},
 ];

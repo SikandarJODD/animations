@@ -29,7 +29,10 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-beam.
   let toRef: HTMLDivElement | null = $state(null);
 </script>
 
-<div class="relative flex h-24 w-64 items-center justify-between" bind:this={containerRef}>
+<div
+  class="relative flex h-24 w-64 items-center justify-between"
+  bind:this={containerRef}
+>
   <div class="size-3 rounded-full bg-current" bind:this={fromRef}></div>
   <div class="size-3 rounded-full bg-current" bind:this={toRef}></div>
   <AnimatedBeam {containerRef} {fromRef} {toRef} />
@@ -366,6 +369,184 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-beam.
     fromRef={div6Ref}
     toRef={div7Ref}
     duration={3}
+  />
+</div>
+```
+
+### 6. merge four files
+
+Four file nodes merge into a bundle through curved, staggered monochrome beams.
+
+```svelte
+<script lang="ts">
+  import { AnimatedBeam } from "#lib/components/magic/animated-beam/index.js";
+  import { FileCode, FileJson, FileType, Package } from "@lucide/svelte";
+
+  let container: HTMLDivElement | null = $state(null);
+  let sources: (HTMLDivElement | null)[] = $state([null, null, null, null]);
+  let bundle: HTMLDivElement | null = $state(null);
+  const files = [
+    { name: "page.svelte", icon: FileCode },
+    { name: "config.json", icon: FileJson },
+    { name: "styles.css", icon: FileType },
+    { name: "utils.ts", icon: FileCode },
+  ];
+</script>
+
+<div
+  bind:this={container}
+  class="relative isolate w-full max-w-xl overflow-hidden px-2 py-6 [--beam:var(--color-neutral-700)] sm:px-8 dark:[--beam:var(--color-neutral-200)]"
+>
+  <div class="relative z-10 flex items-center justify-between gap-6">
+    <div class="flex flex-col gap-7">
+      {#each files as file, i}
+        <div
+          bind:this={sources[i]}
+          class="bg-background flex w-36 items-center gap-3 rounded-lg border px-3 py-2.5"
+        >
+          <file.icon
+            class="text-muted-foreground size-4 shrink-0"
+            strokeWidth={1.5}
+          />
+          <span class="font-mono text-xs">{file.name}</span>
+        </div>
+      {/each}
+    </div>
+    <div class="flex flex-col items-center gap-3">
+      <div
+        bind:this={bundle}
+        class="bg-background flex size-16 items-center justify-center rounded-2xl border"
+      >
+        <Package class="size-7" strokeWidth={1.25} />
+      </div>
+      <span class="text-muted-foreground font-mono text-xs">bundle.js</span>
+    </div>
+  </div>
+  {#each sources as source, i}
+    <AnimatedBeam
+      class="motion-reduce:[&>path+path]:hidden"
+      containerRef={container}
+      fromRef={source}
+      toRef={bundle}
+      duration={4}
+      delay={i * 0.5}
+      curvature={(i - 1.5) * 30}
+      startXOffset={72}
+      endXOffset={-32}
+      pathColor="var(--foreground)"
+      pathOpacity={0.12}
+      gradientStartColor="var(--beam)"
+      gradientStopColor="var(--beam)"
+    />
+  {/each}
+</div>
+```
+
+### 7. publish workflow
+
+A push flows through a build to preview and checks with a single status accent.
+
+```svelte
+<script lang="ts">
+  import { AnimatedBeam } from "#lib/components/magic/animated-beam/index.js";
+  import { GitCommitHorizontal, Box, Globe, Check } from "@lucide/svelte";
+
+  let container: HTMLDivElement | null = $state(null);
+  let commit: HTMLDivElement | null = $state(null);
+  let build: HTMLDivElement | null = $state(null);
+  let preview: HTMLDivElement | null = $state(null);
+  let tests: HTMLDivElement | null = $state(null);
+</script>
+
+<div
+  bind:this={container}
+  class="relative isolate w-full max-w-xl px-2 py-10 [--beam:var(--color-neutral-700)] sm:px-8 dark:[--beam:var(--color-neutral-200)]"
+>
+  <div
+    class="relative z-10 grid grid-cols-3 items-center gap-x-6 gap-y-12 text-center"
+  >
+    <div class="row-span-2 flex flex-col items-center gap-3">
+      <div
+        bind:this={commit}
+        class="bg-background flex size-11 items-center justify-center rounded-full border"
+      >
+        <GitCommitHorizontal class="size-5" strokeWidth={1.5} />
+      </div>
+      <span class="text-muted-foreground text-xs">push</span>
+    </div>
+    <div class="row-span-2 flex flex-col items-center gap-3">
+      <div
+        bind:this={build}
+        class="bg-background flex size-14 items-center justify-center rounded-xl border"
+      >
+        <Box class="size-6" strokeWidth={1.5} />
+      </div>
+      <span class="text-muted-foreground text-xs">build</span>
+    </div>
+    <div class="flex flex-col items-center gap-3">
+      <div
+        bind:this={preview}
+        class="bg-background flex size-11 items-center justify-center rounded-full border"
+      >
+        <Globe class="size-5" strokeWidth={1.5} />
+      </div>
+      <span class="text-muted-foreground text-xs">preview</span>
+    </div>
+    <div class="flex flex-col items-center gap-3">
+      <div
+        bind:this={tests}
+        class="bg-background flex size-11 items-center justify-center rounded-full border"
+      >
+        <Check
+          class="size-5 text-emerald-600 dark:text-emerald-400"
+          strokeWidth={1.5}
+        />
+      </div>
+      <span class="text-muted-foreground text-xs">checks</span>
+    </div>
+  </div>
+  <AnimatedBeam
+    class="motion-reduce:[&>path+path]:hidden"
+    containerRef={container}
+    fromRef={commit}
+    toRef={build}
+    duration={4}
+    startXOffset={22}
+    endXOffset={-28}
+    pathColor="var(--foreground)"
+    pathOpacity={0.12}
+    gradientStartColor="var(--beam)"
+    gradientStopColor="var(--beam)"
+  />
+  <AnimatedBeam
+    class="motion-reduce:[&>path+path]:hidden"
+    containerRef={container}
+    fromRef={build}
+    toRef={preview}
+    duration={4}
+    delay={1.3}
+    startXOffset={28}
+    endXOffset={-22}
+    curvature={35}
+    pathColor="var(--foreground)"
+    pathOpacity={0.12}
+    gradientStartColor="var(--beam)"
+    gradientStopColor="var(--beam)"
+  />
+  <AnimatedBeam
+    class="motion-reduce:[&>path+path]:hidden"
+    containerRef={container}
+    fromRef={build}
+    toRef={tests}
+    duration={4}
+    delay={1.3}
+    startXOffset={28}
+    endXOffset={-22}
+    curvature={-35}
+    pathColor="var(--foreground)"
+    pathOpacity={0.12}
+    gradientStartColor="var(--beam)"
+    gradientStopColor="var(--beam)"
   />
 </div>
 ```

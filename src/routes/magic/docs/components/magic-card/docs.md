@@ -25,9 +25,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/magic-card.jso
   import { MagicCard } from "#lib/components/magic/magic-card/index.js";
 </script>
 
-<MagicCard class="rounded-xl p-8">
-  Hover over this card
-</MagicCard>
+<MagicCard class="rounded-xl p-8">Hover over this card</MagicCard>
 ```
 
 ## Preview
@@ -136,6 +134,64 @@ export { default as MagicCard } from "./magic-card.svelte";
 
 ```typescript
 export { default as MagicCard } from "./magic-card.svelte";
+```
+
+### 2. command reference
+
+An emerald spotlight around a copyable installation command.
+
+```svelte
+<script lang="ts">
+  import { MagicCard } from "#lib/components/magic/magic-card/index.js";
+</script>
+
+<MagicCard
+  gradientSize={220}
+  gradientColor="var(--color-emerald-400)"
+  gradientOpacity={0.12}
+  gradientFrom="var(--color-emerald-400)"
+  gradientTo="var(--color-emerald-700)"
+  class="w-full max-w-md rounded-lg"
+>
+  <div class="p-6">
+    <h3 class="text-sm font-medium">install the component</h3>
+    <pre
+      class="mt-4 overflow-x-auto font-mono text-sm text-emerald-800 dark:text-emerald-200"><code
+        >pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/magic-card.json</code
+      ></pre>
+  </div>
+</MagicCard>
+```
+
+### 3. documentation card
+
+An orange spotlight on a documentation link with a visible keyboard focus state.
+
+```svelte
+<script lang="ts">
+  import { MagicCard } from "#lib/components/magic/magic-card/index.js";
+</script>
+
+<MagicCard
+  gradientSize={180}
+  gradientColor="var(--color-orange-400)"
+  gradientOpacity={0.1}
+  gradientFrom="var(--color-orange-400)"
+  gradientTo="var(--color-orange-700)"
+  class="w-full max-w-sm rounded-lg"
+>
+  <a
+    href="/magic/docs/components/magic-card#props"
+    class="block rounded-[inherit] p-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+  >
+    <h3 class="font-medium text-orange-800 dark:text-orange-200">
+      spotlight settings &rarr;
+    </h3>
+    <p class="text-muted-foreground mt-2 text-sm">
+      Adjust the radius, border colors, and overlay opacity.
+    </p>
+  </a>
+</MagicCard>
 ```
 
 ## Props

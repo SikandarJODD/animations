@@ -1,3 +1,5 @@
+import HyperTextNumeric from "./examples/hyper-text-numeric.svelte";
+import HyperTextNumericRaw from "./examples/hyper-text-numeric.svelte?raw";
 import type { Example } from "#lib/types/examples.js";
 import HyperTextRaw from "#lib/components/magic/hyper-text/hyper-text.svelte?raw";
 import IndexTs from "#lib/components/magic/hyper-text/index.ts?raw";
@@ -40,6 +42,16 @@ const examples: Example[] = [
 		code: {
 			filename: "hyper-text-delayed.svelte",
 			filecode: HyperTextDelayedRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "numeric characters",
+		description: "Reveal a build number using only digits in the scramble.",
+		preview: HyperTextNumeric,
+		code: {
+			filename: "hyper-text-numeric.svelte",
+			filecode: HyperTextNumericRaw,
 			lang: "svelte",
 		},
 	},

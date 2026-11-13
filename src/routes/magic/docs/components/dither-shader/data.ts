@@ -1,4 +1,10 @@
-﻿import DitherShaderRaw from "#lib/components/magic/dither-shader/dither-shader.svelte?raw";
+import DitherShaderEmerald from "./examples/dither-shader-emerald.svelte";
+import DitherShaderEmeraldRaw from "./examples/dither-shader-emerald.svelte?raw";
+import DitherShaderDensity from "./examples/dither-shader-density.svelte";
+import DitherShaderDensityRaw from "./examples/dither-shader-density.svelte?raw";
+import DitherShaderPalette from "./examples/dither-shader-palette.svelte";
+import DitherShaderPaletteRaw from "./examples/dither-shader-palette.svelte?raw";
+import DitherShaderRaw from "#lib/components/magic/dither-shader/dither-shader.svelte?raw";
 import IndexTs from "#lib/components/magic/dither-shader/index.ts?raw";
 
 import type { Example } from "#lib/types/examples.js";
@@ -42,6 +48,38 @@ const examples: Example[] = [
 			highlight: [2],
 		},
 		preview: DitherSharerDemoDuotone,
+	},
+	{
+		name: "emerald halftone",
+		description: "Use a two-color palette and halftone pattern for an image thumbnail.",
+		preview: DitherShaderEmerald,
+		code: {
+			filename: "dither-shader-emerald.svelte",
+			filecode: DitherShaderEmeraldRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "pixel density",
+		description: "Compare a simple ocean image at three grid sizes in taller image containers.",
+		preview: DitherShaderDensity,
+		previewClass: "min-h-104",
+		code: {
+			filename: "dither-shader-density.svelte",
+			filecode: DitherShaderDensityRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "four-color palette",
+		description:
+			"Map soft mountain layers to four warm tones ordered from darkest to lightest.",
+		preview: DitherShaderPalette,
+		code: {
+			filename: "dither-shader-palette.svelte",
+			filecode: DitherShaderPaletteRaw,
+			lang: "svelte",
+		},
 	},
 ];
 

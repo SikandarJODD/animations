@@ -2,6 +2,8 @@
 
 A light glare effect which pans across text making it appear as if it is shimmering.
 
+The text color provides a solid base beneath the moving highlight. Use `--shiny-highlight` to customize the shine color.
+
 ## Installation
 
 ```bash
@@ -28,11 +30,15 @@ Add the animation to your global CSS:
     0%,
     90%,
     100% {
-      background-position: calc(-100% - var(--shiny-width)) 0;
+      background-position:
+        calc(-100% - var(--shiny-width)) 0,
+        0 0;
     }
     30%,
     60% {
-      background-position: calc(100% + var(--shiny-width)) 0;
+      background-position:
+        calc(100% + var(--shiny-width)) 0,
+        0 0;
     }
   }
 }
@@ -77,7 +83,7 @@ Add the animation to your global CSS:
 
 ## Examples
 
-### 1. Documentation Link
+### 1. documentation link
 
 A real documentation link with a narrow shimmer and a visible keyboard focus state.
 
@@ -92,16 +98,17 @@ A real documentation link with a narrow shimmer and a visible keyboard focus sta
 >
   <AnimatedShinyText
     shimmerWidth={60}
-    class="text-sm text-neutral-700 dark:text-neutral-300"
+    duration={4}
+    class="text-sm text-neutral-600 dark:text-neutral-400"
   >
-    Explore the text API &rarr;
+    explore the text api &rarr;
   </AnimatedShinyText>
 </a>
 ```
 
-### 2. Display Text
+### 2. display text
 
-A wider, slower shimmer across a short editorial heading.
+A wider highlight across a short heading with enough contrast to see the sweep.
 
 ```svelte
 <script lang="ts">
@@ -110,13 +117,36 @@ A wider, slower shimmer across a short editorial heading.
 
 <h2 class="text-center font-serif text-4xl sm:text-6xl">
   <AnimatedShinyText
-    shimmerWidth={180}
-    duration={12}
-    class="text-neutral-800 dark:text-neutral-200"
+    shimmerWidth={100}
+    duration={6}
+    class="text-neutral-500 dark:text-neutral-400"
   >
-    Collected works
+    collected works
   </AnimatedShinyText>
 </h2>
+```
+
+### 3. orange accent
+
+Apply a narrow shimmer to an inline link without adding a badge or container.
+
+```svelte
+<script lang="ts">
+  import { AnimatedShinyText } from "#lib/components/magic/animated-shiny-text/index.js";
+</script>
+
+<a
+  href="/magic/docs/components/animated-shiny-text#usage"
+  class="rounded-sm text-sm underline decoration-orange-400/40 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+>
+  <AnimatedShinyText
+    shimmerWidth={45}
+    duration={5}
+    class="text-orange-800 [--shiny-highlight:var(--color-orange-400)] dark:text-orange-300 dark:[--shiny-highlight:var(--color-orange-50)]"
+  >
+    view implementation &rarr;
+  </AnimatedShinyText>
+</a>
 ```
 
 ## Props

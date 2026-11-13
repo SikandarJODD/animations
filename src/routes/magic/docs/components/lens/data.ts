@@ -1,4 +1,8 @@
-﻿import LensRaw from "#lib/components/magic/lens/lens.svelte?raw";
+import LensImageDetail from "./examples/lens-image-detail.svelte";
+import LensImageDetailRaw from "./examples/lens-image-detail.svelte?raw";
+import LensDiagram from "./examples/lens-diagram.svelte";
+import LensDiagramRaw from "./examples/lens-diagram.svelte?raw";
+import LensRaw from "#lib/components/magic/lens/lens.svelte?raw";
 import IndexTs from "#lib/components/magic/lens/index.ts?raw";
 
 import type { Example } from "#lib/types/examples.js";
@@ -17,7 +21,25 @@ export const meta: ComponentMeta = {
 	badge: "new",
 };
 
-const examples: Example[] = [];
+const examples: Example[] = [
+	{
+		name: "image inspection",
+		description: "Inspect a high-resolution image with a larger lens and two-times zoom.",
+		preview: LensImageDetail,
+		code: {
+			filename: "lens-image-detail.svelte",
+			filecode: LensImageDetailRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "diagram labels",
+		description:
+			"Inspect compact request labels on hover without obscuring the diagram at rest.",
+		preview: LensDiagram,
+		code: { filename: "lens-diagram.svelte", filecode: LensDiagramRaw, lang: "svelte" },
+	},
+];
 
 const seo: SEO = {
 	title: "Lens",

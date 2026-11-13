@@ -415,11 +415,15 @@
 	0%,
 	90%,
 	100% {
-		background-position: calc(-100% - var(--shiny-width)) 0;
+		background-position:
+			calc(-100% - var(--shiny-width)) 0,
+			0 0;
 	}
 	30%,
 	60% {
-		background-position: calc(100% + var(--shiny-width)) 0;
+		background-position:
+			calc(100% + var(--shiny-width)) 0,
+			0 0;
 	}
 }
 

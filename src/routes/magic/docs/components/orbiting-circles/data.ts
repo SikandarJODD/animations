@@ -1,4 +1,10 @@
-﻿import OrbitingCirclesRaw from "#lib/components/magic/orbiting-circles/orbiting-circles.svelte?raw";
+import OrbitingCirclesMasked from "./examples/orbiting-circles-masked.svelte";
+import OrbitingCirclesMaskedRaw from "./examples/orbiting-circles-masked.svelte?raw";
+import OrbitingCirclesCounter from "./examples/orbiting-circles-counter.svelte";
+import OrbitingCirclesCounterRaw from "./examples/orbiting-circles-counter.svelte?raw";
+import OrbitingCirclesOffset from "./examples/orbiting-circles-offset.svelte";
+import OrbitingCirclesOffsetRaw from "./examples/orbiting-circles-offset.svelte?raw";
+import OrbitingCirclesRaw from "#lib/components/magic/orbiting-circles/orbiting-circles.svelte?raw";
 import IndexTs from "#lib/components/magic/orbiting-circles/index.ts?raw";
 
 import type { Example } from "#lib/types/examples.js";
@@ -17,7 +23,40 @@ export const meta: ComponentMeta = {
 	badge: "new",
 };
 
-const examples: Example[] = [];
+const examples: Example[] = [
+	{
+		name: "bottom fade",
+		description: "Monochrome satellite icons follow a visible ring that fades at the bottom.",
+		preview: OrbitingCirclesMasked,
+		code: {
+			filename: "orbiting-circles-masked.svelte",
+			filecode: OrbitingCirclesMaskedRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "opposite directions",
+		description:
+			"Colored developer icons orbit a processor in opposite directions with faint tinted backgrounds.",
+		preview: OrbitingCirclesCounter,
+		code: {
+			filename: "orbiting-circles-counter.svelte",
+			filecode: OrbitingCirclesCounterRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "offset orbit",
+		description:
+			"Five weather icons orbit a central sun with light tints and an offset circular path.",
+		preview: OrbitingCirclesOffset,
+		code: {
+			filename: "orbiting-circles-offset.svelte",
+			filecode: OrbitingCirclesOffsetRaw,
+			lang: "svelte",
+		},
+	},
+];
 
 const seo: SEO = {
 	title: "Orbiting Circles",

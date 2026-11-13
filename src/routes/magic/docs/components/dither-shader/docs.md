@@ -108,6 +108,85 @@ An example showcasing the Dither Shader component in action.
 </div>
 ```
 
+### 3. emerald halftone
+
+Use a two-color palette and halftone pattern for an image thumbnail.
+
+```svelte
+<script lang="ts">
+  import { DitherShader } from "#lib/components/magic/dither-shader/index.js";
+</script>
+
+<figure class="w-full max-w-lg">
+  <DitherShader
+    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=85"
+    gridSize={2}
+    ditherMode="halftone"
+    colorMode="duotone"
+    primaryColor="#064e3b"
+    secondaryColor="#a7f3d0"
+    contrast={1.2}
+    class="h-64 overflow-hidden rounded-lg sm:h-80"
+  />
+  <figcaption class="text-muted-foreground mt-3 text-sm">
+    emerald halftone
+  </figcaption>
+</figure>
+```
+
+### 4. pixel density
+
+Compare a simple ocean image at three grid sizes in taller image containers.
+
+```svelte
+<script lang="ts">
+  import { DitherShader } from "#lib/components/magic/dither-shader/index.js";
+</script>
+
+<div class="grid w-full max-w-2xl grid-cols-1 gap-4 py-6 sm:grid-cols-3">
+  {#each [2, 4, 8] as gridSize}
+    <figure>
+      <DitherShader
+        src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85"
+        {gridSize}
+        colorMode="duotone"
+        primaryColor="#0c4a6e"
+        secondaryColor="#bae6fd"
+        class="h-64 overflow-hidden rounded-md sm:h-72"
+      />
+      <figcaption class="text-muted-foreground mt-2 font-mono text-xs">
+        gridSize = {gridSize}
+      </figcaption>
+    </figure>
+  {/each}
+</div>
+```
+
+### 5. four-color palette
+
+Map soft mountain layers to four warm tones ordered from darkest to lightest.
+
+```svelte
+<script lang="ts">
+  import { DitherShader } from "#lib/components/magic/dither-shader/index.js";
+</script>
+
+<figure class="w-full max-w-lg">
+  <DitherShader
+    src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85"
+    gridSize={3}
+    ditherMode="bayer"
+    colorMode="custom"
+    customPalette={["#431407", "#c2410c", "#fb923c", "#ffedd5"]}
+    contrast={1.15}
+    class="h-64 overflow-hidden rounded-lg sm:h-80"
+  />
+  <figcaption class="text-muted-foreground mt-3 text-sm">
+    four-color palette
+  </figcaption>
+</figure>
+```
+
 ## Props
 
 A component for Dither Shader.

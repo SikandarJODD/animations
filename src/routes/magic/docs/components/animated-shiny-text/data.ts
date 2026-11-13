@@ -1,3 +1,5 @@
+import AnimatedShinyTextOrange from "./examples/animated-shiny-text-orange.svelte";
+import AnimatedShinyTextOrangeRaw from "./examples/animated-shiny-text-orange.svelte?raw";
 import Raw from "#lib/components/magic/animated-shiny-text/animated-shiny-text.svelte?raw";
 import IndexTs from "#lib/components/magic/animated-shiny-text/index.ts?raw";
 
@@ -25,7 +27,7 @@ export const meta: ComponentMeta = {
 
 const examples: Example[] = [
 	{
-		name: "Documentation Link",
+		name: "documentation link",
 		description:
 			"A real documentation link with a narrow shimmer and a visible keyboard focus state.",
 		preview: AnimatedShinyTextLink,
@@ -36,12 +38,24 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "Display Text",
-		description: "A wider, slower shimmer across a short editorial heading.",
+		name: "display text",
+		description:
+			"A wider highlight across a short heading with enough contrast to see the sweep.",
 		preview: AnimatedShinyTextHeading,
 		code: {
 			filename: "animated-shiny-text-heading.svelte",
 			filecode: AnimatedShinyTextHeadingRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "orange accent",
+		description:
+			"Apply a narrow shimmer to an inline link without adding a badge or container.",
+		preview: AnimatedShinyTextOrange,
+		code: {
+			filename: "animated-shiny-text-orange.svelte",
+			filecode: AnimatedShinyTextOrangeRaw,
 			lang: "svelte",
 		},
 	},
@@ -63,11 +77,11 @@ const tailwind: CodeBlock = {
     0%,
     90%,
     100% {
-      background-position: calc(-100% - var(--shiny-width)) 0;
+      background-position: calc(-100% - var(--shiny-width)) 0, 0 0;
     }
     30%,
     60% {
-      background-position: calc(100% + var(--shiny-width)) 0;
+      background-position: calc(100% + var(--shiny-width)) 0, 0 0;
     }
   }
 }`,

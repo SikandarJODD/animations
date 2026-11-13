@@ -1,14 +1,10 @@
-<script>
-	import Meteors from "#lib/components/magic/meteors/meteors.svelte";
+<script lang="ts">
+	import { Meteors } from "#lib/components/magic/meteors/index.js";
 </script>
 
 <div
-	class="bg-background relative flex h-fit w-full max-w-lg items-center justify-center overflow-hidden rounded-lg border p-20 md:shadow-xl"
+	class="bg-background relative flex h-64 w-full max-w-lg items-center justify-center overflow-hidden rounded-lg border"
 >
-	<Meteors number={30} />
-	<p
-		class="z-10 bg-linear-to-br from-white to-blue-900/40 bg-clip-text text-center text-5xl font-semibold tracking-tight whitespace-pre-wrap text-transparent"
-	>
-		Meteors
-	</p>
+	<Meteors number={20} angle={215} minDuration={3} maxDuration={6} />
+	<p class="text-foreground relative z-10 text-4xl font-medium">meteors</p>
 </div>

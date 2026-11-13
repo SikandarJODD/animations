@@ -1,4 +1,8 @@
-﻿import MagicCardRaw from "#lib/components/magic/magic-card/magic-card.svelte?raw";
+import MagicCardCommand from "./examples/magic-card-command.svelte";
+import MagicCardCommandRaw from "./examples/magic-card-command.svelte?raw";
+import MagicCardResource from "./examples/magic-card-resource.svelte";
+import MagicCardResourceRaw from "./examples/magic-card-resource.svelte?raw";
+import MagicCardRaw from "#lib/components/magic/magic-card/magic-card.svelte?raw";
 import IndexTs from "#lib/components/magic/magic-card/index.ts?raw";
 
 import type { Example } from "#lib/types/examples.js";
@@ -51,6 +55,27 @@ const examples: Example[] = [
 		code: {
 			filename: "pricing-card.svelte",
 			filecode: PricingCardRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "command reference",
+		description: "An emerald spotlight around a copyable installation command.",
+		preview: MagicCardCommand,
+		code: {
+			filename: "magic-card-command.svelte",
+			filecode: MagicCardCommandRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "documentation card",
+		description:
+			"An orange spotlight on a documentation link with a visible keyboard focus state.",
+		preview: MagicCardResource,
+		code: {
+			filename: "magic-card-resource.svelte",
+			filecode: MagicCardResourceRaw,
 			lang: "svelte",
 		},
 	},

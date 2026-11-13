@@ -57,7 +57,8 @@ let installBlock: InstallComponentDocs = {
 export const meta: ComponentMeta = {
 	id: "meteors",
 	title: "Meteors",
-	description: "A meteor shower effect.",
+	description:
+		"A meteor shower with a consistent travel angle and container-relative spawn positions.",
 	category: "animation",
 	badge: "new",
 };

@@ -4,10 +4,10 @@
 
 <h2 class="text-center font-serif text-4xl sm:text-6xl">
 	<AnimatedShinyText
-		shimmerWidth={180}
-		duration={12}
-		class="text-neutral-800 dark:text-neutral-200"
+		shimmerWidth={100}
+		duration={6}
+		class="text-neutral-500 dark:text-neutral-400"
 	>
-		Collected works
+		collected works
 	</AnimatedShinyText>
 </h2>

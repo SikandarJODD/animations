@@ -35,9 +35,9 @@
 
 	let updateMeteors = () => {
 		const styles = [...new Array(number)].map(() => ({
-			angle: -angle + "deg",
+			angle: angle + "deg",
 			top: "-5%",
-			left: `calc(0% + ${Math.floor(Math.random() * window.innerWidth)}px)`,
+			left: `${Math.random() * 100}%`,
 			animationDelay: Math.random() * (maxDelay - minDelay) + minDelay + "s",
 			animationDuration:
 				Math.floor(Math.random() * (maxDuration - minDuration) + minDuration) + "s",
@@ -53,7 +53,7 @@
 	<span
 		style="--angle: {style.angle}; top: {style.top}; left: {style.left}; animation-delay: {style.animationDelay}; animation-duration: {style.animationDuration};"
 		class={cn(
-			"animate-meteor pointer-events-none absolute size-0.5 rotate-(--angle) rounded-full bg-zinc-500 shadow-[0_0_0_1px_#ffffff10]",
+			"animate-meteor pointer-events-none absolute size-0.5 [transform:rotate(var(--angle))] rounded-full bg-zinc-500 shadow-[0_0_0_1px_#ffffff10] [animation-fill-mode:backwards] motion-reduce:hidden",
 			className
 		)}
 	>
