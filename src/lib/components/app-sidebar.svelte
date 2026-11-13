@@ -52,6 +52,7 @@
 	import type { ComponentProps } from "svelte";
 	import { watch } from "runed";
 	import BhideSvelteCard from "./main/bhide-svelte-card.svelte";
+	import SidebarResourceLinks from "./docs/base/sidebar-resource-links.svelte";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 	let contentRef = $state<HTMLElement | null>(null);
@@ -117,6 +118,7 @@
 		{/each}
 	</Sidebar.Content>
 	<Sidebar.Footer>
+		<SidebarResourceLinks skillsHref="/magic/docs/skills" />
 		<BhideSvelteCard />
 	</Sidebar.Footer>
 	<!-- <Sidebar.Rail /> -->

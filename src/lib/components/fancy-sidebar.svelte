@@ -6,6 +6,7 @@
 	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
 	import type { ComponentProps } from "svelte";
 	import BhideSvelteCard from "./main/bhide-svelte-card.svelte";
+	import SidebarResourceLinks from "./docs/base/sidebar-resource-links.svelte";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
@@ -52,6 +53,7 @@
 		{/each}
 	</Sidebar.Content>
 	<Sidebar.Footer>
+		<SidebarResourceLinks skillsHref="/fancy/skills" />
 		<BhideSvelteCard />
 	</Sidebar.Footer>
 </Sidebar.Root>
