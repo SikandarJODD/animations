@@ -19,7 +19,7 @@
 		color?: string;
 		/** Brightness multiplier. 1 = original, 1.15-1.25 = subtle, 1.4-1.6 = strong, 1.8+ = very bright. */
 		boost?: number;
-		pattern?: "random" | "wave" | "flame";
+		pattern?: "random" | "wave" | "flame" | "ripple" | "aurora" | "rain";
 		hover?: boolean;
 		hoverColor?: string;
 		hoverRadius?: number;
@@ -215,6 +215,36 @@
 						0.02 + Math.pow(edge, 1.5) * (0.8 + Math.sin(y * 0.5 + time * 0.003) * 0.2)
 					);
 				}
+				if (currentPattern === "ripple") {
+					const distance = Math.hypot(x - cols / 2, y - rows / 2);
+					const crest = 0.5 + Math.cos(distance * 0.9 - time * 0.0023) * 0.5;
+					return 0.025 + Math.pow(crest, 7) * 0.975;
+				}
+				if (currentPattern === "aurora") {
+					const height = y / rows;
+					const first = 0.3 + Math.sin(height * 4 + time * 0.0004) * 0.1;
+					const second = 0.68 + Math.sin(height * 5 - time * 0.0003) * 0.09;
+					const curtains =
+						Math.exp(-Math.pow(x / cols - first, 2) / 0.0025) +
+						Math.exp(-Math.pow(x / cols - second, 2) / 0.0018) * 0.8;
+					return (
+						0.02 +
+						Math.min(1, curtains) *
+							(0.8 + Math.sin(height * 3 + time * 0.0008) * 0.2) *
+							0.98
+					);
+				}
+				if (currentPattern === "rain") {
+					const seed = Math.sin((x + 1) * 127.1) * 43758.5453;
+					const phase = seed - Math.floor(seed);
+					const head =
+						((time * (0.002 + phase * 0.002) + phase * (rows + 10)) % (rows + 10)) - 3;
+					const tail = head - y;
+					if (tail < 0 || tail > 8) return 0.015;
+					const reveal = Math.min(1, tail * 2);
+					return 0.015 + reveal * Math.pow(1 - tail / 8, 1.5) * 0.985;
+				}
+
 				return 1;
 			}
 

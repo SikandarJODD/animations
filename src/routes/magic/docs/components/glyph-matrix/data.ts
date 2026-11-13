@@ -1,3 +1,9 @@
+import GlyphMatrixRipple from "./examples/glyph-matrix-ripple.svelte";
+import GlyphMatrixRippleRaw from "./examples/glyph-matrix-ripple.svelte?raw";
+import GlyphMatrixAurora from "./examples/glyph-matrix-aurora.svelte";
+import GlyphMatrixAuroraRaw from "./examples/glyph-matrix-aurora.svelte?raw";
+import GlyphMatrixRain from "./examples/glyph-matrix-rain.svelte";
+import GlyphMatrixRainRaw from "./examples/glyph-matrix-rain.svelte?raw";
 import GlyphMatrixWave from "./examples/glyph-matrix-wave.svelte";
 import GlyphMatrixWaveRaw from "./examples/glyph-matrix-wave.svelte?raw";
 import GlyphMatrixFlame from "./examples/glyph-matrix-flame.svelte";
@@ -78,6 +84,8 @@ let examples: Example[] = [
 		description:
 			"A soft pointer spotlight brightens nearby blue glyphs and leaves a fading trail.",
 		preview: GlyphMatrixCellHighlight,
+		previewClass: "p-0",
+		showRetry: false,
 		code: {
 			filename: "glyph-matrix-cell-highlight.svelte",
 			filecode: GlyphMatrixCellHighlightRaw,
@@ -86,8 +94,10 @@ let examples: Example[] = [
 	},
 	{
 		name: "Binary Focus",
-		description: "Nearby ones brighten around the pointer while zeros keep their base color.",
+		description: "A simple emerald matrix of shifting ones and zeros.",
 		preview: GlyphMatrixBinaryFocus,
+		previewClass: "p-0",
+		showRetry: false,
 		code: {
 			filename: "glyph-matrix-binary-focus.svelte",
 			filecode: GlyphMatrixBinaryFocusRaw,
@@ -96,8 +106,11 @@ let examples: Example[] = [
 	},
 	{
 		name: "Wave Glyphs",
-		description: "An aqua-blue wave with a compact spotlight that reveals nearby glyphs.",
+		description:
+			"An aqua-blue wave with stronger light-mode contrast and a compact pointer spotlight.",
 		preview: GlyphMatrixWave,
+		previewClass: "p-0",
+		showRetry: false,
 		code: {
 			filename: "glyph-matrix-wave.svelte",
 			filecode: GlyphMatrixWaveRaw,
@@ -106,11 +119,50 @@ let examples: Example[] = [
 	},
 	{
 		name: "Flame Glyphs",
-		description: "An orange-red flame with a compact spotlight that reveals nearby glyphs.",
+		description:
+			"A taller orange-red flame with saturated colors and a compact pointer spotlight.",
 		preview: GlyphMatrixFlame,
+		previewClass: "p-0",
+		showRetry: false,
 		code: {
 			filename: "glyph-matrix-flame.svelte",
 			filecode: GlyphMatrixFlameRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Ripple Glyphs",
+		description: "Concentric cobalt rings expand outward across the matrix.",
+		preview: GlyphMatrixRipple,
+		previewClass: "p-0",
+		showRetry: false,
+		code: {
+			filename: "glyph-matrix-ripple.svelte",
+			filecode: GlyphMatrixRippleRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Aurora Glyphs",
+		description: "Emerald curtains drift across the matrix.",
+		preview: GlyphMatrixAurora,
+		previewClass: "p-0",
+		showRetry: false,
+		code: {
+			filename: "glyph-matrix-aurora.svelte",
+			filecode: GlyphMatrixAuroraRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Rain Glyphs",
+		description: "Magenta glyph streams fall at different speeds with fading vertical trails.",
+		preview: GlyphMatrixRain,
+		previewClass: "p-0",
+		showRetry: false,
+		code: {
+			filename: "glyph-matrix-rain.svelte",
+			filecode: GlyphMatrixRainRaw,
 			lang: "svelte",
 		},
 	},
@@ -185,10 +237,10 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "pattern",
-					type: '"random" | "wave" | "flame"',
+					type: '"random" | "wave" | "flame" | "ripple" | "aurora" | "rain"',
 					default: '"random"',
 					description:
-						"Ambient glyph opacity pattern. Wave and flame patterns animate continuously unless reduced motion is enabled.",
+						"Ambient glyph pattern. Animated patterns remain still when reduced motion is enabled.",
 				},
 				{
 					name: "hover",
