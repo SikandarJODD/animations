@@ -83,7 +83,7 @@ Add the animation to your global CSS:
 
 ## Examples
 
-### 1. documentation link
+### 1. Documentation Link
 
 A real documentation link with a narrow shimmer and a visible keyboard focus state.
 
@@ -106,7 +106,7 @@ A real documentation link with a narrow shimmer and a visible keyboard focus sta
 </a>
 ```
 
-### 2. display text
+### 2. Display Text
 
 A wider highlight across a short heading with enough contrast to see the sweep.
 
@@ -126,7 +126,7 @@ A wider highlight across a short heading with enough contrast to see the sweep.
 </h2>
 ```
 
-### 3. orange accent
+### 3. Orange Accent
 
 Apply a narrow shimmer to an inline link without adding a badge or container.
 

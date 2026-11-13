@@ -108,7 +108,7 @@ An example showcasing the Dither Shader component in action.
 </div>
 ```
 
-### 3. emerald halftone
+### 3. Emerald Halftone
 
 Use a two-color palette and halftone pattern for an image thumbnail.
 
@@ -134,7 +134,7 @@ Use a two-color palette and halftone pattern for an image thumbnail.
 </figure>
 ```
 
-### 4. pixel density
+### 4. Pixel Density
 
 Compare a simple ocean image at three grid sizes in taller image containers.
 
@@ -162,7 +162,7 @@ Compare a simple ocean image at three grid sizes in taller image containers.
 </div>
 ```
 
-### 5. four-color palette
+### 5. Four-Color Palette
 
 Map soft mountain layers to four warm tones ordered from darkest to lightest.
 

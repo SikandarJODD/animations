@@ -1,11 +1,11 @@
+import GlyphMatrixWave from "./examples/glyph-matrix-wave.svelte";
+import GlyphMatrixWaveRaw from "./examples/glyph-matrix-wave.svelte?raw";
+import GlyphMatrixFlame from "./examples/glyph-matrix-flame.svelte";
+import GlyphMatrixFlameRaw from "./examples/glyph-matrix-flame.svelte?raw";
 import GlyphMatrixCellHighlight from "./examples/glyph-matrix-cell-highlight.svelte";
 import GlyphMatrixCellHighlightRaw from "./examples/glyph-matrix-cell-highlight.svelte?raw";
 import GlyphMatrixBinaryFocus from "./examples/glyph-matrix-binary-focus.svelte";
 import GlyphMatrixBinaryFocusRaw from "./examples/glyph-matrix-binary-focus.svelte?raw";
-import GlyphMatrixOperatorGrid from "./examples/glyph-matrix-operator-grid.svelte";
-import GlyphMatrixOperatorGridRaw from "./examples/glyph-matrix-operator-grid.svelte?raw";
-import GlyphMatrixQuietBackground from "./examples/glyph-matrix-quiet-background.svelte";
-import GlyphMatrixQuietBackgroundRaw from "./examples/glyph-matrix-quiet-background.svelte?raw";
 import GlyphMatrixSvelteRaw from "#lib/components/magic/glyph-matrix/glyph-matrix.svelte?raw";
 import IndexTsRaw from "#lib/components/magic/glyph-matrix/index.ts?raw";
 
@@ -63,7 +63,7 @@ const installBlock: InstallComponentDocs = {
 };
 let examples: Example[] = [
 	{
-		name: "letters",
+		name: "Letters",
 		preview: LettersExample,
 		previewClass: "p-0",
 		showRetry: false,
@@ -74,8 +74,9 @@ let examples: Example[] = [
 		},
 	},
 	{
-		name: "cell highlight",
-		description: "Highlight the cell under the pointer without changing the other glyphs.",
+		name: "Cell Highlight",
+		description:
+			"A soft pointer spotlight brightens nearby blue glyphs and leaves a fading trail.",
 		preview: GlyphMatrixCellHighlight,
 		code: {
 			filename: "glyph-matrix-cell-highlight.svelte",
@@ -84,8 +85,8 @@ let examples: Example[] = [
 		},
 	},
 	{
-		name: "binary focus",
-		description: "Only the digit 1 responds to hover; the digit 0 keeps its base color.",
+		name: "Binary Focus",
+		description: "Nearby ones brighten around the pointer while zeros keep their base color.",
 		preview: GlyphMatrixBinaryFocus,
 		code: {
 			filename: "glyph-matrix-binary-focus.svelte",
@@ -94,22 +95,22 @@ let examples: Example[] = [
 		},
 	},
 	{
-		name: "operator grid",
-		description: "Apply an orange hover accent only to plus and equals signs.",
-		preview: GlyphMatrixOperatorGrid,
+		name: "Wave Glyphs",
+		description: "An aqua-blue wave with a compact spotlight that reveals nearby glyphs.",
+		preview: GlyphMatrixWave,
 		code: {
-			filename: "glyph-matrix-operator-grid.svelte",
-			filecode: GlyphMatrixOperatorGridRaw,
+			filename: "glyph-matrix-wave.svelte",
+			filecode: GlyphMatrixWaveRaw,
 			lang: "svelte",
 		},
 	},
 	{
-		name: "quiet background",
-		description: "A slower matrix with larger cells and a rose hover accent.",
-		preview: GlyphMatrixQuietBackground,
+		name: "Flame Glyphs",
+		description: "An orange-red flame with a compact spotlight that reveals nearby glyphs.",
+		preview: GlyphMatrixFlame,
 		code: {
-			filename: "glyph-matrix-quiet-background.svelte",
-			filecode: GlyphMatrixQuietBackgroundRaw,
+			filename: "glyph-matrix-flame.svelte",
+			filecode: GlyphMatrixFlameRaw,
 			lang: "svelte",
 		},
 	},
@@ -183,18 +184,32 @@ export const data: ComponentDoc = {
 						"Glyph color. Pass a theme-aware CSS color value from the consumer.",
 				},
 				{
+					name: "pattern",
+					type: '"random" | "wave" | "flame"',
+					default: '"random"',
+					description:
+						"Ambient glyph opacity pattern. Wave and flame patterns animate continuously unless reduced motion is enabled.",
+				},
+				{
 					name: "hover",
 					type: "boolean",
 					default: "false",
 					description:
-						"Enable pointer interaction for individual cells. Hovered cells keep their glyph until the pointer leaves.",
+						"Enable a soft pointer spotlight across nearby glyphs. Characters stay stable while their highlights fade.",
 				},
 				{
 					name: "hoverColor",
 					type: "string",
 					default: "oklch(0.85 0.12 160)",
 					description:
-						"CSS color used for the hovered glyph and its faint cell background.",
+						"CSS color used for nearby highlighted glyphs. Highlights fade out after the pointer leaves.",
+				},
+				{
+					name: "hoverRadius",
+					type: "number",
+					default: "70",
+					description:
+						"Pointer spotlight radius in CSS pixels, with a soft falloff toward its edge.",
 				},
 				{
 					name: "hoverGlyphs",

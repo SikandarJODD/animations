@@ -229,7 +229,7 @@ Add the animation to your global CSS:
 
 ## Examples
 
-### 1. bottom fade
+### 1. Bottom Fade
 
 Monochrome satellite icons follow a visible ring that fades at the bottom.
 
@@ -271,7 +271,7 @@ Monochrome satellite icons follow a visible ring that fades at the bottom.
 </div>
 ```
 
-### 2. opposite directions
+### 2. Opposite Directions
 
 Colored developer icons orbit a processor in opposite directions with faint tinted backgrounds.
 
@@ -343,7 +343,7 @@ Colored developer icons orbit a processor in opposite directions with faint tint
 </div>
 ```
 
-### 3. offset orbit
+### 3. Offset Orbit
 
 Five weather icons orbit a central sun with light tints and an offset circular path.
 

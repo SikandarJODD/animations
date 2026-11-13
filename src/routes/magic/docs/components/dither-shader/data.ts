@@ -50,7 +50,7 @@ const examples: Example[] = [
 		preview: DitherSharerDemoDuotone,
 	},
 	{
-		name: "emerald halftone",
+		name: "Emerald Halftone",
 		description: "Use a two-color palette and halftone pattern for an image thumbnail.",
 		preview: DitherShaderEmerald,
 		code: {
@@ -60,7 +60,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "pixel density",
+		name: "Pixel Density",
 		description: "Compare a simple ocean image at three grid sizes in taller image containers.",
 		preview: DitherShaderDensity,
 		previewClass: "min-h-104",
@@ -71,7 +71,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "four-color palette",
+		name: "Four-Color Palette",
 		description:
 			"Map soft mountain layers to four warm tones ordered from darkest to lightest.",
 		preview: DitherShaderPalette,

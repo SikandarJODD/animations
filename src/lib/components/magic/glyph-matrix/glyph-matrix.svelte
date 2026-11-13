@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
 	import { watch } from "runed";
+	import { MediaQuery } from "svelte/reactivity";
 	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface GlyphMatrixProps extends HTMLAttributes<HTMLCanvasElement> {
@@ -18,8 +19,10 @@
 		color?: string;
 		/** Brightness multiplier. 1 = original, 1.15-1.25 = subtle, 1.4-1.6 = strong, 1.8+ = very bright. */
 		boost?: number;
+		pattern?: "random" | "wave" | "flame";
 		hover?: boolean;
 		hoverColor?: string;
+		hoverRadius?: number;
 		hoverGlyphs?: string;
 		class?: ClassValue;
 	}
@@ -44,8 +47,10 @@
 		fadeBottom = 0.6,
 		color = DEFAULT_COLOR,
 		boost = 1.2,
+		pattern = "random",
 		hover = false,
 		hoverColor = "oklch(0.85 0.12 160)",
+		hoverRadius = 70,
 		hoverGlyphs,
 		onpointermove,
 		onpointerleave,
@@ -57,29 +62,26 @@
 	let rgba = DEFAULT_RGBA;
 	let alphaBoost = 1;
 	let hoverRgba = DEFAULT_RGBA;
-	let hoveredCell: { col: number; row: number } | null = null;
+	const reducedMotion = new MediaQuery("(prefers-reduced-motion: reduce)");
+	let pointer: { x: number; y: number } | null = null;
 	let drawFrame: (() => void) | undefined;
 
 	function handlePointerMove(event: PointerEvent & { currentTarget: HTMLCanvasElement }) {
 		if (hover) {
 			const target = event.currentTarget;
 			const rect = target.getBoundingClientRect();
-			hoveredCell = {
-				col: Math.floor(
-					(((event.clientX - rect.left) / rect.width) * target.clientWidth) / cellSize
-				),
-				row: Math.floor(
-					(((event.clientY - rect.top) / rect.height) * target.clientHeight) / cellSize
-				),
+			pointer = {
+				x: ((event.clientX - rect.left) / rect.width) * target.clientWidth,
+				y: ((event.clientY - rect.top) / rect.height) * target.clientHeight,
 			};
-			drawFrame?.();
+			if (reducedMotion.current) drawFrame?.();
 		}
 		onpointermove?.(event);
 	}
 
 	function handlePointerLeave(event: PointerEvent & { currentTarget: HTMLCanvasElement }) {
-		hoveredCell = null;
-		drawFrame?.();
+		pointer = null;
+		if (reducedMotion.current) drawFrame?.();
 		onpointerleave?.(event);
 	}
 
@@ -135,6 +137,7 @@
 			alphaBoost = getAlphaBoost(nextBoost);
 			rgba = resolveColor(nextColor, nextBoost);
 			hoverRgba = resolveColor(nextHoverColor, 1);
+			drawFrame?.();
 		}
 	);
 
@@ -148,6 +151,8 @@
 			() => fadeBottom,
 			() => hover,
 			() => hoverGlyphs,
+			() => pattern,
+			() => reducedMotion.current,
 		],
 		([
 			currentCanvas,
@@ -156,6 +161,10 @@
 			currentMutationRate,
 			currentInterval,
 			currentFadeBottom,
+			currentHover,
+			currentHoverGlyphs,
+			currentPattern,
+			reduceMotion,
 		]) => {
 			if (!currentCanvas) return;
 
@@ -168,7 +177,9 @@
 			let rows = 0;
 			let cells: string[] = [];
 			let alphas: number[] = [];
+			let hoverLevels = new Float32Array(0);
 			let frame = 0;
+			let lastFrame = 0;
 			let lastTick = 0;
 
 			// Rebuild the matrix when the canvas size changes.
@@ -186,86 +197,104 @@
 				const total = cols * rows;
 				cells = Array.from({ length: total }, () => randomGlyph(glyphPool));
 				alphas = Array.from({ length: total }, () => randomAlpha(0.35));
+				hoverLevels = new Float32Array(total);
 			};
 
-			// Draw the current glyph state using the latest resolved color.
-			const draw = () => {
+			function patternOpacity(x: number, y: number, time: number) {
+				if (currentPattern === "wave") {
+					const crest = 0.5 + Math.sin(x * 0.12 - time * 0.0008) * 0.2;
+					const distance = y / rows - crest;
+					return 0.03 + Math.exp(-(distance * distance) / 0.008) * 0.97;
+				}
+				if (currentPattern === "flame") {
+					const height = y / rows;
+					const center = 0.5 + Math.sin(y * 0.16 + time * 0.0012) * 0.08 * (1 - height);
+					const width = 0.04 + height * 0.32;
+					const edge = Math.max(0, 1 - Math.abs(x / cols - center) / width);
+					return (
+						0.02 + Math.pow(edge, 1.5) * (0.8 + Math.sin(y * 0.5 + time * 0.003) * 0.2)
+					);
+				}
+				return 1;
+			}
+
+			const draw = (time: number, elapsed: number) => {
 				const { clientWidth: width, clientHeight: height } = currentCanvas;
+				const fontSize = Math.max(1, currentCellSize - 2);
 				context.clearRect(0, 0, width, height);
-				context.font = `${Math.max(1, currentCellSize - 2)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
-				context.textBaseline = "top";
+				context.font = `${fontSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+				context.textBaseline = "middle";
+				context.textAlign = "center";
 
 				const { r, g, b, a: colorAlpha } = rgba;
 				for (let y = 0; y < rows; y++) {
 					const fade = currentFadeBottom > 0 ? 1 - (y / rows) * currentFadeBottom : 1;
-
 					for (let x = 0; x < cols; x++) {
 						const index = y * cols + x;
-						const alpha = Math.min(1, alphas[index] * fade * colorAlpha * alphaBoost);
-						const highlighted =
-							hover &&
-							hoveredCell?.col === x &&
-							hoveredCell.row === y &&
-							(!hoverGlyphs || hoverGlyphs.includes(cells[index]));
-
-						if (highlighted) {
-							const { r, g, b, a } = hoverRgba;
-							context.fillStyle = `rgba(${r}, ${g}, ${b}, ${a * 0.12})`;
-							context.fillRect(
-								x * currentCellSize,
-								y * currentCellSize,
-								currentCellSize,
-								currentCellSize
-							);
-							context.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
-						} else {
-							context.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
-						}
-						context.fillText(
-							cells[index] ?? " ",
-							x * currentCellSize,
-							y * currentCellSize
+						const centerX = (x + 0.5) * currentCellSize;
+						const centerY = (y + 0.5) * currentCellSize;
+						const intensity =
+							currentPattern === "random"
+								? alphas[index]
+								: 0.65 + alphas[index] * 0.6;
+						const alpha = Math.min(
+							1,
+							intensity * patternOpacity(x, y, time) * fade * colorAlpha * alphaBoost
 						);
+						let target = 0;
+						if (
+							currentHover &&
+							pointer &&
+							(!currentHoverGlyphs || currentHoverGlyphs.includes(cells[index]))
+						) {
+							const distance = Math.hypot(pointer.x - centerX, pointer.y - centerY);
+							const proximity = Math.max(0, 1 - distance / Math.max(1, hoverRadius));
+							target = proximity * proximity * (3 - 2 * proximity);
+						}
+						const previous = hoverLevels[index];
+						const blend = reduceMotion
+							? 1
+							: 1 - Math.exp(-elapsed / (target > previous ? 65 : 260));
+						const level = previous + (target - previous) * blend;
+						hoverLevels[index] = level < 0.001 ? 0 : level;
+
+						const red = Math.round(r + (hoverRgba.r - r) * level);
+						const green = Math.round(g + (hoverRgba.g - g) * level);
+						const blue = Math.round(b + (hoverRgba.b - b) * level);
+						const opacity = alpha + (hoverRgba.a - alpha) * level;
+						context.fillStyle = `rgba(${red}, ${green}, ${blue}, ${opacity})`;
+						context.fillText(cells[index] ?? " ", centerX, centerY);
 					}
 				}
 			};
 
-			// Mutate a few cells on each animation tick.
 			const tick = (time: number) => {
-				if (time - lastTick >= currentInterval) {
+				const elapsed = lastFrame === 0 ? 16 : Math.min(time - lastFrame, 64);
+				lastFrame = time;
+				const mutate = time - lastTick >= currentInterval;
+				if (mutate) {
 					lastTick = time;
-
 					const total = cols * rows;
-					if (total > 0) {
-						const mutations = Math.max(1, Math.floor(total * currentMutationRate));
-
-						for (let count = 0; count < mutations; count++) {
-							const index = Math.floor(Math.random() * total);
-							if (
-								hover &&
-								hoveredCell &&
-								index === hoveredCell.row * cols + hoveredCell.col
-							)
-								continue;
-							cells[index] = randomGlyph(glyphPool);
-							alphas[index] = randomAlpha(0.45);
-						}
+					const mutations = Math.floor(total * currentMutationRate);
+					for (let count = 0; count < mutations; count++) {
+						const index = Math.floor(Math.random() * total);
+						if (hoverLevels[index] > 0.05) continue;
+						cells[index] = randomGlyph(glyphPool);
+						alphas[index] = randomAlpha(0.45);
 					}
-
-					draw();
 				}
-
+				if (mutate || currentHover || currentPattern !== "random") draw(time, elapsed);
 				frame = requestAnimationFrame(tick);
 			};
 
-			drawFrame = draw;
+			drawFrame = () => draw(0, 0);
 			resize();
-			draw();
-			frame = requestAnimationFrame(tick);
+			draw(0, 0);
+			if (!reduceMotion) frame = requestAnimationFrame(tick);
 
 			const observer = new ResizeObserver(() => {
 				resize();
-				draw();
+				draw(0, 0);
 			});
 
 			observer.observe(currentCanvas);

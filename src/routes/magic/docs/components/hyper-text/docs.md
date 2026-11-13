@@ -86,7 +86,7 @@ Reveal a section heading after a short delay, with hover replay disabled.
 </div>
 ```
 
-### 3. numeric characters
+### 3. Numeric Characters
 
 Reveal a build number using only digits in the scramble.
 

@@ -35,25 +35,25 @@ export const meta: ComponentMeta = {
 
 const examples: Example[] = [
 	{
-		name: "cursor blinking",
+		name: "Cursor Blinking",
 		description: "Compare a blinking cursor with a steady cursor.",
 		preview: CursorBlinking,
 		code: { filename: "cursor-blinking.svelte", filecode: CursorBlinkingRaw, lang: "svelte" },
 	},
 	{
-		name: "cursor styles",
+		name: "Cursor Styles",
 		description: "Compare line, block, and underscore cursors at the same text size.",
 		preview: CursorStyle,
 		code: { filename: "cursor-style.svelte", filecode: CursorStyleRaw, lang: "svelte" },
 	},
 	{
-		name: "single play",
+		name: "Single Play",
 		description: "Cycle through three words once and keep the last word visible.",
 		preview: SinglePlay,
 		code: { filename: "single-play.svelte", filecode: SinglePlayRaw, lang: "svelte" },
 	},
 	{
-		name: "custom speed",
+		name: "Custom Speed",
 		description: "Type quickly and delete slowly with separate speed controls.",
 		preview: CustomSpeed,
 		code: {
@@ -63,7 +63,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "multiple words",
+		name: "Multiple Words",
 		description: "Rotate through a short list of words without extra decoration.",
 		preview: MultipleWords,
 		code: {
@@ -73,7 +73,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "start on view",
+		name: "Start On View",
 		description: "Type a single line when it enters the viewport.",
 		preview: StartOnView,
 		code: {
@@ -83,7 +83,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "command line",
+		name: "Command Line",
 		description: "Type an installation command once with a block cursor.",
 		preview: TypingAnimationCommand,
 		code: {
@@ -93,7 +93,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "inline rotation",
+		name: "Inline Rotation",
 		description: "Keep a sentence still while the final words rotate.",
 		preview: TypingAnimationInline,
 		code: {

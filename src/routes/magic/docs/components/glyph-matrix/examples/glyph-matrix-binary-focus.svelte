@@ -7,7 +7,7 @@
 	<div class="bg-background h-64 overflow-hidden rounded-lg border">
 		<GlyphMatrix
 			glyphs="01"
-			cellSize={24}
+			cellSize={14}
 			hoverGlyphs="1"
 			fadeBottom={0.2}
 			boost={1}

@@ -63,7 +63,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "command reference",
+		name: "Command Reference",
 		description: "An emerald spotlight around a copyable installation command.",
 		preview: MagicCardCommand,
 		code: {
@@ -73,7 +73,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "documentation card",
+		name: "Documentation Card",
 		description:
 			"An orange spotlight on a documentation link with a visible keyboard focus state.",
 		preview: MagicCardResource,
@@ -84,13 +84,13 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "plain spotlight",
+		name: "Plain Spotlight",
 		description: "A monochrome spotlight with a faint overlay and no extra card content.",
 		preview: MagicCardPlain,
 		code: { filename: "magic-card-plain.svelte", filecode: MagicCardPlainRaw, lang: "svelte" },
 	},
 	{
-		name: "compact file link",
+		name: "Compact File Link",
 		description: "A small downloadable registry file with a restrained emerald spotlight.",
 		preview: MagicCardFile,
 		code: { filename: "magic-card-file.svelte", filecode: MagicCardFileRaw, lang: "svelte" },

@@ -27,7 +27,7 @@ export const meta: ComponentMeta = {
 
 const examples: Example[] = [
 	{
-		name: "documentation link",
+		name: "Documentation Link",
 		description:
 			"A real documentation link with a narrow shimmer and a visible keyboard focus state.",
 		preview: AnimatedShinyTextLink,
@@ -38,7 +38,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "display text",
+		name: "Display Text",
 		description:
 			"A wider highlight across a short heading with enough contrast to see the sweep.",
 		preview: AnimatedShinyTextHeading,
@@ -49,7 +49,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "orange accent",
+		name: "Orange Accent",
 		description:
 			"Apply a narrow shimmer to an inline link without adding a badge or container.",
 		preview: AnimatedShinyTextOrange,

@@ -25,7 +25,7 @@ export const meta: ComponentMeta = {
 
 const examples: Example[] = [
 	{
-		name: "bottom fade",
+		name: "Bottom Fade",
 		description: "Monochrome satellite icons follow a visible ring that fades at the bottom.",
 		preview: OrbitingCirclesMasked,
 		code: {
@@ -35,7 +35,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "opposite directions",
+		name: "Opposite Directions",
 		description:
 			"Colored developer icons orbit a processor in opposite directions with faint tinted backgrounds.",
 		preview: OrbitingCirclesCounter,
@@ -46,7 +46,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "offset orbit",
+		name: "Offset Orbit",
 		description:
 			"Five weather icons orbit a central sun with light tints and an offset circular path.",
 		preview: OrbitingCirclesOffset,

@@ -136,7 +136,7 @@ export { default as MagicCard } from "./magic-card.svelte";
 export { default as MagicCard } from "./magic-card.svelte";
 ```
 
-### 2. command reference
+### 2. Command Reference
 
 An emerald spotlight around a copyable installation command.
 
@@ -163,7 +163,7 @@ An emerald spotlight around a copyable installation command.
 </MagicCard>
 ```
 
-### 3. documentation card
+### 3. Documentation Card
 
 An orange spotlight on a documentation link with a visible keyboard focus state.
 
@@ -194,7 +194,7 @@ An orange spotlight on a documentation link with a visible keyboard focus state.
 </MagicCard>
 ```
 
-### 4. plain spotlight
+### 4. Plain Spotlight
 
 A monochrome spotlight with a faint overlay and no extra card content.
 
@@ -216,7 +216,7 @@ A monochrome spotlight with a faint overlay and no extra card content.
 </MagicCard>
 ```
 
-### 5. compact file link
+### 5. Compact File Link
 
 A small downloadable registry file with a restrained emerald spotlight.
 

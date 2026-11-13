@@ -373,7 +373,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-beam.
 </div>
 ```
 
-### 6. merge four files
+### 6. Merge Four Files
 
 Four file nodes merge into a bundle through curved, staggered monochrome beams.
 
@@ -442,7 +442,7 @@ Four file nodes merge into a bundle through curved, staggered monochrome beams.
 </div>
 ```
 
-### 7. publish workflow
+### 7. Publish Workflow
 
 A push flows through a build to preview and checks with a single status accent.
 

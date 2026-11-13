@@ -69,7 +69,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/lens.json
 
 ## Examples
 
-### 1. image inspection
+### 1. Image Inspection
 
 Inspect a high-resolution image with a larger lens and two-times zoom.
 
@@ -99,7 +99,7 @@ Inspect a high-resolution image with a larger lens and two-times zoom.
 </figure>
 ```
 
-### 2. diagram labels
+### 2. Diagram Labels
 
 Inspect compact request labels on hover without obscuring the diagram at rest.
 

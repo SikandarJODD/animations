@@ -146,7 +146,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "merge four files",
+		name: "Merge Four Files",
 		description:
 			"Four file nodes merge into a bundle through curved, staggered monochrome beams.",
 		preview: AnimatedBeamFileMerge,
@@ -157,7 +157,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "publish workflow",
+		name: "Publish Workflow",
 		description:
 			"A push flows through a build to preview and checks with a single status accent.",
 		preview: AnimatedBeamPublish,

@@ -23,7 +23,7 @@ export const meta: ComponentMeta = {
 
 const examples: Example[] = [
 	{
-		name: "image inspection",
+		name: "Image Inspection",
 		description: "Inspect a high-resolution image with a larger lens and two-times zoom.",
 		preview: LensImageDetail,
 		code: {
@@ -33,7 +33,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "diagram labels",
+		name: "Diagram Labels",
 		description:
 			"Inspect compact request labels on hover without obscuring the diagram at rest.",
 		preview: LensDiagram,

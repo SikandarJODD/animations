@@ -46,7 +46,7 @@ const examples: Example[] = [
 		},
 	},
 	{
-		name: "numeric characters",
+		name: "Numeric Characters",
 		description: "Reveal a build number using only digits in the scramble.",
 		preview: HyperTextNumeric,
 		code: {

@@ -46,7 +46,7 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/typing-animati
 
 ## Examples
 
-### 1. cursor blinking
+### 1. Cursor Blinking
 
 Compare a blinking cursor with a steady cursor.
 
@@ -73,7 +73,7 @@ Compare a blinking cursor with a steady cursor.
 </div>
 ```
 
-### 2. cursor styles
+### 2. Cursor Styles
 
 Compare line, block, and underscore cursors at the same text size.
 
@@ -99,7 +99,7 @@ Compare line, block, and underscore cursors at the same text size.
 </div>
 ```
 
-### 3. single play
+### 3. Single Play
 
 Cycle through three words once and keep the last word visible.
 
@@ -115,7 +115,7 @@ Cycle through three words once and keep the last word visible.
 />
 ```
 
-### 4. custom speed
+### 4. Custom Speed
 
 Type quickly and delete slowly with separate speed controls.
 
@@ -134,7 +134,7 @@ Type quickly and delete slowly with separate speed controls.
 />
 ```
 
-### 5. multiple words
+### 5. Multiple Words
 
 Rotate through a short list of words without extra decoration.
 
@@ -150,7 +150,7 @@ Rotate through a short list of words without extra decoration.
 />
 ```
 
-### 6. start on view
+### 6. Start On View
 
 Type a single line when it enters the viewport.
 
@@ -166,7 +166,7 @@ Type a single line when it enters the viewport.
 />
 ```
 
-### 7. command line
+### 7. Command Line
 
 Type an installation command once with a block cursor.
 
@@ -188,7 +188,7 @@ Type an installation command once with a block cursor.
 </div>
 ```
 
-### 8. inline rotation
+### 8. Inline Rotation
 
 Keep a sentence still while the final words rotate.
 

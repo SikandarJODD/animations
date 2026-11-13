@@ -34,7 +34,7 @@ bun add runed
 </div>
 ```
 
-Set `hover` to enable cell highlights. Use `hoverGlyphs` to restrict which characters respond; for example, `hoverGlyphs="1"` highlights ones while zeros keep their base color.
+Set `hover` to brighten an area of glyphs around the pointer. `hoverRadius` controls the size of that spotlight, with a soft falloff at its edge. The highlighted glyphs fade back after the pointer leaves. Use `hoverGlyphs="1"` to limit the effect to ones. Wave and flame patterns remain still with reduced motion.
 
 ## Preview
 
@@ -59,7 +59,7 @@ Set `hover` to enable cell highlights. Use `hoverGlyphs` to restrict which chara
 
 ## Examples
 
-### 1. letters
+### 1. Letters
 
 A lowercase letter pool with an orange accent.
 
@@ -82,9 +82,9 @@ A lowercase letter pool with an orange accent.
 </div>
 ```
 
-### 2. cell highlight
+### 2. Cell Highlight
 
-Highlight the cell under the pointer without changing the other glyphs.
+A soft pointer spotlight brightens nearby blue glyphs and leaves a fading trail.
 
 ```svelte
 <script lang="ts">
@@ -96,7 +96,7 @@ Highlight the cell under the pointer without changing the other glyphs.
   <div class="bg-background h-64 overflow-hidden rounded-lg border">
     <GlyphMatrix
       glyphs=".:+*"
-      cellSize={24}
+      cellSize={14}
       fadeBottom={0.2}
       boost={1}
       hover
@@ -114,9 +114,9 @@ Highlight the cell under the pointer without changing the other glyphs.
 </figure>
 ```
 
-### 3. binary focus
+### 3. Binary Focus
 
-Only the digit 1 responds to hover; the digit 0 keeps its base color.
+Nearby ones brighten around the pointer while zeros keep their base color.
 
 ```svelte
 <script lang="ts">
@@ -128,7 +128,7 @@ Only the digit 1 responds to hover; the digit 0 keeps its base color.
   <div class="bg-background h-64 overflow-hidden rounded-lg border">
     <GlyphMatrix
       glyphs="01"
-      cellSize={24}
+      cellSize={14}
       hoverGlyphs="1"
       fadeBottom={0.2}
       boost={1}
@@ -145,9 +145,9 @@ Only the digit 1 responds to hover; the digit 0 keeps its base color.
 </figure>
 ```
 
-### 4. operator grid
+### 4. Wave Glyphs
 
-Apply an orange hover accent only to plus and equals signs.
+An aqua-blue wave with a compact spotlight that reveals nearby glyphs.
 
 ```svelte
 <script lang="ts">
@@ -156,31 +156,34 @@ Apply an orange hover accent only to plus and equals signs.
 </script>
 
 <figure class="w-full max-w-lg">
-  <div class="bg-background h-64 overflow-hidden rounded-lg border">
+  <div class="bg-background h-72 overflow-hidden rounded-lg border">
     <GlyphMatrix
-      glyphs="+−×÷="
-      cellSize={26}
-      hoverGlyphs="+="
-      fadeBottom={0.2}
+      glyphs="~·:+"
+      pattern="wave"
+      cellSize={14}
+      mutationRate={0.015}
+      interval={160}
+      fadeBottom={0}
       boost={1}
       hover
+      hoverRadius={60}
       color={mode.current === "dark"
-        ? "oklch(0.74 0.15 55)"
-        : "oklch(0.48 0.1 55)"}
+        ? "oklch(0.8 0.12 215)"
+        : "oklch(0.57 0.1 215)"}
       hoverColor={mode.current === "dark"
-        ? "oklch(0.85 0.09 55)"
-        : "oklch(0.4 0.09 55)"}
+        ? "oklch(0.88 0.08 215)"
+        : "oklch(0.47 0.08 215)"}
     />
   </div>
   <figcaption class="text-muted-foreground mt-3 text-xs">
-    hover + or =
+    move across the matrix to reveal a soft trail
   </figcaption>
 </figure>
 ```
 
-### 5. quiet background
+### 5. Flame Glyphs
 
-A slower matrix with larger cells and a rose hover accent.
+An orange-red flame with a compact spotlight that reveals nearby glyphs.
 
 ```svelte
 <script lang="ts">
@@ -189,25 +192,27 @@ A slower matrix with larger cells and a rose hover accent.
 </script>
 
 <figure class="w-full max-w-lg">
-  <div class="bg-background h-64 overflow-hidden rounded-lg border">
+  <div class="bg-background h-72 overflow-hidden rounded-lg border">
     <GlyphMatrix
-      glyphs="·:+"
-      cellSize={28}
-      mutationRate={0.01}
-      interval={300}
-      fadeBottom={0.5}
+      glyphs="·:+*"
+      pattern="flame"
+      cellSize={14}
+      mutationRate={0.015}
+      interval={160}
+      fadeBottom={0}
       boost={1}
       hover
+      hoverRadius={60}
       color={mode.current === "dark"
-        ? "oklch(0.72 0.12 10)"
-        : "oklch(0.48 0.1 10)"}
+        ? "oklch(0.7 0.19 35)"
+        : "oklch(0.6 0.19 35)"}
       hoverColor={mode.current === "dark"
-        ? "oklch(0.85 0.08 10)"
-        : "oklch(0.4 0.09 10)"}
+        ? "oklch(0.76 0.13 35)"
+        : "oklch(0.5 0.16 35)"}
     />
   </div>
   <figcaption class="text-muted-foreground mt-3 text-xs">
-    hover to inspect a cell
+    move across the matrix to reveal a soft trail
   </figcaption>
 </figure>
 ```
@@ -216,17 +221,19 @@ A slower matrix with larger cells and a rose hover accent.
 
 A canvas-based glyph animation that renders a shifting matrix of characters.
 
-| Prop           | Type      | Default                  | Description                                                                                  |
-| -------------- | --------- | ------------------------ | -------------------------------------------------------------------------------------------- |
-| `glyphs`       | `string`  | `"01·•+*/\<>="`          | Characters to randomly pick from.                                                            |
-| `cellSize`     | `number`  | `14`                     | Cell size in pixels, which also controls the font size.                                      |
-| `mutationRate` | `number`  | `0.04`                   | Probability from 0 to 1 that a cell mutates on each tick.                                    |
-| `interval`     | `number`  | `90`                     | Tick interval in milliseconds.                                                               |
-| `fadeBottom`   | `number`  | `0.6`                    | Fade amount toward the bottom of the canvas.                                                 |
-| `color`        | `string`  | `"#6B7280"`              | Glyph color. Pass a theme-aware CSS color value from the consumer.                           |
-| `boost`        | `number`  | `1.2`                    | Brightness multiplier for the glyph color. Values above 1 make the matrix brighter.          |
-| `class`        | `string`  | `""`                     | Additional CSS classes applied to the canvas.                                                |
-| `style`        | `string`  | `undefined`              | Inline styles forwarded to the canvas element.                                               |
-| `hover`        | `boolean` | `false`                  | Enable per-cell pointer highlights. Hovered cells keep their glyph until the pointer leaves. |
-| `hoverColor`   | `string`  | `"oklch(0.85 0.12 160)"` | Highlight color for the glyph and its faint cell background.                                 |
-| `hoverGlyphs`  | `string`  | `undefined`              | Restrict hover highlights to these characters. Omit to highlight every glyph.                |
+| Prop           | Type                            | Default                  | Description                                                                                |
+| -------------- | ------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------ |
+| `glyphs`       | `string`                        | `"01·•+*/\<>="`          | Characters to randomly pick from.                                                          |
+| `cellSize`     | `number`                        | `14`                     | Cell size in pixels, which also controls the font size.                                    |
+| `mutationRate` | `number`                        | `0.04`                   | Probability from 0 to 1 that a cell mutates on each tick.                                  |
+| `interval`     | `number`                        | `90`                     | Tick interval in milliseconds.                                                             |
+| `fadeBottom`   | `number`                        | `0.6`                    | Fade amount toward the bottom of the canvas.                                               |
+| `color`        | `string`                        | `"#6B7280"`              | Glyph color. Pass a theme-aware CSS color value from the consumer.                         |
+| `boost`        | `number`                        | `1.2`                    | Brightness multiplier for the glyph color. Values above 1 make the matrix brighter.        |
+| `class`        | `string`                        | `""`                     | Additional CSS classes applied to the canvas.                                              |
+| `style`        | `string`                        | `undefined`              | Inline styles forwarded to the canvas element.                                             |
+| `pattern`      | `"random" \| "wave" \| "flame"` | `"random"`               | Ambient opacity pattern. Wave and flame remain still with reduced motion.                  |
+| `hover`        | `boolean`                       | `false`                  | Enable a soft pointer spotlight across nearby glyphs, fading out after the pointer leaves. |
+| `hoverColor`   | `string`                        | `"oklch(0.85 0.12 160)"` | Highlight color for glyphs inside the pointer spotlight.                                   |
+| `hoverRadius`  | `number`                        | `70`                     | Spotlight radius in CSS pixels with a soft falloff toward its edge.                        |
+| `hoverGlyphs`  | `string`                        | `undefined`              | Restrict hover highlights to these characters. Omit to highlight every glyph.              |
