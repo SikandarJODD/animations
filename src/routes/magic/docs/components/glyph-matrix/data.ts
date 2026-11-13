@@ -1,3 +1,11 @@
+import GlyphMatrixCellHighlight from "./examples/glyph-matrix-cell-highlight.svelte";
+import GlyphMatrixCellHighlightRaw from "./examples/glyph-matrix-cell-highlight.svelte?raw";
+import GlyphMatrixBinaryFocus from "./examples/glyph-matrix-binary-focus.svelte";
+import GlyphMatrixBinaryFocusRaw from "./examples/glyph-matrix-binary-focus.svelte?raw";
+import GlyphMatrixOperatorGrid from "./examples/glyph-matrix-operator-grid.svelte";
+import GlyphMatrixOperatorGridRaw from "./examples/glyph-matrix-operator-grid.svelte?raw";
+import GlyphMatrixQuietBackground from "./examples/glyph-matrix-quiet-background.svelte";
+import GlyphMatrixQuietBackgroundRaw from "./examples/glyph-matrix-quiet-background.svelte?raw";
 import GlyphMatrixSvelteRaw from "#lib/components/magic/glyph-matrix/glyph-matrix.svelte?raw";
 import IndexTsRaw from "#lib/components/magic/glyph-matrix/index.ts?raw";
 
@@ -55,7 +63,7 @@ const installBlock: InstallComponentDocs = {
 };
 let examples: Example[] = [
 	{
-		name: "Letters Example",
+		name: "letters",
 		preview: LettersExample,
 		previewClass: "p-0",
 		showRetry: false,
@@ -63,6 +71,46 @@ let examples: Example[] = [
 			filename: "letters-example.svelte",
 			filecode: LettersExampleRaw,
 			highlight: [8],
+		},
+	},
+	{
+		name: "cell highlight",
+		description: "Highlight the cell under the pointer without changing the other glyphs.",
+		preview: GlyphMatrixCellHighlight,
+		code: {
+			filename: "glyph-matrix-cell-highlight.svelte",
+			filecode: GlyphMatrixCellHighlightRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "binary focus",
+		description: "Only the digit 1 responds to hover; the digit 0 keeps its base color.",
+		preview: GlyphMatrixBinaryFocus,
+		code: {
+			filename: "glyph-matrix-binary-focus.svelte",
+			filecode: GlyphMatrixBinaryFocusRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "operator grid",
+		description: "Apply an orange hover accent only to plus and equals signs.",
+		preview: GlyphMatrixOperatorGrid,
+		code: {
+			filename: "glyph-matrix-operator-grid.svelte",
+			filecode: GlyphMatrixOperatorGridRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "quiet background",
+		description: "A slower matrix with larger cells and a rose hover accent.",
+		preview: GlyphMatrixQuietBackground,
+		code: {
+			filename: "glyph-matrix-quiet-background.svelte",
+			filecode: GlyphMatrixQuietBackgroundRaw,
+			lang: "svelte",
 		},
 	},
 ];
@@ -80,20 +128,17 @@ export const data: ComponentDoc = {
 	examples,
 	seo,
 	usage: {
-		code: [
-			{
-				filename: "glyph-matrix-import.svelte",
-				filecode: `import GlyphMatrix from "#lib/components/magic/glyph-matrix";`,
-				lang: "typescript",
-			},
-			{
-				filename: "glyph-matrix-usage.svelte",
-				filecode: `<div class="border-border bg-background h-100 w-full overflow-hidden rounded-lg border">
-	<GlyphMatrix />
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { GlyphMatrix } from "#lib/components/magic/glyph-matrix/index.js";
+</script>
+
+<div class="h-64 overflow-hidden rounded-lg border">
+	<GlyphMatrix hover hoverGlyphs="1" glyphs="01" />
 </div>`,
-				lang: "svelte",
-			},
-		],
+			lang: "svelte",
+		},
 	},
 	props: [
 		{
@@ -136,6 +181,27 @@ export const data: ComponentDoc = {
 					default: '"#6B7280"',
 					description:
 						"Glyph color. Pass a theme-aware CSS color value from the consumer.",
+				},
+				{
+					name: "hover",
+					type: "boolean",
+					default: "false",
+					description:
+						"Enable pointer interaction for individual cells. Hovered cells keep their glyph until the pointer leaves.",
+				},
+				{
+					name: "hoverColor",
+					type: "string",
+					default: "oklch(0.85 0.12 160)",
+					description:
+						"CSS color used for the hovered glyph and its faint cell background.",
+				},
+				{
+					name: "hoverGlyphs",
+					type: "string | undefined",
+					default: "undefined",
+					description:
+						"Limit hover highlights to these characters. Omit to highlight every glyph.",
 				},
 				{
 					name: "boost",

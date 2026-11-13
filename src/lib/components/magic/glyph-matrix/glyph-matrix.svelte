@@ -18,6 +18,9 @@
 		color?: string;
 		/** Brightness multiplier. 1 = original, 1.15-1.25 = subtle, 1.4-1.6 = strong, 1.8+ = very bright. */
 		boost?: number;
+		hover?: boolean;
+		hoverColor?: string;
+		hoverGlyphs?: string;
 		class?: ClassValue;
 	}
 
@@ -41,6 +44,11 @@
 		fadeBottom = 0.6,
 		color = DEFAULT_COLOR,
 		boost = 1.2,
+		hover = false,
+		hoverColor = "oklch(0.85 0.12 160)",
+		hoverGlyphs,
+		onpointermove,
+		onpointerleave,
 		style,
 		...props
 	}: GlyphMatrixProps = $props();
@@ -48,6 +56,32 @@
 	let canvas: HTMLCanvasElement | null = $state(null);
 	let rgba = DEFAULT_RGBA;
 	let alphaBoost = 1;
+	let hoverRgba = DEFAULT_RGBA;
+	let hoveredCell: { col: number; row: number } | null = null;
+	let drawFrame: (() => void) | undefined;
+
+	function handlePointerMove(event: PointerEvent & { currentTarget: HTMLCanvasElement }) {
+		if (hover) {
+			const target = event.currentTarget;
+			const rect = target.getBoundingClientRect();
+			hoveredCell = {
+				col: Math.floor(
+					(((event.clientX - rect.left) / rect.width) * target.clientWidth) / cellSize
+				),
+				row: Math.floor(
+					(((event.clientY - rect.top) / rect.height) * target.clientHeight) / cellSize
+				),
+			};
+			drawFrame?.();
+		}
+		onpointermove?.(event);
+	}
+
+	function handlePointerLeave(event: PointerEvent & { currentTarget: HTMLCanvasElement }) {
+		hoveredCell = null;
+		drawFrame?.();
+		onpointerleave?.(event);
+	}
 
 	function randomGlyph(pool: string) {
 		return pool[Math.floor(Math.random() * pool.length)] ?? " ";
@@ -95,10 +129,14 @@
 		};
 	}
 
-	watch([() => color, () => boost], ([nextColor, nextBoost]) => {
-		alphaBoost = getAlphaBoost(nextBoost);
-		rgba = resolveColor(nextColor, nextBoost);
-	});
+	watch(
+		[() => color, () => boost, () => hoverColor],
+		([nextColor, nextBoost, nextHoverColor]) => {
+			alphaBoost = getAlphaBoost(nextBoost);
+			rgba = resolveColor(nextColor, nextBoost);
+			hoverRgba = resolveColor(nextHoverColor, 1);
+		}
+	);
 
 	watch(
 		[
@@ -108,6 +146,8 @@
 			() => mutationRate,
 			() => interval,
 			() => fadeBottom,
+			() => hover,
+			() => hoverGlyphs,
 		],
 		([
 			currentCanvas,
@@ -162,8 +202,25 @@
 					for (let x = 0; x < cols; x++) {
 						const index = y * cols + x;
 						const alpha = Math.min(1, alphas[index] * fade * colorAlpha * alphaBoost);
+						const highlighted =
+							hover &&
+							hoveredCell?.col === x &&
+							hoveredCell.row === y &&
+							(!hoverGlyphs || hoverGlyphs.includes(cells[index]));
 
-						context.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+						if (highlighted) {
+							const { r, g, b, a } = hoverRgba;
+							context.fillStyle = `rgba(${r}, ${g}, ${b}, ${a * 0.12})`;
+							context.fillRect(
+								x * currentCellSize,
+								y * currentCellSize,
+								currentCellSize,
+								currentCellSize
+							);
+							context.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
+						} else {
+							context.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+						}
 						context.fillText(
 							cells[index] ?? " ",
 							x * currentCellSize,
@@ -184,6 +241,12 @@
 
 						for (let count = 0; count < mutations; count++) {
 							const index = Math.floor(Math.random() * total);
+							if (
+								hover &&
+								hoveredCell &&
+								index === hoveredCell.row * cols + hoveredCell.col
+							)
+								continue;
 							cells[index] = randomGlyph(glyphPool);
 							alphas[index] = randomAlpha(0.45);
 						}
@@ -195,6 +258,7 @@
 				frame = requestAnimationFrame(tick);
 			};
 
+			drawFrame = draw;
 			resize();
 			draw();
 			frame = requestAnimationFrame(tick);
@@ -207,6 +271,7 @@
 			observer.observe(currentCanvas);
 
 			return () => {
+				drawFrame = undefined;
 				cancelAnimationFrame(frame);
 				observer.disconnect();
 			};
@@ -216,8 +281,10 @@
 
 <canvas
 	bind:this={canvas}
-	class={cn("pointer-events-none", className)}
+	class={cn(!hover && "pointer-events-none", className)}
 	style={`width: 100%; height: 100%; display: block; ${style ?? ""}`}
+	onpointermove={handlePointerMove}
+	onpointerleave={handlePointerLeave}
 	aria-hidden="true"
 	{...props}
 ></canvas>

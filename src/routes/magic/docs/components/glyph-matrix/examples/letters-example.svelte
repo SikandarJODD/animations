@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { GlyphMatrix } from "#lib/components/magic/glyph-matrix/index.js";
 	import { mode } from "mode-watcher";
-	// Visit https://www.fffuel.co/cccolor/ for colors
 </script>
 
 <div class="bg-background relative h-100 w-full overflow-hidden rounded-lg">
 	<GlyphMatrix
-		glyphs="SVELTE"
+		glyphs="svelte"
 		cellSize={16}
 		mutationRate={0.04}
 		interval={40}

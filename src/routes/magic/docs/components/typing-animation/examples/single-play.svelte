@@ -2,4 +2,8 @@
 	import { TypingAnimation } from "#lib/components/magic/typing-animation/index.js";
 </script>
 
-<TypingAnimation words={["First", "Second", "Final"]} loop={false} />
+<TypingAnimation
+	words={["install", "configure", "ready"]}
+	loop={false}
+	class="text-xl leading-relaxed font-normal tracking-normal"
+/>

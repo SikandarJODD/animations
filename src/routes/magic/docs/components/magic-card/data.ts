@@ -1,3 +1,7 @@
+import MagicCardPlain from "./examples/magic-card-plain.svelte";
+import MagicCardPlainRaw from "./examples/magic-card-plain.svelte?raw";
+import MagicCardFile from "./examples/magic-card-file.svelte";
+import MagicCardFileRaw from "./examples/magic-card-file.svelte?raw";
 import MagicCardCommand from "./examples/magic-card-command.svelte";
 import MagicCardCommandRaw from "./examples/magic-card-command.svelte?raw";
 import MagicCardResource from "./examples/magic-card-resource.svelte";
@@ -78,6 +82,18 @@ const examples: Example[] = [
 			filecode: MagicCardResourceRaw,
 			lang: "svelte",
 		},
+	},
+	{
+		name: "plain spotlight",
+		description: "A monochrome spotlight with a faint overlay and no extra card content.",
+		preview: MagicCardPlain,
+		code: { filename: "magic-card-plain.svelte", filecode: MagicCardPlainRaw, lang: "svelte" },
+	},
+	{
+		name: "compact file link",
+		description: "A small downloadable registry file with a restrained emerald spotlight.",
+		preview: MagicCardFile,
+		code: { filename: "magic-card-file.svelte", filecode: MagicCardFileRaw, lang: "svelte" },
 	},
 ];
 
