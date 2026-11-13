@@ -1,34 +1,28 @@
 <script lang="ts">
+	import ChangelogDate from "../changelog-date.svelte";
 	import ChangelogHighlight from "../changelog-highlight.svelte";
 </script>
 
 <article aria-labelledby="changelog-2026-04-18">
-	<div class="mb-5 flex items-center gap-3">
-		<h2 id="changelog-2026-04-18" class="text-base font-semibold whitespace-nowrap sm:text-lg">
-			April 18, 2026
-		</h2>
-		<div class="bg-border h-px flex-1"></div>
-	</div>
+	<ChangelogDate id="changelog-2026-04-18" datetime="2026-04-18">April 18, 2026</ChangelogDate>
 
-	<p class="text-foreground mb-6 text-sm leading-7 sm:text-[15px]">
+	<p class="text-foreground mb-5 text-sm leading-6 sm:text-[15px]">
 		<a href="/fancy/media-between-text" class="rounded-sm outline-none focus-visible:ring-3">
-			<ChangelogHighlight
-				>Media Between Text component - Svelte Fancy Component</ChangelogHighlight
-			>
+			<ChangelogHighlight>Media Between Text</ChangelogHighlight>
 		</a>
-		is now available, along with new Spell UI and Magic UI additions.
+		joins Fancy Components, alongside additions to Spell UI and Magic UI.
 	</p>
 
-	<div class="space-y-7">
+	<div class="space-y-5">
 		<section aria-labelledby="changelog-2026-04-18-added">
 			<h3
 				id="changelog-2026-04-18-added"
-				class="text-muted-foreground mb-3 text-[11px] font-medium tracking-[0.16em] uppercase"
+				class="text-muted-foreground mb-2.5 text-sm font-medium"
 			>
 				Added
 			</h3>
 
-			<ul class="space-y-2.5 text-sm leading-7 sm:text-[15px]">
+			<ul class="space-y-2 text-sm leading-6 sm:text-[15px]">
 				<li class="grid grid-cols-[0.65rem_1fr] gap-2">
 					<span
 						aria-hidden="true"
@@ -98,12 +92,12 @@
 		<section aria-labelledby="changelog-2026-04-18-fixed">
 			<h3
 				id="changelog-2026-04-18-fixed"
-				class="text-muted-foreground mb-3 text-[11px] font-medium tracking-[0.16em] uppercase"
+				class="text-muted-foreground mb-2.5 text-sm font-medium"
 			>
 				Fixed
 			</h3>
 
-			<ul class="space-y-2.5 text-sm leading-7 sm:text-[15px]">
+			<ul class="space-y-2 text-sm leading-6 sm:text-[15px]">
 				<li class="grid grid-cols-[0.65rem_1fr] gap-2">
 					<span
 						aria-hidden="true"

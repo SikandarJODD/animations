@@ -16,16 +16,16 @@
 			class={cn("mask-[radial-gradient(800px_circle_at_top_center,white,transparent)]")}
 		/>
 		<section>
-			<div class="pt-14 md:pt-32">
-				<div class="mx-auto max-w-7xl px-2 md:px-6">
+			<div class="pt-10 sm:pt-14 md:pt-24 lg:pt-32">
+				<div class="mx-auto max-w-7xl px-4 sm:px-6">
 					<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 						<div class="mt-0">
 							<a
 								href="/magic/docs/components/animated-background"
-								class="hover:bg-muted dark:hover:border-t-border bg-muted dark:bg-muted/60 group mx-auto flex w-fit max-w-[min(100%,30rem)] items-center gap-2 rounded-full border p-1 pl-3 backdrop-blur-xs transition-colors duration-300 sm:pl-3 dark:border-t-white/5 dark:shadow-zinc-950"
+								class="hover:bg-muted dark:hover:border-t-border bg-muted dark:bg-muted/60 group mx-auto flex w-fit max-w-full items-center gap-1.5 rounded-full border p-1 pl-2.5 backdrop-blur-xs transition-colors duration-300 sm:gap-2 sm:pl-3 dark:border-t-white/5 dark:shadow-zinc-950"
 							>
 								<span
-									class="text-foreground flex min-w-0 items-center gap-1.5 text-xs sm:text-sm"
+									class="text-foreground flex min-w-0 items-center gap-1.5 text-[11px] sm:text-xs"
 								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@
 											stroke-linejoin="round"
 										></path>
 									</svg>
-									<span class="font-mono text-xs leading-snug text-balance">
+									<span class="font-mono leading-snug text-balance">
 										New Animated Background Component!
 									</span>
 								</span>
@@ -61,7 +61,7 @@
 						</div>
 
 						<div
-							class="font-display relative mx-auto mt-6 max-w-3xl bg-linear-to-br from-neutral-900 via-neutral-700 to-neutral-600 bg-clip-text pb-2 font-medium text-balance text-transparent lg:mt-16 dark:from-neutral-100 dark:via-neutral-300 dark:to-neutral-400"
+							class="font-display relative mx-auto mt-8 max-w-3xl bg-linear-to-br from-neutral-900 via-neutral-700 to-neutral-600 bg-clip-text pb-2 font-medium text-balance text-transparent sm:mt-10 lg:mt-16 dark:from-neutral-100 dark:via-neutral-300 dark:to-neutral-400"
 						>
 							<div
 								class="absolute -top-10 -left-20 hidden w-fit -rotate-12 gap-1 rounded-t-sm border-b border-dashed border-green-500 bg-green-100 pt-0.5 pr-1.5 pl-1 text-sm font-normal text-green-500 underline-offset-3 lg:flex dark:bg-green-900/40 dark:text-green-400"
@@ -141,46 +141,48 @@
 							</div>
 							<h1
 								id="svelte-animations"
-								class="text-primary text-3xl md:text-4xl xl:text-6xl/tight"
+								class="text-primary text-3xl leading-tight sm:text-4xl xl:text-6xl/tight"
 							>
 								Svelte Animations
 							</h1>
 						</div>
 						<p
 							id="svelte-animations-desc"
-							class="text-muted-foreground mx-auto mt-6 max-w-3xl px-1 text-base text-balance md:mt-10 md:px-0 md:text-lg"
+							class="text-muted-foreground mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-balance sm:text-base md:mt-8 md:text-lg"
 						>
 							<span class="text-primary/80 font-mono">100+</span> free and open-source animated
 							components and effects.
 						</p>
-						<p
-							class="text-muted-foreground mx-auto mt-2.5 max-w-3xl px-1 text-base text-balance md:px-0 md:text-lg"
+						<div
+							class="text-muted-foreground mx-auto mt-3 flex max-w-3xl flex-wrap items-center justify-center gap-x-1.5 gap-y-2 text-sm sm:text-base md:text-lg"
 						>
-							Built with <FaviconLink
+							<span>Built with</span>
+							<FaviconLink
 								href="https://svelte.dev"
 								faviconSrc="https://svelte.dev/favicon.png"
-								class="my-0 mr-1 ml-0 border border-dashed border-[#FF3E00] bg-[#FF3E00]/4 pr-2 pl-1.5 text-[15px] font-medium text-[#FF3E00] hover:text-[#FF3E00] dark:border-orange-500/50 dark:bg-orange-800/20"
+								class="m-0 border border-dashed border-[#FF3E00] bg-[#FF3E00]/4 pr-2 pl-1.5 text-sm font-medium text-[#FF3E00] hover:text-[#FF3E00] dark:border-orange-500/50 dark:bg-orange-800/20"
 							>
 								Svelte
 							</FaviconLink><FaviconLink
 								href="https://tailwindcss.com/"
 								faviconSrc="https://tailwindcss.com/favicon.ico"
 								imageClass="rounded-xs"
-								class="my-0 mr-1.5 ml-0 border border-dashed border-[#06B6D4] bg-[#06B6D4]/4 pr-2 pl-1.5 text-[15px] font-medium text-[#06B6D4] hover:text-[#06B6D4] dark:border-cyan-500/50 dark:bg-cyan-800/20"
+								class="m-0 border border-dashed border-[#06B6D4] bg-[#06B6D4]/4 pr-2 pl-1.5 text-sm font-medium text-[#06B6D4] hover:text-[#06B6D4] dark:border-cyan-500/50 dark:bg-cyan-800/20"
 							>
 								Tailwind CSS
-							</FaviconLink>and
+							</FaviconLink>
+							<span>and</span>
 							<FaviconLink
 								href="https://motion.hyprsonic.dev/"
 								faviconSrc="https://motion.hyprsonic.dev/favicon.ico"
-								class="my-0 ml-0 border border-dashed border-[#F43F5E]/60 bg-[#F43F5E]/4 px-1.5 text-[15px] text-[#F43F5E]/90 hover:text-[#F43F5E] dark:border-pink-500/50 dark:bg-pink-800/20 dark:text-[#F43F5E]/80"
+								class="m-0 border border-dashed border-[#F43F5E]/60 bg-[#F43F5E]/4 px-1.5 text-sm text-[#F43F5E]/90 hover:text-[#F43F5E] dark:border-pink-500/50 dark:bg-pink-800/20 dark:text-[#F43F5E]/80"
 								>Motion Svelte</FaviconLink
 							>
-						</p>
+						</div>
 
 						<div
 							id="svelte-animations-cta"
-							class="mt-18 flex flex-col items-center justify-center gap-3 md:mt-14 md:flex-row"
+							class="mt-10 flex flex-wrap items-center justify-center gap-3 sm:mt-12 md:mt-14"
 						>
 							<Button
 								href="/magic"
