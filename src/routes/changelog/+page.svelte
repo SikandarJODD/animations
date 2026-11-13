@@ -17,13 +17,21 @@
 	class="font-figtree relative min-h-[calc(100vh-4rem)] overflow-x-clip px-5 py-10 sm:px-6 sm:py-14"
 >
 	<div class="relative mx-auto w-full max-w-6xl">
-		<div class="pointer-events-none absolute inset-0 hidden xl:block" aria-hidden="true">
+		<!-- <div
+			class="pointer-events-none absolute inset-y-0 left-4 hidden w-36 pt-44 xl:block"
+			aria-hidden="true"
+		>
 			<DevCoffe
-				class="absolute top-44 left-4 h-auto w-36 text-amber-500/35 dark:text-amber-300/25"
+				class="fixed top-80 block h-auto w-36 text-amber-600/35 dark:text-cyan-600"
 				focusable="false"
 			/>
+		</div> -->
+		<div
+			class="pointer-events-none absolute inset-y-0 right-5 hidden w-28 pt-[34rem] xl:block"
+			aria-hidden="true"
+		>
 			<CatLookinUp
-				class="absolute top-[34rem] right-5 h-auto w-28 -scale-x-100 text-emerald-500/35 dark:text-emerald-300/25"
+				class="fixed bottom-40 block h-auto w-28 -scale-x-100 text-emerald-600/35 dark:text-emerald-500/60"
 				focusable="false"
 			/>
 		</div>
@@ -32,7 +40,7 @@
 			<header class="relative mb-8 -ml-0.5 sm:mb-10">
 				<h1 class="text-2xl font-semibold tracking-normal sm:text-3xl">Changelog</h1>
 				<CatSleeping
-					class="text-foreground pointer-events-none absolute top-0 left-36 h-auto w-14 sm:left-44 sm:w-20"
+					class="pointer-events-none absolute top-1 right-8 h-auto w-10 text-amber-900/70 sm:top-1.5 sm:left-50 sm:w-12 dark:text-amber-200/70"
 					aria-hidden="true"
 					focusable="false"
 				/>
