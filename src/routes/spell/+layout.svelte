@@ -3,6 +3,7 @@
 	import Toc from "#lib/components/docs/base/toc/toc.svelte";
 	import DocsNavigation from "#lib/components/docs/navigation/docs-navigation.svelte";
 	import ContributeCard from "#lib/components/layout/contribute-card.svelte";
+	import GithubStar from "#lib/components/layout/github-star.svelte";
 	import { getPrevNext } from "#lib/components/docs/registry/spell_ui.js";
 	import SpellSidebar from "#lib/components/spell-sidebar.svelte";
 	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
@@ -59,10 +60,9 @@
 						<div class="min-h-0 overflow-y-auto">
 							<Toc toc={toc.current} />
 						</div>
-						<div>
-							<ContributeCard />
-						</div>
-						<div class="mt-auto">
+						<ContributeCard />
+						<div class="mt-auto flex shrink-0 flex-col gap-2 pt-4">
+							<GithubStar />
 							<SupportWork />
 						</div>
 					</div>

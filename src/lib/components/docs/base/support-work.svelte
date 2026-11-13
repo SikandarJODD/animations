@@ -6,7 +6,7 @@
 </script>
 
 <Card.Root
-	class="dark:bg-secondary gap-2 border border-emerald-200 bg-emerald-50/30 py-4 ring-0 dark:border-transparent"
+	class="dark:bg-muted/50 gap-2 border border-emerald-200/60 bg-emerald-50/30 py-4 ring-0 dark:border-transparent"
 >
 	<Card.Header class="px-4">
 		<Card.Title class="text-sm">Support My Work</Card.Title>

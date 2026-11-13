@@ -3,6 +3,7 @@
 	import Toc from "#lib/components/docs/base/toc/toc.svelte";
 	import SupportWork from "#lib/components/docs/base/support-work.svelte";
 	import ContributeCard from "#lib/components/layout/contribute-card.svelte";
+	import GithubStar from "#lib/components/layout/github-star.svelte";
 	import { UseToc } from "#lib/hooks/use-toc.svelte.js";
 
 	let { children } = $props();
@@ -35,7 +36,8 @@
 						<Toc toc={toc.current} />
 					</div>
 					<ContributeCard />
-					<div class="mt-auto">
+					<div class="mt-auto flex shrink-0 flex-col gap-2 pt-4">
+						<GithubStar />
 						<SupportWork />
 					</div>
 				</div>

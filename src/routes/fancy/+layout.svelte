@@ -3,6 +3,7 @@
 	import Toc from "#lib/components/docs/base/toc/toc.svelte";
 	import DocsNavigation from "#lib/components/docs/navigation/docs-navigation.svelte";
 	import ContributeCard from "#lib/components/layout/contribute-card.svelte";
+	import GithubStar from "#lib/components/layout/github-star.svelte";
 	import { getPrevNext } from "#lib/components/docs/registry/fancy_ui.js";
 	import FancySidebar from "#lib/components/fancy-sidebar.svelte";
 	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
@@ -60,7 +61,8 @@
 							<Toc toc={toc.current} />
 						</div>
 						<ContributeCard />
-						<div class="mt-auto">
+						<div class="mt-auto flex shrink-0 flex-col gap-2 pt-4">
+							<GithubStar />
 							<SupportWork />
 						</div>
 					</div>
