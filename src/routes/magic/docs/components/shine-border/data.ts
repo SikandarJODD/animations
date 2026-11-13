@@ -1,4 +1,4 @@
-﻿import ShineBorderRaw from "#lib/components/magic/shine-border/shine-border.svelte?raw";
+import ShineBorderRaw from "#lib/components/magic/shine-border/shine-border.svelte?raw";
 import IndexTs from "#lib/components/magic/shine-border/index.ts?raw";
 
 import type { Example } from "#lib/types/examples.js";
@@ -23,6 +23,7 @@ export const meta: ComponentMeta = {
 const examples: Example[] = [
 	{
 		name: "Monotone",
+		description: "A responsive card up to 28rem wide with a theme-aware shine border.",
 		preview: ShineBorderMonotone,
 		code: {
 			filename: "shine-border-monotone.svelte",

@@ -1,6 +1,6 @@
 # Flickering Grid
 
-A flickering grid background made with SVGs, fully customizable using Tailwind CSS.
+A customizable Canvas-rendered flickering grid background with responsive sizing, color, density, and opacity controls.
 
 ## Installation
 
@@ -78,6 +78,67 @@ A simple flickering grid background.
     width={800}
   />
 </div>
+```
+
+### 2. Header Backdrop
+
+A sparse emerald grid faded away from the heading to keep the text readable.
+
+```svelte
+<script lang="ts">
+  import { FlickeringGrid } from "#lib/components/magic/flickering-grid/index.js";
+</script>
+
+<header
+  class="bg-background relative isolate w-full max-w-xl overflow-hidden rounded-lg border px-6 py-16 sm:px-10"
+>
+  <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+    <FlickeringGrid
+      class="mask-[linear-gradient(to_left,black,transparent)]"
+      color="#10b981"
+      squareSize={3}
+      gridGap={8}
+      maxOpacity={0.35}
+      flickerChance={0.08}
+    />
+  </div>
+  <p class="text-muted-foreground mb-3 text-sm">Developer reference</p>
+  <h2 class="text-3xl font-semibold">API documentation</h2>
+</header>
+```
+
+### 3. Inset Panel
+
+A denser amber grid confined to a panel header, leaving the content area still.
+
+```svelte
+<script lang="ts">
+  import { FlickeringGrid } from "#lib/components/magic/flickering-grid/index.js";
+</script>
+
+<section
+  class="bg-background w-full max-w-sm overflow-hidden rounded-lg border"
+>
+  <div
+    class="relative h-32 border-b bg-amber-50 dark:bg-amber-950/20"
+    aria-hidden="true"
+  >
+    <FlickeringGrid
+      class="absolute inset-0"
+      color="#d97706"
+      squareSize={6}
+      gridGap={4}
+      maxOpacity={0.3}
+      flickerChance={0.15}
+    />
+  </div>
+  <div class="p-6">
+    <h3 class="font-medium">Design resources</h3>
+    <p class="text-muted-foreground mt-2 text-sm">
+      Tokens, type scales, and component guidelines.
+    </p>
+  </div>
+</section>
 ```
 
 ## Props

@@ -1,4 +1,4 @@
-﻿<script lang="ts">
+<script lang="ts">
 	import ShineBorder from "#lib/components/magic/shine-border/shine-border.svelte";
 	import { Button } from "#lib/components/ui/button/index.js";
 	import * as Card from "#lib/components/ui/card/index.js";
@@ -6,7 +6,7 @@
 	import { Label } from "#lib/components/ui/label/index.js";
 </script>
 
-<Card.Root class="relative mx-auto max-w-87 overflow-hidden">
+<Card.Root class="relative mx-auto w-full max-w-md overflow-hidden">
 	<ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
 	<Card.Header>
 		<Card.Title>Login</Card.Title>

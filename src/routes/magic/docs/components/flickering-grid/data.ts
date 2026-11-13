@@ -1,4 +1,4 @@
-﻿import Raw from "#lib/components/magic/flickering-grid/flickering-grid.svelte?raw";
+import Raw from "#lib/components/magic/flickering-grid/flickering-grid.svelte?raw";
 import IndexTs from "#lib/components/magic/flickering-grid/index.ts?raw";
 
 import type { Example } from "#lib/types/examples.js";
@@ -8,6 +8,11 @@ import FlickeringGridBasic from "./examples/flickering-grid-basic.svelte";
 import FlickeringGridBasicRaw from "./examples/flickering-grid-basic.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+
+import FlickeringGridHeader from "./examples/flickering-grid-header.svelte";
+import FlickeringGridHeaderRaw from "./examples/flickering-grid-header.svelte?raw";
+import FlickeringGridPanel from "./examples/flickering-grid-panel.svelte";
+import FlickeringGridPanelRaw from "./examples/flickering-grid-panel.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -27,6 +32,27 @@ const examples: Example[] = [
 		code: {
 			filename: "flickering-grid-basic.svelte",
 			filecode: FlickeringGridBasicRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Header Backdrop",
+		description: "A sparse emerald grid faded away from the heading to keep the text readable.",
+		preview: FlickeringGridHeader,
+		code: {
+			filename: "flickering-grid-header.svelte",
+			filecode: FlickeringGridHeaderRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Inset Panel",
+		description:
+			"A denser amber grid confined to a panel header, leaving the content area still.",
+		preview: FlickeringGridPanel,
+		code: {
+			filename: "flickering-grid-panel.svelte",
+			filecode: FlickeringGridPanelRaw,
 			lang: "svelte",
 		},
 	},

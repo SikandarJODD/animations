@@ -22,7 +22,7 @@ Add the animation to your global CSS:
 
 ```css
 @theme inline {
-  --animate-shiny-text: shiny-text 8s infinite;
+  --animate-shiny-text: shiny-text var(--duration, 8s) infinite;
 
   @keyframes shiny-text {
     0%,
@@ -77,31 +77,46 @@ Add the animation to your global CSS:
 
 ## Examples
 
-### 1. Default Example
+### 1. Documentation Link
+
+A real documentation link with a narrow shimmer and a visible keyboard focus state.
 
 ```svelte
 <script lang="ts">
-  import AnimatedShinyText from "#lib/components/magic/animated-shiny-text/animated-shiny-text.svelte";
-  import { cn } from "#lib/utils.ts";
-  import { ArrowRightIcon } from "@lucide/svelte";
+  import { AnimatedShinyText } from "#lib/components/magic/animated-shiny-text/index.js";
 </script>
 
-<div class="z-10 flex min-h-64 items-center justify-center">
-  <div
-    class={cn(
-      "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
-    )}
+<a
+  href="/magic/docs/components/animated-shiny-text#props"
+  class="rounded-sm underline decoration-neutral-300 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 dark:decoration-neutral-700"
+>
+  <AnimatedShinyText
+    shimmerWidth={60}
+    class="text-sm text-neutral-700 dark:text-neutral-300"
   >
-    <AnimatedShinyText
-      class="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400"
-    >
-      <span>✨ Introducing Magic UI</span>
-      <ArrowRightIcon
-        class="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
-      />
-    </AnimatedShinyText>
-  </div>
-</div>
+    Explore the text API &rarr;
+  </AnimatedShinyText>
+</a>
+```
+
+### 2. Display Text
+
+A wider, slower shimmer across a short editorial heading.
+
+```svelte
+<script lang="ts">
+  import { AnimatedShinyText } from "#lib/components/magic/animated-shiny-text/index.js";
+</script>
+
+<h2 class="text-center font-serif text-4xl sm:text-6xl">
+  <AnimatedShinyText
+    shimmerWidth={180}
+    duration={12}
+    class="text-neutral-800 dark:text-neutral-200"
+  >
+    Collected works
+  </AnimatedShinyText>
+</h2>
 ```
 
 ## Props

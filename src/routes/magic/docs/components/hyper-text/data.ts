@@ -1,10 +1,16 @@
-﻿import HyperTextRaw from "#lib/components/magic/hyper-text/hyper-text.svelte?raw";
+import type { Example } from "#lib/types/examples.js";
+import HyperTextRaw from "#lib/components/magic/hyper-text/hyper-text.svelte?raw";
 import IndexTs from "#lib/components/magic/hyper-text/index.ts?raw";
 
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+
+import HyperTextHex from "./examples/hyper-text-hex.svelte";
+import HyperTextHexRaw from "./examples/hyper-text-hex.svelte?raw";
+import HyperTextDelayed from "./examples/hyper-text-delayed.svelte";
+import HyperTextDelayedRaw from "./examples/hyper-text-delayed.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -14,6 +20,30 @@ export const meta: ComponentMeta = {
 	category: "animation",
 	badge: "new",
 };
+
+const examples: Example[] = [
+	{
+		name: "Hex Character Set",
+		description: "Scramble a revision identifier using only hexadecimal characters.",
+		preview: HyperTextHex,
+		code: {
+			filename: "hyper-text-hex.svelte",
+			filecode: HyperTextHexRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Delayed Reveal",
+		description: "Reveal a section heading after a short delay, with hover replay disabled.",
+		preview: HyperTextDelayed,
+		showRetry: true,
+		code: {
+			filename: "hyper-text-delayed.svelte",
+			filecode: HyperTextDelayedRaw,
+			lang: "svelte",
+		},
+	},
+];
 
 const seo: SEO = {
 	title: "Hyper Text",
@@ -68,6 +98,7 @@ export const data: ComponentDoc = {
 			lang: "svelte",
 		},
 	},
+	examples,
 	seo,
 	props: [
 		{

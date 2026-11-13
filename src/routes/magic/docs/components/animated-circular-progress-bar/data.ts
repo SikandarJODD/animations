@@ -1,4 +1,4 @@
-﻿import AnimatedCircularProgressBar from "#lib/components/magic/animated-circular-progress-bar/animated-circular-progress-bar.svelte?raw";
+import AnimatedCircularProgressBar from "#lib/components/magic/animated-circular-progress-bar/animated-circular-progress-bar.svelte?raw";
 import IndexTs from "#lib/components/magic/animated-circular-progress-bar/index.ts?raw";
 import type { SEO } from "#lib/types/seo.js";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
@@ -70,11 +70,12 @@ export const data: ComponentDoc = {
 			filename: "usage.svelte",
 			filecode: `<script lang="ts">
 	import { AnimatedCircularProgressBar } from "#lib/components/magic/animated-circular-progress-bar/index.js";
+	import { mode } from "mode-watcher";
 </script>
 
 <AnimatedCircularProgressBar
 	value={75}
-	gaugePrimaryColor="#4f46e5"
+	gaugePrimaryColor={mode.current === "dark" ? "#34d399" : "#4f46e5"}
 	gaugeSecondaryColor="#e5e7eb"
 />`,
 			lang: "svelte",
