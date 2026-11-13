@@ -18,51 +18,7 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple.json
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/ripple.json
 ```
 
-## Preview
-
-```svelte
-<script lang="ts">
-	import { Ripple } from "$lib/components/magic/ripple";
-</script>
-
-<div
-	class="bg-background relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
->
-	<p
-		class="z-10 text-center text-5xl font-medium tracking-tighter whitespace-pre-wrap text-white"
-	>
-		Ripple
-	</p>
-	<Ripple />
-</div>
-```
-
-## Examples
-
-### 1. Default Example
-
-```svelte
-<script lang="ts">
-	import { Ripple } from "$lib/components/magic/ripple";
-</script>
-
-<div
-	class="bg-background relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
->
-	<p
-		class="z-10 text-center text-5xl font-medium tracking-tighter whitespace-pre-wrap text-white"
-	>
-		Ripple
-	</p>
-	<Ripple />
-</div>
-```
-
-## Usage
-
-Import `Ripple` from `$lib/components/magic/ripple` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
+Add the animation to your global CSS:
 
 ```css
 @theme inline {
@@ -81,13 +37,65 @@ If the component depends on global CSS, add the following styles:
 }
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Ripple } from "#lib/components/magic/ripple/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <Ripple />
+</div>
+```
+
+## Preview
+
+```svelte
+<script lang="ts">
+  import { Ripple } from "#lib/components/magic/ripple/index.ts";
+</script>
+
+<div
+  class="bg-background relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
+>
+  <p
+    class="z-10 text-center text-5xl font-medium tracking-tighter whitespace-pre-wrap text-white"
+  >
+    Ripple
+  </p>
+  <Ripple />
+</div>
+```
+
+## Examples
+
+### 1. Default Example
+
+```svelte
+<script lang="ts">
+  import { Ripple } from "#lib/components/magic/ripple/index.ts";
+</script>
+
+<div
+  class="bg-background relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border"
+>
+  <p
+    class="z-10 text-center text-5xl font-medium tracking-tighter whitespace-pre-wrap text-white"
+  >
+    Ripple
+  </p>
+  <Ripple />
+</div>
+```
+
 ## Props
 
 A component for Ripple.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `mainCircleSize` | `number` | `210` | The size of the main circle |
-| `mainCircleOpacity` | `number` | `0.24` | The opacity of the main circle |
-| `numCircles` | `number` | `8` | The number of ripple circles |
+| Prop                | Type     | Default | Description                     |
+| ------------------- | -------- | ------- | ------------------------------- |
+| `class`             | `string` | `""`    | Additional CSS classes to apply |
+| `mainCircleSize`    | `number` | `210`   | The size of the main circle     |
+| `mainCircleOpacity` | `number` | `0.24`  | The opacity of the main circle  |
+| `numCircles`        | `number` | `8`     | The number of ripple circles    |

@@ -1,9 +1,9 @@
-import CharBoxRaw from "$lib/components/fancy/letter-3d-swap/charbox.svelte?raw";
-import IndexTsRaw from "$lib/components/fancy/letter-3d-swap/index.ts?raw";
-import Letter3dSwapRaw from "$lib/components/fancy/letter-3d-swap/letter-3d-swap.svelte?raw";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import CharBoxRaw from "#lib/components/fancy/letter-3d-swap/charbox.svelte?raw";
+import IndexTsRaw from "#lib/components/fancy/letter-3d-swap/index.ts?raw";
+import Letter3dSwapRaw from "#lib/components/fancy/letter-3d-swap/letter-3d-swap.svelte?raw";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import PositionExample from "./examples/position-example.svelte";
 import PositionExampleRaw from "./examples/position-example.svelte?raw";
 import Preview from "./examples/preview.svelte";
@@ -104,6 +104,30 @@ export const data: ComponentDoc = {
 		highlight: [[14, 24]],
 	},
 	previewClass: "p-0",
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Letter3DSwap } from "#lib/components/fancy/letter-3d-swap/index.js";
+</script>
+
+<a href="/work" class="inline-flex" aria-label="Explore selected work">
+	<Letter3DSwap
+		as="span"
+		mainClass="w-fit text-3xl font-semibold tracking-tight sm:text-5xl"
+		frontFaceClass="text-foreground"
+		secondFaceClass="text-violet-500"
+		rotateDirection="top"
+		staggerFrom="center"
+		staggerDuration={0.025}
+		transition={{ type: "spring", damping: 24, stiffness: 180 }}
+	>
+		Explore selected work
+	</Letter3DSwap>
+</a>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	props: [
 		{
@@ -112,7 +136,8 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					default: "undefined",
-					description: "Snippet content flattened into grapheme-safe characters for the 3D flip.",
+					description:
+						"Snippet content flattened into grapheme-safe characters for the 3D flip.",
 				},
 				{
 					name: "as",
@@ -124,7 +149,8 @@ export const data: ComponentDoc = {
 					name: "mainClass",
 					type: "string",
 					default: "undefined",
-					description: "Classes applied to the root flex wrapper before `class` is merged in.",
+					description:
+						"Classes applied to the root flex wrapper before `class` is merged in.",
 				},
 				{
 					name: "frontFaceClass",
@@ -136,7 +162,8 @@ export const data: ComponentDoc = {
 					name: "secondFaceClass",
 					type: "string",
 					default: "undefined",
-					description: "Classes applied to the rotating second face of each character box.",
+					description:
+						"Classes applied to the rotating second face of each character box.",
 				},
 				{
 					name: "staggerDuration",
@@ -164,7 +191,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Additional classes merged onto the root wrapper.",
 				},

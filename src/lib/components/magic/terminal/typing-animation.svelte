@@ -1,13 +1,14 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount, getContext } from "svelte";
 	import { motion } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	type ElementType = "div" | "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 	interface TypingAnimationProps {
 		text: string;
-		class?: string;
+		class?: ClassValue;
 		duration?: number;
 		delay?: number;
 		as?: ElementType;

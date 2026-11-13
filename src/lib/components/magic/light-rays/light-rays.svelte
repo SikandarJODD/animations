@@ -1,6 +1,7 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	interface LightRay {
 		id: string;
@@ -14,7 +15,7 @@
 	}
 
 	interface LightRaysProps {
-		class?: string;
+		class?: ClassValue;
 		count?: number;
 		color?: string;
 		blur?: number;

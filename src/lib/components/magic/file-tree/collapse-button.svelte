@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { getContext, onMount } from "svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLButtonAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLButtonAttributes } from "svelte/elements";
 	import type { TreeViewElement } from "./file-tree.svelte";
 
 	interface CollapseButtonProps extends HTMLButtonAttributes {
@@ -21,7 +21,7 @@
 		/**
 		 * Additional CSS classes
 		 */
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

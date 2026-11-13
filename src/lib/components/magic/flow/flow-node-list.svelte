@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-	import { onMount, untrack, type Snippet } from 'svelte';
-	import { watch } from 'runed';
-	import Connectors from './connectors.svelte';
+	import { cn } from "#lib/utils.js";
+	import { onMount, untrack, type Snippet } from "svelte";
+	import { watch } from "runed";
+	import Connectors from "./connectors.svelte";
 	import {
 		useDescendantsContext,
 		useOptionalDescendantsContext,
 		createDescendantsState,
-		setDescendantsContext
-	} from './descendants.svelte';
-	import { useDiagramContext } from './diagram-context.svelte';
-	import type { Connector, NodeData } from './types';
+		setDescendantsContext,
+	} from "./descendants.svelte";
+	import { useDiagramContext } from "./diagram-context.svelte";
+	import type { Connector, NodeData } from "./types";
 
 	interface Props {
 		children?: Snippet;
@@ -37,7 +37,7 @@
 		parallel: false,
 		disabled: false,
 		start: startAnchor,
-		end: endAnchor
+		end: endAnchor,
 	});
 
 	function computeConnectors() {
@@ -64,18 +64,18 @@
 			if (!currentRect || !nextRect) continue;
 
 			const connector =
-				orientation === 'vertical'
+				orientation === "vertical"
 					? {
 							x1: currentRect.left - offsetX + currentRect.width / 2,
 							y1: currentRect.top - offsetY + currentRect.height,
 							x2: nextRect.left - offsetX + nextRect.width / 2,
-							y2: nextRect.top - offsetY
+							y2: nextRect.top - offsetY,
 						}
 					: {
 							x1: currentRect.left - offsetX + currentRect.width,
 							y1: currentRect.top - offsetY + currentRect.height / 2,
 							x2: nextRect.left - offsetX,
-							y2: nextRect.top - offsetY + nextRect.height / 2
+							y2: nextRect.top - offsetY + nextRect.height / 2,
 						};
 
 			edges.push({
@@ -83,7 +83,7 @@
 				disabled: currentNode.props.disabled || nextNode.props.disabled,
 				single: true,
 				fromId: currentNode.id,
-				toId: nextNode.id
+				toId: nextNode.id,
 			});
 		}
 
@@ -107,22 +107,30 @@
 		}
 	);
 
-	watch([() => descendants.measurementEpoch, () => descendants.descendants, () => orientation, () => align], () => {
-		untrack(() => computeConnectors());
-	});
+	watch(
+		[
+			() => descendants.measurementEpoch,
+			() => descendants.descendants,
+			() => orientation,
+			() => align,
+		],
+		() => {
+			untrack(() => computeConnectors());
+		}
+	);
 
 	$effect(() => {
 		const onLayoutShift = () => computeConnectors();
 
-		window.addEventListener('scroll', onLayoutShift, {
+		window.addEventListener("scroll", onLayoutShift, {
 			capture: true,
-			passive: true
+			passive: true,
 		});
-		window.addEventListener('resize', onLayoutShift, { passive: true });
+		window.addEventListener("resize", onLayoutShift, { passive: true });
 
 		return () => {
-			window.removeEventListener('scroll', onLayoutShift, { capture: true });
-			window.removeEventListener('resize', onLayoutShift);
+			window.removeEventListener("scroll", onLayoutShift, { capture: true });
+			window.removeEventListener("resize", onLayoutShift);
 		};
 	});
 </script>
@@ -130,10 +138,11 @@
 <div class="relative" bind:this={containerRef}>
 	<ul
 		class={cn(
-			'ml-0 list-none',
-			orientation === 'vertical' ? 'grid auto-rows-min gap-16' : 'flex gap-16',
-			orientation === 'vertical' && (align === 'center' ? 'justify-items-center' : 'justify-items-start'),
-			orientation === 'horizontal' && (align === 'center' ? 'items-center' : 'items-start')
+			"ml-0 list-none",
+			orientation === "vertical" ? "grid auto-rows-min gap-16" : "flex gap-16",
+			orientation === "vertical" &&
+				(align === "center" ? "justify-items-center" : "justify-items-start"),
+			orientation === "horizontal" && (align === "center" ? "items-center" : "items-start")
 		)}
 	>
 		{@render children?.()}

@@ -1,17 +1,17 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import * as Accordion from "$lib/components/ui/accordion";
-	import { LightSwitch } from "$lib/components/ui/light-switch";
-	import { Portal, PortalBackdrop } from "$lib/components/ui/portal";
-	import { ScrollFadeEffect } from "$lib/components/ui/scroll-area";
-	import { github_repo } from "$lib/config/repo";
-	import { GitHub, Twitter } from "$lib/components/icons";
-	import { cn } from "$lib/utils";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Accordion from "#lib/components/ui/accordion/index.js";
+	import { LightSwitch } from "#lib/components/ui/light-switch/index.js";
+	import { Portal, PortalBackdrop } from "#lib/components/ui/portal/index.js";
+	import { ScrollFadeEffect } from "#lib/components/ui/scroll-area/index.js";
+	import { github_repo } from "#lib/config/repo.js";
+	import { GitHub, Twitter } from "#lib/components/icons/index.js";
+	import { cn } from "#lib/utils.js";
 	import MenuIcon from "@lucide/svelte/icons/menu";
 	import XIcon from "@lucide/svelte/icons/x";
-	import { magicUIComponents } from "$lib/components/docs/registry/magic-ui";
-	import { spellUIComponents } from "$lib/components/docs/registry/spell_ui";
-	import { fancyUIComponents } from "$lib/components/docs/registry/fancy_ui";
+	import { magicUIComponents } from "#lib/components/docs/registry/magic-ui.js";
+	import { spellUIComponents } from "#lib/components/docs/registry/spell_ui.js";
+	import { fancyUIComponents } from "#lib/components/docs/registry/fancy_ui.js";
 	import { projectItems, withUtm } from "./nav-links";
 
 	let open = $state(false);

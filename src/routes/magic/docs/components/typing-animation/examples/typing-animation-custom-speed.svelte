@@ -1,11 +1,12 @@
-﻿<script lang="ts">
-	import { TypingAnimation } from "$lib/components/magic/typing-animation";
+<script lang="ts">
+	import { TypingAnimation } from "#lib/components/magic/typing-animation/index.js";
 </script>
 
 <TypingAnimation
-	words={["Fast typing", "Slow delete"]}
+	words={["quick typing", "slow deletion"]}
 	typeSpeed={50}
 	deleteSpeed={150}
-	pauseDelay={2000}
+	pauseDelay={1500}
 	loop
+	class="text-xl leading-relaxed font-normal tracking-normal"
 />

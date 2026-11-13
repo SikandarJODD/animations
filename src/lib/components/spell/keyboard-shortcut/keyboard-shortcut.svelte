@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { PressedKeys } from "runed";
-	import { cn, type WithElementRef } from "$lib/utils.js";
+	import { cn, type WithElementRef } from "#lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
 
 	type KeyItem = string | { display: string; key: string };

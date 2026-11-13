@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { MorphingText } from "$lib/components/magic/morphing-text";
+	import { MorphingText } from "#lib/components/magic/morphing-text/index.js";
 	const texts = [
 		"Hello",
 		"Morphing",

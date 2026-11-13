@@ -18,18 +18,34 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dot-pattern
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dot-pattern.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { DotPattern } from "#lib/components/magic/dot-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+  <DotPattern class="absolute inset-0" />
+</div>
+```
+
 ## Preview
 
 ```svelte
 <script lang="ts">
-	import { DotPattern } from "$lib/components/magic/dot-pattern";
-	import { cn } from "$lib/utils";
+  import { DotPattern } from "#lib/components/magic/dot-pattern/index.ts";
+  import { cn } from "#lib/utils.ts";
 </script>
 
 <div
-	class="bg-background relative flex h-125 w-70 flex-col items-center justify-center overflow-hidden rounded-lg border md:min-w-2xl"
+  class="bg-background relative flex h-125 w-70 flex-col items-center justify-center overflow-hidden rounded-lg border md:min-w-2xl"
 >
-	<DotPattern class={cn("mask-[radial-gradient(300px_circle_at_center,white,transparent)]")} />
+  <DotPattern
+    class={cn(
+      "mask-[radial-gradient(300px_circle_at_center,white,transparent)]"
+    )}
+  />
 </div>
 ```
 
@@ -39,21 +55,23 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dot-pattern.js
 
 ```svelte
 <script lang="ts">
-	import { DotPattern } from "$lib/components/magic/dot-pattern";
-	import { cn } from "$lib/utils";
+  import { DotPattern } from "#lib/components/magic/dot-pattern/index.ts";
+  import { cn } from "#lib/utils.ts";
 </script>
 
 <div
-	class="bg-background relative flex h-80 w-70 items-center justify-center overflow-hidden rounded-lg border p-20 md:min-w-2xl"
+  class="bg-background relative flex h-80 w-70 items-center justify-center overflow-hidden rounded-lg border p-20 md:min-w-2xl"
 >
-	<DotPattern
-		width={20}
-		height={20}
-		cx={1}
-		cy={1}
-		cr={1}
-		class={cn("[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]")}
-	/>
+  <DotPattern
+    width={20}
+    height={20}
+    cx={1}
+    cy={1}
+    cr={1}
+    class={cn(
+      "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
+    )}
+  />
 </div>
 ```
 
@@ -61,36 +79,34 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dot-pattern.js
 
 ```svelte
 <script lang="ts">
-	import { DotPattern } from "$lib/components/magic/dot-pattern";
-	import { cn } from "$lib/utils";
+  import { DotPattern } from "#lib/components/magic/dot-pattern/index.ts";
+  import { cn } from "#lib/utils.ts";
 </script>
 
 <div
-	class="relative flex h-125 w-70 flex-col items-center justify-center overflow-hidden md:min-w-2xl"
+  class="relative flex h-125 w-70 flex-col items-center justify-center overflow-hidden md:min-w-2xl"
 >
-	<DotPattern
-		glow={true}
-		class={cn("mask-[radial-gradient(300px_circle_at_center,white,transparent)]")}
-	/>
+  <DotPattern
+    glow={true}
+    class={cn(
+      "mask-[radial-gradient(300px_circle_at_center,white,transparent)]"
+    )}
+  />
 </div>
 ```
-
-## Usage
-
-Import `DotPattern` from `$lib/components/magic/dot-pattern` and pass the props you need for your use case.
 
 ## Props
 
 A customizable dot pattern background with optional animations.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `width` | `number` | `16` | Horizontal spacing between dots |
-| `height` | `number` | `16` | Vertical spacing between dots |
-| `x` | `number` | `0` | X-offset of the entire pattern |
-| `y` | `number` | `0` | Y-offset of the entire pattern |
-| `cx` | `number` | `1` | X-offset of individual dots |
-| `cy` | `number` | `1` | Y-offset of individual dots |
-| `cr` | `number` | `1` | Radius of each dot |
-| `glow` | `boolean` | `false` | Enable glowing animation effect |
-| `class` | `string` | `""` | Additional CSS classes |
+| Prop     | Type      | Default | Description                     |
+| -------- | --------- | ------- | ------------------------------- |
+| `width`  | `number`  | `16`    | Horizontal spacing between dots |
+| `height` | `number`  | `16`    | Vertical spacing between dots   |
+| `x`      | `number`  | `0`     | X-offset of the entire pattern  |
+| `y`      | `number`  | `0`     | Y-offset of the entire pattern  |
+| `cx`     | `number`  | `1`     | X-offset of individual dots     |
+| `cy`     | `number`  | `1`     | Y-offset of individual dots     |
+| `cr`     | `number`  | `1`     | Radius of each dot              |
+| `glow`   | `boolean` | `false` | Enable glowing animation effect |
+| `class`  | `string`  | `""`    | Additional CSS classes          |

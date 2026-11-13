@@ -1,9 +1,9 @@
-﻿import CoolModeRaw from "$lib/components/magic/cool-mode/cool-mode.svelte?raw";
-import IndexTs from "$lib/components/magic/cool-mode/index.ts?raw";
+﻿import CoolModeRaw from "#lib/components/magic/cool-mode/cool-mode.svelte?raw";
+import IndexTs from "#lib/components/magic/cool-mode/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import CoolModeCustomImg from "./examples/cool-mode-custom-img.svelte";
@@ -81,11 +81,24 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { CoolMode } from "#lib/components/magic/cool-mode/index.js";
+</script>
+
+<CoolMode>
+	<button type="button">Click me</button>
+</CoolMode>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "CoolMode",
+			name: "Cool Mode",
 			desc: "A wrapper component that adds particle effects on interaction.",
 			props: [
 				{
@@ -103,7 +116,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "CoolParticleOptions",
+			name: "Cool Particle Options",
 			desc: "Configuration options for the particle effect.",
 			props: [
 				{

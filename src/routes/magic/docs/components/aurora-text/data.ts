@@ -1,9 +1,9 @@
-﻿import Raw from "$lib/components/magic/aurora-text/aurora-text.svelte?raw";
-import IndexTs from "$lib/components/magic/aurora-text/index.ts?raw";
+﻿import Raw from "#lib/components/magic/aurora-text/aurora-text.svelte?raw";
+import IndexTs from "#lib/components/magic/aurora-text/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import DemoExample from "./examples/demo-example.svelte";
 import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 import Preview from "./examples/preview.svelte";
@@ -109,11 +109,24 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AuroraText } from "#lib/components/magic/aurora-text/index.js";
+</script>
+
+<h2 class="text-4xl font-bold">
+	Build <AuroraText>beautiful</AuroraText> interfaces
+</h2>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "AuroraText",
+			name: "Aurora Text",
 			desc: "An animated gradient text component with flowing aurora colors.",
 			props: [
 				{
@@ -124,7 +137,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

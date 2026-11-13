@@ -1,7 +1,7 @@
-﻿import AnimatedGridPattern from "$lib/components/magic/animated-grid-pattern/animated-grid-pattern.svelte?raw";
-import IndexTs from "$lib/components/magic/animated-grid-pattern/index.ts?raw";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+﻿import AnimatedGridPattern from "#lib/components/magic/animated-grid-pattern/animated-grid-pattern.svelte?raw";
+import IndexTs from "#lib/components/magic/animated-grid-pattern/index.ts?raw";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -57,10 +57,23 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedGridPattern } from "#lib/components/magic/animated-grid-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<AnimatedGridPattern class="absolute inset-0" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
-			name: "AnimatedGridPatternProps",
+			name: "Animated Grid Pattern Props",
 			desc: "Props for the AnimatedGridPattern component",
 			props: [
 				{
@@ -119,7 +132,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

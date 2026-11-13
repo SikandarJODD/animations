@@ -1,9 +1,9 @@
-﻿import ShinyButtonRaw from "$lib/components/magic/shiny-button/shiny-button.svelte?raw";
-import IndexTs from "$lib/components/magic/shiny-button/index.ts?raw";
+﻿import ShinyButtonRaw from "#lib/components/magic/shiny-button/shiny-button.svelte?raw";
+import IndexTs from "#lib/components/magic/shiny-button/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -60,16 +60,27 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ShinyButton } from "#lib/components/magic/shiny-button/index.js";
+</script>
+
+<ShinyButton>Get started</ShinyButton>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "ShinyButton",
+			name: "Shiny Button",
 			desc: "A component for Shiny Button.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

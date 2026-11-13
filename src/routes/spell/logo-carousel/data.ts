@@ -1,7 +1,7 @@
-import LogoCarouselRaw from "$lib/components/spell/logo-carousel/logo-carousel.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/logo-carousel/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import LogoCarouselRaw from "#lib/components/spell/logo-carousel/logo-carousel.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/logo-carousel/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 
@@ -59,6 +59,21 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { LogoCarousel } from "#lib/components/spell/logo-carousel/index.js";
+</script>
+
+<LogoCarousel items={["Svelte", "Vite", "SvelteKit"]}>
+	{#snippet children(name)}
+		<span>{name}</span>
+	{/snippet}
+</LogoCarousel>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	seo,
 	props: [
@@ -103,7 +118,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "''",
 				},
 			],

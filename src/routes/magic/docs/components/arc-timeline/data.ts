@@ -1,10 +1,10 @@
-import ArcTimelineRaw from "$lib/components/magic/arc-timeline/arc-timeline.svelte?raw";
-import IndexTs from "$lib/components/magic/arc-timeline/index.ts?raw";
-import TypesTs from "$lib/components/magic/arc-timeline/types.ts?raw";
+import ArcTimelineRaw from "#lib/components/magic/arc-timeline/arc-timeline.svelte?raw";
+import IndexTs from "#lib/components/magic/arc-timeline/index.ts?raw";
+import TypesTs from "#lib/components/magic/arc-timeline/types.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
@@ -86,16 +86,34 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ArcTimeline } from "#lib/components/magic/arc-timeline/index.js";
+
+	const timeline = [
+		{
+			time: "2026",
+			steps: [{ icon: "1", content: "Project launched" }],
+		},
+	];
+</script>
+
+<ArcTimeline data={timeline} />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "ArcTimeline",
+			name: "Arc Timeline",
 			desc: "The root timeline container that renders grouped milestone steps around a rotating arc.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes applied to the root container.",
 				},
@@ -126,7 +144,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "ArcTimelineItem",
+			name: "Arc Timeline Item",
 			desc: "A timeline group with a shared time label and one or more steps.",
 			props: [
 				{
@@ -145,7 +163,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "ArcTimelineStep",
+			name: "Arc Timeline Step",
 			desc: "A single milestone marker rendered on the arc.",
 			props: [
 				{
@@ -164,7 +182,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "ArcTimelineArcConfig",
+			name: "Arc Timeline Arc Config",
 			desc: "Controls the geometry and spacing of the arc.",
 			props: [
 				{
@@ -195,7 +213,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "ArcTimelineDefaultActiveStep",
+			name: "Arc Timeline Default Active Step",
 			desc: "Selects the milestone that should be active on first render.",
 			props: [
 				{

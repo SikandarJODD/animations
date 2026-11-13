@@ -1,32 +1,63 @@
-import GlyphMatrixSvelteRaw from "$lib/components/magic/glyph-matrix/glyph-matrix.svelte?raw";
-import IndexTsRaw from "$lib/components/magic/glyph-matrix/index.ts?raw";
+import GlyphMatrixRipple from "./examples/glyph-matrix-ripple.svelte";
+import GlyphMatrixRippleRaw from "./examples/glyph-matrix-ripple.svelte?raw";
+import GlyphMatrixAurora from "./examples/glyph-matrix-aurora.svelte";
+import GlyphMatrixAuroraRaw from "./examples/glyph-matrix-aurora.svelte?raw";
+import GlyphMatrixRain from "./examples/glyph-matrix-rain.svelte";
+import GlyphMatrixRainRaw from "./examples/glyph-matrix-rain.svelte?raw";
+import GlyphMatrixWave from "./examples/glyph-matrix-wave.svelte";
+import GlyphMatrixWaveRaw from "./examples/glyph-matrix-wave.svelte?raw";
+import GlyphMatrixFlame from "./examples/glyph-matrix-flame.svelte";
+import GlyphMatrixFlameRaw from "./examples/glyph-matrix-flame.svelte?raw";
+import GlyphMatrixCellHighlight from "./examples/glyph-matrix-cell-highlight.svelte";
+import GlyphMatrixCellHighlightRaw from "./examples/glyph-matrix-cell-highlight.svelte?raw";
+import GlyphMatrixBinaryFocus from "./examples/glyph-matrix-binary-focus.svelte";
+import GlyphMatrixBinaryFocusRaw from "./examples/glyph-matrix-binary-focus.svelte?raw";
+import GlyphMatrixSvelteRaw from "#lib/components/magic/glyph-matrix/glyph-matrix.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/glyph-matrix/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.js";
 import LettersExample from "./examples/letters-example.svelte";
 import LettersExampleRaw from "./examples/letters-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "glyph-matrix",
 	title: "Glyph Matrix",
-	description: "An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
+	description:
+		"An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
 	category: "magic",
 };
 
 const seo: SEO = {
 	title: "Glyph Matrix",
-	description: "An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
-	keywords: ["Svelte", "Glyph Matrix", "Magic", "Canvas", "Animation", "Theme-aware", "Color", "Grid", "Subtle Shifts"],
+	description:
+		"An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
+	keywords: [
+		"Svelte",
+		"Glyph Matrix",
+		"Magic",
+		"Canvas",
+		"Animation",
+		"Theme-aware",
+		"Color",
+		"Grid",
+		"Subtle Shifts",
+	],
 };
 
 const installBlock: InstallComponentDocs = {
-	packages: ['runed'],
+	packages: ["runed"],
 	installCode: [
-		{ filename: "glyph-matrix.svelte", filecode: GlyphMatrixSvelteRaw, lang: "svelte", isExpand: true, },
-		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", }
+		{
+			filename: "glyph-matrix.svelte",
+			filecode: GlyphMatrixSvelteRaw,
+			lang: "svelte",
+			isExpand: true,
+		},
+		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
 	],
 	folderStructure: `src/
 └── lib/
@@ -38,17 +69,104 @@ const installBlock: InstallComponentDocs = {
 };
 let examples: Example[] = [
 	{
-		name: "Letters Example",
+		name: "Letters",
 		preview: LettersExample,
-		previewClass: 'p-0',
+		previewClass: "p-0",
 		showRetry: false,
 		code: {
 			filename: "letters-example.svelte",
 			filecode: LettersExampleRaw,
 			highlight: [8],
-		}
-	}
-]
+		},
+	},
+	{
+		name: "Cell Highlight",
+		description:
+			"A soft pointer spotlight brightens nearby blue glyphs and leaves a fading trail.",
+		preview: GlyphMatrixCellHighlight,
+		previewClass: "p-0",
+		showRetry: false,
+		code: {
+			filename: "glyph-matrix-cell-highlight.svelte",
+			filecode: GlyphMatrixCellHighlightRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Binary Focus",
+		description: "A simple emerald matrix of shifting ones and zeros.",
+		preview: GlyphMatrixBinaryFocus,
+		previewClass: "p-0",
+		showRetry: false,
+		code: {
+			filename: "glyph-matrix-binary-focus.svelte",
+			filecode: GlyphMatrixBinaryFocusRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Wave Glyphs",
+		description:
+			"An aqua-blue wave with stronger light-mode contrast and a compact pointer spotlight.",
+		preview: GlyphMatrixWave,
+		previewClass: "p-0",
+		showRetry: false,
+		code: {
+			filename: "glyph-matrix-wave.svelte",
+			filecode: GlyphMatrixWaveRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Flame Glyphs",
+		description:
+			"A taller orange-red flame with saturated colors and a compact pointer spotlight.",
+		preview: GlyphMatrixFlame,
+		previewClass: "p-0",
+		showRetry: false,
+		code: {
+			filename: "glyph-matrix-flame.svelte",
+			filecode: GlyphMatrixFlameRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Ripple Glyphs",
+		description: "Concentric cobalt rings expand outward across the matrix.",
+		preview: GlyphMatrixRipple,
+		previewClass: "p-0",
+		showRetry: false,
+		code: {
+			filename: "glyph-matrix-ripple.svelte",
+			filecode: GlyphMatrixRippleRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Aurora Glyphs",
+		description: "Emerald curtains drift across the matrix.",
+		preview: GlyphMatrixAurora,
+		previewClass: "p-0",
+		showRetry: false,
+		code: {
+			filename: "glyph-matrix-aurora.svelte",
+			filecode: GlyphMatrixAuroraRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Rain Glyphs",
+		description: "Magenta glyph streams fall at different speeds with fading vertical trails.",
+		preview: GlyphMatrixRain,
+		previewClass: "p-0",
+		showRetry: false,
+		code: {
+			filename: "glyph-matrix-rain.svelte",
+			filecode: GlyphMatrixRainRaw,
+			lang: "svelte",
+		},
+	},
+];
 export const data: ComponentDoc = {
 	...meta,
 	preview: Preview,
@@ -58,29 +176,26 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
-	previewClass: 'p-0',
+	previewClass: "p-0",
 	installBlock,
 	examples,
 	seo,
 	usage: {
-		code: [
-			{
-				filename: "glyph-matrix-import.svelte",
-				filecode: `import GlyphMatrix from "$lib/components/magic/glyph-matrix";`,
-				lang: "typescript",
-			},
-			{
-				filename: "glyph-matrix-usage.svelte",
-				filecode: `<div class="border-border bg-background h-100 w-full overflow-hidden rounded-lg border">
-	<GlyphMatrix />
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { GlyphMatrix } from "#lib/components/magic/glyph-matrix/index.js";
+</script>
+
+<div class="h-64 overflow-hidden rounded-lg border">
+	<GlyphMatrix hover hoverGlyphs="1" glyphs="01" />
 </div>`,
-				lang: "svelte",
-			},
-		],
+			lang: "svelte",
+		},
 	},
 	props: [
 		{
-			name: "GlyphMatrix",
+			name: "Glyph Matrix",
 			desc: "A canvas-based glyph animation that renders a shifting matrix of characters.",
 			props: [
 				{
@@ -117,17 +232,54 @@ export const data: ComponentDoc = {
 					name: "color",
 					type: "string",
 					default: '"#6B7280"',
-					description: "Glyph color. Pass a theme-aware CSS color value from the consumer.",
+					description:
+						"Glyph color. Pass a theme-aware CSS color value from the consumer.",
+				},
+				{
+					name: "pattern",
+					type: '"random" | "wave" | "flame" | "ripple" | "aurora" | "rain"',
+					default: '"random"',
+					description:
+						"Ambient glyph pattern. Animated patterns remain still when reduced motion is enabled.",
+				},
+				{
+					name: "hover",
+					type: "boolean",
+					default: "false",
+					description:
+						"Enable a soft pointer spotlight across nearby glyphs. Characters stay stable while their highlights fade.",
+				},
+				{
+					name: "hoverColor",
+					type: "string",
+					default: "oklch(0.85 0.12 160)",
+					description:
+						"CSS color used for nearby highlighted glyphs. Highlights fade out after the pointer leaves.",
+				},
+				{
+					name: "hoverRadius",
+					type: "number",
+					default: "70",
+					description:
+						"Pointer spotlight radius in CSS pixels, with a soft falloff toward its edge.",
+				},
+				{
+					name: "hoverGlyphs",
+					type: "string | undefined",
+					default: "undefined",
+					description:
+						"Limit hover highlights to these characters. Omit to highlight every glyph.",
 				},
 				{
 					name: "boost",
 					type: "number",
 					default: "1.2",
-					description: "Brightness multiplier for the glyph color. Values above 1 make the matrix brighter.",
+					description:
+						"Brightness multiplier for the glyph color. Values above 1 make the matrix brighter.",
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes applied to the canvas.",
 				},

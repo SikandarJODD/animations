@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn, type WithElementRef } from "$lib/utils.js";
+	import { cn, type WithElementRef } from "#lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
 
 	let {
@@ -13,7 +13,10 @@
 <span
 	bind:this={ref}
 	data-slot="dropdown-menu-shortcut"
-	class={cn("text-muted-foreground group-focus/dropdown-menu-item:text-accent-foreground ml-auto text-xs tracking-widest", className)}
+	class={cn(
+		"text-muted-foreground group-focus/dropdown-menu-item:text-accent-foreground ml-auto text-xs tracking-widest",
+		className
+	)}
 	{...restProps}
 >
 	{@render children?.()}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Floating, FloatingElement } from "$lib/components/fancy/parallax-floating";
+	import { Floating, FloatingElement } from "#lib/components/fancy/parallax-floating/index.js";
 	import { motion, useReducedMotion } from "motion-sv";
 
 	const reducedMotion = useReducedMotion();

@@ -1,9 +1,9 @@
-﻿import IconCloudRaw from "$lib/components/magic/icon-cloud/icon-cloud.svelte?raw";
-import IndexTs from "$lib/components/magic/icon-cloud/index.ts?raw";
+﻿import IconCloudRaw from "#lib/components/magic/icon-cloud/icon-cloud.svelte?raw";
+import IndexTs from "#lib/components/magic/icon-cloud/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -70,11 +70,26 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { IconCloud } from "#lib/components/magic/icon-cloud/index.js";
+
+	const images = ["svelte", "typescript", "vite"].map(
+		(slug) => \`https://cdn.simpleicons.org/\${slug}/\${slug}\`
+	);
+</script>
+
+<IconCloud {images} />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "IconCloud",
+			name: "Icon Cloud",
 			desc: "A component for Icon Cloud.",
 			props: [
 				{

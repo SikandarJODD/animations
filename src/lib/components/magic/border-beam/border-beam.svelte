@@ -1,6 +1,7 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion, type Transition } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	interface BorderBeamProps {
 		size?: number;
@@ -9,7 +10,7 @@
 		colorFrom?: string;
 		colorTo?: string;
 		transition?: Transition;
-		class?: string;
+		class?: ClassValue;
 		style?: string;
 		reverse?: boolean;
 		initialOffset?: number;

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { useAnimate, type AnimationOptions } from "motion-sv";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
-	import { cn } from "$lib/utils";
+	import type { ClassValue, HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 	import CharBox, { type RotateDirection } from "./charbox.svelte";
 
 	type ElementType = keyof SvelteHTMLElements;
@@ -37,7 +37,7 @@
 		staggerFrom?: StaggerFrom;
 		transition?: AnimationOptions;
 		rotateDirection?: RotateDirection;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	const defaultTransition: AnimationOptions = {

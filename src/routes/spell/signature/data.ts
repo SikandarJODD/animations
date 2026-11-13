@@ -1,7 +1,7 @@
-import SignatureRaw from "$lib/components/spell/signature/signature.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/signature/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import SignatureRaw from "#lib/components/spell/signature/signature.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/signature/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import CustomSignatureExample from "./examples/custom-signature-example.svelte";
@@ -64,6 +64,17 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 		hideLines: true,
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Signature } from "#lib/components/spell/signature/index.js";
+</script>
+
+<Signature text="Rich Harris" />`,
+			lang: "svelte",
+		},
 	},
 	installBlock,
 	examples: [
@@ -139,7 +150,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "",
 					description: "Custom classes applied to the root SVG element.",
 				},

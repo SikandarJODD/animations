@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { GlareHover } from "$lib/components/magic/glare-hover";
-	import Badge from "$lib/components/ui/badge/badge.svelte";
-	import { Button } from "$lib/components/ui/button";
-	import * as Card from "$lib/components/ui/card";
+	import { GlareHover } from "#lib/components/magic/glare-hover/index.js";
+	import Badge from "#lib/components/ui/badge/badge.svelte";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Card from "#lib/components/ui/card/index.js";
 
 	let items = ["Unlimited projects", "Team collaboration", "Advanced analytics"];
 </script>

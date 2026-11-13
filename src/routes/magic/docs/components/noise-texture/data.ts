@@ -1,11 +1,11 @@
-import IndexTsRaw from "$lib/components/magic/noise-texture/index.ts?raw";
-import NoiseTextureSvelteRaw from "$lib/components/magic/noise-texture/noise-texture.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/noise-texture/index.ts?raw";
+import NoiseTextureSvelteRaw from "#lib/components/magic/noise-texture/noise-texture.svelte?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.js";
 import NewsletterExample from "./examples/newsletter-example.svelte";
 import NewsletterExampleRaw from "./examples/newsletter-example.svelte?raw";
 
@@ -60,12 +60,25 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { NoiseTexture } from "#lib/components/magic/noise-texture/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<NoiseTexture className="absolute inset-0" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples,
 	seo,
 	props: [
 		{
-			name: "NoiseTexture",
+			name: "Noise Texture",
 			desc: "An SVG overlay that renders grayscale fractal noise using an internal filter.",
 			props: [
 				{
@@ -95,7 +108,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional classes applied to the root SVG element.",
 				},

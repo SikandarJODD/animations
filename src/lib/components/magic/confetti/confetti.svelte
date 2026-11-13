@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 	import { confetti as neoconfetti } from "@neoconfetti/svelte";
 	import type { ConfettiOptions } from "@neoconfetti/svelte";
 	import type { Snippet } from "svelte";
@@ -7,7 +8,7 @@
 	interface ConfettiProps {
 		active?: boolean;
 		options?: Partial<ConfettiOptions>;
-		class?: string;
+		class?: ClassValue;
 		confettiClass?: string;
 		children?: Snippet;
 	}

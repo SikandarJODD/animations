@@ -1,12 +1,12 @@
-import FloatingContextSvelteTsRaw from "$lib/components/fancy/parallax-floating/floating-context.svelte.ts?raw";
-import FloatingElementSvelteRaw from "$lib/components/fancy/parallax-floating/floating-element.svelte?raw";
-import FloatingSvelteRaw from "$lib/components/fancy/parallax-floating/floating.svelte?raw";
-import IndexTsRaw from "$lib/components/fancy/parallax-floating/index.ts?raw";
-import UseMousePositionSvelteTsRaw from "$lib/hooks/use-mouse-position.svelte.ts?raw";
+import FloatingContextSvelteTsRaw from "#lib/components/fancy/parallax-floating/floating-context.svelte.ts?raw";
+import FloatingElementSvelteRaw from "#lib/components/fancy/parallax-floating/floating-element.svelte?raw";
+import FloatingSvelteRaw from "#lib/components/fancy/parallax-floating/floating.svelte?raw";
+import IndexTsRaw from "#lib/components/fancy/parallax-floating/index.ts?raw";
+import UseMousePositionSvelteTsRaw from "#lib/hooks/use-mouse-position.svelte.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
 import BasicThreeLayer from "./examples/basic-three-layer.svelte";
 import BasicThreeLayerRaw from "./examples/basic-three-layer.svelte?raw";
 import DirectionComparison from "./examples/direction-comparison.svelte";
@@ -23,7 +23,8 @@ import SensitivityComparisonRaw from "./examples/sensitivity-comparison.svelte?r
 export const meta: ComponentMeta = {
 	id: "parallax-floating",
 	title: "Parallax Floating",
-	description: "Create layered parallax movement that responds smoothly to pointer and touch input.",
+	description:
+		"Create layered parallax movement that responds smoothly to pointer and touch input.",
 	category: "fancy",
 };
 
@@ -49,7 +50,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Sensitivity Comparison",
-		description: "The same element and depth respond differently as the root sensitivity changes.",
+		description:
+			"The same element and depth respond differently as the root sensitivity changes.",
 		preview: SensitivityComparison,
 		code: {
 			filename: "sensitivity-comparison.svelte",
@@ -73,7 +75,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Mixed Content",
-		description: "Place images, inline SVGs, and styled text at independent depths in one scene.",
+		description:
+			"Place images, inline SVGs, and styled text at independent depths in one scene.",
 		preview: MixedContent,
 		code: {
 			filename: "mixed-content.svelte",
@@ -85,7 +88,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Grouped Elements",
-		description: "Group related children under one FloatingElement so they share a transform and depth.",
+		description:
+			"Group related children under one FloatingElement so they share a transform and depth.",
 		preview: GroupedElements,
 		code: {
 			filename: "grouped-elements.svelte",
@@ -152,20 +156,29 @@ export const data: ComponentDoc = {
 		code: {
 			filename: "usage.svelte",
 			filecode: `<script lang="ts">
-	import { Floating, FloatingElement } from "$lib/components/fancy/parallax-floating";
+	import { Floating, FloatingElement } from "#lib/components/fancy/parallax-floating/index.js";
 </script>
 
-<Floating>
-	<FloatingElement depth={0.5}>
-		<div class="absolute top-1/2 left-1/4 bg-red-500"></div>
-	</FloatingElement>
-	<FloatingElement depth={1}>
-		<div class="absolute top-1/2 left-2/4 bg-green-500"></div>
-	</FloatingElement>
-	<FloatingElement depth={2}>
-		<div class="absolute top-1/2 left-3/4 bg-blue-500"></div>
-	</FloatingElement>
-</Floating>`,
+<section class="relative h-96 overflow-hidden rounded-3xl bg-neutral-950 text-white">
+	<div class="relative z-10 mx-auto flex h-full max-w-lg flex-col items-center justify-center px-6 text-center">
+		<p class="text-xs tracking-[0.25em] text-white/50 uppercase">Creative studio</p>
+		<h2 class="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Ideas with depth.</h2>
+	</div>
+
+	<Floating sensitivity={0.7} easingFactor={0.06}>
+		<FloatingElement depth={0.5} class="top-12 left-[8%]">
+			<div class="h-28 w-20 -rotate-6 rounded-xl bg-violet-400/80"></div>
+		</FloatingElement>
+		<FloatingElement depth={1.25} class="right-[10%] bottom-10">
+			<div class="size-32 rotate-12 rounded-full border border-cyan-300/60"></div>
+		</FloatingElement>
+		<FloatingElement depth={2} class="top-16 right-[22%]">
+			<div class="rounded-full bg-white px-4 py-2 text-xs font-medium text-black">
+				Available for work
+			</div>
+		</FloatingElement>
+	</Floating>
+</section>`,
 			lang: "svelte",
 		},
 	},
@@ -186,24 +199,26 @@ export const data: ComponentDoc = {
 					name: "sensitivity",
 					type: "number",
 					default: "1",
-					description: "Scales the distance each element moves in response to pointer input.",
+					description:
+						"Scales the distance each element moves in response to pointer input.",
 				},
 				{
 					name: "easingFactor",
 					type: "number",
 					default: "0.05",
-					description: "Controls how quickly elements interpolate toward their target position.",
+					description:
+						"Controls how quickly elements interpolate toward their target position.",
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Classes merged onto the root parallax container.",
 				},
 			],
 		},
 		{
-			name: "FloatingElement",
+			name: "Floating Element",
 			desc: "A positioned layer registered with the nearest Floating root.",
 			props: [
 				{
@@ -216,11 +231,12 @@ export const data: ComponentDoc = {
 					name: "depth",
 					type: "number",
 					default: "1",
-					description: "Multiplies the layer's movement to create near and far parallax depth.",
+					description:
+						"Multiplies the layer's movement to create near and far parallax depth.",
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Classes merged onto the positioned floating element wrapper.",
 				},

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HighlightedText } from "$lib/components/spell/highlighted-text";
+	import { HighlightedText } from "#lib/components/spell/highlighted-text/index.js";
 </script>
 
 <div class="flex flex-col gap-6 text-xl font-semibold tracking-tight">

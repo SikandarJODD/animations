@@ -1,9 +1,9 @@
-﻿import BorderBeamRaw from "$lib/components/magic/border-beam/border-beam.svelte?raw";
-import IndexTs from "$lib/components/magic/border-beam/index.ts?raw";
+﻿import BorderBeamRaw from "#lib/components/magic/border-beam/border-beam.svelte?raw";
+import IndexTs from "#lib/components/magic/border-beam/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import BorderBeamTwo from "./examples/border-beam-two.svelte";
@@ -95,11 +95,25 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { BorderBeam } from "#lib/components/magic/border-beam/index.js";
+</script>
+
+<div class="relative overflow-hidden rounded-xl border p-8">
+	Border beam
+	<BorderBeam />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "BorderBeam",
+			name: "Border Beam",
 			desc: "A component for creating animated border beam effects.",
 			props: [
 				{
@@ -140,7 +154,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Additional CSS classes to apply",
 				},

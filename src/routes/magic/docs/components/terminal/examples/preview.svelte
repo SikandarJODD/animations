@@ -1,5 +1,9 @@
 ﻿<script lang="ts">
-	import { Terminal, AnimatedSpan, TypingAnimation } from "$lib/components/magic/terminal";
+	import {
+		Terminal,
+		AnimatedSpan,
+		TypingAnimation,
+	} from "#lib/components/magic/terminal/index.js";
 </script>
 
 <Terminal>

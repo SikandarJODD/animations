@@ -1,19 +1,19 @@
 <script lang="ts" module>
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	export interface FloatingProps extends HTMLAttributes<HTMLDivElement> {
 		children?: Snippet;
 		sensitivity?: number;
 		easingFactor?: number;
-		class?: string;
+		class?: ClassValue;
 	}
 </script>
 
 <script lang="ts">
 	import { useAnimationFrame, useReducedMotion } from "motion-sv";
-	import { useMousePosition } from "$lib/hooks/use-mouse-position.svelte";
-	import { cn } from "$lib/utils";
+	import { useMousePosition } from "#lib/hooks/use-mouse-position.svelte.js";
+	import { cn } from "#lib/utils.js";
 
 	import { setFloatingContext } from "./floating-context.svelte";
 
@@ -75,10 +75,6 @@
 	});
 </script>
 
-<div
-	bind:this={container}
-	class={cn("absolute top-0 left-0 h-full w-full", className)}
-	{...props}
->
+<div bind:this={container} class={cn("absolute top-0 left-0 h-full w-full", className)} {...props}>
 	{@render children?.()}
 </div>

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { useInView } from "motion-sv";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	type Align = "left" | "center" | "right";
 
@@ -11,7 +11,7 @@
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		children?: Snippet;
 		align?: Align;
-		class?: string;
+		class?: ClassValue;
 		speed?: number;
 		paused?: boolean;
 		delay?: number;

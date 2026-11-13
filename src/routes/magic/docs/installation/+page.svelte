@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { page } from "$app/state";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
+	import { seo_config } from "#lib/config/seo.js";
 	import {
 		Blockquote,
 		H1,
@@ -9,15 +9,15 @@
 		Paragraph,
 		Step,
 		Steps,
-	} from "$lib/components/docs/markdown";
-	import { PMCommand } from "$lib/components/ui/pm-command";
-	import * as Code from "$lib/components/ui/code";
-	import { MetaTags } from "svelte-meta-tags";
+	} from "#lib/components/docs/markdown/index.js";
+	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
+	import * as Code from "#lib/components/ui/code/index.js";
+	import SEOComponent from "#lib/seo/seo.svelte";
 	import Preview from "../components/morphing-text/examples/preview.svelte";
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
+	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
 
 	const exampleCode = `<script lang="ts">
-	import { MorphingText } from "$lib/components/magic/morphing-text";
+	import { MorphingText } from "#lib/components/magic/morphing-text/index.js";
 	const texts = [
 		"Hello",
 		"Morphing",
@@ -35,14 +35,14 @@
 `;
 
 	const title = "Installation";
-	const description = "How to install dependencies and structure your app.";
+	const description =
+		"Install Svelte Magic UI components with the Shadcn Svelte CLI and configure Svelte 5, Tailwind CSS, and Motion SV dependencies.";
 	const socialTitle = "Installation - Svelte Magic UI";
 
-	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
-	let llmsTxtUrl = $derived(`${canonical}/llms.txt`);
+	const llmsTxtUrl = `${seo_config.url}/magic/docs/installation/llms.txt`;
 </script>
 
-<MetaTags
+<SEOComponent
 	{title}
 	titleTemplate="%s - Svelte Magic UI"
 	{description}
@@ -56,20 +56,9 @@
 		"Shadcn Svelte",
 		"Motion SV",
 	]}
-	{canonical}
-	openGraph={{
-		title: socialTitle,
-		description,
-		url: canonical,
-		type: "article",
-	}}
-	twitter={{
-		title: socialTitle,
-		description,
-		cardType: "summary_large_image",
-		site: "@Sikandar_Bhide",
-		creator: "@Sikandar_Bhide",
-	}}
+	{socialTitle}
+	openGraphType="article"
+	siteName="Svelte Magic UI"
 />
 
 <div class="space-y-8 md:space-y-6">
@@ -130,7 +119,9 @@
 	<section class="space-y-4">
 		<H2 id="usage-example">Usage Example</H2>
 		<Paragraph>Here's how to use the Morphing Text component:</Paragraph>
-		<Code.Root code={exampleCode} lang="svelte" class="my-2" />
+		<Code.Snippet
+			code={{ filename: "example.svelte", filecode: exampleCode, lang: "svelte" }}
+		/>
 
 		<div class="pt-2">
 			<PreviewComponent

@@ -4,6 +4,15 @@
 	"title": "Retro Grid",
 	"type": "registry:block",
 	"description": "An animated retro-style grid background component with customizable angle, cell size, opacity, and colors.",
+	"meta": {
+		"categories": [
+			"background",
+			"grid",
+			"retro",
+			"automatic",
+			"medium-motion"
+		]
+	},
 	"css": {
 		"@keyframes grid": {
 			"0%": {
@@ -21,7 +30,7 @@
 	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\n\tinterface RetroGridProps extends HTMLAttributes<HTMLDivElement> {\n\t\tclass?: string;\n\t\tangle?: number;\n\t\tcellSize?: number;\n\t\topacity?: number;\n\t\tlightLineColor?: string;\n\t\tdarkLineColor?: string;\n\t}\n\n\tlet {\n\t\tclass: className,\n\t\tangle = 65,\n\t\tcellSize = 60,\n\t\topacity = 0.5,\n\t\tlightLineColor = \"gray\",\n\t\tdarkLineColor = \"gray\",\n\t\t...props\n\t}: RetroGridProps = $props();\n</script>\n\n<div\n\tclass={cn(\n\t\t\"pointer-events-none absolute size-full overflow-hidden perspective-[200px]\",\n\t\t`opacity-(--opacity)`,\n\t\tclassName\n\t)}\n\tstyle=\"\n\t\t--grid-angle: {angle}deg;\n\t\t--cell-size: {cellSize}px;\n\t\t--opacity: {opacity};\n\t\t--light-line: {lightLineColor};\n\t\t--dark-line: {darkLineColor};\"\n\t{...props}\n>\n\t<div class=\"absolute inset-0 transform-[rotateX(var(--grid-angle))]\">\n\t\t<div\n\t\t\tclass=\"animate-grid inset-[0%_0px] ml-[-200%] h-[300vh] w-[600vw] origin-[100%_0_0] bg-[linear-gradient(to_right,var(--light-line)_1px,transparent_0),linear-gradient(to_bottom,var(--light-line)_1px,transparent_0)] bg-size-[var(--cell-size)_var(--cell-size)] bg-repeat dark:bg-[linear-gradient(to_right,var(--dark-line)_1px,transparent_0),linear-gradient(to_bottom,var(--dark-line)_1px,transparent_0)]\"\n\t\t></div>\n\t</div>\n\n\t<div\n\t\tclass=\"absolute inset-0 bg-linear-to-t from-white to-transparent to-90% dark:from-black\"\n\t></div>\n</div>\n",
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"#lib/utils.js\";\n\timport type { ClassValue, HTMLAttributes } from \"svelte/elements\";\n\n\tinterface RetroGridProps extends HTMLAttributes<HTMLDivElement> {\n\t\tclass?: ClassValue;\n\t\tangle?: number;\n\t\tcellSize?: number;\n\t\topacity?: number;\n\t\tlightLineColor?: string;\n\t\tdarkLineColor?: string;\n\t}\n\n\tlet {\n\t\tclass: className,\n\t\tangle = 65,\n\t\tcellSize = 60,\n\t\topacity = 0.5,\n\t\tlightLineColor = \"gray\",\n\t\tdarkLineColor = \"gray\",\n\t\t...props\n\t}: RetroGridProps = $props();\n</script>\n\n<div\n\tclass={cn(\n\t\t\"pointer-events-none absolute size-full overflow-hidden perspective-[200px]\",\n\t\t`opacity-(--opacity)`,\n\t\tclassName\n\t)}\n\tstyle=\"\n\t\t--grid-angle: {angle}deg;\n\t\t--cell-size: {cellSize}px;\n\t\t--opacity: {opacity};\n\t\t--light-line: {lightLineColor};\n\t\t--dark-line: {darkLineColor};\"\n\t{...props}\n>\n\t<div class=\"absolute inset-0 transform-[rotateX(var(--grid-angle))]\">\n\t\t<div\n\t\t\tclass=\"animate-grid inset-[0%_0px] ml-[-200%] h-[300vh] w-[600vw] origin-[100%_0_0] bg-[linear-gradient(to_right,var(--light-line)_1px,transparent_0),linear-gradient(to_bottom,var(--light-line)_1px,transparent_0)] bg-size-[var(--cell-size)_var(--cell-size)] bg-repeat dark:bg-[linear-gradient(to_right,var(--dark-line)_1px,transparent_0),linear-gradient(to_bottom,var(--dark-line)_1px,transparent_0)]\"\n\t\t></div>\n\t</div>\n\n\t<div\n\t\tclass=\"absolute inset-0 bg-linear-to-t from-white to-transparent to-90% dark:from-black\"\n\t></div>\n</div>\n",
 			"type": "registry:component",
 			"target": "magic/retro-grid/retro-grid.svelte"
 		},

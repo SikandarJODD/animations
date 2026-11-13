@@ -1,6 +1,7 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion, AnimatePresence } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 
 	interface Position {
@@ -28,7 +29,7 @@
 		lensColor?: string;
 		/** The aria label of the lens */
 		ariaLabel?: string;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

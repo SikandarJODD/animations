@@ -6,15 +6,18 @@
 		Paragraph,
 		Strong,
 		UnorderedList,
-	} from "$lib/components/docs/markdown";
-	import * as Icons from "$lib/components/icons";
-	import { StripedPattern } from "$lib/components/magic/striped-pattern";
-	import { Avatar, AvatarFallback, AvatarImage } from "$lib/components/ui/avatar";
-	import { Button } from "$lib/components/ui/button";
-	import * as Breadcrumb from "$lib/components/ui/breadcrumb";
-	import { page } from "$app/state";
-	import { MetaTags } from "svelte-meta-tags";
-	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
+	} from "#lib/components/docs/markdown/index.js";
+	import * as Icons from "#lib/components/icons/index.js";
+	import { StripedPattern } from "#lib/components/magic/striped-pattern/index.js";
+	import { Avatar, AvatarFallback, AvatarImage } from "#lib/components/ui/avatar/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Breadcrumb from "#lib/components/ui/breadcrumb/index.js";
+	import SEOComponent from "#lib/seo/seo.svelte";
+	import {
+		buildSpellKeywords,
+		SPELL_SOCIAL_IMAGE,
+		SPELL_TITLE_TEMPLATE,
+	} from "#lib/seo/spell.js";
 
 	const creator = {
 		name: "tom",
@@ -35,39 +38,17 @@
 		"Svelte design engineering patterns",
 	]);
 	const socialTitle = `${title} | Svelte Spell UI`;
-
-	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
 </script>
 
-<MetaTags
+<SEOComponent
 	{title}
 	titleTemplate={SPELL_TITLE_TEMPLATE}
 	{description}
 	{keywords}
-	{canonical}
-	robots="index,follow"
-	additionalRobotsProps={{
-		maxSnippet: -1,
-		maxImagePreview: "large",
-		maxVideoPreview: -1,
-	}}
-	openGraph={{
-		url: canonical,
-		title: socialTitle,
-		description,
-		type: "article",
-		siteName: "Svelte Spell UI",
-		images: [SPELL_SOCIAL_IMAGE],
-	}}
-	twitter={{
-		cardType: "summary_large_image",
-		title: socialTitle,
-		description,
-		image: SPELL_SOCIAL_IMAGE.url,
-		imageAlt: SPELL_SOCIAL_IMAGE.alt,
-		site: "@Sikandar_Bhide",
-		creator: "@Sikandar_Bhide",
-	}}
+	{socialTitle}
+	openGraphType="article"
+	siteName="Svelte Spell UI"
+	images={[SPELL_SOCIAL_IMAGE]}
 />
 
 <div class="space-y-8 md:space-y-10">

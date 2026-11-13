@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, type ButtonSize } from "$lib/components/ui/button";
+	import { Button, type ButtonSize } from "#lib/components/ui/button/index.js";
 	import { Check, Copy } from "@lucide/svelte";
 	import { toast } from "svelte-sonner";
 
@@ -41,9 +41,9 @@
 	{size}
 >
 	{#if copied}
-		<Check class="size-4" />
+		<Check class="size-3.5" />
 	{:else}
-		<Copy class="size-4" />
+		<Copy class="size-3.5" />
 	{/if}
 	<span>Copy Page</span>
 </Button>

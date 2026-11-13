@@ -1,12 +1,13 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	type ElementType = "span" | "div" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 	interface LineShadowTextProps {
 		content: string;
-		class?: string;
+		class?: ClassValue;
 		shadowColor?: string;
 		as?: ElementType;
 	}

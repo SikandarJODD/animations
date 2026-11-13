@@ -1,9 +1,9 @@
-﻿import ShineBorderRaw from "$lib/components/magic/shine-border/shine-border.svelte?raw";
-import IndexTs from "$lib/components/magic/shine-border/index.ts?raw";
+import ShineBorderRaw from "#lib/components/magic/shine-border/shine-border.svelte?raw";
+import IndexTs from "#lib/components/magic/shine-border/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -14,7 +14,8 @@ import ShineBorderMonotoneRaw from "./examples/shine-border-monotone.svelte?raw"
 export const meta: ComponentMeta = {
 	id: "shine-border",
 	title: "ShineBorder",
-	description: "A description for ShineBorder component.",
+	description:
+		"Add an animated gradient shine to cards, buttons, and panels with the customizable Shine Border component for Svelte 5.",
 	category: "animation",
 	badge: "new",
 };
@@ -22,6 +23,7 @@ export const meta: ComponentMeta = {
 const examples: Example[] = [
 	{
 		name: "Monotone",
+		description: "A responsive card up to 28rem wide with a theme-aware shine border.",
 		preview: ShineBorderMonotone,
 		code: {
 			filename: "shine-border-monotone.svelte",
@@ -35,7 +37,8 @@ const examples: Example[] = [
 
 const seo: SEO = {
 	title: "ShineBorder",
-	description: "Shine border is an animated background border effect.",
+	description:
+		"Create an animated Shine Border effect in Svelte 5 with customizable colors, duration, width, and rounded corners for cards and interactive surfaces.",
 	keywords: ["Svelte", "ShineBorder", "Svelte 5 Animations", "Animation", "Web Design"],
 	titleTemplate: "%s | Svelte Magic UI",
 };
@@ -94,16 +97,30 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ShineBorder } from "#lib/components/magic/shine-border/index.js";
+</script>
+
+<div class="relative overflow-hidden rounded-xl border p-8">
+	Shine border
+	<ShineBorder />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "ShineBorder",
+			name: "Shine Border",
 			desc: "A component for ShineBorder.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

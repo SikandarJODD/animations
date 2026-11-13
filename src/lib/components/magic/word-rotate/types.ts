@@ -1,6 +1,6 @@
 import type { MotionHTMLAttributes, MotionProps } from "motion-sv";
 import type { HTMLAttributes } from "svelte/elements";
-import type { WithElementRef } from "$lib/utils.js";
+import type { WithElementRef } from "#lib/utils.js";
 
 export type RotatingTextContextType = {
 	currentText: string;

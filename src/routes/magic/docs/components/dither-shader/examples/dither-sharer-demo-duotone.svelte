@@ -1,5 +1,5 @@
 <script>
-	import { DitherShader } from "$lib/components/magic/dither-shader";
+	import { DitherShader } from "#lib/components/magic/dither-shader/index.js";
 </script>
 
 <div class="flex flex-col items-center gap-6 p-8">

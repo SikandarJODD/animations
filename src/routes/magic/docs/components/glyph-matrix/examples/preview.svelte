@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GlyphMatrix } from "$lib/components/magic/glyph-matrix";
+	import { GlyphMatrix } from "#lib/components/magic/glyph-matrix/index.js";
 	import { mode } from "mode-watcher";
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-	import { MagicCard } from "$lib/components/magic/magic-card";
+	import { MagicCard } from "#lib/components/magic/magic-card/index.js";
 </script>
 
 <div class="flex flex-col gap-6 sm:flex-row">

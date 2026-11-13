@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ScrollArea as ScrollAreaPrimitive } from "bits-ui";
-	import { cn, type WithoutChild } from "$lib/utils.js";
+	import { cn, type WithoutChild } from "#lib/utils.js";
 	import { Scrollbar } from "./index.js";
 
 	let {
@@ -34,7 +34,7 @@
 		data-orientation={orientation}
 		data-slot="scroll-area-viewport"
 		class={[
-			"size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1",
+			"focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1",
 			fadeEffect &&
 				"no-scrollbar data-[orientation=horizontal]:overflow-x-auto data-[orientation=vertical]:overflow-y-auto",
 			fadeEffect &&

@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	type MarqueeDirection = "left" | "right" | "up" | "down";
 
 	interface MarqueeProps extends HTMLAttributes<HTMLDivElement> {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		duration?: number;
 		pauseOnHover?: boolean;
 		direction?: MarqueeDirection;

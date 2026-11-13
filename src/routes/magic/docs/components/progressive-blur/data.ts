@@ -1,9 +1,9 @@
-﻿import ProgressiveBlurRaw from "$lib/components/magic/progressive-blur/progressive-blur.svelte?raw";
-import IndexTs from "$lib/components/magic/progressive-blur/index.ts?raw";
+﻿import ProgressiveBlurRaw from "#lib/components/magic/progressive-blur/progressive-blur.svelte?raw";
+import IndexTs from "#lib/components/magic/progressive-blur/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -68,16 +68,30 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ProgressiveBlur } from "#lib/components/magic/progressive-blur/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<div class="h-full overflow-auto">Scrollable content</div>
+	<ProgressiveBlur position="bottom" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "ProgressiveBlur",
+			name: "Progressive Blur",
 			desc: "A component that creates a progressive blur effect with customizable positioning and blur levels.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

@@ -9,6 +9,7 @@
 			"title": "Animated Gradient Svg",
 			"author": "SikandarJODD",
 			"description": "An animated SVG gradient background built from moving blurred circles.",
+			"meta": { "categories": ["background", "svg", "gradient", "decoration", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/animated-gradient-svg/animated-gradient-svg.svelte",
@@ -58,6 +59,7 @@
 			"title": "Media Between Text",
 			"author": "SikandarJODD",
 			"description": "Reveal image or video media between two pieces of text with hover, view, or manual triggers.",
+			"meta": { "categories": ["text", "media", "hover", "reveal", "marketing", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/media-between-text/media-between-text.svelte",
@@ -79,6 +81,7 @@
 			"title": "Pixel Trail",
 			"author": "SikandarJODD",
 			"description": "A pixelated trail effect that recolors grid pixels as you move your cursor.",
+			"meta": { "categories": ["background", "cursor", "pixel", "trail", "decoration", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/pixel-trail/pixel-trail.svelte",
@@ -110,6 +113,7 @@
 			"title": "Parallax Floating",
 			"author": "SikandarJODD",
 			"description": "Create layered parallax movement that responds smoothly to pointer and touch input.",
+			"meta": { "categories": ["media", "cursor", "touch", "parallax", "decoration", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/parallax-floating/floating.svelte",
@@ -146,6 +150,7 @@
 			"title": "Pixelate Svg Filter",
 			"author": "SikandarJODD",
 			"description": "An SVG filter definition component for applying configurable pixelation effects.",
+			"meta": { "categories": ["media", "svg", "pixel", "filter", "decoration", "subtle"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/pixelate-svg-filter/pixelate-svg-filter.svelte",
@@ -166,6 +171,7 @@
 			"title": "Scroll And Swap",
 			"author": "SikandarJODD",
 			"description": "Swap duplicated text vertically based on scroll progress within a target container.",
+			"meta": { "categories": ["text", "scroll", "swap", "marketing", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/scroll-and-swap/scroll-and-swap.svelte",
@@ -187,6 +193,7 @@
 			"title": "Stacking Cards",
 			"author": "SikandarJODD",
 			"description": "Create sticky stacked cards that scale progressively as the container scrolls.",
+			"meta": { "categories": ["card", "scroll", "stack", "marketing", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/stacking-cards/stacking-cards.svelte",
@@ -213,6 +220,7 @@
 			"title": "Letter 3D Swap",
 			"author": "SikandarJODD",
 			"description": "Rotate each character on hover with a 3D flip and configurable stagger direction.",
+			"meta": { "categories": ["text", "hover", "3d", "swap", "marketing", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/letter-3d-swap/letter-3d-swap.svelte",
@@ -239,6 +247,7 @@
 			"title": "Letter Swap",
 			"author": "SikandarJODD",
 			"description": "Slide each letter into a second copy on hover with directional staggered motion.",
+			"meta": { "categories": ["text", "hover", "swap", "marketing", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/letter-swap/letter-swap.svelte",
@@ -260,6 +269,7 @@
 			"title": "Letter Swap Ping Pong",
 			"author": "SikandarJODD",
 			"description": "Swap letters on hover and reverse them on exit with debounced ping-pong motion.",
+			"meta": { "categories": ["text", "hover", "swap", "marketing", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/letter-swap-ping-pong/letter-swap-ping-pong.svelte",
@@ -281,6 +291,7 @@
 			"title": "Random Letter Swap",
 			"author": "SikandarJODD",
 			"description": "Reveal a second letter layer in a shuffled hover order for a randomized swap effect.",
+			"meta": { "categories": ["text", "hover", "randomized", "swap", "marketing", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/random-letter-swap/random-letter-swap.svelte",
@@ -302,6 +313,7 @@
 			"title": "Random Letter Swap Ping Pong",
 			"author": "SikandarJODD",
 			"description": "Animate randomized letter swaps on hover in and out using a persistent shuffled order.",
+			"meta": { "categories": ["text", "hover", "randomized", "swap", "marketing", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/random-letter-swap-ping-pong/random-letter-swap-ping-pong.svelte",
@@ -323,6 +335,7 @@
 			"title": "Scramble Hover",
 			"author": "SikandarJODD",
 			"description": "Scramble text on hover with sequential or iterative reveals and custom character sets.",
+			"meta": { "categories": ["text", "hover", "scramble", "reveal", "marketing", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/scramble-hover/scramble-hover.svelte",
@@ -344,6 +357,7 @@
 			"title": "Scramble In",
 			"author": "SikandarJODD",
 			"description": "Animate text in by revealing real characters through a configurable scramble pass.",
+			"meta": { "categories": ["text", "entrance", "scramble", "reveal", "marketing", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/scramble-in/scramble-in.svelte",
@@ -365,6 +379,7 @@
 			"title": "Text Along Path",
 			"author": "SikandarJODD",
 			"description": "Render animated text that loops or tracks scroll progress along any SVG path.",
+			"meta": { "categories": ["text", "svg", "scroll", "path", "decoration", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/text-along-path/text-along-path.svelte",
@@ -386,6 +401,7 @@
 			"title": "Text Highlighter",
 			"author": "SikandarJODD",
 			"description": "Sweep a highlight background across inline text on hover, in view, or on demand.",
+			"meta": { "categories": ["text", "hover", "highlight", "reveal", "marketing", "subtle"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/text-highlighter/text-highlighter.svelte",
@@ -407,6 +423,7 @@
 			"title": "Text Rotate",
 			"author": "SikandarJODD",
 			"description": "Rotate through multiple text strings with per-character, per-word, or per-line motion and imperative controls.",
+			"meta": { "categories": ["text", "automatic", "rotate", "hero", "marketing", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/text-rotate/text-rotate.svelte",
@@ -428,6 +445,7 @@
 			"title": "Underline To Background",
 			"author": "SikandarJODD",
 			"description": "Expand an underline into a full background fill while transitioning the text color.",
+			"meta": { "categories": ["text", "hover", "highlight", "marketing", "subtle"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/underline-to-background/underline-to-background.svelte",
@@ -449,6 +467,7 @@
 			"title": "Vertical Cut Reveal",
 			"author": "SikandarJODD",
 			"description": "Reveal text from vertical cuts with word, character, or line-based staggering.",
+			"meta": { "categories": ["text", "entrance", "reveal", "hero", "marketing", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/fancy/vertical-cut-reveal/vertical-cut-reveal.svelte",

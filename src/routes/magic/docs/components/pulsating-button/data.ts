@@ -1,9 +1,9 @@
-﻿import PulsatingButtonRaw from "$lib/components/magic/pulsating-button/pulsating-button.svelte?raw";
-import IndexTs from "$lib/components/magic/pulsating-button/index.ts?raw";
+﻿import PulsatingButtonRaw from "#lib/components/magic/pulsating-button/pulsating-button.svelte?raw";
+import IndexTs from "#lib/components/magic/pulsating-button/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import RingVariant from "./examples/ring-variant.svelte";
@@ -169,16 +169,27 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { PulsatingButton } from "#lib/components/magic/pulsating-button/index.js";
+</script>
+
+<PulsatingButton>Get started</PulsatingButton>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "PulsatingButton",
+			name: "Pulsating Button",
 			desc: "A component for Pulsating Button.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

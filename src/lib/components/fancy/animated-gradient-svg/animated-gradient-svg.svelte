@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
-	import { useDimensions } from "$lib/hooks/use-dimension.svelte";
-	import { cn } from "$lib/utils";
+	import { useDimensions } from "#lib/hooks/use-dimension.svelte.js";
+	import { cn } from "#lib/utils.js";
 
 	type BlurStrength = "light" | "medium" | "heavy";
 
@@ -10,7 +10,7 @@
 		colors: string[];
 		speed?: number;
 		blur?: BlurStrength;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	interface BlobConfig {

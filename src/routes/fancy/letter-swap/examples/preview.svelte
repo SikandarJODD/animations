@@ -1,6 +1,6 @@
 <script>
-	import { LetterSwap } from "$lib/components/fancy/letter-swap";
-	import { LetterSwapPingPong } from "$lib/components/fancy/letter-swap-ping-pong";
+	import { LetterSwap } from "#lib/components/fancy/letter-swap/index.js";
+	import { LetterSwapPingPong } from "#lib/components/fancy/letter-swap-ping-pong/index.js";
 </script>
 
 <div

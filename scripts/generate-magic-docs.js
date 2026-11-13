@@ -10,19 +10,19 @@ process.chdir(rootDir);
 const GROUP_CONFIG = {
 	magic: {
 		componentsDir: path.join(rootDir, "src", "routes", "magic", "docs", "components"),
-		importBase: "$lib/components/magic",
+		importBase: "#lib/components/magic",
 		moduleBase: "/src/routes/magic/docs/components",
 		registryPrefix: "r",
 	},
 	spell: {
 		componentsDir: path.join(rootDir, "src", "routes", "spell"),
-		importBase: "$lib/components/spell",
+		importBase: "#lib/components/spell",
 		moduleBase: "/src/routes/spell",
 		registryPrefix: "s",
 	},
 	fancy: {
 		componentsDir: path.join(rootDir, "src", "routes", "fancy"),
-		importBase: "$lib/components/fancy",
+		importBase: "#lib/components/fancy",
 		moduleBase: "/src/routes/fancy",
 		registryPrefix: "f",
 	},

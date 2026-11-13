@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 	import type { ElementType, MotionProps, Variants } from "motion-sv";
 	import { motion, AnimatePresence } from "motion-sv";
 
@@ -256,7 +257,7 @@
 		/**
 		 * The class name to be applied to the component
 		 */
-		class?: string;
+		class?: ClassValue;
 		/**
 		 * The class name to be applied to each segment
 		 */

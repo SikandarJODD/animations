@@ -1,9 +1,5 @@
-import Root, {
-	type AnimatedBackgroundProps
-} from "./animated-background.svelte";
-import Item, {
-	type AnimatedBackgroundItemProps
-} from "./animated-background-item.svelte";
+import Root, { type AnimatedBackgroundProps } from "./animated-background.svelte";
+import Item, { type AnimatedBackgroundItemProps } from "./animated-background-item.svelte";
 
 export {
 	Root,
@@ -13,5 +9,5 @@ export {
 	type AnimatedBackgroundItemProps,
 	//
 	Root as AnimatedBackground,
-	Item as AnimatedBackgroundItem
+	Item as AnimatedBackgroundItem,
 };

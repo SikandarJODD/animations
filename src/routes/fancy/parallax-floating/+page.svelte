@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ComponentDocPage from "$lib/components/docs/base/ComponentDocPage.svelte";
+	import ComponentDocPage from "#lib/components/docs/base/component-doc-page.svelte";
 	import { data } from "./data";
 </script>
 

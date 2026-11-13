@@ -29,9 +29,6 @@ class ScrollState {
 	}
 }
 
-export function createScroll(
-	downThreshold: number,
-	upThreshold?: number
-): ScrollState {
+export function createScroll(downThreshold: number, upThreshold?: number): ScrollState {
 	return new ScrollState(downThreshold, upThreshold);
 }

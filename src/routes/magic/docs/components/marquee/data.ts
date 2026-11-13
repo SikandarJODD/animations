@@ -1,9 +1,9 @@
-﻿import Raw from "$lib/components/magic/marquee/marquee.svelte?raw";
-import IndexTs from "$lib/components/magic/marquee/index.ts?raw";
+﻿import Raw from "#lib/components/magic/marquee/marquee.svelte?raw";
+import IndexTs from "#lib/components/magic/marquee/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -138,6 +138,21 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Marquee } from "#lib/components/magic/marquee/index.js";
+</script>
+
+<Marquee>
+	<span>Design</span>
+	<span>Develop</span>
+	<span>Ship</span>
+</Marquee>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
@@ -153,7 +168,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

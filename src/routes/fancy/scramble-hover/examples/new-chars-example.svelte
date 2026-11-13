@@ -1,5 +1,5 @@
 <script>
-	import { ScrambleHover } from "$lib/components/fancy/scramble-hover";
+	import { ScrambleHover } from "#lib/components/fancy/scramble-hover/index.js";
 </script>
 
 <div

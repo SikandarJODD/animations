@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Marquee } from "$lib/components/spell/marquee";
-	import { cn } from "$lib/utils";
+	import { Marquee } from "#lib/components/spell/marquee/index.js";
+	import { cn } from "#lib/utils.js";
 
 	const notifications = [
 		{ text: "New message received", time: "2 min ago", type: "info" },

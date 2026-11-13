@@ -1,5 +1,5 @@
 <script>
-	import { HexagonPattern } from "$lib/components/magic/hexagon-pattern";
+	import { HexagonPattern } from "#lib/components/magic/hexagon-pattern/index.js";
 </script>
 
 <div

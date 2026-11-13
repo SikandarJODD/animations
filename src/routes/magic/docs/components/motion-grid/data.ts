@@ -1,12 +1,12 @@
-import MotionGridRaw from "$lib/components/magic/motion-grid/motion-grid.svelte?raw";
-import MotionGridCellsRaw from "$lib/components/magic/motion-grid/motion-grid-cells.svelte?raw";
-import UseMotionGridContextRaw from "$lib/components/magic/motion-grid/use-motion-grid-context.svelte.ts?raw";
-import TypesRaw from "$lib/components/magic/motion-grid/types.ts?raw";
-import IndexTs from "$lib/components/magic/motion-grid/index.ts?raw";
+import MotionGridRaw from "#lib/components/magic/motion-grid/motion-grid.svelte?raw";
+import MotionGridCellsRaw from "#lib/components/magic/motion-grid/motion-grid-cells.svelte?raw";
+import UseMotionGridContextRaw from "#lib/components/magic/motion-grid/use-motion-grid-context.svelte.ts?raw";
+import TypesRaw from "#lib/components/magic/motion-grid/types.ts?raw";
+import IndexTs from "#lib/components/magic/motion-grid/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
@@ -126,11 +126,29 @@ export const data: ComponentDoc = {
 			hideLines: true,
 		},
 	],
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { MotionGrid, MotionGridCells, type Frames } from "#lib/components/magic/motion-grid/index.js";
+
+	const frames: Frames = [
+		[[0, 0], [1, 1]],
+		[[1, 0], [0, 1]],
+	];
+</script>
+
+<MotionGrid gridSize={[2, 2]} {frames} class="w-12 gap-1">
+	<MotionGridCells class="aspect-square rounded-full bg-muted data-[active=true]:bg-primary" />
+</MotionGrid>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "MotionGrid",
+			name: "Motion Grid",
 			desc: "Grid container that provides frame state and layout context.",
 			props: [
 				{
@@ -165,14 +183,14 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional classes for the grid root.",
 				},
 			],
 		},
 		{
-			name: "MotionGridCells",
+			name: "Motion Grid Cells",
 			desc: "Renders all cells and applies active/inactive presentation.",
 			props: [
 				{
@@ -189,7 +207,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Base class applied to all cells.",
 				},

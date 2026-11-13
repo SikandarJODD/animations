@@ -1,9 +1,9 @@
-﻿import NeonGradientCardRaw from "$lib/components/magic/neon-gradient-card/neon-gradient-card.svelte?raw";
-import IndexTs from "$lib/components/magic/neon-gradient-card/index.ts?raw";
+﻿import NeonGradientCardRaw from "#lib/components/magic/neon-gradient-card/neon-gradient-card.svelte?raw";
+import IndexTs from "#lib/components/magic/neon-gradient-card/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -76,15 +76,28 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { NeonGradientCard } from "#lib/components/magic/neon-gradient-card/index.js";
+</script>
+
+<NeonGradientCard>
+	Neon card
+</NeonGradientCard>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
-			name: "NeonGradientCard",
+			name: "Neon Gradient Card",
 			desc: "A component for Neon Gradient Card.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

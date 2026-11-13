@@ -1,11 +1,11 @@
-import IndexTsRaw from "$lib/components/fancy/pixelate-svg-filter/index.ts?raw";
-import PixelateSvgFilterSvelteRaw from "$lib/components/fancy/pixelate-svg-filter/pixelate-svg-filter.svelte?raw";
+import IndexTsRaw from "#lib/components/fancy/pixelate-svg-filter/index.ts?raw";
+import PixelateSvgFilterSvelteRaw from "#lib/components/fancy/pixelate-svg-filter/pixelate-svg-filter.svelte?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.js";
 import VideoPixelateDemo from "./examples/video-pixelate-demo.svelte";
 import VideoPixelateDemoRaw from "./examples/video-pixelate-demo.svelte?raw";
 import ImagePixelatedDemo from "./examples/image-pixelated-demo.svelte";
@@ -13,21 +13,27 @@ import ImagePixelatedDemo from "./examples/image-pixelated-demo.svelte";
 export const meta: ComponentMeta = {
 	id: "pixelate-svg-filter",
 	title: "Pixelate Svg Filter",
-	description: "A filter component that applies a pixelation effect with an SVG filter. Safari is not supported.",
+	description:
+		"A filter component that applies a pixelation effect with an SVG filter. Safari is not supported.",
 	category: "fancy",
 };
 
 const seo: SEO = {
 	title: "Pixelate Svg Filter",
-	description: "A filter component that applies a pixelation effect with an SVG filter. Safari is not supported.",
+	description:
+		"A filter component that applies a pixelation effect with an SVG filter. Safari is not supported.",
 	keywords: ["Svelte", "Pixelate Svg Filter", "Fancy"],
 };
 
 const installBlock: InstallComponentDocs = {
 	packages: [],
 	installCode: [
-		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ filename: "pixelate-svg-filter.svelte", filecode: PixelateSvgFilterSvelteRaw, lang: "svelte", }
+		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript", isExpand: true },
+		{
+			filename: "pixelate-svg-filter.svelte",
+			filecode: PixelateSvgFilterSvelteRaw,
+			lang: "svelte",
+		},
 	],
 	folderStructure: `src/
 └── lib/
@@ -35,7 +41,7 @@ const installBlock: InstallComponentDocs = {
         └── fancy/
             └── pixelate-svg-filter/
                 ├── pixelate-svg-filter.svelte
-                └── index.ts`
+                └── index.ts`,
 };
 
 const examples: Example[] = [
@@ -47,7 +53,7 @@ const examples: Example[] = [
 			filecode: VideoPixelateDemoRaw,
 			lang: "svelte",
 			hideLines: true,
-		}
+		},
 	},
 	{
 		name: "Image Pixelate Demo",
@@ -57,9 +63,9 @@ const examples: Example[] = [
 			filecode: "",
 			lang: "svelte",
 			hideLines: true,
-		}
-	}
-]
+		},
+	},
+];
 
 export const data: ComponentDoc = {
 	...meta,
@@ -71,6 +77,36 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { PixelateSvgFilter } from "#lib/components/fancy/pixelate-svg-filter/index.js";
+
+	let pixelated = $state(true);
+</script>
+
+<div class="relative w-fit overflow-hidden rounded-2xl">
+	<PixelateSvgFilter id="portrait-pixelate" size={12} crossLayers />
+
+	<img
+		src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=720&q=80"
+		alt="Portrait of a woman outdoors"
+		class="h-96 w-72 object-cover transition-[filter] duration-300"
+		style:filter={pixelated ? "url(#portrait-pixelate)" : "none"}
+	/>
+
+	<button
+		type="button"
+		class="absolute right-3 bottom-3 rounded-full bg-black/70 px-4 py-2 text-sm text-white backdrop-blur"
+		onclick={() => (pixelated = !pixelated)}
+	>
+		{pixelated ? "Show original" : "Pixelate image"}
+	</button>
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [],

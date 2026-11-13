@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 
 	type AuroraTextProps = {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		colors?: string[];
 		speed?: number;
 	};

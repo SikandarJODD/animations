@@ -1,12 +1,13 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount, getContext } from "svelte";
 	import { motion } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	interface AnimatedSpanProps {
 		children: Snippet;
 		delay?: number;
-		class?: string;
+		class?: ClassValue;
 		startOnView?: boolean;
 		itemIndex?: number;
 	}

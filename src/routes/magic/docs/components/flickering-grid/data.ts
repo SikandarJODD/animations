@@ -1,20 +1,25 @@
-﻿import Raw from "$lib/components/magic/flickering-grid/flickering-grid.svelte?raw";
-import IndexTs from "$lib/components/magic/flickering-grid/index.ts?raw";
+import Raw from "#lib/components/magic/flickering-grid/flickering-grid.svelte?raw";
+import IndexTs from "#lib/components/magic/flickering-grid/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import FlickeringGridBasic from "./examples/flickering-grid-basic.svelte";
 import FlickeringGridBasicRaw from "./examples/flickering-grid-basic.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+
+import FlickeringGridHeader from "./examples/flickering-grid-header.svelte";
+import FlickeringGridHeaderRaw from "./examples/flickering-grid-header.svelte?raw";
+import FlickeringGridPanel from "./examples/flickering-grid-panel.svelte";
+import FlickeringGridPanelRaw from "./examples/flickering-grid-panel.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
 	id: "flickering-grid",
 	title: "Flickering Grid",
 	description:
-		"A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
+		"A customizable Flickering Grid background component for Svelte 5, rendered efficiently with Canvas and styled using Tailwind CSS.",
 	category: "animation",
 	badge: "new",
 };
@@ -30,13 +35,40 @@ const examples: Example[] = [
 			lang: "svelte",
 		},
 	},
+	{
+		name: "Header Backdrop",
+		description: "A sparse emerald grid faded away from the heading to keep the text readable.",
+		preview: FlickeringGridHeader,
+		code: {
+			filename: "flickering-grid-header.svelte",
+			filecode: FlickeringGridHeaderRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Inset Panel",
+		description:
+			"A denser amber grid confined to a panel header, leaving the content area still.",
+		preview: FlickeringGridPanel,
+		code: {
+			filename: "flickering-grid-panel.svelte",
+			filecode: FlickeringGridPanelRaw,
+			lang: "svelte",
+		},
+	},
 ];
 
 const seo: SEO = {
-	title: "Flickering Grid",
+	title: "Flickering Grid for Svelte 5",
 	description:
-		"A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
-	keywords: ["Svelte", "Flickering Grid", "Svelte 5 Animations", "Animation", "Web Design"],
+		"Build a customizable Flickering Grid animation in Svelte 5 with Canvas rendering, responsive sizing, color controls, and adjustable flicker opacity.",
+	keywords: [
+		"Flickering Grid Svelte",
+		"Svelte Flickering Grid",
+		"Svelte 5 Canvas animation",
+		"Svelte animated background",
+		"Tailwind CSS animation",
+	],
 	titleTemplate: "%s | Svelte Magic UI",
 };
 
@@ -74,16 +106,29 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { FlickeringGrid } from "#lib/components/magic/flickering-grid/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<FlickeringGrid class="absolute inset-0 size-full" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "FlickeringGrid",
+			name: "Flickering Grid",
 			desc: "A component for creating a flickering grid background.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

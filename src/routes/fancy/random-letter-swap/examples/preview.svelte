@@ -1,6 +1,6 @@
 <script>
-	import { RandomLetterSwap } from "$lib/components/fancy/random-letter-swap";
-	import { RandomLetterSwapPingPong } from "$lib/components/fancy/random-letter-swap-ping-pong";
+	import { RandomLetterSwap } from "#lib/components/fancy/random-letter-swap/index.js";
+	import { RandomLetterSwapPingPong } from "#lib/components/fancy/random-letter-swap-ping-pong/index.js";
 </script>
 
 <div

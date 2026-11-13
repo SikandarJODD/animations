@@ -18,17 +18,27 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/smooth-curs
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/smooth-cursor.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { SmoothCursor } from "#lib/components/magic/smooth-cursor/index.js";
+</script>
+
+<SmoothCursor />
+```
+
 ## Preview
 
 ```svelte
 <script lang="ts">
-	import { SmoothCursor } from "$lib/components/magic/smooth-cursor";
+  import { SmoothCursor } from "#lib/components/magic/smooth-cursor/index.ts";
 </script>
 
 <div>
-	<span class="hidden md:block">Move your mouse around</span>
-	<span class="block md:hidden">Tap anywhere to see the cursor</span>
-	<SmoothCursor />
+  <span class="hidden md:block">Move your mouse around</span>
+  <span class="block md:hidden">Tap anywhere to see the cursor</span>
+  <SmoothCursor />
 </div>
 ```
 
@@ -38,24 +48,20 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/smooth-cursor.
 
 ```svelte
 <script lang="ts">
-	import { SmoothCursor } from "$lib/components/magic/smooth-cursor";
+  import { SmoothCursor } from "#lib/components/magic/smooth-cursor/index.ts";
 </script>
 
 <div>
-	<span class="hidden md:block">Move your mouse around</span>
-	<span class="block md:hidden">Tap anywhere to see the cursor</span>
-	<SmoothCursor />
+  <span class="hidden md:block">Move your mouse around</span>
+  <span class="block md:hidden">Tap anywhere to see the cursor</span>
+  <SmoothCursor />
 </div>
 ```
-
-## Usage
-
-Import `SmoothCursor` from `$lib/components/magic/smooth-cursor` and pass the props you need for your use case.
 
 ## Props
 
 A component for Smooth Cursor.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
+| Prop    | Type     | Default | Description                     |
+| ------- | -------- | ------- | ------------------------------- |
+| `class` | `string` | `""`    | Additional CSS classes to apply |

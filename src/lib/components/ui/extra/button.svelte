@@ -34,12 +34,15 @@
 		},
 	} as const;
 
-	export { type ButtonSize, type ButtonVariant } from "$lib/components/ui/button";
+	export { type ButtonSize, type ButtonVariant } from "#lib/components/ui/button/index.js";
 </script>
 
 <script lang="ts">
-	import { Button, type ButtonProps as ButtonPrimitiveProps } from "$lib/components/ui/button";
-	import { Spinner } from "$lib/components/ui/spinner";
+	import {
+		Button,
+		type ButtonProps as ButtonPrimitiveProps,
+	} from "#lib/components/ui/button/index.js";
+	import { Spinner } from "#lib/components/ui/spinner/index.js";
 
 	let {
 		ref = $bindable(null),

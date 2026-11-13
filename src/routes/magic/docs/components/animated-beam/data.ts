@@ -1,6 +1,10 @@
-﻿import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import AnimatedBeamFileMerge from "./examples/animated-beam-file-merge.svelte";
+import AnimatedBeamFileMergeRaw from "./examples/animated-beam-file-merge.svelte?raw";
+import AnimatedBeamPublish from "./examples/animated-beam-publish.svelte";
+import AnimatedBeamPublishRaw from "./examples/animated-beam-publish.svelte?raw";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 
 // Preview
 import Preview from "./examples/preview.svelte";
@@ -10,12 +14,12 @@ import OpenaiIcon from "./examples/openai-icon.svelte?raw";
 import UserIcon from "./examples/user-icon.svelte?raw";
 
 // Main Component
-import AnimatedBeamRaw from "$lib/components/magic/animated-beam/animated-beam.svelte?raw";
-import Index from "$lib/components/magic/animated-beam/index.ts?raw";
-import Types from "$lib/components/magic/animated-beam/types.ts?raw";
-import UseGradientCoordinates from "$lib/components/magic/animated-beam/use-gradient-coordinates.svelte.ts?raw";
-import UsePathCalculator from "$lib/components/magic/animated-beam/use-path-calculator.svelte.ts?raw";
-import UseResizeObserver from "$lib/components/magic/animated-beam/use-resize-observer.svelte.ts?raw";
+import AnimatedBeamRaw from "#lib/components/magic/animated-beam/animated-beam.svelte?raw";
+import Index from "#lib/components/magic/animated-beam/index.ts?raw";
+import Types from "#lib/components/magic/animated-beam/types.ts?raw";
+import UseGradientCoordinates from "#lib/components/magic/animated-beam/use-gradient-coordinates.svelte.ts?raw";
+import UsePathCalculator from "#lib/components/magic/animated-beam/use-path-calculator.svelte.ts?raw";
+import UseResizeObserver from "#lib/components/magic/animated-beam/use-resize-observer.svelte.ts?raw";
 
 // Examples
 import AnimatedBeamWithCurvature from "./examples/animated-beam-with-curvature.svelte";
@@ -141,6 +145,28 @@ const examples: Example[] = [
 			isExpand: true,
 		},
 	},
+	{
+		name: "Merge Four Files",
+		description:
+			"Four file nodes merge into a bundle through curved, staggered monochrome beams.",
+		preview: AnimatedBeamFileMerge,
+		code: {
+			filename: "animated-beam-file-merge.svelte",
+			filecode: AnimatedBeamFileMergeRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Publish Workflow",
+		description:
+			"A push flows through a build to preview and checks with a single status accent.",
+		preview: AnimatedBeamPublish,
+		code: {
+			filename: "animated-beam-publish.svelte",
+			filecode: AnimatedBeamPublishRaw,
+			lang: "svelte",
+		},
+	},
 ];
 
 const seo: SEO = {
@@ -181,6 +207,25 @@ export const data: ComponentDoc = {
 			hideLines: true,
 		},
 	],
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedBeam } from "#lib/components/magic/animated-beam/index.js";
+
+	let containerRef: HTMLDivElement | null = $state(null);
+	let fromRef: HTMLDivElement | null = $state(null);
+	let toRef: HTMLDivElement | null = $state(null);
+</script>
+
+<div class="relative flex h-24 w-64 items-center justify-between" bind:this={containerRef}>
+	<div class="size-3 rounded-full bg-current" bind:this={fromRef}></div>
+	<div class="size-3 rounded-full bg-current" bind:this={toRef}></div>
+	<AnimatedBeam {containerRef} {fromRef} {toRef} />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
@@ -190,7 +235,7 @@ export const data: ComponentDoc = {
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

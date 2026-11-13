@@ -1,13 +1,13 @@
 <script lang="ts" generics="T">
-	import { cn, type WithoutChildren } from "$lib/utils";
+	import { cn, type WithoutChildren } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	type TextMarqueeProps = WithoutChildren<Omit<HTMLAttributes<HTMLDivElement>, "prefix">> & {
 		items: T[];
 		children: Snippet<[T, number]>;
 		prefix?: Snippet;
-		class?: string;
+		class?: ClassValue;
 		speed?: number;
 		height?: number;
 		itemHeight?: number;

@@ -1,10 +1,16 @@
-﻿import RippleButtonRaw from "$lib/components/magic/ripple-button/ripple-button.svelte?raw";
-import IndexTs from "$lib/components/magic/ripple-button/index.ts?raw";
+import type { Example } from "#lib/types/examples.js";
+import RippleButtonRaw from "#lib/components/magic/ripple-button/ripple-button.svelte?raw";
+import IndexTs from "#lib/components/magic/ripple-button/index.ts?raw";
 
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+
+import RippleButtonTinted from "./examples/ripple-button-tinted.svelte";
+import RippleButtonTintedRaw from "./examples/ripple-button-tinted.svelte?raw";
+import RippleButtonSizes from "./examples/ripple-button-sizes.svelte";
+import RippleButtonSizesRaw from "./examples/ripple-button-sizes.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -14,6 +20,30 @@ export const meta: ComponentMeta = {
 	category: "animation",
 	badge: "new",
 };
+
+const examples: Example[] = [
+	{
+		name: "Tinted Buttons",
+		description:
+			"Emerald and orange buttons with faint translucent fills and light text in dark mode.",
+		preview: RippleButtonTinted,
+		code: {
+			filename: "ripple-button-tinted.svelte",
+			filecode: RippleButtonTintedRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Button Sizes",
+		description: "Compact, default, and large buttons using padding and font-size utilities.",
+		preview: RippleButtonSizes,
+		code: {
+			filename: "ripple-button-sizes.svelte",
+			filecode: RippleButtonSizesRaw,
+			lang: "svelte",
+		},
+	},
+];
 
 const seo: SEO = {
 	title: "Ripple Button",
@@ -93,15 +123,27 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { RippleButton } from "#lib/components/magic/ripple-button/index.js";
+</script>
+
+<RippleButton>Click me</RippleButton>`,
+			lang: "svelte",
+		},
+	},
+	examples,
 	seo,
 	props: [
 		{
-			name: "RippleButton",
+			name: "Ripple Button",
 			desc: "A component for Ripple Button.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

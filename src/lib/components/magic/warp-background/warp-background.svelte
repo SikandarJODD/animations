@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { motion } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface BeamProps {
 		width: string | number;
@@ -13,7 +13,7 @@
 
 	interface WarpBackgroundProps extends HTMLAttributes<HTMLDivElement> {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		perspective?: number;
 		beamsPerSide?: number;
 		beamSize?: number;

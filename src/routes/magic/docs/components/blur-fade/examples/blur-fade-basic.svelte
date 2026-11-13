@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { BlurFade } from "$lib/components/magic/blur-fade";
+	import { BlurFade } from "#lib/components/magic/blur-fade/index.js";
 </script>
 
 <div class="flex flex-col items-center justify-center gap-4 rounded-lg border p-8">

@@ -1,8 +1,8 @@
-import WordsStaggerRaw from "$lib/components/spell/words-stagger/words-stagger.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/words-stagger/index.ts?raw";
-import SharedTextUtilsRaw from "$lib/utils/text-utils.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import WordsStaggerRaw from "#lib/components/spell/words-stagger/words-stagger.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/words-stagger/index.ts?raw";
+import SharedTextUtilsRaw from "#lib/utils/text-utils.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import WordsStaggerSpeedExample from "./examples/words-stagger-speed-example.svelte";
@@ -45,7 +45,7 @@ const installBlock: InstallComponentDocs = {
 			lang: "typescript",
 		},
 		{
-			filename: "src/lib/utils/text-utils.ts",
+			filename: "src/lib/utils/text-utils.js",
 			filecode: SharedTextUtilsRaw,
 			lang: "typescript",
 		},
@@ -70,6 +70,17 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 		hideLines: true,
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { WordsStagger } from "#lib/components/spell/words-stagger/index.js";
+</script>
+
+<WordsStagger>Build delightful interfaces with Svelte.</WordsStagger>`,
+			lang: "svelte",
+		},
 	},
 	installBlock,
 	examples: [
@@ -160,7 +171,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "",
 					description: "Custom classes applied to the animated root element.",
 				},

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Separator } from "$lib/components/magic/separator";
-	import { Button } from "$lib/components/ui/button";
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
+	import { Separator } from "#lib/components/magic/separator/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import { Input } from "#lib/components/ui/input/index.js";
+	import { Label } from "#lib/components/ui/label/index.js";
 </script>
 
 <form
@@ -17,7 +17,13 @@
 	<div class="space-y-4">
 		<div class="space-y-2">
 			<Label for="signup-name">Name</Label>
-			<Input id="signup-name" name="name" placeholder="Jane Doe" autocomplete="name" required />
+			<Input
+				id="signup-name"
+				name="name"
+				placeholder="Jane Doe"
+				autocomplete="name"
+				required
+			/>
 		</div>
 		<div class="space-y-2">
 			<Label for="signup-email">Email</Label>

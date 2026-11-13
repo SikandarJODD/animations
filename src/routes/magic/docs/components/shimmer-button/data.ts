@@ -1,8 +1,8 @@
-﻿import ShimmerButtonRaw from "$lib/components/magic/shimmer-button/shimmer-button.svelte?raw";
-import IndexTs from "$lib/components/magic/shimmer-button/index.ts?raw";
+﻿import ShimmerButtonRaw from "#lib/components/magic/shimmer-button/shimmer-button.svelte?raw";
+import IndexTs from "#lib/components/magic/shimmer-button/index.ts?raw";
 
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -92,15 +92,26 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ShimmerButton } from "#lib/components/magic/shimmer-button/index.js";
+</script>
+
+<ShimmerButton>Get started</ShimmerButton>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
-			name: "ShimmerButton",
+			name: "Shimmer Button",
 			desc: "A component for Shimmer Button.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

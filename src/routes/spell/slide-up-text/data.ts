@@ -1,8 +1,8 @@
-import SlideUpTextRaw from "$lib/components/spell/slide-up-text/slide-up-text.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/slide-up-text/index.ts?raw";
-import SharedTextUtilsRaw from "$lib/utils/text-utils.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import SlideUpTextRaw from "#lib/components/spell/slide-up-text/slide-up-text.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/slide-up-text/index.ts?raw";
+import SharedTextUtilsRaw from "#lib/utils/text-utils.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import CharacterSplitExample from "./examples/split-by-example.svelte";
@@ -45,7 +45,7 @@ const installBlock: InstallComponentDocs = {
 			lang: "typescript",
 		},
 		{
-			filename: "src/lib/utils/text-utils.ts",
+			filename: "src/lib/utils/text-utils.js",
 			filecode: SharedTextUtilsRaw,
 			lang: "typescript",
 		},
@@ -67,6 +67,17 @@ export const data: ComponentDoc = {
 		filename: "preview.svelte",
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { SlideUpText } from "#lib/components/spell/slide-up-text/index.js";
+</script>
+
+<SlideUpText>You can just ship things.</SlideUpText>`,
+			lang: "svelte",
+		},
 	},
 	installBlock,
 	examples: [
@@ -168,7 +179,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "",
 					description: "Custom classes applied to the root wrapper.",
 				},

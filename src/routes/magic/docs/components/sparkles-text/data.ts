@@ -1,8 +1,8 @@
-import IndexTsRaw from "$lib/components/magic/sparkles-text/index.ts?raw";
-import SparklesTextSvelteRaw from "$lib/components/magic/sparkles-text/sparkles-text.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/sparkles-text/index.ts?raw";
+import SparklesTextSvelteRaw from "#lib/components/magic/sparkles-text/sparkles-text.svelte?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 
@@ -45,12 +45,23 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { SparklesText } from "#lib/components/magic/sparkles-text/index.js";
+</script>
+
+<SparklesText>Sparkles</SparklesText>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [],
 	seo,
 	props: [
 		{
-			name: "SparklesText",
+			name: "Sparkles Text",
 			desc: "A text wrapper that renders animated sparkle stars around its children.",
 			props: [
 				{
@@ -79,7 +90,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional classes merged onto the root element.",
 				},

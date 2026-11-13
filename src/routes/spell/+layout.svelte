@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import Toc from "$lib/components/docs/base/toc/toc.svelte";
-	import DocsNavigation from "$lib/components/docs/navigation/DocsNavigation.svelte";
-	import ContributeCard from "$lib/components/layout/contribute-card.svelte";
-	import { getPrevNext } from "$lib/components/docs/registry/spell_ui";
-	import SpellSidebar from "$lib/components/spell-sidebar.svelte";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import { UseToc } from "$lib/hooks/use-toc.svelte";
-	import SupportWork from "$lib/components/docs/base/support-work.svelte";
+	import Toc from "#lib/components/docs/base/toc/toc.svelte";
+	import DocsNavigation from "#lib/components/docs/navigation/docs-navigation.svelte";
+	import ContributeCard from "#lib/components/layout/contribute-card.svelte";
+	import GithubStar from "#lib/components/layout/github-star.svelte";
+	import { getPrevNext } from "#lib/components/docs/registry/spell_ui.js";
+	import SpellSidebar from "#lib/components/spell-sidebar.svelte";
+	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
+	import { UseToc } from "#lib/hooks/use-toc.svelte.js";
+	import SupportWork from "#lib/components/docs/base/support-work.svelte";
 
 	let { children } = $props();
 
@@ -40,7 +41,7 @@
 		{@render children()}
 	{:else}
 		<div
-			class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 px-4 py-6 sm:px-6 lg:pr-2 lg:pl-12 xl:grid-cols-[minmax(0,1fr)_16rem] xl:gap-x-14 xl:gap-y-0"
+			class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 px-4 py-8 sm:px-6 lg:px-8 xl:py-10 2xl:grid-cols-[minmax(0,1fr)_16rem] 2xl:items-start 2xl:gap-x-12 2xl:gap-y-0 2xl:pr-2"
 		>
 			<main
 				class="w-full max-w-5xl min-w-0 xl:justify-self-center 2xl:max-w-6xl"
@@ -50,7 +51,7 @@
 				<DocsNavigation previous={navigation.previous} next={navigation.next} />
 			</main>
 
-			<aside class="hidden w-full xl:block">
+			<aside class="hidden h-full w-full 2xl:block">
 				<div class="sticky top-24">
 					<div class="flex h-[calc(100vh-8rem)] min-h-0 flex-col">
 						<div>
@@ -59,10 +60,9 @@
 						<div class="min-h-0 overflow-y-auto">
 							<Toc toc={toc.current} />
 						</div>
-						<div>
-							<ContributeCard />
-						</div>
-						<div class="mt-auto">
+						<ContributeCard />
+						<div class="mt-auto flex shrink-0 flex-col gap-2 pt-4">
+							<GithubStar />
 							<SupportWork />
 						</div>
 					</div>

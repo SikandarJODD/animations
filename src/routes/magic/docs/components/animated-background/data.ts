@@ -1,10 +1,10 @@
-import AnimatedBackgroundContextSvelteTsRaw from "$lib/components/magic/animated-background/animated-background-context.svelte.ts?raw";
-import AnimatedBackgroundItemSvelteRaw from "$lib/components/magic/animated-background/animated-background-item.svelte?raw";
-import AnimatedBackgroundSvelteRaw from "$lib/components/magic/animated-background/animated-background.svelte?raw";
-import IndexTsRaw from "$lib/components/magic/animated-background/index.ts?raw";
+import AnimatedBackgroundContextSvelteTsRaw from "#lib/components/magic/animated-background/animated-background-context.svelte.ts?raw";
+import AnimatedBackgroundItemSvelteRaw from "#lib/components/magic/animated-background/animated-background-item.svelte?raw";
+import AnimatedBackgroundSvelteRaw from "#lib/components/magic/animated-background/animated-background.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/animated-background/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import AnimatedTabsHoverExample from "./examples/animated-tabs-hover-example.svelte";
@@ -13,12 +13,13 @@ import AnimatedCardBackgroundHoverExample from "./examples/animated-card-backgro
 import AnimatedCardBackgroundHoverExampleRaw from "./examples/animated-card-background-hover-example.svelte?raw";
 import SegmentedControlExample from "./examples/segmented-control-example.svelte";
 import SegmentedControlExampleRaw from "./examples/segmented-control-example.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.js";
 
 export const meta: ComponentMeta = {
 	id: "animated-background",
 	title: "Animated Background",
-	description: "A shared animated background that smoothly moves between selected or hovered items.",
+	description:
+		"A shared animated background that smoothly moves between selected or hovered items.",
 	category: "magic",
 };
 
@@ -42,11 +43,13 @@ const installBlock: InstallComponentDocs = {
 			filename: "animated-background-item.svelte",
 			filecode: AnimatedBackgroundItemSvelteRaw,
 			lang: "svelte",
+			isExpand: true,
 		},
 		{
 			filename: "animated-background.svelte",
 			filecode: AnimatedBackgroundSvelteRaw,
 			lang: "svelte",
+			isExpand: true,
 		},
 		{ filename: "index.ts", filecode: IndexTsRaw, lang: "typescript" },
 	],
@@ -108,7 +111,7 @@ export const data: ComponentDoc = {
 	import {
 		AnimatedBackground,
 		AnimatedBackgroundItem
-	} from "$lib/components/magic/animated-background";
+	} from "#lib/components/magic/animated-background/index.js";
 
 	const tabs = ["Home", "About", "Contact"];
 </script>
@@ -132,7 +135,7 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "AnimatedBackground",
+			name: "Animated Background",
 			desc: "The root component that manages the active item and shared background animation.",
 			props: [
 				{
@@ -155,7 +158,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "CSS classes applied to the animated background element.",
 				},
@@ -174,7 +177,7 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "AnimatedBackgroundItem",
+			name: "Animated Background Item",
 			desc: "An individual selectable item that participates in the shared background animation.",
 			props: [
 				{
@@ -185,7 +188,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes applied to the item wrapper.",
 				},

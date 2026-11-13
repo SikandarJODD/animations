@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { GlareHover } from "$lib/components/magic/glare-hover";
-	import * as Card from "$lib/components/ui/card";
-	import { Button } from "$lib/components/ui/button";
+	import { GlareHover } from "#lib/components/magic/glare-hover/index.js";
+	import * as Card from "#lib/components/ui/card/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 </script>
 
 <GlareHover class="rounded-xl" color="#505050" duration={700}>

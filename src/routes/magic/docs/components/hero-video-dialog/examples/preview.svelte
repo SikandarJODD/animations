@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { HeroVideoDialog } from "$lib/components/magic/hero-video-dialog";
+	import { HeroVideoDialog } from "#lib/components/magic/hero-video-dialog/index.js";
 </script>
 
 <div class="relative">

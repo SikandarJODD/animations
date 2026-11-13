@@ -18,11 +18,21 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/shiny-butto
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shiny-button.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { ShinyButton } from "#lib/components/magic/shiny-button/index.js";
+</script>
+
+<ShinyButton>Get started</ShinyButton>
+```
+
 ## Preview
 
 ```svelte
 <script lang="ts">
-	import { ShinyButton } from "$lib/components/magic/shiny-button";
+  import { ShinyButton } from "#lib/components/magic/shiny-button/index.ts";
 </script>
 
 <ShinyButton>Shiny Button</ShinyButton>
@@ -34,20 +44,16 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/shiny-button.j
 
 ```svelte
 <script lang="ts">
-	import { ShinyButton } from "$lib/components/magic/shiny-button";
+  import { ShinyButton } from "#lib/components/magic/shiny-button/index.ts";
 </script>
 
 <ShinyButton>Shiny Button</ShinyButton>
 ```
 
-## Usage
-
-Import `ShinyButton` from `$lib/components/magic/shiny-button` and pass the props you need for your use case.
-
 ## Props
 
 A component for Shiny Button.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
+| Prop    | Type     | Default | Description                     |
+| ------- | -------- | ------- | ------------------------------- |
+| `class` | `string` | `""`    | Additional CSS classes to apply |

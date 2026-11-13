@@ -1,9 +1,14 @@
 <script lang="ts">
-	import { cn } from "$lib/utils.js";
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 	import { onMount, untrack, type Snippet } from "svelte";
 	import { watch } from "runed";
 	import Connectors from "./connectors.svelte";
-	import { createDescendantsState, setDescendantsContext, useDescendantsContext } from "./descendants.svelte";
+	import {
+		createDescendantsState,
+		setDescendantsContext,
+		useDescendantsContext,
+	} from "./descendants.svelte";
 	import { useDiagramContext } from "./diagram-context.svelte";
 	import type { Connector, NodeData, ParallelAlign, RectLike } from "./types";
 
@@ -18,7 +23,7 @@
 
 	interface FlowParallelProps {
 		align?: ParallelAlign;
-		class?: string;
+		class?: ClassValue;
 		children?: Snippet;
 	}
 
@@ -171,8 +176,12 @@
 		const hasIncomingJunction = (() => {
 			if (incomingBranchPoints.length <= 1) return false;
 
-			const hasAbove = incomingBranchPoints.some((point) => point.y < start.y - FLAT_THRESHOLD);
-			const hasBelow = incomingBranchPoints.some((point) => point.y > start.y + FLAT_THRESHOLD);
+			const hasAbove = incomingBranchPoints.some(
+				(point) => point.y < start.y - FLAT_THRESHOLD
+			);
+			const hasBelow = incomingBranchPoints.some(
+				(point) => point.y > start.y + FLAT_THRESHOLD
+			);
 			const hasInline = incomingBranchPoints.some(
 				(point) => Math.abs(point.y - start.y) <= FLAT_THRESHOLD
 			);
@@ -325,9 +334,12 @@
 		return () => observer.disconnect();
 	});
 
-	watch(() => parentDescendants.measurementEpoch, () => {
-		untrack(() => remeasure());
-	});
+	watch(
+		() => parentDescendants.measurementEpoch,
+		() => {
+			untrack(() => remeasure());
+		}
+	);
 
 	$effect(() => {
 		const onLayoutShift = () => {
@@ -381,7 +393,7 @@
 	bind:this={containerRef}
 	class={cn(
 		"relative isolate",
-		orientation === "horizontal" ? "px-16 -mr-16" : "py-16 -mb-16",
+		orientation === "horizontal" ? "-mr-16 px-16" : "-mb-16 py-16",
 		orientation === "horizontal"
 			? previousIsParallel
 				? "-ml-3"
@@ -397,7 +409,9 @@
 		{#if links}
 			<Connectors connectors={links.connectors} {orientation}>
 				{#if junctionMarker === "square" && links.junctions.start}
-					<g transform={`translate(${links.junctions.start.x} ${links.junctions.start.y})`}>
+					<g
+						transform={`translate(${links.junctions.start.x} ${links.junctions.start.y})`}
+					>
 						<rect x="-3" y="-3" width="6" height="6" fill="currentColor" rx="1" />
 					</g>
 				{/if}

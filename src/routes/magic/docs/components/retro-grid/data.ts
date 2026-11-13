@@ -1,9 +1,9 @@
-﻿import RetroGridRaw from "$lib/components/magic/retro-grid/retro-grid.svelte?raw";
-import IndexTs from "$lib/components/magic/retro-grid/index.ts?raw";
+﻿import RetroGridRaw from "#lib/components/magic/retro-grid/retro-grid.svelte?raw";
+import IndexTs from "#lib/components/magic/retro-grid/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -77,16 +77,29 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { RetroGrid } from "#lib/components/magic/retro-grid/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<RetroGrid />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "RetroGrid",
+			name: "Retro Grid",
 			desc: "A component for Retro Grid.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

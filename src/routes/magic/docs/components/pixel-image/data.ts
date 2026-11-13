@@ -1,9 +1,9 @@
-﻿import Raw from "$lib/components/magic/pixel-image/pixel-image.svelte?raw";
-import IndexTs from "$lib/components/magic/pixel-image/index.ts?raw";
+﻿import Raw from "#lib/components/magic/pixel-image/pixel-image.svelte?raw";
+import IndexTs from "#lib/components/magic/pixel-image/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -105,11 +105,22 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { PixelImage } from "#lib/components/magic/pixel-image/index.js";
+</script>
+
+<PixelImage src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "PixelImage",
+			name: "Pixel Image",
 			desc: "A component that creates stunning image reveal animations by splitting images into a grid of pieces with staggered fade-in effects.",
 			props: [
 				{

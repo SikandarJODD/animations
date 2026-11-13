@@ -1,9 +1,15 @@
-﻿import DitherShaderRaw from "$lib/components/magic/dither-shader/dither-shader.svelte?raw";
-import IndexTs from "$lib/components/magic/dither-shader/index.ts?raw";
+import DitherShaderEmerald from "./examples/dither-shader-emerald.svelte";
+import DitherShaderEmeraldRaw from "./examples/dither-shader-emerald.svelte?raw";
+import DitherShaderDensity from "./examples/dither-shader-density.svelte";
+import DitherShaderDensityRaw from "./examples/dither-shader-density.svelte?raw";
+import DitherShaderPalette from "./examples/dither-shader-palette.svelte";
+import DitherShaderPaletteRaw from "./examples/dither-shader-palette.svelte?raw";
+import DitherShaderRaw from "#lib/components/magic/dither-shader/dither-shader.svelte?raw";
+import IndexTs from "#lib/components/magic/dither-shader/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import DitherShaderExample from "./examples/dither-shader-example.svelte";
 import DitherShaderExampleRaw from "./examples/dither-shader-example.svelte?raw";
 import DitherSharerDemoDuotone from "./examples/dither-sharer-demo-duotone.svelte";
@@ -42,6 +48,38 @@ const examples: Example[] = [
 			highlight: [2],
 		},
 		preview: DitherSharerDemoDuotone,
+	},
+	{
+		name: "Emerald Halftone",
+		description: "Use a two-color palette and halftone pattern for an image thumbnail.",
+		preview: DitherShaderEmerald,
+		code: {
+			filename: "dither-shader-emerald.svelte",
+			filecode: DitherShaderEmeraldRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Pixel Density",
+		description: "Compare a simple ocean image at three grid sizes in taller image containers.",
+		preview: DitherShaderDensity,
+		previewClass: "min-h-104",
+		code: {
+			filename: "dither-shader-density.svelte",
+			filecode: DitherShaderDensityRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Four-Color Palette",
+		description:
+			"Map soft mountain layers to four warm tones ordered from darkest to lightest.",
+		preview: DitherShaderPalette,
+		code: {
+			filename: "dither-shader-palette.svelte",
+			filecode: DitherShaderPaletteRaw,
+			lang: "svelte",
+		},
 	},
 ];
 
@@ -87,11 +125,25 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { DitherShader } from "#lib/components/magic/dither-shader/index.js";
+</script>
+
+<DitherShader
+	src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
+	class="h-80 w-full"
+/>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "DitherShader",
+			name: "Dither Shader",
 			desc: "A component for Dither Shader.",
 			props: [
 				{
@@ -193,7 +245,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description:
 						"Additional CSS classes for the container (use this to set size via Tailwind).",

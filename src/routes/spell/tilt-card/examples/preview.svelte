@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TiltCard } from "$lib/components/spell/tilt-card";
+	import { TiltCard } from "#lib/components/spell/tilt-card/index.js";
 </script>
 
 {#snippet spellLogo()}

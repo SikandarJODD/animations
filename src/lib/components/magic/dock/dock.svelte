@@ -1,8 +1,9 @@
 <script lang="ts" module>
 	import type { MotionValue } from "motion-sv";
+	import type { ClassValue } from "svelte/elements";
 
 	export interface DockProps {
-		class?: string;
+		class?: ClassValue;
 		iconSize?: number;
 		iconMagnification?: number;
 		disableMagnification?: boolean;
@@ -22,7 +23,7 @@
 
 <script lang="ts">
 	import { motion, useMotionValue } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 	import { setContext } from "svelte";
 

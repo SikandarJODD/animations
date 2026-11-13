@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Letter3DSwap } from "$lib/components/fancy/letter-3d-swap";
+	import { Letter3DSwap } from "#lib/components/fancy/letter-3d-swap/index.js";
 </script>
 
 <div class="flex min-h-80 items-center justify-center rounded-xl bg-sky-100 px-5 py-8">

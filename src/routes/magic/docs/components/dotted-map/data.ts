@@ -1,9 +1,9 @@
-﻿import DottedMapRaw from "$lib/components/magic/dotted-map/dotted-map.svelte?raw";
-import IndexTs from "$lib/components/magic/dotted-map/index.ts?raw";
+﻿import DottedMapRaw from "#lib/components/magic/dotted-map/dotted-map.svelte?raw";
+import IndexTs from "#lib/components/magic/dotted-map/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
-import type { Example } from "$lib/types/examples";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { Example } from "#lib/types/examples.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import CustomDotRadius from "./examples/custom-dot-radius.svelte";
@@ -72,11 +72,26 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { DottedMap } from "#lib/components/magic/dotted-map/index.js";
+
+	const markers = [{ lat: 40.7128, lng: -74.006, size: 0.4 }];
+</script>
+
+<div class="h-80 w-full">
+	<DottedMap {markers} />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "DottedMap",
+			name: "Dotted Map",
 			desc: "An SVG-based world map with dots and customizable markers.",
 			props: [
 				{ name: "width", type: "number", default: "150", description: "Width of the map" },
@@ -119,7 +134,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

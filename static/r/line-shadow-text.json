@@ -7,6 +7,15 @@
 	"dependencies": [
 		"motion-sv"
 	],
+	"meta": {
+		"categories": [
+			"text",
+			"shadow",
+			"marketing",
+			"automatic",
+			"medium-motion"
+		]
+	},
 	"css": {
 		"@keyframes line-shadow": {
 			"0%": {
@@ -24,7 +33,7 @@
 	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\n\timport { motion } from \"motion-sv\";\n\timport { cn } from \"$UTILS$\";\n\n\ttype ElementType = \"span\" | \"div\" | \"p\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\";\n\n\tinterface LineShadowTextProps {\n\t\tcontent: string;\n\t\tclass?: string;\n\t\tshadowColor?: string;\n\t\tas?: ElementType;\n\t}\n\n\tlet {\n\t\tcontent,\n\t\tclass: className,\n\t\tshadowColor = \"black\",\n\t\tas = \"span\",\n\t}: LineShadowTextProps = $props();\n\n\tlet MotionComponent = $derived(motion[as]);\n</script>\n\n<MotionComponent\n\tstyle={{ \"--shadow-color\": shadowColor }}\n\tclass={cn(\n\t\t\"relative z-0 inline-block whitespace-pre\",\n\t\t\"after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]\",\n\t\t\"after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]\",\n\t\t\"after:-z-10 after:bg-size-[0.06em_0.06em] after:bg-clip-text after:text-transparent\",\n\t\t\"after:animate-line-shadow\",\n\t\tclassName\n\t)}\n\tdata-text={content}\n>\n\t{content}\n</MotionComponent>\n",
+			"content": "<script lang=\"ts\">\n\timport type { ClassValue } from \"svelte/elements\";\n\timport { motion } from \"motion-sv\";\n\timport { cn } from \"#lib/utils.js\";\n\n\ttype ElementType = \"span\" | \"div\" | \"p\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\";\n\n\tinterface LineShadowTextProps {\n\t\tcontent: string;\n\t\tclass?: ClassValue;\n\t\tshadowColor?: string;\n\t\tas?: ElementType;\n\t}\n\n\tlet {\n\t\tcontent,\n\t\tclass: className,\n\t\tshadowColor = \"black\",\n\t\tas = \"span\",\n\t}: LineShadowTextProps = $props();\n\n\tlet MotionComponent = $derived(motion[as]);\n</script>\n\n<MotionComponent\n\tstyle={{ \"--shadow-color\": shadowColor }}\n\tclass={cn(\n\t\t\"relative z-0 inline-block whitespace-pre\",\n\t\t\"after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]\",\n\t\t\"after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]\",\n\t\t\"after:-z-10 after:bg-size-[0.06em_0.06em] after:bg-clip-text after:text-transparent\",\n\t\t\"after:animate-line-shadow\",\n\t\tclassName\n\t)}\n\tdata-text={content}\n>\n\t{content}\n</MotionComponent>\n",
 			"type": "registry:component",
 			"target": "magic/line-shadow-text/line-shadow-text.svelte"
 		},

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LabelInput } from "$lib/components/spell/label-input";
+	import { LabelInput } from "#lib/components/spell/label-input/index.js";
 </script>
 
 <div class="flex gap-4 not-md:flex-col">

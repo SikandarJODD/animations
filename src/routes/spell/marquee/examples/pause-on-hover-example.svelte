@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Marquee } from "$lib/components/spell/marquee";
-	import { Avatar, AvatarImage, AvatarFallback } from "$lib/components/ui/avatar";
+	import { Marquee } from "#lib/components/spell/marquee/index.js";
+	import { Avatar, AvatarImage, AvatarFallback } from "#lib/components/ui/avatar/index.js";
 	const users = [
 		{ id: "alice", name: "Alice", role: "Product Manager", initials: "AL" },
 		{ id: "bob", name: "Bob", role: "Software Engineer", initials: "BO" },
@@ -24,7 +24,7 @@
 				<AvatarFallback>{user.initials}</AvatarFallback>
 			</Avatar>
 			<div class="flex flex-col justify-between">
-				<h1 class="text-sm font-medium">{user.name}</h1>
+				<p class="text-sm font-medium">{user.name}</p>
 				<p class="text-muted-foreground text-xs">{user.role}</p>
 			</div>
 		</div>

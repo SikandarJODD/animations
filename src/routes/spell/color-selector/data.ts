@@ -1,7 +1,7 @@
-import ColorSelectorRaw from "$lib/components/spell/color-selector/color-selector.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/color-selector/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import ColorSelectorRaw from "#lib/components/spell/color-selector/color-selector.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/color-selector/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import SizeVariationExample from "./examples/size-variation-example.svelte";
@@ -61,6 +61,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ColorSelector } from "#lib/components/spell/color-selector/index.js";
+</script>
+
+<ColorSelector colors={["orange", "teal", "purple"]} />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{
@@ -119,7 +130,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "",
 					description: "Custom classes merged onto the radiogroup root.",
 				},

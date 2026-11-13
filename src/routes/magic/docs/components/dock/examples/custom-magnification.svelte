@@ -4,8 +4,8 @@
 	import MessageCircle from "@lucide/svelte/icons/message-circle";
 	import Music from "@lucide/svelte/icons/music";
 
-	import { GitHub } from "$lib/components/icons";
-	import { Dock, DockIcon } from "$lib/components/magic/dock";
+	import { GitHub } from "#lib/components/icons/index.js";
+	import { Dock, DockIcon } from "#lib/components/magic/dock/index.js";
 </script>
 
 <div class="relative flex w-full items-center justify-center">

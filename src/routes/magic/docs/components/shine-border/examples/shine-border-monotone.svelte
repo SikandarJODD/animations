@@ -1,14 +1,14 @@
 <script lang="ts">
-	import ShineBorder from "$lib/components/magic/shine-border/shine-border.svelte";
-	import { Button } from "$lib/components/ui/button";
-	import * as Card from "$lib/components/ui/card/index.js";
-	import { Input } from "$lib/components/ui/input";
-	import { Label } from "$lib/components/ui/label";
+	import ShineBorder from "#lib/components/magic/shine-border/shine-border.svelte";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Card from "#lib/components/ui/card/index.js";
+	import { Input } from "#lib/components/ui/input/index.js";
+	import { Label } from "#lib/components/ui/label/index.js";
 	// For Light and Dark Mode
 	import { mode } from "mode-watcher";
 </script>
 
-<Card.Root class="relative mx-auto max-w-87 overflow-hidden">
+<Card.Root class="relative mx-auto w-full max-w-md overflow-hidden">
 	<ShineBorder shineColor={mode.current === "dark" ? "white" : "black"} />
 	<Card.Header>
 		<Card.Title>Login</Card.Title>

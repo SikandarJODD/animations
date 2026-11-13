@@ -1,12 +1,12 @@
-import LetterSwapRaw from "$lib/components/fancy/letter-swap/letter-swap.svelte?raw";
-import LetterSwapPingPongRaw from "$lib/components/fancy/letter-swap-ping-pong/letter-swap-ping-pong.svelte?raw";
-import IndexTsPingPongRaw from "$lib/components/fancy/letter-swap-ping-pong/index.ts?raw";
-import IndexTsRaw from "$lib/components/fancy/letter-swap/index.ts?raw";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import LetterSwapRaw from "#lib/components/fancy/letter-swap/letter-swap.svelte?raw";
+import LetterSwapPingPongRaw from "#lib/components/fancy/letter-swap-ping-pong/letter-swap-ping-pong.svelte?raw";
+import IndexTsPingPongRaw from "#lib/components/fancy/letter-swap-ping-pong/index.ts?raw";
+import IndexTsRaw from "#lib/components/fancy/letter-swap/index.ts?raw";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.js";
 import StaggerFromExample from "./examples/stagger-from-example.svelte";
 import StaggerFromExampleRaw from "./examples/stagger-from-example.svelte?raw";
 import LineSwapExample from "./examples/line-swap-example.svelte";
@@ -86,6 +86,42 @@ export const data: ComponentDoc = {
 		filecode: PreviewRaw,
 		lang: "svelte",
 	},
+	usage: {
+		code: [
+			{
+				filename: "forward-usage.svelte",
+				filecode: `<script lang="ts">
+	import { LetterSwap } from "#lib/components/fancy/letter-swap/index.js";
+</script>
+
+<a href="/about" class="inline-flex text-3xl font-semibold tracking-tight">
+	<LetterSwap
+		label="Meet the studio"
+		staggerFrom="center"
+		staggerDuration={0.025}
+		class="text-foreground"
+	/>
+</a>`,
+				lang: "svelte",
+			},
+			{
+				filename: "ping-pong-usage.svelte",
+				filecode: `<script lang="ts">
+	import { LetterSwapPingPong } from "#lib/components/fancy/letter-swap-ping-pong/index.js";
+</script>
+
+<button class="rounded-full border px-5 py-3 text-sm font-medium" type="button">
+	<LetterSwapPingPong
+		label="Add to collection"
+		reverse={false}
+		staggerFrom="first"
+		staggerDuration={0.02}
+	/>
+</button>`,
+				lang: "svelte",
+			},
+		],
+	},
 	examples,
 	props: [
 		{
@@ -102,7 +138,8 @@ export const data: ComponentDoc = {
 					name: "reverse",
 					type: "boolean",
 					default: "true",
-					description: "Reverses the vertical swap direction for the entering characters.",
+					description:
+						"Reverses the vertical swap direction for the entering characters.",
 				},
 				{
 					name: "transition",
@@ -124,7 +161,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Classes merged onto the interactive text wrapper.",
 				},

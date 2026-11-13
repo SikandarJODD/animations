@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Sheet from "$lib/components/ui/sheet/index.js";
-	import { cn, type WithElementRef } from "$lib/utils.js";
+	import * as Sheet from "#lib/components/ui/sheet/index.js";
+	import { cn, type WithElementRef } from "#lib/utils.js";
 	import { SIDEBAR_WIDTH_MOBILE } from "./constants.js";
 	import { useSidebar } from "./context.svelte.js";
 	import type { HTMLAttributes } from "svelte/elements";
@@ -25,7 +25,7 @@
 {#if collapsible === "none"}
 	<div
 		class={cn(
-			"flex h-full w-(--sidebar-width) flex-col bg-sidebar text-sidebar-foreground",
+			"bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col",
 			className
 		)}
 		bind:this={ref}
@@ -34,14 +34,17 @@
 		{@render children?.()}
 	</div>
 {:else if sidebar.isMobile}
-	<Sheet.Root bind:open={() => sidebar.openMobile, (v) => sidebar.setOpenMobile(v)} {...restProps}>
+	<Sheet.Root
+		bind:open={() => sidebar.openMobile, (v) => sidebar.setOpenMobile(v)}
+		{...restProps}
+	>
 		<Sheet.Content
 			bind:ref
 			data-sidebar="sidebar"
 			data-slot="sidebar"
 			data-mobile="true"
 			class={cn(
-				"w-(--sidebar-width) bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden",
+				"bg-sidebar text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden",
 				className
 			)}
 			style="--sidebar-width: {SIDEBAR_WIDTH_MOBILE};"
@@ -59,7 +62,7 @@
 {:else}
 	<div
 		bind:this={ref}
-		class="group peer hidden text-sidebar-foreground md:block"
+		class="group peer text-sidebar-foreground hidden md:block"
 		data-state={sidebar.state}
 		data-collapsible={sidebar.state === "collapsed" ? collapsible : ""}
 		data-variant={variant}
@@ -70,7 +73,7 @@
 		<div
 			data-slot="sidebar-gap"
 			class={cn(
-				"transition-[width] duration-200 ease-linear relative w-(--sidebar-width) bg-transparent",
+				"relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear",
 				"group-data-[collapsible=offcanvas]:w-0",
 				"group-data-[side=right]:rotate-180",
 				variant === "floating" || variant === "inset"
@@ -94,7 +97,7 @@
 			<div
 				data-sidebar="sidebar"
 				data-slot="sidebar-inner"
-				class="bg-sidebar group-data-[variant=floating]:ring-sidebar-border group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:ring-1 flex size-full flex-col"
+				class="dark:bg-sidebar group-data-[variant=floating]:ring-sidebar-border flex size-full flex-col bg-white group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow-sm"
 			>
 				{@render children?.()}
 			</div>

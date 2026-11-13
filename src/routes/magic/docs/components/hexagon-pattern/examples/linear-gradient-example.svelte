@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { HexagonPattern } from "$lib/components/magic/hexagon-pattern";
-	import { cn } from "$lib/utils";
+	import { HexagonPattern } from "#lib/components/magic/hexagon-pattern/index.js";
+	import { cn } from "#lib/utils.js";
 </script>
 
 <div
@@ -10,8 +10,6 @@
 		radius={40}
 		x={-1}
 		y={-1}
-		className={cn(
-			"mask-[linear-gradient(to_bottom_right,white,transparent,transparent)]"
-		)}
+		className={cn("mask-[linear-gradient(to_bottom_right,white,transparent,transparent)]")}
 	/>
 </div>

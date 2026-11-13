@@ -1,10 +1,10 @@
-﻿import BentoGridRaw from "$lib/components/magic/bento-grid/bento-grid.svelte?raw";
-import BentoCardRaw from "$lib/components/magic/bento-grid/bento-card.svelte?raw";
-import IndexTs from "$lib/components/magic/bento-grid/index.ts?raw";
+﻿import BentoGridRaw from "#lib/components/magic/bento-grid/bento-grid.svelte?raw";
+import BentoCardRaw from "#lib/components/magic/bento-grid/bento-card.svelte?raw";
+import IndexTs from "#lib/components/magic/bento-grid/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -84,6 +84,31 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import BoxIcon from "@lucide/svelte/icons/box";
+	import { BentoCard, BentoGrid } from "#lib/components/magic/bento-grid/index.js";
+</script>
+
+{#snippet background()}
+	<div class="absolute inset-0 bg-muted"></div>
+{/snippet}
+
+<BentoGrid>
+	<BentoCard
+		name="Analytics"
+		description="Track your most important metrics."
+		href="/analytics"
+		cta="View analytics"
+		Icon={BoxIcon}
+		{background}
+	/>
+</BentoGrid>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
@@ -92,7 +117,7 @@ export const data: ComponentDoc = {
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},
@@ -113,7 +138,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

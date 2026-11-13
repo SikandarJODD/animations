@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { motion } from "motion-sv";
-	import { cn } from "$lib/utils";
-	import type { HTMLAttributes } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface AnimatedGridPatternProps extends HTMLAttributes<SVGElement> {
 		width?: number;
@@ -14,7 +14,7 @@
 		maxOpacity?: number;
 		duration?: number;
 		repeatDelay?: number;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	type Square = {

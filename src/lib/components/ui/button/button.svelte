@@ -2,7 +2,7 @@
 	import type { WithChildren, WithoutChildren } from "bits-ui";
 	import { type VariantProps, tv } from "tailwind-variants";
 	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 
 	export const buttonVariants = tv({
 		base: "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 group/button inline-flex shrink-0 cursor-pointer items-center justify-center rounded-md border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:ring-3 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:ring-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
@@ -28,6 +28,8 @@
 				icon: "size-9",
 				"icon-xs":
 					"size-6 rounded-[min(var(--radius-md),8px)] in-data-[slot=button-group]:rounded-md [&_svg:not([class*='size-'])]:size-3",
+				"icon-md":
+					"size-7.5 rounded-[min(var(--radius-md),9px)] in-data-[slot=button-group]:rounded-md [&_svg:not([class*='size-'])]:size-3.5",
 				"icon-sm":
 					"size-8 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-md",
 				"icon-lg": "size-10",

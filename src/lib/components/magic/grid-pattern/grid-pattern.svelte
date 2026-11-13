@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
-	import type { SVGAttributes } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
+	import type { ClassValue, SVGAttributes } from "svelte/elements";
 
 	interface GridPatternProps extends SVGAttributes<SVGSVGElement> {
 		width?: number;
@@ -21,7 +21,7 @@
 		 * Stroke dash array for dashed lines
 		 */
 		strokeDashArray?: string;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

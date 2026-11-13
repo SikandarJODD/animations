@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
-	import type { SVGAttributes } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
+	import type { ClassValue, SVGAttributes } from "svelte/elements";
 
 	type Direction = "horizontal" | "vertical";
 	type HexPoint = readonly [number, number];
@@ -13,7 +13,7 @@
 		direction?: Direction;
 		strokeDasharray?: string;
 		hexagons?: Array<[col: number, row: number]>;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	function hexVertexList(cx: number, cy: number, r: number, direction: Direction): HexPoint[] {

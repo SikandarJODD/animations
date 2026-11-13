@@ -1,11 +1,11 @@
-import GlareHoverSvelteRaw from "$lib/components/magic/glare-hover/glare-hover.svelte?raw";
-import IndexTsRaw from "$lib/components/magic/glare-hover/index.ts?raw";
+import GlareHoverSvelteRaw from "#lib/components/magic/glare-hover/glare-hover.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/glare-hover/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import type { Example } from "$lib/types/examples";
+import type { Example } from "#lib/types/examples.js";
 import CtaExample from "./examples/cta-example.svelte";
 import CtaExampleRaw from "./examples/cta-example.svelte?raw";
 
@@ -65,12 +65,25 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { GlareHover } from "#lib/components/magic/glare-hover/index.js";
+</script>
+
+<GlareHover class="rounded-xl">
+	<div class="rounded-xl border p-8">Hover me</div>
+</GlareHover>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples,
 	seo,
 	props: [
 		{
-			name: "GlareHover",
+			name: "Glare Hover",
 			desc: "A wrapper component that sweeps a configurable glare across its content on hover.",
 			props: [
 				{
@@ -136,7 +149,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional classes merged onto the root div.",
 				},

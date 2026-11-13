@@ -1,7 +1,7 @@
 <script lang="ts">
 	import "./layout.css";
-	import favicon from "$lib/assets/favicon.svg";
-	import { Header } from "$lib/components/main/header";
+	import favicon from "#lib/assets/favicon.svg";
+	import { Header } from "#lib/components/main/header/index.js";
 	import { ModeWatcher, toggleMode } from "mode-watcher";
 	import { activeElement, PressedKeys } from "runed";
 

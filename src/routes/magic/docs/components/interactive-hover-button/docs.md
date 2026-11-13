@@ -18,11 +18,21 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive-hover-button.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { InteractiveHoverButton } from "#lib/components/magic/interactive-hover-button/index.js";
+</script>
+
+<InteractiveHoverButton>Hover me</InteractiveHoverButton>
+```
+
 ## Preview
 
 ```svelte
 <script lang="ts">
-	import { InteractiveHoverButton } from "$lib/components/magic/interactive-hover-button";
+  import { InteractiveHoverButton } from "#lib/components/magic/interactive-hover-button/index.ts";
 </script>
 
 <InteractiveHoverButton>Hover Me</InteractiveHoverButton>
@@ -34,21 +44,17 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/interactive-ho
 
 ```svelte
 <script lang="ts">
-	import { InteractiveHoverButton } from "$lib/components/magic/interactive-hover-button";
+  import { InteractiveHoverButton } from "#lib/components/magic/interactive-hover-button/index.ts";
 </script>
 
 <InteractiveHoverButton>Hover Me</InteractiveHoverButton>
 ```
 
-## Usage
-
-Import the component and wrap the content you want it to affect. Adjust the optional props to tune the visual behavior.
-
 ## Props
 
 A component for Interactive Hover Button.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
+| Prop       | Type      | Default    | Description                              |
+| ---------- | --------- | ---------- | ---------------------------------------- |
+| `class`    | `string`  | `""`       | Additional CSS classes to apply          |
 | `children` | `Snippet` | `required` | The content to display inside the button |

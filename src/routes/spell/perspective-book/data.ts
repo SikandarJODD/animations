@@ -1,7 +1,7 @@
-import PerspectiveBookRaw from "$lib/components/spell/perspective-book/perspective-book.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/perspective-book/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import PerspectiveBookRaw from "#lib/components/spell/perspective-book/perspective-book.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/perspective-book/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import TexturedExample from "./examples/textured-example.svelte";
@@ -61,6 +61,19 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { PerspectiveBook } from "#lib/components/spell/perspective-book/index.js";
+</script>
+
+<PerspectiveBook>
+	<h2>Perspective Interfaces</h2>
+</PerspectiveBook>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{
@@ -90,7 +103,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "''",
 				},
 				{

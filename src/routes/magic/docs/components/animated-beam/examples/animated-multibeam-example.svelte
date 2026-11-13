@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AnimatedBeam } from "$lib/components/magic/animated-beam";
+	import { AnimatedBeam } from "#lib/components/magic/animated-beam/index.js";
 	import Circle from "./circle.svelte";
 	import GoogleDriveIcon from "./google-drive-icon.svelte";
 	import GoogleDocsIcon from "./google-docs-icon.svelte";

@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { StripedPattern } from "$lib/components/magic/striped-pattern";
+	import { StripedPattern } from "#lib/components/magic/striped-pattern/index.js";
 </script>
 
 <div

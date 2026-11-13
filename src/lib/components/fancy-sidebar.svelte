@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { fancyUISidebarGroups } from "$lib/components/docs/registry/fancy_ui";
-	import Badge from "$lib/components/ui/badge/badge.svelte";
-	import { ScrollArea, ScrollFadeEffect } from "$lib/components/ui/scroll-area/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import { fancyUISidebarGroups } from "#lib/components/docs/registry/fancy_ui.js";
+	import Badge from "#lib/components/ui/badge/badge.svelte";
+	import { ScrollArea, ScrollFadeEffect } from "#lib/components/ui/scroll-area/index.js";
+	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
 	import type { ComponentProps } from "svelte";
 	import BhideSvelteCard from "./main/bhide-svelte-card.svelte";
+	import SidebarResourceLinks from "./docs/base/sidebar-resource-links.svelte";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 
-<Sidebar.Root {...restProps} bind:ref class="bg-background! pt-14">
+<Sidebar.Root {...restProps} bind:ref class="pt-14">
 	<Sidebar.Content>
 		{#each fancyUISidebarGroups as group (group.title)}
 			{#if group.items.length}
@@ -52,6 +53,7 @@
 		{/each}
 	</Sidebar.Content>
 	<Sidebar.Footer>
+		<SidebarResourceLinks skillsHref="/fancy/skills" />
 		<BhideSvelteCard />
 	</Sidebar.Footer>
 </Sidebar.Root>

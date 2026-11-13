@@ -1,7 +1,7 @@
-import TextMarqueeRaw from "$lib/components/spell/text-marquee/text-marquee.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/text-marquee/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import TextMarqueeRaw from "#lib/components/spell/text-marquee/text-marquee.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/text-marquee/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 
@@ -58,6 +58,21 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { TextMarquee } from "#lib/components/spell/text-marquee/index.js";
+</script>
+
+<TextMarquee items={["Magic", "Spell", "Motion"]}>
+	{#snippet children(item)}
+		<span>{item}</span>
+	{/snippet}
+</TextMarquee>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	seo,
 	props: [
@@ -103,7 +118,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "",
 					description: "Custom classes applied to the root wrapper.",
 				},

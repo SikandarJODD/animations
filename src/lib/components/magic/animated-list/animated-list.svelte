@@ -1,12 +1,13 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount } from "svelte";
 	import { motion, AnimatePresence, createLayoutMotion } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 
 	interface AnimatedListProps<T> {
 		items: T[];
-		class?: string;
+		class?: ClassValue;
 		delay?: number;
 		children: Snippet<[T, number]>;
 	}

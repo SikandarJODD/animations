@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { motion } from "motion-sv";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	type AnimatedCheckboxProps = HTMLAttributes<HTMLButtonElement> & {
 		title?: string;
 		checked?: boolean;
 		defaultChecked?: boolean;
-		class?: string;
+		class?: ClassValue;
 		onCheckedChange?: (checked: boolean) => void;
 	};
 

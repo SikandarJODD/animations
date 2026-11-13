@@ -1,7 +1,7 @@
-﻿import Raw from "$lib/components/magic/animated-list/animated-list.svelte?raw";
-import IndexTs from "$lib/components/magic/animated-list/index.ts?raw";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+﻿import Raw from "#lib/components/magic/animated-list/animated-list.svelte?raw";
+import IndexTs from "#lib/components/magic/animated-list/index.ts?raw";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import NotificationCode from "./examples/notification.svelte?raw";
@@ -73,6 +73,27 @@ export const data: ComponentDoc = {
 			hideLines: true,
 		},
 	],
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedList } from "#lib/components/magic/animated-list/index.js";
+
+	const items = [
+		{ id: 1, label: "First item" },
+		{ id: 2, label: "Second item" },
+		{ id: 3, label: "Third item" },
+	];
+</script>
+
+<AnimatedList {items}>
+	{#snippet children(item)}
+		<div class="rounded-md border p-3">{item.label}</div>
+	{/snippet}
+</AnimatedList>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
@@ -81,7 +102,7 @@ export const data: ComponentDoc = {
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

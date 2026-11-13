@@ -1,7 +1,7 @@
-import GradientWaveTextRaw from "$lib/components/spell/gradient-wave-text/gradient-wave-text.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/gradient-wave-text/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import GradientWaveTextRaw from "#lib/components/spell/gradient-wave-text/gradient-wave-text.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/gradient-wave-text/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import LinearBandsExample from "./examples/linear-bands-example.svelte";
@@ -60,6 +60,17 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 		hideLines: true,
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { GradientWaveText } from "#lib/components/spell/gradient-wave-text/index.js";
+</script>
+
+<GradientWaveText>Just ship things.</GradientWaveText>`,
+			lang: "svelte",
+		},
 	},
 	installBlock,
 	examples: [
@@ -177,7 +188,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "",
 					description: "Custom classes applied to the root wrapper.",
 				},

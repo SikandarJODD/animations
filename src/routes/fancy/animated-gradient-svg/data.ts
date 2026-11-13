@@ -1,22 +1,24 @@
-import AnimatedGradientSvgSvelteRaw from "$lib/components/fancy/animated-gradient-svg/animated-gradient-svg.svelte?raw";
-import IndexTsRaw from "$lib/components/fancy/animated-gradient-svg/index.ts?raw";
+import AnimatedGradientSvgSvelteRaw from "#lib/components/fancy/animated-gradient-svg/animated-gradient-svg.svelte?raw";
+import IndexTsRaw from "#lib/components/fancy/animated-gradient-svg/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "animated-gradient-svg",
 	title: "Animated Gradient Svg",
-	description: "An animated multi-color gradient background effect with SVG elements.",
+	description:
+		"Create a fluid multi-color SVG gradient background for Svelte 5 with customizable colors, movement, blur, and blend effects.",
 	category: "fancy",
 };
 
 const seo: SEO = {
 	title: "Animated Gradient Svg",
-	description: "An animated multi-color gradient background effect with SVG elements.",
+	description:
+		"Build an animated SVG gradient background in Svelte 5 with configurable colors, movement, blur, and blend effects for expressive interfaces.",
 	keywords: ["Svelte", "Animated Gradient Svg", "Svelte Fancy Components"],
 };
 
@@ -70,6 +72,34 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedGradientSvg } from "#lib/components/fancy/animated-gradient-svg/index.js";
+</script>
+
+<section class="relative min-h-96 overflow-hidden rounded-3xl bg-slate-950 text-white">
+	<AnimatedGradientSvg
+		colors={["#7c3aed", "#2563eb", "#06b6d4", "#f43f5e"]}
+		speed={8}
+		blur="medium"
+		class="opacity-80"
+	/>
+
+	<div class="relative z-10 flex min-h-96 max-w-2xl flex-col justify-end p-8 sm:p-12">
+		<p class="text-sm font-medium tracking-[0.2em] text-white/70 uppercase">New collection</p>
+		<h2 class="mt-3 text-4xl font-semibold tracking-tight sm:text-6xl">
+			Color in motion.
+		</h2>
+		<p class="mt-4 max-w-lg text-white/75">
+			Build an atmospheric hero while keeping your content readable above the animated layer.
+		</p>
+	</div>
+</section>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
@@ -78,7 +108,8 @@ export const data: ComponentDoc = {
 					name: "colors",
 					type: "string[]",
 					required: true,
-					description: "List of blob colors used to generate the animated gradient field.",
+					description:
+						"List of blob colors used to generate the animated gradient field.",
 				},
 				{
 					name: "speed",
@@ -94,7 +125,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Classes merged onto the outer absolute-positioned wrapper.",
 				},

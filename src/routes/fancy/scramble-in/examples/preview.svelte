@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ScrambleIn } from "$lib/components/fancy/scramble-in";
+	import { ScrambleIn } from "#lib/components/fancy/scramble-in/index.js";
 
 	const titles = [
 		"1. One More Time (featuring Romanthony) - 5:20",

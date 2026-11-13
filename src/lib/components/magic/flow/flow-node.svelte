@@ -1,16 +1,17 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-	import { onMount, untrack, type Snippet } from 'svelte';
-	import { watch } from 'runed';
-	import { useDescendantsContext } from './descendants.svelte';
-	import { setFlowNodeAnchorContext } from './node-context.svelte';
-	import { withElementAttachment } from './render-props';
-	import { rectEquals, type NodeData, type RectLike } from './types';
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
+	import { onMount, untrack, type Snippet } from "svelte";
+	import { watch } from "runed";
+	import { useDescendantsContext } from "./descendants.svelte";
+	import { setFlowNodeAnchorContext } from "./node-context.svelte";
+	import { withElementAttachment } from "./render-props";
+	import { rectEquals, type NodeData, type RectLike } from "./types";
 
 	interface FlowNodeProps {
 		id?: string;
 		disabled?: boolean;
-		class?: string;
+		class?: ClassValue;
 		children?: Snippet;
 		render?: Snippet<[{ props: Record<string, unknown> }]>;
 	}
@@ -29,7 +30,7 @@
 		end: RectLike | null;
 	}>({
 		start: null,
-		end: null
+		end: null,
 	});
 
 	let index = $derived(descendants.getIndex(nodeId));
@@ -38,7 +39,7 @@
 		parallel: false,
 		disabled,
 		start: measurements.start,
-		end: measurements.end
+		end: measurements.end,
 	});
 
 	setFlowNodeAnchorContext({
@@ -49,7 +50,7 @@
 		registerEndAnchor: (anchor) => {
 			endAnchorRef = anchor;
 			remeasure();
-		}
+		},
 	});
 
 	function remeasure() {
@@ -65,7 +66,7 @@
 
 		measurements = {
 			start: startRect,
-			end: endRect
+			end: endRect,
 		};
 	}
 
@@ -73,10 +74,10 @@
 		withElementAttachment(
 			{
 				class: className,
-				style: 'cursor: default;',
-				'data-node-index': index,
-				'data-node-id': nodeId,
-				'data-testid': nodeId
+				style: "cursor: default;",
+				"data-node-index": index,
+				"data-node-id": nodeId,
+				"data-testid": nodeId,
 			},
 			(element: HTMLElement | null) => {
 				nodeRef = element;
@@ -131,15 +132,15 @@
 			descendants.notifySizeChange();
 		};
 
-		window.addEventListener('scroll', onLayoutShift, {
+		window.addEventListener("scroll", onLayoutShift, {
 			capture: true,
-			passive: true
+			passive: true,
 		});
-		window.addEventListener('resize', onLayoutShift, { passive: true });
+		window.addEventListener("resize", onLayoutShift, { passive: true });
 
 		return () => {
-			window.removeEventListener('scroll', onLayoutShift, { capture: true });
-			window.removeEventListener('resize', onLayoutShift);
+			window.removeEventListener("scroll", onLayoutShift, { capture: true });
+			window.removeEventListener("resize", onLayoutShift);
 		};
 	});
 </script>
@@ -149,7 +150,10 @@
 {:else}
 	<li
 		bind:this={nodeRef}
-		class={cn('bg-kumo-base text-sm ring-kumo-line rounded-md px-3 py-2 shadow ring', className)}
+		class={cn(
+			"bg-kumo-base ring-kumo-line rounded-md px-3 py-2 text-sm shadow ring",
+			className
+		)}
 		style="cursor: default;"
 		data-node-index={index}
 		data-node-id={nodeId}

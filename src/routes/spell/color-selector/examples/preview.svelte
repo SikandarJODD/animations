@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { ColorSelector, type ColorSelectorColor } from "$lib/components/spell/color-selector";
+	import {
+		ColorSelector,
+		type ColorSelectorColor,
+	} from "#lib/components/spell/color-selector/index.js";
 
 	let value: ColorSelectorColor = $state("teal");
 </script>

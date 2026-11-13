@@ -1,6 +1,6 @@
 ﻿<script>
-	import { ProgressiveBlur } from "$lib/components/magic/progressive-blur";
-	import { ScrollArea } from "$lib/components/ui/scroll-area";
+	import { ProgressiveBlur } from "#lib/components/magic/progressive-blur/index.js";
+	import { ScrollArea } from "#lib/components/ui/scroll-area/index.js";
 </script>
 
 <div class="relative w-full rounded-xl border">

@@ -8,11 +8,20 @@
 		"@lucide/svelte"
 	],
 	"devDependencies": [
-		"@lucide/svelte@^0.561.0"
+		"@lucide/svelte@^1.71.0"
 	],
+	"meta": {
+		"categories": [
+			"button",
+			"hover",
+			"text",
+			"marketing",
+			"medium-motion"
+		]
+	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\n\timport { ArrowRight } from \"@lucide/svelte\";\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\timport type { HTMLButtonAttributes } from \"svelte/elements\";\n\n\tinterface InteractiveHoverButtonProps extends HTMLButtonAttributes {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t}\n\n\tlet { children, class: className, ...props }: InteractiveHoverButtonProps = $props();\n</script>\n\n<button\n\tclass={cn(\n\t\t\"group bg-background relative w-auto cursor-pointer overflow-hidden rounded-full border p-2 px-6 text-center font-semibold\",\n\t\tclassName\n\t)}\n\t{...props}\n>\n\t<div class=\"flex items-center gap-2\">\n\t\t<div\n\t\t\tclass=\"bg-primary h-2 w-2 rounded-full transition-all duration-300 group-hover:scale-[100.8]\"\n\t\t></div>\n\t\t<span\n\t\t\tclass=\"inline-block transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0\"\n\t\t>\n\t\t\t{@render children()}\n\t\t</span>\n\t</div>\n\t<div\n\t\tclass=\"text-primary-foreground absolute top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:-translate-x-5 group-hover:opacity-100\"\n\t>\n\t\t<span>{@render children()}</span>\n\t\t<ArrowRight />\n\t</div>\n</button>\n",
+			"content": "<script lang=\"ts\">\n\timport { ArrowRight } from \"@lucide/svelte\";\n\timport { cn } from \"#lib/utils.js\";\n\timport type { Snippet } from \"svelte\";\n\timport type { ClassValue, HTMLButtonAttributes } from \"svelte/elements\";\n\n\tinterface InteractiveHoverButtonProps extends HTMLButtonAttributes {\n\t\tchildren: Snippet;\n\t\tclass?: ClassValue;\n\t}\n\n\tlet { children, class: className, ...props }: InteractiveHoverButtonProps = $props();\n</script>\n\n<button\n\tclass={cn(\n\t\t\"group bg-background relative w-auto cursor-pointer overflow-hidden rounded-full border p-2 px-6 text-center font-semibold\",\n\t\tclassName\n\t)}\n\t{...props}\n>\n\t<div class=\"flex items-center gap-2\">\n\t\t<div\n\t\t\tclass=\"bg-primary h-2 w-2 rounded-full transition-all duration-300 group-hover:scale-[100.8]\"\n\t\t></div>\n\t\t<span\n\t\t\tclass=\"inline-block transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0\"\n\t\t>\n\t\t\t{@render children()}\n\t\t</span>\n\t</div>\n\t<div\n\t\tclass=\"text-primary-foreground absolute top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:-translate-x-5 group-hover:opacity-100\"\n\t>\n\t\t<span>{@render children()}</span>\n\t\t<ArrowRight />\n\t</div>\n</button>\n",
 			"type": "registry:component",
 			"target": "magic/interactive-hover-button/interactive-hover-button.svelte"
 		},

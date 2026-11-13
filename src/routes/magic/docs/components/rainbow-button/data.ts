@@ -1,9 +1,9 @@
-﻿import RainbowButtonRaw from "$lib/components/magic/rainbow-button/rainbow-button.svelte?raw";
-import IndexTs from "$lib/components/magic/rainbow-button/index.ts?raw";
+﻿import RainbowButtonRaw from "#lib/components/magic/rainbow-button/rainbow-button.svelte?raw";
+import IndexTs from "#lib/components/magic/rainbow-button/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -101,6 +101,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 		highlight: [2],
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { RainbowButton } from "#lib/components/magic/rainbow-button/index.js";
+</script>
+
+<RainbowButton>Get started</RainbowButton>`,
+			lang: "svelte",
+		},
 	},
 	examples,
 	seo,

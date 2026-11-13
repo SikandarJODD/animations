@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { MediaBetweenText } from "$lib/components/fancy/media-between-text";
-	import pixelImageDemo from "$lib/assets/pixel-image-demo.jpg";
+	import { MediaBetweenText } from "#lib/components/fancy/media-between-text/index.js";
+	import pixelImageDemo from "#lib/assets/pixel-image-demo.jpg";
 </script>
 
 <div

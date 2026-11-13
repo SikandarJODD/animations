@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
 	import type { LinkItemType } from "./types";
 	import type { Component } from "svelte";
 	import type { LucideIcon } from "@lucide/svelte";
-	import { Badge } from "$lib/components/spell/badge";
+	import { Badge } from "#lib/components/spell/badge/index.js";
 
 	type Props = LinkItemType & HTMLAttributes<HTMLAnchorElement>;
 	let {

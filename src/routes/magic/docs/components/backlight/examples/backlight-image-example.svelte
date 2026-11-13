@@ -1,5 +1,5 @@
 <script>
-	import { Backlight } from "$lib/components/magic/backlight";
+	import { Backlight } from "#lib/components/magic/backlight/index.js";
 </script>
 
 <Backlight class="w-full">

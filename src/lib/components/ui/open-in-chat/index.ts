@@ -1,24 +1,24 @@
 // Main components
-export { default as OpenIn } from "./OpenIn.svelte";
-export { default as OpenInContent } from "./OpenInContent.svelte";
-export { default as OpenInItem } from "./OpenInItem.svelte";
-export { default as OpenInLabel } from "./OpenInLabel.svelte";
-export { default as OpenInSeparator } from "./OpenInSeparator.svelte";
-export { default as OpenInTrigger } from "./OpenInTrigger.svelte";
+export { default as OpenIn } from "./open-in.svelte";
+export { default as OpenInContent } from "./open-in-content.svelte";
+export { default as OpenInItem } from "./open-in-item.svelte";
+export { default as OpenInLabel } from "./open-in-label.svelte";
+export { default as OpenInSeparator } from "./open-in-separator.svelte";
+export { default as OpenInTrigger } from "./open-in-trigger.svelte";
 
 // Provider-specific components
-export { default as OpenInChatGPT } from "./OpenInChatGPT.svelte";
-export { default as OpenInClaude } from "./OpenInClaude.svelte";
-export { default as OpenInT3 } from "./OpenInT3.svelte";
-export { default as OpenInScira } from "./OpenInScira.svelte";
-export { default as OpenInV0 } from "./OpenInV0.svelte";
+export { default as OpenInChatGPT } from "./open-in-chatgpt.svelte";
+export { default as OpenInClaude } from "./open-in-claude.svelte";
+export { default as OpenInT3 } from "./open-in-t3.svelte";
+export { default as OpenInScira } from "./open-in-scira.svelte";
+export { default as OpenInV0 } from "./open-in-v0.svelte";
 
 // Icon components
-export { default as GitHubIcon } from "./GitHubIcon.svelte";
-export { default as SciraIcon } from "./SciraIcon.svelte";
-export { default as ChatGPTIcon } from "./ChatGPTIcon.svelte";
-export { default as ClaudeIcon } from "./ClaudeIcon.svelte";
-export { default as V0Icon } from "./V0Icon.svelte";
+export { default as GitHubIcon } from "./github-icon.svelte";
+export { default as SciraIcon } from "./scira-icon.svelte";
+export { default as ChatGPTIcon } from "./chatgpt-icon.svelte";
+export { default as ClaudeIcon } from "./claude-icon.svelte";
+export { default as V0Icon } from "./v0-icon.svelte";
 
 // Context
 export {

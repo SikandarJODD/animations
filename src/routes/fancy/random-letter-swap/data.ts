@@ -1,9 +1,9 @@
-import RandomLetterSwapPingPongRaw from "$lib/components/fancy/random-letter-swap-ping-pong/random-letter-swap-ping-pong.svelte?raw";
-import IndexPingPongRaw from "$lib/components/fancy/random-letter-swap-ping-pong/index.ts?raw";
-import IndexTsRaw from "$lib/components/fancy/random-letter-swap/index.ts?raw";
-import RandomLetterSwapRaw from "$lib/components/fancy/random-letter-swap/random-letter-swap.svelte?raw";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import RandomLetterSwapPingPongRaw from "#lib/components/fancy/random-letter-swap-ping-pong/random-letter-swap-ping-pong.svelte?raw";
+import IndexPingPongRaw from "#lib/components/fancy/random-letter-swap-ping-pong/index.ts?raw";
+import IndexTsRaw from "#lib/components/fancy/random-letter-swap/index.ts?raw";
+import RandomLetterSwapRaw from "#lib/components/fancy/random-letter-swap/random-letter-swap.svelte?raw";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
@@ -69,6 +69,42 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 	},
 	previewClass: "p-0",
+	usage: {
+		code: [
+			{
+				filename: "forward-usage.svelte",
+				filecode: `<script lang="ts">
+	import { RandomLetterSwap } from "#lib/components/fancy/random-letter-swap/index.js";
+</script>
+
+<a href="/archive" class="inline-flex text-3xl font-semibold tracking-tight">
+	<RandomLetterSwap
+		label="Explore the archive"
+		staggerDuration={0.025}
+		transition={{ type: "spring", duration: 0.65, bounce: 0 }}
+		class="text-foreground"
+	/>
+</a>`,
+				lang: "svelte",
+			},
+			{
+				filename: "ping-pong-usage.svelte",
+				filecode: `<script lang="ts">
+	import { RandomLetterSwapPingPong } from "#lib/components/fancy/random-letter-swap-ping-pong/index.js";
+</script>
+
+<button type="button" class="rounded-full bg-black px-5 py-3 text-sm font-medium text-white">
+	<RandomLetterSwapPingPong
+		label="Shuffle selection"
+		reverse={false}
+		staggerDuration={0.018}
+		transition={{ type: "spring", duration: 0.6, bounce: 0 }}
+	/>
+</button>`,
+				lang: "svelte",
+			},
+		],
+	},
 	props: [
 		{
 			name: "Shared Props",
@@ -78,13 +114,15 @@ export const data: ComponentDoc = {
 					name: "label",
 					type: "string",
 					required: true,
-					description: "Text string split into characters and shuffled into a random reveal order.",
+					description:
+						"Text string split into characters and shuffled into a random reveal order.",
 				},
 				{
 					name: "reverse",
 					type: "boolean",
 					default: "true",
-					description: "Reverses the vertical swap direction for the entering characters.",
+					description:
+						"Reverses the vertical swap direction for the entering characters.",
 				},
 				{
 					name: "transition",
@@ -96,11 +134,12 @@ export const data: ComponentDoc = {
 					name: "staggerDuration",
 					type: "number",
 					default: "0.02",
-					description: "Delay in seconds between characters in the shuffled animation order.",
+					description:
+						"Delay in seconds between characters in the shuffled animation order.",
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Classes merged onto the interactive text wrapper.",
 				},

@@ -12,7 +12,7 @@ const navs: NavType[] = [
 		sub: [
 			{
 				name: "Svelte Magic UI",
-				description: "50+ animations and effects for Svelte.",
+				description: "60+ animations and effects for Svelte.",
 				icon: SparklesIcon,
 				href: "/magic",
 			},
@@ -32,10 +32,10 @@ const navs: NavType[] = [
 			},
 		],
 	},
-	{
-		name: "Changelog",
-		href: "/changelog",
-	},
+	// {
+	// 	name: "Changelog",
+	// 	href: "/changelog",
+	// },
 ];
 
 const projectItems: ProjectItemType[] = [

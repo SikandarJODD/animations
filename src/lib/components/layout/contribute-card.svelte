@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BugIcon from "@lucide/svelte/icons/bug";
 	import LightbulbIcon from "@lucide/svelte/icons/lightbulb";
+	import MessageCircleIcon from "@lucide/svelte/icons/message-circle";
 	let { class: className = "" }: { class?: string } = $props();
 
 	const githubBase = "https://github.com/SikandarJODD/animations";
@@ -31,6 +32,17 @@
 				>
 					<LightbulbIcon class="size-3.5 shrink-0" />
 					<span>Request a feature</span>
+				</a>
+			</li>
+			<li>
+				<a
+					class="text-muted-foreground hover:text-foreground inline-flex items-center gap-2.5 text-xs transition-colors"
+					href="https://x.com/Sikandar_Bhide"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<MessageCircleIcon class="size-3.5 shrink-0" />
+					<span>DM me on X</span>
 				</a>
 			</li>
 		</ul>

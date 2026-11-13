@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { motion, useAnimate, stagger, type AnimationOptions } from "motion-sv";
 	import { Debounced } from "runed";
-	import { cn } from "$lib/utils";
-	import type { HTMLAttributes } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface LetterSwapPingPongProps extends HTMLAttributes<HTMLSpanElement> {
 		label: string;
@@ -10,7 +10,7 @@
 		transition?: AnimationOptions;
 		staggerDuration?: number;
 		staggerFrom?: "first" | "last" | "center" | number;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

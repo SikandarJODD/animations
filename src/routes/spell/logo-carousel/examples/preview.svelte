@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LogoCarousel } from "$lib/components/spell/logo-carousel";
+	import { LogoCarousel } from "#lib/components/spell/logo-carousel/index.js";
 
 	const logos = [
 		{ src: "/logos/vercel.svg", alt: "Vercel logo" },

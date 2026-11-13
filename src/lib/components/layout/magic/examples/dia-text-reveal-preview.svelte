@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { DiaTextReveal } from "$lib/components/magic/dia-text-reveal";
+	import { DiaTextReveal } from "#lib/components/magic/dia-text-reveal/index.js";
 </script>
 
 <div class="text-foreground flex min-h-80 items-center justify-center">
-	<h1 class="text-center text-3xl font-semibold tracking-tight md:text-4xl">
+	<h2 class="text-center text-3xl font-semibold tracking-tight md:text-4xl">
 		Learn to{" "}
 		<DiaTextReveal
 			repeat
 			repeatDelay={1.2}
 			text={["build faster", "ship smarter", "scale easier"]}
 		/>
-	</h1>
+	</h2>
 </div>

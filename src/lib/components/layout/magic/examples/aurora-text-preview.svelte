@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AuroraText from "$lib/components/magic/aurora-text/aurora-text.svelte";
+	import AuroraText from "#lib/components/magic/aurora-text/aurora-text.svelte";
 </script>
 
 <div class="flex min-h-80 items-center justify-center">

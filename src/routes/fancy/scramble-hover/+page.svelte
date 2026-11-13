@@ -1,19 +1,20 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import * as Item from "$lib/components/ui/item/index.js";
-	import CompactPropsTable from "$lib/components/docs/base/CompactPropsTable.svelte";
-	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
-	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
-	import { H1, H2, H3, Paragraph } from "$lib/components/docs/markdown/index";
-	import { Button } from "$lib/components/ui/button";
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
-	import SEOComponent from "$lib/seo/SEO.svelte";
+	import * as Item from "#lib/components/ui/item/index.js";
+	import CompactPropsTable from "#lib/components/docs/base/compact-props-table.svelte";
+	import InstallComponent from "#lib/components/docs/base/install-component.svelte";
+	import PackageBadges from "#lib/components/docs/base/package-badges.svelte";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
+	import { H1, H2, H3, Paragraph } from "#lib/components/docs/markdown/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
+	import SEOComponent from "#lib/seo/seo.svelte";
+	import * as Code from "#lib/components/ui/code/index.js";
 	import { data } from "./data";
 
 	let PreviewComp = $derived(data.preview);
-	let installUrl = $derived(`${page.url.origin}/f/${data.id}.json`);
-	let llmsTxtUrl = $derived(`${page.url.href.split("?")[0].split("#")[0]}/llms.txt`);
+	let installUrl = $derived(`/f/${data.id}.json`);
+	let llmsTxtUrl = $derived(`${page.url.pathname}/llms.txt`);
 </script>
 
 <SEOComponent
@@ -93,6 +94,21 @@
 			</Item.Actions>
 		</Item.Root>
 	</section>
+
+	{#if data.usage?.code}
+		<section class="mt-14">
+			<H2 id="usage">Usage</H2>
+			<div class="mt-4 space-y-4">
+				{#if Array.isArray(data.usage.code)}
+					{#each data.usage.code as codeBlock}
+						<Code.Snippet code={codeBlock} />
+					{/each}
+				{:else}
+					<Code.Snippet code={data.usage.code} />
+				{/if}
+			</div>
+		</section>
+	{/if}
 
 	{#if data.examples && data.examples.length > 0}
 		<section class="mt-14">

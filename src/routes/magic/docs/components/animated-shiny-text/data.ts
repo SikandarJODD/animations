@@ -1,12 +1,19 @@
-﻿import Raw from "$lib/components/magic/animated-shiny-text/animated-shiny-text.svelte?raw";
-import IndexTs from "$lib/components/magic/animated-shiny-text/index.ts?raw";
+import AnimatedShinyTextOrange from "./examples/animated-shiny-text-orange.svelte";
+import AnimatedShinyTextOrangeRaw from "./examples/animated-shiny-text-orange.svelte?raw";
+import Raw from "#lib/components/magic/animated-shiny-text/animated-shiny-text.svelte?raw";
+import IndexTs from "#lib/components/magic/animated-shiny-text/index.ts?raw";
 
-import type { CodeBlock } from "$lib/components/ui/code";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { CodeBlock } from "#lib/components/ui/code/index.js";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+
+import AnimatedShinyTextLink from "./examples/animated-shiny-text-link.svelte";
+import AnimatedShinyTextLinkRaw from "./examples/animated-shiny-text-link.svelte?raw";
+import AnimatedShinyTextHeading from "./examples/animated-shiny-text-heading.svelte";
+import AnimatedShinyTextHeadingRaw from "./examples/animated-shiny-text-heading.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -18,6 +25,42 @@ export const meta: ComponentMeta = {
 	badge: "new",
 };
 
+const examples: Example[] = [
+	{
+		name: "Documentation Link",
+		description:
+			"A real documentation link with a narrow shimmer and a visible keyboard focus state.",
+		preview: AnimatedShinyTextLink,
+		code: {
+			filename: "animated-shiny-text-link.svelte",
+			filecode: AnimatedShinyTextLinkRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Display Text",
+		description:
+			"A wider highlight across a short heading with enough contrast to see the sweep.",
+		preview: AnimatedShinyTextHeading,
+		code: {
+			filename: "animated-shiny-text-heading.svelte",
+			filecode: AnimatedShinyTextHeadingRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Orange Accent",
+		description:
+			"Apply a narrow shimmer to an inline link without adding a badge or container.",
+		preview: AnimatedShinyTextOrange,
+		code: {
+			filename: "animated-shiny-text-orange.svelte",
+			filecode: AnimatedShinyTextOrangeRaw,
+			lang: "svelte",
+		},
+	},
+];
+
 const seo: SEO = {
 	title: "Animated Shiny Text",
 	description:
@@ -28,17 +71,17 @@ const seo: SEO = {
 
 const tailwind: CodeBlock = {
 	filecode: `@theme inline {
-  --animate-shiny-text: shiny-text 8s infinite;
+  --animate-shiny-text: shiny-text var(--duration, 8s) infinite;
 
   @keyframes shiny-text {
     0%,
     90%,
     100% {
-      background-position: calc(-100% - var(--shiny-width)) 0;
+      background-position: calc(-100% - var(--shiny-width)) 0, 0 0;
     }
     30%,
     60% {
-      background-position: calc(100% + var(--shiny-width)) 0;
+      background-position: calc(100% + var(--shiny-width)) 0, 0 0;
     }
   }
 }`,
@@ -82,10 +125,22 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedShinyText } from "#lib/components/magic/animated-shiny-text/index.js";
+</script>
+
+<AnimatedShinyText>Shiny text</AnimatedShinyText>`,
+			lang: "svelte",
+		},
+	},
+	examples,
 	seo,
 	props: [
 		{
-			name: "AnimatedShinyText",
+			name: "Animated Shiny Text",
 			desc: "A text component with a light glare shimmer effect.",
 			props: [
 				{
@@ -96,7 +151,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

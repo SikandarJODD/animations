@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLButtonAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLButtonAttributes } from "svelte/elements";
 
 	interface ShimmerButtonProps extends HTMLButtonAttributes {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		shimmerColor?: string;
 		shimmerSize?: string;
 		borderRadius?: string;

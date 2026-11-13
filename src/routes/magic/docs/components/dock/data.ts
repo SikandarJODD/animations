@@ -1,10 +1,10 @@
-﻿import DockRaw from "$lib/components/magic/dock/dock.svelte?raw";
-import DockIconRaw from "$lib/components/magic/dock/dock-icon.svelte?raw";
-import IndexTs from "$lib/components/magic/dock/index.ts?raw";
+﻿import DockRaw from "#lib/components/magic/dock/dock.svelte?raw";
+import DockIconRaw from "#lib/components/magic/dock/dock-icon.svelte?raw";
+import IndexTs from "#lib/components/magic/dock/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import DirectionExample from "./examples/direction.svelte";
@@ -121,6 +121,24 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import HomeIcon from "@lucide/svelte/icons/house";
+	import { Dock, DockIcon } from "#lib/components/magic/dock/index.js";
+</script>
+
+<Dock>
+	<DockIcon>
+		<button type="button" aria-label="Home">
+			<HomeIcon class="size-5" />
+		</button>
+	</DockIcon>
+</Dock>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
@@ -130,7 +148,7 @@ export const data: ComponentDoc = {
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply.",
 				},
@@ -174,12 +192,12 @@ export const data: ComponentDoc = {
 			],
 		},
 		{
-			name: "DockIcon",
+			name: "Dock Icon",
 			desc: "Individual icon wrapper that responds to the dock's magnification context.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply.",
 				},

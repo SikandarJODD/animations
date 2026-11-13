@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { WithElementRef } from "$lib/utils.js";
+	import type { WithElementRef } from "#lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
 
 	export type AnimatedBackgroundItemProps = WithElementRef<
@@ -11,7 +11,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 	import { getAnimatedBackgroundContext } from "./animated-background-context.svelte.js";
 
 	let {
@@ -55,8 +55,7 @@
 				? event.relatedTarget.closest("[data-animated-background-id]")
 				: null;
 		const isMovingWithinBackground =
-			relatedItem?.getAttribute("data-animated-background-id") ===
-			background.layoutId;
+			relatedItem?.getAttribute("data-animated-background-id") === background.layoutId;
 
 		if (background.enableHover && !isMovingWithinBackground) {
 			background.setActiveId(null);

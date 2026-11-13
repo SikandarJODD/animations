@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { browser } from "$app/environment";
-	import { cn, type WithoutChildren } from "$lib/utils";
+	import { browser } from "$app/env";
+	import { cn, type WithoutChildren } from "#lib/utils.js";
 	import { onMount } from "svelte";
 	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 

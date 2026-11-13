@@ -1,6 +1,6 @@
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta } from "#lib/types/structure.js";
 
 // Import examples
 import Preview from "./examples/preview.svelte";
@@ -140,6 +140,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2, 6],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { TextAnimate } from "#lib/components/magic/text-animate/index.js";
+</script>
+
+<TextAnimate content="Animated text" animation="blurInUp" />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	installBlock: {
@@ -147,7 +158,7 @@ export const data: ComponentDoc = {
 	},
 	props: [
 		{
-			name: "TextAnimate",
+			name: "Text Animate",
 			desc: "A component for animating text with various effects and granular control.",
 			props: [
 				{
@@ -206,7 +217,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply to the container",
 				},

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { page } from "$app/state";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
+	import { seo_config } from "#lib/config/seo.js";
 	import {
 		Divider,
 		H1,
@@ -10,19 +10,18 @@
 		Paragraph,
 		Strong,
 		UnorderedList,
-	} from "$lib/components/docs/markdown";
-	import { MetaTags } from "svelte-meta-tags";
+	} from "#lib/components/docs/markdown/index.js";
+	import SEOComponent from "#lib/seo/seo.svelte";
 
 	const title = "Introduction";
 	const description =
 		"Svelte Magic UI is a collection of re-usable components built with Svelte, Tailwind CSS and Motion SV.";
 	const socialTitle = "Svelte Magic UI - Introduction";
 
-	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
-	let llmsTxtUrl = $derived(`${canonical}/llms.txt`);
+	const llmsTxtUrl = `${seo_config.url}/magic/docs/llms.txt`;
 </script>
 
-<MetaTags
+<SEOComponent
 	{title}
 	titleTemplate="%s - Svelte Magic UI"
 	{description}
@@ -35,21 +34,9 @@
 		"Tailwind CSS",
 		"Motion SV",
 	]}
-	{canonical}
-	openGraph={{
-		title: socialTitle,
-		description,
-		url: canonical,
-		type: "article",
-	}}
-	twitter={{
-		title: socialTitle,
-		description,
-		image: "https://sv-animations.vercel.app/og.png",
-		cardType: "summary_large_image",
-		site: "@Sikandar_Bhide",
-		creator: "@Sikandar_Bhide",
-	}}
+	{socialTitle}
+	openGraphType="article"
+	siteName="Svelte Magic UI"
 />
 
 <div class="space-y-10 md:space-y-12">
@@ -73,7 +60,7 @@
 		<H2 id="features">Features</H2>
 
 		<UnorderedList class="mt-0">
-			<ListItem><Strong>50+ components</Strong> ready to use in your projects</ListItem>
+			<ListItem><Strong>60+ components</Strong> ready to use in your projects</ListItem>
 			<ListItem><Strong>Open source</Strong> and free forever</ListItem>
 			<ListItem><Strong>Easily customizable</Strong> to match your design system</ListItem>
 			<ListItem

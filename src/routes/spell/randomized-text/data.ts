@@ -1,8 +1,8 @@
-import RandomizedTextRaw from "$lib/components/spell/randomized-text/randomized-text.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/randomized-text/index.ts?raw";
-import SharedTextUtilsRaw from "$lib/utils/text-utils.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import RandomizedTextRaw from "#lib/components/spell/randomized-text/randomized-text.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/randomized-text/index.ts?raw";
+import SharedTextUtilsRaw from "#lib/utils/text-utils.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import CharacterSplitExample from "./examples/character-split-example.svelte";
@@ -44,7 +44,7 @@ const installBlock: InstallComponentDocs = {
 			lang: "typescript",
 		},
 		{
-			filename: "src/lib/utils/text-utils.ts",
+			filename: "src/lib/utils/text-utils.js",
 			filecode: SharedTextUtilsRaw,
 			lang: "typescript",
 		},
@@ -69,6 +69,17 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 		hideLines: true,
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { RandomizedText } from "#lib/components/spell/randomized-text/index.js";
+</script>
+
+<RandomizedText>Introducing Spell UI</RandomizedText>`,
+			lang: "svelte",
+		},
 	},
 	installBlock,
 	examples: [
@@ -143,7 +154,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "",
 					description: "Custom classes applied to the animated root element.",
 				},

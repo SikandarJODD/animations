@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { motion, type AnimationOptions, type Variants } from "motion-sv";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
-	import { cn } from "$lib/utils";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 
 	type SplitBy = "words" | "characters" | "lines" | string;
 	type StaggerFrom = "first" | "last" | "center" | "random" | number;
@@ -26,7 +26,7 @@
 		onStart?: () => void;
 		onComplete?: () => void;
 		autoStart?: boolean;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	const defaultTransition: AnimationOptions = {

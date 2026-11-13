@@ -1,7 +1,7 @@
-import QRCodeRaw from "$lib/components/spell/qrcode/qrcode.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/qrcode/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import QRCodeRaw from "#lib/components/spell/qrcode/qrcode.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/qrcode/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import CustomColorsExample from "./examples/custom-colors-example.svelte";
@@ -54,6 +54,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { QRCode } from "#lib/components/spell/qrcode/index.js";
+</script>
+
+<QRCode value="https://sv-animations.vercel.app" />`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{
@@ -105,7 +116,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "''",
 					description: "Custom classes merged onto the root SVG element.",
 				},

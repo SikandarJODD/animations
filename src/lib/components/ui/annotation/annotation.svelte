@@ -1,11 +1,9 @@
 <script lang="ts" module>
-	import type { WithElementRef } from "$lib/utils.js";
+	import type { WithElementRef } from "#lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
 
-	export type AnnotationDirection =
-		"n" | "ne" | "e" | "se" | "s" | "sw" | "w" | "nw";
-	export type AnnotationColor =
-		"amber" | "blue" | "green" | "red" | "purple" | "rainbow";
+	export type AnnotationDirection = "n" | "ne" | "e" | "se" | "s" | "sw" | "w" | "nw";
+	export type AnnotationColor = "amber" | "blue" | "green" | "red" | "purple" | "rainbow";
 
 	export type AnnotationProps = WithElementRef<
 		HTMLAttributes<HTMLSpanElement>,
@@ -31,7 +29,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 
 	let {
 		ref = $bindable(null),

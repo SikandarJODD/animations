@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BarSpinner } from "$lib/components/spell/bar-spinner";
+	import { BarSpinner } from "#lib/components/spell/bar-spinner/index.js";
 </script>
 
 <div class="flex items-center gap-4">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { IconCloud } from "$lib/components/magic/icon-cloud";
+	import { IconCloud } from "#lib/components/magic/icon-cloud/index.js";
 
 	let images = $state([
 		"https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=100&h=100&fit=crop",

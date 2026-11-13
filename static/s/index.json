@@ -7,7 +7,14 @@
 		"description": "A 3D book cover wrapper with a hover tilt effect and optional textured overlay.",
 		"registryDependencies": [],
 		"meta": {
-			"docs": "Add perspective-book-textured.avif image inside /static folder"
+			"docs": "Add perspective-book-textured.avif image inside /static folder",
+			"categories": [
+				"card",
+				"3d",
+				"hover",
+				"tilt",
+				"high-motion"
+			]
 		},
 		"relativeUrl": "perspective-book.json"
 	},
@@ -17,6 +24,15 @@
 		"type": "registry:block",
 		"description": "A cursor-reactive tilt wrapper with configurable scale, tilt depth, perspective, and spotlight.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"card",
+				"3d",
+				"cursor",
+				"hover",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "tilt-card.json"
 	},
 	{
@@ -25,6 +41,16 @@
 		"type": "registry:block",
 		"description": "A seeded canvas avatar with hover animation, WebGL rendering, and a deterministic 2D fallback path.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"avatar",
+				"canvas",
+				"webgl",
+				"hover",
+				"generative",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "fallback-avatar.json"
 	},
 	{
@@ -36,6 +62,14 @@
 			"tailwind-variants"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"badge",
+				"status",
+				"label",
+				"link"
+			]
+		},
 		"relativeUrl": "badge.json"
 	},
 	{
@@ -44,6 +78,15 @@
 		"type": "registry:block",
 		"description": "A compact loading spinner made from twelve fading bars, ideal for inline waits, cards, dialogs, and button-adjacent status indicators.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"loading",
+				"feedback",
+				"spinner",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "bar-spinner.json"
 	},
 	{
@@ -55,6 +98,15 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"keyboard",
+				"shortcut",
+				"input",
+				"interactive",
+				"subtle"
+			]
+		},
 		"relativeUrl": "kbd.json"
 	},
 	{
@@ -63,6 +115,16 @@
 		"type": "registry:block",
 		"description": "A reusable horizontal or vertical marquee with optional fade edges and hover pause.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"marquee",
+				"content",
+				"automatic",
+				"hover",
+				"fade",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "marquee.json"
 	},
 	{
@@ -71,6 +133,16 @@
 		"type": "registry:block",
 		"description": "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"logo",
+				"carousel",
+				"marketing",
+				"automatic",
+				"stagger",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "logo-carousel.json"
 	},
 	{
@@ -82,6 +154,15 @@
 			"spotify-url-info"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"audio",
+				"card",
+				"media",
+				"playback",
+				"interactive"
+			]
+		},
 		"relativeUrl": "spotify-card.json"
 	},
 	{
@@ -93,6 +174,14 @@
 			"qrcode"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"qr-code",
+				"utility",
+				"canvas",
+				"data-visualization"
+			]
+		},
 		"relativeUrl": "qrcode.json"
 	},
 	{
@@ -101,6 +190,15 @@
 		"type": "registry:block",
 		"description": "A vertical text rotator with snippet-based prefix and row composition.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"marquee",
+				"hero",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "text-marquee.json"
 	},
 	{
@@ -112,6 +210,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hero",
+				"reveal",
+				"blur",
+				"stagger",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "blur-reveal.json"
 	},
 	{
@@ -123,6 +231,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hero",
+				"reveal",
+				"blur",
+				"stagger",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "words-stagger.json"
 	},
 	{
@@ -134,6 +252,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hero",
+				"reveal",
+				"randomized",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "randomized-text.json"
 	},
 	{
@@ -145,6 +272,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"reveal",
+				"scramble",
+				"scroll",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "special-text.json"
 	},
 	{
@@ -156,6 +292,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"highlight",
+				"reveal",
+				"scroll",
+				"subtle"
+			]
+		},
 		"relativeUrl": "highlighted-text.json"
 	},
 	{
@@ -167,6 +312,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hero",
+				"reveal",
+				"stagger",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "slide-up-text.json"
 	},
 	{
@@ -178,6 +332,15 @@
 			"opentype.js"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"signature",
+				"svg",
+				"draw",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "signature.json"
 	},
 	{
@@ -189,6 +352,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"gradient",
+				"hero",
+				"scroll",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "gradient-wave-text.json"
 	},
 	{
@@ -200,6 +372,15 @@
 			"tailwind-variants"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"form",
+				"color",
+				"picker",
+				"input",
+				"interactive"
+			]
+		},
 		"relativeUrl": "color-selector.json"
 	},
 	{
@@ -212,6 +393,15 @@
 			"@lucide/svelte"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"form",
+				"input",
+				"label",
+				"password",
+				"interactive"
+			]
+		},
 		"relativeUrl": "label-input.json"
 	},
 	{
@@ -223,6 +413,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"form",
+				"checkbox",
+				"input",
+				"feedback",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "animated-checkbox.json"
 	},
 	{
@@ -231,6 +430,15 @@
 		"type": "registry:block",
 		"description": "A particle input companion that launches custom items outward from the cursor as you type.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"form",
+				"input",
+				"particles",
+				"keyboard",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "exploding-input.json"
 	}
 ]

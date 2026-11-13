@@ -1,9 +1,9 @@
-﻿import BlurFadeRaw from "$lib/components/magic/blur-fade/blur-fade.svelte?raw";
-import IndexTs from "$lib/components/magic/blur-fade/index.ts?raw";
+﻿import BlurFadeRaw from "#lib/components/magic/blur-fade/blur-fade.svelte?raw";
+import IndexTs from "#lib/components/magic/blur-fade/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import Example1 from "./examples/blur-fade-basic.svelte";
@@ -95,11 +95,24 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { BlurFade } from "#lib/components/magic/blur-fade/index.js";
+</script>
+
+<BlurFade>
+	<h2 class="text-3xl font-bold">Fade into view</h2>
+</BlurFade>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "BlurFade",
+			name: "Blur Fade",
 			desc: "A component for creating blur and fade animations.",
 			props: [
 				{
@@ -110,7 +123,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

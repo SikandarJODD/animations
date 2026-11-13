@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { page } from "$app/state";
-	import Hero from "$lib/components/layout/Hero.svelte";
-	import Footer from "$lib/components/main/footer.svelte";
-	import Sponsors from "$lib/components/main/sponsors.svelte";
-	import { MetaTags } from "svelte-meta-tags";
+	import Hero from "#lib/components/layout/hero.svelte";
+	import Footer from "#lib/components/main/footer.svelte";
+	import Sponsors from "#lib/components/main/sponsors.svelte";
+	import { seo_config } from "#lib/config/seo.js";
+	import { github_repo } from "#lib/config/repo.js";
+	import { JsonLd, MetaTags } from "svelte-meta-tags";
 
-	const title = "Svelte Animations Components";
+	const title = "Svelte 5 Animation Components";
 	const description =
-		"50+ free and open-source animated components and effects. Built with Svelte 5, Typescript, Tailwind CSS, and Motion SV.";
+		"Explore 100+ free, open-source Svelte 5 animation and UI components built with TypeScript, Tailwind CSS, and Motion for production interfaces.";
 	const keywords = [
 		"svelte animations",
 		"svelte transition",
@@ -20,23 +21,32 @@
 		"animated components",
 	];
 	const socialImage = {
-		url: "https://sv-animations.vercel.app/og.png",
+		url: `${seo_config.url}/og.png`,
+		secureUrl: `${seo_config.url}/og.png`,
+		type: "image/png",
 		width: 1200,
 		height: 630,
 		alt: "Svelte Animations Components",
 	};
 
-	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
-	let jsonLd = $derived({
-		"@context": "https://schema.org",
+	const canonical = `${seo_config.url}/`;
+	const jsonLd = {
 		"@graph": [
 			{
-				"@type": "WebSite",
-				"@id": `${page.url.origin}/#website`,
+				"@type": "Organization",
+				"@id": `${seo_config.url}/#organization`,
 				name: "Svelte Animations",
-				url: page.url.origin,
+				url: seo_config.url,
+				sameAs: [github_repo.url, "https://x.com/Sikandar_Bhide"],
+			},
+			{
+				"@type": "WebSite",
+				"@id": `${seo_config.url}/#website`,
+				name: "Svelte Animations",
+				url: seo_config.url,
 				description,
 				inLanguage: "en",
+				publisher: { "@id": `${seo_config.url}/#organization` },
 			},
 			{
 				"@type": "CollectionPage",
@@ -45,7 +55,7 @@
 				description,
 				url: canonical,
 				isPartOf: {
-					"@id": `${page.url.origin}/#website`,
+					"@id": `${seo_config.url}/#website`,
 				},
 				mainEntity: {
 					"@type": "ItemList",
@@ -54,7 +64,7 @@
 						{
 							"@type": "ListItem",
 							position: 1,
-							url: `${page.url.origin}/magic`,
+							url: `${seo_config.url}/magic`,
 							name: "Svelte Magic UI",
 							description:
 								"Animated Svelte 5 components and motion-driven effects for modern interfaces.",
@@ -62,7 +72,7 @@
 						{
 							"@type": "ListItem",
 							position: 2,
-							url: `${page.url.origin}/spell`,
+							url: `${seo_config.url}/spell`,
 							name: "Svelte Spell UI",
 							description:
 								"Refined Svelte 5 UI components inspired by Spell UI for product interfaces.",
@@ -70,7 +80,7 @@
 						{
 							"@type": "ListItem",
 							position: 3,
-							url: `${page.url.origin}/fancy`,
+							url: `${seo_config.url}/fancy`,
 							name: "Svelte Fancy Components",
 							description:
 								"Expressive text and media-driven components for Svelte 5 with distinctive interaction design.",
@@ -79,50 +89,41 @@
 				},
 			},
 		],
-	});
+	};
 </script>
-
-<svelte:head>
-	<script type="application/ld+json">
-		{@html JSON.stringify(jsonLd)}
-	</script>
-</svelte:head>
 
 <MetaTags
 	{title}
+	titleTemplate="%s | Svelte Animations"
 	{description}
 	{keywords}
 	{canonical}
 	robots="index,follow"
-	additionalRobotsProps={{
-		maxSnippet: -1,
-		maxImagePreview: "large",
-		maxVideoPreview: -1,
-	}}
+	additionalRobotsProps={{ maxSnippet: -1, maxImagePreview: "large", maxVideoPreview: -1 }}
 	openGraph={{
-		url: canonical,
-		title,
-		description,
 		type: "website",
+		url: canonical,
+		title: `${title} | Svelte Animations`,
+		description,
+		locale: "en_US",
 		siteName: "Svelte Animations",
 		images: [socialImage],
 	}}
 	twitter={{
 		cardType: "summary_large_image",
-		title,
+		site: "@Sikandar_Bhide",
+		creator: "@Sikandar_Bhide",
+		title: `${title} | Svelte Animations`,
 		description,
 		image: socialImage.url,
 		imageAlt: socialImage.alt,
-		site: "@Sikandar_Bhide",
-		creator: "@Sikandar_Bhide",
 	}}
 	additionalMetaTags={[
-		{
-			name: "author",
-			content: "Sikandar Bhide",
-		},
+		{ name: "author", content: "Sikandar Bhide" },
+		{ name: "application-name", content: "Svelte Animations" },
 	]}
 />
+<JsonLd schema={jsonLd} />
 
 <Hero />
 <Sponsors />

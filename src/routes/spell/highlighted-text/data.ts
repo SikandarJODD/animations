@@ -1,7 +1,7 @@
-import HighlightedTextRaw from "$lib/components/spell/highlighted-text/highlighted-text.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/highlighted-text/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import HighlightedTextRaw from "#lib/components/spell/highlighted-text/highlighted-text.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/highlighted-text/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import DirectionExample from "./examples/direction-example.svelte";
@@ -61,6 +61,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { HighlightedText } from "#lib/components/spell/highlighted-text/index.js";
+</script>
+
+<HighlightedText>Important</HighlightedText>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{
@@ -112,7 +123,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "",
 					description: "Custom classes applied to the outer inline wrapper.",
 				},

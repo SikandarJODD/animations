@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PixelTrail } from "$lib/components/fancy/pixel-trail";
+	import { PixelTrail } from "#lib/components/fancy/pixel-trail/index.js";
 </script>
 
 <div class="flex h-80 w-dvw flex-col bg-black text-white md:h-120">

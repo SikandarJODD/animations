@@ -1,9 +1,9 @@
-import DiaTextRevealRaw from "$lib/components/magic/dia-text-reveal/dia-text-reveal.svelte?raw";
-import IndexTs from "$lib/components/magic/dia-text-reveal/index.ts?raw";
+import DiaTextRevealRaw from "#lib/components/magic/dia-text-reveal/dia-text-reveal.svelte?raw";
+import IndexTs from "#lib/components/magic/dia-text-reveal/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import CustomGradient from "./examples/custom-gradient.svelte";
 import CustomGradientRaw from "./examples/custom-gradient.svelte?raw";
 import DurationAndDelay from "./examples/duration-and-delay.svelte";
@@ -103,11 +103,27 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2, 6],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { DiaTextReveal } from "#lib/components/magic/dia-text-reveal/index.js";
+</script>
+
+<div class="flex min-h-40 items-center justify-center">
+	<DiaTextReveal
+		text="Joy of Code"
+		class="pb-1 text-4xl font-semibold sm:text-6xl"
+	/>
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "DiaTextReveal",
+			name: "Dia Text Reveal",
 			desc: "A component for revealing text with a moving gradient sweep.",
 			props: [
 				{
@@ -175,7 +191,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply to the animated span.",
 				},

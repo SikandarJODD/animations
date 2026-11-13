@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TextMarquee } from "$lib/components/spell/text-marquee";
+	import { TextMarquee } from "#lib/components/spell/text-marquee/index.js";
 
 	let phrases = ["Magic", "Spell", "Aceternity", "Luxe", "Indie", "Motion"];
 </script>

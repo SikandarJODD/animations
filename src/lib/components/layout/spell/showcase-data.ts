@@ -1,5 +1,5 @@
 import type { Component } from "svelte";
-import { spellUIComponents, type SpellComponent } from "$lib/components/docs/registry/spell_ui";
+import { spellUIComponents, type SpellComponent } from "#lib/components/docs/registry/spell_ui.js";
 import AnimatedCheckboxPreview from "../../../../routes/spell/animated-checkbox/examples/preview.svelte";
 import BadgePreview from "../../../../routes/spell/badge/examples/preview.svelte";
 import BarSpinnerPreview from "../../../../routes/spell/bar-spinner/examples/preview.svelte";

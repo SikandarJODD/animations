@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface OrbitingCirclesProps extends HTMLAttributes<HTMLDivElement> {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		reverse?: boolean;
 		duration?: number;
 		radius?: number;
@@ -40,7 +40,7 @@
 		class="pointer-events-none absolute inset-0 size-full"
 	>
 		<circle
-			class="stroke-1 dark:stroke-white/20"
+			class="stroke-foreground/20 stroke-1"
 			cx="50%"
 			cy="50%"
 			r={radius}
@@ -58,7 +58,7 @@
 	style:--icon-size="{iconSize}px"
 	class={cn(
 		"animate-orbit absolute flex size-(--icon-size) transform-gpu items-center justify-center rounded-full [animation-delay:calc(var(--delay)*1000ms)]",
-		{ "direction-[reverse]": reverse },
+		{ "[animation-direction:reverse]": reverse },
 		className
 	)}
 	{...props}

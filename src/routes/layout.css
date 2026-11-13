@@ -208,11 +208,13 @@
 	}
 	body {
 		@apply bg-background text-foreground antialiased;
+		font-synthesis-weight: none;
+		text-rendering: optimizeLegibility;
 	}
 
 	/* Custom scrollbar styling. Thanks @pranathiperii. */
 	::-webkit-scrollbar {
-		width: 5px;
+		width: 6px;
 		height: 5px;
 	}
 
@@ -225,7 +227,7 @@
 	}
 
 	::-webkit-scrollbar-thumb {
-		@apply bg-muted-foreground/40 rounded-md;
+		@apply bg-muted-foreground/30 rounded-md;
 	}
 	::-webkit-scrollbar-thumb:hover {
 		@apply bg-muted-foreground/60;
@@ -413,11 +415,15 @@
 	0%,
 	90%,
 	100% {
-		background-position: calc(-100% - var(--shiny-width)) 0;
+		background-position:
+			calc(-100% - var(--shiny-width)) 0,
+			0 0;
 	}
 	30%,
 	60% {
-		background-position: calc(100% + var(--shiny-width)) 0;
+		background-position:
+			calc(100% + var(--shiny-width)) 0,
+			0 0;
 	}
 }
 

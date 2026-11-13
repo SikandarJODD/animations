@@ -1,8 +1,8 @@
-﻿import InteractiveHoverButtonRaw from "$lib/components/magic/interactive-hover-button/interactive-hover-button.svelte?raw";
-import IndexTs from "$lib/components/magic/interactive-hover-button/index.ts?raw";
+﻿import InteractiveHoverButtonRaw from "#lib/components/magic/interactive-hover-button/interactive-hover-button.svelte?raw";
+import IndexTs from "#lib/components/magic/interactive-hover-button/index.ts?raw";
 
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -71,15 +71,26 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { InteractiveHoverButton } from "#lib/components/magic/interactive-hover-button/index.js";
+</script>
+
+<InteractiveHoverButton>Hover me</InteractiveHoverButton>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
-			name: "InteractiveHoverButton",
+			name: "Interactive Hover Button",
 			desc: "A component for Interactive Hover Button.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

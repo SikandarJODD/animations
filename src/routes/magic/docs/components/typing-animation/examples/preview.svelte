@@ -1,5 +1,8 @@
-﻿<script lang="ts">
-	import { TypingAnimation } from "$lib/components/magic/typing-animation";
+<script lang="ts">
+	import { TypingAnimation } from "#lib/components/magic/typing-animation/index.js";
 </script>
 
-<TypingAnimation content="Hello World! 👋"></TypingAnimation>
+<TypingAnimation
+	content="hello, svelte."
+	class="text-2xl leading-relaxed font-normal tracking-normal"
+/>

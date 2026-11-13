@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 
 	interface MarqueeProps {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		reverse?: boolean;
 		pauseOnHover?: boolean;
 		vertical?: boolean;

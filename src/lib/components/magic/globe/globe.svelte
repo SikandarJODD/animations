@@ -1,11 +1,12 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import type { COBEOptions, Globe } from "cobe";
 	import { Spring } from "svelte/motion";
 	import { onDestroy, onMount } from "svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	interface Props {
-		class?: string;
+		class?: ClassValue;
 		config?: Partial<COBEOptions>;
 	}
 

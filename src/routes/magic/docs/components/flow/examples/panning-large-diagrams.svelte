@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Flow from '$lib/components/magic/flow';
+	import * as Flow from "#lib/components/magic/flow/index.js";
 </script>
 
 <Flow.Root class="border-kumo-hairline rounded-lg border">

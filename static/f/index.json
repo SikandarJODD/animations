@@ -6,6 +6,15 @@
 		"author": "SikandarJODD",
 		"description": "An animated SVG gradient background built from moving blurred circles.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"svg",
+				"gradient",
+				"decoration",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "animated-gradient-svg.json"
 	},
 	{
@@ -18,6 +27,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"media",
+				"hover",
+				"reveal",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "media-between-text.json"
 	},
 	{
@@ -30,6 +49,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"cursor",
+				"pixel",
+				"trail",
+				"decoration",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "pixel-trail.json"
 	},
 	{
@@ -43,6 +72,16 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"media",
+				"cursor",
+				"touch",
+				"parallax",
+				"decoration",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "parallax-floating.json"
 	},
 	{
@@ -52,6 +91,16 @@
 		"author": "SikandarJODD",
 		"description": "An SVG filter definition component for applying configurable pixelation effects.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"media",
+				"svg",
+				"pixel",
+				"filter",
+				"decoration",
+				"subtle"
+			]
+		},
 		"relativeUrl": "pixelate-svg-filter.json"
 	},
 	{
@@ -64,6 +113,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"scroll",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "scroll-and-swap.json"
 	},
 	{
@@ -76,6 +134,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"card",
+				"scroll",
+				"stack",
+				"marketing",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "stacking-cards.json"
 	},
 	{
@@ -88,6 +155,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hover",
+				"3d",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "letter-3d-swap.json"
 	},
 	{
@@ -100,6 +177,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hover",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "letter-swap.json"
 	},
 	{
@@ -113,6 +199,15 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hover",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "letter-swap-ping-pong.json"
 	},
 	{
@@ -126,6 +221,16 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hover",
+				"randomized",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "random-letter-swap.json"
 	},
 	{
@@ -139,6 +244,16 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hover",
+				"randomized",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "random-letter-swap-ping-pong.json"
 	},
 	{
@@ -151,6 +266,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hover",
+				"scramble",
+				"reveal",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "scramble-hover.json"
 	},
 	{
@@ -163,6 +288,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"entrance",
+				"scramble",
+				"reveal",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "scramble-in.json"
 	},
 	{
@@ -175,6 +310,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"svg",
+				"scroll",
+				"path",
+				"decoration",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "text-along-path.json"
 	},
 	{
@@ -187,6 +332,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hover",
+				"highlight",
+				"reveal",
+				"marketing",
+				"subtle"
+			]
+		},
 		"relativeUrl": "text-highlighter.json"
 	},
 	{
@@ -199,6 +354,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"automatic",
+				"rotate",
+				"hero",
+				"marketing",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "text-rotate.json"
 	},
 	{
@@ -211,6 +376,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hover",
+				"highlight",
+				"marketing",
+				"subtle"
+			]
+		},
 		"relativeUrl": "underline-to-background.json"
 	},
 	{
@@ -223,6 +397,16 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"entrance",
+				"reveal",
+				"hero",
+				"marketing",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "vertical-cut-reveal.json"
 	}
 ]

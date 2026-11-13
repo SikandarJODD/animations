@@ -1,9 +1,9 @@
 ﻿<script lang="ts">
-	import { BorderBeam } from "$lib/components/magic/border-beam";
-	import Button from "$lib/components/ui/button/button.svelte";
-	import * as Card from "$lib/components/ui/card/index.js";
-	import Input from "$lib/components/ui/input/input.svelte";
-	import Label from "$lib/components/ui/label/label.svelte";
+	import { BorderBeam } from "#lib/components/magic/border-beam/index.js";
+	import Button from "#lib/components/ui/button/button.svelte";
+	import * as Card from "#lib/components/ui/card/index.js";
+	import Input from "#lib/components/ui/input/input.svelte";
+	import Label from "#lib/components/ui/label/label.svelte";
 </script>
 
 <Card.Root class="relative w-87.5 overflow-hidden">

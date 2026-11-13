@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FallbackAvatar } from "$lib/components/spell/fallback-avatar";
+	import { FallbackAvatar } from "#lib/components/spell/fallback-avatar/index.js";
 </script>
 
 <div class="flex flex-wrap items-center gap-6">

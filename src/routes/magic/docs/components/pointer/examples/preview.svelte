@@ -1,5 +1,5 @@
 ﻿<script>
-	import { Pointer } from "$lib/components/magic/pointer";
+	import { Pointer } from "#lib/components/magic/pointer/index.js";
 	import { motion } from "motion-sv";
 </script>
 

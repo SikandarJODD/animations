@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TextHighlighter } from "$lib/components/fancy/text-highlighter";
+	import { TextHighlighter } from "#lib/components/fancy/text-highlighter/index.js";
 </script>
 
 <div class="flex min-h-80 items-center rounded-xl bg-[#fffdf7] px-6 py-8 text-slate-900 sm:px-8">

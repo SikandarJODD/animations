@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { asset } from "$app/paths";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	type BookSize = "sm" | "default" | "lg";
 
@@ -24,7 +24,7 @@
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		children?: Snippet;
 		size?: BookSize;
-		class?: string;
+		class?: ClassValue;
 		textured?: boolean;
 		style?: string;
 	}
@@ -40,7 +40,7 @@
 
 	// you need to download the texture image
 	// place it inside /static folder
-	let textureUrl = asset("/perspective-book-textured.avif");
+	let textureUrl = asset("perspective-book-textured.avif");
 </script>
 
 <div class="group z-10 h-min w-min perspective-[900px]" {style} {...props}>

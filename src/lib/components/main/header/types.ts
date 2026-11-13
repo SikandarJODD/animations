@@ -1,6 +1,6 @@
 import type { LucideIcon } from "@lucide/svelte";
 import type { Component } from "svelte";
-import type { BadgeVariant } from "$lib/components/spell/badge";
+import type { BadgeVariant } from "#lib/components/spell/badge/index.js";
 
 export type LinkItemType = {
 	name: string;

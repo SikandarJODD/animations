@@ -1,7 +1,7 @@
-import SpecialTextRaw from "$lib/components/spell/special-text/special-text.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/special-text/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import SpecialTextRaw from "#lib/components/spell/special-text/special-text.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/special-text/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import ViewportReplayExample from "./examples/viewport-replay-example.svelte";
@@ -53,6 +53,17 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 		hideLines: true,
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { SpecialText } from "#lib/components/spell/special-text/index.js";
+</script>
+
+<SpecialText>SVELTE SPELL UI</SpecialText>`,
+			lang: "svelte",
+		},
 	},
 	installBlock,
 	examples: [
@@ -113,7 +124,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "",
 					description: "Custom classes applied to the animated root span.",
 				},

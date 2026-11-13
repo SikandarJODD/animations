@@ -1,6 +1,7 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { createMap } from "piri";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 
 	interface Marker extends Record<string, unknown> {
 		lat: number;
@@ -17,7 +18,7 @@
 		markerColor?: string;
 		dotRadius?: number;
 		stagger?: boolean;
-		class?: string;
+		class?: ClassValue;
 		style?: string;
 	}
 

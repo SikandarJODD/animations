@@ -1,8 +1,9 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion, type MotionHTMLAttributes, type MotionProps } from "motion-sv";
 	import { SvelteSet } from "svelte/reactivity";
 
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	type RevealDirection = "start" | "end" | "center";
 	type MotionSpanProps = Omit<MotionProps<"span">, "as" | "asChild"> &
@@ -18,7 +19,7 @@
 		revealDirection?: RevealDirection;
 		useOriginalCharsOnly?: boolean;
 		characters?: string;
-		class?: string;
+		class?: ClassValue;
 		scrambledClass?: string;
 	}
 

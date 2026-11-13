@@ -1,9 +1,15 @@
-﻿import OrbitingCirclesRaw from "$lib/components/magic/orbiting-circles/orbiting-circles.svelte?raw";
-import IndexTs from "$lib/components/magic/orbiting-circles/index.ts?raw";
+import OrbitingCirclesMasked from "./examples/orbiting-circles-masked.svelte";
+import OrbitingCirclesMaskedRaw from "./examples/orbiting-circles-masked.svelte?raw";
+import OrbitingCirclesCounter from "./examples/orbiting-circles-counter.svelte";
+import OrbitingCirclesCounterRaw from "./examples/orbiting-circles-counter.svelte?raw";
+import OrbitingCirclesOffset from "./examples/orbiting-circles-offset.svelte";
+import OrbitingCirclesOffsetRaw from "./examples/orbiting-circles-offset.svelte?raw";
+import OrbitingCirclesRaw from "#lib/components/magic/orbiting-circles/orbiting-circles.svelte?raw";
+import IndexTs from "#lib/components/magic/orbiting-circles/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -17,7 +23,40 @@ export const meta: ComponentMeta = {
 	badge: "new",
 };
 
-const examples: Example[] = [];
+const examples: Example[] = [
+	{
+		name: "Bottom Fade",
+		description: "Monochrome satellite icons follow a visible ring that fades at the bottom.",
+		preview: OrbitingCirclesMasked,
+		code: {
+			filename: "orbiting-circles-masked.svelte",
+			filecode: OrbitingCirclesMaskedRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Opposite Directions",
+		description:
+			"Colored developer icons orbit a processor in opposite directions with faint tinted backgrounds.",
+		preview: OrbitingCirclesCounter,
+		code: {
+			filename: "orbiting-circles-counter.svelte",
+			filecode: OrbitingCirclesCounterRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Offset Orbit",
+		description:
+			"Five weather icons orbit a central sun with light tints and an offset circular path.",
+		preview: OrbitingCirclesOffset,
+		code: {
+			filename: "orbiting-circles-offset.svelte",
+			filecode: OrbitingCirclesOffsetRaw,
+			lang: "svelte",
+		},
+	},
+];
 
 const seo: SEO = {
 	title: "Orbiting Circles",
@@ -88,16 +127,31 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { OrbitingCircles } from "#lib/components/magic/orbiting-circles/index.js";
+</script>
+
+<div class="relative h-64">
+	<OrbitingCircles>
+		<span class="rounded-full border p-2">A</span>
+	</OrbitingCircles>
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "OrbitingCircles",
+			name: "Orbiting Circles",
 			desc: "A component that creates orbiting animations with customizable paths and behaviors.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply to the orbiting element",
 				},

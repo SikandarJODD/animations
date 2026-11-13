@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import {
 		animate,
 		motion,
@@ -12,6 +12,7 @@
 		type MotionProps,
 	} from "motion-sv";
 	import { untrack } from "svelte";
+	import type { ClassValue } from "svelte/elements";
 
 	const DEFAULT_COLORS = ["#c679c4", "#fa3d1d", "#ffb005", "#e1e1fe", "#0358f7"];
 	const BAND_HALF = 17;
@@ -31,7 +32,7 @@
 		repeatDelay?: number;
 		triggerOnView?: boolean;
 		once?: boolean;
-		class?: string;
+		class?: ClassValue;
 		fixedWidth?: boolean;
 	};
 

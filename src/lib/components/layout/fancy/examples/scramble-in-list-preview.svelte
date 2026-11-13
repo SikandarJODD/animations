@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ScrambleIn } from "$lib/components/fancy/scramble-in";
+	import { ScrambleIn } from "#lib/components/fancy/scramble-in/index.js";
 
 	const items = ["Animations", "Motions", "Transitions", "Interactions"];
 </script>

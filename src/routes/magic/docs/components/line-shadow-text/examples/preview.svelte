@@ -1,9 +1,9 @@
 ﻿<script lang="ts">
-	import { LineShadowText } from "$lib/components/magic/line-shadow-text";
+	import { LineShadowText } from "#lib/components/magic/line-shadow-text/index.js";
 	import { mode } from "mode-watcher";
 </script>
 
-<h1
+<h2
 	class="text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl"
 >
 	Ship
@@ -12,4 +12,4 @@
 		class="italic"
 		shadowColor={mode.current === "dark" ? "white" : "black"}
 	></LineShadowText>
-</h1>
+</h2>

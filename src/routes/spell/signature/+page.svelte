@@ -1,20 +1,26 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
-	import { Button } from "$lib/components/ui/button";
-	import * as Item from "$lib/components/ui/item";
-	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
-	import PackageBadges from "$lib/components/docs/base/PackageBadges.svelte";
-	import APITable from "$lib/components/docs/base/APITable.svelte";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
-	import { MetaTags } from "svelte-meta-tags";
-	import { buildSpellKeywords, SPELL_SOCIAL_IMAGE, SPELL_TITLE_TEMPLATE } from "$lib/seo/spell";
+	import { seo_config } from "#lib/config/seo.js";
+	import { H1, H2, Paragraph, H3 } from "#lib/components/docs/markdown/index.js";
+	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
+	import * as Code from "#lib/components/ui/code/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Item from "#lib/components/ui/item/index.js";
+	import InstallComponent from "#lib/components/docs/base/install-component.svelte";
+	import PackageBadges from "#lib/components/docs/base/package-badges.svelte";
+	import APITable from "#lib/components/docs/base/api-table.svelte";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
+	import SEOComponent from "#lib/seo/seo.svelte";
+	import {
+		buildSpellKeywords,
+		SPELL_SOCIAL_IMAGE,
+		SPELL_TITLE_TEMPLATE,
+	} from "#lib/seo/spell.js";
 	import { data } from "./data";
 	import { Download } from "@lucide/svelte";
 
 	let PreviewComp = $derived(data.preview);
-	let installUrl = $derived(`${page.url.origin}/s/${data.id}.json`);
+	let installUrl = $derived(`${seo_config.url}/s/${data.id}.json`);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -22,8 +28,9 @@
 		return cleanUrl;
 	};
 
-	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
-	let canonical = $derived(page.url.href.split("?")[0].split("#")[0]);
+	let llmsTxtUrl = $derived(
+		new URL(`${getURLPath(page.url.pathname)}/llms.txt`, seo_config.url).href
+	);
 	const keywords = buildSpellKeywords(data.seo.keywords, [
 		data.title,
 		"animated signature component",
@@ -33,35 +40,15 @@
 	const socialTitle = `${data.seo.title} | Svelte Spell UI`;
 </script>
 
-<MetaTags
+<SEOComponent
 	title={data.seo.title}
 	titleTemplate={SPELL_TITLE_TEMPLATE}
 	description={data.seo.description}
 	{keywords}
-	{canonical}
-	robots="index,follow"
-	additionalRobotsProps={{
-		maxSnippet: -1,
-		maxImagePreview: "large",
-		maxVideoPreview: -1,
-	}}
-	openGraph={{
-		url: canonical,
-		title: socialTitle,
-		description: data.seo.description,
-		type: "article",
-		siteName: "Svelte Spell UI",
-		images: [SPELL_SOCIAL_IMAGE],
-	}}
-	twitter={{
-		cardType: "summary_large_image",
-		title: socialTitle,
-		description: data.seo.description,
-		image: SPELL_SOCIAL_IMAGE.url,
-		imageAlt: SPELL_SOCIAL_IMAGE.alt,
-		site: "@Sikandar_Bhide",
-		creator: "@Sikandar_Bhide",
-	}}
+	{socialTitle}
+	openGraphType="article"
+	siteName="Svelte Spell UI"
+	images={[SPELL_SOCIAL_IMAGE]}
 />
 
 <div class="space-y-8 md:space-y-8">
@@ -121,6 +108,21 @@
 			</Item.Actions>
 		</Item.Root>
 	</section>
+
+	{#if data.usage?.code}
+		<section>
+			<H2 id="usage">Usage</H2>
+			<div class="mt-4 space-y-4">
+				{#if Array.isArray(data.usage.code)}
+					{#each data.usage.code as codeBlock}
+						<Code.Snippet code={codeBlock} />
+					{/each}
+				{:else}
+					<Code.Snippet code={data.usage.code} />
+				{/if}
+			</div>
+		</section>
+	{/if}
 
 	{#if data.examples && data.examples.length > 0}
 		<section>

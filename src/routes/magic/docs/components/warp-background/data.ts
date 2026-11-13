@@ -1,9 +1,9 @@
-﻿import WarpBackgroundRaw from "$lib/components/magic/warp-background/warp-background.svelte?raw";
-import IndexTs from "$lib/components/magic/warp-background/index.ts?raw";
+﻿import WarpBackgroundRaw from "#lib/components/magic/warp-background/warp-background.svelte?raw";
+import IndexTs from "#lib/components/magic/warp-background/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -60,16 +60,29 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { WarpBackground } from "#lib/components/magic/warp-background/index.js";
+</script>
+
+<WarpBackground>
+	<div class="rounded-xl bg-background p-8">Warped background</div>
+</WarpBackground>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "WarpBackground",
+			name: "Warp Background",
 			desc: "A component for Warp Background.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

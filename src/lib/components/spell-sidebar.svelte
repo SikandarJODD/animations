@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { spellUISidebarGroups } from "$lib/components/docs/registry/spell_ui";
-	import Badge from "$lib/components/ui/badge/badge.svelte";
-	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import { spellUISidebarGroups } from "#lib/components/docs/registry/spell_ui.js";
+	import Badge from "#lib/components/ui/badge/badge.svelte";
+	import { ScrollArea } from "#lib/components/ui/scroll-area/index.js";
+	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
 	import { watch } from "runed";
 	import type { ComponentProps } from "svelte";
 	import BhideSvelteCard from "./main/bhide-svelte-card.svelte";
+	import SidebarResourceLinks from "./docs/base/sidebar-resource-links.svelte";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 
@@ -74,6 +75,7 @@
 		{/each}
 	</Sidebar.Content>
 	<Sidebar.Footer>
+		<SidebarResourceLinks skillsHref="/spell/skills" />
 		<BhideSvelteCard />
 	</Sidebar.Footer>
 </Sidebar.Root>

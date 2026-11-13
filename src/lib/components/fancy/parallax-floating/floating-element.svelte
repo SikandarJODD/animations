@@ -1,17 +1,17 @@
 <script lang="ts" module>
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	export interface FloatingElementProps extends HTMLAttributes<HTMLDivElement> {
 		children?: Snippet;
 		depth?: number;
-		class?: string;
+		class?: ClassValue;
 	}
 </script>
 
 <script lang="ts">
 	import { watch } from "runed";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	import { useFloatingContext } from "./floating-context.svelte";
 

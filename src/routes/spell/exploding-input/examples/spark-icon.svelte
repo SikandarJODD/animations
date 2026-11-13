@@ -1,5 +1,9 @@
 <script lang="ts">
-	let { class: className = "" } = $props<{ class?: string }>();
+	interface Props {
+		class?: string;
+	}
+
+	let { class: className = "" }: Props = $props();
 </script>
 
 <svg viewBox="0 0 32 32" fill="none" class={className} aria-hidden="true">

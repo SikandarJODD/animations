@@ -1,5 +1,8 @@
 <script lang="ts" module>
-	import { magicUISidebarGroups, type BadgeType } from "$lib/components/docs/registry/magic-ui";
+	import {
+		magicUISidebarGroups,
+		type BadgeType,
+	} from "#lib/components/docs/registry/magic-ui.js";
 
 	type NavItem = {
 		title: string;
@@ -42,13 +45,14 @@
 </script>
 
 <script lang="ts">
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
-	import Badge from "$lib/components/ui/badge/badge.svelte";
+	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
+	import { ScrollArea } from "#lib/components/ui/scroll-area/index.js";
+	import Badge from "#lib/components/ui/badge/badge.svelte";
 	import { page } from "$app/state";
 	import type { ComponentProps } from "svelte";
 	import { watch } from "runed";
 	import BhideSvelteCard from "./main/bhide-svelte-card.svelte";
+	import SidebarResourceLinks from "./docs/base/sidebar-resource-links.svelte";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 	let contentRef = $state<HTMLElement | null>(null);
@@ -114,6 +118,7 @@
 		{/each}
 	</Sidebar.Content>
 	<Sidebar.Footer>
+		<SidebarResourceLinks skillsHref="/magic/docs/skills" />
 		<BhideSvelteCard />
 	</Sidebar.Footer>
 	<!-- <Sidebar.Rail /> -->

@@ -1,9 +1,9 @@
-﻿import HeroVideoDialogRaw from "$lib/components/magic/hero-video-dialog/hero-video-dialog.svelte?raw";
-import IndexTs from "$lib/components/magic/hero-video-dialog/index.ts?raw";
+﻿import HeroVideoDialogRaw from "#lib/components/magic/hero-video-dialog/hero-video-dialog.svelte?raw";
+import IndexTs from "#lib/components/magic/hero-video-dialog/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import TopInBottomOut from "./examples/hero-video-top-in-bottom-out.svelte";
@@ -75,11 +75,26 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { HeroVideoDialog } from "#lib/components/magic/hero-video-dialog/index.js";
+</script>
+
+<HeroVideoDialog
+	videoSrc="https://www.youtube.com/embed/rv3Yq-B8qp4"
+	thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+	thumbnailAlt="Video preview"
+/>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "HeroVideoDialogProps",
+			name: "Hero Video Dialog Props",
 			desc: "Props for the HeroVideoDialog component",
 			props: [
 				{
@@ -108,7 +123,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Additional CSS classes",
 				},

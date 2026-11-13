@@ -1,9 +1,9 @@
-import BacklightRaw from "$lib/components/magic/backlight/backlight.svelte?raw";
-import IndexTs from "$lib/components/magic/backlight/index.ts?raw";
+import BacklightRaw from "#lib/components/magic/backlight/backlight.svelte?raw";
+import IndexTs from "#lib/components/magic/backlight/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import BacklightSvgExample from "./examples/backlight-svg-example.svelte";
@@ -87,6 +87,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Backlight } from "#lib/components/magic/backlight/index.js";
+</script>
+
+<Backlight blur={20}>
+	<div class="rounded-xl bg-background p-8">Backlit content</div>
+</Backlight>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
@@ -102,7 +115,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Custom classes applied to the outer wrapper element.",
 				},

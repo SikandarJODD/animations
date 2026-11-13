@@ -317,7 +317,7 @@ async function resolveComponentExport({
 }
 
 function getImportStatement(sourceRelativePath, exportName, localName) {
-	const importPath = `$lib/components/${sourceRelativePath}`;
+	const importPath = `#lib/components/${sourceRelativePath}`;
 
 	if (exportName === localName) {
 		return `import { ${localName} } from "${importPath}";`;
@@ -423,7 +423,7 @@ function getRouteInfo(sourceRelativePath, routeSlug) {
 
 function renderPageSvelte(installPathPrefix) {
 	return `<script lang="ts">
-\timport ComponentDocPage from "$lib/components/docs/base/ComponentDocPage.svelte";
+\timport ComponentDocPage from "#lib/components/docs/base/ComponentDocPage.svelte";
 \timport { data } from "./data";
 </script>
 
@@ -512,8 +512,8 @@ function renderDataTs({
 
 	return `${installCodeImports.join("\n")}
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.ts";
+import type { SEO } from "#lib/types/seo.ts";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 
@@ -556,7 +556,7 @@ export const data: ComponentDoc = {
 function buildInstallCodeImports(sourceRelativePath, sourceFiles) {
 	return sourceFiles.map((filePath) => {
 		const variableName = toRawImportVariable(filePath);
-		return `import ${variableName} from "$lib/components/${sourceRelativePath}/${filePath}?raw";`;
+		return `import ${variableName} from "#lib/components/${sourceRelativePath}/${filePath}?raw";`;
 	});
 }
 

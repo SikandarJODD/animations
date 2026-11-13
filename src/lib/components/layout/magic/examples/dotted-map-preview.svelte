@@ -1,5 +1,5 @@
 <script lang="ts">
-	import DottedMap from "$lib/components/magic/dotted-map/dotted-map.svelte";
+	import DottedMap from "#lib/components/magic/dotted-map/dotted-map.svelte";
 
 	const markers = [
 		{ lat: 37.7749, lng: -122.4194, size: 0.4 },

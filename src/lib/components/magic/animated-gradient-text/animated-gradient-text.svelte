@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 
 	type AnimatedGradientTextProps = {
@@ -7,7 +8,7 @@
 		colorFrom?: string;
 		colorTo?: string;
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		rest?: Record<string, any>;
 	};
 

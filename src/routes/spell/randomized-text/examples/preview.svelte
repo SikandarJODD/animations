@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { RandomizedText } from "$lib/components/spell/randomized-text";
+	import { RandomizedText } from "#lib/components/spell/randomized-text/index.js";
 </script>
 
 <div class="flex min-h-[200px] items-center justify-center">

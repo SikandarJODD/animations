@@ -1,0 +1,1831 @@
+{
+	"magic": [
+		{
+			"name": "animated-background",
+			"title": "Animated Background",
+			"description": "A shared animated background that smoothly moves between selected or hovered items.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/animated-background",
+			"registryUrl": "https://sv-animations.vercel.app/r/animated-background.json",
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			],
+			"categories": [
+				"background",
+				"selection",
+				"hover",
+				"layout",
+				"subtle"
+			]
+		},
+		{
+			"name": "animated-gradient-text",
+			"title": "Animated Gradient Text",
+			"description": "An animated gradient background which transitions between colors for text.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/animated-gradient-text",
+			"registryUrl": "https://sv-animations.vercel.app/r/animated-gradient-text.json",
+			"dependencies": [],
+			"categories": [
+				"text",
+				"gradient",
+				"marketing",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "text-animate",
+			"title": "Text Animate",
+			"description": "Animate text with various effects like blur, slide, scale, and fade with granular control over words, characters, or lines.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/text-animate",
+			"registryUrl": "https://sv-animations.vercel.app/r/text-animate.json",
+			"dependencies": [
+				"runed",
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"reveal",
+				"blur",
+				"marketing",
+				"high-motion"
+			]
+		},
+		{
+			"name": "animated-beam",
+			"title": "Animated Beam",
+			"description": "A component for creating animated beam effects between two elements with customizable gradients and paths.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/animated-beam",
+			"registryUrl": "https://sv-animations.vercel.app/r/animated-beam.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"data-visualization",
+				"connector",
+				"gradient",
+				"automatic",
+				"high-motion"
+			]
+		},
+		{
+			"name": "animated-theme-toggler",
+			"title": "Animated Theme Toggler",
+			"description": "A smooth animated theme toggler that uses the View Transition API to create a circular reveal effect when switching between light and dark themes.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/animated-theme-toggler",
+			"registryUrl": "https://sv-animations.vercel.app/r/animated-theme-toggler.json",
+			"dependencies": [],
+			"categories": [
+				"button",
+				"theme",
+				"click",
+				"reveal",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "arc-timeline",
+			"title": "Arc Timeline",
+			"description": "A curved timeline that rotates through milestone steps with clickable markers, icons, and configurable spacing.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/arc-timeline",
+			"registryUrl": "https://sv-animations.vercel.app/r/arc-timeline.json",
+			"dependencies": [],
+			"categories": [
+				"timeline",
+				"navigation",
+				"click",
+				"content",
+				"high-motion"
+			]
+		},
+		{
+			"name": "animated-circular-progress-bar",
+			"title": "Animated Circular Progress Bar",
+			"description": "A circular progress bar component with animated transitions between primary and secondary colors.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/animated-circular-progress-bar",
+			"registryUrl": "https://sv-animations.vercel.app/r/animated-circular-progress-bar.json",
+			"dependencies": [],
+			"categories": [
+				"progress",
+				"data-visualization",
+				"loading",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "animated-grid-pattern",
+			"title": "Animated Grid Pattern",
+			"description": "An animated grid pattern component that creates a dynamic background with moving squares that fade in and out.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/animated-grid-pattern",
+			"registryUrl": "https://sv-animations.vercel.app/r/animated-grid-pattern.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"background",
+				"grid",
+				"decoration",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "blur-fade",
+			"title": "Blur Fade",
+			"description": "A component that animates content with blur and fade effects, supporting directional movement and intersection observer triggering.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/blur-fade",
+			"registryUrl": "https://sv-animations.vercel.app/r/blur-fade.json",
+			"dependencies": [
+				"runed",
+				"motion-sv"
+			],
+			"categories": [
+				"reveal",
+				"blur",
+				"scroll",
+				"content",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "border-beam",
+			"title": "Border Beam",
+			"description": "A component for creating animated border beam effects around elements with customizable gradients, duration, and direction.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/border-beam",
+			"registryUrl": "https://sv-animations.vercel.app/r/border-beam.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"border",
+				"gradient",
+				"decoration",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "file-tree",
+			"title": "File Tree",
+			"description": "An interactive file tree component with expandable folders, selectable files, and smooth animations.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/file-tree",
+			"registryUrl": "https://sv-animations.vercel.app/r/file-tree.json",
+			"dependencies": [
+				"@lucide/svelte",
+				"motion-sv"
+			],
+			"categories": [
+				"file",
+				"navigation",
+				"click",
+				"tree",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "dot-pattern",
+			"title": "Dot Pattern",
+			"description": "A customizable dot pattern background component with optional glow animations and mask effects.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/dot-pattern",
+			"registryUrl": "https://sv-animations.vercel.app/r/dot-pattern.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"background",
+				"pattern",
+				"glow",
+				"decoration",
+				"subtle"
+			]
+		},
+		{
+			"name": "dia-text-reveal",
+			"title": "Dia Text Reveal",
+			"description": "A sweeping gradient text reveal with viewport triggering and rotating text support.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/dia-text-reveal",
+			"registryUrl": "https://sv-animations.vercel.app/r/dia-text-reveal.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"reveal",
+				"gradient",
+				"scroll",
+				"high-motion"
+			]
+		},
+		{
+			"name": "cool-mode",
+			"title": "Cool Mode",
+			"description": "Add a fun particle effect that follows mouse interactions, with support for emojis, images, and custom shapes.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/cool-mode",
+			"registryUrl": "https://sv-animations.vercel.app/r/cool-mode.json",
+			"dependencies": [],
+			"categories": [
+				"particles",
+				"cursor",
+				"click",
+				"decoration",
+				"high-motion"
+			]
+		},
+		{
+			"name": "shine-border",
+			"title": "Shine Border",
+			"description": "A component that adds a shining animated border effect with customizable colors, duration, and border width.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/shine-border",
+			"registryUrl": "https://sv-animations.vercel.app/r/shine-border.json",
+			"dependencies": [],
+			"categories": [
+				"border",
+				"shine",
+				"decoration",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "animated-list",
+			"title": "Animated List",
+			"description": "A component that animates list items with smooth layout transitions, revealing items one by one from top to bottom.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/animated-list",
+			"registryUrl": "https://sv-animations.vercel.app/r/animated-list.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"list",
+				"layout",
+				"reveal",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "animated-shiny-text",
+			"title": "Animated Shiny Text",
+			"description": "A shimmering text effect component that creates a moving shine animation across text.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/animated-shiny-text",
+			"registryUrl": "https://sv-animations.vercel.app/r/animated-shiny-text.json",
+			"dependencies": [],
+			"categories": [
+				"text",
+				"shimmer",
+				"marketing",
+				"automatic",
+				"subtle"
+			]
+		},
+		{
+			"name": "aurora-text",
+			"title": "Aurora Text",
+			"description": "A text component with animated aurora gradient effect that smoothly transitions between customizable colors.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/aurora-text",
+			"registryUrl": "https://sv-animations.vercel.app/r/aurora-text.json",
+			"dependencies": [],
+			"categories": [
+				"text",
+				"gradient",
+				"aurora",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "backlight",
+			"title": "Backlight",
+			"description": "An SVG filter wrapper that adds a soft, saturated backlight glow around the content it wraps.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/backlight",
+			"registryUrl": "https://sv-animations.vercel.app/r/backlight.json",
+			"dependencies": [],
+			"categories": [
+				"glow",
+				"filter",
+				"decoration",
+				"content",
+				"subtle"
+			]
+		},
+		{
+			"name": "avatar-circles",
+			"title": "Avatar Circles",
+			"description": "A component that displays overlapping avatar circles with optional count indicator for showing team members or contributors.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/avatar-circles",
+			"registryUrl": "https://sv-animations.vercel.app/r/avatar-circles.json",
+			"dependencies": [],
+			"categories": [
+				"avatar",
+				"social-proof",
+				"team",
+				"content",
+				"static"
+			]
+		},
+		{
+			"name": "dotted-map",
+			"title": "Dotted Map",
+			"description": "A world map component rendered with dots, supporting custom markers with staggered entrance animations.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/dotted-map",
+			"registryUrl": "https://sv-animations.vercel.app/r/dotted-map.json",
+			"dependencies": [
+				"piri"
+			],
+			"categories": [
+				"map",
+				"data-visualization",
+				"markers",
+				"reveal",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "marquee",
+			"title": "Marquee",
+			"description": "A smooth scrolling marquee component with support for horizontal and vertical directions, pause on hover, and reverse animation.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/marquee",
+			"registryUrl": "https://sv-animations.vercel.app/r/marquee.json",
+			"dependencies": [],
+			"categories": [
+				"marquee",
+				"content",
+				"automatic",
+				"hover",
+				"high-motion"
+			]
+		},
+		{
+			"name": "meteors",
+			"title": "Meteors",
+			"description": "A meteor shower effect component with customizable number of meteors and animated falling effects.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/meteors",
+			"registryUrl": "https://sv-animations.vercel.app/r/meteors.json",
+			"dependencies": [],
+			"categories": [
+				"background",
+				"particles",
+				"decoration",
+				"automatic",
+				"high-motion"
+			]
+		},
+		{
+			"name": "pixel-image",
+			"title": "Pixel Image",
+			"description": "An image component that reveals itself through a pixelated grid animation with optional grayscale to color transition.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/pixel-image",
+			"registryUrl": "https://sv-animations.vercel.app/r/pixel-image.json",
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			],
+			"categories": [
+				"image",
+				"reveal",
+				"pixel",
+				"marketing",
+				"high-motion"
+			]
+		},
+		{
+			"name": "striped-pattern",
+			"title": "Striped Pattern",
+			"description": "An SVG-based striped pattern background component with configurable direction and stripe dimensions.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/striped-pattern",
+			"registryUrl": "https://sv-animations.vercel.app/r/striped-pattern.json",
+			"dependencies": [],
+			"categories": [
+				"background",
+				"pattern",
+				"stripes",
+				"decoration",
+				"static"
+			]
+		},
+		{
+			"name": "typing-animation",
+			"title": "Typing Animation",
+			"description": "A typewriter effect component that types out text with customizable speed, cursor styles, and support for cycling through multiple words.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/typing-animation",
+			"registryUrl": "https://sv-animations.vercel.app/r/typing-animation.json",
+			"dependencies": [
+				"runed",
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"typing",
+				"hero",
+				"automatic",
+				"high-motion"
+			]
+		},
+		{
+			"name": "flickering-grid",
+			"title": "Flickering Grid",
+			"description": "An animated flickering grid pattern component that creates a dynamic canvas-based background with randomly flickering squares.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/flickering-grid",
+			"registryUrl": "https://sv-animations.vercel.app/r/flickering-grid.json",
+			"dependencies": [],
+			"categories": [
+				"background",
+				"grid",
+				"canvas",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "grid-pattern",
+			"title": "Grid Pattern",
+			"description": "An SVG-based grid pattern background component with support for highlighted squares and customizable grid dimensions.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/grid-pattern",
+			"registryUrl": "https://sv-animations.vercel.app/r/grid-pattern.json",
+			"dependencies": [],
+			"categories": [
+				"background",
+				"grid",
+				"pattern",
+				"decoration",
+				"static"
+			]
+		},
+		{
+			"name": "glare-hover",
+			"title": "Glare Hover",
+			"description": "A glare hover effect that adds a subtle shine to elements when hovered.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/glare-hover",
+			"registryUrl": "https://sv-animations.vercel.app/r/glare-hover.json",
+			"dependencies": [],
+			"categories": [
+				"hover",
+				"glare",
+				"shine",
+				"decoration",
+				"subtle"
+			]
+		},
+		{
+			"name": "globe",
+			"title": "Globe",
+			"description": "An autorotating, interactive, and highly performant globe made using WebGL.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/globe",
+			"registryUrl": "https://sv-animations.vercel.app/r/globe.json",
+			"dependencies": [
+				"cobe"
+			],
+			"categories": [
+				"globe",
+				"3d",
+				"webgl",
+				"drag",
+				"high-motion"
+			]
+		},
+		{
+			"name": "hero-video-dialog",
+			"title": "Hero Video Dialog",
+			"description": "A video dialog component with animated entrance effects, thumbnail support, and customizable animation styles.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/hero-video-dialog",
+			"registryUrl": "https://sv-animations.vercel.app/r/hero-video-dialog.json",
+			"dependencies": [
+				"@lucide/svelte",
+				"motion-sv"
+			],
+			"categories": [
+				"video",
+				"dialog",
+				"hero",
+				"click",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "hexagon-pattern",
+			"title": "Hexagon Pattern",
+			"description": "An SVG-based hexagon pattern background component with configurable radius, gap, direction, and highlighted cells.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/hexagon-pattern",
+			"registryUrl": "https://sv-animations.vercel.app/r/hexagon-pattern.json",
+			"dependencies": [],
+			"categories": [
+				"background",
+				"pattern",
+				"hexagon",
+				"decoration",
+				"static"
+			]
+		},
+		{
+			"name": "hyper-text",
+			"title": "Hyper Text",
+			"description": "An animated text component that creates a glitch effect by cycling through random characters before revealing the final text.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/hyper-text",
+			"registryUrl": "https://sv-animations.vercel.app/r/hyper-text.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"glitch",
+				"reveal",
+				"marketing",
+				"high-motion"
+			]
+		},
+		{
+			"name": "icon-cloud",
+			"title": "Icon Cloud",
+			"description": "An interactive 3D tag cloud component that displays icons or images in a sphere formation with smooth rotation and drag interactions.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/icon-cloud",
+			"registryUrl": "https://sv-animations.vercel.app/r/icon-cloud.json",
+			"dependencies": [],
+			"categories": [
+				"icon",
+				"3d",
+				"cloud",
+				"drag",
+				"high-motion"
+			]
+		},
+		{
+			"name": "interactive-hover-button",
+			"title": "Interactive Hover Button",
+			"description": "A button with an interactive hover effect featuring an expanding dot and sliding text animation with an arrow.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/interactive-hover-button",
+			"registryUrl": "https://sv-animations.vercel.app/r/interactive-hover-button.json",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"categories": [
+				"button",
+				"hover",
+				"text",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "light-rays",
+			"title": "Light Rays",
+			"description": "A component that creates animated light rays with customizable count, color, blur, speed, and length.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/light-rays",
+			"registryUrl": "https://sv-animations.vercel.app/r/light-rays.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"background",
+				"light",
+				"blur",
+				"decoration",
+				"high-motion"
+			]
+		},
+		{
+			"name": "line-shadow-text",
+			"title": "Line Shadow Text",
+			"description": "A text component with an animated diagonal line shadow effect that moves across the text.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/line-shadow-text",
+			"registryUrl": "https://sv-animations.vercel.app/r/line-shadow-text.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"shadow",
+				"marketing",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "motion-grid",
+			"title": "Motion Grid",
+			"description": "A frame-based 2D grid animation primitive with active/inactive cell states.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/motion-grid",
+			"registryUrl": "https://sv-animations.vercel.app/r/motion-grid.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"grid",
+				"animation-primitive",
+				"canvas",
+				"automatic",
+				"high-motion"
+			]
+		},
+		{
+			"name": "morphing-text",
+			"title": "Morphing Text",
+			"description": "A text component that smoothly morphs between multiple text strings with a blur transition effect.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/morphing-text",
+			"registryUrl": "https://sv-animations.vercel.app/r/morphing-text.json",
+			"dependencies": [],
+			"categories": [
+				"text",
+				"morph",
+				"blur",
+				"automatic",
+				"high-motion"
+			]
+		},
+		{
+			"name": "neon-gradient-card",
+			"title": "Neon Gradient Card",
+			"description": "A card component with animated neon gradient borders and customizable colors, border size, and radius.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/neon-gradient-card",
+			"registryUrl": "https://sv-animations.vercel.app/r/neon-gradient-card.json",
+			"dependencies": [],
+			"categories": [
+				"card",
+				"gradient",
+				"neon",
+				"border",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "noise-texture",
+			"title": "Noise Texture",
+			"description": "An SVG fractal noise layer using feTurbulence for subtle texture overlays.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/noise-texture",
+			"registryUrl": "https://sv-animations.vercel.app/r/noise-texture.json",
+			"dependencies": [],
+			"categories": [
+				"background",
+				"texture",
+				"noise",
+				"decoration",
+				"subtle"
+			]
+		},
+		{
+			"name": "number-ticker",
+			"title": "Number Ticker",
+			"description": "An animated number counter component with spring physics that smoothly animates from a start value to an end value.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/number-ticker",
+			"registryUrl": "https://sv-animations.vercel.app/r/number-ticker.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"number",
+				"counter",
+				"data-visualization",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "pulsating-button",
+			"title": "Pulsating Button",
+			"description": "A button component with a pulsating ring effect that expands and fades around the button.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/pulsating-button",
+			"registryUrl": "https://sv-animations.vercel.app/r/pulsating-button.json",
+			"dependencies": [],
+			"categories": [
+				"button",
+				"pulse",
+				"call-to-action",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "rainbow-button",
+			"title": "Rainbow Button",
+			"description": "A button component with animated rainbow gradient borders and background that cycles through multiple colors.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/rainbow-button",
+			"registryUrl": "https://sv-animations.vercel.app/r/rainbow-button.json",
+			"dependencies": [
+				"bits-ui",
+				"tailwind-variants"
+			],
+			"categories": [
+				"button",
+				"gradient",
+				"rainbow",
+				"call-to-action",
+				"high-motion"
+			]
+		},
+		{
+			"name": "ripple",
+			"title": "Ripple",
+			"description": "A component that creates expanding ripple circles with customizable size, opacity, and number of circles.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/ripple",
+			"registryUrl": "https://sv-animations.vercel.app/r/ripple.json",
+			"dependencies": [],
+			"categories": [
+				"background",
+				"ripple",
+				"decoration",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "ripple-button",
+			"title": "Ripple Button",
+			"description": "A button component with a ripple effect that appears on click, expanding from the click position.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/ripple-button",
+			"registryUrl": "https://sv-animations.vercel.app/r/ripple-button.json",
+			"dependencies": [
+				"runed"
+			],
+			"categories": [
+				"button",
+				"click",
+				"ripple",
+				"feedback",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "scroll-progress",
+			"title": "Scroll Progress",
+			"description": "A fixed progress bar component that indicates page scroll progress with a gradient color effect.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/scroll-progress",
+			"registryUrl": "https://sv-animations.vercel.app/r/scroll-progress.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"progress",
+				"scroll",
+				"navigation",
+				"gradient",
+				"subtle"
+			]
+		},
+		{
+			"name": "separator",
+			"title": "Separator",
+			"description": "A flexible horizontal separator for dividing content with solid or gradient lines and optional centered labels.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/separator",
+			"registryUrl": "https://sv-animations.vercel.app/r/separator.json",
+			"dependencies": [],
+			"categories": [
+				"separator",
+				"layout",
+				"text",
+				"gradient",
+				"static"
+			]
+		},
+		{
+			"name": "shimmer-button",
+			"title": "Shimmer Button",
+			"description": "A button component with an animated shimmer effect that slides across the button surface.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/shimmer-button",
+			"registryUrl": "https://sv-animations.vercel.app/r/shimmer-button.json",
+			"dependencies": [],
+			"categories": [
+				"button",
+				"shimmer",
+				"call-to-action",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "shiny-button",
+			"title": "Shiny Button",
+			"description": "A button component with a shiny gradient mask effect that animates across the text on hover and press.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/shiny-button",
+			"registryUrl": "https://sv-animations.vercel.app/r/shiny-button.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"button",
+				"shine",
+				"gradient",
+				"hover",
+				"subtle"
+			]
+		},
+		{
+			"name": "terminal",
+			"title": "Terminal",
+			"description": "A terminal-like UI component with typing animations, sequence control, and intersection observer support.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/terminal",
+			"registryUrl": "https://sv-animations.vercel.app/r/terminal.json",
+			"dependencies": [
+				"runed"
+			],
+			"categories": [
+				"terminal",
+				"code",
+				"typing",
+				"scroll",
+				"high-motion"
+			]
+		},
+		{
+			"name": "video-text",
+			"title": "Video Text",
+			"description": "A component that displays video content masked by text, creating a text-shaped video effect with customizable typography.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/video-text",
+			"registryUrl": "https://sv-animations.vercel.app/r/video-text.json",
+			"dependencies": [
+				"runed"
+			],
+			"categories": [
+				"text",
+				"video",
+				"mask",
+				"hero",
+				"high-motion"
+			]
+		},
+		{
+			"name": "warp-background",
+			"title": "Warp Background",
+			"description": "A 3D perspective grid background with animated light beams that create a warping effect.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/warp-background",
+			"registryUrl": "https://sv-animations.vercel.app/r/warp-background.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"background",
+				"grid",
+				"3d",
+				"light",
+				"high-motion"
+			]
+		},
+		{
+			"name": "word-rotate",
+			"title": "Word Rotate",
+			"description": "A component that cycles through an array of words with smooth fade and slide animations between transitions.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/word-rotate",
+			"registryUrl": "https://sv-animations.vercel.app/r/word-rotate.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"rotate",
+				"hero",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "bento-grid",
+			"title": "Bento Grid",
+			"description": "A flexible grid layout with interchangeable BentoCard items for showcasing content in a responsive masonry style.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/bento-grid",
+			"registryUrl": "https://sv-animations.vercel.app/r/bento-grid.json",
+			"dependencies": [
+				"@lucide/svelte"
+			],
+			"categories": [
+				"grid",
+				"card",
+				"layout",
+				"marketing",
+				"static"
+			]
+		},
+		{
+			"name": "dither-shader",
+			"title": "Dither Shader",
+			"description": "A canvas-based component that applies dithering effects to images with customizable patterns and color modes.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/dither-shader",
+			"registryUrl": "https://sv-animations.vercel.app/r/dither-shader.json",
+			"dependencies": [],
+			"categories": [
+				"image",
+				"canvas",
+				"dither",
+				"filter",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "dock",
+			"title": "Dock",
+			"description": "A macOS-style dock component with smooth magnification animation on hover, inspired by the macOS dock.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/dock",
+			"registryUrl": "https://sv-animations.vercel.app/r/dock.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"navigation",
+				"dock",
+				"hover",
+				"magnification",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "lens",
+			"title": "Lens",
+			"description": "An interactive component that enables zooming into images, videos and other elements.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/lens",
+			"registryUrl": "https://sv-animations.vercel.app/r/lens.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"image",
+				"video",
+				"zoom",
+				"hover",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "magic-card",
+			"title": "Magic Card",
+			"description": "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/magic-card",
+			"registryUrl": "https://sv-animations.vercel.app/r/magic-card.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"card",
+				"spotlight",
+				"cursor",
+				"hover",
+				"subtle"
+			]
+		},
+		{
+			"name": "orbiting-circles",
+			"title": "Orbiting Circles",
+			"description": "A component that displays icons or elements orbiting in a circular path with customizable radius, duration, and direction.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/orbiting-circles",
+			"registryUrl": "https://sv-animations.vercel.app/r/orbiting-circles.json",
+			"dependencies": [],
+			"categories": [
+				"icon",
+				"orbit",
+				"decoration",
+				"automatic",
+				"high-motion"
+			]
+		},
+		{
+			"name": "pointer",
+			"title": "Pointer",
+			"description": "A custom pointer component that appears while hovering over wrapped content.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/pointer",
+			"registryUrl": "https://sv-animations.vercel.app/r/pointer.json",
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			],
+			"categories": [
+				"cursor",
+				"pointer",
+				"hover",
+				"feedback",
+				"subtle"
+			]
+		},
+		{
+			"name": "progressive-blur",
+			"title": "Progressive Blur",
+			"description": "A component that creates a progressive blur effect at the top, bottom, or both edges of a container with customizable blur levels and positioning.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/progressive-blur",
+			"registryUrl": "https://sv-animations.vercel.app/r/progressive-blur.json",
+			"dependencies": [],
+			"categories": [
+				"blur",
+				"overlay",
+				"content",
+				"decoration",
+				"subtle"
+			]
+		},
+		{
+			"name": "retro-grid",
+			"title": "Retro Grid",
+			"description": "An animated retro-style grid background component with customizable angle, cell size, opacity, and colors.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/retro-grid",
+			"registryUrl": "https://sv-animations.vercel.app/r/retro-grid.json",
+			"dependencies": [],
+			"categories": [
+				"background",
+				"grid",
+				"retro",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "smooth-cursor",
+			"title": "Smooth Cursor",
+			"description": "A smooth animated cursor component with spring physics that follows mouse movement with rotation and scale effects.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/smooth-cursor",
+			"registryUrl": "https://sv-animations.vercel.app/r/smooth-cursor.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"cursor",
+				"pointer",
+				"spring",
+				"mouse",
+				"high-motion"
+			]
+		},
+		{
+			"name": "sparkles-text",
+			"title": "Sparkles Text",
+			"description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/sparkles-text",
+			"registryUrl": "https://sv-animations.vercel.app/r/sparkles-text.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"sparkles",
+				"particles",
+				"marketing",
+				"high-motion"
+			]
+		},
+		{
+			"name": "stagger-text",
+			"title": "Stagger Text",
+			"description": "An interactive text component where characters animate vertically on hover with a staggered delay effect.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/stagger-text",
+			"registryUrl": "https://sv-animations.vercel.app/r/stagger-text.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"hover",
+				"stagger",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "glyph-matrix",
+			"title": "Glyph Matrix",
+			"description": "An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/glyph-matrix",
+			"registryUrl": "https://sv-animations.vercel.app/r/glyph-matrix.json",
+			"dependencies": [
+				"runed"
+			],
+			"categories": [
+				"background",
+				"glyph",
+				"canvas",
+				"automatic",
+				"subtle"
+			]
+		},
+		{
+			"name": "flow",
+			"title": "Flow",
+			"description": "A group of components for building directed flow diagrams with nodes and connectors.",
+			"documentationUrl": "https://sv-animations.vercel.app/magic/docs/components/flow",
+			"registryUrl": "https://sv-animations.vercel.app/r/flow.json",
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			],
+			"categories": [
+				"data-visualization",
+				"diagram",
+				"node",
+				"connector",
+				"interactive"
+			]
+		}
+	],
+	"spell": [
+		{
+			"name": "perspective-book",
+			"title": "Perspective Book",
+			"description": "A 3D book cover wrapper with a hover tilt effect and optional textured overlay.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/perspective-book",
+			"registryUrl": "https://sv-animations.vercel.app/s/perspective-book.json",
+			"dependencies": [],
+			"categories": [
+				"card",
+				"3d",
+				"hover",
+				"tilt",
+				"high-motion"
+			]
+		},
+		{
+			"name": "tilt-card",
+			"title": "Tilt Card",
+			"description": "A cursor-reactive tilt wrapper with configurable scale, tilt depth, perspective, and spotlight.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/tilt-card",
+			"registryUrl": "https://sv-animations.vercel.app/s/tilt-card.json",
+			"dependencies": [],
+			"categories": [
+				"card",
+				"3d",
+				"cursor",
+				"hover",
+				"high-motion"
+			]
+		},
+		{
+			"name": "fallback-avatar",
+			"title": "Fallback Avatar",
+			"description": "A seeded canvas avatar with hover animation, WebGL rendering, and a deterministic 2D fallback path.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/fallback-avatar",
+			"registryUrl": "https://sv-animations.vercel.app/s/fallback-avatar.json",
+			"dependencies": [],
+			"categories": [
+				"avatar",
+				"canvas",
+				"webgl",
+				"hover",
+				"generative",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "badge",
+			"title": "Badge",
+			"description": "A compact pill badge with multi-color variants, optional link mode, and size presets.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/badge",
+			"registryUrl": "https://sv-animations.vercel.app/s/badge.json",
+			"dependencies": [
+				"tailwind-variants"
+			],
+			"categories": [
+				"badge",
+				"status",
+				"label",
+				"link"
+			]
+		},
+		{
+			"name": "bar-spinner",
+			"title": "Bar Spinner",
+			"description": "A compact loading spinner made from twelve fading bars, ideal for inline waits, cards, dialogs, and button-adjacent status indicators.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/bar-spinner",
+			"registryUrl": "https://sv-animations.vercel.app/s/bar-spinner.json",
+			"dependencies": [],
+			"categories": [
+				"loading",
+				"feedback",
+				"spinner",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "kbd",
+			"title": "Keyboard Shortcuts",
+			"description": "A tactile keyboard shortcut keycap with optional live keyboard listening.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/kbd",
+			"registryUrl": "https://sv-animations.vercel.app/s/kbd.json",
+			"dependencies": [
+				"runed"
+			],
+			"categories": [
+				"keyboard",
+				"shortcut",
+				"input",
+				"interactive",
+				"subtle"
+			]
+		},
+		{
+			"name": "marquee",
+			"title": "Marquee",
+			"description": "A reusable horizontal or vertical marquee with optional fade edges and hover pause.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/marquee",
+			"registryUrl": "https://sv-animations.vercel.app/s/marquee.json",
+			"dependencies": [],
+			"categories": [
+				"marquee",
+				"content",
+				"automatic",
+				"hover",
+				"fade",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "logo-carousel",
+			"title": "Logo Carousel",
+			"description": "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/logo-carousel",
+			"registryUrl": "https://sv-animations.vercel.app/s/logo-carousel.json",
+			"dependencies": [],
+			"categories": [
+				"logo",
+				"carousel",
+				"marketing",
+				"automatic",
+				"stagger",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "spotify-card",
+			"title": "Spotify Card",
+			"description": "A Spotify preview card with blurred artwork, playback controls, and server-fetched metadata.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/spotify-card",
+			"registryUrl": "https://sv-animations.vercel.app/s/spotify-card.json",
+			"dependencies": [
+				"spotify-url-info"
+			],
+			"categories": [
+				"audio",
+				"card",
+				"media",
+				"playback",
+				"interactive"
+			]
+		},
+		{
+			"name": "qrcode",
+			"title": "QRCode",
+			"description": "A rounded QR code renderer with circular modules and stylized finder patterns.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/qrcode",
+			"registryUrl": "https://sv-animations.vercel.app/s/qrcode.json",
+			"dependencies": [
+				"qrcode"
+			],
+			"categories": [
+				"qr-code",
+				"utility",
+				"canvas",
+				"data-visualization"
+			]
+		},
+		{
+			"name": "text-marquee",
+			"title": "Text Marquee",
+			"description": "A vertical text rotator with snippet-based prefix and row composition.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/text-marquee",
+			"registryUrl": "https://sv-animations.vercel.app/s/text-marquee.json",
+			"dependencies": [],
+			"categories": [
+				"text",
+				"marquee",
+				"hero",
+				"automatic",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "blur-reveal",
+			"title": "Blur Reveal",
+			"description": "A text-only blur and stagger reveal for hero copy, headings, and announcements.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/blur-reveal",
+			"registryUrl": "https://sv-animations.vercel.app/s/blur-reveal.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"hero",
+				"reveal",
+				"blur",
+				"stagger",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "words-stagger",
+			"title": "Words Stagger",
+			"description": "A word-by-word blur and lift reveal for hero copy, launch messaging, and editorial headings.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/words-stagger",
+			"registryUrl": "https://sv-animations.vercel.app/s/words-stagger.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"hero",
+				"reveal",
+				"blur",
+				"stagger",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "randomized-text",
+			"title": "Randomized Text",
+			"description": "A stable randomized text reveal for hero copy, labels, and editorial callouts.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/randomized-text",
+			"registryUrl": "https://sv-animations.vercel.app/s/randomized-text.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"hero",
+				"reveal",
+				"randomized",
+				"high-motion"
+			]
+		},
+		{
+			"name": "special-text",
+			"title": "Special Text",
+			"description": "A scrambled text reveal with optional viewport triggering and plain text or slotted content input.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/special-text",
+			"registryUrl": "https://sv-animations.vercel.app/s/special-text.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"reveal",
+				"scramble",
+				"scroll",
+				"high-motion"
+			]
+		},
+		{
+			"name": "highlighted-text",
+			"title": "Highlighted Text",
+			"description": "An inline highlight sweep that reveals text from configurable directions with optional viewport triggers.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/highlighted-text",
+			"registryUrl": "https://sv-animations.vercel.app/s/highlighted-text.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"highlight",
+				"reveal",
+				"scroll",
+				"subtle"
+			]
+		},
+		{
+			"name": "slide-up-text",
+			"title": "Slide Up Text",
+			"description": "A configurable text reveal that slides words, characters, or lines upward with staggered motion.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/slide-up-text",
+			"registryUrl": "https://sv-animations.vercel.app/s/slide-up-text.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"hero",
+				"reveal",
+				"stagger",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "signature",
+			"title": "Signature",
+			"description": "A handwritten signature renderer that animates glyph paths from downloaded font data.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/signature",
+			"registryUrl": "https://sv-animations.vercel.app/s/signature.json",
+			"dependencies": [
+				"opentype.js"
+			],
+			"categories": [
+				"text",
+				"signature",
+				"svg",
+				"draw",
+				"high-motion"
+			]
+		},
+		{
+			"name": "gradient-wave-text",
+			"title": "Gradient Wave Text",
+			"description": "A flowing gradient text effect with radial or linear bands, custom colors, and view-triggered playback.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/gradient-wave-text",
+			"registryUrl": "https://sv-animations.vercel.app/s/gradient-wave-text.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"gradient",
+				"hero",
+				"scroll",
+				"high-motion"
+			]
+		},
+		{
+			"name": "color-selector",
+			"title": "Color Selector",
+			"description": "A compact swatch picker with preset or custom CSS colors, form support, and size variants.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/color-selector",
+			"registryUrl": "https://sv-animations.vercel.app/s/color-selector.json",
+			"dependencies": [
+				"tailwind-variants"
+			],
+			"categories": [
+				"form",
+				"color",
+				"picker",
+				"input",
+				"interactive"
+			]
+		},
+		{
+			"name": "label-input",
+			"title": "Label Input",
+			"description": "A floating-label input with ring-color variants and password visibility toggle support.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/label-input",
+			"registryUrl": "https://sv-animations.vercel.app/s/label-input.json",
+			"dependencies": [
+				"tailwind-variants",
+				"@lucide/svelte"
+			],
+			"categories": [
+				"form",
+				"input",
+				"label",
+				"password",
+				"interactive"
+			]
+		},
+		{
+			"name": "animated-checkbox",
+			"title": "Animated Checkbox",
+			"description": "A motion-driven checkbox row with animated checkmark drawing and strike-through feedback.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/animated-checkbox",
+			"registryUrl": "https://sv-animations.vercel.app/s/animated-checkbox.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"form",
+				"checkbox",
+				"input",
+				"feedback",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "exploding-input",
+			"title": "Exploding Input",
+			"description": "A particle input companion that launches custom items outward from the cursor as you type.",
+			"documentationUrl": "https://sv-animations.vercel.app/spell/exploding-input",
+			"registryUrl": "https://sv-animations.vercel.app/s/exploding-input.json",
+			"dependencies": [],
+			"categories": [
+				"form",
+				"input",
+				"particles",
+				"keyboard",
+				"high-motion"
+			]
+		}
+	],
+	"fancy": [
+		{
+			"name": "animated-gradient-svg",
+			"title": "Animated Gradient Svg",
+			"description": "An animated SVG gradient background built from moving blurred circles.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/animated-gradient-svg",
+			"registryUrl": "https://sv-animations.vercel.app/f/animated-gradient-svg.json",
+			"dependencies": [],
+			"categories": [
+				"background",
+				"svg",
+				"gradient",
+				"decoration",
+				"high-motion"
+			]
+		},
+		{
+			"name": "media-between-text",
+			"title": "Media Between Text",
+			"description": "Reveal image or video media between two pieces of text with hover, view, or manual triggers.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/media-between-text",
+			"registryUrl": "https://sv-animations.vercel.app/f/media-between-text.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"media",
+				"hover",
+				"reveal",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "pixel-trail",
+			"title": "Pixel Trail",
+			"description": "A pixelated trail effect that recolors grid pixels as you move your cursor.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/pixel-trail",
+			"registryUrl": "https://sv-animations.vercel.app/f/pixel-trail.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"background",
+				"cursor",
+				"pixel",
+				"trail",
+				"decoration",
+				"high-motion"
+			]
+		},
+		{
+			"name": "parallax-floating",
+			"title": "Parallax Floating",
+			"description": "Create layered parallax movement that responds smoothly to pointer and touch input.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/parallax-floating",
+			"registryUrl": "https://sv-animations.vercel.app/f/parallax-floating.json",
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			],
+			"categories": [
+				"media",
+				"cursor",
+				"touch",
+				"parallax",
+				"decoration",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "pixelate-svg-filter",
+			"title": "Pixelate Svg Filter",
+			"description": "An SVG filter definition component for applying configurable pixelation effects.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/pixelate-svg-filter",
+			"registryUrl": "https://sv-animations.vercel.app/f/pixelate-svg-filter.json",
+			"dependencies": [],
+			"categories": [
+				"media",
+				"svg",
+				"pixel",
+				"filter",
+				"decoration",
+				"subtle"
+			]
+		},
+		{
+			"name": "scroll-and-swap",
+			"title": "Scroll And Swap",
+			"description": "Swap duplicated text vertically based on scroll progress within a target container.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/scroll-and-swap",
+			"registryUrl": "https://sv-animations.vercel.app/f/scroll-and-swap.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"scroll",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "stacking-cards",
+			"title": "Stacking Cards",
+			"description": "Create sticky stacked cards that scale progressively as the container scrolls.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/stacking-cards",
+			"registryUrl": "https://sv-animations.vercel.app/f/stacking-cards.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"card",
+				"scroll",
+				"stack",
+				"marketing",
+				"high-motion"
+			]
+		},
+		{
+			"name": "letter-3d-swap",
+			"title": "Letter 3D Swap",
+			"description": "Rotate each character on hover with a 3D flip and configurable stagger direction.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/letter-3d-swap",
+			"registryUrl": "https://sv-animations.vercel.app/f/letter-3d-swap.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"hover",
+				"3d",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "letter-swap",
+			"title": "Letter Swap",
+			"description": "Slide each letter into a second copy on hover with directional staggered motion.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/letter-swap",
+			"registryUrl": "https://sv-animations.vercel.app/f/letter-swap.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"hover",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "letter-swap-ping-pong",
+			"title": "Letter Swap Ping Pong",
+			"description": "Swap letters on hover and reverse them on exit with debounced ping-pong motion.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/letter-swap-ping-pong",
+			"registryUrl": "https://sv-animations.vercel.app/f/letter-swap-ping-pong.json",
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			],
+			"categories": [
+				"text",
+				"hover",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "random-letter-swap",
+			"title": "Random Letter Swap",
+			"description": "Reveal a second letter layer in a shuffled hover order for a randomized swap effect.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/random-letter-swap",
+			"registryUrl": "https://sv-animations.vercel.app/f/random-letter-swap.json",
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			],
+			"categories": [
+				"text",
+				"hover",
+				"randomized",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "random-letter-swap-ping-pong",
+			"title": "Random Letter Swap Ping Pong",
+			"description": "Animate randomized letter swaps on hover in and out using a persistent shuffled order.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/random-letter-swap-ping-pong",
+			"registryUrl": "https://sv-animations.vercel.app/f/random-letter-swap-ping-pong.json",
+			"dependencies": [
+				"motion-sv",
+				"runed"
+			],
+			"categories": [
+				"text",
+				"hover",
+				"randomized",
+				"swap",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "scramble-hover",
+			"title": "Scramble Hover",
+			"description": "Scramble text on hover with sequential or iterative reveals and custom character sets.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/scramble-hover",
+			"registryUrl": "https://sv-animations.vercel.app/f/scramble-hover.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"hover",
+				"scramble",
+				"reveal",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "scramble-in",
+			"title": "Scramble In",
+			"description": "Animate text in by revealing real characters through a configurable scramble pass.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/scramble-in",
+			"registryUrl": "https://sv-animations.vercel.app/f/scramble-in.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"entrance",
+				"scramble",
+				"reveal",
+				"marketing",
+				"medium-motion"
+			]
+		},
+		{
+			"name": "text-along-path",
+			"title": "Text Along Path",
+			"description": "Render animated text that loops or tracks scroll progress along any SVG path.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/text-along-path",
+			"registryUrl": "https://sv-animations.vercel.app/f/text-along-path.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"svg",
+				"scroll",
+				"path",
+				"decoration",
+				"high-motion"
+			]
+		},
+		{
+			"name": "text-highlighter",
+			"title": "Text Highlighter",
+			"description": "Sweep a highlight background across inline text on hover, in view, or on demand.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/text-highlighter",
+			"registryUrl": "https://sv-animations.vercel.app/f/text-highlighter.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"hover",
+				"highlight",
+				"reveal",
+				"marketing",
+				"subtle"
+			]
+		},
+		{
+			"name": "text-rotate",
+			"title": "Text Rotate",
+			"description": "Rotate through multiple text strings with per-character, per-word, or per-line motion and imperative controls.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/text-rotate",
+			"registryUrl": "https://sv-animations.vercel.app/f/text-rotate.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"automatic",
+				"rotate",
+				"hero",
+				"marketing",
+				"high-motion"
+			]
+		},
+		{
+			"name": "underline-to-background",
+			"title": "Underline To Background",
+			"description": "Expand an underline into a full background fill while transitioning the text color.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/underline-to-background",
+			"registryUrl": "https://sv-animations.vercel.app/f/underline-to-background.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"hover",
+				"highlight",
+				"marketing",
+				"subtle"
+			]
+		},
+		{
+			"name": "vertical-cut-reveal",
+			"title": "Vertical Cut Reveal",
+			"description": "Reveal text from vertical cuts with word, character, or line-based staggering.",
+			"documentationUrl": "https://sv-animations.vercel.app/fancy/vertical-cut-reveal",
+			"registryUrl": "https://sv-animations.vercel.app/f/vertical-cut-reveal.json",
+			"dependencies": [
+				"motion-sv"
+			],
+			"categories": [
+				"text",
+				"entrance",
+				"reveal",
+				"hero",
+				"marketing",
+				"high-motion"
+			]
+		}
+	]
+}

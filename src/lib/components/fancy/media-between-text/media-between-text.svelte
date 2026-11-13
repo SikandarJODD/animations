@@ -1,16 +1,11 @@
 <script lang="ts">
 	import { motion, useInView, type AnimationOptions, type Variants } from "motion-sv";
 	import type { ClassValue, HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	type ElementType = keyof SvelteHTMLElements;
 	type TriggerType = "hover" | "ref" | "inView";
-	type UseInViewOptions = {
-		once?: boolean;
-		amount?: "some" | "all" | number;
-		margin?: string;
-		root?: HTMLElement | Document;
-	};
+	type UseInViewOptions = ReturnType<NonNullable<Parameters<typeof useInView>[1]>>;
 
 	interface MediaBetweenTextProps extends HTMLAttributes<HTMLDivElement> {
 		firstText: string;
@@ -31,7 +26,7 @@
 		animationVariants?: Variants;
 		leftTextClass?: ClassValue;
 		rightTextClass?: string;
-		class?: string;
+		class?: ClassValue;
 		isAnimating?: boolean;
 	}
 

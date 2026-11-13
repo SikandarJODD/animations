@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LetterSwapPingPong } from "$lib/components/fancy/letter-swap-ping-pong";
+	import { LetterSwapPingPong } from "#lib/components/fancy/letter-swap-ping-pong/index.js";
 </script>
 
 <div

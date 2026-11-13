@@ -18,36 +18,54 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-ci
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-circular-progress-bar.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { AnimatedCircularProgressBar } from "#lib/components/magic/animated-circular-progress-bar/index.js";
+  import { mode } from "mode-watcher";
+</script>
+
+<AnimatedCircularProgressBar
+  value={75}
+  gaugePrimaryColor={mode.current === "dark" ? "#34d399" : "#4f46e5"}
+  gaugeSecondaryColor="#e5e7eb"
+/>
+```
+
 ## Preview
 
 ```svelte
 <script lang="ts">
-	import { AnimatedCircularProgressBar } from "$lib/components/magic/animated-circular-progress-bar";
-	import { onMount, onDestroy } from "svelte";
+  import { AnimatedCircularProgressBar } from "#lib/components/magic/animated-circular-progress-bar/index.js";
+  import { mode } from "mode-watcher";
+  import { onMount, onDestroy } from "svelte";
 
-	let value = $state(0);
-	let interval: ReturnType<typeof setInterval>;
+  let value = $state(0);
+  let interval: ReturnType<typeof setInterval>;
 
-	onMount(() => {
-		const handleIncrement = () => {
-			value = value === 100 ? 0 : value + 10;
-		};
+  onMount(() => {
+    const handleIncrement = () => {
+      value = value === 100 ? 0 : value + 10;
+    };
 
-		handleIncrement();
-		interval = setInterval(handleIncrement, 2000);
-	});
+    handleIncrement();
+    interval = setInterval(handleIncrement, 2000);
+  });
 
-	onDestroy(() => {
-		if (interval) {
-			clearInterval(interval);
-		}
-	});
+  onDestroy(() => {
+    if (interval) {
+      clearInterval(interval);
+    }
+  });
 </script>
 
 <AnimatedCircularProgressBar
-	{value}
-	gaugePrimaryColor="rgb(79 70 229)"
-	gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
+  {value}
+  gaugePrimaryColor={mode.current === "dark" ? "#34d399" : "rgb(79 70 229)"}
+  gaugeSecondaryColor={mode.current === "dark"
+    ? "rgba(255, 255, 255, 0.1)"
+    : "rgba(0, 0, 0, 0.1)"}
 />
 ```
 
@@ -57,58 +75,45 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-circu
 
 ```svelte
 <script lang="ts">
-	import { AnimatedCircularProgressBar } from "$lib/components/magic/animated-circular-progress-bar";
-	import { onMount, onDestroy } from "svelte";
+  import { AnimatedCircularProgressBar } from "#lib/components/magic/animated-circular-progress-bar/index.ts";
+  import { mode } from "mode-watcher";
+  import { onMount, onDestroy } from "svelte";
 
-	let value = $state(0);
-	let interval: ReturnType<typeof setInterval>;
+  let value = $state(0);
+  let interval: ReturnType<typeof setInterval>;
 
-	onMount(() => {
-		const handleIncrement = () => {
-			value = value === 100 ? 0 : value + 10;
-		};
+  onMount(() => {
+    const handleIncrement = () => {
+      value = value === 100 ? 0 : value + 10;
+    };
 
-		handleIncrement();
-		interval = setInterval(handleIncrement, 2000);
-	});
+    handleIncrement();
+    interval = setInterval(handleIncrement, 2000);
+  });
 
-	onDestroy(() => {
-		if (interval) {
-			clearInterval(interval);
-		}
-	});
+  onDestroy(() => {
+    if (interval) {
+      clearInterval(interval);
+    }
+  });
 </script>
 
 <AnimatedCircularProgressBar
-	{value}
-	gaugePrimaryColor="rgb(79 70 229)"
-	gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
-/>
-```
-
-## Usage
-
-Pass the current `value` along with `gaugePrimaryColor` and `gaugeSecondaryColor`. The component calculates the percentage from `min`, `max`, and `value`.
-
-```svelte
-<script lang="ts">
-	import { AnimatedCircularProgressBar } from "$lib/components/magic/animated-circular-progress-bar";
-</script>
-
-<AnimatedCircularProgressBar
-	value={75}
-	gaugePrimaryColor="rgb(79 70 229)"
-	gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
+  {value}
+  gaugePrimaryColor={mode.current === "dark" ? "#34d399" : "rgb(79 70 229)"}
+  gaugeSecondaryColor={mode.current === "dark"
+    ? "rgba(255, 255, 255, 0.1)"
+    : "rgba(0, 0, 0, 0.1)"}
 />
 ```
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `max` | `number` | `100` | The maximum value for the progress bar |
-| `min` | `number` | `0` | The minimum value for the progress bar |
-| `value` | `number` | `0` | The current value of the progress bar |
-| `gaugePrimaryColor` | `string` | `required` | The color for the progress portion of the bar |
+| Prop                  | Type     | Default    | Description                                    |
+| --------------------- | -------- | ---------- | ---------------------------------------------- |
+| `max`                 | `number` | `100`      | The maximum value for the progress bar         |
+| `min`                 | `number` | `0`        | The minimum value for the progress bar         |
+| `value`               | `number` | `0`        | The current value of the progress bar          |
+| `gaugePrimaryColor`   | `string` | `required` | The color for the progress portion of the bar  |
 | `gaugeSecondaryColor` | `string` | `required` | The color for the remaining portion of the bar |
-| `class` | `string` | `""` | Additional CSS classes to apply |
+| `class`               | `string` | `""`       | Additional CSS classes to apply                |

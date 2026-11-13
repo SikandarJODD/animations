@@ -1,9 +1,9 @@
-﻿import Raw from "$lib/components/magic/striped-pattern/striped-pattern.svelte?raw";
-import IndexTs from "$lib/components/magic/striped-pattern/index.ts?raw";
+﻿import Raw from "#lib/components/magic/striped-pattern/striped-pattern.svelte?raw";
+import IndexTs from "#lib/components/magic/striped-pattern/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -55,6 +55,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { StripedPattern } from "#lib/components/magic/striped-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<StripedPattern />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
@@ -64,7 +77,7 @@ export const data: ComponentDoc = {
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

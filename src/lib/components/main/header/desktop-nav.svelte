@@ -1,9 +1,10 @@
 <script lang="ts">
-	import * as NavigationMenu from "$lib/components/ui/navigation-menu/index";
+	import * as NavigationMenu from "#lib/components/ui/navigation-menu/index.js";
 	import { ArrowUpRightIcon, PackageIcon } from "@lucide/svelte";
 	import LinkItem from "./link-item.svelte";
 	import { navs, projectItems, withUtm } from "./nav-links";
-	import Github from "$icons/github.svelte";
+	import Github from "#lib/components/icons/github.svelte";
+	import { resolve } from "$app/paths";
 </script>
 
 <NavigationMenu.Root class="hidden md:flex">
@@ -11,7 +12,8 @@
 		{#each navs as nav}
 			{#if nav.sub}
 				<NavigationMenu.Item>
-					<NavigationMenu.Trigger class="hover:bg-accent/60! h-fit rounded-full py-1.5!"
+					<NavigationMenu.Trigger
+						class="hover:bg-accent dark:hover:bg-accent/80! h-fit rounded-full px-3 py-1.5!"
 						>{nav.name}</NavigationMenu.Trigger
 					>
 					<NavigationMenu.Content class="p-0">
@@ -26,7 +28,9 @@
 				</NavigationMenu.Item>
 			{:else}
 				<NavigationMenu.Item>
-					<NavigationMenu.Link class="hover:bg-accent! rounded-full px-3 py-1.5">
+					<NavigationMenu.Link
+						class="hover:bg-accent dark:hover:bg-accent/80! rounded-full px-3 py-1.5"
+					>
 						{#snippet child({ props })}
 							<a href={nav.href} {...props}>{nav.name}</a>
 						{/snippet}
@@ -36,7 +40,7 @@
 		{/each}
 		<NavigationMenu.Item id="other-projects">
 			<NavigationMenu.Trigger
-				class="hover:bg-accent/80! h-fit rounded-full py-1.5! pr-2.5 pl-3 font-normal"
+				class="hover:bg-accent dark:hover:bg-accent/80! h-fit rounded-full py-1.5! pr-2.5 pl-3 font-normal"
 				>Other Projects</NavigationMenu.Trigger
 			>
 			<NavigationMenu.Content class="p-0!">
@@ -109,6 +113,15 @@
 					</div>
 				</div>
 			</NavigationMenu.Content>
+		</NavigationMenu.Item>
+		<NavigationMenu.Item>
+			<NavigationMenu.Link
+				class="hover:bg-accent dark:hover:bg-accent/80! rounded-full px-3 py-1.5"
+			>
+				{#snippet child({ props })}
+					<a href={resolve("/changelog")} {...props}>Changelog</a>
+				{/snippet}
+			</NavigationMenu.Link>
 		</NavigationMenu.Item>
 	</NavigationMenu.List>
 	<NavigationMenu.Viewport />

@@ -1,7 +1,7 @@
-import IndexTs from "$lib/components/magic/meteors/index.ts?raw";
-import MeteorsRaw from "$lib/components/magic/meteors/meteors.svelte?raw";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import IndexTs from "#lib/components/magic/meteors/index.ts?raw";
+import MeteorsRaw from "#lib/components/magic/meteors/meteors.svelte?raw";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 
 // Preview
 import Preview from "./examples/preview.svelte";
@@ -57,7 +57,8 @@ let installBlock: InstallComponentDocs = {
 export const meta: ComponentMeta = {
 	id: "meteors",
 	title: "Meteors",
-	description: "A meteor shower effect.",
+	description:
+		"A meteor shower with a consistent travel angle and container-relative spawn positions.",
 	category: "animation",
 	badge: "new",
 };
@@ -78,6 +79,19 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 		highlight: [2],
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Meteors } from "#lib/components/magic/meteors/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<Meteors />
+</div>`,
+			lang: "svelte",
+		},
 	},
 	seo,
 	installBlock,
@@ -123,7 +137,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "",
 					description: "Additional CSS classes for the meteors container",
 				},

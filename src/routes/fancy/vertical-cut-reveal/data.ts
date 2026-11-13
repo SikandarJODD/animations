@@ -1,8 +1,8 @@
-import IndexTsRaw from "$lib/components/fancy/vertical-cut-reveal/index.ts?raw";
-import VerticalCutRevealRaw from "$lib/components/fancy/vertical-cut-reveal/vertical-cut-reveal.svelte?raw";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import IndexTsRaw from "#lib/components/fancy/vertical-cut-reveal/index.ts?raw";
+import VerticalCutRevealRaw from "#lib/components/fancy/vertical-cut-reveal/vertical-cut-reveal.svelte?raw";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import RandomLetterExample from "./examples/random-letter-example.svelte";
@@ -138,6 +138,30 @@ export const data: ComponentDoc = {
 		filecode: PreviewRaw,
 		lang: "svelte",
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { VerticalCutReveal } from "#lib/components/fancy/vertical-cut-reveal/index.js";
+</script>
+
+<section class="rounded-3xl bg-neutral-950 px-6 py-20 text-white sm:px-12">
+	<p class="mb-5 text-sm tracking-[0.2em] text-white/50 uppercase">Independent creative studio</p>
+
+	<VerticalCutReveal
+		splitBy="words"
+		staggerFrom="first"
+		staggerDuration={0.08}
+		transition={{ type: "spring", stiffness: 210, damping: 24, delay: 0.15 }}
+		containerClass="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl"
+		wordLevelClass="mr-[0.22em]"
+	>
+		We build digital experiences with clarity and character.
+	</VerticalCutReveal>
+</section>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	props: [
 		{
@@ -152,7 +176,8 @@ export const data: ComponentDoc = {
 					name: "reverse",
 					type: "boolean",
 					default: "false",
-					description: "Reverses the reveal direction so units enter from above instead of below.",
+					description:
+						"Reverses the reveal direction so units enter from above instead of below.",
 				},
 				{
 					name: "transition",
@@ -164,7 +189,8 @@ export const data: ComponentDoc = {
 					name: "splitBy",
 					type: '"words" | "characters" | "lines" | string',
 					default: '"words"',
-					description: "Controls whether the text is split by words, characters, lines, or a custom delimiter.",
+					description:
+						"Controls whether the text is split by words, characters, lines, or a custom delimiter.",
 				},
 				{
 					name: "staggerDuration",
@@ -212,11 +238,12 @@ export const data: ComponentDoc = {
 					name: "autoStart",
 					type: "boolean",
 					default: "true",
-					description: "Starts the reveal automatically instead of waiting for `startAnimation()`.",
+					description:
+						"Starts the reveal automatically instead of waiting for `startAnimation()`.",
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Additional classes merged onto the outer container.",
 				},

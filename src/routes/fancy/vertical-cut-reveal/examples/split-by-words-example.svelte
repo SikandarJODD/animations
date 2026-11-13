@@ -1,5 +1,5 @@
 <script>
-	import { VerticalCutReveal } from "$lib/components/fancy/vertical-cut-reveal";
+	import { VerticalCutReveal } from "#lib/components/fancy/vertical-cut-reveal/index.js";
 </script>
 
 <div

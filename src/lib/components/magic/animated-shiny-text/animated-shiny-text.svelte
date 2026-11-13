@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 	interface Props {
 		children?: import("svelte").Snippet;
-		class?: string;
+		class?: ClassValue;
 		shimmerWidth?: number;
 		duration?: number;
 		[key: string]: any;
@@ -20,12 +21,26 @@
 <span
 	style="--shiny-width: {shimmerWidth}px; --duration: {duration}s"
 	class={cn(
-		"mx-auto max-w-md text-neutral-600/70 dark:text-neutral-400/70",
-		"animate-shiny-text bg-size-[var(--shiny-width)_100%] bg-clip-text bg-position-[0_0] bg-no-repeat [transition:background-position_1s_cubic-bezier(.6,.6,0,1)_infinite]",
-		"bg-linear-to-r from-transparent via-black/80 via-50% to-transparent dark:via-white/80",
+		"shiny-text inline-block text-neutral-600 dark:text-neutral-400",
+		"animate-shiny-text bg-clip-text bg-no-repeat [-webkit-text-fill-color:transparent] motion-reduce:animate-none",
+		"[--shiny-highlight:var(--color-neutral-950)] dark:[--shiny-highlight:var(--color-white)]",
 		className
 	)}
 	{...restProps}
 >
 	{@render children?.()}
 </span>
+
+<style>
+	.shiny-text {
+		background-image:
+			linear-gradient(110deg, transparent 20%, var(--shiny-highlight) 50%, transparent 80%),
+			linear-gradient(currentColor, currentColor);
+		background-size:
+			var(--shiny-width) 100%,
+			100% 100%;
+		background-position:
+			calc(-100% - var(--shiny-width)) 0,
+			0 0;
+	}
+</style>

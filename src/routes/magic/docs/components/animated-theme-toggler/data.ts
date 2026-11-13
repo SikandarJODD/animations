@@ -1,9 +1,9 @@
-﻿import AnimatedThemeTogglerRaw from "$lib/components/magic/animated-theme-toggler/animated-theme-toggler.svelte?raw";
+﻿import AnimatedThemeTogglerRaw from "#lib/components/magic/animated-theme-toggler/animated-theme-toggler.svelte?raw";
 
-import IndexTs from "$lib/components/magic/animated-theme-toggler/index.ts?raw";
+import IndexTs from "#lib/components/magic/animated-theme-toggler/index.ts?raw";
 
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -71,15 +71,26 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedThemeToggler } from "#lib/components/magic/animated-theme-toggler/index.js";
+</script>
+
+<AnimatedThemeToggler />`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
-			name: "AnimatedThemeToggler",
+			name: "Animated Theme Toggler",
 			desc: "A component for smooth theme switching with circular reveal animation.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

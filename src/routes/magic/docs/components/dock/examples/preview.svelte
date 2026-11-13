@@ -4,12 +4,17 @@
 	import PencilIcon from "@lucide/svelte/icons/pencil";
 
 	import { type Snippet } from "svelte";
-	import { Separator } from "$lib/components/ui/separator";
-	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+	import { Separator } from "#lib/components/ui/separator/index.js";
+	import * as Tooltip from "#lib/components/ui/tooltip/index.js";
 
-	import { Dock, DockIcon, type DockIconProps, type DockProps } from "$lib/components/magic/dock";
-	import { cn } from "$lib/utils";
-	import { Button } from "$lib/components/ui/button";
+	import {
+		Dock,
+		DockIcon,
+		type DockIconProps,
+		type DockProps,
+	} from "#lib/components/magic/dock/index.js";
+	import { cn } from "#lib/utils.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 
 	const DATA = {
 		navbar: [

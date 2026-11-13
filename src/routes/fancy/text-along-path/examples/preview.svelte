@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onDestroy } from "svelte";
 	import { AnimatePresence, motion } from "motion-sv";
-	import { AnimatedPathText } from "$lib/components/fancy/text-along-path";
-	import { BarSpinner } from "$lib/components/spell/bar-spinner";
+	import { AnimatedPathText } from "#lib/components/fancy/text-along-path/index.js";
+	import { BarSpinner } from "#lib/components/spell/bar-spinner/index.js";
 
 	type ButtonState = "idle" | "loading" | "success";
 

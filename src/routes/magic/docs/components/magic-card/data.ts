@@ -1,9 +1,17 @@
-﻿import MagicCardRaw from "$lib/components/magic/magic-card/magic-card.svelte?raw";
-import IndexTs from "$lib/components/magic/magic-card/index.ts?raw";
+import MagicCardPlain from "./examples/magic-card-plain.svelte";
+import MagicCardPlainRaw from "./examples/magic-card-plain.svelte?raw";
+import MagicCardFile from "./examples/magic-card-file.svelte";
+import MagicCardFileRaw from "./examples/magic-card-file.svelte?raw";
+import MagicCardCommand from "./examples/magic-card-command.svelte";
+import MagicCardCommandRaw from "./examples/magic-card-command.svelte?raw";
+import MagicCardResource from "./examples/magic-card-resource.svelte";
+import MagicCardResourceRaw from "./examples/magic-card-resource.svelte?raw";
+import MagicCardRaw from "#lib/components/magic/magic-card/magic-card.svelte?raw";
+import IndexTs from "#lib/components/magic/magic-card/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import GradientShowcase from "./examples/gradient-showcase.svelte";
@@ -53,6 +61,39 @@ const examples: Example[] = [
 			filecode: PricingCardRaw,
 			lang: "svelte",
 		},
+	},
+	{
+		name: "Command Reference",
+		description: "An emerald spotlight around a copyable installation command.",
+		preview: MagicCardCommand,
+		code: {
+			filename: "magic-card-command.svelte",
+			filecode: MagicCardCommandRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Documentation Card",
+		description:
+			"An orange spotlight on a documentation link with a visible keyboard focus state.",
+		preview: MagicCardResource,
+		code: {
+			filename: "magic-card-resource.svelte",
+			filecode: MagicCardResourceRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Plain Spotlight",
+		description: "A monochrome spotlight with a faint overlay and no extra card content.",
+		preview: MagicCardPlain,
+		code: { filename: "magic-card-plain.svelte", filecode: MagicCardPlainRaw, lang: "svelte" },
+	},
+	{
+		name: "Compact File Link",
+		description: "A small downloadable registry file with a restrained emerald spotlight.",
+		preview: MagicCardFile,
+		code: { filename: "magic-card-file.svelte", filecode: MagicCardFileRaw, lang: "svelte" },
 	},
 ];
 
@@ -107,11 +148,23 @@ export const data: ComponentDoc = {
 			highlight: [2],
 		},
 	],
-	// examples,
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { MagicCard } from "#lib/components/magic/magic-card/index.js";
+</script>
+
+<MagicCard class="rounded-xl p-8">
+	Hover over this card
+</MagicCard>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
-			name: "MagicCard",
+			name: "Magic Card",
 			desc: "A component for Magic Card.",
 			props: [
 				{
@@ -122,7 +175,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes.",
 				},

@@ -2,7 +2,7 @@
 	import {
 		AnimatedBackground,
 		AnimatedBackgroundItem,
-	} from "$lib/components/magic/animated-background";
+	} from "#lib/components/magic/animated-background/index.js";
 
 	const labels = ["Day", "Week", "Month", "Year"];
 </script>

@@ -1,10 +1,18 @@
-﻿import HyperTextRaw from "$lib/components/magic/hyper-text/hyper-text.svelte?raw";
-import IndexTs from "$lib/components/magic/hyper-text/index.ts?raw";
+import HyperTextNumeric from "./examples/hyper-text-numeric.svelte";
+import HyperTextNumericRaw from "./examples/hyper-text-numeric.svelte?raw";
+import type { Example } from "#lib/types/examples.js";
+import HyperTextRaw from "#lib/components/magic/hyper-text/hyper-text.svelte?raw";
+import IndexTs from "#lib/components/magic/hyper-text/index.ts?raw";
 
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+
+import HyperTextHex from "./examples/hyper-text-hex.svelte";
+import HyperTextHexRaw from "./examples/hyper-text-hex.svelte?raw";
+import HyperTextDelayed from "./examples/hyper-text-delayed.svelte";
+import HyperTextDelayedRaw from "./examples/hyper-text-delayed.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -14,6 +22,40 @@ export const meta: ComponentMeta = {
 	category: "animation",
 	badge: "new",
 };
+
+const examples: Example[] = [
+	{
+		name: "Hex Character Set",
+		description: "Scramble a revision identifier using only hexadecimal characters.",
+		preview: HyperTextHex,
+		code: {
+			filename: "hyper-text-hex.svelte",
+			filecode: HyperTextHexRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Delayed Reveal",
+		description: "Reveal a section heading after a short delay, with hover replay disabled.",
+		preview: HyperTextDelayed,
+		showRetry: true,
+		code: {
+			filename: "hyper-text-delayed.svelte",
+			filecode: HyperTextDelayedRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Numeric Characters",
+		description: "Reveal a build number using only digits in the scramble.",
+		preview: HyperTextNumeric,
+		code: {
+			filename: "hyper-text-numeric.svelte",
+			filecode: HyperTextNumericRaw,
+			lang: "svelte",
+		},
+	},
+];
 
 const seo: SEO = {
 	title: "Hyper Text",
@@ -57,10 +99,22 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { HyperText } from "#lib/components/magic/hyper-text/index.js";
+</script>
+
+<HyperText text="Hover me" />`,
+			lang: "svelte",
+		},
+	},
+	examples,
 	seo,
 	props: [
 		{
-			name: "HyperText",
+			name: "Hyper Text",
 			desc: "A component for Hyper Text.",
 			props: [
 				{
@@ -71,7 +125,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

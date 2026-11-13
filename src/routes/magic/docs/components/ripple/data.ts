@@ -1,9 +1,9 @@
-﻿import RippleRaw from "$lib/components/magic/ripple/ripple.svelte?raw";
-import IndexTs from "$lib/components/magic/ripple/index.ts?raw";
+﻿import RippleRaw from "#lib/components/magic/ripple/ripple.svelte?raw";
+import IndexTs from "#lib/components/magic/ripple/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -77,6 +77,19 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Ripple } from "#lib/components/magic/ripple/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<Ripple />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
@@ -85,7 +98,7 @@ export const data: ComponentDoc = {
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

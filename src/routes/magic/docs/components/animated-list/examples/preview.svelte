@@ -1,6 +1,6 @@
 ﻿<script lang="ts">
-	import { AnimatedList } from "$lib/components/magic/animated-list";
-	import { cn } from "$lib/utils";
+	import { AnimatedList } from "#lib/components/magic/animated-list/index.js";
+	import { cn } from "#lib/utils.js";
 	import Notification from "./notification.svelte";
 
 	interface NotificationItem {

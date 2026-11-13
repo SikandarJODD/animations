@@ -1,8 +1,8 @@
-import IndexTsRaw from "$lib/components/fancy/scramble-in/index.ts?raw";
-import ScrambleInRaw from "$lib/components/fancy/scramble-in/scramble-in.svelte?raw";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import IndexTsRaw from "#lib/components/fancy/scramble-in/index.ts?raw";
+import ScrambleInRaw from "#lib/components/fancy/scramble-in/scramble-in.svelte?raw";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import BindThisControlsExample from "./examples/bind-this-controls-example.svelte";
 import BindThisControlsExampleRaw from "./examples/bind-this-controls-example.svelte?raw";
 import DelayAndSpeedExample from "./examples/delay-and-speed-example.svelte";
@@ -110,6 +110,38 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 	},
 	previewClass: "p-0",
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { ScrambleIn } from "#lib/components/fancy/scramble-in/index.js";
+</script>
+
+<div class="rounded-2xl bg-neutral-950 p-6 font-mono text-white" aria-live="polite">
+	<p class="text-xs tracking-[0.2em] text-emerald-400 uppercase">Deployment status</p>
+
+	<div class="mt-5 flex flex-col gap-2">
+		<ScrambleIn
+			text="SYSTEM ONLINE"
+			scrambleSpeed={35}
+			scrambledLetterCount={4}
+			characters="01#/@"
+			class="text-2xl font-semibold"
+			scrambledClass="text-emerald-400"
+		/>
+		<ScrambleIn
+			text="All services operational"
+			scrambleDelay={450}
+			scrambleSpeed={25}
+			scrambledLetterCount={3}
+			class="text-sm text-white/65"
+			scrambledClass="text-emerald-300"
+		/>
+	</div>
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	props: [
 		{
@@ -136,7 +168,8 @@ export const data: ComponentDoc = {
 					name: "scrambledLetterCount",
 					type: "number",
 					default: "2",
-					description: "Maximum number of trailing scrambled characters shown during the reveal.",
+					description:
+						"Maximum number of trailing scrambled characters shown during the reveal.",
 				},
 				{
 					name: "characters",
@@ -148,11 +181,12 @@ export const data: ComponentDoc = {
 					name: "scrambledClass",
 					type: "string",
 					default: "undefined",
-					description: "Classes applied to the still-scrambled trailing portion of the text.",
+					description:
+						"Classes applied to the still-scrambled trailing portion of the text.",
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Classes applied to the revealed portion of the text.",
 				},

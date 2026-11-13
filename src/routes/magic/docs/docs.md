@@ -6,7 +6,7 @@ Svelte Magic UI is a collection of re-usable components built with Svelte, Tailw
 
 ## Features
 
-- **50+ components** ready to use in your projects
+- **60+ components** ready to use in your projects
 - **Open source** and free forever
 - **Easily customizable** to match your design system
 - **Install components via Shadcn Svelte CLI** for quick integration with your project

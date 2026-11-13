@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GridPattern } from "$lib/components/magic/grid-pattern";
+	import { GridPattern } from "#lib/components/magic/grid-pattern/index.js";
 </script>
 
 <div

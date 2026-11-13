@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AnimatedCheckbox } from "$lib/components/spell/animated-checkbox";
+	import { AnimatedCheckbox } from "#lib/components/spell/animated-checkbox/index.js";
 
 	let checked = $state(false);
 </script>

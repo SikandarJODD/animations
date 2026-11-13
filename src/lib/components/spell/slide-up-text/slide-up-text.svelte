@@ -1,9 +1,13 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
-	import { readNormalizedTextContent, segmentText, splitGraphemes } from "$lib/utils/text-utils";
+	import { cn } from "#lib/utils.js";
+	import {
+		readNormalizedTextContent,
+		segmentText,
+		splitGraphemes,
+	} from "#lib/utils/text-utils.js";
 	import { motion, useInView, type AnimationOptions, type Variants } from "motion-sv";
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	type SplitMode = "words" | "characters" | "lines";
 	type StaggerFrom = "first" | "last" | "center";
@@ -34,7 +38,7 @@
 		stagger?: number;
 		from?: StaggerFrom;
 		transition?: AnimationOptions;
-		class?: string;
+		class?: ClassValue;
 		wordClass?: string;
 		charClass?: string;
 		autoStart?: boolean;

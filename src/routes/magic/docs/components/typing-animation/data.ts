@@ -1,23 +1,27 @@
-﻿import Raw from "$lib/components/magic/typing-animation/typing-animation.svelte?raw";
-import IndexTs from "$lib/components/magic/typing-animation/index.ts?raw";
+import TypingAnimationInline from "./examples/typing-animation-inline.svelte";
+import TypingAnimationInlineRaw from "./examples/typing-animation-inline.svelte?raw";
+import TypingAnimationCommand from "./examples/typing-animation-command.svelte";
+import TypingAnimationCommandRaw from "./examples/typing-animation-command.svelte?raw";
+import Raw from "#lib/components/magic/typing-animation/typing-animation.svelte?raw";
+import IndexTs from "#lib/components/magic/typing-animation/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import Example1 from "./examples/cursor-blinking.svelte";
-import Example1Raw from "./examples/cursor-blinking.svelte?raw";
-import Example2 from "./examples/cursor-style.svelte";
-import Example2Raw from "./examples/cursor-style.svelte?raw";
-import Example3 from "./examples/single-play.svelte";
-import Example3Raw from "./examples/single-play.svelte?raw";
-import Example4 from "./examples/typing-animation-custom-speed.svelte";
-import Example4Raw from "./examples/typing-animation-custom-speed.svelte?raw";
-import Example5 from "./examples/typing-animation-multiple-words-with-logo.svelte";
-import Example5Raw from "./examples/typing-animation-multiple-words-with-logo.svelte?raw";
-import Example6 from "./examples/typing-animation-start-on-view.svelte";
-import Example6Raw from "./examples/typing-animation-start-on-view.svelte?raw";
+import CursorBlinking from "./examples/cursor-blinking.svelte";
+import CursorBlinkingRaw from "./examples/cursor-blinking.svelte?raw";
+import CursorStyle from "./examples/cursor-style.svelte";
+import CursorStyleRaw from "./examples/cursor-style.svelte?raw";
+import SinglePlay from "./examples/single-play.svelte";
+import SinglePlayRaw from "./examples/single-play.svelte?raw";
+import CustomSpeed from "./examples/typing-animation-custom-speed.svelte";
+import CustomSpeedRaw from "./examples/typing-animation-custom-speed.svelte?raw";
+import MultipleWords from "./examples/typing-animation-multiple-words-with-logo.svelte";
+import MultipleWordsRaw from "./examples/typing-animation-multiple-words-with-logo.svelte?raw";
+import StartOnView from "./examples/typing-animation-start-on-view.svelte";
+import StartOnViewRaw from "./examples/typing-animation-start-on-view.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -32,55 +36,69 @@ export const meta: ComponentMeta = {
 const examples: Example[] = [
 	{
 		name: "Cursor Blinking",
-		preview: Example1,
-		code: {
-			filename: "cursor-blinking.svelte",
-			filecode: Example1Raw,
-			lang: "svelte",
-		},
+		description: "Compare a blinking cursor with a steady cursor.",
+		preview: CursorBlinking,
+		code: { filename: "cursor-blinking.svelte", filecode: CursorBlinkingRaw, lang: "svelte" },
 	},
 	{
-		name: "Cursor Style",
-		preview: Example2,
-		code: {
-			filename: "cursor-style.svelte",
-			filecode: Example2Raw,
-			lang: "svelte",
-		},
+		name: "Cursor Styles",
+		description: "Compare line, block, and underscore cursors at the same text size.",
+		preview: CursorStyle,
+		code: { filename: "cursor-style.svelte", filecode: CursorStyleRaw, lang: "svelte" },
 	},
 	{
 		name: "Single Play",
-		preview: Example3,
-		code: {
-			filename: "single-play.svelte",
-			filecode: Example3Raw,
-			lang: "svelte",
-		},
+		description: "Cycle through three words once and keep the last word visible.",
+		preview: SinglePlay,
+		code: { filename: "single-play.svelte", filecode: SinglePlayRaw, lang: "svelte" },
 	},
 	{
 		name: "Custom Speed",
-		preview: Example4,
+		description: "Type quickly and delete slowly with separate speed controls.",
+		preview: CustomSpeed,
 		code: {
 			filename: "typing-animation-custom-speed.svelte",
-			filecode: Example4Raw,
+			filecode: CustomSpeedRaw,
 			lang: "svelte",
 		},
 	},
 	{
-		name: "Multiple Words with Emojis",
-		preview: Example5,
+		name: "Multiple Words",
+		description: "Rotate through a short list of words without extra decoration.",
+		preview: MultipleWords,
 		code: {
 			filename: "typing-animation-multiple-words-with-logo.svelte",
-			filecode: Example5Raw,
+			filecode: MultipleWordsRaw,
 			lang: "svelte",
 		},
 	},
 	{
 		name: "Start On View",
-		preview: Example6,
+		description: "Type a single line when it enters the viewport.",
+		preview: StartOnView,
 		code: {
 			filename: "typing-animation-start-on-view.svelte",
-			filecode: Example6Raw,
+			filecode: StartOnViewRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Command Line",
+		description: "Type an installation command once with a block cursor.",
+		preview: TypingAnimationCommand,
+		code: {
+			filename: "typing-animation-command.svelte",
+			filecode: TypingAnimationCommandRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Inline Rotation",
+		description: "Keep a sentence still while the final words rotate.",
+		preview: TypingAnimationInline,
+		code: {
+			filename: "typing-animation-inline.svelte",
+			filecode: TypingAnimationInlineRaw,
 			lang: "svelte",
 		},
 	},
@@ -136,11 +154,22 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { TypingAnimation } from "#lib/components/magic/typing-animation/index.js";
+</script>
+
+<TypingAnimation content="hello, svelte." class="text-2xl leading-relaxed font-normal tracking-normal" />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "TypingAnimation",
+			name: "Typing Animation",
 			desc: "A versatile typing animation component with support for single text, multiple words, cursor customization, and animation controls.",
 			props: [
 				{
@@ -157,7 +186,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

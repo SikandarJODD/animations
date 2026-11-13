@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
+	import { H1, H2, Paragraph, H3 } from "#lib/components/docs/markdown/index.js";
 
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
-	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
-	import APITable from "$lib/components/docs/base/APITable.svelte";
-	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
+	import * as Code from "#lib/components/ui/code/index.js";
+	import InstallComponent from "#lib/components/docs/base/install-component.svelte";
+	import APITable from "#lib/components/docs/base/api-table.svelte";
+	import { CopyPageDropdown } from "#lib/components/docs/copy-page-dropdown/index.js";
 	import { data } from "./data";
-	import SEO from "$lib/seo/SEO.svelte";
+	import SEO from "#lib/seo/seo.svelte";
 
 	let PreviewComp = $derived(data.preview);
-	let installUrl = $derived(`${page.url.origin}/r/${data.id}.json`);
+	let installUrl = $derived(`/r/${data.id}.json`);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -44,19 +45,32 @@
 		codeBlocks={data.installBlock?.installCode}
 		folderStructure={data.installBlock?.folderStructure}
 		packages={data.installBlock?.packages}
-		class="my-4"
+		class="mt-4 md:mb-10"
 	/>
+
+	{#if data.usage?.code}
+		<H2 id="usage">Usage</H2>
+		<div class="mt-4 space-y-4">
+			{#if Array.isArray(data.usage.code)}
+				{#each data.usage.code as codeBlock}
+					<Code.Snippet code={codeBlock} />
+				{/each}
+			{:else}
+				<Code.Snippet code={data.usage.code} />
+			{/if}
+		</div>
+	{/if}
 
 	{#if data.examples && data.examples.length > 0}
 		<H2 id="examples">Examples</H2>
 		{#each data.examples as example}
 			{@const ExampleComp = example.preview}
-			<div class="my-8">
+			<div class="my-4">
 				<H3 id={example.name.toLowerCase().replace(/\s+/g, "-")}>
 					{example.name}
 				</H3>
 				{#if example.description}
-					<Paragraph>{example.description}</Paragraph>
+					<Paragraph class="mt-1">{example.description}</Paragraph>
 				{/if}
 				<div class="my-4">
 					<PreviewComponent code={example.code} isCentered={true}>

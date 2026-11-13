@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PixelateSvgFilter } from "$lib/components/fancy/pixelate-svg-filter";
+	import { PixelateSvgFilter } from "#lib/components/fancy/pixelate-svg-filter/index.js";
 	let mousePosition = $state({ x: 0, y: 0 });
 	// Derived Pixel Size based on Mouse X Position
 	let updateMousePosition = (event: MouseEvent) => {

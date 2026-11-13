@@ -1,8 +1,8 @@
-﻿import WordRotateRaw from "$lib/components/magic/word-rotate/word-rotate.svelte?raw";
-import IndexTs from "$lib/components/magic/word-rotate/index.ts?raw";
+﻿import WordRotateRaw from "#lib/components/magic/word-rotate/word-rotate.svelte?raw";
+import IndexTs from "#lib/components/magic/word-rotate/index.ts?raw";
 
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -57,15 +57,26 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { WordRotate } from "#lib/components/magic/word-rotate/index.js";
+</script>
+
+<WordRotate words={["Design", "Develop", "Ship"]} />`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
-			name: "WordRotate",
+			name: "Word Rotate",
 			desc: "A component for Word Rotate.",
 			props: [
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

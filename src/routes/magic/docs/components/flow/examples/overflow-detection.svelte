@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Flow from "$lib/components/magic/flow";
+	import * as Flow from "#lib/components/magic/flow/index.js";
 
 	let overflow = $state({ x: false, y: false });
 

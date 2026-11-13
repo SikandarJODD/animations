@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { tick } from "svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import {
 		AnimatePresence,
 		createLayoutMotion,
@@ -9,7 +9,7 @@
 		type MotionProps,
 		type Transition,
 	} from "motion-sv";
-	import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
 
 	type ElementType = keyof SvelteHTMLElements;
 	type SplitBy = "words" | "characters" | "lines" | string;
@@ -47,7 +47,7 @@
 		mainClassName?: string;
 		splitLevelClassName?: string;
 		elementLevelClassName?: string;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	const defaultTransition: Transition = {

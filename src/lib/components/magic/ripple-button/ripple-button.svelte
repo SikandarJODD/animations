@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { watch } from "runed";
 	import type { Snippet } from "svelte";
-	import type { HTMLButtonAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLButtonAttributes } from "svelte/elements";
 
 	interface RippleButtonProps extends HTMLButtonAttributes {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		rippleColor?: string;
 		duration?: string;
 	}

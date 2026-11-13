@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { motion } from "motion-sv";
 	import { untrack } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface ScrambleInProps extends HTMLAttributes<HTMLSpanElement> {
 		text: string;
@@ -9,7 +9,7 @@
 		scrambleSpeed?: number;
 		scrambledLetterCount?: number;
 		characters?: string;
-		class?: string;
+		class?: ClassValue;
 		scrambledClass?: string;
 		autoStart?: boolean;
 		onStart?: () => void;

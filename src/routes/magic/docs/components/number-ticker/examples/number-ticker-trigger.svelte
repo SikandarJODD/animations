@@ -1,5 +1,5 @@
 <script>
-	import { NumberTicker } from "$lib/components/magic/number-ticker";
+	import { NumberTicker } from "#lib/components/magic/number-ticker/index.js";
 </script>
 
 <NumberTicker

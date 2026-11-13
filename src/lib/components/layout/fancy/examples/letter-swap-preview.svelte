@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LetterSwap } from "$lib/components/fancy/letter-swap";
+	import { LetterSwap } from "#lib/components/fancy/letter-swap/index.js";
 </script>
 
 <div

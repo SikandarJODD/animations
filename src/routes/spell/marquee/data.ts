@@ -1,7 +1,7 @@
-import MarqueeRaw from "$lib/components/spell/marquee/marquee.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/marquee/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import MarqueeRaw from "#lib/components/spell/marquee/marquee.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/marquee/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import VerticalExample from "./examples/vertical-example.svelte";
@@ -54,6 +54,21 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 		hideLines: true,
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Marquee } from "#lib/components/spell/marquee/index.js";
+</script>
+
+<Marquee>
+	<span>Design</span>
+	<span>Build</span>
+	<span>Ship</span>
+</Marquee>`,
+			lang: "svelte",
+		},
 	},
 	installBlock,
 	examples: [
@@ -116,7 +131,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "''",
 				},
 				{

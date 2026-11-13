@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { DollarIcon } from "$icons";
-	import { Button } from "$lib/components/ui/button/index.js";
-	import * as Card from "$lib/components/ui/card/index.js";
-	import { github_repo } from "$lib/config/repo";
+	import { DollarIcon } from "#lib/components/icons/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as Card from "#lib/components/ui/card/index.js";
+	import { github_repo } from "#lib/config/repo.js";
 </script>
 
 <Card.Root
-	class="dark:bg-secondary gap-2 border border-emerald-200 bg-emerald-50/30 py-4 ring-0 dark:border-transparent"
+	class="dark:bg-muted/50 gap-2 border border-emerald-200/60 bg-emerald-50/30 py-4 ring-0 dark:border-transparent"
 >
 	<Card.Header class="px-4">
 		<Card.Title class="text-sm">Support My Work</Card.Title>

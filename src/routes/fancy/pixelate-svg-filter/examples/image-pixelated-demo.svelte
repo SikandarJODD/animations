@@ -1,6 +1,6 @@
 <script lang="ts">
-	import SvelteLogo from "$lib/assets/favicon.svg";
-	import PixelateSvgFilter from "$lib/components/fancy/pixelate-svg-filter/pixelate-svg-filter.svelte";
+	import SvelteLogo from "#lib/assets/favicon.svg";
+	import PixelateSvgFilter from "#lib/components/fancy/pixelate-svg-filter/pixelate-svg-filter.svelte";
 
 	let pixelSize = $state(16);
 </script>
@@ -26,9 +26,14 @@
 		style="filter: url(#img-filter);"
 		class="h-120"
 	/>
-	<div class="mt-2 flex items-center gap-1 font-mono justify-end text-xs">
-		<span class='text-muted-foreground '>Credits: </span>
-		<a href="https://i.pinimg.com/1200x/9c/5b/cb/9c5bcbb8f7f8daf40fef136246fc0430.jpg" target="_blank" rel="noopener noreferrer" class='text-red-500 bg-red-50 dark:bg-red-900/30'>Pinterest</a>
+	<div class="mt-2 flex items-center justify-end gap-1 font-mono text-xs">
+		<span class="text-muted-foreground">Credits: </span>
+		<a
+			href="https://i.pinimg.com/1200x/9c/5b/cb/9c5bcbb8f7f8daf40fef136246fc0430.jpg"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="bg-red-50 text-red-500 dark:bg-red-900/30">Pinterest</a
+		>
 	</div>
 </div>
 

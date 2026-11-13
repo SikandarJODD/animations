@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 
 	interface AnimatedCircularProgressBarProps {
 		max?: number;
@@ -7,7 +8,7 @@
 		value: number;
 		gaugePrimaryColor: string;
 		gaugeSecondaryColor: string;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

@@ -1,19 +1,19 @@
 <script lang="ts" module>
 	import type { Snippet } from "svelte";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	export interface StackingCardItemProps extends HTMLAttributes<HTMLDivElement> {
 		children?: Snippet;
 		index: number;
 		topPosition?: string;
-		class?: string;
+		class?: ClassValue;
 	}
 </script>
 
 <script lang="ts">
 	import { motion, useScroll, useTransform } from "motion-sv";
 	import { getContext } from "svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	type StackingCardsContext = {
 		progress: ReturnType<typeof useScroll>["scrollYProgress"];

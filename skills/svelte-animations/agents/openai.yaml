@@ -1,0 +1,4 @@
+interface:
+    display_name: "Svelte Animations"
+    short_description: "Find, install, and adapt Svelte animation components"
+    default_prompt: "Use $svelte-animations to find and install the best animation component for my Svelte project."

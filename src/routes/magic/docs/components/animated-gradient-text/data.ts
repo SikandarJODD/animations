@@ -1,7 +1,7 @@
-import type { CodeBlock } from "$lib/components/ui/code";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
+import type { CodeBlock } from "#lib/components/ui/code/index.js";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta } from "#lib/types/structure.js";
 import CustomSpeed from "./examples/custom-speed.svelte";
 import CustomSpeedRaw from "./examples/custom-speed.svelte?raw";
 import Preview from "./examples/preview.svelte";
@@ -67,6 +67,17 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedGradientText } from "#lib/components/magic/animated-gradient-text/index.js";
+</script>
+
+<AnimatedGradientText>Animated gradient text</AnimatedGradientText>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	installBlock: {
@@ -75,7 +86,7 @@ export const data: ComponentDoc = {
 	},
 	props: [
 		{
-			name: "AnimatedGradientText",
+			name: "Animated Gradient Text",
 			desc: "A text component with animated gradient background effect.",
 			props: [
 				{
@@ -98,7 +109,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

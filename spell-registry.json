@@ -9,7 +9,8 @@
 			"title": "Perspective Book",
 			"author": "SikandarJODD",
 			"meta": {
-				"docs": "Add perspective-book-textured.avif image inside /static folder"
+				"docs": "Add perspective-book-textured.avif image inside /static folder",
+				"categories": ["card", "3d", "hover", "tilt", "high-motion"]
 			},
 			"description": "A 3D book cover wrapper with a hover tilt effect and optional textured overlay.",
 			"files": [
@@ -31,6 +32,7 @@
 			"type": "registry:block",
 			"title": "Tilt Card",
 			"description": "A cursor-reactive tilt wrapper with configurable scale, tilt depth, perspective, and spotlight.",
+			"meta": { "categories": ["card", "3d", "cursor", "hover", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/tilt-card/tilt-card.svelte",
@@ -50,6 +52,7 @@
 			"type": "registry:block",
 			"title": "Fallback Avatar",
 			"description": "A seeded canvas avatar with hover animation, WebGL rendering, and a deterministic 2D fallback path.",
+			"meta": { "categories": ["avatar", "canvas", "webgl", "hover", "generative", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/fallback-avatar/fallback-avatar.svelte",
@@ -79,6 +82,7 @@
 			"type": "registry:block",
 			"title": "Badge",
 			"description": "A compact pill badge with multi-color variants, optional link mode, and size presets.",
+			"meta": { "categories": ["badge", "status", "label", "link"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/badge/badge.svelte",
@@ -99,6 +103,7 @@
 			"type": "registry:block",
 			"title": "Bar Spinner",
 			"description": "A compact loading spinner made from twelve fading bars, ideal for inline waits, cards, dialogs, and button-adjacent status indicators.",
+			"meta": { "categories": ["loading", "feedback", "spinner", "automatic", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/bar-spinner/bar-spinner.svelte",
@@ -118,6 +123,7 @@
 			"type": "registry:block",
 			"title": "Keyboard Shortcuts",
 			"description": "A tactile keyboard shortcut keycap with optional live keyboard listening.",
+			"meta": { "categories": ["keyboard", "shortcut", "input", "interactive", "subtle"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/keyboard-shortcut/keyboard-shortcut.svelte",
@@ -138,6 +144,7 @@
 			"type": "registry:block",
 			"title": "Marquee",
 			"description": "A reusable horizontal or vertical marquee with optional fade edges and hover pause.",
+			"meta": { "categories": ["marquee", "content", "automatic", "hover", "fade", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/marquee/marquee.svelte",
@@ -157,6 +164,7 @@
 			"type": "registry:block",
 			"title": "Logo Carousel",
 			"description": "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
+			"meta": { "categories": ["logo", "carousel", "marketing", "automatic", "stagger", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/logo-carousel/logo-carousel.svelte",
@@ -176,6 +184,7 @@
 			"type": "registry:block",
 			"title": "Spotify Card",
 			"description": "A Spotify preview card with blurred artwork, playback controls, and server-fetched metadata.",
+			"meta": { "categories": ["audio", "card", "media", "playback", "interactive"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/spotify-card/spotify-card.svelte",
@@ -201,6 +210,7 @@
 			"type": "registry:block",
 			"title": "QRCode",
 			"description": "A rounded QR code renderer with circular modules and stylized finder patterns.",
+			"meta": { "categories": ["qr-code", "utility", "canvas", "data-visualization"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/qrcode/qrcode.svelte",
@@ -221,6 +231,7 @@
 			"type": "registry:block",
 			"title": "Text Marquee",
 			"description": "A vertical text rotator with snippet-based prefix and row composition.",
+			"meta": { "categories": ["text", "marquee", "hero", "automatic", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/text-marquee/text-marquee.svelte",
@@ -240,6 +251,7 @@
 			"type": "registry:block",
 			"title": "Blur Reveal",
 			"description": "A text-only blur and stagger reveal for hero copy, headings, and announcements.",
+			"meta": { "categories": ["text", "hero", "reveal", "blur", "stagger", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/blur-reveal/blur-reveal.svelte",
@@ -260,6 +272,7 @@
 			"type": "registry:block",
 			"title": "Words Stagger",
 			"description": "A word-by-word blur and lift reveal for hero copy, launch messaging, and editorial headings.",
+			"meta": { "categories": ["text", "hero", "reveal", "blur", "stagger", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/utils/text-utils.ts",
@@ -285,6 +298,7 @@
 			"type": "registry:block",
 			"title": "Randomized Text",
 			"description": "A stable randomized text reveal for hero copy, labels, and editorial callouts.",
+			"meta": { "categories": ["text", "hero", "reveal", "randomized", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/utils/text-utils.ts",
@@ -310,6 +324,7 @@
 			"type": "registry:block",
 			"title": "Special Text",
 			"description": "A scrambled text reveal with optional viewport triggering and plain text or slotted content input.",
+			"meta": { "categories": ["text", "reveal", "scramble", "scroll", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/special-text/special-text.svelte",
@@ -330,6 +345,7 @@
 			"type": "registry:block",
 			"title": "Highlighted Text",
 			"description": "An inline highlight sweep that reveals text from configurable directions with optional viewport triggers.",
+			"meta": { "categories": ["text", "highlight", "reveal", "scroll", "subtle"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/highlighted-text/highlighted-text.svelte",
@@ -350,6 +366,7 @@
 			"type": "registry:block",
 			"title": "Slide Up Text",
 			"description": "A configurable text reveal that slides words, characters, or lines upward with staggered motion.",
+			"meta": { "categories": ["text", "hero", "reveal", "stagger", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/utils/text-utils.ts",
@@ -375,6 +392,7 @@
 			"type": "registry:block",
 			"title": "Signature",
 			"description": "A handwritten signature renderer that animates glyph paths from downloaded font data.",
+			"meta": { "categories": ["text", "signature", "svg", "draw", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/signature/signature.svelte",
@@ -395,6 +413,7 @@
 			"type": "registry:block",
 			"title": "Gradient Wave Text",
 			"description": "A flowing gradient text effect with radial or linear bands, custom colors, and view-triggered playback.",
+			"meta": { "categories": ["text", "gradient", "hero", "scroll", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/gradient-wave-text/gradient-wave-text.svelte",
@@ -415,6 +434,7 @@
 			"type": "registry:block",
 			"title": "Color Selector",
 			"description": "A compact swatch picker with preset or custom CSS colors, form support, and size variants.",
+			"meta": { "categories": ["form", "color", "picker", "input", "interactive"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/color-selector/color-selector.svelte",
@@ -435,6 +455,7 @@
 			"type": "registry:block",
 			"title": "Label Input",
 			"description": "A floating-label input with ring-color variants and password visibility toggle support.",
+			"meta": { "categories": ["form", "input", "label", "password", "interactive"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/label-input/label-input.svelte",
@@ -455,6 +476,7 @@
 			"type": "registry:block",
 			"title": "Animated Checkbox",
 			"description": "A motion-driven checkbox row with animated checkmark drawing and strike-through feedback.",
+			"meta": { "categories": ["form", "checkbox", "input", "feedback", "medium-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/animated-checkbox/animated-checkbox.svelte",
@@ -475,6 +497,7 @@
 			"type": "registry:block",
 			"title": "Exploding Input",
 			"description": "A particle input companion that launches custom items outward from the cursor as you type.",
+			"meta": { "categories": ["form", "input", "particles", "keyboard", "high-motion"] },
 			"files": [
 				{
 					"path": "./src/lib/components/spell/exploding-input/exploding-input.svelte",

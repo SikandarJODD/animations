@@ -18,33 +18,7 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/rainbow-but
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/rainbow-button.json
 ```
 
-## Preview
-
-```svelte
-<script lang="ts">
-	import { RainbowButton } from "$lib/components/magic/rainbow-button";
-</script>
-
-<RainbowButton>Join Affiliate Program</RainbowButton>
-```
-
-## Examples
-
-### 1. Outline Variant
-
-```svelte
-<script>
-	import { RainbowButton } from "$lib/components/magic/rainbow-button";
-</script>
-
-<RainbowButton variant="outline">Get Unlimited Access</RainbowButton>
-```
-
-## Usage
-
-Import `RainbowButton` from `$lib/components/magic/rainbow-button` and pass the props you need for your use case.
-
-If the component depends on global CSS, add the following styles:
+Add the animation to your global CSS:
 
 ```css
 @theme inline {
@@ -59,6 +33,38 @@ If the component depends on global CSS, add the following styles:
     }
   }
 }
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { RainbowButton } from "#lib/components/magic/rainbow-button/index.js";
+</script>
+
+<RainbowButton>Get started</RainbowButton>
+```
+
+## Preview
+
+```svelte
+<script lang="ts">
+  import { RainbowButton } from "#lib/components/magic/rainbow-button/index.ts";
+</script>
+
+<RainbowButton>Join Affiliate Program</RainbowButton>
+```
+
+## Examples
+
+### 1. Outline Variant
+
+```svelte
+<script>
+  import { RainbowButton } from "#lib/components/magic/rainbow-button/index.ts";
+</script>
+
+<RainbowButton variant="outline">Get Unlimited Access</RainbowButton>
 ```
 
 ## Props

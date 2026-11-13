@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
-	import { readNormalizedTextContent, segmentText } from "$lib/utils/text-utils";
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
+	import { readNormalizedTextContent, segmentText } from "#lib/utils/text-utils.js";
 	import { motion, useInView, type Variants } from "motion-sv";
 	import type { Snippet } from "svelte";
 
@@ -21,7 +22,7 @@
 
 	type WordsStaggerProps = {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		style?: string;
 		as?: WordsStaggerElement;
 		delay?: number;

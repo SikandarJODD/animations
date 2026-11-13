@@ -18,11 +18,21 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/s/bar-spinner
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/bar-spinner.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { BarSpinner } from "#lib/components/spell/bar-spinner/index.js";
+</script>
+
+<BarSpinner size={24} />
+```
+
 ## Preview
 
 ```svelte
 <script lang="ts">
-	import { BarSpinner } from "$lib/components/spell/bar-spinner";
+  import { BarSpinner } from "#lib/components/spell/bar-spinner/index.ts";
 </script>
 
 <BarSpinner />
@@ -34,25 +44,21 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/s/bar-spinner.js
 
 ```svelte
 <script lang="ts">
-	import { BarSpinner } from "$lib/components/spell/bar-spinner";
+  import { BarSpinner } from "#lib/components/spell/bar-spinner/index.ts";
 </script>
 
 <div class="flex items-center gap-4">
-	<BarSpinner size={16} />
-	<BarSpinner size={20} />
-	<BarSpinner size={24} />
-	<BarSpinner size={32} />
+  <BarSpinner size={16} />
+  <BarSpinner size={20} />
+  <BarSpinner size={24} />
+  <BarSpinner size={32} />
 </div>
 ```
 
-## Usage
-
-Import `BarSpinner` from `$lib/components/spell/bar-spinner` and pass the props you need for your use case.
-
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `size` | `number` | `20` | - |
-| `color` | `string` | `"currentColor"` | - |
-| `class` | `string \| undefined` | `undefined` | - |
+| Prop    | Type                  | Default          | Description |
+| ------- | --------------------- | ---------------- | ----------- |
+| `size`  | `number`              | `20`             | -           |
+| `color` | `string`              | `"currentColor"` | -           |
+| `class` | `string \| undefined` | `undefined`      | -           |

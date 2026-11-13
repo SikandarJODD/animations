@@ -1,9 +1,9 @@
-﻿import NumberTickerRaw from "$lib/components/magic/number-ticker/number-ticker.svelte?raw";
-import IndexTs from "$lib/components/magic/number-ticker/index.ts?raw";
+﻿import NumberTickerRaw from "#lib/components/magic/number-ticker/number-ticker.svelte?raw";
+import IndexTs from "#lib/components/magic/number-ticker/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import NumberPickerStartValue from "./examples/number-ticker-start-value.svelte";
@@ -105,11 +105,22 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { NumberTicker } from "#lib/components/magic/number-ticker/index.js";
+</script>
+
+<NumberTicker value={100} />`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "NumberTicker",
+			name: "Number Ticker",
 			desc: "A component for animating numbers to count up or down to a target value.",
 			props: [
 				{
@@ -144,7 +155,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply.",
 				},

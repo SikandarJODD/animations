@@ -1,6 +1,7 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { motion, AnimatePresence } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	type AnimationStyle =
 		| "from-bottom"
@@ -17,7 +18,7 @@
 		videoSrc: string;
 		thumbnailSrc: string;
 		thumbnailAlt?: string;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

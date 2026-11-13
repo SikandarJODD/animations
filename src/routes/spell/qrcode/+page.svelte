@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ComponentDocPage from "$lib/components/docs/base/ComponentDocPage.svelte";
+	import ComponentDocPage from "#lib/components/docs/base/component-doc-page.svelte";
 	import { data } from "./data";
 </script>
 
@@ -14,6 +14,7 @@
 	installPackages={data.installBlock?.packages}
 	installFolderStructure={data.installBlock?.folderStructure}
 	installTailwindCode={data.installBlock?.tailwind}
+	usage={data.usage}
 	examples={data.examples}
 	propsTables={data.props}
 	descriptionClass="max-w-xl"

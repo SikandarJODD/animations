@@ -9,6 +9,15 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"selection",
+				"hover",
+				"layout",
+				"subtle"
+			]
+		},
 		"relativeUrl": "animated-background.json"
 	},
 	{
@@ -17,6 +26,15 @@
 		"type": "registry:block",
 		"description": "An animated gradient background which transitions between colors for text.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"gradient",
+				"marketing",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "animated-gradient-text.json"
 	},
 	{
@@ -29,6 +47,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"reveal",
+				"blur",
+				"marketing",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "text-animate.json"
 	},
 	{
@@ -40,6 +67,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"data-visualization",
+				"connector",
+				"gradient",
+				"automatic",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "animated-beam.json"
 	},
 	{
@@ -48,6 +84,15 @@
 		"type": "registry:block",
 		"description": "A smooth animated theme toggler that uses the View Transition API to create a circular reveal effect when switching between light and dark themes.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"button",
+				"theme",
+				"click",
+				"reveal",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "animated-theme-toggler.json"
 	},
 	{
@@ -56,6 +101,15 @@
 		"type": "registry:block",
 		"description": "A curved timeline that rotates through milestone steps with clickable markers, icons, and configurable spacing.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"timeline",
+				"navigation",
+				"click",
+				"content",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "arc-timeline.json"
 	},
 	{
@@ -64,6 +118,15 @@
 		"type": "registry:block",
 		"description": "A circular progress bar component with animated transitions between primary and secondary colors.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"progress",
+				"data-visualization",
+				"loading",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "animated-circular-progress-bar.json"
 	},
 	{
@@ -75,6 +138,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"grid",
+				"decoration",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "animated-grid-pattern.json"
 	},
 	{
@@ -87,6 +159,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"reveal",
+				"blur",
+				"scroll",
+				"content",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "blur-fade.json"
 	},
 	{
@@ -98,6 +179,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"border",
+				"gradient",
+				"decoration",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "border-beam.json"
 	},
 	{
@@ -110,6 +200,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"file",
+				"navigation",
+				"click",
+				"tree",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "file-tree.json"
 	},
 	{
@@ -121,6 +220,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"pattern",
+				"glow",
+				"decoration",
+				"subtle"
+			]
+		},
 		"relativeUrl": "dot-pattern.json"
 	},
 	{
@@ -132,6 +240,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"reveal",
+				"gradient",
+				"scroll",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "dia-text-reveal.json"
 	},
 	{
@@ -140,6 +257,15 @@
 		"type": "registry:block",
 		"description": "Add a fun particle effect that follows mouse interactions, with support for emojis, images, and custom shapes.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"particles",
+				"cursor",
+				"click",
+				"decoration",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "cool-mode.json"
 	},
 	{
@@ -148,6 +274,15 @@
 		"type": "registry:block",
 		"description": "A component that adds a shining animated border effect with customizable colors, duration, and border width.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"border",
+				"shine",
+				"decoration",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "shine-border.json"
 	},
 	{
@@ -159,6 +294,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"list",
+				"layout",
+				"reveal",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "animated-list.json"
 	},
 	{
@@ -167,6 +311,15 @@
 		"type": "registry:block",
 		"description": "A shimmering text effect component that creates a moving shine animation across text.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"shimmer",
+				"marketing",
+				"automatic",
+				"subtle"
+			]
+		},
 		"relativeUrl": "animated-shiny-text.json"
 	},
 	{
@@ -175,6 +328,15 @@
 		"type": "registry:block",
 		"description": "A text component with animated aurora gradient effect that smoothly transitions between customizable colors.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"gradient",
+				"aurora",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "aurora-text.json"
 	},
 	{
@@ -183,6 +345,15 @@
 		"type": "registry:block",
 		"description": "An SVG filter wrapper that adds a soft, saturated backlight glow around the content it wraps.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"glow",
+				"filter",
+				"decoration",
+				"content",
+				"subtle"
+			]
+		},
 		"relativeUrl": "backlight.json"
 	},
 	{
@@ -191,6 +362,15 @@
 		"type": "registry:block",
 		"description": "A component that displays overlapping avatar circles with optional count indicator for showing team members or contributors.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"avatar",
+				"social-proof",
+				"team",
+				"content",
+				"static"
+			]
+		},
 		"relativeUrl": "avatar-circles.json"
 	},
 	{
@@ -202,6 +382,15 @@
 			"piri"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"map",
+				"data-visualization",
+				"markers",
+				"reveal",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "dotted-map.json"
 	},
 	{
@@ -210,6 +399,15 @@
 		"type": "registry:block",
 		"description": "A smooth scrolling marquee component with support for horizontal and vertical directions, pause on hover, and reverse animation.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"marquee",
+				"content",
+				"automatic",
+				"hover",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "marquee.json"
 	},
 	{
@@ -218,6 +416,15 @@
 		"type": "registry:block",
 		"description": "A meteor shower effect component with customizable number of meteors and animated falling effects.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"particles",
+				"decoration",
+				"automatic",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "meteors.json"
 	},
 	{
@@ -230,6 +437,15 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"image",
+				"reveal",
+				"pixel",
+				"marketing",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "pixel-image.json"
 	},
 	{
@@ -238,6 +454,15 @@
 		"type": "registry:block",
 		"description": "An SVG-based striped pattern background component with configurable direction and stripe dimensions.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"pattern",
+				"stripes",
+				"decoration",
+				"static"
+			]
+		},
 		"relativeUrl": "striped-pattern.json"
 	},
 	{
@@ -250,6 +475,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"typing",
+				"hero",
+				"automatic",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "typing-animation.json"
 	},
 	{
@@ -258,6 +492,15 @@
 		"type": "registry:block",
 		"description": "An animated flickering grid pattern component that creates a dynamic canvas-based background with randomly flickering squares.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"grid",
+				"canvas",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "flickering-grid.json"
 	},
 	{
@@ -266,6 +509,15 @@
 		"type": "registry:block",
 		"description": "An SVG-based grid pattern background component with support for highlighted squares and customizable grid dimensions.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"grid",
+				"pattern",
+				"decoration",
+				"static"
+			]
+		},
 		"relativeUrl": "grid-pattern.json"
 	},
 	{
@@ -274,6 +526,15 @@
 		"type": "registry:block",
 		"description": "A glare hover effect that adds a subtle shine to elements when hovered.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"hover",
+				"glare",
+				"shine",
+				"decoration",
+				"subtle"
+			]
+		},
 		"relativeUrl": "glare-hover.json"
 	},
 	{
@@ -285,6 +546,15 @@
 			"cobe"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"globe",
+				"3d",
+				"webgl",
+				"drag",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "globe.json"
 	},
 	{
@@ -297,6 +567,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"video",
+				"dialog",
+				"hero",
+				"click",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "hero-video-dialog.json"
 	},
 	{
@@ -305,6 +584,15 @@
 		"type": "registry:block",
 		"description": "An SVG-based hexagon pattern background component with configurable radius, gap, direction, and highlighted cells.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"pattern",
+				"hexagon",
+				"decoration",
+				"static"
+			]
+		},
 		"relativeUrl": "hexagon-pattern.json"
 	},
 	{
@@ -316,6 +604,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"glitch",
+				"reveal",
+				"marketing",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "hyper-text.json"
 	},
 	{
@@ -325,6 +622,15 @@
 		"description": "An interactive 3D tag cloud component that displays icons or images in a sphere formation with smooth rotation and drag interactions.",
 		"dependencies": [],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"icon",
+				"3d",
+				"cloud",
+				"drag",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "icon-cloud.json"
 	},
 	{
@@ -336,6 +642,15 @@
 			"@lucide/svelte"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"button",
+				"hover",
+				"text",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "interactive-hover-button.json"
 	},
 	{
@@ -347,6 +662,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"light",
+				"blur",
+				"decoration",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "light-rays.json"
 	},
 	{
@@ -358,6 +682,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"shadow",
+				"marketing",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "line-shadow-text.json"
 	},
 	{
@@ -369,6 +702,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"grid",
+				"animation-primitive",
+				"canvas",
+				"automatic",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "motion-grid.json"
 	},
 	{
@@ -377,6 +719,15 @@
 		"type": "registry:block",
 		"description": "A text component that smoothly morphs between multiple text strings with a blur transition effect.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"morph",
+				"blur",
+				"automatic",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "morphing-text.json"
 	},
 	{
@@ -385,6 +736,15 @@
 		"type": "registry:block",
 		"description": "A card component with animated neon gradient borders and customizable colors, border size, and radius.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"card",
+				"gradient",
+				"neon",
+				"border",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "neon-gradient-card.json"
 	},
 	{
@@ -393,6 +753,15 @@
 		"type": "registry:block",
 		"description": "An SVG fractal noise layer using feTurbulence for subtle texture overlays.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"texture",
+				"noise",
+				"decoration",
+				"subtle"
+			]
+		},
 		"relativeUrl": "noise-texture.json"
 	},
 	{
@@ -404,6 +773,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"number",
+				"counter",
+				"data-visualization",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "number-ticker.json"
 	},
 	{
@@ -412,6 +790,15 @@
 		"type": "registry:block",
 		"description": "A button component with a pulsating ring effect that expands and fades around the button.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"button",
+				"pulse",
+				"call-to-action",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "pulsating-button.json"
 	},
 	{
@@ -424,6 +811,15 @@
 			"tailwind-variants"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"button",
+				"gradient",
+				"rainbow",
+				"call-to-action",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "rainbow-button.json"
 	},
 	{
@@ -432,6 +828,15 @@
 		"type": "registry:block",
 		"description": "A component that creates expanding ripple circles with customizable size, opacity, and number of circles.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"ripple",
+				"decoration",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "ripple.json"
 	},
 	{
@@ -443,6 +848,15 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"button",
+				"click",
+				"ripple",
+				"feedback",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "ripple-button.json"
 	},
 	{
@@ -454,6 +868,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"progress",
+				"scroll",
+				"navigation",
+				"gradient",
+				"subtle"
+			]
+		},
 		"relativeUrl": "scroll-progress.json"
 	},
 	{
@@ -462,6 +885,15 @@
 		"type": "registry:block",
 		"description": "A flexible horizontal separator for dividing content with solid or gradient lines and optional centered labels.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"separator",
+				"layout",
+				"text",
+				"gradient",
+				"static"
+			]
+		},
 		"relativeUrl": "separator.json"
 	},
 	{
@@ -470,6 +902,15 @@
 		"type": "registry:block",
 		"description": "A button component with an animated shimmer effect that slides across the button surface.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"button",
+				"shimmer",
+				"call-to-action",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "shimmer-button.json"
 	},
 	{
@@ -481,6 +922,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"button",
+				"shine",
+				"gradient",
+				"hover",
+				"subtle"
+			]
+		},
 		"relativeUrl": "shiny-button.json"
 	},
 	{
@@ -492,6 +942,15 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"terminal",
+				"code",
+				"typing",
+				"scroll",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "terminal.json"
 	},
 	{
@@ -503,6 +962,15 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"video",
+				"mask",
+				"hero",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "video-text.json"
 	},
 	{
@@ -514,6 +982,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"grid",
+				"3d",
+				"light",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "warp-background.json"
 	},
 	{
@@ -525,6 +1002,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"rotate",
+				"hero",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "word-rotate.json"
 	},
 	{
@@ -536,6 +1022,15 @@
 			"@lucide/svelte"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"grid",
+				"card",
+				"layout",
+				"marketing",
+				"static"
+			]
+		},
 		"relativeUrl": "bento-grid.json"
 	},
 	{
@@ -545,6 +1040,15 @@
 		"description": "A canvas-based component that applies dithering effects to images with customizable patterns and color modes.",
 		"dependencies": [],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"image",
+				"canvas",
+				"dither",
+				"filter",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "dither-shader.json"
 	},
 	{
@@ -556,6 +1060,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"navigation",
+				"dock",
+				"hover",
+				"magnification",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "dock.json"
 	},
 	{
@@ -567,6 +1080,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"image",
+				"video",
+				"zoom",
+				"hover",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "lens.json"
 	},
 	{
@@ -578,6 +1100,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"card",
+				"spotlight",
+				"cursor",
+				"hover",
+				"subtle"
+			]
+		},
 		"relativeUrl": "magic-card.json"
 	},
 	{
@@ -586,18 +1117,36 @@
 		"type": "registry:block",
 		"description": "A component that displays icons or elements orbiting in a circular path with customizable radius, duration, and direction.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"icon",
+				"orbit",
+				"decoration",
+				"automatic",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "orbiting-circles.json"
 	},
 	{
 		"name": "pointer",
 		"title": "Pointer",
 		"type": "registry:block",
-		"description": "A component that displays a pointer when hovering over an element",
+		"description": "A custom pointer component that appears while hovering over wrapped content.",
 		"dependencies": [
 			"motion-sv",
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"cursor",
+				"pointer",
+				"hover",
+				"feedback",
+				"subtle"
+			]
+		},
 		"relativeUrl": "pointer.json"
 	},
 	{
@@ -606,6 +1155,15 @@
 		"type": "registry:block",
 		"description": "A component that creates a progressive blur effect at the top, bottom, or both edges of a container with customizable blur levels and positioning.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"blur",
+				"overlay",
+				"content",
+				"decoration",
+				"subtle"
+			]
+		},
 		"relativeUrl": "progressive-blur.json"
 	},
 	{
@@ -614,6 +1172,15 @@
 		"type": "registry:block",
 		"description": "An animated retro-style grid background component with customizable angle, cell size, opacity, and colors.",
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"grid",
+				"retro",
+				"automatic",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "retro-grid.json"
 	},
 	{
@@ -625,6 +1192,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"cursor",
+				"pointer",
+				"spring",
+				"mouse",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "smooth-cursor.json"
 	},
 	{
@@ -636,6 +1212,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"sparkles",
+				"particles",
+				"marketing",
+				"high-motion"
+			]
+		},
 		"relativeUrl": "sparkles-text.json"
 	},
 	{
@@ -647,6 +1232,15 @@
 			"motion-sv"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"text",
+				"hover",
+				"stagger",
+				"marketing",
+				"medium-motion"
+			]
+		},
 		"relativeUrl": "stagger-text.json"
 	},
 	{
@@ -658,6 +1252,15 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"background",
+				"glyph",
+				"canvas",
+				"automatic",
+				"subtle"
+			]
+		},
 		"relativeUrl": "glyph-matrix.json"
 	},
 	{
@@ -670,6 +1273,15 @@
 			"runed"
 		],
 		"registryDependencies": [],
+		"meta": {
+			"categories": [
+				"data-visualization",
+				"diagram",
+				"node",
+				"connector",
+				"interactive"
+			]
+		},
 		"relativeUrl": "flow.json"
 	}
 ]

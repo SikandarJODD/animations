@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { ScrambleIn } from "$lib/components/fancy/scramble-in";
-	import { Button } from "$lib/components/ui/button";
+	import { ScrambleIn } from "#lib/components/fancy/scramble-in/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 
 	let scrambleRef: { start: () => void; reset: () => void } | null = null;
 	let status = $state("Ready to animate");

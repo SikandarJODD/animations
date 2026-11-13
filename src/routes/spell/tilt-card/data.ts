@@ -1,7 +1,7 @@
-import TiltCardRaw from "$lib/components/spell/tilt-card/tilt-card.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/tilt-card/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import TiltCardRaw from "#lib/components/spell/tilt-card/tilt-card.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/tilt-card/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import ScaleExample from "./examples/scale-example.svelte";
@@ -63,6 +63,19 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 		hideLines: true,
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { TiltCard } from "#lib/components/spell/tilt-card/index.js";
+</script>
+
+<TiltCard>
+	<div class="rounded-xl border p-8">Hover me</div>
+</TiltCard>`,
+			lang: "svelte",
+		},
 	},
 	installBlock,
 	seo,

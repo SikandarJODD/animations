@@ -18,15 +18,25 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/stagger-tex
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/stagger-text.json
 ```
 
+## Usage
+
+```svelte
+<script lang="ts">
+  import { StaggerText } from "#lib/components/magic/stagger-text/index.js";
+</script>
+
+<StaggerText text="Staggered text" />
+```
+
 ## Preview
 
 ```svelte
 <script lang="ts">
-	import { StaggerText } from "$lib/components/magic/stagger-text";
+  import { StaggerText } from "#lib/components/magic/stagger-text/index.ts";
 </script>
 
 <div>
-	<StaggerText text="Stagger Text!!" />
+  <StaggerText text="Stagger Text!!" />
 </div>
 
 <style>
@@ -39,25 +49,21 @@ bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/stagger-text.j
 
 ```svelte
 <script lang="ts">
-	import { StaggerText } from "$lib/components/magic/stagger-text";
+  import { StaggerText } from "#lib/components/magic/stagger-text/index.ts";
 </script>
 
 <div>
-	<StaggerText text="Stagger Text!!" />
+  <StaggerText text="Stagger Text!!" />
 </div>
 
 <style>
 </style>
 ```
 
-## Usage
-
-Import `StaggerText` from `$lib/components/magic/stagger-text` and pass the props you need for your use case.
-
 ## Props
 
 A component for Stagger Text.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `class` | `string` | `""` | Additional CSS classes to apply |
+| Prop    | Type     | Default | Description                     |
+| ------- | -------- | ------- | ------------------------------- |
+| `class` | `string` | `""`    | Additional CSS classes to apply |

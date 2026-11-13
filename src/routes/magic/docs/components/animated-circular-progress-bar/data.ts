@@ -1,7 +1,7 @@
-﻿import AnimatedCircularProgressBar from "$lib/components/magic/animated-circular-progress-bar/animated-circular-progress-bar.svelte?raw";
-import IndexTs from "$lib/components/magic/animated-circular-progress-bar/index.ts?raw";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import AnimatedCircularProgressBar from "#lib/components/magic/animated-circular-progress-bar/animated-circular-progress-bar.svelte?raw";
+import IndexTs from "#lib/components/magic/animated-circular-progress-bar/index.ts?raw";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -65,10 +65,26 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedCircularProgressBar } from "#lib/components/magic/animated-circular-progress-bar/index.js";
+	import { mode } from "mode-watcher";
+</script>
+
+<AnimatedCircularProgressBar
+	value={75}
+	gaugePrimaryColor={mode.current === "dark" ? "#34d399" : "#4f46e5"}
+	gaugeSecondaryColor="#e5e7eb"
+/>`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
-			name: "AnimatedCircularProgressBar",
+			name: "Animated Circular Progress Bar",
 			desc: "A component for displaying animated circular progress.",
 			props: [
 				{
@@ -103,7 +119,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

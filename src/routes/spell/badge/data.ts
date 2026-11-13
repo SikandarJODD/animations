@@ -1,7 +1,7 @@
-import BadgeRaw from "$lib/components/spell/badge/badge.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/badge/index.ts?raw";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import BadgeRaw from "#lib/components/spell/badge/badge.svelte?raw";
+import IndexTsRaw from "#lib/components/spell/badge/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import ColorBadgesExample from "./examples/color-badges-example.svelte";
@@ -56,6 +56,17 @@ export const data: ComponentDoc = {
 		lang: "svelte",
 		hideLines: true,
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Badge } from "#lib/components/spell/badge/index.js";
+</script>
+
+<Badge variant="secondary">New</Badge>`,
+			lang: "svelte",
+		},
+	},
 	installBlock,
 	examples: [
 		{
@@ -105,7 +116,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string | undefined",
+					type: "ClassValue",
 					default: "undefined",
 				},
 			],

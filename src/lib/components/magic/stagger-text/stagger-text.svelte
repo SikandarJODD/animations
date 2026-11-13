@@ -19,13 +19,14 @@
 
 <script lang="ts">
 	import { motion, type Variants } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import type { ClassValue } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
 
 	type StaggerTextElement = "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 	interface StaggerTextProps {
 		text: string;
-		class?: string;
+		class?: ClassValue;
 		as?: StaggerTextElement;
 	}
 
@@ -44,9 +45,9 @@
 	};
 </script>
 
-<h1 class="sr-only">
+<span class="sr-only">
 	{text}
-</h1>
+</span>
 <MotionComponent
 	class={cn("overflow-clip tracking-wide select-text", className)}
 	aria-label={text}

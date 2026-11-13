@@ -14,6 +14,9 @@ import LinkedIn from "./linkedin.svelte";
 import Twitch from "./twitch.svelte";
 import YouTube from "./youtube.svelte";
 import DollarIcon from "./dollar-icon.svelte";
+import Codex from "./codex.svelte";
+import ChatGPT from "./chatgpt.svelte";
+import Claude from "./claude.svelte";
 
 export interface Props extends HTMLAttributes<SVGElement> {
 	class?: string;
@@ -37,4 +40,7 @@ export {
 	Twitch,
 	YouTube,
 	DollarIcon,
+	Codex,
+	ChatGPT,
+	Claude,
 };

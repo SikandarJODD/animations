@@ -1,8 +1,8 @@
-﻿import Raw from "$lib/components/magic/avatar-circles/avatar-circles.svelte?raw";
-import IndexTs from "$lib/components/magic/avatar-circles/index.ts?raw";
+﻿import Raw from "#lib/components/magic/avatar-circles/avatar-circles.svelte?raw";
+import IndexTs from "#lib/components/magic/avatar-circles/index.ts?raw";
 
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -65,10 +65,28 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AvatarCircles } from "#lib/components/magic/avatar-circles/index.js";
+
+	const avatars = [
+		{
+			imageUrl: "https://github.com/shadcn.png",
+			profileUrl: "https://github.com/shadcn",
+		},
+	];
+</script>
+
+<AvatarCircles avatarUrls={avatars} numPeople={12} />`,
+			lang: "svelte",
+		},
+	},
 	seo,
 	props: [
 		{
-			name: "AvatarCircles",
+			name: "Avatar Circles",
 			desc: "A component that displays user avatars in a stacked, overlapping circle layout.",
 			props: [
 				{
@@ -85,7 +103,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},

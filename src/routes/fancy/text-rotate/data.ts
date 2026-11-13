@@ -1,8 +1,8 @@
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import IndexTsRaw from "$lib/components/fancy/text-rotate/index.ts?raw";
-import TextRotateRaw from "$lib/components/fancy/text-rotate/text-rotate.svelte?raw";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import IndexTsRaw from "#lib/components/fancy/text-rotate/index.ts?raw";
+import TextRotateRaw from "#lib/components/fancy/text-rotate/text-rotate.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewRaw from "./examples/preview.svelte?raw";
 import { FANCY_OG_IMAGES, FANCY_TITLE_TEMPLATE } from "../seo";
@@ -70,6 +70,35 @@ export const data: ComponentDoc = {
 		filename: "preview.svelte",
 		filecode: PreviewRaw,
 		lang: "svelte",
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { TextRotate } from "#lib/components/fancy/text-rotate/index.js";
+
+	const qualities = ["clear.", "useful.", "memorable."];
+</script>
+
+<h1 class="flex flex-wrap items-center gap-x-3 text-4xl font-semibold tracking-tight sm:text-6xl">
+	<span>Make every interaction</span>
+	<TextRotate
+		as="span"
+		texts={qualities}
+		rotationInterval={2400}
+		splitBy="characters"
+		staggerFrom="last"
+		staggerDuration={0.025}
+		initial={{ y: "100%", opacity: 0 }}
+		animate={{ y: 0, opacity: 1 }}
+		exit={{ y: "-100%", opacity: 0 }}
+		mainClassName="overflow-hidden rounded-xl bg-violet-600 px-3 py-1 text-white"
+		splitLevelClassName="overflow-hidden"
+		transition={{ type: "spring", damping: 28, stiffness: 260 }}
+	/>
+</h1>`,
+			lang: "svelte",
+		},
 	},
 	examples,
 	props: [
@@ -192,7 +221,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: "undefined",
 					description: "Additional classes merged onto the root layout wrapper.",
 				},

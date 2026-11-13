@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { AnimatedGradientText } from "$lib/components/magic/animated-gradient-text";
-	import { cn } from "$lib/utils";
+	import { AnimatedGradientText } from "#lib/components/magic/animated-gradient-text/index.js";
+	import { cn } from "#lib/utils.js";
 	import { ChevronRight } from "@lucide/svelte";
 </script>
 

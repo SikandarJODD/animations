@@ -1,8 +1,8 @@
-import GlobeSvelteRaw from "$lib/components/magic/globe/globe.svelte?raw";
-import IndexTsRaw from "$lib/components/magic/globe/index.ts?raw";
+import GlobeSvelteRaw from "#lib/components/magic/globe/globe.svelte?raw";
+import IndexTsRaw from "#lib/components/magic/globe/index.ts?raw";
 
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 
@@ -43,6 +43,19 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 		hideLines: true,
+	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { Globe } from "#lib/components/magic/globe/index.js";
+</script>
+
+<div class="h-80 w-80">
+	<Globe />
+</div>`,
+			lang: "svelte",
+		},
 	},
 	installBlock,
 	examples: [],

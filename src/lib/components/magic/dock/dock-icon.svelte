@@ -1,13 +1,15 @@
 <script lang="ts" module>
+	import type { ClassValue } from "svelte/elements";
+
 	export interface DockIconProps {
-		class?: string;
+		class?: ClassValue;
 		children: Snippet;
 	}
 </script>
 
 <script lang="ts">
 	import { motion, useMotionValue, useTransform, useSpring } from "motion-sv";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 	import { getContext } from "svelte";
 	import type { DockContext } from "./dock.svelte";

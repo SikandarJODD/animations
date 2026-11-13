@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
-	import type { HTMLAttributes } from "svelte/elements";
+	import { cn } from "#lib/utils.js";
+	import type { ClassValue, HTMLAttributes } from "svelte/elements";
 
 	interface RippleProps extends HTMLAttributes<HTMLDivElement> {
 		mainCircleSize?: number;
 		mainCircleOpacity?: number;
 		numCircles?: number;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let {

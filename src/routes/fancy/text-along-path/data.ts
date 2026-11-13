@@ -1,8 +1,8 @@
-import IndexTsRaw from "$lib/components/fancy/text-along-path/index.ts?raw";
-import TextAlongPathRaw from "$lib/components/fancy/text-along-path/text-along-path.svelte?raw";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import IndexTsRaw from "#lib/components/fancy/text-along-path/index.ts?raw";
+import TextAlongPathRaw from "#lib/components/fancy/text-along-path/text-along-path.svelte?raw";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import AutoExample from "./examples/auto-example.svelte";
 import AutoExampleRaw from "./examples/auto-example.svelte?raw";
 import ClosedPathExample from "./examples/closed-path-example.svelte";
@@ -107,6 +107,34 @@ export const data: ComponentDoc = {
 		filecode: PreviewRaw,
 		lang: "svelte",
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { AnimatedPathText } from "#lib/components/fancy/text-along-path/index.js";
+
+	const circlePath = "M 100 100 m -72 0 a 72 72 0 1 1 144 0 a 72 72 0 1 1 -144 0";
+</script>
+
+<div class="relative grid size-72 place-items-center rounded-full bg-neutral-950 text-white">
+	<AnimatedPathText
+		path={circlePath}
+		pathId="studio-badge-path"
+		viewBox="0 0 200 200"
+		text="INDEPENDENT STUDIO • DESIGN & DEVELOPMENT • INDEPENDENT STUDIO • DESIGN & DEVELOPMENT • "
+		textClass="fill-white text-[10px] tracking-[0.16em]"
+		svgClass="absolute inset-0 size-full"
+		duration={14}
+		textAnchor="start"
+	/>
+
+	<div class="grid size-28 place-items-center rounded-full border border-white/20 text-center">
+		<span class="text-sm font-medium tracking-[0.2em]">EST.<br />2026</span>
+	</div>
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	props: [
 		{
@@ -204,7 +232,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "easingFunction",
-					type: '{ calcMode?: string; keyTimes?: string; keySplines?: string }',
+					type: "{ calcMode?: string; keyTimes?: string; keySplines?: string }",
 					default: "{}",
 					description:
 						"Optional SVG animation timing settings forwarded to both auto animation tracks.",
@@ -213,7 +241,8 @@ export const data: ComponentDoc = {
 					name: "scrollContainer",
 					type: "HTMLElement | null",
 					default: "undefined",
-					description: "Optional scroll container observed when `animationType` is `scroll`.",
+					description:
+						"Optional scroll container observed when `animationType` is `scroll`.",
 				},
 				{
 					name: "scrollOffset",
@@ -225,7 +254,8 @@ export const data: ComponentDoc = {
 					name: "scrollTransformValues",
 					type: "[number, number]",
 					default: "[0, 100]",
-					description: "Maps scroll progress to the text path start offset percentage range.",
+					description:
+						"Maps scroll progress to the text path start offset percentage range.",
 				},
 			],
 		},

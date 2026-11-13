@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import Marquee from "$lib/components/magic/marquee/marquee.svelte";
+	import Marquee from "#lib/components/magic/marquee/marquee.svelte";
 	import ReviewCard from "./review-card.svelte";
 
 	let reviews = $state([

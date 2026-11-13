@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SpecialText } from "$lib/components/spell/special-text";
+	import { SpecialText } from "#lib/components/spell/special-text/index.js";
 </script>
 
 <div class="flex flex-col gap-4">

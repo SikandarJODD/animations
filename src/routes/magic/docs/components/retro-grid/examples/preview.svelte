@@ -1,5 +1,5 @@
 ﻿<script>
-	import { RetroGrid } from "$lib/components/magic/retro-grid";
+	import { RetroGrid } from "#lib/components/magic/retro-grid/index.js";
 </script>
 
 <div

@@ -42,7 +42,7 @@
 <script lang="ts">
 	import EyeIcon from "@lucide/svelte/icons/eye";
 	import EyeOffIcon from "@lucide/svelte/icons/eye-off";
-	import { cn, type WithElementRef } from "$lib/utils.js";
+	import { cn, type WithElementRef } from "#lib/utils.js";
 	import type { HTMLInputAttributes as InputAttributes } from "svelte/elements";
 
 	type InputType = "text" | "email" | "password" | "search" | "tel" | "url" | "number" | "hidden";

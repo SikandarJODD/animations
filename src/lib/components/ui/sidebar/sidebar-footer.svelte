@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn, type WithElementRef } from "$lib/utils.js";
+	import { cn, type WithElementRef } from "#lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
 
 	let {
@@ -14,7 +14,7 @@
 	bind:this={ref}
 	data-slot="sidebar-footer"
 	data-sidebar="footer"
-	class={cn("gap-2 p-2 flex flex-col", className)}
+	class={cn("flex flex-col gap-2 p-2", className)}
 	{...restProps}
 >
 	{@render children?.()}

@@ -1,9 +1,9 @@
-﻿import DotPatternRaw from "$lib/components/magic/dot-pattern/dot-pattern.svelte?raw";
-import IndexTs from "$lib/components/magic/dot-pattern/index.ts?raw";
+﻿import DotPatternRaw from "#lib/components/magic/dot-pattern/dot-pattern.svelte?raw";
+import IndexTs from "#lib/components/magic/dot-pattern/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { Example } from "#lib/types/examples.js";
+import type { SEO } from "#lib/types/seo.js";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "#lib/types/structure.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import DotPatternLinearGradient from "./examples/dot-pattern-linear-gradient.svelte";
@@ -91,11 +91,24 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
+	usage: {
+		code: {
+			filename: "usage.svelte",
+			filecode: `<script lang="ts">
+	import { DotPattern } from "#lib/components/magic/dot-pattern/index.js";
+</script>
+
+<div class="relative h-64 overflow-hidden">
+	<DotPattern class="absolute inset-0" />
+</div>`,
+			lang: "svelte",
+		},
+	},
 	examples,
 	seo,
 	props: [
 		{
-			name: "DotPattern",
+			name: "Dot Pattern",
 			desc: "A customizable dot pattern background with optional animations.",
 			props: [
 				{
@@ -143,7 +156,7 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string",
+					type: "ClassValue",
 					default: '""',
 					description: "Additional CSS classes",
 				},

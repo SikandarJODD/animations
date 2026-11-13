@@ -1,12 +1,13 @@
 <script lang="ts">
+	import type { ClassValue } from "svelte/elements";
 	import { onMount, setContext } from "svelte";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 	import { watch } from "runed";
 
 	interface TerminalProps {
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 		sequence?: boolean;
 		startOnView?: boolean;
 	}
