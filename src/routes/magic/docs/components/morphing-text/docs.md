@@ -80,5 +80,5 @@ A component for Morphing Text.
 
 | Prop    | Type       | Default | Description                     |
 | ------- | ---------- | ------- | ------------------------------- |
-| `class` | `string`   | `""`    | Additional CSS classes to apply |
+| `class` | `ClassValue` | `""`    | Additional CSS classes to apply |
 | `texts` | `string[]` | `[]`    | Array of texts to morph through |

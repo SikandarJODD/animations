@@ -70,19 +70,18 @@
 						lang={code.lang}
 						highlight={code.highlight}
 						hideLines={code.hideLines}
-						class="overflow-visible"
 					/>
 				</Root>
 			</ScrollFadeEffect>
 		{:else}
-			<div class="no-scrollbar max-h-[600px] overflow-auto">
+			<div class="no-scrollbar max-h-[600px] overflow-x-hidden overflow-y-auto">
 				<Root class="bg-background h-auto rounded-none border-0">
 					<HighlightedCode
 						code={displayedCode}
 						lang={code.lang}
 						highlight={code.highlight}
 						hideLines={code.hideLines}
-						class="no-scrollbar bg-background overflow-visible"
+						class="bg-background"
 					/>
 				</Root>
 			</div>

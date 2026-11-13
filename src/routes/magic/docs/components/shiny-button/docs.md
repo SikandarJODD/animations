@@ -56,4 +56,4 @@ A component for Shiny Button.
 
 | Prop    | Type     | Default | Description                     |
 | ------- | -------- | ------- | ------------------------------- |
-| `class` | `string` | `""`    | Additional CSS classes to apply |
+| `class` | `ClassValue` | `""`    | Additional CSS classes to apply |

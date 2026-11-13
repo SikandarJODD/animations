@@ -12,7 +12,7 @@ const GROUPS = {
 	fancy: path.join(rootDir, "src", "routes", "fancy"),
 };
 
-const STRING_ONLY_CLASS_DOCS = new Set(["magic/icon-cloud"]);
+const STRING_ONLY_CLASS_DOCS = new Set(["magic/animated-beam", "magic/icon-cloud"]);
 
 function printUsage() {
 	console.log(`Usage:

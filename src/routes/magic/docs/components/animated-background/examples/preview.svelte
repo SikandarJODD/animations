@@ -3,6 +3,7 @@
 		AnimatedBackground,
 		AnimatedBackgroundItem,
 	} from "#lib/components/magic/animated-background/index.js";
+	import { Annotation } from "#lib/components/ui/annotation/index.js";
 	import { Button } from "#lib/components/ui/button/index.js";
 	import { Home, PhoneCall, Settings, User } from "@lucide/svelte";
 
@@ -15,8 +16,12 @@
 </script>
 
 <div class="absolute bottom-8">
-	<div
-		class="border-muted flex w-full space-x-2 rounded-xl border bg-neutral-50/40 p-1.5 dark:bg-zinc-900/50"
+	<Annotation
+		note="Click one. Watch it glide."
+		direction="s"
+		customColor="var(--preview-annotation-color)"
+		noMark
+		class="border-muted flex w-full space-x-2 rounded-xl! border bg-neutral-50/40 p-1.5 [--preview-annotation-color:var(--color-ink)] dark:bg-zinc-900/50 dark:[--preview-annotation-color:var(--color-muted-foreground)]"
 	>
 		<AnimatedBackground
 			defaultValue={tabs[0].label}
@@ -37,5 +42,5 @@
 				</AnimatedBackgroundItem>
 			{/each}
 		</AnimatedBackground>
-	</div>
+	</Annotation>
 </div>
