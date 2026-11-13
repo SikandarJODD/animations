@@ -1,35 +1,24 @@
 <script lang="ts">
+	import ChangelogDate from "../changelog-date.svelte";
 	import ChangelogHighlight from "../changelog-highlight.svelte";
 </script>
 
 <article aria-labelledby="changelog-2026-05-02">
-	<div class="mb-5 flex items-center gap-3">
-		<h2 id="changelog-2026-05-02" class="text-base font-semibold whitespace-nowrap sm:text-lg">
-			May 2, 2026
-		</h2>
-		<div class="bg-border h-px flex-1"></div>
-	</div>
+	<ChangelogDate id="changelog-2026-05-02" datetime="2026-05-02">May 2, 2026</ChangelogDate>
 
-	<p class="text-foreground mb-6 text-sm leading-7 sm:text-[15px]">
+	<p class="text-foreground mb-5 text-sm leading-6 sm:text-[15px]">
 		<a
 			href="/magic/docs/components/arc-timeline"
 			class="rounded-sm outline-none focus-visible:ring-3"
 		>
-			<ChangelogHighlight>Arc Timeline component</ChangelogHighlight>
+			<ChangelogHighlight>Arc Timeline</ChangelogHighlight>
 		</a>
-		is now available in Svelte Magic UI.
+		joins Svelte Magic UI.
 	</p>
 
-	<div class="space-y-7">
-		<section aria-labelledby="changelog-2026-05-02-added">
-			<h3
-				id="changelog-2026-05-02-added"
-				class="text-muted-foreground mb-3 text-[11px] font-medium tracking-[0.16em] uppercase"
-			>
-				Added
-			</h3>
-
-			<ul class="space-y-2.5 text-sm leading-7 sm:text-[15px]">
+	<div class="space-y-5">
+		<section aria-label="Added">
+			<ul class="space-y-2 text-sm leading-6 sm:text-[15px]">
 				<li class="flex gap-2.5">
 					<span
 						aria-hidden="true"

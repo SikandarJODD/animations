@@ -1,32 +1,28 @@
 <script lang="ts">
+	import ChangelogDate from "../changelog-date.svelte";
 	import ChangelogHighlight from "../changelog-highlight.svelte";
 </script>
 
 <article aria-labelledby="changelog-2026-05-12">
-	<div class="mb-5 flex items-center gap-3">
-		<h2 id="changelog-2026-05-12" class="text-base font-semibold whitespace-nowrap sm:text-lg">
-			May 12, 2026
-		</h2>
-		<div class="bg-border h-px flex-1"></div>
-	</div>
+	<ChangelogDate id="changelog-2026-05-12" datetime="2026-05-12">May 12, 2026</ChangelogDate>
 
-	<p class="text-foreground mb-6 text-sm leading-7 sm:text-[15px]">
+	<p class="text-foreground mb-5 text-sm leading-6 sm:text-[15px]">
 		<a href="/fancy/scramble-in" class="rounded-sm outline-none focus-visible:ring-3">
-			<ChangelogHighlight>New Fancy Components</ChangelogHighlight>
+			<ChangelogHighlight>Five new Fancy Components</ChangelogHighlight>
 		</a>
-		and docs navigation upgrades are now available.
+		plus better keyboard navigation in the docs.
 	</p>
 
-	<div class="space-y-7">
+	<div class="space-y-5">
 		<section aria-labelledby="changelog-2026-05-12-added">
 			<h3
 				id="changelog-2026-05-12-added"
-				class="text-muted-foreground mb-3 text-[11px] font-medium tracking-[0.16em] uppercase"
+				class="text-muted-foreground mb-2.5 text-sm font-medium"
 			>
 				Added
 			</h3>
 
-			<ul class="space-y-2.5 text-sm leading-7 sm:text-[15px]">
+			<ul class="space-y-2 text-sm leading-6 sm:text-[15px]">
 				<li class="grid grid-cols-[0.65rem_1fr] gap-2">
 					<span
 						aria-hidden="true"
@@ -111,12 +107,12 @@
 		<section aria-labelledby="changelog-2026-05-12-improved">
 			<h3
 				id="changelog-2026-05-12-improved"
-				class="text-muted-foreground mb-3 text-[11px] font-medium tracking-[0.16em] uppercase"
+				class="text-muted-foreground mb-2.5 text-sm font-medium"
 			>
 				Improved
 			</h3>
 
-			<ul class="space-y-2.5 text-sm leading-7 sm:text-[15px]">
+			<ul class="space-y-2 text-sm leading-6 sm:text-[15px]">
 				<li class="grid grid-cols-[0.65rem_1fr] gap-2">
 					<span
 						aria-hidden="true"
