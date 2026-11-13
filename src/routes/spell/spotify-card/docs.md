@@ -79,4 +79,4 @@ bun add spotify-url-info
 | Prop    | Type     | Default    | Description                                                                                    |
 | ------- | -------- | ---------- | ---------------------------------------------------------------------------------------------- |
 | `url`   | `string` | `required` | The Spotify track, album, playlist, or episode URL sent to the API route for preview metadata. |
-| `class` | `string` | `''`       | Custom classes merged onto the root card wrapper.                                              |
+| `class` | `ClassValue` | `''`       | Custom classes merged onto the root card wrapper.                                              |

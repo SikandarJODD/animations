@@ -235,7 +235,7 @@ export const data: ComponentDoc = {
 			props: [
 				{
 					name: "class",
-					type: "ClassValue",
+					type: "string",
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},
